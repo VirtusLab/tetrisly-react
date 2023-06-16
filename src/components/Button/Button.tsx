@@ -1,3 +1,10 @@
+import { useState } from "react";
+
 export const Button = () => {
-  return <div>Button</div>;
+  const [clicked, setClicked] = useState(false);
+  return (
+    <button onClick={() => setClicked(true)} disabled={clicked}>
+      {clicked ? "Clicked" : "Click me"}
+    </button>
+  );
 };
