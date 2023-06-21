@@ -19,7 +19,7 @@ const themeExtension = {
   ringWidths,
 };
 
-export const theme = {
+export const theme: Theme = {
   ...themeExtension,
   ...defaultTheme,
 };

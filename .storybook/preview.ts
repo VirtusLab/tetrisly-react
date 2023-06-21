@@ -2,8 +2,8 @@ import type { Preview } from "@storybook/react";
 
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { withThemeFromJSXProvider } from "@storybook/addon-styling";
-import { TetrislyProvider } from "../src/theme/TetrislyProvider";
-import { GlobalStyles } from "../src/theme/GlobalStyles.styled";
+import { TetrislyProvider } from "../src/tetrisly/TetrislyProvider";
+import { GlobalStyles } from "../src/GlobalStyles.styled";
 
 /* TODO: update import for your custom theme configurations */
 // import { lightTheme, darkTheme } from '../path/to/themes';

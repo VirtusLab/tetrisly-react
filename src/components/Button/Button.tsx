@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { tet } from "../../theme/tetrisly";
+import { tet } from "../../tetrisly/tetrisly";
 
 export const Button = () => {
   const [clicked, setClicked] = useState(false);
