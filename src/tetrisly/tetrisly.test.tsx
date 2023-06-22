@@ -4,7 +4,7 @@ import { tet } from "./tetrisly";
 import { theme } from "../theme";
 
 describe("check tetrisly provider, and correct styling", () => {
-  it("with no theme provided should render default theme", () => {
+  it("with no theme provided should use default theme", () => {
     render(
       <TetrislyProvider>
         <tet.button color="$g-color-blue-+1">Click me</tet.button>
@@ -13,7 +13,7 @@ describe("check tetrisly provider, and correct styling", () => {
     const button = screen.getByText("Click me");
     expect(button).toHaveStyle(`color: ${theme.colors["$g-color-blue-+1"]}`);
   });
-  it("with theme provided should render theme", () => {
+  it("with theme provided should use theme", () => {
     const customColor = "rgb(255, 0, 0)";
     render(
       <TetrislyProvider
