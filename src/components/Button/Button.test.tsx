@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { act, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Button } from "./Button";
 
@@ -16,14 +16,15 @@ describe("Button", () => {
   it("should render correct text when clicked", async () => {
     const { getByRole } = render(<Button />);
     const button = getByRole("button");
-    await userEvent.click(button);
+    act(() => userEvent.click(button));
     expect(button).toHaveTextContent("Clicked");
   });
 
   it("should be disabled when clicked", async () => {
     const { getByRole } = render(<Button />);
     const button = getByRole("button");
-    await userEvent.click(button);
+    act(() => userEvent.click(button));
+
     expect(button).toBeDisabled();
   });
 });
