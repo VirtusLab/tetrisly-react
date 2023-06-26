@@ -1,7 +1,6 @@
 import { defaultTheme as xDefaultTheme } from "@xstyled/system";
 
 import { theme as defaultTheme } from "./theme";
-import { Theme as DefaultTheme } from "./Theme.interface";
 
 const { screens, states } = xDefaultTheme;
 
@@ -19,9 +18,9 @@ const themeExtension = {
   ringWidths,
 };
 
-export const theme: Theme = {
+export const theme = {
   ...themeExtension,
   ...defaultTheme,
 };
 
-export type Theme = DefaultTheme & typeof themeExtension;
+export type Theme = typeof theme;

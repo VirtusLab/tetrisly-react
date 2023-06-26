@@ -14,7 +14,7 @@ type ProviderProps = PropsWithChildren<{
 export const TetrislyProvider = ({
   children,
   theme: overrideTheme,
-  disableGlobalStyles,
+  disableGlobalStyles = false,
 }: ProviderProps) => {
   const providerTheme =
     overrideTheme === undefined ? theme : mergeObjects(theme, overrideTheme);
