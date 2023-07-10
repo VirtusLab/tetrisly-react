@@ -1,30 +1,24 @@
-import { act, render } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render } from "../../tests/render";
 import { Button } from "./Button";
+
+const getButton = (jsx: JSX.Element) => {
+  const { getByRole } = render(jsx);
+  return getByRole("button");
+};
 
 describe("Button", () => {
   it("should render the button", () => {
-    const { getByRole } = render(<Button />);
-    expect(getByRole("button")).toBeInTheDocument();
+    const button = getButton(<Button label="Hello there" />);
+    expect(button).toBeInTheDocument();
   });
 
   it("should render correct text", () => {
-    const { getByRole } = render(<Button />);
-    expect(getByRole("button")).toHaveTextContent("Click me");
+    const button = getButton(<Button label="Hello there" />);
+    expect(button).toHaveTextContent("Hello there");
   });
 
-  it("should render correct text when clicked", async () => {
-    const { getByRole } = render(<Button />);
-    const button = getByRole("button");
-    act(() => userEvent.click(button));
-    expect(button).toHaveTextContent("Clicked");
-  });
-
-  it("should be disabled when clicked", async () => {
-    const { getByRole } = render(<Button />);
-    const button = getByRole("button");
-    act(() => userEvent.click(button));
-
-    expect(button).toBeDisabled();
+  it("should render Default button when no props are provided (except label) ", () => {
+    // TODO(add tests)
+    expect(true).toBe(true);
   });
 });

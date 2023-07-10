@@ -4,6 +4,7 @@ describe("mergeObject", () => {
   it("should merge two objects in such a way that the second object's properties override the first object's properties", () => {
     const object1 = {
       name: "John",
+
       age: 20,
       address: {
         city: "New York",
@@ -13,6 +14,7 @@ describe("mergeObject", () => {
 
     const object2 = {
       name: "Jane",
+      lastName: "Doe",
       address: {
         city: "Los Angeles",
       },
@@ -21,6 +23,7 @@ describe("mergeObject", () => {
     const result = {
       name: "Jane",
       age: 20,
+      lastName: "Doe",
       address: {
         city: "Los Angeles",
         country: "USA",

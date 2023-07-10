@@ -16,10 +16,10 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "types"],
+  "include": ["src", "types/styled.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

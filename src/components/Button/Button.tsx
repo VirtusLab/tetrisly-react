@@ -1,15 +1,30 @@
-import { useState } from "react";
+import { ButtonProps } from "./Button.props";
 import { tet } from "../../tetrisly/tetrisly";
+import { ButtonVariant } from "./types/ButtonType.type";
+import { ButtonAppearance } from "./types/ButtonAppearance.type";
+import { stylesBuilder } from "./stylesBuilder/stylesBuilder";
 
-export const Button = () => {
-  const [clicked, setClicked] = useState(false);
+export const Button = <
+  TVariant extends ButtonVariant = "Default",
+  TAppearance extends ButtonAppearance<TVariant> = ButtonAppearance<TVariant>
+>({
+  label,
+  variant,
+  appearance,
+  intent,
+  state,
+  size,
+  ...rest
+}: ButtonProps<TVariant, TAppearance>) => {
   return (
     <tet.button
-      color="$a-color-action-destructive-active"
-      onClick={() => setClicked(true)}
-      disabled={clicked}
+      {...stylesBuilder({ variant, appearance, intent, size })}
+      disabled={state === "disabled"}
+      data-state={state}
+      style={{ textUnderlineOffset: "3px", textDecorationThickness: "1px" }}
+      {...rest}
     >
-      {clicked ? "Clicked" : "Click me"}
+      {label}
     </tet.button>
   );
 };

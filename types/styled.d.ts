@@ -1,8 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import "styled-components";
 import "@xstyled/system";
-import { Theme as RootTheme } from "../src/theme/Theme.interface";
+import { Theme as RootTheme } from "../src/theme";
 
 interface AppTheme extends RootTheme {}
 

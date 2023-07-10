@@ -2,12 +2,11 @@ import { Preflight, ThemeProvider } from "@xstyled/styled-components";
 import { theme } from "../theme";
 import { PropsWithChildren } from "react";
 import { GlobalStyles } from "../GlobalStyles.styled";
-import { Theme } from "@xstyled/styled-components";
-import { TwoPartial } from "../utility-types/TwoPartial";
 import { mergeObjects } from "../services/mergeObjects";
+import { AbstractTheme } from "../theme/Theme.interface";
 
 type ProviderProps = PropsWithChildren<{
-  theme?: TwoPartial<Theme>;
+  theme?: AbstractTheme;
   disableGlobalStyles?: boolean;
 }>;
 

@@ -26,5 +26,13 @@ export function mergeObjects<T extends object>(obj1: T, obj2: TwoPartial<T>) {
       }
     }
   });
-  return mergedObject;
+  const leftProperties = Object.keys(obj2).filter(
+    (key) => !Object.keys(obj1).includes(key)
+  );
+  return {
+    ...mergedObject,
+    ...Object.fromEntries(
+      leftProperties.map((key) => [key, obj2[key as keyof typeof obj2]])
+    ),
+  };
 }
