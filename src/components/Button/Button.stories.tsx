@@ -256,12 +256,13 @@ export const AllOptions: Story = {
                       {sizes.map((size) => {
                         const props = {
                           label,
+                          variant,
                           state,
                           appearance: appearanceOption,
                           intent,
                           size,
                           key: `${variant}-${appearanceOption}-${intent}-${size}`,
-                        };
+                        }
 
                         return <Button {...props} />;
                       })}
