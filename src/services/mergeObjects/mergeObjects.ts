@@ -1,4 +1,4 @@
-import { TwoPartial } from "../../utility-types/TwoPartial";
+import { TwoPartial } from '../../utility-types/TwoPartial';
 
 function entriesOf<T extends object>(obj: T): [keyof T, T[keyof T]][] {
   return Object.entries(obj) as [keyof T, T[keyof T]][];
@@ -16,7 +16,7 @@ export function mergeObjects<T extends object>(obj1: T, obj2: TwoPartial<T>) {
   entriesOf(obj1).forEach(([key, entries]) => {
     if (hasAttribute(obj2, key)) {
       const differentObj = obj2[key];
-      if (typeof differentObj === "string") {
+      if (typeof differentObj === 'string') {
         mergedObject[key] = differentObj;
       } else {
         mergedObject[key] = {

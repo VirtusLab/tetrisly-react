@@ -1,17 +1,16 @@
-import React, { ReactElement } from "react";
-import { render, RenderOptions } from "@testing-library/react";
-import { TetrislyProvider } from "../tetrisly/TetrislyProvider";
+import { render, RenderOptions } from '@testing-library/react';
+import React, { ReactElement } from 'react';
 
-// eslint-disable-next-line react-refresh/only-export-components
-const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
-  return <TetrislyProvider>{children}</TetrislyProvider>;
-};
+import { TetrislyProvider } from '../tetrisly/TetrislyProvider';
+
+ 
+const AllTheProviders = ({ children }: { children: React.ReactNode }) => <TetrislyProvider>{children}</TetrislyProvider>;
 
 const customRender = (
   ui: ReactElement,
-  options?: Omit<RenderOptions, "wrapper">
+  options?: Omit<RenderOptions, 'wrapper'>
 ) => render(ui, { wrapper: AllTheProviders, ...options });
 
-// eslint-disable-next-line react-refresh/only-export-components
-export * from "@testing-library/react";
+ 
+export * from '@testing-library/react';
 export { customRender as render };

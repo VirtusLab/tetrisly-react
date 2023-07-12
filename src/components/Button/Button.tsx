@@ -1,11 +1,11 @@
-import { ButtonProps } from "./Button.props";
-import { tet } from "../../tetrisly/tetrisly";
-import { ButtonVariant } from "./types/ButtonType.type";
-import { ButtonAppearance } from "./types/ButtonAppearance.type";
-import { stylesBuilder } from "./stylesBuilder/stylesBuilder";
+import { ButtonProps } from './Button.props';
+import { stylesBuilder } from './stylesBuilder/stylesBuilder';
+import { ButtonAppearance } from './types/ButtonAppearance.type';
+import { ButtonVariant } from './types/ButtonType.type';
+import { tet } from '../../tetrisly/tetrisly';
 
 export const Button = <
-  TVariant extends ButtonVariant = "Default",
+  TVariant extends ButtonVariant = 'Default',
   TAppearance extends ButtonAppearance<TVariant> = ButtonAppearance<TVariant>
 >({
   label,
@@ -15,16 +15,14 @@ export const Button = <
   state,
   size,
   ...rest
-}: ButtonProps<TVariant, TAppearance>) => {
-  return (
+}: ButtonProps<TVariant, TAppearance>) => (
     <tet.button
       {...stylesBuilder({ variant, appearance, intent, size })}
-      disabled={state === "disabled"}
+      disabled={state === 'disabled'}
       data-state={state}
-      style={{ textUnderlineOffset: "3px", textDecorationThickness: "1px" }}
+      style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
       {...rest}
     >
       {label}
     </tet.button>
   );
-};

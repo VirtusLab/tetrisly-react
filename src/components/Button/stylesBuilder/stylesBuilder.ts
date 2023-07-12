@@ -1,10 +1,18 @@
-import { ButtonAppearance } from "../types/ButtonAppearance.type";
-import { ButtonVariant } from "../types/ButtonType.type";
-import { StylesBuilderProps } from "./stylesBuilder.props";
-import { applyDefaults } from "./applyDefaults";
-import { config } from "../Button.config";
-import { SystemProps } from "@xstyled/styled-components";
-import { Theme } from "../../../theme";
+import { SystemProps } from '@xstyled/styled-components';
+
+import { applyDefaults } from './applyDefaults';
+import { StylesBuilderProps } from './stylesBuilder.props';
+import { Theme } from '../../../theme';
+import { config } from '../Button.config';
+import { ButtonAppearance } from '../types/ButtonAppearance.type';
+import { ButtonVariant } from '../types/ButtonType.type';
+
+function isKeyOf<T extends object>(
+  obj: T,
+  key: string
+): key is Exclude<keyof T, number | symbol> {
+  return key in obj;
+}
 
 export function stylesBuilder<
   TVariant extends ButtonVariant,
@@ -38,9 +46,3 @@ export function stylesBuilder<
   } as const;
 }
 
-function isKeyOf<T extends object>(
-  obj: T,
-  key: string
-): key is Exclude<keyof T, number | symbol> {
-  return key in obj;
-}

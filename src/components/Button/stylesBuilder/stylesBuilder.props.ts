@@ -1,7 +1,7 @@
-import { ButtonAppearance } from "../types/ButtonAppearance.type";
-import { ButtonIntent } from "../types/ButtonIntent.type";
-import { ButtonSize } from "../types/ButtonSize.type";
-import { ButtonVariant } from "../types/ButtonType.type";
+import { ButtonAppearance } from '../types/ButtonAppearance.type';
+import { ButtonIntent } from '../types/ButtonIntent.type';
+import { ButtonSize } from '../types/ButtonSize.type';
+import { ButtonVariant } from '../types/ButtonType.type';
 
 export type StylesBuilderProps<
   TVariant extends ButtonVariant,

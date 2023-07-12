@@ -1,11 +1,12 @@
-import { SystemProps } from "@xstyled/styled-components";
-import { ButtonAppearance } from "./types/ButtonAppearance.type";
-import { ButtonIntent } from "./types/ButtonIntent.type";
-import { ButtonSize } from "./types/ButtonSize.type";
-import { ButtonVariant } from "./types/ButtonType.type";
-import { Theme } from "../../theme";
+import { SystemProps } from '@xstyled/styled-components';
 
-type BaseProps = Omit<SystemProps<Theme>, "appearance">;
+import { ButtonAppearance } from './types/ButtonAppearance.type';
+import { ButtonIntent } from './types/ButtonIntent.type';
+import { ButtonSize } from './types/ButtonSize.type';
+import { ButtonVariant } from './types/ButtonType.type';
+import { Theme } from '../../theme';
+
+type BaseProps = Omit<SystemProps<Theme>, 'appearance'>;
 
 type VariantConfig<TVariant extends ButtonVariant> = {
   appearance: {
@@ -21,25 +22,25 @@ type VariantConfig<TVariant extends ButtonVariant> = {
 } & BaseProps;
 
 const commonConfig = {
-  display: "inline-flex",
-  justifyContent: "center",
-  alignItems: "center",
-  borderRadius: "medium",
-  textAlign: "center",
-  whiteSpace: "nowrap",
+  display: 'inline-flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderRadius: 'medium',
+  textAlign: 'center',
+  whiteSpace: 'nowrap',
   opacity: {
-    disabled: "disabled",
+    disabled: 'disabled',
   },
   outlineColor: {
-    focus: "interaction-focus-default",
+    focus: 'interaction-focus-default',
   },
   outlineWidth: {
-    focus: "focus",
+    focus: 'focus',
   },
   outlineOffset: 2,
   pointerEvents: {
-    loading: "none",
-    disabled: "none",
+    loading: 'none',
+    disabled: 'none',
   },
   transition: true,
   transitionDuration: 200,
@@ -47,73 +48,73 @@ const commonConfig = {
 
 const defaultConfig = {
   ...commonConfig,
-  boxShadow: "bottom-100",
+  boxShadow: 'bottom-100',
   appearance: {
     primary: {
-      color: "action-inverted-normal",
+      color: 'action-inverted-normal',
       intent: {
         none: {
           backgroundColor: {
-            _: "action-primary-normal",
-            hover: "action-primary-hover",
-            active: "action-primary-active",
-            selected: "action-primary-selected",
+            _: 'action-primary-normal',
+            hover: 'action-primary-hover',
+            active: 'action-primary-active',
+            selected: 'action-primary-selected',
             // loading: "action-primary-loading",
           },
         },
         success: {
           backgroundColor: {
-            _: "action-success-normal",
-            hover: "action-success-hover",
-            active: "action-success-active",
-            selected: "action-success-selected",
+            _: 'action-success-normal',
+            hover: 'action-success-hover',
+            active: 'action-success-active',
+            selected: 'action-success-selected',
             // loading: "action-success-loading",
           },
         },
         destructive: {
           backgroundColor: {
-            _: "action-destructive-normal",
-            hover: "action-destructive-hover",
-            active: "action-destructive-active",
-            selected: "action-destructive-selected",
+            _: 'action-destructive-normal',
+            hover: 'action-destructive-hover',
+            active: 'action-destructive-active',
+            selected: 'action-destructive-selected',
             // loading: "action-destructive-loading",
           },
         },
       },
     },
     secondary: {
-      backgroundColor: "transparent",
+      backgroundColor: 'transparent',
       ringInset: true,
-      ring: "100",
+      ring: '100',
       ringColor: {
-        _: "action-outline-normal",
-        hover: "action-outline-hover",
-        active: "action-outline-active",
-        selected: "action-outline-selected",
+        _: 'action-outline-normal',
+        hover: 'action-outline-hover',
+        active: 'action-outline-active',
+        selected: 'action-outline-selected',
       },
       intent: {
         none: {
           color: {
-            _: "action-neutral-normal",
-            hover: "action-neutral-hover",
-            active: "action-neutral-active",
-            selected: "action-neutral-selected",
+            _: 'action-neutral-normal',
+            hover: 'action-neutral-hover',
+            active: 'action-neutral-active',
+            selected: 'action-neutral-selected',
           },
         },
         success: {
           color: {
-            _: "action-success-normal",
-            hover: "action-success-hover",
-            active: "action-success-active",
-            selected: "action-success-selected",
+            _: 'action-success-normal',
+            hover: 'action-success-hover',
+            active: 'action-success-active',
+            selected: 'action-success-selected',
           },
         },
         destructive: {
           color: {
-            _: "action-destructive-normal",
-            hover: "action-destructive-hover",
-            active: "action-destructive-active",
-            selected: "action-destructive-selected",
+            _: 'action-destructive-normal',
+            hover: 'action-destructive-hover',
+            active: 'action-destructive-active',
+            selected: 'action-destructive-selected',
           },
         },
       },
@@ -122,10 +123,10 @@ const defaultConfig = {
       intent: {
         none: {
           backgroundColor: {
-            _: "action-inverted-normal",
-            hover: "action-inverted-hover",
-            active: "action-inverted-active",
-            selected: "action-inverted-selected",
+            _: 'action-inverted-normal',
+            hover: 'action-inverted-hover',
+            active: 'action-inverted-active',
+            selected: 'action-inverted-selected',
             // loading: "action-inverted-loading",
           },
         },
@@ -133,45 +134,45 @@ const defaultConfig = {
     },
   },
   size: {
-    small: { h: "250", text: "body-medium", px: "150" },
-    medium: { h: "300", text: "body-medium", px: "200" },
-    large: { h: "350", text: "body-large", px: "200" },
+    small: { h: '250', text: 'body-medium', px: '150' },
+    medium: { h: '300', text: 'body-medium', px: '200' },
+    large: { h: '350', text: 'body-large', px: '200' },
   },
-} as const satisfies VariantConfig<"Default">;
+} as const satisfies VariantConfig<'Default'>;
 
 const ghostConfig = {
   ...commonConfig,
   backgroundColor: {
-    _: "transparent",
-    hover: "action-ghost-hover",
-    active: "action-ghost-active",
-    selected: "action-ghost-selected",
+    _: 'transparent',
+    hover: 'action-ghost-hover',
+    active: 'action-ghost-active',
+    selected: 'action-ghost-selected',
   },
   appearance: {
     primary: {
       intent: {
         none: {
           color: {
-            _: "action-primary-normal",
-            hover: "action-primary-hover",
-            active: "action-primary-active",
-            selected: "action-primary-selected",
+            _: 'action-primary-normal',
+            hover: 'action-primary-hover',
+            active: 'action-primary-active',
+            selected: 'action-primary-selected',
           },
         },
         success: {
           color: {
-            _: "action-success-normal",
-            hover: "action-success-hover",
-            active: "action-success-active",
-            selected: "action-success-selected",
+            _: 'action-success-normal',
+            hover: 'action-success-hover',
+            active: 'action-success-active',
+            selected: 'action-success-selected',
           },
         },
         destructive: {
           color: {
-            _: "action-destructive-normal",
-            hover: "action-destructive-hover",
-            active: "action-destructive-active",
-            selected: "action-destructive-selected",
+            _: 'action-destructive-normal',
+            hover: 'action-destructive-hover',
+            active: 'action-destructive-active',
+            selected: 'action-destructive-selected',
           },
         },
       },
@@ -180,10 +181,10 @@ const ghostConfig = {
       intent: {
         none: {
           color: {
-            _: "action-neutral-normal",
-            hover: "action-neutral-hover",
-            active: "action-neutral-active",
-            selected: "action-neutral-selected",
+            _: 'action-neutral-normal',
+            hover: 'action-neutral-hover',
+            active: 'action-neutral-active',
+            selected: 'action-neutral-selected',
           },
         },
       },
@@ -192,15 +193,15 @@ const ghostConfig = {
       intent: {
         none: {
           backgroundColor: {
-            hover: "action-ghost-inverted-hover",
-            active: "action-ghost-inverted-active",
-            selected: "action-ghost-inverted-selected",
+            hover: 'action-ghost-inverted-hover',
+            active: 'action-ghost-inverted-active',
+            selected: 'action-ghost-inverted-selected',
           },
           color: {
-            _: "action-inverted-normal",
-            hover: "action-inverted-hover",
-            active: "action-inverted-active",
-            selected: "action-inverted-selected",
+            _: 'action-inverted-normal',
+            hover: 'action-inverted-hover',
+            active: 'action-inverted-active',
+            selected: 'action-inverted-selected',
           },
         },
       },
@@ -209,51 +210,51 @@ const ghostConfig = {
       intent: {
         none: {
           color: {
-            _: "action-reverseInverted-normal",
-            hover: "action-reverseInverted-hover",
-            active: "action-reverseInverted-active",
-            selected: "action-reverseInverted-selected",
+            _: 'action-reverseInverted-normal',
+            hover: 'action-reverseInverted-hover',
+            active: 'action-reverseInverted-active',
+            selected: 'action-reverseInverted-selected',
           },
         },
       },
     },
   },
   size: {
-    small: { h: "250", text: "body-medium", px: "150" },
-    medium: { h: "300", text: "body-medium", px: "200" },
-    large: { h: "350", text: "body-large", px: "200" },
+    small: { h: '250', text: 'body-medium', px: '150' },
+    medium: { h: '300', text: 'body-medium', px: '200' },
+    large: { h: '350', text: 'body-large', px: '200' },
   },
-} as const satisfies VariantConfig<"Ghost">;
+} as const satisfies VariantConfig<'Ghost'>;
 
 const bareConfig = {
   ...commonConfig,
   p: 0,
-  backgroundColor: "transparent",
+  backgroundColor: 'transparent',
   appearance: {
     primary: {
       intent: {
         none: {
           color: {
-            _: "action-primary-normal",
-            hover: "action-primary-hover",
-            active: "action-primary-active",
-            selected: "action-primary-selected",
+            _: 'action-primary-normal',
+            hover: 'action-primary-hover',
+            active: 'action-primary-active',
+            selected: 'action-primary-selected',
           },
         },
         success: {
           color: {
-            _: "action-success-normal",
-            hover: "action-success-hover",
-            active: "action-success-active",
-            selected: "action-success-selected",
+            _: 'action-success-normal',
+            hover: 'action-success-hover',
+            active: 'action-success-active',
+            selected: 'action-success-selected',
           },
         },
         destructive: {
           color: {
-            _: "action-destructive-normal",
-            hover: "action-destructive-hover",
-            active: "action-destructive-active",
-            selected: "action-destructive-selected",
+            _: 'action-destructive-normal',
+            hover: 'action-destructive-hover',
+            active: 'action-destructive-active',
+            selected: 'action-destructive-selected',
           },
         },
       },
@@ -262,10 +263,10 @@ const bareConfig = {
       intent: {
         none: {
           color: {
-            _: "action-neutral-normal",
-            hover: "action-neutral-hover",
-            active: "action-neutral-active",
-            selected: "action-neutral-selected",
+            _: 'action-neutral-normal',
+            hover: 'action-neutral-hover',
+            active: 'action-neutral-active',
+            selected: 'action-neutral-selected',
           },
         },
       },
@@ -274,34 +275,34 @@ const bareConfig = {
       intent: {
         none: {
           color: {
-            _: "action-inverted-normal",
-            hover: "action-inverted-hover",
-            active: "action-inverted-active",
-            selected: "action-inverted-selected",
+            _: 'action-inverted-normal',
+            hover: 'action-inverted-hover',
+            active: 'action-inverted-active',
+            selected: 'action-inverted-selected',
           },
         },
       },
-      textDecoration: "underline",
+      textDecoration: 'underline',
     },
     reverseInverted: {
       intent: {
         none: {
           color: {
-            _: "action-reverseInverted-normal",
-            hover: "action-reverseInverted-hover",
-            active: "action-reverseInverted-active",
-            selected: "action-reverseInverted-selected",
+            _: 'action-reverseInverted-normal',
+            hover: 'action-reverseInverted-hover',
+            active: 'action-reverseInverted-active',
+            selected: 'action-reverseInverted-selected',
           },
         },
       },
-      textDecoration: "underline",
+      textDecoration: 'underline',
     },
   },
   size: {
-    medium: { text: "body-medium" },
-    large: { text: "body-large" },
+    medium: { text: 'body-medium' },
+    large: { text: 'body-large' },
   },
-} as const satisfies VariantConfig<"Bare">;
+} as const satisfies VariantConfig<'Bare'>;
 
 export const config = {
   Default: defaultConfig,

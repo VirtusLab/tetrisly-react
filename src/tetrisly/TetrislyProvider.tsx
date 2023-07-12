@@ -1,9 +1,10 @@
-import { Preflight, ThemeProvider } from "@xstyled/styled-components";
-import { theme } from "../theme";
-import { PropsWithChildren } from "react";
-import { GlobalStyles } from "../GlobalStyles.styled";
-import { mergeObjects } from "../services/mergeObjects";
-import { AbstractTheme } from "../theme/Theme.interface";
+import { Preflight, ThemeProvider } from '@xstyled/styled-components';
+import { PropsWithChildren } from 'react';
+
+import { GlobalStyles } from '../GlobalStyles.styled';
+import { mergeObjects } from '../services/mergeObjects';
+import { theme } from '../theme';
+import { AbstractTheme } from '../theme/Theme.interface';
 
 type ProviderProps = PropsWithChildren<{
   theme?: AbstractTheme;

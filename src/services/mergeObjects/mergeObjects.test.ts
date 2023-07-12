@@ -1,32 +1,32 @@
-import { mergeObjects } from "./mergeObjects";
+import { mergeObjects } from './mergeObjects';
 
-describe("mergeObject", () => {
-  it("should merge two objects in such a way that the second object's properties override the first object's properties", () => {
+describe('mergeObject', () => {
+  it('should merge two objects in such a way that the second object\'s properties override the first object\'s properties', () => {
     const object1 = {
-      name: "John",
+      name: 'John',
 
       age: 20,
       address: {
-        city: "New York",
-        country: "USA",
+        city: 'New York',
+        country: 'USA',
       },
     };
 
     const object2 = {
-      name: "Jane",
-      lastName: "Doe",
+      name: 'Jane',
+      lastName: 'Doe',
       address: {
-        city: "Los Angeles",
+        city: 'Los Angeles',
       },
     };
 
     const result = {
-      name: "Jane",
+      name: 'Jane',
       age: 20,
-      lastName: "Doe",
+      lastName: 'Doe',
       address: {
-        city: "Los Angeles",
-        country: "USA",
+        city: 'Los Angeles',
+        country: 'USA',
       },
     };
 

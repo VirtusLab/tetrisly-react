@@ -1,13 +1,13 @@
-import { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes } from 'react';
 
-import { ButtonAppearance } from "./types/ButtonAppearance.type";
-import { ButtonIntent } from "./types/ButtonIntent.type";
-import { ButtonSize } from "./types/ButtonSize.type";
-import { ButtonVariant } from "./types/ButtonType.type";
-import { ButtonState } from "./types/ButtonState.type";
+import { ButtonAppearance } from './types/ButtonAppearance.type';
+import { ButtonIntent } from './types/ButtonIntent.type';
+import { ButtonSize } from './types/ButtonSize.type';
+import { ButtonState } from './types/ButtonState.type';
+import { ButtonVariant } from './types/ButtonType.type';
 
 export type ButtonProps<
-  TVariant extends ButtonVariant = "Default",
+  TVariant extends ButtonVariant = 'Default',
   TAppearance extends ButtonAppearance<TVariant> = ButtonAppearance<TVariant>
 > = {
   variant?: TVariant;
@@ -16,4 +16,4 @@ export type ButtonProps<
   intent?: ButtonIntent<TVariant, TAppearance>;
   label: string;
   state?: ButtonState;
-} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disabled" | "color">;
+} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled' | 'color'>;
