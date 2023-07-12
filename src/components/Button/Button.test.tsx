@@ -17,7 +17,14 @@ describe('Button', () => {
     expect(button).toHaveTextContent('Hello there');
   });
 
-  it('should render Default button when no props are provided (except label) ', () => {
+  it('should throw an error if wrong config is provided', () => {
+    expect(() =>
+      // @ts-expect-error testing wrong config
+      render(<Button variant="Default" appearance="reverseInverted" />)
+    ).toThrowError();
+  });
+
+  it('should render Default button when only label is provided', () => {
     // TODO(add tests)
     expect(true).toBe(true);
   });
