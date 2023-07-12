@@ -1,1 +1,1 @@
-export type ButtonVariant = 'Default' | 'Ghost' | 'Bare';
+export type ButtonVariant = 'default' | 'ghost' | 'bare';

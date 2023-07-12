@@ -1,3 +1,5 @@
+import { DeepPartial } from '../../../utility-types/DeepPartial';
+import { VariantConfig } from '../Button.config';
 import { ButtonAppearance } from '../types/ButtonAppearance.type';
 import { ButtonIntent } from '../types/ButtonIntent.type';
 import { ButtonSize } from '../types/ButtonSize.type';
@@ -11,4 +13,5 @@ export type StylesBuilderProps<
   variant?: TVariant;
   intent?: ButtonIntent<TVariant, TAppearance>;
   size?: ButtonSize<TVariant>;
+  custom?: DeepPartial<Record<ButtonVariant, VariantConfig<ButtonVariant>>>;
 };

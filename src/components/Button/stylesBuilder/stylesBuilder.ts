@@ -1,9 +1,10 @@
 import { SystemProps } from '@xstyled/styled-components';
+import { merge } from 'lodash';
 
 import { applyDefaults } from './applyDefaults';
 import { StylesBuilderProps } from './stylesBuilder.props';
 import { Theme } from '../../../theme';
-import { config } from '../Button.config';
+import { VariantConfig, config as defaultConfig } from '../Button.config';
 import { ButtonAppearance } from '../types/ButtonAppearance.type';
 import { ButtonVariant } from '../types/ButtonType.type';
 
@@ -17,9 +18,16 @@ function isKeyOf<T extends object>(
 export function stylesBuilder<
   TVariant extends ButtonVariant,
   TAppearance extends ButtonAppearance<TVariant>
->(props: StylesBuilderProps<TVariant, TAppearance>): SystemProps<Theme> {
+>({
+  custom = {},
+  ...props
+}: StylesBuilderProps<TVariant, TAppearance>): SystemProps<Theme> {
   const options = applyDefaults(props);
-  const { appearance, size, ...rest } = config[options.variant];
+  // const config = mergeObjects(defaultConfig, custom);
+  const config = merge(defaultConfig, custom);
+  const { appearance, size, ...rest } = config[
+    options.variant
+  ] as VariantConfig<TVariant>;
 
   if (!isKeyOf(appearance, options.appearance))
     throw new Error(

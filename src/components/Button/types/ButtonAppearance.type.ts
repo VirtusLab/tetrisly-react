@@ -4,11 +4,11 @@ import { Equal, Expect } from '../../../utility-types/testing';
 type Appearance = 'primary' | 'secondary' | 'inverted' | 'reverseInverted';
 
 export type ButtonAppearance<TVariant extends ButtonVariant> =
-  TVariant extends 'Default'
+  TVariant extends 'default'
     ? Exclude<Appearance, 'reverseInverted'>
-    : TVariant extends 'Ghost'
+    : TVariant extends 'ghost'
     ? Appearance
-    : TVariant extends 'Bare'
+    : TVariant extends 'bare'
     ? Appearance
     : never;
 
@@ -16,17 +16,17 @@ export type ButtonAppearance<TVariant extends ButtonVariant> =
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 type Cases = [
   Expect<
-    Equal<ButtonAppearance<'Default'>, 'primary' | 'secondary' | 'inverted'>
+    Equal<ButtonAppearance<'default'>, 'primary' | 'secondary' | 'inverted'>
   >,
   Expect<
     Equal<
-      ButtonAppearance<'Ghost'>,
+      ButtonAppearance<'ghost'>,
       'primary' | 'secondary' | 'inverted' | 'reverseInverted'
     >
   >,
   Expect<
     Equal<
-      ButtonAppearance<'Bare'>,
+      ButtonAppearance<'bare'>,
       'primary' | 'secondary' | 'inverted' | 'reverseInverted'
     >
   >,

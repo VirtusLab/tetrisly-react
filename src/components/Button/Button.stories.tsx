@@ -7,7 +7,7 @@ import { ButtonSize } from './types/ButtonSize.type';
 import { ButtonVariant } from './types/ButtonType.type';
 import { tet } from '../../tetrisly/tetrisly';
 
-const meta: Meta<typeof Button> = {
+const meta = {
   title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
@@ -26,15 +26,15 @@ const meta: Meta<typeof Button> = {
       control: { type: 'radio' },
     },
   },
-};
+} satisfies Meta<typeof Button>;
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   argTypes: {
     appearance: {
-      options: ['primary', 'secondary', 'inverted'],
+      options: ['primary', 'secondary', 'inverted', 'reverseInverted'],
       defaultValue: 'primary',
       control: { type: 'radio' },
     },
@@ -57,7 +57,7 @@ export const DefaultDisabled: Story = {
 
 export const Ghost: Story = {
   args: {
-    variant: 'Ghost',
+    variant: 'ghost',
   },
   argTypes: {
     appearance: {
@@ -84,7 +84,7 @@ export const GhostDisabled: Story = {
 
 export const Bare: Story = {
   args: {
-    variant: 'Bare',
+    variant: 'bare',
   },
   argTypes: {
     appearance: {
@@ -134,7 +134,7 @@ type Combinations = {
 };
 
 const combinations = {
-  Default: {
+  default: {
     appearance: {
       primary: ['success', 'destructive', 'none'],
       secondary: ['success', 'destructive', 'none'],
@@ -142,7 +142,7 @@ const combinations = {
     },
     size: ['small', 'medium', 'large'],
   },
-  Ghost: {
+  ghost: {
     appearance: {
       primary: ['success', 'destructive', 'none'],
       secondary: ['none'],
@@ -151,7 +151,7 @@ const combinations = {
     },
     size: ['small', 'medium', 'large'],
   },
-  Bare: {
+  bare: {
     appearance: {
       primary: ['success', 'destructive', 'none'],
       secondary: ['none'],

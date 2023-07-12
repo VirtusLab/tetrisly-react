@@ -5,7 +5,7 @@ import { stylesBuilder } from './stylesBuilder';
 describe('stylesBuilder', () => {
   it('should return correct color for default variant', () => {
     const props = {
-      variant: 'Default',
+      variant: 'default',
       appearance: 'primary',
       intent: 'none',
       size: 'medium',

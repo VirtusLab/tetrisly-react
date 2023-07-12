@@ -1,4 +1,4 @@
-import { mergeObjects } from './mergeObjects';
+import { merge as mergeObjects } from 'lodash';
 
 describe('mergeObject', () => {
   it("should merge two objects in such a way that the second object's properties override the first object's properties", () => {

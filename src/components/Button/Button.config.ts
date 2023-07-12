@@ -8,7 +8,7 @@ import { Theme } from '../../theme';
 
 type BaseProps = Omit<SystemProps<Theme>, 'appearance'>;
 
-type VariantConfig<TVariant extends ButtonVariant> = {
+export type VariantConfig<TVariant extends ButtonVariant> = {
   appearance: {
     [Appearance in ButtonAppearance<TVariant>]: {
       intent: {
@@ -138,7 +138,7 @@ const defaultConfig = {
     medium: { h: '300', text: 'body-medium', px: '200' },
     large: { h: '350', text: 'body-large', px: '200' },
   },
-} as const satisfies VariantConfig<'Default'>;
+} as const satisfies VariantConfig<'default'>;
 
 const ghostConfig = {
   ...commonConfig,
@@ -224,7 +224,7 @@ const ghostConfig = {
     medium: { h: '300', text: 'body-medium', px: '200' },
     large: { h: '350', text: 'body-large', px: '200' },
   },
-} as const satisfies VariantConfig<'Ghost'>;
+} as const satisfies VariantConfig<'ghost'>;
 
 const bareConfig = {
   ...commonConfig,
@@ -302,10 +302,10 @@ const bareConfig = {
     medium: { text: 'body-medium' },
     large: { text: 'body-large' },
   },
-} as const satisfies VariantConfig<'Bare'>;
+} as const satisfies VariantConfig<'bare'>;
 
 export const config = {
-  Default: defaultConfig,
-  Ghost: ghostConfig,
-  Bare: bareConfig,
-} as const;
+  default: defaultConfig,
+  ghost: ghostConfig,
+  bare: bareConfig,
+} as const satisfies Record<ButtonVariant, unknown>;

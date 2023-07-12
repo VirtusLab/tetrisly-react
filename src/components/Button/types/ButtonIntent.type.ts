@@ -7,7 +7,7 @@ type Intent = 'none' | 'success' | 'destructive';
 export type ButtonIntent<
   TVariant extends ButtonVariant,
   TAppearance extends ButtonAppearance<TVariant>
-> = TVariant extends 'Default'
+> = TVariant extends 'default'
   ? TAppearance extends 'primary'
     ? Intent
     : TAppearance extends 'secondary'
@@ -15,7 +15,7 @@ export type ButtonIntent<
     : TAppearance extends 'inverted'
     ? 'none'
     : never
-  : TVariant extends 'Ghost'
+  : TVariant extends 'ghost'
   ? TAppearance extends 'primary'
     ? Intent
     : TAppearance extends 'secondary'
@@ -25,7 +25,7 @@ export type ButtonIntent<
     : TAppearance extends 'reverseInverted'
     ? 'none'
     : never
-  : TVariant extends 'Bare'
+  : TVariant extends 'bare'
   ? TAppearance extends 'primary'
     ? Intent
     : TAppearance extends 'secondary'
@@ -43,37 +43,37 @@ type Cases = [
   // Default
   Expect<
     Equal<
-      ButtonIntent<'Default', 'primary'>,
+      ButtonIntent<'default', 'primary'>,
       'none' | 'success' | 'destructive'
     >
   >,
   Expect<
     Equal<
-      ButtonIntent<'Default', 'secondary'>,
+      ButtonIntent<'default', 'secondary'>,
       'none' | 'success' | 'destructive'
     >
   >,
-  Expect<Equal<ButtonIntent<'Default', 'inverted'>, 'none'>>,
+  Expect<Equal<ButtonIntent<'default', 'inverted'>, 'none'>>,
   // @ts-expect-error - wrong appearance
-  ButtonIntent<'Default', 'reverseInverted'>,
+  ButtonIntent<'default', 'reverseInverted'>,
 
   // Ghost
   Expect<
-    Equal<ButtonIntent<'Ghost', 'primary'>, 'none' | 'success' | 'destructive'>
+    Equal<ButtonIntent<'ghost', 'primary'>, 'none' | 'success' | 'destructive'>
   >,
-  Expect<Equal<ButtonIntent<'Ghost', 'secondary'>, 'none'>>,
-  Expect<Equal<ButtonIntent<'Ghost', 'inverted'>, 'none'>>,
-  Expect<Equal<ButtonIntent<'Ghost', 'reverseInverted'>, 'none'>>,
+  Expect<Equal<ButtonIntent<'ghost', 'secondary'>, 'none'>>,
+  Expect<Equal<ButtonIntent<'ghost', 'inverted'>, 'none'>>,
+  Expect<Equal<ButtonIntent<'ghost', 'reverseInverted'>, 'none'>>,
   // @ts-expect-error - wrong appearance
   ButtonIntent<'Ghost', 'Foo'>,
 
   // Bare
   Expect<
-    Equal<ButtonIntent<'Bare', 'primary'>, 'none' | 'success' | 'destructive'>
+    Equal<ButtonIntent<'bare', 'primary'>, 'none' | 'success' | 'destructive'>
   >,
-  Expect<Equal<ButtonIntent<'Bare', 'secondary'>, 'none'>>,
-  Expect<Equal<ButtonIntent<'Bare', 'inverted'>, 'none'>>,
-  Expect<Equal<ButtonIntent<'Bare', 'reverseInverted'>, 'none'>>,
+  Expect<Equal<ButtonIntent<'bare', 'secondary'>, 'none'>>,
+  Expect<Equal<ButtonIntent<'bare', 'inverted'>, 'none'>>,
+  Expect<Equal<ButtonIntent<'bare', 'reverseInverted'>, 'none'>>,
   // @ts-expect-error - wrong appearance
   ButtonIntent<'Bare', 'Foo'>,
 
