@@ -16,13 +16,13 @@ export const Button = <
   size,
   ...rest
 }: ButtonProps<TVariant, TAppearance>) => (
-    <tet.button
-      {...stylesBuilder({ variant, appearance, intent, size })}
-      disabled={state === 'disabled'}
-      data-state={state}
-      style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
-      {...rest}
-    >
-      {label}
-    </tet.button>
-  );
+  <tet.button
+    {...stylesBuilder({ variant, appearance, intent, size })}
+    disabled={state === 'disabled'}
+    data-state={state}
+    style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
+    {...rest}
+  >
+    {label}
+  </tet.button>
+);

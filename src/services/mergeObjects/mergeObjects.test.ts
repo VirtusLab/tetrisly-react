@@ -1,7 +1,7 @@
 import { mergeObjects } from './mergeObjects';
 
 describe('mergeObject', () => {
-  it('should merge two objects in such a way that the second object\'s properties override the first object\'s properties', () => {
+  it("should merge two objects in such a way that the second object's properties override the first object's properties", () => {
     const object1 = {
       name: 'John',
 

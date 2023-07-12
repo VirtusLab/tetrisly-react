@@ -45,4 +45,3 @@ export function stylesBuilder<
     ...sizes,
   } as const;
 }
-
