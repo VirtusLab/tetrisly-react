@@ -1,12 +1,7 @@
 import type { Preview } from "@storybook/react";
 
-import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { withThemeFromJSXProvider } from "@storybook/addon-styling";
 import { TetrislyProvider } from "../src/tetrisly/TetrislyProvider";
-import { GlobalStyles } from "../src/GlobalStyles.styled";
-
-/* TODO: update import for your custom theme configurations */
-// import { lightTheme, darkTheme } from '../path/to/themes';
 
 const preview: Preview = {
   parameters: {
@@ -20,16 +15,8 @@ const preview: Preview = {
   },
 
   decorators: [
-    // Adds global styles and theme switching support.
     withThemeFromJSXProvider({
-      /* Uncomment for theme switching support */
-      // themes: {
-      //   light: lightTheme,
-      //   dark: darkTheme,
-      // }
-      // defaultTheme: 'light',
       Provider: TetrislyProvider,
-      GlobalStyles,
     }),
   ],
 };
