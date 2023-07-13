@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { useEffect, useState } from 'react';
 
 import { Button } from './Button';
 import { ButtonAppearance } from './types/ButtonAppearance.type';
@@ -6,6 +7,8 @@ import { ButtonIntent } from './types/ButtonIntent.type';
 import { ButtonSize } from './types/ButtonSize.type';
 import { ButtonVariant } from './types/ButtonType.type';
 import { tet } from '../../tetrisly/tetrisly';
+
+import { ButtonProps } from '.';
 
 const meta = {
   title: 'Components/Button',
@@ -30,6 +33,29 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+const ButtonWithLoading = <
+  TVariant extends ButtonVariant,
+  TAppearance extends ButtonAppearance<TVariant>
+>({
+  state,
+  ...props
+}: ButtonProps<TVariant, TAppearance>) => {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timeout);
+  }, [loading]);
+  return (
+    <Button
+      {...props}
+      state={loading ? 'loading' : state}
+      onClick={() => setLoading(!loading)}
+    />
+  );
+};
 
 export const Default: Story = {
   argTypes: {
@@ -263,7 +289,7 @@ export const AllOptions: Story = {
                           key: `${variant}-${appearanceOption}-${intent}-${size}`,
                         };
 
-                        return <Button {...props} />;
+                        return <ButtonWithLoading {...props} />;
                       })}
                     </tet.div>
                   </tet.div>

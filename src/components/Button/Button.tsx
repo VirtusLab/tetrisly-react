@@ -3,6 +3,7 @@ import { stylesBuilder } from './stylesBuilder/stylesBuilder';
 import { ButtonAppearance } from './types/ButtonAppearance.type';
 import { ButtonVariant } from './types/ButtonType.type';
 import { tet } from '../../tetrisly/tetrisly';
+import { Loader } from '../Loader/Loader';
 
 export const Button = <
   TVariant extends ButtonVariant = 'default',
@@ -15,15 +16,25 @@ export const Button = <
   state,
   size,
   custom,
+  dropdown,
+  afterIcon,
+  beforeIcon,
   ...rest
-}: ButtonProps<TVariant, TAppearance>) => (
-  <tet.button
-    {...stylesBuilder({ variant, appearance, intent, size, custom })}
-    disabled={state === 'disabled'}
-    data-state={state}
-    style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
-    {...rest}
-  >
-    {label}
-  </tet.button>
-);
+}: ButtonProps<TVariant, TAppearance>) => {
+  if (dropdown && afterIcon) {
+    throw new Error('Button cannot have both dropdown and afterIcon');
+  }
+  return (
+    <tet.button
+      {...stylesBuilder({ variant, appearance, intent, size, custom })}
+      disabled={['disabled', 'loading'].includes(state ?? '')}
+      data-state={state}
+      style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
+      {...rest}
+    >
+      {/* TODO(Loader): update Loader when implemented */}
+      {state === 'loading' && <Loader mr="component-gap-large" />}
+      {label}
+    </tet.button>
+  );
+};

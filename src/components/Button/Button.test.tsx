@@ -19,12 +19,16 @@ describe('Button', () => {
 
   it('should throw an error if wrong config is provided', () => {
     expect(() =>
-      // @ts-expect-error testing wrong config
-      render(<Button variant="Default" appearance="reverseInverted" />)
+      // @ts-expect-error testing wrong appearance
+      render(<Button variant="default" appearance="reverseInverted" />)
+    ).toThrowError();
+    expect(() =>
+      // @ts-expect-error testing wrong dropdown
+      render(<Button label="Hello There" afterIcon="20-placeholder" dropdown />)
     ).toThrowError();
   });
 
-  it('should render Default button when only label is provided', () => {
+  it('should render default button when only label is provided', () => {
     // TODO(add tests)
     expect(true).toBe(true);
   });

@@ -6,6 +6,9 @@ import { ButtonIntent } from './types/ButtonIntent.type';
 import { ButtonSize } from './types/ButtonSize.type';
 import { ButtonState } from './types/ButtonState.type';
 import { ButtonVariant } from './types/ButtonType.type';
+import { Or } from '../../utility-types/Or';
+
+type Icon20 = `20-${string}`;
 
 export type ButtonProps<
   TVariant extends ButtonVariant = 'default',
@@ -18,4 +21,6 @@ export type ButtonProps<
   label: string;
   state?: ButtonState;
   custom?: StylesBuilderProps<TVariant, TAppearance>['custom'];
-} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled' | 'color'>;
+  beforeIcon?: Icon20;
+} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled' | 'color'> &
+  Or<{ afterIcon?: Icon20 }, { dropdown?: boolean }>;
