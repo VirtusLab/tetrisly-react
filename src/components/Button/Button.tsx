@@ -35,7 +35,7 @@ export const Button = <
       {...rest}
     >
       {/* TODO(Loader): update Loader when implemented */}
-      {state === 'loading' && <Loader mr="component-gap-large" />}
+      {state === 'loading' && <Loader />}
       {beforeIcon && state !== 'loading' && <Icon name={beforeIcon} />}
       {label}
       {dropdown && <Icon name="20-chevron-down" />}
