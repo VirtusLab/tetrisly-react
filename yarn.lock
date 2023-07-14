@@ -3335,6 +3335,14 @@
     eslint-plugin-react-hooks ">=4.6.0"
     eslint-plugin-react-refresh ">=0.3.4"
 
+"@virtuslab/tetrisly-icons@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@virtuslab/tetrisly-icons/-/tetrisly-icons-1.0.0.tgz#c989feae8b87c7e29b384aad61182c54e27c1c39"
+  integrity sha512-5OsyoIn5gIj5NPPwRbU3c2SIZCWTzkqJJY35wx0sbfij1SsiHlJXlTUHP53gueqoShLOy+1cTtrPbtTIusiPSA==
+  dependencies:
+    react "^18.2.0"
+    react-dom "^18.2.0"
+
 "@vitejs/plugin-react-swc@^3.3.2":
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-react-swc/-/plugin-react-swc-3.3.2.tgz#34a82c1728066f48a86dfecb2f15df60f89207fb"

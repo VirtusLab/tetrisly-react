@@ -1,3 +1,4 @@
+import { IconName } from '@virtuslab/tetrisly-icons';
 import { ButtonHTMLAttributes } from 'react';
 
 import { StylesBuilderProps } from './stylesBuilder/stylesBuilder.props';
@@ -8,7 +9,7 @@ import { ButtonState } from './types/ButtonState.type';
 import { ButtonVariant } from './types/ButtonType.type';
 import { Or } from '../../utility-types/Or';
 
-type Icon20 = `20-${string}`;
+type Icon20 = IconName & `20-${string}`;
 
 export type ButtonProps<
   TVariant extends ButtonVariant = 'default',

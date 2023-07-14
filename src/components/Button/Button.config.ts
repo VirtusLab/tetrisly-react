@@ -8,6 +8,27 @@ import { Theme } from '../../theme';
 
 type BaseProps = Omit<SystemProps<Theme>, 'appearance'>;
 
+const size = {
+  small: {
+    pl: '100', // 8px
+    pr: '150', // 12px
+    py: '50', // 4px,
+    text: 'body-medium',
+  },
+  medium: {
+    pl: '150', // 12px
+    pr: '200', // 16px
+    py: '100', // 8px,
+    text: 'body-medium',
+  },
+  large: {
+    pl: '150', // 12px
+    pr: '200', // 16px
+    py: '125', // 10px,
+    text: 'body-large',
+  },
+} as const satisfies Record<'small' | 'medium' | 'large', BaseProps>;
+
 export type VariantConfig<TVariant extends ButtonVariant> = {
   appearance: {
     [Appearance in ButtonAppearance<TVariant>]: {
@@ -23,6 +44,7 @@ export type VariantConfig<TVariant extends ButtonVariant> = {
 
 const commonConfig = {
   display: 'inline-flex',
+  gap: '100',
   justifyContent: 'center',
   alignItems: 'center',
   borderRadius: 'medium',
@@ -133,11 +155,7 @@ const defaultConfig = {
       },
     },
   },
-  size: {
-    small: { h: '250', text: 'body-medium', px: '150' },
-    medium: { h: '300', text: 'body-medium', px: '200' },
-    large: { h: '350', text: 'body-large', px: '200' },
-  },
+  size,
 } as const satisfies VariantConfig<'default'>;
 
 const ghostConfig = {
@@ -219,11 +237,7 @@ const ghostConfig = {
       },
     },
   },
-  size: {
-    small: { h: '250', text: 'body-medium', px: '150' },
-    medium: { h: '300', text: 'body-medium', px: '200' },
-    large: { h: '350', text: 'body-large', px: '200' },
-  },
+  size,
 } as const satisfies VariantConfig<'ghost'>;
 
 const bareConfig = {

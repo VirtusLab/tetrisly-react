@@ -4,15 +4,15 @@ import { MarginProps } from '../../types/MarginProps';
 const Loader = (props: MarginProps) => (
   <tet.svg
     xmlns="http://www.w3.org/2000/svg"
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
     fill="none"
     {...props}
   >
-    <circle cx="16" cy="16" r="13" stroke="#F0F3F5" strokeWidth="2" />
+    <circle cx="10" cy="10" r="7" stroke="#F0F3F5" strokeWidth="2" />
     <path
-      d="M3 16C3 23.1797 8.8203 29 16 29C23.1797 29 29 23.1797 29 16C29 8.8203 23.1797 3 16 3"
+      d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3"
       stroke="#3062D4"
       strokeWidth="2"
       strokeLinecap="round"

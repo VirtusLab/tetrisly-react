@@ -81,6 +81,27 @@ export const DefaultDisabled: Story = {
   },
 };
 
+export const DefaultBeforeIcon: Story = {
+  ...Default,
+  args: {
+    beforeIcon: '20-placeholder',
+  },
+};
+
+export const DefaultAfterIcon: Story = {
+  ...Default,
+  args: {
+    afterIcon: '20-placeholder',
+  },
+};
+
+export const DefaultDropdown: Story = {
+  ...Default,
+  args: {
+    dropdown: true,
+  },
+};
+
 export const Ghost: Story = {
   args: {
     variant: 'ghost',

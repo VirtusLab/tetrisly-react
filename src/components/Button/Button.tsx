@@ -1,3 +1,5 @@
+import { Icon } from '@virtuslab/tetrisly-icons';
+
 import { ButtonProps } from './Button.props';
 import { stylesBuilder } from './stylesBuilder/stylesBuilder';
 import { ButtonAppearance } from './types/ButtonAppearance.type';
@@ -34,7 +36,10 @@ export const Button = <
     >
       {/* TODO(Loader): update Loader when implemented */}
       {state === 'loading' && <Loader mr="component-gap-large" />}
+      {beforeIcon && state !== 'loading' && <Icon name={beforeIcon} />}
       {label}
+      {dropdown && <Icon name="20-chevron-down" />}
+      {afterIcon && <Icon name={afterIcon} />}
     </tet.button>
   );
 };
