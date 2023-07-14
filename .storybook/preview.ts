@@ -1,5 +1,8 @@
 import type { Preview } from "@storybook/react";
 
+import { withThemeFromJSXProvider } from "@storybook/addon-styling";
+import { TetrislyProvider } from "../src/tetrisly/TetrislyProvider";
+
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
@@ -10,6 +13,12 @@ const preview: Preview = {
       },
     },
   },
+
+  decorators: [
+    withThemeFromJSXProvider({
+      Provider: TetrislyProvider,
+    }),
+  ],
 };
 
 export default preview;
