@@ -25,7 +25,7 @@ describe('stylesBuilder', () => {
       boxShadow: 'bottom-100',
       color: 'action-inverted-normal',
       display: 'inline-flex',
-      h: '300',
+      gap: '100',
       justifyContent: 'center',
       opacity: {
         disabled: 'disabled',
@@ -41,7 +41,10 @@ describe('stylesBuilder', () => {
         disabled: 'none',
         loading: 'none',
       },
-      px: '200',
+      pl: '150',
+      pr: '200',
+      py: '100',
+
       text: 'body-medium',
       textAlign: 'center',
       transition: true,
