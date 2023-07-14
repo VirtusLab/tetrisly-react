@@ -14,12 +14,16 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    "paths": {
+      "@/*": ["./src/*"],
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
   },
-  "include": ["vite.config.ts", "vitest.config.ts", "src", "types/styled.d.ts"],
+  "include": ["vite.config.ts", "vitest.config.ts", "src", "types"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,4 +1,4 @@
-import { TwoPartial } from '../../utility-types/TwoPartial';
+import { TwoPartial } from "@/utility-types/TwoPartial";
 
 function entriesOf<T extends object>(obj: T): [keyof T, T[keyof T]][] {
   return Object.entries(obj) as [keyof T, T[keyof T]][];
