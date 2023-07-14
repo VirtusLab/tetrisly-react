@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { TetrislyProvider } from "./TetrislyProvider";
 import { tet } from "./tetrisly";
-import { theme } from "../theme";
+import { theme } from "theme";
 
 describe("check tetrisly provider, and correct styling", () => {
   it("with no theme provided should use default theme", () => {
