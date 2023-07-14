@@ -1,9 +1,9 @@
 import { Preflight, ThemeProvider } from "@xstyled/styled-components";
-import { theme } from "theme";
+import { theme } from "@/theme";
 import { PropsWithChildren } from "react";
 import { Theme } from "@xstyled/styled-components";
-import { TwoPartial } from "utility-types/TwoPartial";
-import { mergeObjects } from "services/mergeObjects";
+import { TwoPartial } from "@/utility-types/TwoPartial";
+import { mergeObjects } from "@/services/mergeObjects";
 
 type ProviderProps = PropsWithChildren<{
   theme?: TwoPartial<Theme>;
