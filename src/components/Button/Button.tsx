@@ -24,7 +24,7 @@ export const Button = <
   ...rest
 }: ButtonProps<TVariant, TAppearance>) => {
   if (dropdown && afterIcon) {
-    throw new Error('Button cannot have both dropdown and afterIcon');
+    throw new Error('Button cannot have both dropdown indicator and afterIcon');
   }
   return (
     <tet.button
