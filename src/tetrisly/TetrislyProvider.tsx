@@ -7,17 +7,19 @@ import { mergeObjects } from "@/services/mergeObjects";
 
 type ProviderProps = PropsWithChildren<{
   theme?: TwoPartial<Theme>;
+  preflight?: boolean;
 }>;
 
 export const TetrislyProvider = ({
   children,
   theme: overrideTheme,
+  preflight = true
 }: ProviderProps) => {
   const providerTheme =
     overrideTheme === undefined ? theme : mergeObjects(theme, overrideTheme);
   return (
     <ThemeProvider theme={providerTheme}>
-      <Preflight />
+      {preflight && <Preflight />}
       {children}
     </ThemeProvider>
   );
