@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import { tet } from './tetrisly';
 import { TetrislyProvider } from './TetrislyProvider';
+
 import { theme } from '@/theme';
 
 describe('check tetrisly provider, and correct styling', () => {
@@ -34,11 +35,15 @@ describe('check tetrisly provider, and correct styling', () => {
   });
   it('with theme provided should replace default theme when same key is provided', () => {
     const customColor = 'rgb(255, 0, 0)';
-    const button = screen.getByText("Click me");
+    const button = screen.getByText('Click me');
     expect(button).toHaveStyle(`color: ${customColor}`);
   });
-  it("with theme provided should replace default theme when same key is provided", () => {
-    const customColor = "rgb(255, 0, 0)";
+  it('with theme provided should replace default theme when same key is provided', () => {
+    const customColor = 'rgb(255, 0, 0)';
+    render(
+      <TetrislyProvider
+        theme={{
+          colors: {
             'blue-+1': customColor,
           },
         }}

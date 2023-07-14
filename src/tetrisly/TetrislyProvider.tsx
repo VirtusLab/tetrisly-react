@@ -1,9 +1,9 @@
-import { Preflight, ThemeProvider } from "@xstyled/styled-components";
-import { theme } from "@/theme";
-import { PropsWithChildren } from "react";
-import { Theme } from "@xstyled/styled-components";
-import { TwoPartial } from "@/utility-types/TwoPartial";
-import { mergeObjects } from "@/services/mergeObjects";
+import { Preflight, ThemeProvider, Theme } from '@xstyled/styled-components';
+import { PropsWithChildren } from 'react';
+
+import { mergeObjects } from '@/services/mergeObjects';
+import { theme } from '@/theme';
+import { TwoPartial } from '@/utility-types/TwoPartial';
 
 type ProviderProps = PropsWithChildren<{
   theme?: TwoPartial<Theme>;
@@ -13,7 +13,7 @@ type ProviderProps = PropsWithChildren<{
 export const TetrislyProvider = ({
   children,
   theme: overrideTheme,
-  preflight = true
+  preflight = true,
 }: ProviderProps) => {
   const providerTheme =
     overrideTheme === undefined ? theme : mergeObjects(theme, overrideTheme);
