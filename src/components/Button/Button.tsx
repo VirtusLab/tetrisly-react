@@ -7,6 +7,8 @@ import { ButtonVariant } from './types/ButtonType.type';
 import { tet } from '../../tetrisly/tetrisly';
 import { Loader } from '../Loader/Loader';
 
+import { MarginProps } from '@/types/MarginProps';
+
 export const Button = <
   TVariant extends ButtonVariant = 'default',
   TAppearance extends ButtonAppearance<TVariant> = ButtonAppearance<TVariant>
@@ -22,7 +24,7 @@ export const Button = <
   afterIcon,
   beforeIcon,
   ...rest
-}: ButtonProps<TVariant, TAppearance>) => {
+}: ButtonProps<TVariant, TAppearance> & MarginProps) => {
   if (dropdown && afterIcon) {
     throw new Error('Button cannot have both dropdown indicator and afterIcon');
   }

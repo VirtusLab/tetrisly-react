@@ -4,7 +4,7 @@ import { merge } from 'lodash';
 import { applyDefaults } from './applyDefaults';
 import { StylesBuilderProps } from './stylesBuilder.props';
 import { Theme } from '../../../theme';
-import { VariantConfig, config as defaultConfig } from '../Button.config';
+import { VariantConfig, config as defaultConfig } from '../Button.styles';
 import { ButtonAppearance } from '../types/ButtonAppearance.type';
 import { ButtonVariant } from '../types/ButtonType.type';
 
