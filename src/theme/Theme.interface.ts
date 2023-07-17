@@ -17,11 +17,11 @@ export type Theme = {
   texts: Texts;
   shadows: Shadows;
   opacity: Opacity;
+  screens: Screens;
+  states: States;
+  ringWidths: BorderWidths;
 };
 
-export type AbstractTheme = Partial<{
-  [key in keyof Theme]: Record<string, string | RefferenceType>;
-}>;
 export type Colors = {
   'coolGrey--4': string | RefferenceType;
   'coolGrey--3': string | RefferenceType;
@@ -383,17 +383,17 @@ export type Colors = {
   'content-secondary-inverted': string | RefferenceType;
   'content-tertiary-inverted': string | RefferenceType;
   'content-disabled-inverted': string | RefferenceType;
-  'content-informative': string | RefferenceType;
-  'content-positive': string | RefferenceType;
-  'content-warning': string | RefferenceType;
-  'content-negative': string | RefferenceType;
-  'content-brand': string | RefferenceType;
-  'border-neutral': string | RefferenceType;
-  'border-informative': string | RefferenceType;
-  'border-positive': string | RefferenceType;
-  'border-warning': string | RefferenceType;
-  'border-negative': string | RefferenceType;
-  'border-brand': string | RefferenceType;
+  'content-informative-secondary': string | RefferenceType;
+  'content-positive-secondary': string | RefferenceType;
+  'content-warning-secondary': string | RefferenceType;
+  'content-negative-secondary': string | RefferenceType;
+  'content-brand-secondary': string | RefferenceType;
+  'border-neutral-strong': string | RefferenceType;
+  'border-informative-strong': string | RefferenceType;
+  'border-positive-strong': string | RefferenceType;
+  'border-warning-strong': string | RefferenceType;
+  'border-negative-strong': string | RefferenceType;
+  'border-brand-strong': string | RefferenceType;
   'border-neutral-subtle': string | RefferenceType;
   'border-informative-subtle': string | RefferenceType;
   'border-positive-subtle': string | RefferenceType;
@@ -404,12 +404,12 @@ export type Colors = {
   'border-default': string | RefferenceType;
   'background-default': string | RefferenceType;
   'background-inverted': string | RefferenceType;
-  'background-neutral': string | RefferenceType;
-  'background-informative': string | RefferenceType;
-  'background-positive': string | RefferenceType;
-  'background-warning': string | RefferenceType;
-  'background-negative': string | RefferenceType;
-  'background-brand': string | RefferenceType;
+  'background-neutral-strong': string | RefferenceType;
+  'background-informative-strong': string | RefferenceType;
+  'background-positive-strong': string | RefferenceType;
+  'background-warning-strong': string | RefferenceType;
+  'background-negative-strong': string | RefferenceType;
+  'background-brand-strong': string | RefferenceType;
   'background-neutral-subtle': string | RefferenceType;
   'background-informative-subtle': string | RefferenceType;
   'background-positive-subtle': string | RefferenceType;
@@ -422,7 +422,7 @@ export type Colors = {
   'background-warning-surface': string | RefferenceType;
   'background-negative-surface': string | RefferenceType;
   'background-brand-surface': string | RefferenceType;
-  'background-dimmer': string | RefferenceType;
+  'interaction-background-dimmer': string | RefferenceType;
   'action-primary-normal': string | RefferenceType;
   'action-primary-hover': string | RefferenceType;
   'action-primary-active': string | RefferenceType;
@@ -536,88 +536,190 @@ export type Colors = {
   'interaction-inverted-active': string | RefferenceType;
   'interaction-inverted-selected': string | RefferenceType;
   'interaction-focus-default': string | RefferenceType;
-  'nonContextual-grey-onMuted': string | RefferenceType;
-  'nonContextual-grey-default': string | RefferenceType;
-  'nonContextual-grey-muted': string | RefferenceType;
-  'nonContextual-grey-subtle': string | RefferenceType;
-  'nonContextual-grey-surface': string | RefferenceType;
-  'nonContextual-red-onMuted': string | RefferenceType;
-  'nonContextual-red-default': string | RefferenceType;
-  'nonContextual-red-muted': string | RefferenceType;
-  'nonContextual-red-subtle': string | RefferenceType;
-  'nonContextual-red-surface': string | RefferenceType;
-  'nonContextual-raspberry-onMuted': string | RefferenceType;
-  'nonContextual-raspberry-default': string | RefferenceType;
-  'nonContextual-raspberry-muted': string | RefferenceType;
-  'nonContextual-raspberry-subtle': string | RefferenceType;
-  'nonContextual-raspberry-surface': string | RefferenceType;
-  'nonContextual-magenta-onMuted': string | RefferenceType;
-  'nonContextual-magenta-default': string | RefferenceType;
-  'nonContextual-magenta-muted': string | RefferenceType;
-  'nonContextual-magenta-subtle': string | RefferenceType;
-  'nonContextual-magenta-surface': string | RefferenceType;
-  'nonContextual-purple-onMuted': string | RefferenceType;
-  'nonContextual-purple-default': string | RefferenceType;
-  'nonContextual-purple-muted': string | RefferenceType;
-  'nonContextual-purple-subtle': string | RefferenceType;
-  'nonContextual-purple-surface': string | RefferenceType;
-  'nonContextual-grape-onMuted': string | RefferenceType;
-  'nonContextual-grape-default': string | RefferenceType;
-  'nonContextual-grape-muted': string | RefferenceType;
-  'nonContextual-grape-subtle': string | RefferenceType;
-  'nonContextual-grape-surface': string | RefferenceType;
-  'nonContextual-violet-onMuted': string | RefferenceType;
-  'nonContextual-violet-default': string | RefferenceType;
-  'nonContextual-violet-muted': string | RefferenceType;
-  'nonContextual-violet-subtle': string | RefferenceType;
-  'nonContextual-violet-surface': string | RefferenceType;
-  'nonContextual-blue-onMuted': string | RefferenceType;
-  'nonContextual-blue-default': string | RefferenceType;
-  'nonContextual-blue-muted': string | RefferenceType;
-  'nonContextual-blue-subtle': string | RefferenceType;
-  'nonContextual-blue-surface': string | RefferenceType;
-  'nonContextual-cyan-onMuted': string | RefferenceType;
-  'nonContextual-cyan-default': string | RefferenceType;
-  'nonContextual-cyan-muted': string | RefferenceType;
-  'nonContextual-cyan-subtle': string | RefferenceType;
-  'nonContextual-cyan-surface': string | RefferenceType;
-  'nonContextual-teal-onMuted': string | RefferenceType;
-  'nonContextual-teal-default': string | RefferenceType;
-  'nonContextual-teal-muted': string | RefferenceType;
-  'nonContextual-teal-subtle': string | RefferenceType;
-  'nonContextual-teal-surface': string | RefferenceType;
-  'nonContextual-aquamarine-onMuted': string | RefferenceType;
-  'nonContextual-aquamarine-default': string | RefferenceType;
-  'nonContextual-aquamarine-muted': string | RefferenceType;
-  'nonContextual-aquamarine-subtle': string | RefferenceType;
-  'nonContextual-aquamarine-surface': string | RefferenceType;
-  'nonContextual-green-onMuted': string | RefferenceType;
-  'nonContextual-green-default': string | RefferenceType;
-  'nonContextual-green-muted': string | RefferenceType;
-  'nonContextual-green-subtle': string | RefferenceType;
-  'nonContextual-green-surface': string | RefferenceType;
-  'nonContextual-emerald-onMuted': string | RefferenceType;
-  'nonContextual-emerald-default': string | RefferenceType;
-  'nonContextual-emerald-muted': string | RefferenceType;
-  'nonContextual-emerald-subtle': string | RefferenceType;
-  'nonContextual-emerald-surface': string | RefferenceType;
+  'nonSemantic-grey-content-primary': string | RefferenceType;
+  'nonSemantic-grey-background-strong': string | RefferenceType;
+  'nonSemantic-grey-background-muted': string | RefferenceType;
+  'nonSemantic-grey-background-onSubtle': string | RefferenceType;
+  'nonSemantic-grey-background-surface': string | RefferenceType;
+  'nonSemantic-red-content-primary': string | RefferenceType;
+  'nonSemantic-red-background-strong': string | RefferenceType;
+  'nonSemantic-red-background-muted': string | RefferenceType;
+  'nonSemantic-red-background-onSubtle': string | RefferenceType;
+  'nonSemantic-red-background-surface': string | RefferenceType;
+  'nonSemantic-raspberry-content-primary': string | RefferenceType;
+  'nonSemantic-raspberry-background-strong': string | RefferenceType;
+  'nonSemantic-raspberry-background-muted': string | RefferenceType;
+  'nonSemantic-raspberry-background-onSubtle': string | RefferenceType;
+  'nonSemantic-raspberry-background-surface': string | RefferenceType;
+  'nonSemantic-magenta-content-primary': string | RefferenceType;
+  'nonSemantic-magenta-background-strong': string | RefferenceType;
+  'nonSemantic-magenta-background-muted': string | RefferenceType;
+  'nonSemantic-magenta-background-onSubtle': string | RefferenceType;
+  'nonSemantic-magenta-background-surface': string | RefferenceType;
+  'nonSemantic-purple-content-primary': string | RefferenceType;
+  'nonSemantic-purple-background-strong': string | RefferenceType;
+  'nonSemantic-purple-background-muted': string | RefferenceType;
+  'nonSemantic-purple-background-onSubtle': string | RefferenceType;
+  'nonSemantic-purple-background-surface': string | RefferenceType;
+  'nonSemantic-grape-content-primary': string | RefferenceType;
+  'nonSemantic-grape-background-strong': string | RefferenceType;
+  'nonSemantic-grape-background-muted': string | RefferenceType;
+  'nonSemantic-grape-background-onSubtle': string | RefferenceType;
+  'nonSemantic-grape-background-surface': string | RefferenceType;
+  'nonSemantic-violet-content-primary': string | RefferenceType;
+  'nonSemantic-violet-background-strong': string | RefferenceType;
+  'nonSemantic-violet-background-muted': string | RefferenceType;
+  'nonSemantic-violet-background-onSubtle': string | RefferenceType;
+  'nonSemantic-violet-background-surface': string | RefferenceType;
+  'nonSemantic-blue-content-primary': string | RefferenceType;
+  'nonSemantic-blue-background-strong': string | RefferenceType;
+  'nonSemantic-blue-background-muted': string | RefferenceType;
+  'nonSemantic-blue-background-onSubtle': string | RefferenceType;
+  'nonSemantic-blue-background-surface': string | RefferenceType;
+  'nonSemantic-cyan-content-primary': string | RefferenceType;
+  'nonSemantic-cyan-background-strong': string | RefferenceType;
+  'nonSemantic-cyan-background-muted': string | RefferenceType;
+  'nonSemantic-cyan-background-onSubtle': string | RefferenceType;
+  'nonSemantic-cyan-background-surface': string | RefferenceType;
+  'nonSemantic-teal-content-primary': string | RefferenceType;
+  'nonSemantic-teal-background-strong': string | RefferenceType;
+  'nonSemantic-teal-background-muted': string | RefferenceType;
+  'nonSemantic-teal-background-onSubtle': string | RefferenceType;
+  'nonSemantic-teal-background-surface': string | RefferenceType;
+  'nonSemantic-aquamarine-content-primary': string | RefferenceType;
+  'nonSemantic-aquamarine-background-strong': string | RefferenceType;
+  'nonSemantic-aquamarine-background-muted': string | RefferenceType;
+  'nonSemantic-aquamarine-background-onSubtle': string | RefferenceType;
+  'nonSemantic-aquamarine-background-surface': string | RefferenceType;
+  'nonSemantic-green-content-primary': string | RefferenceType;
+  'nonSemantic-green-background-strong': string | RefferenceType;
+  'nonSemantic-green-background-muted': string | RefferenceType;
+  'nonSemantic-green-background-onSubtle': string | RefferenceType;
+  'nonSemantic-green-background-surface': string | RefferenceType;
+  'nonSemantic-emerald-content-primary': string | RefferenceType;
+  'nonSemantic-emerald-background-strong': string | RefferenceType;
+  'nonSemantic-emerald-background-muted': string | RefferenceType;
+  'nonSemantic-emerald-background-onSubtle': string | RefferenceType;
+  'nonSemantic-emerald-background-surface': string | RefferenceType;
   'border-defaultA': string | RefferenceType;
-  'nonContextual-orange-onMuted': string | RefferenceType;
-  'nonContextual-orange-default': string | RefferenceType;
-  'nonContextual-orange-muted': string | RefferenceType;
-  'nonContextual-orange-subtle': string | RefferenceType;
-  'nonContextual-orange-surface': string | RefferenceType;
+  'nonSemantic-orange-content-primary': string | RefferenceType;
+  'nonSemantic-orange-background-strong': string | RefferenceType;
+  'nonSemantic-orange-background-muted': string | RefferenceType;
+  'nonSemantic-orange-background-onSubtle': string | RefferenceType;
+  'nonSemantic-orange-background-surface': string | RefferenceType;
+  'content-informative-primary': string | RefferenceType;
+  'content-positive-primary': string | RefferenceType;
+  'content-warning-primary': string | RefferenceType;
+  'content-negative-primary': string | RefferenceType;
+  'content-brand-primary': string | RefferenceType;
+  'background-neutral-muted': string | RefferenceType;
+  'background-neutral-onSubtle': string | RefferenceType;
+  'background-informative-muted': string | RefferenceType;
+  'background-informative-onSubtle': string | RefferenceType;
+  'background-positive-muted': string | RefferenceType;
+  'background-positive-onSubtle': string | RefferenceType;
+  'background-warning-muted': string | RefferenceType;
+  'background-warning-onSubtle': string | RefferenceType;
+  'background-negative-muted': string | RefferenceType;
+  'background-negative-onSubtle': string | RefferenceType;
+  'background-brand-muted': string | RefferenceType;
+  'background-brand-onSubtle': string | RefferenceType;
+  'nonSemantic-grey-content-secondary': string | RefferenceType;
+  'nonSemantic-red-content-secondary': string | RefferenceType;
+  'nonSemantic-raspberry-content-secondary': string | RefferenceType;
+  'nonSemantic-magenta-content-secondary': string | RefferenceType;
+  'nonSemantic-purple-content-secondary': string | RefferenceType;
+  'nonSemantic-grape-content-secondary': string | RefferenceType;
+  'nonSemantic-violet-content-secondary': string | RefferenceType;
+  'nonSemantic-blue-content-secondary': string | RefferenceType;
+  'nonSemantic-cyan-content-secondary': string | RefferenceType;
+  'nonSemantic-teal-content-secondary': string | RefferenceType;
+  'nonSemantic-aquamarine-content-secondary': string | RefferenceType;
+  'nonSemantic-green-content-secondary': string | RefferenceType;
+  'nonSemantic-emerald-content-secondary': string | RefferenceType;
+  'nonSemantic-orange-content-secondary': string | RefferenceType;
+  'nonSemantic-grey-background-subtle': string | RefferenceType;
+  'nonSemantic-red-background-subtle': string | RefferenceType;
+  'nonSemantic-raspberry-background-subtle': string | RefferenceType;
+  'nonSemantic-magenta-background-subtle': string | RefferenceType;
+  'nonSemantic-purple-background-subtle': string | RefferenceType;
+  'nonSemantic-grape-background-subtle': string | RefferenceType;
+  'nonSemantic-violet-background-subtle': string | RefferenceType;
+  'nonSemantic-blue-background-subtle': string | RefferenceType;
+  'nonSemantic-cyan-background-subtle': string | RefferenceType;
+  'nonSemantic-teal-background-subtle': string | RefferenceType;
+  'nonSemantic-aquamarine-background-subtle': string | RefferenceType;
+  'nonSemantic-green-background-subtle': string | RefferenceType;
+  'nonSemantic-emerald-background-subtle': string | RefferenceType;
+  'nonSemantic-orange-background-subtle': string | RefferenceType;
+  'nonSemantic-grey-border-default': string | RefferenceType;
+  'nonSemantic-grey-border-strong': string | RefferenceType;
+  'nonSemantic-grey-border-subtle': string | RefferenceType;
+  'nonSemantic-red-border-default': string | RefferenceType;
+  'nonSemantic-red-border-strong': string | RefferenceType;
+  'nonSemantic-red-border-subtle': string | RefferenceType;
+  'nonSemantic-raspberry-border-default': string | RefferenceType;
+  'nonSemantic-raspberry-border-strong': string | RefferenceType;
+  'nonSemantic-raspberry-border-subtle': string | RefferenceType;
+  'nonSemantic-magenta-border-default': string | RefferenceType;
+  'nonSemantic-magenta-border-strong': string | RefferenceType;
+  'nonSemantic-magenta-border-subtle': string | RefferenceType;
+  'nonSemantic-purple-border-default': string | RefferenceType;
+  'nonSemantic-purple-border-strong': string | RefferenceType;
+  'nonSemantic-purple-border-subtle': string | RefferenceType;
+  'nonSemantic-grape-border-default': string | RefferenceType;
+  'nonSemantic-grape-border-strong': string | RefferenceType;
+  'nonSemantic-grape-border-subtle': string | RefferenceType;
+  'nonSemantic-violet-border-default': string | RefferenceType;
+  'nonSemantic-violet-border-strong': string | RefferenceType;
+  'nonSemantic-violet-border-subtle': string | RefferenceType;
+  'nonSemantic-blue-border-default': string | RefferenceType;
+  'nonSemantic-blue-border-strong': string | RefferenceType;
+  'nonSemantic-blue-border-subtle': string | RefferenceType;
+  'nonSemantic-cyan-border-default': string | RefferenceType;
+  'nonSemantic-cyan-border-strong': string | RefferenceType;
+  'nonSemantic-cyan-border-subtle': string | RefferenceType;
+  'nonSemantic-teal-border-default': string | RefferenceType;
+  'nonSemantic-teal-border-strong': string | RefferenceType;
+  'nonSemantic-teal-border-subtle': string | RefferenceType;
+  'nonSemantic-aquamarine-border-default': string | RefferenceType;
+  'nonSemantic-aquamarine-border-strong': string | RefferenceType;
+  'nonSemantic-aquamarine-border-subtle': string | RefferenceType;
+  'nonSemantic-green-border-default': string | RefferenceType;
+  'nonSemantic-green-border-strong': string | RefferenceType;
+  'nonSemantic-green-border-subtle': string | RefferenceType;
+  'nonSemantic-emerald-border-default': string | RefferenceType;
+  'nonSemantic-emerald-border-strong': string | RefferenceType;
+  'nonSemantic-emerald-border-subtle': string | RefferenceType;
+  'nonSemantic-orange-border-default': string | RefferenceType;
+  'nonSemantic-orange-border-strong': string | RefferenceType;
+  'nonSemantic-orange-border-subtle': string | RefferenceType;
+  'nonSemantic-white-content-primary': string | RefferenceType;
+  'nonSemantic-white-content-secondary': string | RefferenceType;
+  'nonSemantic-white-border-default': string | RefferenceType;
+  'nonSemantic-white-border-strong': string | RefferenceType;
+  'nonSemantic-white-border-subtle': string | RefferenceType;
+  'nonSemantic-white-background-strong': string | RefferenceType;
+  'nonSemantic-white-background-muted': string | RefferenceType;
+  'nonSemantic-white-background-onSubtle': string | RefferenceType;
+  'nonSemantic-white-background-subtle': string | RefferenceType;
+  'nonSemantic-white-background-surface': string | RefferenceType;
 };
+
 export type Radii = {
   '0': string | RefferenceType;
+  '25': string | RefferenceType;
+  '50': string | RefferenceType;
   '100': string | RefferenceType;
-  '200': string | RefferenceType;
-  '300': string | RefferenceType;
-  full: string | RefferenceType;
+  '999': string | RefferenceType;
+  '150': string | RefferenceType;
   small: string | RefferenceType;
   medium: string | RefferenceType;
   large: string | RefferenceType;
+  xLarge: string | RefferenceType;
+  full: string | RefferenceType;
 };
+
 export type BorderWidths = {
   '0': string | RefferenceType;
   '100': string | RefferenceType;
@@ -626,119 +728,134 @@ export type BorderWidths = {
   focus: string | RefferenceType;
   medium: string | RefferenceType;
 };
+
 export type BorderStyles = {
   none: string | RefferenceType;
   solid: string | RefferenceType;
   dashed: string | RefferenceType;
 };
+
 export type Sizes = {
-  '0': string | RefferenceType;
-  '25': string | RefferenceType;
-  '50': string | RefferenceType;
-  '100': string | RefferenceType;
-  '150': string | RefferenceType;
-  '200': string | RefferenceType;
-  '250': string | RefferenceType;
-  '300': string | RefferenceType;
-  '350': string | RefferenceType;
+  xLarge: string | RefferenceType;
+  large: string | RefferenceType;
+  medium: string | RefferenceType;
+  small: string | RefferenceType;
+  xSmall: string | RefferenceType;
+  '2xSmall': string | RefferenceType;
+  '3xSmall': string | RefferenceType;
 };
+
 export type Space = {
   '0': string | RefferenceType;
   '25': string | RefferenceType;
   '50': string | RefferenceType;
-  '75': string | RefferenceType;
   '100': string | RefferenceType;
   '150': string | RefferenceType;
   '200': string | RefferenceType;
   '300': string | RefferenceType;
   '400': string | RefferenceType;
+  '600': string | RefferenceType;
   '500': string | RefferenceType;
-  '125': string | RefferenceType;
-  '175': string | RefferenceType;
+  '250': string | RefferenceType;
+  '700': string | RefferenceType;
+  '800': string | RefferenceType;
+  '1000': string | RefferenceType;
+  '1200': string | RefferenceType;
+  '1500': string | RefferenceType;
+  '1600': string | RefferenceType;
+  '550': string | RefferenceType;
+  'component-gap-2xSmall': string | RefferenceType;
   'component-gap-xSmall': string | RefferenceType;
   'component-gap-small': string | RefferenceType;
-  'component-gap-medium': string | RefferenceType;
   'component-gap-large': string | RefferenceType;
-  'component-gap-xLarge': string | RefferenceType;
   'component-gap-2xLarge': string | RefferenceType;
-  'component-gap-3xLarge': string | RefferenceType;
   'component-padding-xSmall': string | RefferenceType;
   'component-padding-small': string | RefferenceType;
   'component-padding-medium': string | RefferenceType;
   'component-padding-large': string | RefferenceType;
-  'component-padding-xLarge': string | RefferenceType;
   'component-padding-2xLarge': string | RefferenceType;
+  'component-gap-medium': string | RefferenceType;
+  'component-gap-null': string | RefferenceType;
+  'component-gap-xLarge': string | RefferenceType;
   'component-padding-3xLarge': string | RefferenceType;
   'component-padding-4xLarge': string | RefferenceType;
+  'component-padding-6xLarge': string | RefferenceType;
+  'component-padding-2xSmall': string | RefferenceType;
+  'component-padding-xLarge': string | RefferenceType;
+  'component-padding-5xLarge': string | RefferenceType;
+  'component-gap-3xLarge': string | RefferenceType;
+  'component-padding-null': string | RefferenceType;
 };
+
 export type Fonts = {
   primary: string | RefferenceType;
 };
+
 export type FontSizes = {
-  '25': string | RefferenceType;
-  '50': string | RefferenceType;
-  '75': string | RefferenceType;
-  '100': string | RefferenceType;
+  '125': string | RefferenceType;
+  '150': string | RefferenceType;
+  '175': string | RefferenceType;
   '200': string | RefferenceType;
+  '225': string | RefferenceType;
   '300': string | RefferenceType;
   '400': string | RefferenceType;
   '500': string | RefferenceType;
   '600': string | RefferenceType;
 };
+
 export type FontWeights = {
   '400': string | RefferenceType;
   '450': string | RefferenceType;
   '600': string | RefferenceType;
 };
+
 export type LetterSpacings = {
   '0': string | RefferenceType;
   '100': string | RefferenceType;
   '200': string | RefferenceType;
 };
+
 export type LineHeights = {
   'scale-100': string | RefferenceType;
   'scale-150': string | RefferenceType;
   'scale-166': string | RefferenceType;
   'scale-200': string | RefferenceType;
-  'value-100': string | RefferenceType;
-  'value-150': string | RefferenceType;
   'value-200': string | RefferenceType;
   'value-250': string | RefferenceType;
   'value-300': string | RefferenceType;
   'value-350': string | RefferenceType;
+  'value-400': string | RefferenceType;
   'value-450': string | RefferenceType;
-  'value-600': string | RefferenceType;
+  'value-550': string | RefferenceType;
   'value-700': string | RefferenceType;
+  'value-800': string | RefferenceType;
 };
+
 export type Texts = {
-  'normal-25': {
+  'normal-125': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
     lineHeight: string | RefferenceType;
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
-  'normal-50': {
+
+  'normal-150': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
     lineHeight: string | RefferenceType;
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
-  'normal-75': {
+
+  'normal-175': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
     lineHeight: string | RefferenceType;
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
-  'normal-100': {
-    fontFamily: string | RefferenceType;
-    fontSize: string | RefferenceType;
-    lineHeight: string | RefferenceType;
-    fontWeight: string | RefferenceType;
-    letterSpacing: string | RefferenceType;
-  };
+
   'normal-200': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -746,6 +863,15 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
+  'normal-225': {
+    fontFamily: string | RefferenceType;
+    fontSize: string | RefferenceType;
+    lineHeight: string | RefferenceType;
+    fontWeight: string | RefferenceType;
+    letterSpacing: string | RefferenceType;
+  };
+
   'normal-300': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -753,6 +879,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'normal-400': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -760,6 +887,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'normal-500': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -767,6 +895,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'normal-600': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -774,34 +903,31 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
-  'medium-25': {
+
+  'medium-125': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
     lineHeight: string | RefferenceType;
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
-  'medium-50': {
+
+  'medium-150': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
     lineHeight: string | RefferenceType;
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
-  'medium-75': {
+
+  'medium-175': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
     lineHeight: string | RefferenceType;
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
-  'medium-100': {
-    fontFamily: string | RefferenceType;
-    fontSize: string | RefferenceType;
-    lineHeight: string | RefferenceType;
-    fontWeight: string | RefferenceType;
-    letterSpacing: string | RefferenceType;
-  };
+
   'medium-200': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -809,6 +935,15 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
+  'medium-225': {
+    fontFamily: string | RefferenceType;
+    fontSize: string | RefferenceType;
+    lineHeight: string | RefferenceType;
+    fontWeight: string | RefferenceType;
+    letterSpacing: string | RefferenceType;
+  };
+
   'medium-300': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -816,6 +951,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'medium-400': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -823,6 +959,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'medium-500': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -830,6 +967,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'medium-600': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -837,34 +975,31 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
-  'strong-25': {
+
+  'strong-125': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
     lineHeight: string | RefferenceType;
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
-  'strong-50': {
+
+  'strong-150': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
     lineHeight: string | RefferenceType;
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
-  'strong-75': {
+
+  'strong-175': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
     lineHeight: string | RefferenceType;
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
-  'strong-100': {
-    fontFamily: string | RefferenceType;
-    fontSize: string | RefferenceType;
-    lineHeight: string | RefferenceType;
-    fontWeight: string | RefferenceType;
-    letterSpacing: string | RefferenceType;
-  };
+
   'strong-200': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -872,6 +1007,15 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
+  'strong-225': {
+    fontFamily: string | RefferenceType;
+    fontSize: string | RefferenceType;
+    lineHeight: string | RefferenceType;
+    fontWeight: string | RefferenceType;
+    letterSpacing: string | RefferenceType;
+  };
+
   'strong-300': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -879,6 +1023,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'strong-400': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -886,6 +1031,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'strong-500': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -893,6 +1039,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'strong-600': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -900,6 +1047,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'body-large': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -907,6 +1055,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'body-medium': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -914,6 +1063,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'body-small': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -921,6 +1071,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'body-xSmall': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -928,6 +1079,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'body-strong-large': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -935,6 +1087,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'body-strong-medium': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -942,6 +1095,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'body-strong-small': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -949,6 +1103,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'body-strong-xSmall': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -956,6 +1111,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'hero-large': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -963,6 +1119,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'hero-medium': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -970,6 +1127,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'header-4xLarge': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -977,6 +1135,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'header-3xLarge': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -984,6 +1143,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'header-xLarge': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -991,6 +1151,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'header-large': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -998,6 +1159,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'header-medium': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -1005,6 +1167,7 @@ export type Texts = {
     fontWeight: string | RefferenceType;
     letterSpacing: string | RefferenceType;
   };
+
   'header-small': {
     fontFamily: string | RefferenceType;
     fontSize: string | RefferenceType;
@@ -1013,6 +1176,7 @@ export type Texts = {
     letterSpacing: string | RefferenceType;
   };
 };
+
 export type Shadows = {
   'bottom-100': string | RefferenceType;
   'bottom-200': string | RefferenceType;
@@ -1023,9 +1187,42 @@ export type Shadows = {
   'top-300': string | RefferenceType;
   'top-400': string | RefferenceType;
 };
+
 export type Opacity = {
   '0': string | RefferenceType;
   '50': string | RefferenceType;
   '100': string | RefferenceType;
   disabled: string | RefferenceType;
+};
+
+export type Screens = {
+  _: number;
+  xs: number;
+  sm: number;
+  md: number;
+  lg: number;
+  xl: number;
+  '2xl': number;
+};
+
+export type States = {
+  _: null;
+  motionSafe: string;
+  motionReduce: string;
+  first: string;
+  last: string;
+  odd: string;
+  even: string;
+  visited: string;
+  checked: string;
+  focusWithin: string;
+  hover: string;
+  focus: string;
+  focusVisible: string;
+  active: string;
+  placeholder: string;
+  disabled: string;
+  selected: string;
+  loading: string;
+  alert: string;
 };
