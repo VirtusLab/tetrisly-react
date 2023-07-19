@@ -18,11 +18,11 @@ import {
   transitions,
   typography,
   style,
-} from "@xstyled/styled-components";
+} from '@xstyled/styled-components';
 
 const opacity = style({
-  prop: "opacity",
-  key: "opacity",
+  prop: 'opacity',
+  key: 'opacity',
 });
 
 export const { css, styled, x, createGlobalStyle } = createCss(

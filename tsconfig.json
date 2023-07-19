@@ -20,10 +20,10 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
   },
-  "include": ["src", "types"],
+  "include": ["vite.config.ts", "vitest.config.ts", "src", "types"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,3 +1,1 @@
-export const Component = {
-  hello: "there",
-};
+export { Button } from './components/Button';

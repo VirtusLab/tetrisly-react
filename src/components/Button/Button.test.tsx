@@ -1,30 +1,43 @@
-import { act, render } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { Button } from "./Button";
+import { Button } from './Button';
+import { render } from '../../tests/render';
 
-describe("Button", () => {
-  it("should render the button", () => {
-    const { getByRole } = render(<Button />);
-    expect(getByRole("button")).toBeInTheDocument();
+const getButton = (jsx: JSX.Element) => {
+  const { getByRole, getByTestId } = render(jsx);
+
+  return getByRole('button');
+};
+
+describe('Button', () => {
+  it('should render the button', () => {
+    const button = getButton(<Button label="Hello there" />);
+    expect(button).toBeInTheDocument();
   });
 
-  it("should render correct text", () => {
-    const { getByRole } = render(<Button />);
-    expect(getByRole("button")).toHaveTextContent("Click me");
+  it('should render correct text', () => {
+    const button = getButton(<Button label="Hello there" />);
+    expect(button).toHaveTextContent('Hello there');
   });
 
-  it("should render correct text when clicked", async () => {
-    const { getByRole } = render(<Button />);
-    const button = getByRole("button");
-    act(() => userEvent.click(button));
-    expect(button).toHaveTextContent("Clicked");
+  it('should throw an error if wrong config is provided', () => {
+    expect(() =>
+      // @ts-expect-error testing wrong appearance
+      render(<Button variant="default" appearance="reverseInverted" />)
+    ).toThrowError();
+    expect(() =>
+      render(
+        // @ts-expect-error testing wrong dropdown
+        <Button
+          label="Hello There"
+          afterIcon="20-placeholder"
+          dropdownIndicator
+        />
+      )
+    ).toThrowError();
   });
 
-  it("should be disabled when clicked", async () => {
-    const { getByRole } = render(<Button />);
-    const button = getByRole("button");
-    act(() => userEvent.click(button));
-
+  it('should be disabled if disabled state is passed', () => {
+    const button = getButton(<Button label="Hello there" state="disabled" />);
     expect(button).toBeDisabled();
+    expect(button).toHaveStyle('pointer-events: none');
   });
 });
