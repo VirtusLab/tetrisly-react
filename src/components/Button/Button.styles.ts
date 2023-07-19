@@ -12,19 +12,19 @@ const size = {
   small: {
     pl: '100',
     pr: '150',
-    py: '50',
+    h: 'small',
     text: 'body-medium',
   },
   medium: {
     pl: '150',
     pr: '200',
-    py: '100',
+    h: 'medium',
     text: 'body-medium',
   },
   large: {
     pl: '150',
     pr: '200',
-    py: '125',
+    h: 'large',
     text: 'body-large',
   },
 } as const satisfies Record<'small' | 'medium' | 'large', BaseProps>;
