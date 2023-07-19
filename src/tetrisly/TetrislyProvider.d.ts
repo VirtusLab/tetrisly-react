@@ -1,9 +1,9 @@
-import { PropsWithChildren } from "react";
-import { Theme } from "@xstyled/styled-components";
-import { TwoPartial } from "../utility-types/TwoPartial";
+import { Theme } from '@xstyled/styled-components';
+import { PropsWithChildren } from 'react';
+import { TwoPartial } from '../utility-types/TwoPartial';
 type ProviderProps = PropsWithChildren<{
     theme?: TwoPartial<Theme>;
-    disableGlobalStyles?: boolean;
+    preflight?: boolean;
 }>;
-export declare const TetrislyProvider: ({ children, theme: overrideTheme, disableGlobalStyles, }: ProviderProps) => import("react/jsx-runtime").JSX.Element;
+export declare const TetrislyProvider: ({ children, theme: overrideTheme, preflight, }: ProviderProps) => import("react/jsx-runtime").JSX.Element;
 export {};

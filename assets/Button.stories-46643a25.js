@@ -1,4 +1,0 @@
-import{s as n,c as l,a as p,t as d,b as m,d as u,e as y,f as x,g as f,h as b,l as k,i as g,j as C,k as j,m as v,n as h,o as E,p as S,q as $,r as o}from"./index-cd22671a.js";import{r as B}from"./index-8db94870.js";import"./_commonjsHelpers-042e6b4d.js";const G=n({prop:"opacity",key:"opacity"}),{css:R,styled:w,x:P,createGlobalStyle:A}=l(p($,S,E,h,v,j,C,g,k,b,f,x,y,u,m,d,G)),_=P,c=()=>{const[t,i]=B.useState(!1);return o.jsx(_.button,{color:"$a-color-action-destructive-active",onClick:()=>i(!0),disabled:t,children:t?"Clicked":"Click me"})},D={component:c},s={render:()=>o.jsx(c,{})};var a,e,r;s.parameters={...s.parameters,docs:{...(a=s.parameters)==null?void 0:a.docs,source:{originalSource:`{
-  render: () => <Button />
-}`,...(r=(e=s.parameters)==null?void 0:e.docs)==null?void 0:r.source}}};const F=["Primary"];export{s as Primary,F as __namedExportsOrder,D as default};
-//# sourceMappingURL=Button.stories-46643a25.js.map

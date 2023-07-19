@@ -1,2 +1,2 @@
-import { Theme } from "./Theme.interface";
+import { Theme } from './Theme.interface';
 export declare const theme: Theme;
