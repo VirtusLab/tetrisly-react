@@ -37,5 +37,6 @@ describe('Button', () => {
   it('should be disabled if disabled state is passed', () => {
     const button = getButton(<Button label="Hello there" state="disabled" />);
     expect(button).toBeDisabled();
+    expect(button).toHaveStyle('pointer-events: none');
   });
 });
