@@ -715,7 +715,7 @@ const tempTheme: Omit<Theme, 'ringWidths'> = {
   sizes: {
     xLarge: th.space('800'),
     large: th.space('600'),
-    medium: th.space('500, 550'),
+    medium: th.space('500'),
     small: th.space('400'),
     xSmall: th.space('300'),
     '2xSmall': th.space('250'),
