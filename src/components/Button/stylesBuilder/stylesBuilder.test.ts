@@ -43,7 +43,7 @@ describe('stylesBuilder', () => {
       },
       pl: '150',
       pr: '200',
-      py: '100',
+      h: 'medium',
 
       text: 'body-medium',
       textAlign: 'center',

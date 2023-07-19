@@ -3,9 +3,10 @@ import { merge } from 'lodash';
 
 import { applyDefaults } from './applyDefaults';
 import { StylesBuilderProps } from './stylesBuilder.props';
-import { VariantConfig, config as defaultConfig } from '../Button.styles';
+import { config as defaultConfig } from '../Button.styles';
 import { ButtonAppearance } from '../types/ButtonAppearance.type';
 import { ButtonVariant } from '../types/ButtonType.type';
+import { VariantConfig } from '../VariantConfig';
 
 import { isKeyOf } from '@/services';
 import { Theme } from '@/theme';

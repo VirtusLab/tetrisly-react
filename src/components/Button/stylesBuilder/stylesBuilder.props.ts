@@ -1,9 +1,9 @@
 import { DeepPartial } from '../../../utility-types/DeepPartial';
-import { VariantConfig } from '../Button.styles';
 import { ButtonAppearance } from '../types/ButtonAppearance.type';
 import { ButtonIntent } from '../types/ButtonIntent.type';
 import { ButtonSize } from '../types/ButtonSize.type';
 import { ButtonVariant } from '../types/ButtonType.type';
+import { VariantConfig } from '../VariantConfig';
 
 export type StylesBuilderProps<
   TVariant extends ButtonVariant,

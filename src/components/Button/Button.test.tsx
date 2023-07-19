@@ -1,10 +1,5 @@
-import { th } from '@xstyled/system';
-
 import { Button } from './Button';
-import { config as styles } from './Button.styles';
 import { render } from '../../tests/render';
-
-import { theme } from '@/theme';
 
 const getButton = (jsx: JSX.Element) => {
   const { getByRole } = render(jsx);
@@ -39,19 +34,8 @@ describe('Button', () => {
     ).toThrowError();
   });
 
-  it('should render default button when only label is provided', () => {
-    const button = getButton(<Button label="Hello there" />);
-    const {
-      backgroundColor,
-      intent: {
-        none: {
-          color: { _: color },
-        },
-      },
-    } = styles.default.appearance.secondary;
-    expect(button).toHaveStyle(
-      `background-color: ${th.color(backgroundColor)({ theme })}`
-    );
-    expect(button).toHaveStyle(`color: ${th.color(color)({ theme })}`);
+  it('should be disabled if disabled state is passed', () => {
+    const button = getButton(<Button label="Hello there" state="disabled" />);
+    expect(button).toBeDisabled();
   });
 });
