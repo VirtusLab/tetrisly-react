@@ -4,7 +4,7 @@ import { ButtonProps } from './Button.props';
 import { stylesBuilder } from './stylesBuilder/stylesBuilder';
 import { ButtonAppearance } from './types/ButtonAppearance.type';
 import { ButtonVariant } from './types/ButtonType.type';
-import { tet } from '../../tetrisly/tetrisly';
+import { tet } from '../../tetrisly';
 
 import { MarginProps } from '@/types/MarginProps';
 
@@ -29,6 +29,7 @@ export const Button = <
   }
   return (
     <tet.button
+      data-testid="button"
       {...stylesBuilder({ variant, appearance, intent, size, custom })}
       disabled={['disabled', 'loading'].includes(state ?? '')}
       data-state={state}

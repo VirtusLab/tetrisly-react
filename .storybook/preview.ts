@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react';
 
 import { withThemeFromJSXProvider } from '@storybook/addon-styling';
-import { TetrislyProvider } from '../src/tetrisly/TetrislyProvider';
+import { TetrislyProvider } from '../src/tetrisly';
 
 const preview: Preview = {
   parameters: {
