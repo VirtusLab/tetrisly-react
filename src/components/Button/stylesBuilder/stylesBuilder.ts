@@ -3,27 +3,22 @@ import { merge } from 'lodash';
 
 import { applyDefaults } from './applyDefaults';
 import { StylesBuilderProps } from './stylesBuilder.props';
-import { Theme } from '../../../theme';
-import { VariantConfig, config as defaultConfig } from '../Button.styles';
+import { config as defaultConfig } from '../Button.styles';
 import { ButtonAppearance } from '../types/ButtonAppearance.type';
 import { ButtonVariant } from '../types/ButtonType.type';
+import { VariantConfig } from '../VariantConfig';
 
-function isKeyOf<T extends object>(
-  obj: T,
-  key: string
-): key is Exclude<keyof T, number | symbol> {
-  return key in obj;
-}
+import { isKeyOf } from '@/services';
+import { Theme } from '@/theme';
 
-export function stylesBuilder<
+export const stylesBuilder = <
   TVariant extends ButtonVariant,
   TAppearance extends ButtonAppearance<TVariant>
 >({
   custom = {},
   ...props
-}: StylesBuilderProps<TVariant, TAppearance>): SystemProps<Theme> {
+}: StylesBuilderProps<TVariant, TAppearance>): SystemProps<Theme> => {
   const options = applyDefaults(props);
-  // const config = mergeObjects(defaultConfig, custom);
   const config = merge(defaultConfig, custom);
   const { appearance, size, ...rest } = config[
     options.variant
@@ -52,4 +47,4 @@ export function stylesBuilder<
     ...intentProps,
     ...sizes,
   } as const;
-}
+};

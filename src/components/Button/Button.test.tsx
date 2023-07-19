@@ -23,13 +23,20 @@ describe('Button', () => {
       render(<Button variant="default" appearance="reverseInverted" />)
     ).toThrowError();
     expect(() =>
-      // @ts-expect-error testing wrong dropdown
-      render(<Button label="Hello There" afterIcon="20-placeholder" dropdown />)
+      render(
+        // @ts-expect-error testing wrong dropdown
+        <Button
+          label="Hello There"
+          afterIcon="20-placeholder"
+          dropdownIndicator
+        />
+      )
     ).toThrowError();
   });
 
-  it('should render default button when only label is provided', () => {
-    // TODO(add tests)
-    expect(true).toBe(true);
+  it('should be disabled if disabled state is passed', () => {
+    const button = getButton(<Button label="Hello there" state="disabled" />);
+    expect(button).toBeDisabled();
+    expect(button).toHaveStyle('pointer-events: none');
   });
 });

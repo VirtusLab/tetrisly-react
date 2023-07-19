@@ -1,46 +1,31 @@
 import { SystemProps } from '@xstyled/styled-components';
 
-import { ButtonAppearance } from './types/ButtonAppearance.type';
-import { ButtonIntent } from './types/ButtonIntent.type';
-import { ButtonSize } from './types/ButtonSize.type';
 import { ButtonVariant } from './types/ButtonType.type';
+import { VariantConfig } from './VariantConfig';
 import { Theme } from '../../theme';
 
 type BaseProps = Omit<SystemProps<Theme>, 'appearance'>;
 
 const size = {
   small: {
-    pl: '100', // 8px
-    pr: '150', // 12px
-    py: '50', // 4px,
+    pl: '100',
+    pr: '150',
+    h: 'small',
     text: 'body-medium',
   },
   medium: {
-    pl: '150', // 12px
-    pr: '200', // 16px
-    py: '100', // 8px,
+    pl: '150',
+    pr: '200',
+    h: 'medium',
     text: 'body-medium',
   },
   large: {
-    pl: '150', // 12px
-    pr: '200', // 16px
-    py: '125', // 10px,
+    pl: '150',
+    pr: '200',
+    h: 'large',
     text: 'body-large',
   },
 } as const satisfies Record<'small' | 'medium' | 'large', BaseProps>;
-
-export type VariantConfig<TVariant extends ButtonVariant> = {
-  appearance: {
-    [Appearance in ButtonAppearance<TVariant>]: {
-      intent: {
-        [Intent in ButtonIntent<TVariant, Appearance>]: BaseProps;
-      };
-    } & BaseProps;
-  };
-  size: {
-    [Size in ButtonSize<TVariant>]: BaseProps;
-  };
-} & BaseProps;
 
 const commonConfig = {
   display: 'inline-flex',
@@ -105,7 +90,7 @@ const defaultConfig = {
       },
     },
     secondary: {
-      backgroundColor: 'transparent',
+      backgroundColor: 'action-inverted-normal',
       ringInset: true,
       ring: '100',
       ringColor: {
@@ -150,6 +135,12 @@ const defaultConfig = {
             active: 'action-inverted-active',
             selected: 'action-inverted-selected',
             // loading: "action-inverted-loading",
+          },
+          color: {
+            _: 'action-neutral-normal',
+            hover: 'action-neutral-hover',
+            active: 'action-neutral-active',
+            selected: 'action-neutral-selected',
           },
         },
       },
@@ -211,9 +202,10 @@ const ghostConfig = {
       intent: {
         none: {
           backgroundColor: {
-            hover: 'action-ghost-inverted-hover',
-            active: 'action-ghost-inverted-active',
-            selected: 'action-ghost-inverted-selected',
+            _: 'action-ghost-normal',
+            hover: 'action-ghost-hover',
+            active: 'action-ghost-active',
+            selected: 'action-ghost-selected',
           },
           color: {
             _: 'action-inverted-normal',

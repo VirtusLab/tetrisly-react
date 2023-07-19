@@ -5,7 +5,6 @@ import { stylesBuilder } from './stylesBuilder/stylesBuilder';
 import { ButtonAppearance } from './types/ButtonAppearance.type';
 import { ButtonVariant } from './types/ButtonType.type';
 import { tet } from '../../tetrisly/tetrisly';
-import { Loader } from '../Loader/Loader';
 
 import { MarginProps } from '@/types/MarginProps';
 
@@ -20,7 +19,7 @@ export const Button = <
   state,
   size,
   custom,
-  dropdown,
+  dropdownIndicator: dropdown,
   afterIcon,
   beforeIcon,
   ...rest
@@ -37,7 +36,7 @@ export const Button = <
       {...rest}
     >
       {/* TODO(Loader): update Loader when implemented */}
-      {state === 'loading' && <Loader />}
+      {state === 'loading' && '...'}
       {beforeIcon && state !== 'loading' && <Icon name={beforeIcon} />}
       {label}
       {dropdown && <Icon name="20-chevron-down" />}

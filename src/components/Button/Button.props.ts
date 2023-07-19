@@ -1,4 +1,3 @@
-import { IconName } from '@virtuslab/tetrisly-icons';
 import { ButtonHTMLAttributes } from 'react';
 
 import { StylesBuilderProps } from './stylesBuilder/stylesBuilder.props';
@@ -7,9 +6,9 @@ import { ButtonIntent } from './types/ButtonIntent.type';
 import { ButtonSize } from './types/ButtonSize.type';
 import { ButtonState } from './types/ButtonState.type';
 import { ButtonVariant } from './types/ButtonType.type';
-import { Or } from '../../utility-types/Or';
 
-type Icon20 = IconName & `20-${string}`;
+import { IconName } from '@/utility-types/IconName';
+import { Or } from '@/utility-types/Or';
 
 export type ButtonProps<
   TVariant extends ButtonVariant = 'default',
@@ -22,6 +21,6 @@ export type ButtonProps<
   label: string;
   state?: ButtonState;
   custom?: StylesBuilderProps<TVariant, TAppearance>['custom'];
-  beforeIcon?: Icon20;
+  beforeIcon?: IconName<20>;
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled' | 'color'> &
-  Or<{ afterIcon?: Icon20 }, { dropdown?: boolean }>;
+  Or<{ afterIcon?: IconName<20> }, { dropdownIndicator?: boolean }>;
