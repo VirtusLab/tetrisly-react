@@ -11,13 +11,13 @@ export function applyDefaults<
   appearance,
   intent,
   size,
-  variant: rawVariant,
+  variant,
 }: StylesBuilderProps<TVariant, TAppearance>): Required<
   Omit<StylesBuilderProps<TVariant, TAppearance>, 'custom'>
 > {
   return {
-    variant: (rawVariant ?? 'default') as TVariant,
-    appearance: (appearance ?? 'primary') as TAppearance,
+    variant: (variant ?? 'default') as TVariant,
+    appearance: (appearance ?? 'secondary') as TAppearance,
     intent: (intent ?? 'none') as ButtonIntent<TVariant, TAppearance>,
     size: (size ?? 'medium') as ButtonSize<TVariant>,
   };

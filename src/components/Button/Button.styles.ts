@@ -10,21 +10,21 @@ type BaseProps = Omit<SystemProps<Theme>, 'appearance'>;
 
 const size = {
   small: {
-    pl: '100', // 8px
-    pr: '150', // 12px
-    py: '50', // 4px,
+    pl: '100',
+    pr: '150',
+    py: '50',
     text: 'body-medium',
   },
   medium: {
-    pl: '150', // 12px
-    pr: '200', // 16px
-    py: '100', // 8px,
+    pl: '150',
+    pr: '200',
+    py: '100',
     text: 'body-medium',
   },
   large: {
-    pl: '150', // 12px
-    pr: '200', // 16px
-    py: '125', // 10px,
+    pl: '150',
+    pr: '200',
+    py: '125',
     text: 'body-large',
   },
 } as const satisfies Record<'small' | 'medium' | 'large', BaseProps>;
@@ -105,7 +105,7 @@ const defaultConfig = {
       },
     },
     secondary: {
-      backgroundColor: 'transparent',
+      backgroundColor: 'action-inverted-normal',
       ringInset: true,
       ring: '100',
       ringColor: {

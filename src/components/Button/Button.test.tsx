@@ -1,5 +1,10 @@
+import { th } from '@xstyled/system';
+
 import { Button } from './Button';
+import { config as styles } from './Button.styles';
 import { render } from '../../tests/render';
+
+import { theme } from '@/theme';
 
 const getButton = (jsx: JSX.Element) => {
   const { getByRole } = render(jsx);
@@ -23,13 +28,30 @@ describe('Button', () => {
       render(<Button variant="default" appearance="reverseInverted" />)
     ).toThrowError();
     expect(() =>
-      // @ts-expect-error testing wrong dropdown
-      render(<Button label="Hello There" afterIcon="20-placeholder" dropdown />)
+      render(
+        // @ts-expect-error testing wrong dropdown
+        <Button
+          label="Hello There"
+          afterIcon="20-placeholder"
+          dropdownIndicator
+        />
+      )
     ).toThrowError();
   });
 
   it('should render default button when only label is provided', () => {
-    // TODO(add tests)
-    expect(true).toBe(true);
+    const button = getButton(<Button label="Hello there" />);
+    const {
+      backgroundColor,
+      intent: {
+        none: {
+          color: { _: color },
+        },
+      },
+    } = styles.default.appearance.secondary;
+    expect(button).toHaveStyle(
+      `background-color: ${th.color(backgroundColor)({ theme })}`
+    );
+    expect(button).toHaveStyle(`color: ${th.color(color)({ theme })}`);
   });
 });
