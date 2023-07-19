@@ -6,7 +6,7 @@ import { ButtonAppearance } from './types/ButtonAppearance.type';
 import { ButtonIntent } from './types/ButtonIntent.type';
 import { ButtonSize } from './types/ButtonSize.type';
 import { ButtonVariant } from './types/ButtonType.type';
-import { tet } from '../../tetrisly/tetrisly';
+import { tet } from '../../tetrisly';
 
 import { ButtonProps } from '.';
 

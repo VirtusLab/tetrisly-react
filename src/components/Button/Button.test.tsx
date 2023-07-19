@@ -2,7 +2,8 @@ import { Button } from './Button';
 import { render } from '../../tests/render';
 
 const getButton = (jsx: JSX.Element) => {
-  const { getByRole } = render(jsx);
+  const { getByRole, getByTestId } = render(jsx);
+
   return getByRole('button');
 };
 

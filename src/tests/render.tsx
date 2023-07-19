@@ -1,7 +1,7 @@
 import { render, RenderOptions } from '@testing-library/react';
 import React, { ReactElement } from 'react';
 
-import { TetrislyProvider } from '../tetrisly/TetrislyProvider';
+import { TetrislyProvider } from '../tetrisly';
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => (
   <TetrislyProvider>{children}</TetrislyProvider>
