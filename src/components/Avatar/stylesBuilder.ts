@@ -22,17 +22,28 @@ export const stylesBuilder = <T extends object>(
 ): BaseProps => {
   const config = merge(origConfig, custom);
   const styles = fromEntries(
-    entries(config).filter((key) => !keys(variants).includes(key))
+    entries(config).filter(([key, _]) => !keys(variants).includes(key))
   ) as BaseProps;
-  const variantStyles = entries(variants).map(([key, value]) => {
+  // const variantStyles = fromEntries(
+  //   entries(variants).map(([key, value]) => {
+  //     if (typeof value === 'string') {
+  //       return config[key][value];
+  //     }
+  //     if (typeof value === 'boolean') {
+  //       return value ? config[key] : {};
+  //     }
+  //     return stylesBuilder(value, config[key]);
+  //   })
+  // );
+  const variantStyles = entries(variants).reduce((acc, [key, value]) => {
     if (typeof value === 'string') {
-      return config[key][value];
+      return { ...acc, ...config[key][value] };
     }
     if (typeof value === 'boolean') {
-      return value ? config[key] : {};
+      return value ? { ...acc, ...config[key] } : acc;
     }
-    return stylesBuilder(value, config[key]);
-  });
+    return { ...acc, ...stylesBuilder(value, config[key]) };
+  }, {} as BaseProps);
 
   return { ...styles, ...variantStyles };
 };

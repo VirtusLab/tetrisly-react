@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { AvatarProps } from './Avatar.props';
 import { config } from './Avatar.styles';
-import { stylesBuilder } from './styleBuilder';
+import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
 import { WithCustom } from '@/utility-types/WithCustom';
