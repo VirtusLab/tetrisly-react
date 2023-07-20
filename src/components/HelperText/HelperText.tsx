@@ -1,7 +1,8 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
+import { merge } from 'lodash';
 
 import { HelperTextProps } from './HelperText.props';
-import { config } from './HelperText.styles';
+import { config as defaultConfig } from './HelperText.styles';
 import { tet } from '../../tetrisly';
 
 import { isKeyOf } from '@/services';
@@ -12,9 +13,10 @@ export const HelperText = ({
   beforeIcon,
   counter,
   text,
+  custom = {},
   ...rest
 }: HelperTextProps & MarginProps) => {
-  const { intent: intentStyles, ...restStyles } = config;
+  const { intent: intentStyles, ...restStyles } = merge(defaultConfig, custom);
 
   if (!isKeyOf(intentStyles, intent)) {
     throw new Error(`${intent} is not a valid intent`);
