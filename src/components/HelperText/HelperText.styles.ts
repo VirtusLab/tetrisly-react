@@ -1,20 +1,18 @@
 import { SystemProps } from '@xstyled/styled-components';
 
-import { HelperTextProps } from './HelperText.props';
+import { HelperTextIntent } from './HelperTextIntent.type';
+
+import { Theme } from '@/theme';
 
 type Config = {
-  intent: Record<HelperTextProps['intent'], SystemProps>;
+  intent: Record<HelperTextIntent, SystemProps>;
 };
 
-const commonConfig = {
+export const config = {
   display: 'flex',
   alignItems: 'flex-start',
   gap: 'component-gap-large',
   text: 'medium-150',
-};
-
-export const config = {
-  ...commonConfig,
   intent: {
     none: {
       color: 'content-secondary',
@@ -26,4 +24,4 @@ export const config = {
       color: 'content-positive-secondary',
     },
   },
-} as const satisfies Config;
+} as const satisfies SystemProps<Theme> & Config;
