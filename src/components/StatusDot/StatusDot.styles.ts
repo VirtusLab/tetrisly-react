@@ -1,20 +1,18 @@
 import { SystemProps } from '@xstyled/styled-components';
 
-import { StatusDotProps } from './StatusDot.props';
+import { StatusDotAppearance } from './StatusDotAppearance.type';
+
+import { Theme } from '@/theme';
 
 type Config = {
-  appearance: Record<StatusDotProps['appearance'], SystemProps>;
+  appearance: Record<StatusDotAppearance, SystemProps>;
   stroked: SystemProps;
 };
 
-export const commonConfig = {
+export const config = {
   w: '12px',
   h: '12px',
   borderRadius: 'full',
-};
-
-export const config = {
-  ...commonConfig,
   appearance: {
     red: {
       backgroundColor: 'nonSemantic-red-background-strong',
@@ -30,4 +28,4 @@ export const config = {
     ring: 'medium',
     ringColor: 'border-inverted',
   },
-} as const satisfies Config;
+} as const satisfies Omit<SystemProps<Theme>, 'appearance'> & Config;
