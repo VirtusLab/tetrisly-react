@@ -1,10 +1,7 @@
-import { SystemProps } from '@xstyled/styled-components';
-
 import { ButtonVariant } from './types/ButtonType.type';
 import { VariantConfig } from './VariantConfig';
-import { Theme } from '../../theme';
 
-type BaseProps = Omit<SystemProps<Theme>, 'appearance'>;
+import { BaseProps } from '@/types/BaseProps';
 
 const size = {
   small: {

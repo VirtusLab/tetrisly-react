@@ -1,5 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { Avatar } from "./Avatar";
+import { Meta, StoryObj } from '@storybook/react';
+
+import { Avatar } from './Avatar';
 
 const meta = {
   component: Avatar,
@@ -8,4 +9,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  args: {
+    appearance: 'blue',
+    emphasis: 'high',
+  },
+};
