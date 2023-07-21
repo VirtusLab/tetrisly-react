@@ -7,11 +7,8 @@ const meta = {
 } satisfies Meta<typeof Avatar>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Avatar>;
 
 export const Primary: Story = {
-  args: {
-    appearance: 'blue',
-    emphasis: 'high',
-  },
+  args: {},
 };
