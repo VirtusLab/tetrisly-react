@@ -1,5 +1,7 @@
 import { BaseProps } from '@/types/BaseProps';
 
+export type BaseKeys = (typeof baseKeys)[number];
+
 export const baseKeys = [
   'tableLayout',
   'transform',

@@ -3,6 +3,7 @@ import { SystemProps } from '@xstyled/styled-components';
 import { AvatarAppearance, avatarAppearances } from './AvatarAppearances';
 
 import { fromEntries } from '@/services/fromEntries';
+import { BaseProps } from '@/types/BaseProps';
 
 type Config = {
   shape: Record<'rounded' | 'square', SystemProps>;
@@ -11,15 +12,16 @@ type Config = {
     SystemProps
   >;
   appearance: Record<
-    AvatarAppearance,
+    AvatarAppearance | 'image',
     {
       emphasis: Record<'high' | 'low', SystemProps>;
     }
   >;
-  isBoolean: SystemProps;
-};
+} & BaseProps;
 
 export const config = {
+  overflow: 'hidden',
+  position: 'relative',
   shape: {
     rounded: {
       borderRadius: 'full',
@@ -32,42 +34,52 @@ export const config = {
     large: {
       w: 'large',
       h: 'large',
+      text: 'body-large',
     },
     medium: {
       w: 'medium',
       h: 'medium',
+      text: 'body-medium',
     },
     small: {
       w: 'small',
       h: 'small',
+      text: 'body-small',
     },
     xSmall: {
       w: 'xSmall',
       h: 'xSmall',
+      text: 'body-strong-xSmall',
     },
     '2xSmall': {
       w: '2xSmall',
       h: '2xSmall',
+      text: 'body-strong-xSmall',
     },
   },
-  isBoolean: {
-    color: 'nonSemantic-white-content-primary',
-  },
-  appearance: fromEntries(
-    avatarAppearances.map((appearance) => [
-      appearance,
-      {
-        emphasis: {
-          high: {
-            color: `nonSemantic-${appearance}-content-primary`,
-            backgroundColor: `nonSemantic-${appearance}-background-muted`,
-          },
-          low: {
-            color: 'nonSemantic-white-content-primary',
-            backgroundColor: `nonSemantic-${appearance}-background-strong`,
+  appearance: {
+    image: {
+      emphasis: {
+        high: {},
+        low: {},
+      },
+    },
+    ...fromEntries(
+      avatarAppearances.map((appearance) => [
+        appearance,
+        {
+          emphasis: {
+            high: {
+              color: `nonSemantic-${appearance}-content-primary`,
+              backgroundColor: `nonSemantic-${appearance}-background-muted`,
+            },
+            low: {
+              color: 'nonSemantic-white-content-primary',
+              backgroundColor: `nonSemantic-${appearance}-background-strong`,
+            },
           },
         },
-      },
-    ])
-  ),
+      ]),
+    ),
+  },
 } satisfies Config;
