@@ -23,7 +23,9 @@ describe('Label', () => {
   });
 
   it('should render optional if a prop passed', () => {
-    const { optional } = getLabel(<Label label="Hello there" optional />);
+    const { optional } = getLabel(
+      <Label label="Hello there" optional="optional" />
+    );
     expect(optional).toBeInTheDocument();
   });
 
@@ -44,7 +46,7 @@ describe('Label', () => {
 
   it('should render correct colors', () => {
     const { label, optional, tooltip } = getLabel(
-      <Label label="Hello there" optional tooltip />
+      <Label label="Hello there" optional="optional" tooltip />
     );
     expect(label).toHaveStyle('color: rgb(39, 39, 39)');
     expect(optional).toHaveStyle('color: rgb(126, 126, 126);');
