@@ -5,7 +5,6 @@ import { AvatarAppearance } from './AvatarAppearances';
 export type AvatarProps = (
   | {
       img: Omit<ImgHTMLAttributes<HTMLImageElement>, 'color'>;
-      name: string;
       appearance: 'image';
       emphasis?: 'low';
     }

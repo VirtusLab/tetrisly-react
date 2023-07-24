@@ -23,4 +23,7 @@ export const Plain: Story = {
   argTypes: {
     appearance: avatarAppearances,
   },
+  args: {
+    initials: 'M',
+  },
 };

@@ -22,6 +22,9 @@ type Config = {
 export const config = {
   overflow: 'hidden',
   position: 'relative',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   shape: {
     rounded: {
       borderRadius: 'full',

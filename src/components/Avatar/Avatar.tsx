@@ -29,14 +29,10 @@ export const Avatar: FC<WithCustom<AvatarProps, typeof config>> = ({
   });
   return (
     <tet.div {...styles}>
-      {hasImage(rest) && (
-        <tet.img
-          w="100%"
-          h="100%"
-          src={rest.img.src}
-          alt={rest.name}
-          {...rest.img}
-        />
+      {hasImage(rest) ? (
+        <tet.img w="100%" h="100%" {...rest.img} />
+      ) : (
+        rest.initials
       )}
     </tet.div>
   );
@@ -46,4 +42,8 @@ function hasImage(
   obj: object,
 ): obj is { img: Omit<ImgHTMLAttributes<HTMLImageElement>, 'color'> } {
   return 'img' in obj;
+}
+
+function hasInitials(obj: object): obj is { initials: string } {
+  return 'initials' in obj;
 }
