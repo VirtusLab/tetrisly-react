@@ -8,7 +8,6 @@ const getLabel = (jsx: JSX.Element) => {
     label: queryByTestId('label'),
     optional: queryByTestId('label-optional'),
     tooltip: queryByTestId('label-tooltip'),
-    action: queryByTestId('label-action'),
   };
 };
 
@@ -41,21 +40,6 @@ describe('Label', () => {
   it('should not render tooltip if a prop not passed', () => {
     const { tooltip } = getLabel(<Label label="Hello there" />);
     expect(tooltip).toBeNull();
-  });
-
-  it('should render action if a prop passed', () => {
-    const { action } = getLabel(
-      <Label
-        label="Hello there"
-        action={{ label: 'Action', appearance: 'primary' }}
-      />
-    );
-    expect(action).toBeInTheDocument();
-  });
-
-  it('should not render action if a prop not passed', () => {
-    const { action } = getLabel(<Label label="Hello there" />);
-    expect(action).toBeNull();
   });
 
   it('should render correct colors', () => {
