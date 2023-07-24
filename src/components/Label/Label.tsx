@@ -10,7 +10,6 @@ import { tet } from '@/tetrisly';
 
 export const Label = ({
   label,
-  action,
   tooltip,
   optional,
   custom = {},
