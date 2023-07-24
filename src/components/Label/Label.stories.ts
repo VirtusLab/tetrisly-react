@@ -18,7 +18,7 @@ export const Default: Story = {};
 
 export const Optional: Story = {
   args: {
-    optional: true,
+    optional: 'optional',
   },
 };
 
@@ -30,7 +30,7 @@ export const Tooltip: Story = {
 
 export const All: Story = {
   args: {
-    optional: true,
+    optional: 'optional',
     tooltip: true,
   },
 };
