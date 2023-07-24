@@ -22,12 +22,6 @@ export const Optional: Story = {
   },
 };
 
-export const Action: Story = {
-  args: {
-    action: { label: 'Action', appearance: 'primary' },
-  },
-};
-
 export const Tooltip: Story = {
   args: {
     tooltip: true,
@@ -37,7 +31,6 @@ export const Tooltip: Story = {
 export const All: Story = {
   args: {
     optional: true,
-    action: { label: 'Action', appearance: 'primary' },
     tooltip: true,
   },
 };
