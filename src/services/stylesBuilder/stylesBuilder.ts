@@ -6,9 +6,6 @@ import { fromEntries } from '../fromEntries';
 import { BaseProps } from '@/types/BaseProps';
 import { Custom } from '@/utility-types/WithCustom';
 
-const entries = <T extends object>(obj: T) =>
-  Object.entries(obj) as Array<[keyof T, T[keyof T]]>;
-
 type OnlyOne<Keys extends PropertyKey, T> = {
   [key in Keys]: { [k in key]: T };
 }[Keys];
@@ -67,49 +64,55 @@ export const stylesBuilder = <
 
   type NestedConfig = Record<TNested[number], object>;
   if (!nestedConfig) throw new Error('nested config is not an object');
+  type ConfigType = BaseProps & T & ConfigWithNested<TNested, object>;
   const nestedStyles = fromEntries(
-    entries(nestedConfig as NestedConfig).map(([key, value]) => [
+    Object.entries(nestedConfig as NestedConfig).map(([key, value]) => [
       key,
       stylesBuilder({
-        config: value as any,
+        config: value as ConfigType,
         variant: variantConfig,
       }).styles,
     ]),
   );
   return {
     styles: outputStyles,
-    ...nestedStyles,
+    ...(nestedStyles as Record<TNested[number], BaseProps>),
   };
 };
 function extractVariant<T extends object>(
   config: T,
   variant: Variant<T>,
 ): BaseProps {
-  const variantStyles = entries(variant).reduce((acc, [key, value]) => {
+  const variantStyles = Object.entries(variant).reduce((acc, [key, value]) => {
+    type Key = keyof typeof config;
     if (typeof value === 'string')
       return {
         ...acc,
-        ...config[key][value as keyof (typeof config)[typeof key]],
+        ...config[key as Key][value as keyof (typeof config)[Key]],
       };
 
     if (typeof value === 'boolean') {
-      return value ? { ...acc, ...config[key] } : acc;
+      return value ? { ...acc, ...config[key as Key] } : acc;
     }
     if (typeof value !== 'object' && value !== null) {
       throw new Error(
         `value for the key: ${key.toString()} in variants is not an object`,
       );
     }
-    if (!isObject(config[key])) {
+    if (!isObject(config[key as Key])) {
       throw new Error(
         `value for the key: ${key.toString()} in config is not an object`,
       );
     }
-    type NewConfig = (typeof config)[typeof key] & object;
+    type NewConfig = BaseProps &
+      T[keyof T] &
+      object &
+      ConfigWithNested<[], object>;
+
     return {
       ...acc,
       ...stylesBuilder({
-        config: config[key] as NewConfig,
+        config: config[key as Key] as NewConfig,
         variant: value as Variant<NewConfig>,
       }).styles,
     };

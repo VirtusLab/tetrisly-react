@@ -133,7 +133,7 @@ describe('stylesBuilder', () => {
       },
     };
     expect(
-      stylesBuilder({ variant: primary, config, nestedList: ['div'] })
+      stylesBuilder({ variant: primary, config, nestedList: ['div'] }),
     ).toEqual(primaryResult);
   });
 });
