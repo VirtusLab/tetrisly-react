@@ -3227,10 +3227,10 @@
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
 
-"@virtuslab/eslint-config-tetrisly@^1.1.8":
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/@virtuslab/eslint-config-tetrisly/-/eslint-config-tetrisly-1.1.8.tgz#1ef793976d228c5b91872a3ee48a70b4114ad578"
-  integrity sha512-LK5Ukz9DVyd24x6U246fgQCECt5Owej/RkUG/J1Cghvg0sa8su90kM9ySZnzgLU4Y9m+fpkFvM+SPw3IwDATHA==
+"@virtuslab/eslint-config-tetrisly@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@virtuslab/eslint-config-tetrisly/-/eslint-config-tetrisly-1.2.0.tgz#2842b0ab1f11404296020c631a569e09d1e6a548"
+  integrity sha512-xo2Dfe9qeXGTUMcIfsPvCkNm/A+/xICRvIcEIZv0x6XaGSxG4FYCNCHF0gOV9cYIUnt/7/JcWycJXu3SwEs1LA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.57.1"
     "@typescript-eslint/parser" "^5.60.1"

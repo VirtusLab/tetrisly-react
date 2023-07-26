@@ -6,6 +6,7 @@ import { fromEntries } from '@/services/fromEntries';
 import { BaseProps } from '@/types/BaseProps';
 
 type Config = {
+  nestedImage: SystemProps;
   shape: Record<'rounded' | 'square', SystemProps>;
   size: Record<
     'large' | 'medium' | 'small' | 'xSmall' | '2xSmall',
@@ -20,6 +21,10 @@ type Config = {
 } & BaseProps;
 
 export const config = {
+  nestedImage: {
+    w: '100%',
+    h: '100%',
+  },
   overflow: 'hidden',
   position: 'relative',
   display: 'flex',
@@ -73,12 +78,12 @@ export const config = {
         {
           emphasis: {
             high: {
-              color: `nonSemantic-${appearance}-content-primary`,
-              backgroundColor: `nonSemantic-${appearance}-background-muted`,
-            },
-            low: {
               color: 'nonSemantic-white-content-primary',
               backgroundColor: `nonSemantic-${appearance}-background-strong`,
+            },
+            low: {
+              color: `nonSemantic-${appearance}-content-primary`,
+              backgroundColor: `nonSemantic-${appearance}-background-muted`,
             },
           },
         },

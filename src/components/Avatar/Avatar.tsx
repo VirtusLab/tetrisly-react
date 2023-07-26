@@ -15,7 +15,7 @@ export const Avatar: FC<WithCustom<AvatarProps, typeof config>> = ({
   custom,
   ...rest
 }) => {
-  const { styles } = stylesBuilder({
+  const { styles, nestedImage } = stylesBuilder({
     variant: {
       shape,
       size,
@@ -26,11 +26,12 @@ export const Avatar: FC<WithCustom<AvatarProps, typeof config>> = ({
     },
     config,
     custom,
+    nestedList: ['nestedImage'],
   });
   return (
     <tet.div {...styles}>
       {hasImage(rest) ? (
-        <tet.img w="100%" h="100%" {...rest.img} />
+        <tet.img {...nestedImage} {...rest.img} />
       ) : (
         rest.initials
       )}

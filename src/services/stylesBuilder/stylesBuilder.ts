@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { merge } from 'lodash';
 
 import { BaseKeys, baseKeys } from './baseKeys';
@@ -22,9 +21,14 @@ type Variant<T extends object> = {
     : never;
 };
 
+type Output<TNested extends readonly string[]> = { styles: BaseProps } & Record<
+  TNested[number],
+  BaseProps
+>;
+
 export const stylesBuilder = <
   T extends object,
-  const TNested extends readonly string[] = []
+  const TNested extends readonly string[] = [],
 >({
   config: origConfig,
   variant: variantConfig,
@@ -35,19 +39,21 @@ export const stylesBuilder = <
   variant: Variant<Omit<T, TNested[number]>>;
   custom?: Custom<T>;
   nestedList?: TNested;
-}): { styles: BaseProps } => {
+}): Output<TNested> => {
   nestedList?.forEach((nestedElement) => {
     if (Object.keys(variantConfig).includes(nestedElement))
       throw new Error(
-        `nested element: ${nestedElement} is also a variant key, please remove it from nested list`
+        `nested element: ${nestedElement} is also a variant key, please remove it from nested list`,
       );
   });
   const config = merge(origConfig, custom || {}) as T;
   const { styles, rest: notStyles } = spltStyles<T, TNested>(config);
   const { nested: nestedConfig, rest } = splitNested(
     notStyles,
-    nestedList || []
+    nestedList || [],
   );
+
+  if (Object.keys(rest).length === 0) return { styles } as Output<TNested>;
 
   const variantStyles = extractVariant(rest, variantConfig);
 
@@ -56,23 +62,19 @@ export const stylesBuilder = <
     ...variantStyles,
   };
 
-  if (Object.keys(nestedConfig).length === 0) return { styles: outputStyles };
+  if (Object.keys(nestedConfig).length === 0)
+    return { styles: outputStyles } as Output<TNested>;
+
   type NestedConfig = Record<TNested[number], object>;
   if (!nestedConfig) throw new Error('nested config is not an object');
   const nestedStyles = fromEntries(
-    entries(nestedConfig as NestedConfig).map(([key, value]) => {
-      console.log('key', key);
-      console.log('value', value);
-      console.log('variant', variantConfig[key as keyof typeof variantConfig]);
-
-      return [
-        key,
-        stylesBuilder({
-          config: value as T & ConfigWithNested<TNested, object>,
-          variant: variantConfig,
-        }).styles,
-      ];
-    })
+    entries(nestedConfig as NestedConfig).map(([key, value]) => [
+      key,
+      stylesBuilder({
+        config: value as any,
+        variant: variantConfig,
+      }).styles,
+    ]),
   );
   return {
     styles: outputStyles,
@@ -81,7 +83,7 @@ export const stylesBuilder = <
 };
 function extractVariant<T extends object>(
   config: T,
-  variant: Variant<T>
+  variant: Variant<T>,
 ): BaseProps {
   const variantStyles = entries(variant).reduce((acc, [key, value]) => {
     if (typeof value === 'string')
@@ -95,12 +97,12 @@ function extractVariant<T extends object>(
     }
     if (typeof value !== 'object' && value !== null) {
       throw new Error(
-        `value for the key: ${key.toString()} in variants is not an object`
+        `value for the key: ${key.toString()} in variants is not an object`,
       );
     }
     if (!isObject(config[key])) {
       throw new Error(
-        `value for the key: ${key.toString()} in config is not an object`
+        `value for the key: ${key.toString()} in config is not an object`,
       );
     }
     type NewConfig = (typeof config)[typeof key] & object;
@@ -119,17 +121,17 @@ function isObject(value: unknown): value is object {
   return typeof value === 'object' && value !== null;
 }
 function spltStyles<T extends object, TNested extends readonly string[]>(
-  config: T
+  config: T,
 ) {
   const styles = Object.fromEntries(
     Object.entries(config).filter(([key]) =>
-      (baseKeys as string[]).includes(key)
-    )
+      (baseKeys as string[]).includes(key),
+    ),
   ) as BaseProps;
   const rest = Object.fromEntries(
     Object.entries(config).filter(
-      ([key]) => !(baseKeys as string[]).includes(key)
-    )
+      ([key]) => !(baseKeys as string[]).includes(key),
+    ),
   ) as Exclude<T & ConfigWithNested<TNested, object>, BaseProps>;
 
   return {
@@ -145,10 +147,10 @@ type ConfigWithNested<TNested extends readonly string[], TConfig> = Record<
 
 function splitNested<
   TConfig extends ConfigWithNested<TNested, object>,
-  const TNested extends readonly string[]
+  const TNested extends readonly string[],
 >(
   config: TConfig,
-  nestedList: TNested
+  nestedList: TNested,
 ): {
   nested: ConfigWithNested<TNested, object>;
   rest: Exclude<TConfig, ConfigWithNested<TNested, object>>;
@@ -159,11 +161,11 @@ function splitNested<
       rest: config as Exclude<TConfig, ConfigWithNested<TNested, object>>,
     };
   const nested = Object.fromEntries(
-    Object.entries(config).filter(([key]) => nestedList.includes(key))
+    Object.entries(config).filter(([key]) => nestedList.includes(key)),
   ) as ConfigWithNested<TNested, object>;
 
   const rest = Object.fromEntries(
-    Object.entries(config).filter(([key]) => !nestedList.includes(key))
+    Object.entries(config).filter(([key]) => !nestedList.includes(key)),
   ) as Exclude<TConfig, ConfigWithNested<TNested, object>>;
 
   return {
