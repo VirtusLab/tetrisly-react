@@ -10,6 +10,8 @@ on:
 jobs:
   deploy:
     name: Deploy Storybook to GitHub Pages
+    env:
+      NODE_OPTIONS: '--max_old_space_size=4096'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
