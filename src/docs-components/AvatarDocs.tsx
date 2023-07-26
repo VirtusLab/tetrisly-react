@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { Hero } from './common/Hero';
 import { Avatar } from '../components/Avatar/Avatar';
 import { AvatarProps } from '../components/Avatar/Avatar.props';

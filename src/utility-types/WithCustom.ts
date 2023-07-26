@@ -1,5 +1,5 @@
-import { BaseProps } from '@/types/BaseProps';
 import { BaseKeys } from '@/services/stylesBuilder/baseKeys';
+import { BaseProps } from '@/types/BaseProps';
 
 type PartialWithBaseProps<T extends object> = {
   [P in keyof T]?: T[P] extends object

@@ -10,7 +10,7 @@ import { MarginProps } from '@/types/MarginProps';
 
 export const Button = <
   TVariant extends ButtonVariant = 'default',
-  TAppearance extends ButtonAppearance<TVariant> = ButtonAppearance<TVariant>
+  TAppearance extends ButtonAppearance<TVariant> = ButtonAppearance<TVariant>,
 >({
   label,
   variant,

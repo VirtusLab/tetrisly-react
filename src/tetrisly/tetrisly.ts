@@ -43,8 +43,8 @@ export const { css, styled, x, createGlobalStyle } = createCss(
     transforms,
     transitions,
     typography,
-    opacity
-  )
+    opacity,
+  ),
 );
 
 export const t = x;
