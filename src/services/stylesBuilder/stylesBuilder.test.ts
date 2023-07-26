@@ -94,4 +94,46 @@ describe('stylesBuilder', () => {
       styles: secondaryResult,
     });
   });
+
+  it('should return a styles object with nested elements present', () => {
+    const config = {
+      color: 'action-ghost-active',
+      appearance: {
+        primary: {
+          backgroundColor: 'action-neutral-active',
+        },
+        secondary: {
+          backgroundColor: 'red-+2',
+        },
+      },
+      div: {
+        color: 'red-+2',
+        appearance: {
+          primary: {
+            backgroundColor: 'blue-+2',
+          },
+          secondary: {
+            backgroundColor: 'green-+2',
+          },
+        },
+      },
+    } as const;
+
+    const primary = {
+      appearance: 'primary',
+    } as const;
+    const primaryResult = {
+      styles: {
+        color: 'action-ghost-active',
+        backgroundColor: 'action-neutral-active',
+      },
+      div: {
+        color: 'red-+2',
+        backgroundColor: 'blue-+2',
+      },
+    };
+    expect(
+      stylesBuilder({ variant: primary, config, nestedList: ['div'] })
+    ).toEqual(primaryResult);
+  });
 });
