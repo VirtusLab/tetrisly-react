@@ -1,5 +1,4 @@
 import { Loader } from './Loader';
-import { ProgressCircle } from './Progress';
 import { render } from '../../tests/render';
 
 const getLoader = (jsx: JSX.Element) => {
