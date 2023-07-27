@@ -21,7 +21,7 @@ export const Loader = ({
     custom,
   });
   return (
-    <tet.svg {...svgStyles}>
+    <tet.svg {...svgStyles} xmlns="http://www.w3.org/2000/svg">
       <tet.path {...baseStyles} />
       {progress === undefined ? (
         <AnimatedPath shape={shape} {...progressStyles} />

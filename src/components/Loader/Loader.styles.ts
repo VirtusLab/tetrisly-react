@@ -1,50 +1,54 @@
 import { SystemProps } from '@xstyled/styled-components';
 
-import type { LoaderAppearance } from './types';
+import type { LoaderAppearance, LoaderShape, LoaderSize } from './types';
 
 import { Theme } from '@/theme';
-import { DeepPartial } from '@/utility-types/DeepPartial';
 
 type Config = {
-  size: Record<'circle' | 'bar', Record<LoaderSize, any>>;
+  size: Record<LoaderShape, Record<LoaderSize, SystemProps>>;
   appearance: Record<
     LoaderAppearance,
     Record<'base' | 'progress', SystemProps>
   >;
   svg: SystemProps;
-  base: Record<'circle' | 'bar', SystemProps>;
-  progress: Record<'circle' | 'bar', SystemProps>;
-  custom?: DeepPartial<SystemProps<Theme> & typeof config>;
+  base: Record<
+    LoaderShape,
+    SystemProps & { strokeWidth: number; strokeLinecap: string }
+  >;
+  progress: Record<
+    LoaderShape,
+    SystemProps & { strokeWidth: number; strokeLinecap: string }
+  >;
 };
 
 export const config = {
   size: {
     circle: {
       large: {
-        width: 48,
-        height: 48,
+        w: 48,
+        h: 48,
       },
       medium: {
-        width: 32,
-        height: 32,
+        w: 32,
+        h: 32,
       },
       small: {
-        width: 20,
-        height: 20,
+        w: 20,
+        h: 20,
       },
     },
     bar: {
       large: {
-        width: 128,
-        height: 8,
+        w: 128,
+        h: 8,
       },
       medium: {
-        width: 128,
-        height: 6,
+        w: 128,
+        h: 6,
       },
       small: {
-        width: 128,
-        height: 4,
+        w: 128,
+        h: 4,
       },
     },
   },
@@ -84,13 +88,12 @@ export const config = {
     },
   },
   svg: {
-    xmlns: 'http://www.w3.org/2000/svg',
     fill: 'none',
     borderRadius: 'large',
   },
   base: {
     circle: {
-      strokeWidth: 2,
+      strokeWidth: 8,
       strokeLinecap: 'round',
     },
     bar: {

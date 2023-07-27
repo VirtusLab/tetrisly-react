@@ -54,33 +54,27 @@ export function stylesBuilder({
   const size = config.size[props.shape][props.size];
   const svgSizeStyles = {
     ...size,
-    viewBox: `0 0 ${size.width} ${size.height}`,
+    viewBox: `0 0 ${size.w} ${size.h}`,
   };
 
   const baseSizeStyles = {
     d:
       props.shape === 'circle'
-        ? describeArc(
-          size.width / 2,
-          size.width / 2,
-          size.width / 2 - 3,
-          0,
-          359.99
-        )
-        : `M 0 ${size.height / 2} H ${size.width}`,
+        ? describeArc(size.w / 2, size.w / 2, size.w / 2 - 3, 0, 359.99)
+        : `M 0 ${size.h / 2} H ${size.w}`,
   };
 
   const progressSizeStyles = {
     d:
       props.shape === 'circle'
         ? describeArc(
-          size.width / 2,
-          size.width / 2,
-          size.width / 2 - 3,
-          0,
-          360 * (props.progress ?? 0.4)
-        )
-        : `M 0 ${size.height / 2} H ${(props.progress ?? 0.5) * size.width}`,
+            size.w / 2,
+            size.w / 2,
+            size.w / 2 - 3,
+            0,
+            360 * (props.progress ?? 0.4)
+          )
+        : `M 0 ${size.h / 2} H ${(props.progress ?? 0.5) * size.w}`,
   };
 
   const svgStyles = {

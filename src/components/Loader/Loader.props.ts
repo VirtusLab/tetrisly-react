@@ -10,7 +10,7 @@ export type LoaderProps = {
   appearance?: LoaderAppearance;
   size?: LoaderSize;
   progress?: number;
-  shape: 'circle' | 'bar';
+  shape: LoaderShape;
   custom?: DeepPartial<SystemProps<Theme> & typeof config>;
 };
 

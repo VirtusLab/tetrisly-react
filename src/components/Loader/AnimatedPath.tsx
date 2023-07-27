@@ -20,10 +20,10 @@ const animationBar = keyframes`
   }
 `;
 
-export const AnimatedPath = styled(tet.path) <{ shape: string }>`
+export const AnimatedPath = styled(tet.path)<{ shape: string }>`
   aspect-ratio: 1;
   transform-origin: center center;
   animation: ${({ shape }) =>
-    shape === 'circle' ? animationCircle : animationBar}
+      shape === 'circle' ? animationCircle : animationBar}
     1.4s infinite linear;
 `;
