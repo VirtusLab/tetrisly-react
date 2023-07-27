@@ -21,12 +21,20 @@ export const Loader = ({
     custom,
   });
   return (
-    <tet.svg {...svgStyles} xmlns="http://www.w3.org/2000/svg">
-      <tet.path {...baseStyles} />
+    <tet.svg
+      {...svgStyles}
+      xmlns="http://www.w3.org/2000/svg"
+      data-testid="loader"
+    >
+      <tet.path {...baseStyles} data-testid="loader-base" />
       {progress === undefined ? (
-        <AnimatedPath shape={shape} {...progressStyles} />
+        <AnimatedPath
+          shape={shape}
+          {...progressStyles}
+          data-testid="loader-progress"
+        />
       ) : (
-        <tet.path {...progressStyles} />
+        <tet.path {...progressStyles} data-testid="loader-progress" />
       )}
     </tet.svg>
   );

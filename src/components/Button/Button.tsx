@@ -5,6 +5,7 @@ import { stylesBuilder } from './stylesBuilder/stylesBuilder';
 import { ButtonAppearance } from './types/ButtonAppearance.type';
 import { ButtonVariant } from './types/ButtonType.type';
 import { tet } from '../../tetrisly';
+import { ProgressCircle } from '../Loader';
 
 import { MarginProps } from '@/types/MarginProps';
 
@@ -36,8 +37,7 @@ export const Button = <
       style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
       {...rest}
     >
-      {/* TODO(Loader): update Loader when implemented */}
-      {state === 'loading' && '...'}
+      {state === 'loading' && <ProgressCircle />}
       {beforeIcon && state !== 'loading' && <Icon name={beforeIcon} />}
       {label}
       {dropdown && <Icon name="20-chevron-down" />}

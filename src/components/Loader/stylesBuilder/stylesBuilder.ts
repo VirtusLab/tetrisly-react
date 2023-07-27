@@ -1,5 +1,6 @@
 import { merge } from 'lodash';
 
+import { applyDefaults } from './applyDefaults';
 import { LoaderProps } from '../Loader.props';
 import { config as defaultConfig } from '../Loader.styles';
 
@@ -45,36 +46,35 @@ function describeArc(
   return d;
 }
 
-export function stylesBuilder({
-  custom = {},
-  ...props
-}: Required<LoaderProps>) {
+export function stylesBuilder({ custom = {}, ...props }: LoaderProps) {
+  const options = applyDefaults(props);
   const config = merge(defaultConfig, custom);
 
-  const size = config.size[props.shape][props.size];
+  const size = config.size[options.shape][options.size];
+  const { w, h, ...restSizeStyles } = size;
   const svgSizeStyles = {
     ...size,
-    viewBox: `0 0 ${size.w} ${size.h}`,
+    viewBox: `0 0 ${w} ${h}`,
   };
 
   const baseSizeStyles = {
     d:
-      props.shape === 'circle'
-        ? describeArc(size.w / 2, size.w / 2, size.w / 2 - 3, 0, 359.99)
-        : `M 0 ${size.h / 2} H ${size.w}`,
+      options.shape === 'circle'
+        ? describeArc(w / 2, w / 2, w / 2 - 3, 0, 359.99)
+        : `M 0 ${h / 2} H ${w}`,
   };
 
   const progressSizeStyles = {
     d:
-      props.shape === 'circle'
+      options.shape === 'circle'
         ? describeArc(
-            size.w / 2,
-            size.w / 2,
-            size.w / 2 - 3,
+            w / 2,
+            w / 2,
+            w / 2 - 3,
             0,
-            360 * (props.progress ?? 0.4)
+            360 * (options.progress ?? 0.4)
           )
-        : `M 0 ${size.h / 2} H ${(props.progress ?? 0.5) * size.w}`,
+        : `M 0 ${h / 2} H ${(options.progress ?? 0.5) * w}`,
   };
 
   const svgStyles = {
@@ -84,14 +84,16 @@ export function stylesBuilder({
 
   const baseStyles = {
     ...baseSizeStyles,
-    ...config.base[props.shape],
-    ...config.appearance[props.appearance].base,
+    ...restSizeStyles,
+    ...config.appearance[options.appearance].base,
+    ...config.progress,
   };
 
   const progressStyles = {
     ...progressSizeStyles,
-    ...config.progress[props.shape],
-    ...config.appearance[props.appearance].progress,
+    ...restSizeStyles,
+    ...config.appearance[options.appearance].progress,
+    ...config.progress,
   };
 
   return { svgStyles, baseStyles, progressStyles };
