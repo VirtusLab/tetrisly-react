@@ -1,4 +1,4 @@
-import { IconProps } from '@virtuslab/tetrisly-icons/dist/tetrisly-icons.es';
+import { IconProps } from '@virtuslab/tetrisly-icons';
 import { SystemProps } from '@xstyled/styled-components';
 
 import { HelperTextIntent } from './HelperTextIntent.type';
