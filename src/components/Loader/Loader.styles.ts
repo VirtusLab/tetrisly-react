@@ -11,14 +11,8 @@ type Config = {
     Record<'base' | 'progress', SystemProps>
   >;
   svg: SystemProps;
-  base: Record<
-    LoaderShape,
-    SystemProps & { strokeWidth: number; strokeLinecap: string }
-  >;
-  progress: Record<
-    LoaderShape,
-    SystemProps & { strokeWidth: number; strokeLinecap: string }
-  >;
+  base: Record<LoaderShape, SystemProps>;
+  progress: Record<LoaderShape, SystemProps>;
 };
 
 export const config = {
