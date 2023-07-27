@@ -2,7 +2,7 @@ import { SystemProps } from '@xstyled/styled-components';
 
 import { StatusDotAppearance } from './StatusDotAppearance.type';
 
-import { Theme } from '@/theme';
+import { BaseConfigProps } from '@/utility-types/BaseConfigProps';
 
 type Config = {
   appearance: Record<StatusDotAppearance, SystemProps>;
@@ -28,4 +28,4 @@ export const config = {
     ring: 'medium',
     ringColor: 'border-inverted',
   },
-} as const satisfies Omit<SystemProps<Theme>, 'appearance'> & Config;
+} as const satisfies BaseConfigProps & Config;

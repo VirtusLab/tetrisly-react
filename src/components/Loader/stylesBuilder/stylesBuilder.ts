@@ -1,8 +1,11 @@
 import { merge } from 'lodash';
 
-import { applyDefaults } from './applyDefaults';
 import { LoaderProps } from '../Loader.props';
 import { config as defaultConfig } from '../Loader.styles';
+
+type StylesBuilderProps = Omit<Required<LoaderProps>, 'progress'> & {
+  progress: number | undefined;
+};
 
 function polarToCartesian(
   centerX: number,
@@ -46,35 +49,30 @@ function describeArc(
   return d;
 }
 
-export function stylesBuilder({ custom = {}, ...props }: LoaderProps) {
-  const options = applyDefaults(props);
+export function stylesBuilder({ custom = {}, ...props }: StylesBuilderProps) {
   const config = merge(defaultConfig, custom);
 
-  const size = config.size[options.shape][options.size];
+  const size = config.size[props.shape][props.size];
   const { w, h, ...restSizeStyles } = size;
   const svgSizeStyles = {
     ...size,
     viewBox: `0 0 ${w} ${h}`,
   };
 
+  const progress = Math.min(Math.max(props.progress ?? 0.4, 0), 1);
+
   const baseSizeStyles = {
     d:
-      options.shape === 'circle'
+      props.shape === 'circle'
         ? describeArc(w / 2, w / 2, w / 2 - 3, 0, 359.99)
         : `M 0 ${h / 2} H ${w}`,
   };
 
   const progressSizeStyles = {
     d:
-      options.shape === 'circle'
-        ? describeArc(
-            w / 2,
-            w / 2,
-            w / 2 - 3,
-            0,
-            360 * (options.progress ?? 0.4)
-          )
-        : `M 0 ${h / 2} H ${(options.progress ?? 0.5) * w}`,
+      props.shape === 'circle'
+        ? describeArc(w / 2, w / 2, w / 2 - 3, 0, 359.99 * progress)
+        : `M 0 ${h / 2} H ${progress * w}`,
   };
 
   const svgStyles = {
@@ -85,14 +83,14 @@ export function stylesBuilder({ custom = {}, ...props }: LoaderProps) {
   const baseStyles = {
     ...baseSizeStyles,
     ...restSizeStyles,
-    ...config.appearance[options.appearance].base,
+    ...config.appearance[props.appearance].base,
     ...config.progress,
   };
 
   const progressStyles = {
     ...progressSizeStyles,
     ...restSizeStyles,
-    ...config.appearance[options.appearance].progress,
+    ...config.appearance[props.appearance].progress,
     ...config.progress,
   };
 
