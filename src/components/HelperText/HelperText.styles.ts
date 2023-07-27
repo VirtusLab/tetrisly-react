@@ -1,3 +1,4 @@
+import { IconProps } from '@virtuslab/tetrisly-icons/dist/tetrisly-icons.es';
 import { SystemProps } from '@xstyled/styled-components';
 
 import { HelperTextIntent } from './HelperTextIntent.type';
@@ -6,6 +7,8 @@ import { Theme } from '@/theme';
 
 type Config = {
   intent: Record<HelperTextIntent, SystemProps>;
+  icon: Record<HelperTextIntent, SystemProps & IconProps>;
+  iconContainer: SystemProps;
 };
 
 export const config = {
