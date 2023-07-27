@@ -24,11 +24,7 @@ describe('HelperText', () => {
 
   it('should render correct intent color (none)', () => {
     const { text, icon, counter } = getHelperText(
-      <HelperText
-        intent="none"
-        beforeIcon="20-placeholder"
-        counter={{ current: 0, max: 0 }}
-      />
+      <HelperText intent="none" beforeIcon counter={{ current: 0, max: 0 }} />
     );
     expect(text).toHaveStyle('color: rgb(85, 85, 85);');
     expect(icon).toHaveStyle('color: rgb(85, 85, 85);');
@@ -37,11 +33,7 @@ describe('HelperText', () => {
 
   it('should render correct intent color (alert)', () => {
     const { text, icon, counter } = getHelperText(
-      <HelperText
-        intent="alert"
-        beforeIcon="20-placeholder"
-        counter={{ current: 0, max: 0 }}
-      />
+      <HelperText intent="alert" beforeIcon counter={{ current: 0, max: 0 }} />
     );
     expect(text).toHaveStyle('color: rgb(197, 52, 52);');
     expect(icon).toHaveStyle('color: rgb(197, 52, 52);');
@@ -52,7 +44,7 @@ describe('HelperText', () => {
     const { text, icon, counter } = getHelperText(
       <HelperText
         intent="success"
-        beforeIcon="20-placeholder"
+        beforeIcon
         counter={{ current: 0, max: 0 }}
       />
     );
@@ -62,7 +54,7 @@ describe('HelperText', () => {
   });
 
   it('should render icon if passed as a prop', () => {
-    const { icon } = getHelperText(<HelperText beforeIcon="20-placeholder" />);
+    const { icon } = getHelperText(<HelperText beforeIcon />);
     expect(icon).toBeInTheDocument();
   });
 
@@ -87,12 +79,6 @@ describe('HelperText', () => {
     expect(() =>
       // @ts-expect-error testing wrong appearance
       render(<HelperText intent="default" />)
-    ).toThrowError();
-    expect(() =>
-      render(
-        // @ts-expect-error testing wrong dropdown
-        <HelperText beforeIcon="12341234" />
-      )
     ).toThrowError();
   });
 });

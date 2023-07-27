@@ -27,7 +27,7 @@ export const Default: Story = {};
 
 export const DefaultWithIcon: Story = {
   args: {
-    beforeIcon: '20-alert-fill',
+    beforeIcon: true,
   },
 };
 
