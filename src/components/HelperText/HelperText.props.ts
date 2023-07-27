@@ -1,9 +1,10 @@
-import { Theme } from '@/theme';
-import { DeepPartial } from '@/utility-types/DeepPartial';
-import { IconName } from '@/utility-types/IconName';
 import { SystemProps } from '@xstyled/styled-components';
+
 import { config } from './HelperText.styles';
 import { HelperTextIntent } from './HelperTextIntent.type';
+
+import { Theme } from '@/theme';
+import { DeepPartial } from '@/utility-types/DeepPartial';
 
 export type HelperTextProps = {
   intent?: HelperTextIntent;
@@ -11,7 +12,7 @@ export type HelperTextProps = {
     current: number;
     max: number;
   };
-  beforeIcon?: IconName;
+  beforeIcon?: boolean;
   text?: string;
-  custom?: DeepPartial<SystemProps<Theme> & typeof config>
+  custom?: DeepPartial<SystemProps<Theme> & typeof config>;
 };

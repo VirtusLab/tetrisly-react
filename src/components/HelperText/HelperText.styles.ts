@@ -24,4 +24,20 @@ export const config = {
       color: 'content-positive-secondary',
     },
   },
+  icon: {
+    none: {
+      name: '16-info',
+    },
+    alert: {
+      name: '16-alert-full',
+    },
+    success: {
+      name: '16-check',
+    },
+  },
+  iconContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    minHeight: '2xSmall',
+  },
 } as const satisfies SystemProps<Theme> & Config;

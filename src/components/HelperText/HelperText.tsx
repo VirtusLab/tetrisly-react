@@ -10,13 +10,18 @@ import { MarginProps } from '@/types/MarginProps';
 
 export const HelperText = ({
   intent = 'none',
-  beforeIcon,
+  beforeIcon = false,
   counter,
   text,
   custom = {},
   ...rest
 }: HelperTextProps & MarginProps) => {
-  const { intent: intentStyles, ...restStyles } = merge(defaultConfig, custom);
+  const {
+    intent: intentStyles,
+    icon: iconStyles,
+    iconContainer: iconContainerStyles,
+    ...restStyles
+  } = merge(defaultConfig, custom);
 
   if (!isKeyOf(intentStyles, intent)) {
     throw new Error(`${intent} is not a valid intent`);
@@ -29,8 +34,10 @@ export const HelperText = ({
 
   return (
     <tet.div {...styles} {...rest} data-testid="helper-text">
-      {!!beforeIcon && (
-        <Icon name={beforeIcon} data-testid="helper-text-icon" />
+      {beforeIcon && (
+        <tet.span {...iconContainerStyles}>
+          <Icon {...iconStyles[intent]} data-testid="helper-text-icon" />
+        </tet.span>
       )}
       {!!text && text}
       {!!counter && (
