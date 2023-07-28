@@ -22,7 +22,7 @@ export const config = {
     color: 'content-secondary',
     display: 'flex',
     alignItems: 'center',
-    minHeight: '2xSmall',
+    minHeight: 'xSmall',
   },
   optional: {
     color: 'content-tertiary',
