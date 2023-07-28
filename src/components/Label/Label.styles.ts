@@ -20,6 +20,9 @@ export const config = {
   gap: 'component-gap-medium',
   tooltip: {
     color: 'content-secondary',
+    display: 'flex',
+    alignItems: 'center',
+    minHeight: '2xSmall',
   },
   optional: {
     color: 'content-tertiary',

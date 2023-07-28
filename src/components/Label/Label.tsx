@@ -25,13 +25,13 @@ export const Label = ({
       {label}
       {!!optional && (
         <tet.span {...optionalStyles} data-testid="label-optional">
-          ({optional})
+          {optional}
         </tet.span>
       )}
       {/* TODO: add tooltip instead of bare icon, when we get one */}
       {tooltip && (
         <tet.span {...tooltipStyles} data-testid="label-tooltip">
-          <Icon name="20-info-fill" />
+          <Icon name="16-info" />
         </tet.span>
       )}
       {/* TODO: add action when we discuss how they should behave */}
