@@ -24,7 +24,12 @@ describe('HelperText', () => {
 
   it('should render correct intent color (none)', () => {
     const { text, icon, counter } = getHelperText(
-      <HelperText intent="none" beforeIcon counter={{ current: 0, max: 0 }} />
+      <HelperText
+        text="Hello there"
+        intent="none"
+        beforeIcon
+        counter={{ current: 0, max: 0 }}
+      />
     );
     expect(text).toHaveStyle('color: rgb(85, 85, 85);');
     expect(icon).toHaveStyle('color: rgb(85, 85, 85);');
@@ -33,7 +38,12 @@ describe('HelperText', () => {
 
   it('should render correct intent color (alert)', () => {
     const { text, icon, counter } = getHelperText(
-      <HelperText intent="alert" beforeIcon counter={{ current: 0, max: 0 }} />
+      <HelperText
+        text="Hello there"
+        intent="alert"
+        beforeIcon
+        counter={{ current: 0, max: 0 }}
+      />
     );
     expect(text).toHaveStyle('color: rgb(197, 52, 52);');
     expect(icon).toHaveStyle('color: rgb(197, 52, 52);');
@@ -43,6 +53,7 @@ describe('HelperText', () => {
   it('should render correct intent color (success)', () => {
     const { text, icon, counter } = getHelperText(
       <HelperText
+        text="Hello there"
         intent="success"
         beforeIcon
         counter={{ current: 0, max: 0 }}
@@ -54,12 +65,14 @@ describe('HelperText', () => {
   });
 
   it('should render icon if passed as a prop', () => {
-    const { icon } = getHelperText(<HelperText beforeIcon />);
+    const { icon } = getHelperText(
+      <HelperText text="Hello there" beforeIcon />
+    );
     expect(icon).toBeInTheDocument();
   });
 
   it('should not render icon if not passed as a prop', () => {
-    const { icon } = getHelperText(<HelperText />);
+    const { icon } = getHelperText(<HelperText text="Hello there" />);
     expect(icon).toBeNull();
   });
 
@@ -71,7 +84,7 @@ describe('HelperText', () => {
   });
 
   it('should not render counter if not passed as a prop', () => {
-    const { counter } = getHelperText(<HelperText />);
+    const { counter } = getHelperText(<HelperText text="Hello there" />);
     expect(counter).toBeNull();
   });
 
