@@ -17,7 +17,7 @@ export const config = {
   color: 'content-primary',
   display: 'flex',
   alignItems: 'flex-start',
-  gap: 'component-gap-medium',
+  gap: 'component-gap-xSmall',
   tooltip: {
     color: 'content-secondary',
     display: 'flex',
