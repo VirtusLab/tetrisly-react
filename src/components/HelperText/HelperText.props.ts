@@ -13,6 +13,6 @@ export type HelperTextProps = {
     max: number;
   };
   beforeIcon?: boolean;
-  text?: string;
+  text: string;
   custom?: DeepPartial<SystemProps<Theme> & typeof config>;
 };

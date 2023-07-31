@@ -1,13 +1,13 @@
-import { IconProps } from '@virtuslab/tetrisly-icons';
 import { SystemProps } from '@xstyled/styled-components';
 
 import { HelperTextIntent } from './HelperTextIntent.type';
 
 import { Theme } from '@/theme';
+import { IconName } from '@/utility-types/IconName';
 
 type Config = {
   intent: Record<HelperTextIntent, SystemProps>;
-  icon: Record<HelperTextIntent, SystemProps & IconProps>;
+  icon: Record<HelperTextIntent, SystemProps & IconName<16>>;
   iconContainer: SystemProps;
 };
 
