@@ -1,4 +1,4 @@
-import { SystemProps, SystemProp, Color } from '@xstyled/styled-components';
+import { SystemProps } from '@xstyled/styled-components';
 
 import { fromEntries } from '@/services/fromEntries';
 import { Theme } from '@/theme';
@@ -45,17 +45,17 @@ export const config = {
         {
           high: {
             color: `content-primary${basicIntent !== 'warning' ? '-inverted' : ''
-              }` as SystemProp<Color<Theme>, Theme>,
+              }` as SystemProps['color'],
             backgroundColor: `background-${basicIntent}-strong`,
           },
           medium: {
             color: `content-${basicIntent !== 'neutral' ? `${basicIntent}-` : ''
-              }primary` as SystemProp<Color<Theme>, Theme>,
+              }primary` as SystemProps['color'],
             backgroundColor: `background-${basicIntent}-muted`,
           },
           low: {
             color: `content-${basicIntent !== 'neutral' ? `${basicIntent}-` : ''
-              }-primary` as SystemProp<Color<Theme>, Theme>,
+              }-primary` as SystemProps['color'],
             backgroundColor: `background-${basicIntent}-onSubtle`,
           },
         },
