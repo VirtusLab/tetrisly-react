@@ -55,7 +55,7 @@ describe('Loader', () => {
 
   it('should animate when progress is undefined', () => {
     const { progress } = getLoader(<Loader shape="bar" size="medium" />);
-    expect(progress).toHaveStyle('animation: mrMnx 1.4s infinite linear');
+    expect(progress).toHaveStyle('animation: fBJDHo 1.4s infinite linear');
   });
 
   it('should render correct appearance', () => {
