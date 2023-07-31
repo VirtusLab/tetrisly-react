@@ -1,2 +1,2 @@
-export { ProgressBar, ProgressCircle } from './Progress';
-export type { ProgressProps } from './Progress';
+export { Loader } from './Loader';
+export type { LoaderProps } from './Loader.props';

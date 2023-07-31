@@ -13,14 +13,16 @@ const animationCircle = keyframes`
 
 const animationBar = keyframes`
   0% {
-    transform: translate(-64px, 0px);
+    transform: translate(-50%, 0px);
   }
   100% {
-    transform: translate(192px, 0px);
+    transform: translate(150%, 0px);
   }
 `;
 
-export const AnimatedPath = styled(tet.path)<{ shape: string }>`
+export const AnimatedPath = styled(tet.path)<{
+  shape: string;
+}>`
   aspect-ratio: 1;
   transform-origin: center center;
   animation: ${({ shape }) =>

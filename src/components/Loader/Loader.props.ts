@@ -13,6 +13,3 @@ export type LoaderProps = {
   shape: LoaderShape;
   custom?: DeepPartial<SystemProps<Theme> & typeof config>;
 };
-
-export type ProgressCircleProps = Omit<LoaderProps, 'shape'>;
-export type ProgressBarProps = Omit<LoaderProps, 'shape'>;
