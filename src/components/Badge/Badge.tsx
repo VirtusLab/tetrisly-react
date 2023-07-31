@@ -1,4 +1,5 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
+import { merge } from 'lodash';
 
 import { BadgeProps } from './Badge.props';
 import { config as defaultConfig } from './Badge.styles';
@@ -13,14 +14,16 @@ export const Badge = ({
   afterIcon,
   icon,
   label,
+  custom = {},
 }: BadgeProps) => {
+  const config = merge(defaultConfig, custom);
   const {
     appearance: appearanceStyles,
     intent: intentStyles,
     label: labelStyles,
     icon: iconStyles,
     ...restStyles
-  } = defaultConfig;
+  } = config;
   const color = appearance
     ? appearanceStyles[appearance][emphasis]
     : intentStyles[intent][emphasis];
