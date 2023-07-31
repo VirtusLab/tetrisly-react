@@ -7,7 +7,7 @@ import { IconName } from '@/utility-types/IconName';
 
 type Config = {
   intent: Record<HelperTextIntent, SystemProps>;
-  icon: Record<HelperTextIntent, SystemProps & IconName<16>>;
+  icon: Record<HelperTextIntent, SystemProps & { name: IconName<16> }>;
   iconContainer: SystemProps;
 };
 
