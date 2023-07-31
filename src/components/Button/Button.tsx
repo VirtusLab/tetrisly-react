@@ -6,7 +6,7 @@ import { ButtonAppearance } from './types/ButtonAppearance.type';
 import { ButtonVariant } from './types/ButtonType.type';
 import { tet } from '../../tetrisly';
 
-import { MarginProps } from '@/types/MarginProps';
+import type { MarginProps } from '@/types';
 
 export const Button = <
   TVariant extends ButtonVariant = 'default',
