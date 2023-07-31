@@ -78,7 +78,7 @@ describe('HelperText', () => {
 
   it('should render counter if passed as a prop', () => {
     const { counter } = getHelperText(
-      <HelperText counter={{ current: 0, max: 0 }} />
+      <HelperText text="Hello there" counter={{ current: 0, max: 0 }} />
     );
     expect(counter).toBeInTheDocument();
   });
