@@ -48,13 +48,15 @@ export const config = {
             backgroundColor: `background-${basicIntent}-strong`,
           },
           medium: {
-            color: `content-${basicIntent !== 'neutral' && `${basicIntent}-`
-              }primary`,
+            color: `content-${
+              basicIntent !== 'neutral' && `${basicIntent}-`
+            }primary`,
             backgroundColor: `background-${basicIntent}-muted`,
           },
           low: {
-            color: `content-${basicIntent !== 'neutral' && `${basicIntent}-`
-              }-primary`,
+            color: `content-${
+              basicIntent !== 'neutral' && `${basicIntent}-`
+            }-primary`,
             backgroundColor: `background-${basicIntent}-onSubtle`,
           },
         },
