@@ -44,21 +44,18 @@ export const config = {
         basicIntent,
         {
           high: {
-            color: `content-primary${
-              basicIntent !== 'warning' ? '-inverted' : ''
-            }`,
+            color: `content-primary${basicIntent !== 'warning' ? '-inverted' : ''
+              }`,
             backgroundColor: `background-${basicIntent}-strong`,
           },
           medium: {
-            color: `content-${
-              basicIntent !== 'neutral' ? `${basicIntent}-` : ''
-            }primary`,
+            color: `content-${basicIntent !== 'neutral' ? `${basicIntent}-` : ''
+              }primary`,
             backgroundColor: `background-${basicIntent}-muted`,
           },
           low: {
-            color: `content-${
-              basicIntent !== 'neutral' ? `${basicIntent}-` : ''
-            }-primary`,
+            color: `content-${basicIntent !== 'neutral' ? `${basicIntent}-` : ''
+              }-primary`,
             backgroundColor: `background-${basicIntent}-onSubtle`,
           },
         },
@@ -78,4 +75,5 @@ export const config = {
     padding: 'component-padding-xSmall',
   },
   gap: 'component-gap-xSmall',
-} as const satisfies Omit<SystemProps<Theme>, 'padding'> & Config;
+} as const satisfies Omit<SystemProps<Theme>, 'appearance' | 'padding'> &
+  Config;
