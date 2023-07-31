@@ -44,18 +44,20 @@ export const config = {
         basicIntent,
         {
           high: {
-            color: `content-primary${basicIntent !== 'warning' && '-inverted'}`,
+            color: `content-primary${
+              basicIntent !== 'warning' ? '-inverted' : ''
+            }`,
             backgroundColor: `background-${basicIntent}-strong`,
           },
           medium: {
             color: `content-${
-              basicIntent !== 'neutral' && `${basicIntent}-`
+              basicIntent !== 'neutral' ? `${basicIntent}-` : ''
             }primary`,
             backgroundColor: `background-${basicIntent}-muted`,
           },
           low: {
             color: `content-${
-              basicIntent !== 'neutral' && `${basicIntent}-`
+              basicIntent !== 'neutral' ? `${basicIntent}-` : ''
             }-primary`,
             backgroundColor: `background-${basicIntent}-onSubtle`,
           },
