@@ -1,10 +1,7 @@
-import { SystemProps } from '@xstyled/styled-components';
-
 import { ButtonVariant } from './types/ButtonType.type';
 import { VariantConfig } from './VariantConfig';
-import { Theme } from '../../theme';
 
-type BaseProps = Omit<SystemProps<Theme>, 'appearance'>;
+import { BaseConfigProps } from '@/utility-types/BaseConfigProps';
 
 const size = {
   small: {
@@ -25,7 +22,7 @@ const size = {
     h: 'large',
     text: 'body-large',
   },
-} as const satisfies Record<'small' | 'medium' | 'large', BaseProps>;
+} as const satisfies Record<'small' | 'medium' | 'large', BaseConfigProps>;
 
 const commonConfig = {
   display: 'inline-flex',
@@ -51,7 +48,7 @@ const commonConfig = {
   },
   transition: true,
   transitionDuration: 200,
-} as const satisfies BaseProps;
+} as const satisfies BaseConfigProps;
 
 const defaultConfig = {
   ...commonConfig,

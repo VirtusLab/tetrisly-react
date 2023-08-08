@@ -1,6 +1,5 @@
 import { ButtonAppearance } from './ButtonAppearance.type';
 import { ButtonVariant } from './ButtonType.type';
-import { Equal, Expect } from '../../../utility-types/testing';
 
 type Intent = 'none' | 'success' | 'destructive';
 
