@@ -39,7 +39,7 @@ export const HelperText = ({
           <Icon {...iconStyles[intent]} data-testid="helper-text-icon" />
         </tet.span>
       )}
-      {!!text && text}
+      {text}
       {!!counter && (
         <tet.span data-testid="helper-text-counter">{`${counter.current}/${counter.max}`}</tet.span>
       )}
