@@ -3,3 +3,4 @@ export { HelperText } from './components/HelperText';
 export { Label } from './components/Label';
 export { Loader } from './components/Loader';
 export { StatusDot } from './components/StatusDot';
+export { TextInput } from './components/TextInput';
