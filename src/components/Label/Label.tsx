@@ -1,5 +1,4 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { MarginProps } from '@xstyled/styled-components';
 import { merge } from 'lodash';
 
 import { LabelProps } from './Label.props';
@@ -7,6 +6,7 @@ import { config as defaultConfig } from './Label.styles';
 // import { Button } from '../Button';
 
 import { tet } from '@/tetrisly';
+import { MarginProps } from '@/types/MarginProps';
 
 export const Label = ({
   label,
