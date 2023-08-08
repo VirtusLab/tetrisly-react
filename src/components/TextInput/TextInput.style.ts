@@ -18,8 +18,6 @@ export const config = {
     _: 'interaction-border-neutral-normal',
     hover: 'interaction-border-hover',
     focus: 'interaction-focus-default',
-    // active: 'action-outline-active',
-    // selected: 'action-outline-selected',
     alert: 'interaction-border-alert',
   },
   borderRadius: 'medium',
