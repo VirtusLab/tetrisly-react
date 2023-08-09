@@ -21,14 +21,14 @@ export interface TextInputProps
   > {
   type?: TextInputType;
   beforeComponent?:
-  | Component<'Icon', IconProps>
-  | Component<'Prefix', { text: string }>
-  | Component<'Dropdown', Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>>;
+    | Component<'Icon', IconProps>
+    | Component<'Prefix', { text: string }>
+    | Component<'Dropdown', Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>>;
   afterComponent?:
-  | Component<'Icon', IconProps>
-  | Component<'Sufix', { text: string }>
-  | Component<'Button', Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>>
-  | Component<'Dropdown', Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>>;
+    | Component<'Icon', IconProps>
+    | Component<'Sufix', { text: string }>
+    | Component<'Button', Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>>
+    | Component<'Dropdown', Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>>;
   state?: 'disabled' | 'alert' | 'alert-focus';
   hasClearButton?: boolean;
   custom?: DeepPartial<SystemProps<Theme> & typeof config>;

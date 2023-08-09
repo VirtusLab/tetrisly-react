@@ -81,3 +81,47 @@ export const BeforeDropdownComponent: Story = {
     },
   },
 };
+
+export const AfterDropdownComponent: Story = {
+  args: {
+    afterComponent: {
+      type: 'Dropdown',
+      props: {
+        label: 'Action',
+      },
+    },
+  },
+};
+
+export const AfterIconComponent: Story = {
+  args: {
+    afterComponent: {
+      type: 'Icon',
+      props: {
+        name: '20-bolt',
+      },
+    },
+  },
+};
+
+export const AfterPrefixComponent: Story = {
+  args: {
+    afterComponent: {
+      type: 'Sufix',
+      props: {
+        text: 'Sufix',
+      },
+    },
+  },
+};
+
+export const AfterButtonComponent: Story = {
+  args: {
+    afterComponent: {
+      type: 'Button',
+      props: {
+        label: 'Action',
+      },
+    },
+  },
+};

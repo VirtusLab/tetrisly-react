@@ -14,14 +14,7 @@ export const TextInput = forwardRef<
   TextInputProps & MarginProps
 >(
   (
-    {
-      type = 'text',
-      beforeComponent,
-      afterComponent,
-      // hasClearButton = false,
-      state,
-      custom = {},
-    },
+    { type = 'text', beforeComponent, afterComponent, state, custom = {} },
     inputRef
   ) => {
     const config = merge(custom, defaultConfig);
@@ -31,18 +24,32 @@ export const TextInput = forwardRef<
         icon: iconStyles,
         text: textStyles,
       },
+      spacing,
       ...defaultStyles
     } = config;
     return (
-      <tet.div {...defaultStyles} data-state={state}>
-        {beforeComponent?.type === 'Icon' && (
-          <Icon {...beforeComponent.props} {...iconStyles} />
-        )}
-        {beforeComponent?.type === 'Prefix' && (
-          <tet.span {...textStyles}>{beforeComponent.props.text}</tet.span>
-        )}
-        {beforeComponent?.type === 'Dropdown' && (
-          <Button variant="ghost" label="Label" dropdownIndicator />
+      <tet.div
+        {...defaultStyles}
+        pl={!!beforeComponent && '0'}
+        pr={!!afterComponent && '0'}
+        data-state={state}
+      >
+        {!!beforeComponent && (
+          <tet.span {...spacing.beforeComponent[beforeComponent.type]}>
+            {beforeComponent.type === 'Icon' && (
+              <Icon {...beforeComponent.props} {...iconStyles} />
+            )}
+            {beforeComponent.type === 'Prefix' && (
+              <tet.span {...textStyles}>{beforeComponent.props.text}</tet.span>
+            )}
+            {beforeComponent.type === 'Dropdown' && (
+              <Button
+                variant="ghost"
+                label={beforeComponent.props.label}
+                dropdownIndicator
+              />
+            )}
+          </tet.span>
         )}
         <tet.input
           {...inputStyles}
@@ -50,19 +57,27 @@ export const TextInput = forwardRef<
           disabled={state === 'disabled'}
           ref={inputRef}
         />
-        {afterComponent?.type === 'Icon' && (
-          <Icon {...afterComponent.props} {...iconStyles} />
+        {!!afterComponent && (
+          <tet.span {...spacing.afterComponent[afterComponent.type]}>
+            {afterComponent.type === 'Icon' && (
+              <Icon {...afterComponent.props} {...iconStyles} />
+            )}
+            {afterComponent.type === 'Sufix' && (
+              <tet.span {...textStyles}>{afterComponent.props.text}</tet.span>
+            )}
+            {afterComponent.type === 'Button' && (
+              <Button variant="ghost" label="Label" />
+            )}
+            {afterComponent.type === 'Dropdown' && (
+              <Button
+                variant="ghost"
+                label={afterComponent.props.label}
+                dropdownIndicator
+              />
+            )}
+            {/* TODO render IconButton with an clear input action if hasClearButton props is passed */}
+          </tet.span>
         )}
-        {afterComponent?.type === 'Sufix' && (
-          <tet.p {...textStyles}>{afterComponent.props.text}</tet.p>
-        )}
-        {afterComponent?.type === 'Button' && (
-          <Button variant="ghost" label="Label" />
-        )}
-        {afterComponent?.type === 'Dropdown' && (
-          <Button variant="ghost" label="Label" dropdownIndicator />
-        )}
-        {/* TODO render IconButton with an clear input action if hasClearButton props is passed */}
       </tet.div>
     );
   }
