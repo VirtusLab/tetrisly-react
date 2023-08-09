@@ -1,11 +1,12 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
 import { merge } from 'lodash';
-import { forwardRef } from 'react';
+import { forwardRef, useRef, MouseEvent } from 'react';
 
 import { TextInputProps } from './TextInput.props';
 import { config as defaultConfig } from './TextInput.style';
 import { Button } from '../Button';
 
+import { extractMarginProps } from '@/services/extractMarginProps';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
@@ -14,9 +15,20 @@ export const TextInput = forwardRef<
   TextInputProps & MarginProps
 >(
   (
-    { type = 'text', beforeComponent, afterComponent, state, custom = {} },
+    {
+      type = 'text',
+      beforeComponent,
+      afterComponent,
+      state,
+      custom = {},
+      ...rest
+    },
     inputRef
   ) => {
+    const [marginProps, inputProps] = extractMarginProps<
+      TextInputProps & MarginProps
+    >(rest);
+
     const config = merge(custom, defaultConfig);
     const {
       innerComponents: {
@@ -27,12 +39,27 @@ export const TextInput = forwardRef<
       spacing,
       ...defaultStyles
     } = config;
+
+    const containerRef = useRef<HTMLInputElement | null>(null);
+
+    const handleContainerClick = (e: MouseEvent) => {
+      if (e.target === containerRef.current) {
+        const input = containerRef.current?.querySelector('input');
+
+        if (input) input.focus();
+      }
+    };
+
     return (
       <tet.div
+        ref={containerRef}
+        onClick={handleContainerClick}
         {...defaultStyles}
         pl={!!beforeComponent && '0'}
         pr={!!afterComponent && '0'}
+        {...marginProps}
         data-state={state}
+        data-testid="text-input"
       >
         {!!beforeComponent && (
           <tet.span {...spacing.beforeComponent[beforeComponent.type]}>
@@ -53,6 +80,7 @@ export const TextInput = forwardRef<
         )}
         <tet.input
           {...inputStyles}
+          {...inputProps}
           type={type}
           disabled={state === 'disabled'}
           ref={inputRef}
