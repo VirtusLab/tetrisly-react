@@ -5,7 +5,7 @@ import { AvatarAppearance, avatarAppearances } from './AvatarAppearances';
 import { fromEntries } from '@/services/fromEntries';
 import { BaseProps } from '@/types/BaseProps';
 
-type Config = {
+export type AvatarConfig = {
   nestedImage: SystemProps;
   shape: Record<'rounded' | 'square', SystemProps>;
   size: Record<
@@ -87,7 +87,7 @@ export const config = {
             },
           },
         },
-      ]),
+      ])
     ),
   },
-} satisfies Config;
+} satisfies AvatarConfig;

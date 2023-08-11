@@ -1,32 +1,24 @@
 import { FC, ImgHTMLAttributes } from 'react';
 
 import { AvatarProps } from './Avatar.props';
-import { config } from './Avatar.styles';
+import { AvatarConfig, config } from './Avatar.styles';
+import { stylesBuilder } from './stylesBuilder';
 
-import { stylesBuilder } from '@/services/stylesBuilder';
 import { tet } from '@/tetrisly';
 import { WithCustom } from '@/utility-types/WithCustom';
 
-export const Avatar: FC<WithCustom<AvatarProps, typeof config>> = ({
+export const Avatar: FC<WithCustom<AvatarProps, AvatarConfig>> = ({
   appearance = 'blue',
   emphasis = 'low',
   shape = 'rounded',
   size = 'medium',
-  custom,
+  custom = {},
   ...rest
 }) => {
-  const { styles, nestedImage } = stylesBuilder({
-    variant: {
-      shape,
-      size,
-      appearance: { [appearance]: { emphasis } } as Record<
-        typeof appearance,
-        { emphasis: typeof emphasis }
-      >,
-    },
+  const { nestedImage, ...styles } = stylesBuilder({
     config,
     custom,
-    nestedList: ['nestedImage'],
+    variant: { appearance, emphasis, shape, size },
   });
   return (
     <tet.div {...styles}>
@@ -40,7 +32,7 @@ export const Avatar: FC<WithCustom<AvatarProps, typeof config>> = ({
 };
 
 function hasImage(
-  obj: object,
+  obj: object
 ): obj is { img: Omit<ImgHTMLAttributes<HTMLImageElement>, 'color'> } {
   return 'img' in obj;
 }
