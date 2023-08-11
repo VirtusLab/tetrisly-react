@@ -32,7 +32,7 @@ export const Avatar: FC<WithCustom<AvatarProps, AvatarConfig>> = ({
 };
 
 function hasImage(
-  obj: object
+  obj: object,
 ): obj is { img: Omit<ImgHTMLAttributes<HTMLImageElement>, 'color'> } {
   return 'img' in obj;
 }

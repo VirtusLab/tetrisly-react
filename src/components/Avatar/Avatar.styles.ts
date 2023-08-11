@@ -87,7 +87,7 @@ export const config = {
             },
           },
         },
-      ])
+      ]),
     ),
   },
 } satisfies AvatarConfig;
