@@ -4,7 +4,6 @@ import { ConfigWithNested } from './ConfigWithNested';
 import { splitNested } from './splitNested';
 import { spltStyles } from './splitStyles';
 import { Variant } from './Variant';
-import { fromEntries } from '../fromEntries';
 
 import { BaseProps } from '@/types/BaseProps';
 import { Custom } from '@/utility-types/WithCustom';
@@ -16,7 +15,7 @@ type Output<TNested extends readonly string[]> = { styles: BaseProps } & Record<
 
 export const stylesBuilder = <
   T extends object,
-  const TNested extends readonly string[] = [],
+  const TNested extends readonly string[] = []
 >({
   config: origConfig,
   variant: variantConfig,
@@ -31,14 +30,14 @@ export const stylesBuilder = <
   nestedList?.forEach((nestedElement) => {
     if (Object.keys(variantConfig).includes(nestedElement))
       throw new Error(
-        `nested element: ${nestedElement} is also a variant key, please remove it from nested list`,
+        `nested element: ${nestedElement} is also a variant key, please remove it from nested list`
       );
   });
   const config = merge(origConfig, custom || {}) as T;
   const { styles, rest: notStyles } = spltStyles<T, TNested>(config);
   const { nested: nestedConfig, rest } = splitNested(
     notStyles,
-    nestedList || [],
+    nestedList || []
   );
 
   if (Object.keys(rest).length === 0) return { styles } as Output<TNested>;
@@ -63,7 +62,7 @@ export const stylesBuilder = <
         config: value as ConfigType,
         variant: variantConfig,
       }).styles,
-    ]),
+    ])
   );
   return {
     styles: outputStyles,
@@ -73,7 +72,7 @@ export const stylesBuilder = <
 
 export function extractVariant<T extends object>(
   config: T,
-  variant: Variant<T>,
+  variant: Variant<T>
 ): BaseProps {
   const variantStyles = Object.entries(variant).reduce((acc, [key, value]) => {
     type Key = keyof typeof config;
@@ -88,12 +87,12 @@ export function extractVariant<T extends object>(
     }
     if (typeof value !== 'object' && value !== null) {
       throw new Error(
-        `value for the key: ${key.toString()} in variants is not an object`,
+        `value for the key: ${key.toString()} in variants is not an object`
       );
     }
     if (!isObject(config[key as Key])) {
       throw new Error(
-        `value for the key: ${key.toString()} in config is not an object`,
+        `value for the key: ${key.toString()} in config is not an object`
       );
     }
     type NewConfig = BaseProps &

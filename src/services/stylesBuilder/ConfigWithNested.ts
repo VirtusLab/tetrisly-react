@@ -1,4 +1,4 @@
 export type ConfigWithNested<
   TNested extends readonly string[],
-  TConfig,
+  TConfig
 > = Record<TNested[number], TConfig>;
