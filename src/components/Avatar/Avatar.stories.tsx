@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from './Avatar';
 import { avatarAppearances } from './AvatarAppearances';
+
 import { tet } from '@/tetrisly';
 
 const meta = {

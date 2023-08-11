@@ -4,12 +4,10 @@ module.exports = {
     '@virtuslab/eslint-config-tetrisly',
   ],
   rules: {
-    'no-use-before-define': [
-      'error',
+    '@typescript-eslint/no-use-before-define': [
+      2,
       {
         functions: false,
-        classes: false,
-        variables: false,
         typedefs: false,
       },
     ],

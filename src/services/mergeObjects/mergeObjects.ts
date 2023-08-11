@@ -6,7 +6,7 @@ function entriesOf<T extends object>(obj: T): [keyof T, T[keyof T]][] {
 
 function hasAttribute<
   TObj extends object,
-  TAttribute extends string | number | symbol,
+  TAttribute extends string | number | symbol
 >(obj: TObj, attribute: TAttribute): obj is TObj & Record<TAttribute, unknown> {
   return attribute in obj;
 }
@@ -27,12 +27,12 @@ export function mergeObjects<T extends object>(obj1: T, obj2: TwoPartial<T>) {
     }
   });
   const leftProperties = Object.keys(obj2).filter(
-    (key) => !Object.keys(obj1).includes(key),
+    (key) => !Object.keys(obj1).includes(key)
   );
   return {
     ...mergedObject,
     ...Object.fromEntries(
-      leftProperties.map((key) => [key, obj2[key as keyof typeof obj2]]),
+      leftProperties.map((key) => [key, obj2[key as keyof typeof obj2]])
     ),
   };
 }

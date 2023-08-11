@@ -5,7 +5,7 @@ type Intent = 'none' | 'success' | 'destructive';
 
 export type ButtonIntent<
   TVariant extends ButtonVariant,
-  TAppearance extends ButtonAppearance<TVariant>,
+  TAppearance extends ButtonAppearance<TVariant>
 > = TVariant extends 'default'
   ? TAppearance extends 'primary'
     ? Intent

@@ -21,7 +21,7 @@ describe('Button', () => {
   it('should throw an error if wrong config is provided', () => {
     expect(() =>
       // @ts-expect-error testing wrong appearance
-      render(<Button variant="default" appearance="reverseInverted" />),
+      render(<Button variant="default" appearance="reverseInverted" />)
     ).toThrowError();
     expect(() =>
       render(
@@ -30,8 +30,8 @@ describe('Button', () => {
           label="Hello There"
           afterIcon="20-placeholder"
           dropdownIndicator
-        />,
-      ),
+        />
+      )
     ).toThrowError();
   });
 

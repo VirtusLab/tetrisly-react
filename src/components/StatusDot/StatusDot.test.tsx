@@ -29,17 +29,17 @@ describe('StatusDot', () => {
 
   it('should render border', () => {
     const statusDotStroked = getStatusDot(
-      <StatusDot appearance="green" stroked />,
+      <StatusDot appearance="green" stroked />
     );
     expect(statusDotStroked).toHaveStyle(
-      'box-shadow: var(--x-ring-shadow,0 0 #0000),var(--x-shadow,0 0 #0000);',
+      'box-shadow: var(--x-ring-shadow,0 0 #0000),var(--x-shadow,0 0 #0000);'
     );
   });
 
   it('should throw an error if wrong config is provided', () => {
     expect(() =>
       // @ts-expect-error testing wrong appearance
-      render(<StatusDot appearance="reverseInverted" />),
+      render(<StatusDot appearance="reverseInverted" />)
     ).toThrowError();
   });
 });
