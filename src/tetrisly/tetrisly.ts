@@ -25,6 +25,11 @@ const opacity = style({
   key: 'opacity',
 });
 
+const strokeWidth = style({
+  prop: 'strokeWidth',
+  key: 'strokeWidth',
+});
+
 export const { css, styled, x, createGlobalStyle } = createCss(
   compose(
     animations,
@@ -44,7 +49,8 @@ export const { css, styled, x, createGlobalStyle } = createCss(
     transitions,
     typography,
     opacity,
-  ),
+    strokeWidth
+  )
 );
 
 export const t = x;
