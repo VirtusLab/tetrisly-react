@@ -1,4 +1,4 @@
-import { BaseKeys } from '@/services/stylesBuilder/baseKeys';
+import { BaseKeys } from '@/types/BaseKeys';
 import { BaseProps } from '@/types/BaseProps';
 
 type PartialWithBaseProps<T extends object> = {
