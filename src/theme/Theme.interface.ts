@@ -1226,4 +1226,6 @@ export type States = {
   loading: string;
   alert: string;
   indeterminate: string;
+  hoverNotChecked: string;
+  focusNotChecked: string;
 };

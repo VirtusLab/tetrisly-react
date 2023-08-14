@@ -54,10 +54,9 @@ export const config = {
         _: 'interaction-border-neutral-normal',
         checked: 'interaction-ghost-normal',
         alert: 'interaction-border-alert',
-        '&:hover:not(:checked):not(:alert)': 'interaction-border-hover',
-        '&:focus:not(:checked):not(:alert)':
-          'interaction-border-neutral-normal',
-        '&:indeterminate': 'none',
+        hoverNotChecked: 'interaction-border-hover',
+        focusNotChecked: 'interaction-border-neutral-normal',
+        indeterminate: 'transparent',
       },
       outlineStyle: {
         focusWithin: 'solid',
