@@ -5,17 +5,18 @@ import { BadgeProps } from './Badge.props';
 import { config as defaultConfig } from './Badge.styles';
 
 import { tet } from '@/tetrisly';
+import { MarginProps } from '@/types/MarginProps';
 
 export const Badge = ({
   appearance,
   intent,
-  emphasis,
+  emphasis = 'high',
   beforeIcon,
   afterIcon,
   icon,
   label,
   custom = {},
-}: BadgeProps) => {
+}: BadgeProps & MarginProps) => {
   const config = merge(defaultConfig, custom);
   const {
     appearance: appearanceStyles,

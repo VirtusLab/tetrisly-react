@@ -17,24 +17,22 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    appearance: 'blue',
-    emphasis: 'high',
-    icon: '16-bolt',
-  },
-};
-
-export const Label: Story = {
-  args: {
     intent: 'informative',
     emphasis: 'high',
     label: 'Label',
   },
 };
 
+export const Icon: Story = {
+  args: {
+    appearance: 'blue',
+    icon: '16-bolt',
+  },
+};
+
 export const LabelIcons: Story = {
   args: {
     intent: 'informative',
-    emphasis: 'high',
     label: 'Label',
     beforeIcon: '16-bolt',
     afterIcon: '16-bolt',
@@ -46,17 +44,12 @@ export const All = () => (
     <tet.p>High emphasis</tet.p>
     <tet.div display="flex" spaceX="component-gap-small">
       {basicAppearances.map((appearance) => (
-        <Badge
-          appearance={appearance}
-          emphasis="high"
-          icon="16-bolt"
-          key={appearance}
-        />
+        <Badge appearance={appearance} icon="16-bolt" key={appearance} />
       ))}
     </tet.div>
     <tet.div display="flex" spaceX="component-gap-small">
       {basicIntents.map((intent) => (
-        <Badge intent={intent} emphasis="high" icon="16-bolt" key={intent} />
+        <Badge intent={intent} icon="16-bolt" key={intent} />
       ))}
     </tet.div>
     <tet.p>Medium emphasis</tet.p>
