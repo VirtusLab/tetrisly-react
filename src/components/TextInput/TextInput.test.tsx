@@ -39,11 +39,11 @@ describe('TextInput', () => {
   });
 
   it('should emit onFocus', () => {
-    const textInput = getTextInput(<TextInput onBlur={handleEventMock} />);
+    const textInput = getTextInput(<TextInput onFocus={handleEventMock} />);
 
     const input = textInput.querySelector('input');
     if (input) {
-      fireEvent.blur(input);
+      fireEvent.focus(input);
     }
 
     expect(handleEventMock).toHaveBeenCalled();

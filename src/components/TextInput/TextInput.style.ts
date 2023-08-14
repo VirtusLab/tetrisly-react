@@ -44,9 +44,11 @@ export const config = {
   outlineWidth: {
     focusWithin: 'focus',
   },
-  outlineOffset: 2,
+  outlineOffset: {
+    alert: 'focus',
+  },
   transition: true,
-  transitionDuration: 200,
+  transitionDuration: 50,
   cursor: 'text',
   pointerEvents: {
     disabled: 'none',
