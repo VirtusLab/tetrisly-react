@@ -16,6 +16,6 @@ export type BadgeProps = Or<
     { label: string; beforeIcon?: IconName<16>; afterIcon?: IconName<16> },
     { icon: IconName<16> }
   > & {
-    emphasis: 'high' | 'medium' | 'low';
+    emphasis?: 'high' | 'medium' | 'low';
     custom?: DeepPartial<SystemProps<Theme> & typeof config>;
   };
