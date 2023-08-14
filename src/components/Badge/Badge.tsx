@@ -16,6 +16,7 @@ export const Badge = ({
   icon,
   label,
   custom = {},
+  ...restProps
 }: BadgeProps & MarginProps) => {
   const config = merge(defaultConfig, custom);
   const {
@@ -25,16 +26,27 @@ export const Badge = ({
     icon: iconStyles,
     ...restStyles
   } = config;
+
+  if (!appearance && !intent) {
+    throw new Error('Badge needs to have defined appearance or intent prop');
+  }
+
   const color = appearance
     ? appearanceStyles[appearance][emphasis]
     : intentStyles[intent][emphasis];
   const padding = label ? labelStyles : iconStyles;
   return (
-    <tet.div {...color} {...padding} {...restStyles}>
-      {!!beforeIcon && <Icon name={beforeIcon} />}
-      {!!icon && <Icon name={icon} />}
+    <tet.div
+      {...color}
+      {...padding}
+      {...restStyles}
+      {...restProps}
+      data-testid="badge"
+    >
+      {!!beforeIcon && <Icon name={beforeIcon} data-testid="badge-icon" />}
+      {!!icon && <Icon name={icon} data-testid="badge-icon" />}
       {label}
-      {!!afterIcon && <Icon name={afterIcon} />}
+      {!!afterIcon && <Icon name={afterIcon} data-testid="badge-icon" />}
     </tet.div>
   );
 };
