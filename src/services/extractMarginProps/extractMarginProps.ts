@@ -13,12 +13,12 @@ import {
 
 interface MarginsProps
   extends MarginProps,
-  MarginLeftProps,
-  MarginBottomProps,
-  MarginTopProps,
-  MarginRightProps,
-  MarginXProps,
-  MarginYProps { }
+    MarginLeftProps,
+    MarginBottomProps,
+    MarginTopProps,
+    MarginRightProps,
+    MarginXProps,
+    MarginYProps {}
 
 const marginPropsKeys: (keyof MarginsProps)[] = [
   'm',
