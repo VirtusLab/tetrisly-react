@@ -1,9 +1,10 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
 import { merge } from 'lodash';
-import { forwardRef, useEffect, useId, useRef, useState } from 'react';
+import { forwardRef, useId } from 'react';
 
 import type { CheckboxProps } from './Checkbox.props';
 import { config as defaultConfig } from './Checkbox.styles';
+import { useIconChecked, useIndeterminate } from './hooks';
 import { HelperText } from '../HelperText';
 
 import { extractMarginProps } from '@/services';
@@ -25,14 +26,14 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
     },
     checkboxForwardRef
   ) => {
-    const [isIconChecked, setIsIconChecked] = useState(isChecked);
-
     const [marginProps, { onChange: onCheckboxChange, ...checkboxProps }] =
       extractMarginProps<Props>(restProps);
 
+    const [isIconChecked, setIsIconChecked] = useIconChecked(isChecked);
+
     const checkboxId = useId();
 
-    const checkboxLocalRef = useRef<HTMLInputElement | null>(null);
+    const checkboxRef = useIndeterminate(isIndeterminate);
 
     const options = merge(defaultConfig, custom);
     const {
@@ -46,16 +47,6 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
       ...defaultStyles
     } = options;
 
-    useEffect(() => {
-      if (checkboxLocalRef.current !== null) {
-        checkboxLocalRef.current.indeterminate = isIndeterminate;
-      }
-    }, [checkboxLocalRef, isIndeterminate]);
-
-    useEffect(() => {
-      setIsIconChecked(isChecked);
-    }, [isChecked]);
-
     return (
       <tet.div {...defaultStyles} {...marginProps} data-testid="checkbox">
         <tet.label
@@ -67,7 +58,7 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
             <tet.input
               type="checkbox"
               ref={(instance) => {
-                checkboxLocalRef.current = instance;
+                checkboxRef.current = instance;
                 if (typeof checkboxForwardRef === 'function') {
                   checkboxForwardRef(instance);
                 } else if (checkboxForwardRef) {

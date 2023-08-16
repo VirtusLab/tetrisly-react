@@ -13,12 +13,12 @@ import {
 
 interface MarginsProps
   extends MarginProps,
-    MarginLeftProps,
-    MarginBottomProps,
-    MarginTopProps,
-    MarginRightProps,
-    MarginXProps,
-    MarginYProps {}
+  MarginLeftProps,
+  MarginBottomProps,
+  MarginTopProps,
+  MarginRightProps,
+  MarginXProps,
+  MarginYProps { }
 
 const marginPropsKeys: (keyof MarginsProps)[] = [
   'm',
@@ -61,11 +61,11 @@ export const extractMarginProps = <T = object>(
 
   Object.entries(props).forEach(([key, value]: [string, unknown]) => {
     if (marginPropsKeys.includes(key as keyof MarginsProps)) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (marginsProps as any)[key] = value;
+      marginsProps[key as keyof MarginsProps] =
+        value as MarginsProps[keyof MarginsProps];
     } else {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (restProps as any)[key] = value;
+      restProps[key as keyof OmitMarginProps<T>] =
+        value as OmitMarginProps<T>[keyof OmitMarginProps<T>];
     }
   });
 
