@@ -1,16 +1,19 @@
-import { SystemProp } from '@xstyled/styled-components';
+import { SystemProp, SystemProps } from '@xstyled/styled-components';
 
 import { config } from './Divider.styles';
-import { DividerOrientation } from './DividerOrientation.type';
 
 import { Theme } from '@/theme';
-import { WithCustom } from '@/utility-types/WithCustom';
+import { DeepPartial } from '@/utility-types/DeepPartial';
 
-export type DividerProps = WithCustom<
-  {
-    orientation?: DividerOrientation;
-    width?: SystemProp<string | number | object | (string & object), Theme>;
-    height?: SystemProp<string | number | object | (string & object), Theme>;
-  },
-  typeof config
->;
+export type DividerProps = (
+  | {
+      orientation: 'vertical';
+      height?: SystemProp<string | number | object | (string & object), Theme>;
+    }
+  | {
+      orientation?: 'horizontal';
+      width?: SystemProp<string | number | object | (string & object), Theme>;
+    }
+) & {
+  custom?: DeepPartial<SystemProps<Theme> & typeof config>;
+};

@@ -9,11 +9,7 @@ type Custom = {
 };
 
 export const config = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
   backgroundColor: 'border-default',
-  flexShrink: 0,
   orientation: {
     horizontal: {
       w: '100%',

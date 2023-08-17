@@ -15,8 +15,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const Vertical = () => (
-  <tet.div h="100px">
-    <Divider orientation="vertical" />
-  </tet.div>
-);
+export const Vertical: Story = {
+  args: {
+    orientation: 'vertical',
+  },
+  render: (args) => (
+    <tet.div h="100px">
+      <Divider {...args} />
+    </tet.div>
+  ),
+};
