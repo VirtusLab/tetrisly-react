@@ -1,12 +1,10 @@
 import { SystemProps } from '@xstyled/styled-components';
 
-import { Theme } from '@/theme';
+import { BaseProps } from '@/types/BaseProps';
 
 type Config = {
   innerComponents: {
-    checkbox: SystemProps;
-    checkboxContainer: SystemProps;
-    checkboxIcon: SystemProps;
+    radioButton: SystemProps;
     label: SystemProps;
     helperText: SystemProps;
   };
@@ -27,41 +25,32 @@ export const config = {
     disabled: 'none',
   },
   innerComponents: {
-    checkboxContainer: {
-      position: 'relative',
-    },
-    checkbox: {
+    radioButton: {
       appearance: 'none',
-      display: 'block',
-      w: '3xSmall',
-      h: '3xSmall',
-      backgroundColor: {
-        _: 'interaction-background-formField',
-        checked: {
-          _: 'interaction-default-normal',
-          hover: 'interaction-default-hover',
-        },
-        indeterminate: {
-          _: 'interaction-default-normal',
-          hover: 'interaction-default-hover',
-        },
+      display: 'flex',
+      w: '16px',
+      h: '16px',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexShrink: 0,
+      backgroundColor: 'interaction-background-formField',
+      ring: {
+        _: 'focus',
+        checked: '5px',
       },
-      color: 'white',
-      ring: 'focus',
-      borderRadius: 'medium',
+      borderRadius: 'full',
       ringInset: true,
       ringColor: {
         _: 'interaction-border-neutral-normal',
         hover: 'interaction-border-hover',
         checked: {
-          _: 'interaction-ghost-normal',
-          hover: 'interaction-ghost-normal',
+          _: 'interaction-default-normal',
+          hover: 'interaction-default-hover',
         },
         alert: {
           _: 'interaction-border-alert',
           hover: 'interaction-border-alert',
         },
-        indeterminate: 'transparent',
       },
       outlineStyle: {
         focusWithin: 'solid',
@@ -79,12 +68,6 @@ export const config = {
       transitionDuration: 200,
       cursor: 'pointer',
     },
-    checkboxIcon: {
-      position: 'absolute',
-      color: 'interaction-inverted-normal',
-      left: 0,
-      top: 0,
-    },
     label: {
       display: 'flex',
       justifyContent: 'center',
@@ -98,4 +81,4 @@ export const config = {
       paddingLeft: 'component-padding-2xLarge',
     },
   },
-} as const satisfies SystemProps<Theme> & Config;
+} as const satisfies BaseProps & Config;

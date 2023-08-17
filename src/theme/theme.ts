@@ -1155,8 +1155,10 @@ const tempTheme: Omit<Theme, 'ringWidths'> = {
     loading: '&[data-state="loading"]',
     alert: '&:invalid, &[data-state="alert"]',
     indeterminate: '&:indeterminate',
-    hoverNotChecked: '&:hover:not(:checked):not(:alert)',
-    focusNotChecked: '&:focus:not(:checked):not(:alert)',
+    hoverNotChecked: '&:hover:not(:checked)',
+    hoverNotAlerted: '&:hover:not(:invalid, [data-state="alert"])',
+    focusNotChecked: '&:focus:not(:checked)',
+    focusNotAlerted: '&:focus:not(:invalid, [data-state="alert"])',
   },
 };
 
