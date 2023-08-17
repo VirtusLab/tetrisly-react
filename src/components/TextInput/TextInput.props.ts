@@ -8,29 +8,30 @@ import { ButtonProps } from '../Button';
 
 import { Theme } from '@/theme';
 import type { BasicInputState } from '@/types';
+import { InnerComponent } from '@/types/InnerComponent';
 import { DeepPartial } from '@/utility-types/DeepPartial';
 
-type Component<N, P = object> = {
-  type: N;
-  props: P;
-};
-
-export interface TextInputProps
-  extends Omit<
-    InputHTMLAttributes<HTMLInputElement>,
-    'disabled' | 'color' | 'type'
-  > {
+export type TextInputProps = {
   type?: TextInputType;
   beforeComponent?:
-    | Component<'Icon', IconProps>
-    | Component<'Prefix', { text: string }>
-    | Component<'Dropdown', Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>>;
+    | InnerComponent<'Icon', IconProps>
+    | InnerComponent<'Prefix', { text: string }>
+    | InnerComponent<
+        'Dropdown',
+        Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>
+      >;
   afterComponent?:
-    | Component<'Icon', IconProps>
-    | Component<'Sufix', { text: string }>
-    | Component<'Button', Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>>
-    | Component<'Dropdown', Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>>;
+    | InnerComponent<'Icon', IconProps>
+    | InnerComponent<'Sufix', { text: string }>
+    | InnerComponent<'Button', Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>>
+    | InnerComponent<
+        'Dropdown',
+        Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>
+      >;
   state?: BasicInputState;
   hasClearButton?: boolean;
   custom?: DeepPartial<SystemProps<Theme> & typeof config>;
-}
+} & Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'checked' | 'disabled' | 'color' | 'type'
+>;

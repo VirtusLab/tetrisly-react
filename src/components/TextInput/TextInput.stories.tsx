@@ -18,36 +18,12 @@ export const Default: Story = {};
 
 export const Disabled: Story = {
   args: {
-    beforeComponent: {
-      type: 'Icon',
-      props: {
-        name: '20-bolt',
-      },
-    },
-    afterComponent: {
-      type: 'Icon',
-      props: {
-        name: '20-bolt',
-      },
-    },
     state: 'disabled',
   },
 };
 
 export const Alert: Story = {
   args: {
-    beforeComponent: {
-      type: 'Icon',
-      props: {
-        name: '20-bolt',
-      },
-    },
-    afterComponent: {
-      type: 'Icon',
-      props: {
-        name: '20-bolt',
-      },
-    },
     state: 'alert',
   },
 };
