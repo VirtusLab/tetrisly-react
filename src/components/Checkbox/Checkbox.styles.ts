@@ -52,10 +52,15 @@ export const config = {
       ringInset: true,
       ringColor: {
         _: 'interaction-border-neutral-normal',
-        checked: 'interaction-ghost-normal',
-        alert: 'interaction-border-alert',
-        hoverNotChecked: 'interaction-border-hover',
-        focusNotChecked: 'interaction-border-neutral-normal',
+        hover: 'interaction-border-hover',
+        checked: {
+          _: 'interaction-ghost-normal',
+          hover: 'interaction-ghost-normal',
+        },
+        alert: {
+          _: 'interaction-border-alert',
+          hover: 'interaction-border-alert',
+        },
         indeterminate: 'transparent',
       },
       outlineStyle: {

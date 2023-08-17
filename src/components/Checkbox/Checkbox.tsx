@@ -48,7 +48,12 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
     } = options;
 
     return (
-      <tet.div {...defaultStyles} {...marginProps} data-testid="checkbox">
+      <tet.div
+        {...defaultStyles}
+        {...marginProps}
+        data-state={state}
+        data-testid="checkbox"
+      >
         <tet.label
           htmlFor={checkboxId}
           {...labelStyles}
