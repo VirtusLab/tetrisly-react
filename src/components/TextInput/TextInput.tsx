@@ -64,13 +64,16 @@ export const TextInput = forwardRef<
         {!!beforeComponent && (
           <tet.span {...spacing.beforeComponent[beforeComponent.type]}>
             {beforeComponent.type === 'Icon' && (
-              <Icon {...beforeComponent.props} {...iconStyles} />
+              <tet.span {...iconStyles}>
+                <Icon {...beforeComponent.props} />
+              </tet.span>
             )}
             {beforeComponent.type === 'Prefix' && (
               <tet.span {...textStyles}>{beforeComponent.props.text}</tet.span>
             )}
             {beforeComponent.type === 'Dropdown' && (
               <Button
+                size="small"
                 variant="ghost"
                 label={beforeComponent.props.label}
                 dropdownIndicator
@@ -88,16 +91,19 @@ export const TextInput = forwardRef<
         {!!afterComponent && (
           <tet.span {...spacing.afterComponent[afterComponent.type]}>
             {afterComponent.type === 'Icon' && (
-              <Icon {...afterComponent.props} {...iconStyles} />
+              <tet.span {...iconStyles}>
+                <Icon {...afterComponent.props} />
+              </tet.span>
             )}
             {afterComponent.type === 'Sufix' && (
               <tet.span {...textStyles}>{afterComponent.props.text}</tet.span>
             )}
             {afterComponent.type === 'Button' && (
-              <Button variant="ghost" label="Label" />
+              <Button size="small" variant="ghost" label="Label" />
             )}
             {afterComponent.type === 'Dropdown' && (
               <Button
+                size="small"
                 variant="ghost"
                 label={afterComponent.props.label}
                 dropdownIndicator

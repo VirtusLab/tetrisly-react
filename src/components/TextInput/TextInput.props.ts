@@ -7,6 +7,7 @@ import { TextInputType } from './TextInputType.type';
 import { ButtonProps } from '../Button';
 
 import { Theme } from '@/theme';
+import type { BasicInputState } from '@/types';
 import { DeepPartial } from '@/utility-types/DeepPartial';
 
 type Component<N, P = object> = {
@@ -29,7 +30,7 @@ export interface TextInputProps
     | Component<'Sufix', { text: string }>
     | Component<'Button', Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>>
     | Component<'Dropdown', Pick<ButtonProps<'ghost'>, 'label' | 'onClick'>>;
-  state?: 'disabled' | 'alert' | 'alert-focus';
+  state?: BasicInputState;
   hasClearButton?: boolean;
   custom?: DeepPartial<SystemProps<Theme> & typeof config>;
 }

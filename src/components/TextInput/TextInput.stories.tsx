@@ -6,6 +6,9 @@ const meta = {
   title: 'Components/Text Input',
   component: TextInput,
   tags: ['autodocs'],
+  args: {
+    placeholder: 'Placeholder',
+  },
 } satisfies Meta<typeof TextInput>;
 
 export default meta;
