@@ -1,3 +1,4 @@
+export { Badge } from './components/Badge';
 export { Button } from './components/Button';
 export { HelperText } from './components/HelperText';
 export { Label } from './components/Label';
