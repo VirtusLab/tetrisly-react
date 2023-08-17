@@ -31,7 +31,12 @@ export const RadioButton = forwardRef<HTMLInputElement, Props>(
     const radioButtonId = useId();
 
     return (
-      <tet.div {...restStyles} {...marginProps} data-state={state}>
+      <tet.div
+        {...restStyles}
+        {...marginProps}
+        data-state={state}
+        data-testid="radio-button"
+      >
         <tet.label
           {...labelStyles}
           htmlFor={radioButtonId}
