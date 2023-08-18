@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: ["development"]
+    branches: ['development']
   pull_request:
-    branches: ["development"]
+    branches: ['development']
 
 jobs:
   build:
@@ -24,13 +24,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "yarn"
+          cache: 'yarn'
 
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - run: yarn build-storybook
       - run: yarn test
+      - run: npx chromatic --project-token=${{ secrets.CHROMATIC_TOKEN }}

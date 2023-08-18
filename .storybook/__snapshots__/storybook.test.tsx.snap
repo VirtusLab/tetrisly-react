@@ -1,0 +1,1246 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Storybook Snapshots > 'Components/Button' > AllOptions 1`] = `
+<div>
+  <div
+    class="sc-dGCmGc"
+  >
+    <div
+      class="sc-dGCmGc ioZWzo"
+    >
+      <b
+        class="sc-kMribo bqJDbe"
+      >
+        default
+      </b>
+      <div
+        class="sc-dGCmGc cSJXgB"
+      >
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                primary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                success
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf cTsFgW"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf eoeOWz"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf egiilD"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                primary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                destructive
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf dUQXne"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf bVrLij"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf iCKbwX"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                primary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                none
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf juVjfK"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf bJMXMX"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf bBQrcb"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-dGCmGc cSJXgB"
+      >
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                secondary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                success
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf jnHSPl"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf FvHOU"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf cpQakw"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                secondary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                destructive
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf jFXHGV"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf jOPCtI"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf dYiLsg"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                secondary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                none
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf idIBRZ"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf gQqIHk"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf iALbcM"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-dGCmGc cSJXgB"
+      >
+        <div
+          class="sc-dGCmGc cqYFhU"
+        >
+          <div
+            class="sc-dGCmGc iKfGuz"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw fJruEC"
+              >
+                inverted
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw fJruEC"
+              >
+                none
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf jysBdE"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf eAiIcJ"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf cRxWPx"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-dGCmGc hvHjKN"
+    >
+      <b
+        class="sc-kMribo bqJDbe"
+      >
+        ghost
+      </b>
+      <div
+        class="sc-dGCmGc cSJXgB"
+      >
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                primary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                success
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf guuNvW"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf hocYmv"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf RrNZz"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                primary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                destructive
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf iDVYna"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf gfCDsn"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf WwJvr"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                primary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                none
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf cyMiae"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf bxhFlz"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf gpSexz"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-dGCmGc cSJXgB"
+      >
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                secondary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                none
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf hKvFKK"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf dYPdIn"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf iRzCUn"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-dGCmGc cSJXgB"
+      >
+        <div
+          class="sc-dGCmGc cqYFhU"
+        >
+          <div
+            class="sc-dGCmGc iKfGuz"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw fJruEC"
+              >
+                inverted
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw fJruEC"
+              >
+                none
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf eHOCvK"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf liNCMX"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf fafNVT"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-dGCmGc cSJXgB"
+      >
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                reverseInverted
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                none
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf wWVme"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf KiKrX"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf lHaTb"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-dGCmGc hvHjKN"
+    >
+      <b
+        class="sc-kMribo bqJDbe"
+      >
+        bare
+      </b>
+      <div
+        class="sc-dGCmGc cSJXgB"
+      >
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                primary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                success
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf DWOMg"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf DWOMg"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                primary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                destructive
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf hOvmhY"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf hOvmhY"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                primary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                none
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf kQtXmE"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf kQtXmE"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-dGCmGc cSJXgB"
+      >
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                secondary
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                none
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf lfOHEw"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf lfOHEw"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-dGCmGc cSJXgB"
+      >
+        <div
+          class="sc-dGCmGc cqYFhU"
+        >
+          <div
+            class="sc-dGCmGc iKfGuz"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw fJruEC"
+              >
+                inverted
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw fJruEC"
+              >
+                none
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf lifkMZ"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf lifkMZ"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-dGCmGc cSJXgB"
+      >
+        <div
+          class="sc-dGCmGc dnGuup"
+        >
+          <div
+            class="sc-dGCmGc eoRCJB"
+          >
+            <div>
+              Appearance:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                reverseInverted
+              </span>
+            </div>
+            ·
+            <div>
+              Intent:
+               
+              <span
+                class="sc-gtJxfw eRSWjw"
+              >
+                none
+              </span>
+            </div>
+          </div>
+          <div
+            class="sc-dGCmGc fCQytW"
+          >
+            <button
+              class="sc-lizKOf iGmHPN"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+            <button
+              class="sc-lizKOf iGmHPN"
+              data-testid="button"
+              style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+            >
+              Button label
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Button' > Bare 1`] = `
+<div>
+  <button
+    class="sc-lizKOf lfOHEw"
+    data-testid="button"
+    style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+  >
+    Button label
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Button' > BareDisabled 1`] = `
+<div>
+  <button
+    class="sc-lizKOf gQqIHk"
+    data-state="disabled"
+    data-testid="button"
+    disabled=""
+    style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+  >
+    Button label
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Button' > BareLoading 1`] = `
+<div>
+  <button
+    class="sc-lizKOf gQqIHk"
+    data-state="loading"
+    data-testid="button"
+    disabled=""
+    style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+  >
+    ...
+    Button label
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Button' > Default 1`] = `
+<div>
+  <button
+    class="sc-lizKOf gQqIHk"
+    data-testid="button"
+    style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+  >
+    Button label
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Button' > DefaultAfterIcon 1`] = `
+<div>
+  <button
+    class="sc-lizKOf gQqIHk"
+    data-testid="button"
+    style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+  >
+    Button label
+    <svg
+      fill="none"
+      height="20"
+      viewBox="0 0 20 20"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M10 2.50024C5.85786 2.50024 2.5 5.85811 2.5 10.0002C2.5 14.1424 5.85786 17.5002 10 17.5002C14.1421 17.5002 17.5 14.1424 17.5 10.0002C17.5 5.85811 14.1421 2.50024 10 2.50024ZM1 10.0002C1 5.02968 5.02944 1.00024 10 1.00024C14.9706 1.00024 19 5.02968 19 10.0002C19 14.9708 14.9706 19.0002 10 19.0002C5.02944 19.0002 1 14.9708 1 10.0002Z"
+        fill="currentColor"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Button' > DefaultBeforeIcon 1`] = `
+<div>
+  <button
+    class="sc-lizKOf gQqIHk"
+    data-testid="button"
+    style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+  >
+    <svg
+      fill="none"
+      height="20"
+      viewBox="0 0 20 20"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M10 2.50024C5.85786 2.50024 2.5 5.85811 2.5 10.0002C2.5 14.1424 5.85786 17.5002 10 17.5002C14.1421 17.5002 17.5 14.1424 17.5 10.0002C17.5 5.85811 14.1421 2.50024 10 2.50024ZM1 10.0002C1 5.02968 5.02944 1.00024 10 1.00024C14.9706 1.00024 19 5.02968 19 10.0002C19 14.9708 14.9706 19.0002 10 19.0002C5.02944 19.0002 1 14.9708 1 10.0002Z"
+        fill="currentColor"
+        fill-rule="evenodd"
+      />
+    </svg>
+    Button label
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Button' > DefaultDisabled 1`] = `
+<div>
+  <button
+    class="sc-lizKOf gQqIHk"
+    data-state="disabled"
+    data-testid="button"
+    disabled=""
+    style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+  >
+    Button label
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Button' > DefaultDropdown 1`] = `
+<div>
+  <button
+    class="sc-lizKOf gQqIHk"
+    data-testid="button"
+    style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+  >
+    Button label
+    <svg
+      fill="none"
+      height="20"
+      viewBox="0 0 20 20"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M4.23214 7.20748C4.53177 6.92148 5.00651 6.93252 5.29252 7.23214L10 12.1638L14.7075 7.23215C14.9935 6.93252 15.4682 6.92148 15.7679 7.20749C16.0675 7.49349 16.0785 7.96824 15.7925 8.26786L10.5425 13.7679C10.401 13.9161 10.205 14 10 14C9.79504 14 9.59901 13.9161 9.45748 13.7679L4.20748 8.26786C3.92148 7.96823 3.93252 7.49349 4.23214 7.20748Z"
+        fill="currentColor"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Button' > DefaultLoading 1`] = `
+<div>
+  <button
+    class="sc-lizKOf gQqIHk"
+    data-state="loading"
+    data-testid="button"
+    disabled=""
+    style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+  >
+    ...
+    Button label
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Button' > Ghost 1`] = `
+<div>
+  <button
+    class="sc-lizKOf dYPdIn"
+    data-testid="button"
+    style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+  >
+    Button label
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Button' > GhostDisabled 1`] = `
+<div>
+  <button
+    class="sc-lizKOf gQqIHk"
+    data-state="disabled"
+    data-testid="button"
+    disabled=""
+    style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+  >
+    Button label
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Button' > GhostLoading 1`] = `
+<div>
+  <button
+    class="sc-lizKOf gQqIHk"
+    data-state="loading"
+    data-testid="button"
+    disabled=""
+    style="text-underline-offset: 3px; text-decoration-thickness: 1px;"
+  >
+    ...
+    Button label
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Status Dot' > Default 1`] = `
+<div>
+  <div
+    class="sc-dGCmGc fIeOBq"
+    data-testid="status-dot"
+  />
+</div>
+`;
+
+exports[`Storybook Snapshots > 'Components/Status Dot' > Stroked 1`] = `
+<div>
+  <div
+    class="sc-dGCmGc etjzMW"
+    data-testid="status-dot"
+  />
+</div>
+`;
