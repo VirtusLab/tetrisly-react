@@ -1,10 +1,11 @@
 import { FC, ImgHTMLAttributes } from 'react';
 
 import { AvatarProps } from './Avatar.props';
-import { AvatarConfig, config } from './Avatar.styles';
+import { config } from './Avatar.styles';
 import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
+import { MarginProps } from '@/types/MarginProps';
 
 export const Avatar: FC<AvatarProps> = ({
   appearance = 'blue',
@@ -12,6 +13,7 @@ export const Avatar: FC<AvatarProps> = ({
   shape = 'rounded',
   size = 'medium',
   custom = {},
+  initials,
   ...rest
 }) => {
   const { nestedImage, ...styles } = stylesBuilder({
@@ -19,19 +21,22 @@ export const Avatar: FC<AvatarProps> = ({
     custom,
     variant: { appearance, emphasis, shape, size },
   });
+
+  const [img, marginProps] = extractImage(rest);
+
   return (
-    <tet.div {...styles}>
-      {hasImage(rest) && rest.img !== null ? (
-        <tet.img {...nestedImage} {...rest.img} />
-      ) : (
-        rest.initials
-      )}
+    <tet.div {...{ ...styles, ...marginProps }}>
+      {img !== null ? <tet.img {...nestedImage} {...img} /> : initials}
     </tet.div>
   );
 };
 
-function hasImage(
-  obj: object
-): obj is { img: Omit<ImgHTMLAttributes<HTMLImageElement>, 'color'> } {
-  return 'img' in obj;
+function extractImage<T extends object>(obj: T) {
+  if ('img' in obj) {
+    const { img, ...marginProps } = obj as {
+      img: Omit<ImgHTMLAttributes<HTMLImageElement>, 'color'>;
+    } & MarginProps;
+    return [img, marginProps] as const;
+  }
+  return [null, obj] as const;
 }

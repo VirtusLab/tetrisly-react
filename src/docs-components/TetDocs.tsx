@@ -1,5 +1,5 @@
 import { TetrislyProvider, tet } from '@/tetrisly';
-import { Primary, Controls } from '@storybook/blocks';
+import { Primary, Controls, Stories } from '@storybook/blocks';
 
 import { Unstyled, useOf } from '@storybook/blocks';
 import { FC, PropsWithChildren } from 'react';
@@ -35,6 +35,7 @@ export const TetDocs: FC<PropsWithChildren<{ docs: string }>> = ({
       </Unstyled>
       <Primary />
       <Controls />
+      <Stories />
     </>
   );
 };

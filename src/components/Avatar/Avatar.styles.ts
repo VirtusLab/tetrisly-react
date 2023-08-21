@@ -1,21 +1,19 @@
-import { SystemProps } from '@xstyled/styled-components';
-
-import { AvatarAppearance, avatarAppearances } from './AvatarAppearances';
+import { AvatarShape } from './AvatarShape.type';
+import { Appearance, appearances } from '../../types/Appearance';
 
 import { fromEntries } from '@/services/fromEntries';
+import { Emphasis } from '@/types/Emphasis';
+import { Size, sizes } from '@/types/Size';
 import { BaseConfigProps } from '@/utility-types/BaseConfigProps';
 
 export type AvatarConfig = {
   nestedImage: BaseConfigProps;
-  shape: Record<'rounded' | 'square', BaseConfigProps>;
-  size: Record<
-    'large' | 'medium' | 'small' | 'xSmall' | '2xSmall',
-    BaseConfigProps
-  >;
+  shape: Record<AvatarShape, BaseConfigProps>;
+  size: Record<Size, BaseConfigProps>;
   appearance: Record<
-    AvatarAppearance | 'image',
+    Appearance | 'image',
     {
-      emphasis: Record<'high' | 'low', BaseConfigProps>;
+      emphasis: Record<Emphasis, BaseConfigProps>;
     }
   >;
 } & BaseConfigProps;
@@ -38,33 +36,18 @@ export const config = {
       borderRadius: 'large',
     },
   },
-  size: {
-    large: {
-      w: 'large',
-      h: 'large',
-      text: 'body-large',
-    },
-    medium: {
-      w: 'medium',
-      h: 'medium',
-      text: 'body-medium',
-    },
-    small: {
-      w: 'small',
-      h: 'small',
-      text: 'body-small',
-    },
-    xSmall: {
-      w: 'xSmall',
-      h: 'xSmall',
-      text: 'body-strong-xSmall',
-    },
-    '2xSmall': {
-      w: '2xSmall',
-      h: '2xSmall',
-      text: 'body-strong-xSmall',
-    },
-  },
+  size: sizes.reduce(
+    (acc, size) => ({
+      ...acc,
+      [size]: {
+        w: size,
+        h: size,
+        text: `body-${size.includes('xSmall') ? 'strong-xSmall' : size}`,
+      },
+    }),
+    {} as Record<Size, BaseConfigProps>,
+  ),
+
   appearance: {
     image: {
       emphasis: {
@@ -73,7 +56,7 @@ export const config = {
       },
     },
     ...fromEntries(
-      avatarAppearances.map((appearance) => [
+      appearances.map((appearance) => [
         appearance,
         {
           emphasis: {
@@ -87,7 +70,7 @@ export const config = {
             },
           },
         },
-      ])
+      ]),
     ),
   },
 } satisfies AvatarConfig;

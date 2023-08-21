@@ -1,7 +1,7 @@
 import { Hero } from './common/Hero';
 import { Avatar } from '../components/Avatar/Avatar';
 import { AvatarProps } from '../components/Avatar/Avatar.props';
-import { avatarAppearances } from '../components/Avatar/AvatarAppearances';
+import { appearances } from '../types/Appearance';
 
 import { TetrislyProvider, tet } from '@/tetrisly';
 
@@ -60,7 +60,7 @@ export const AvatarDocs = () => (
                     }}
                   />
                 )}
-                {avatarAppearances.map((appearance) => (
+                {appearances.map((appearance) => (
                   <RowAvatar
                     key={`${appearance}${shape}${emphasis}`}
                     appearance={appearance}

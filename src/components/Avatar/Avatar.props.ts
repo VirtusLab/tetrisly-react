@@ -1,7 +1,12 @@
 import { ImgHTMLAttributes } from 'react';
 
-import { AvatarAppearance } from './AvatarAppearances';
 import { AvatarConfig } from './Avatar.styles';
+import { AvatarShape } from './AvatarShape.type';
+import { Appearance } from '../../types/Appearance';
+
+import { Emphasis } from '@/types/Emphasis';
+import { MarginProps } from '@/types/MarginProps';
+import { Size } from '@/types/Size';
 import { DeepPartial } from '@/utility-types/DeepPartial';
 
 export type AvatarProps = (
@@ -12,12 +17,12 @@ export type AvatarProps = (
       initials?: never;
     }
   | {
-      appearance?: AvatarAppearance;
-      emphasis?: 'low' | 'high';
+      appearance?: Appearance;
+      emphasis?: Emphasis;
       initials: string;
     }
 ) & {
-  shape?: 'rounded' | 'square';
-  size?: 'large' | 'medium' | 'small' | 'xSmall' | '2xSmall';
+  shape?: AvatarShape;
+  size?: Size;
   custom?: DeepPartial<AvatarConfig>;
-};
+} & MarginProps;

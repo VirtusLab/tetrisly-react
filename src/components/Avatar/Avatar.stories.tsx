@@ -1,9 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from './Avatar';
-import { avatarAppearances } from './AvatarAppearances';
-import { TetDocs } from '@/docs-components/TetDocs';
+import { appearances } from '../../types/Appearance';
+
 import { AvatarDocs } from '@/docs-components/AvatarDocs';
+import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
   component: Avatar,
@@ -35,12 +36,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Avatar>;
 
-export const Plain: Story = {
+export const Initials: Story = {
   argTypes: {
-    appearance: avatarAppearances,
+    appearance: appearances,
   },
   args: {
     initials: 'M',
+    appearance: 'cyan',
   },
 };
 

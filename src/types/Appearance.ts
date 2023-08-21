@@ -1,4 +1,4 @@
-export const avatarAppearances = [
+export const appearances = [
   'blue',
   'green',
   'grey',
@@ -15,4 +15,4 @@ export const avatarAppearances = [
   'emerald',
 ] as const;
 
-export type AvatarAppearance = (typeof avatarAppearances)[number];
+export type Appearance = (typeof appearances)[number];
