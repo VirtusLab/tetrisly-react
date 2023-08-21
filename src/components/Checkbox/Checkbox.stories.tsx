@@ -16,14 +16,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const Checked = () => {
-  const [checked, setChecked] = useState(true);
-  return (
-    <Checkbox
-      isChecked={checked}
-      onChange={(e) => setChecked(e.target.checked)}
-    />
-  );
+export const Checked: Story = {
+  args: {
+    isChecked: true,
+  },
 };
 
 export const Indeterminate = () => {

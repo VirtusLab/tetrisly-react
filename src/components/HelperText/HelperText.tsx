@@ -13,15 +13,16 @@ export const HelperText = ({
   beforeIcon = false,
   counter,
   text,
-  custom = {},
+  custom,
   ...rest
 }: HelperTextProps & MarginProps) => {
+  const options = custom ? merge(defaultConfig, custom) : defaultConfig;
   const {
     intent: intentStyles,
     icon: iconStyles,
     iconContainer: iconContainerStyles,
     ...restStyles
-  } = merge(defaultConfig, custom);
+  } = options;
 
   if (!isKeyOf(intentStyles, intent)) {
     throw new Error(`${intent} is not a valid intent`);

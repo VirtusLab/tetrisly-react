@@ -12,14 +12,16 @@ export const Label = ({
   label,
   tooltip,
   optional,
-  custom = {},
+  custom,
   ...rest
 }: LabelProps & MarginProps) => {
+  const options = custom ? merge(defaultConfig, custom) : defaultConfig;
   const {
     optional: optionalStyles,
     tooltip: tooltipStyles,
     ...labelStyles
-  } = merge(defaultConfig, custom);
+  } = options;
+
   return (
     <tet.div {...labelStyles} {...rest} data-testid="label">
       {label}

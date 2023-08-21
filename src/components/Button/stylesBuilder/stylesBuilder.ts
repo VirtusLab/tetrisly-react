@@ -14,12 +14,13 @@ import { Theme } from '@/theme';
 export const stylesBuilder = <
   TVariant extends ButtonVariant,
   TAppearance extends ButtonAppearance<TVariant>
->({
-  custom = {},
-  ...props
-}: StylesBuilderProps<TVariant, TAppearance>): SystemProps<Theme> => {
+>(
+  props: StylesBuilderProps<TVariant, TAppearance>
+): SystemProps<Theme> => {
   const options = applyDefaults(props);
-  const config = merge(defaultConfig, custom);
+  const config = props.custom
+    ? merge(defaultConfig, props.custom)
+    : defaultConfig;
   const { appearance, size, ...rest } = config[
     options.variant
   ] as VariantConfig<TVariant>;
