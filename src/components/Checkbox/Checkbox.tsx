@@ -84,7 +84,7 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
         />
         <tet.div
           {...checkboxIconStyles}
-          onClick={(e) => !label && handleInputChange(e)}
+          onClick={() => !label && handleInputChange()}
         >
           {isIndeterminate && <Icon name="16-minus" />}
           <Icon name="16-check" id="checkmark" />
