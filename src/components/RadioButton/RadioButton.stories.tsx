@@ -14,23 +14,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const Checked = () => {
-  const [checked, setChecked] = useState(true);
-  return (
-    <RadioButton
-      isChecked={checked}
-      onChange={(e) => setChecked(e.target.checked)}
-    />
-  );
+export const Checked: Story = {
+  args: {
+    isChecked: true,
+  },
 };
 
-export const Multiple = () => (
-  <>
-    <RadioButton name="drone" label="Huey" />
-    <RadioButton name="drone" label="Devey" />
-    <RadioButton name="drone" label="Louie" />
-  </>
-);
+export const Multiple: Story = {
+  render: () => (
+    <>
+      <RadioButton name="drone" label="Huey" />
+      <RadioButton name="drone" label="Devey" />
+      <RadioButton name="drone" label="Louie" />
+    </>
+  ),
+};
 
 export const Disabled: Story = {
   args: {
