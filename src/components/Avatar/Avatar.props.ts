@@ -1,6 +1,8 @@
 import { ImgHTMLAttributes } from 'react';
 
 import { AvatarAppearance } from './AvatarAppearances';
+import { AvatarConfig } from './Avatar.styles';
+import { DeepPartial } from '@/utility-types/DeepPartial';
 
 export type AvatarProps = (
   | {
@@ -17,4 +19,5 @@ export type AvatarProps = (
 ) & {
   shape?: 'rounded' | 'square';
   size?: 'large' | 'medium' | 'small' | 'xSmall' | '2xSmall';
+  custom?: DeepPartial<AvatarConfig>;
 };

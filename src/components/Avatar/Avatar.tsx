@@ -5,9 +5,8 @@ import { AvatarConfig, config } from './Avatar.styles';
 import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
-import { WithCustom } from '@/utility-types/WithCustom';
 
-export const Avatar: FC<WithCustom<AvatarProps, AvatarConfig>> = ({
+export const Avatar: FC<AvatarProps> = ({
   appearance = 'blue',
   emphasis = 'low',
   shape = 'rounded',
@@ -22,7 +21,7 @@ export const Avatar: FC<WithCustom<AvatarProps, AvatarConfig>> = ({
   });
   return (
     <tet.div {...styles}>
-      {hasImage(rest) ? (
+      {hasImage(rest) && rest.img !== null ? (
         <tet.img {...nestedImage} {...rest.img} />
       ) : (
         rest.initials
@@ -32,7 +31,7 @@ export const Avatar: FC<WithCustom<AvatarProps, AvatarConfig>> = ({
 };
 
 function hasImage(
-  obj: object,
+  obj: object
 ): obj is { img: Omit<ImgHTMLAttributes<HTMLImageElement>, 'color'> } {
   return 'img' in obj;
 }

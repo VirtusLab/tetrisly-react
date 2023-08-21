@@ -2,8 +2,7 @@ import { merge } from 'lodash';
 
 import { AvatarProps } from './Avatar.props';
 import { AvatarConfig } from './Avatar.styles';
-
-import { Custom } from '@/utility-types/WithCustom';
+import { DeepPartial } from '@/utility-types/DeepPartial';
 
 export function stylesBuilder({
   config: originalConfig,
@@ -11,7 +10,7 @@ export function stylesBuilder({
   variant,
 }: {
   config: AvatarConfig;
-  custom: Custom<AvatarConfig>;
+  custom: DeepPartial<AvatarConfig>;
   variant: Required<
     Pick<AvatarProps, 'appearance' | 'emphasis' | 'shape' | 'size'>
   >;

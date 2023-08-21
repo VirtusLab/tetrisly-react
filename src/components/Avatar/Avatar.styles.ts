@@ -3,22 +3,22 @@ import { SystemProps } from '@xstyled/styled-components';
 import { AvatarAppearance, avatarAppearances } from './AvatarAppearances';
 
 import { fromEntries } from '@/services/fromEntries';
-import { BaseProps } from '@/types/BaseProps';
+import { BaseConfigProps } from '@/utility-types/BaseConfigProps';
 
 export type AvatarConfig = {
-  nestedImage: SystemProps;
-  shape: Record<'rounded' | 'square', SystemProps>;
+  nestedImage: BaseConfigProps;
+  shape: Record<'rounded' | 'square', BaseConfigProps>;
   size: Record<
     'large' | 'medium' | 'small' | 'xSmall' | '2xSmall',
-    SystemProps
+    BaseConfigProps
   >;
   appearance: Record<
     AvatarAppearance | 'image',
     {
-      emphasis: Record<'high' | 'low', SystemProps>;
+      emphasis: Record<'high' | 'low', BaseConfigProps>;
     }
   >;
-} & BaseProps;
+} & BaseConfigProps;
 
 export const config = {
   nestedImage: {
@@ -87,7 +87,7 @@ export const config = {
             },
           },
         },
-      ]),
+      ])
     ),
   },
 } satisfies AvatarConfig;

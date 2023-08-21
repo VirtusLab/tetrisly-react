@@ -17,28 +17,22 @@ const emphasises = ['low', 'high'] as const;
 
 const RowAvatar = ({ size: _, ...props }: AvatarProps) => (
   <tet.div display="flex" gap="component-gap-xLarge" alignItems="center">
-    {sizes.map((size) => (
-      <Avatar {...props} size={size} />
+    {sizes.map((size, idx) => (
+      <Avatar key={idx} {...props} size={size} />
     ))}
   </tet.div>
 );
 
 export const AvatarDocs = () => (
-  <TetrislyProvider>
-    <Hero
-      component="Avatar"
-      description="A visual representation of a user's identity, often displayed as a small image or icon. Avatars can be personalized with user-uploaded photos or auto-generated images and are commonly used in profile sections, comments, and messaging interfaces."
-      docs="https://docs.tetrisly.com/components/list/avatar"
-    />
-
+  <>
     {emphasises.map((emphasis) => (
-      <tet.section pb="component-padding-4xLarge">
+      <tet.section key={emphasis} pb="component-padding-4xLarge">
         <tet.h2 px="1000" py="500" text="header-3xLarge">
           {capitalize(emphasis)} Emphasis
         </tet.h2>
         <tet.div display="flex" justifyContent="space-around">
           {shapes.map((shape) => (
-            <tet.div display="flex" flexDirection="column">
+            <tet.div key={shape} display="flex" flexDirection="column">
               <tet.h3
                 py="component-padding-2xLarge"
                 color="content-secondary"
@@ -68,6 +62,7 @@ export const AvatarDocs = () => (
                 )}
                 {avatarAppearances.map((appearance) => (
                   <RowAvatar
+                    key={`${appearance}${shape}${emphasis}`}
                     appearance={appearance}
                     shape={shape}
                     emphasis={emphasis}
@@ -80,7 +75,7 @@ export const AvatarDocs = () => (
         </tet.div>
       </tet.section>
     ))}
-  </TetrislyProvider>
+  </>
 );
 
 function capitalize(string: string) {
