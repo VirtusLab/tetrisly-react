@@ -1,5 +1,7 @@
-export { Button } from './components/Button';
-export { HelperText } from './components/HelperText';
-export { Label } from './components/Label';
-export { Loader } from './components/Loader';
-export { StatusDot } from './components/StatusDot';
+export * from './components/Badge';
+export * from './components/Button';
+export * from './components/Divider';
+export * from './components/HelperText';
+export * from './components/Label';
+export * from './components/Loader';
+export * from './components/StatusDot';
