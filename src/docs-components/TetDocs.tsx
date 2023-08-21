@@ -1,4 +1,4 @@
-import { TetrislyProvider } from '@/tetrisly';
+import { TetrislyProvider, tet } from '@/tetrisly';
 import { Primary, Controls } from '@storybook/blocks';
 
 import { Unstyled, useOf } from '@storybook/blocks';
@@ -23,12 +23,14 @@ export const TetDocs: FC<PropsWithChildren<{ docs: string }>> = ({
     <>
       <Unstyled>
         <TetrislyProvider>
-          <Hero
-            component={title.split('/').pop() ?? ''}
-            description={description}
-            docs={docs}
-          />
-          {children}
+          <tet.div w="888px">
+            <Hero
+              component={title.split('/').pop() ?? ''}
+              description={description}
+              docs={docs}
+            />
+            {children}
+          </tet.div>
         </TetrislyProvider>
       </Unstyled>
       <Primary />

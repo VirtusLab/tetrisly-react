@@ -16,7 +16,7 @@ const shapes = ['rounded', 'square'] as const;
 const emphasises = ['low', 'high'] as const;
 
 const RowAvatar = ({ size: _, ...props }: AvatarProps) => (
-  <tet.div display="flex" gap="component-gap-xLarge" alignItems="center">
+  <tet.div display="flex" gap="40px" alignItems="center">
     {sizes.map((size, idx) => (
       <Avatar key={idx} {...props} size={size} />
     ))}
@@ -26,11 +26,11 @@ const RowAvatar = ({ size: _, ...props }: AvatarProps) => (
 export const AvatarDocs = () => (
   <>
     {emphasises.map((emphasis) => (
-      <tet.section key={emphasis} pb="component-padding-4xLarge">
-        <tet.h2 px="1000" py="500" text="header-3xLarge">
+      <tet.section key={emphasis} pb="component-padding-4xLarge" px="1000">
+        <tet.h2 py="500" text="header-3xLarge">
           {capitalize(emphasis)} Emphasis
         </tet.h2>
-        <tet.div display="flex" justifyContent="space-around">
+        <tet.div display="flex" gap="80px" justifyContent="space-between">
           {shapes.map((shape) => (
             <tet.div key={shape} display="flex" flexDirection="column">
               <tet.h3
