@@ -1,9 +1,8 @@
-import { Hero } from './common/Hero';
 import { Avatar } from '../components/Avatar/Avatar';
 import { AvatarProps } from '../components/Avatar/Avatar.props';
 import { appearances } from '../types/Appearance';
 
-import { TetrislyProvider, tet } from '@/tetrisly';
+import { tet } from '@/tetrisly';
 
 const sizes = [
   'large',
@@ -17,8 +16,8 @@ const emphasises = ['low', 'high'] as const;
 
 const RowAvatar = ({ size: _, ...props }: AvatarProps) => (
   <tet.div display="flex" gap="40px" alignItems="center">
-    {sizes.map((size, idx) => (
-      <Avatar key={idx} {...props} size={size} />
+    {sizes.map((size) => (
+      <Avatar key={size} {...props} size={size} />
     ))}
   </tet.div>
 );

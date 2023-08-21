@@ -2,6 +2,7 @@ import { merge } from 'lodash';
 
 import { AvatarProps } from './Avatar.props';
 import { AvatarConfig } from './Avatar.styles';
+
 import { DeepPartial } from '@/utility-types/DeepPartial';
 
 export function stylesBuilder({

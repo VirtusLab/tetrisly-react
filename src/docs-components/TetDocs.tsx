@@ -1,9 +1,9 @@
-import { TetrislyProvider, tet } from '@/tetrisly';
-import { Primary, Controls, Stories } from '@storybook/blocks';
-
-import { Unstyled, useOf } from '@storybook/blocks';
+import { Primary, Controls, Stories, Unstyled, useOf } from '@storybook/blocks';
 import { FC, PropsWithChildren } from 'react';
+
 import { Hero } from './common/Hero';
+
+import { TetrislyProvider, tet } from '@/tetrisly';
 
 export const TetDocs: FC<PropsWithChildren<{ docs: string }>> = ({
   children,
