@@ -68,6 +68,7 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
 
     const handleInputChange = () => {
       checkboxInternalRef.current?.click();
+      checkboxInternalRef.current?.focus();
     };
 
     const input = (
