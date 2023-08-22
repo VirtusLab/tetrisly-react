@@ -10,10 +10,6 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-styling',
     '@storybook/addon-docs',
-    {
-      name: '@storybook/addon-styling',
-      options: {},
-    },
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -22,9 +18,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-  core: {
-    builder: '@storybook/builder-vite',
-  },
+  core: {},
   async viteFinal(config) {
     if (!config.plugins) {
       config.plugins = [];

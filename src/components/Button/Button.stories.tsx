@@ -36,7 +36,7 @@ type Story = StoryObj<typeof meta>;
 
 const ButtonWithLoading = <
   TVariant extends ButtonVariant,
-  TAppearance extends ButtonAppearance<TVariant>
+  TAppearance extends ButtonAppearance<TVariant>,
 >({
   state,
   ...props
@@ -318,7 +318,7 @@ export const AllOptions: Story = {
               </tet.div>
             ))}
           </tet.div>
-        )
+        ),
       )}
     </tet.div>
   ),

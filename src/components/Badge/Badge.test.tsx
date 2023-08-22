@@ -26,7 +26,7 @@ describe('Badge', () => {
 
   it('should render the before icon', () => {
     const icon = getBadgeIcon(
-      <Badge appearance="blue" label="Label" beforeIcon="16-minus" />
+      <Badge appearance="blue" label="Label" beforeIcon="16-minus" />,
     );
     expect(icon[0]).toBeInTheDocument();
   });
@@ -38,7 +38,7 @@ describe('Badge', () => {
 
   it('should render the after icon', () => {
     const icon = getBadgeIcon(
-      <Badge appearance="blue" label="Label" afterIcon="16-minus" />
+      <Badge appearance="blue" label="Label" afterIcon="16-minus" />,
     );
     expect(icon[0]).toBeInTheDocument();
   });
@@ -50,7 +50,7 @@ describe('Badge', () => {
         label="Label"
         beforeIcon="16-minus"
         afterIcon="16-minus"
-      />
+      />,
     );
     expect(icon).toHaveLength(2);
   });
@@ -63,7 +63,7 @@ describe('Badge', () => {
   it('should throw an error if wrong config is provided', () => {
     expect(() =>
       // @ts-expect-error testing wrong appearance
-      render(<Badge />)
+      render(<Badge />),
     ).toThrowError();
   });
 
@@ -73,7 +73,7 @@ describe('Badge', () => {
         appearance="blue"
         label="label"
         custom={{ backgroundColor: 'background-negative-subtle' }}
-      />
+      />,
     );
 
     expect(badge).toHaveStyle('background-color: rgb(254, 245, 245)');
