@@ -17,6 +17,6 @@ export type CheckboxGroupProps = {
   helperText?: string;
   custom?: DeepPartial<SystemProps<Theme> & typeof config>;
   children?:
-  | React.ReactElement<CheckboxItemProps>
-  | React.ReactElement<CheckboxItemProps>[];
+    | React.ReactElement<CheckboxItemProps>
+    | React.ReactElement<CheckboxItemProps>[];
 };
