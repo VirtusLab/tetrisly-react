@@ -51,23 +51,21 @@ type OmitMarginProps<T> = Omit<
   | 'my'
 >;
 
-export const extractMarginProps = <T extends object = object>(
+export const extractMarginProps = <T extends MarginProps = MarginProps>(
   props: T,
 ): [MarginsProps, OmitMarginProps<T>] => {
   if (!(props instanceof Object)) return [{}, {} as T];
 
-  const marginsProps: MarginsProps = {};
-  const restProps: OmitMarginProps<T> = {} as OmitMarginProps<T>;
-
-  Object.entries(props).forEach(([key, value]: [string, unknown]) => {
-    if (marginPropsKeys.includes(key as keyof MarginsProps)) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (marginsProps as any)[key] = value;
-    } else {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (restProps as any)[key] = value;
-    }
-  });
+  const entries = Object.entries(props) as [keyof MarginProps, T[keyof T]][];
+  const [marginsProps, restProps] = entries.reduce(
+    ([margins, rest], [key, value]) => {
+      if (marginPropsKeys.includes(key)) {
+        return [{ ...margins, [key]: value }, rest];
+      }
+      return [margins, { ...rest, [key]: value }];
+    },
+    [{} as MarginProps, {} as OmitMarginProps<T>],
+  );
 
   return [marginsProps, restProps];
 };
