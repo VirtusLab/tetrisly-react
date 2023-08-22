@@ -2,21 +2,21 @@ import { AvatarShape } from './AvatarShape.type';
 import { Appearance, appearances } from '../../types/Appearance';
 
 import { fromEntries } from '@/services/fromEntries';
+import { BaseProps } from '@/types/BaseProps';
 import { Emphasis } from '@/types/Emphasis';
 import { Size, sizes } from '@/types/Size';
-import { BaseConfigProps } from '@/utility-types/BaseConfigProps';
 
 export type AvatarConfig = {
-  nestedImage: BaseConfigProps;
-  shape: Record<AvatarShape, BaseConfigProps>;
-  size: Record<Size, BaseConfigProps>;
+  nestedImage: BaseProps;
+  shape: Record<AvatarShape, BaseProps>;
+  size: Record<Size, BaseProps>;
   appearance: Record<
     Appearance | 'image',
     {
-      emphasis: Record<Emphasis, BaseConfigProps>;
+      emphasis: Record<Emphasis, BaseProps>;
     }
   >;
-} & BaseConfigProps;
+} & BaseProps;
 
 export const config = {
   nestedImage: {
@@ -45,7 +45,7 @@ export const config = {
         text: `body-${size.includes('xSmall') ? 'strong-xSmall' : size}`,
       },
     }),
-    {} as Record<Size, BaseConfigProps>,
+    {} as Record<Size, BaseProps>,
   ),
 
   appearance: {
