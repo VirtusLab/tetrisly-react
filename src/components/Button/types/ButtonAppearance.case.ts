@@ -22,5 +22,5 @@ type Cases = [
     >
   >,
   // @ts-expect-error - wrong variant
-  ButtonAppearance<'Foo'>
+  ButtonAppearance<'Foo'>,
 ];

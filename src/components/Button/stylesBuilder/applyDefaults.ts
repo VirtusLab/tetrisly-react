@@ -6,7 +6,7 @@ import { ButtonVariant } from '../types/ButtonType.type';
 
 export function applyDefaults<
   TVariant extends ButtonVariant,
-  TAppearance extends ButtonAppearance<TVariant>
+  TAppearance extends ButtonAppearance<TVariant>,
 >({
   appearance,
   intent,
