@@ -49,8 +49,8 @@ export const { css, styled, x, createGlobalStyle } = createCss(
     transitions,
     typography,
     opacity,
-    strokeWidth,
-  ),
+    strokeWidth
+  )
 );
 
 export const t = x;

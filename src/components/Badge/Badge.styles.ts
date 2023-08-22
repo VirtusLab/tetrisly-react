@@ -35,7 +35,7 @@ export const config = {
             backgroundColor: `nonSemantic-${basicAppearance}-background-onSubtle`,
           },
         },
-      ]),
+      ])
     ),
   },
   intent: {
@@ -62,7 +62,7 @@ export const config = {
             backgroundColor: `background-${basicIntent}-onSubtle`,
           },
         },
-      ]),
+      ])
     ),
   },
   display: 'flex',

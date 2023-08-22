@@ -12,7 +12,7 @@ import { Or } from '@/utility-types/Or';
 
 export type ButtonProps<
   TVariant extends ButtonVariant = 'default',
-  TAppearance extends ButtonAppearance<TVariant> = ButtonAppearance<TVariant>,
+  TAppearance extends ButtonAppearance<TVariant> = ButtonAppearance<TVariant>
 > = {
   variant?: TVariant;
   appearance?: TAppearance;

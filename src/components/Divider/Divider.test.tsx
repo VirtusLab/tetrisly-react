@@ -29,14 +29,14 @@ describe('Divider', () => {
 
   it('should change the height', () => {
     const divider = getDivider(
-      <Divider orientation="vertical" height="10px" />,
+      <Divider orientation="vertical" height="10px" />
     );
     expect(divider).toHaveStyle('height: 10px');
   });
 
   it('should propagate a custom prop', () => {
     const divider = getDivider(
-      <Divider custom={{ color: 'background-negative-subtle' }} />,
+      <Divider custom={{ color: 'background-negative-subtle' }} />
     );
 
     expect(divider).toHaveStyle('color: rgb(254, 245, 245)');

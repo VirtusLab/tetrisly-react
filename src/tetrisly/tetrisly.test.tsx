@@ -10,7 +10,7 @@ describe('check tetrisly provider, and correct styling', () => {
     render(
       <TetrislyProvider>
         <tet.button color="blue-+1">Click me</tet.button>
-      </TetrislyProvider>,
+      </TetrislyProvider>
     );
     const button = screen.getByText('Click me');
     expect(button).toHaveStyle(`color: ${theme.colors['blue-+1']}`);
@@ -28,7 +28,7 @@ describe('check tetrisly provider, and correct styling', () => {
         <tet.button color="blue-+1" backgroundColor="blue-+2">
           Click me
         </tet.button>
-      </TetrislyProvider>,
+      </TetrislyProvider>
     );
     const button = screen.getByText('Click me');
     expect(button).toHaveStyle(`color: ${customColor}`);
@@ -46,7 +46,7 @@ describe('check tetrisly provider, and correct styling', () => {
         <tet.button color="blue-+1" backgroundColor="blue-+2">
           Click me
         </tet.button>
-      </TetrislyProvider>,
+      </TetrislyProvider>
     );
     const button = screen.getByText('Click me');
     expect(button).toHaveStyle(`color: ${customColor}`);

@@ -45,7 +45,7 @@ export const config = {
         text: `body-${size.includes('xSmall') ? 'strong-xSmall' : size}`,
       },
     }),
-    {} as Record<Size, BaseConfigProps>,
+    {} as Record<Size, BaseConfigProps>
   ),
 
   appearance: {
@@ -70,7 +70,7 @@ export const config = {
             },
           },
         },
-      ]),
+      ])
     ),
   },
 } satisfies AvatarConfig;

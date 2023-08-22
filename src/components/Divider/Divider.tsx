@@ -15,7 +15,7 @@ export const Divider = ({
 }: DividerProps & MarginProps) => {
   const { orientation: orientationStyles, ...restStyles } = merge(
     defaultConfig,
-    custom,
+    custom
   );
   return (
     <tet.hr

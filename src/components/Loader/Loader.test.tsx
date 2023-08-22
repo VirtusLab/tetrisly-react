@@ -66,7 +66,7 @@ describe('Loader', () => {
 
   it('should render correct appearance (greyscale)', () => {
     const { base, progress } = getLoader(
-      <Loader shape="circle" appearance="greyscale" />,
+      <Loader shape="circle" appearance="greyscale" />
     );
     expect(base).toHaveStyle('stroke: hsla(204,20%,95%,1); ');
     expect(progress).toHaveStyle('stroke: hsla(210,12%,33%,1);');
@@ -74,7 +74,7 @@ describe('Loader', () => {
 
   it('should render correct appearance (inverted)', () => {
     const { base, progress } = getLoader(
-      <Loader shape="circle" appearance="inverted" />,
+      <Loader shape="circle" appearance="inverted" />
     );
     expect(base).toHaveStyle('stroke: hsla(0,0%,100%,1);');
     expect(progress).toHaveStyle('stroke: hsla(222,66%,51%,1);');
@@ -82,7 +82,7 @@ describe('Loader', () => {
 
   it('should render correct appearance (white)', () => {
     const { base, progress } = getLoader(
-      <Loader shape="circle" appearance="white" />,
+      <Loader shape="circle" appearance="white" />
     );
     expect(base).toHaveStyle('stroke: hsla(0,0%,100%,1);');
     expect(progress).toHaveStyle('stroke: hsla(0,0%,100%,1);');
