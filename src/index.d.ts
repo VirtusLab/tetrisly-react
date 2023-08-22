@@ -6,5 +6,6 @@ export * from './components/Divider';
 export * from './components/HelperText';
 export * from './components/Label';
 export * from './components/Loader';
+export * from './components/RadioButton';
 export * from './components/StatusDot';
 export * from './components/TextInput';

@@ -1,16 +1,16 @@
 import { AvatarShape } from './AvatarShape.type';
 import { Appearance } from '../../types/Appearance';
+import { BaseProps } from '../../types/BaseProps';
 import { Emphasis } from '../../types/Emphasis';
 import { Size } from '../../types/Size';
-import { BaseConfigProps } from '../../utility-types/BaseConfigProps';
 export type AvatarConfig = {
-    nestedImage: BaseConfigProps;
-    shape: Record<AvatarShape, BaseConfigProps>;
-    size: Record<Size, BaseConfigProps>;
+    nestedImage: BaseProps;
+    shape: Record<AvatarShape, BaseProps>;
+    size: Record<Size, BaseProps>;
     appearance: Record<Appearance | 'image', {
-        emphasis: Record<Emphasis, BaseConfigProps>;
+        emphasis: Record<Emphasis, BaseProps>;
     }>;
-} & BaseConfigProps;
+} & BaseProps;
 export declare const config: {
     nestedImage: {
         w: string;
@@ -29,7 +29,7 @@ export declare const config: {
             borderRadius: string;
         };
     };
-    size: Record<"large" | "medium" | "small" | "xSmall" | "2xSmall", BaseConfigProps>;
+    size: Record<"small" | "medium" | "large" | "xSmall" | "2xSmall", BaseProps>;
     appearance: {
         blue: {
             emphasis: {

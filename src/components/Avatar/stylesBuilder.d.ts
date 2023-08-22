@@ -180,5 +180,5 @@ export declare function stylesBuilder({ config: originalConfig, custom, variant,
     listStyleType?: import("@xstyled/system").SystemProp<import("csstype").Property.ListStyleType, import("../../theme").Theme> | undefined;
     listStylePosition?: import("@xstyled/system").SystemProp<import("csstype").Property.ListStylePosition, import("../../theme").Theme> | undefined;
     text?: import("@xstyled/system").SystemProp<import("@xstyled/system").ThemeText<import("../../theme").Theme>, import("../../theme").Theme> | undefined;
-    nestedImage: import("../../utility-types/BaseConfigProps").BaseConfigProps & DeepPartial<import("../../utility-types/BaseConfigProps").BaseConfigProps>;
+    nestedImage: import("../../types/BaseProps").BaseProps & DeepPartial<import("../../types/BaseProps").BaseProps>;
 };
