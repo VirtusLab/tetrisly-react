@@ -30,6 +30,19 @@ export const RadioButton = forwardRef<HTMLInputElement, Props>(
 
     const radioButtonId = useId();
 
+    const input = (
+      <tet.input
+        type="radio"
+        ref={radioButtonRef}
+        id={radioButtonId}
+        checked={isChecked}
+        disabled={state === 'disabled'}
+        data-state={state}
+        {...radioButtonProps}
+        {...radioButtonStyles}
+      />
+    );
+
     return (
       <tet.div
         {...restStyles}
@@ -37,23 +50,18 @@ export const RadioButton = forwardRef<HTMLInputElement, Props>(
         data-state={state}
         data-testid="radio-button"
       >
-        <tet.label
-          {...labelStyles}
-          htmlFor={radioButtonId}
-          data-testid="radio-button-label"
-        >
-          <tet.input
-            type="radio"
-            ref={radioButtonRef}
-            id={radioButtonId}
-            checked={isChecked}
-            disabled={state === 'disabled'}
-            data-state={state}
-            {...radioButtonProps}
-            {...radioButtonStyles}
-          />
-          {label}
-        </tet.label>
+        {label ? (
+          <tet.label
+            htmlFor={radioButtonId}
+            {...labelStyles}
+            data-testid="radio-button-label"
+          >
+            {input}
+            {label}
+          </tet.label>
+        ) : (
+          input
+        )}
         {!!helperText && (
           <HelperText
             intent={state === 'alert' ? 'alert' : 'none'}
