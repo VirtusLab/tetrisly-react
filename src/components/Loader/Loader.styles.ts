@@ -3,7 +3,7 @@ import { SvgProperties } from 'csstype';
 
 import type { LoaderAppearance, LoaderShape, LoaderSize } from './types';
 
-import { BaseConfigProps } from '@/utility-types/BaseConfigProps';
+import { BaseProps } from '@/types/BaseProps';
 
 type Config = {
   size: Record<
@@ -97,4 +97,4 @@ export const config = {
   progress: {
     strokeLinecap: 'round',
   },
-} as const satisfies BaseConfigProps & Config;
+} as const satisfies BaseProps & Config;
