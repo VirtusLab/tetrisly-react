@@ -1154,6 +1154,7 @@ const tempTheme: Omit<Theme, 'ringWidths'> = {
     selected: '&[data-state="selected"]',
     loading: '&[data-state="loading"]',
     alert: '&:invalid, &[data-state="alert"]',
+    indeterminate: '&:indeterminate',
   },
 };
 
