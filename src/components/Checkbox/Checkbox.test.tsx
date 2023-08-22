@@ -90,7 +90,7 @@ describe('Checkbox', () => {
 
   it('should render helper text if props provided', () => {
     const { label, helperText } = getCheckbox(
-      <Checkbox label="Label" helperText="Helper text" />
+      <Checkbox label="Label" helperText="Helper text" />,
     );
 
     expect(label).toHaveTextContent('Label');
@@ -106,7 +106,7 @@ describe('Checkbox', () => {
 
   it('should propagate custom props', () => {
     const { checkbox } = getCheckbox(
-      <Checkbox custom={{ backgroundColor: 'background-negative-subtle' }} />
+      <Checkbox custom={{ backgroundColor: 'background-negative-subtle' }} />,
     );
 
     expect(checkbox).toHaveStyle('background-color: rgb(254, 245, 245)');
