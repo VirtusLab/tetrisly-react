@@ -36,7 +36,7 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
       custom,
       ...restProps
     },
-    checkboxForwardRef
+    checkboxForwardRef,
   ) => {
     const [marginProps, checkboxProps] = extractMarginProps<Props>(restProps);
 
@@ -122,5 +122,5 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
         )}
       </tet.div>
     );
-  }
+  },
 );

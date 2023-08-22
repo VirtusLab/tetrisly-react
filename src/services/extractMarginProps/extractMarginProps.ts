@@ -13,12 +13,12 @@ import {
 
 interface MarginsProps
   extends MarginProps,
-  MarginLeftProps,
-  MarginBottomProps,
-  MarginTopProps,
-  MarginRightProps,
-  MarginXProps,
-  MarginYProps { }
+    MarginLeftProps,
+    MarginBottomProps,
+    MarginTopProps,
+    MarginRightProps,
+    MarginXProps,
+    MarginYProps {}
 
 const marginPropsKeys: (keyof MarginsProps)[] = [
   'm',
@@ -52,7 +52,7 @@ type OmitMarginProps<T> = Omit<
 >;
 
 export const extractMarginProps = <T extends object = object>(
-  props: T
+  props: T,
 ): [MarginsProps, OmitMarginProps<T>] => {
   if (!(props instanceof Object)) return [{}, {} as T];
 
@@ -64,7 +64,7 @@ export const extractMarginProps = <T extends object = object>(
       }
       return [margins, { ...rest, [key]: value }];
     },
-    [{} as MarginProps, {} as OmitMarginProps<T>]
+    [{} as MarginProps, {} as OmitMarginProps<T>],
   );
 
   return [marginsProps, restProps];

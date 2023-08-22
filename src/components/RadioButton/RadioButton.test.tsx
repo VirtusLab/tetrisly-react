@@ -23,7 +23,7 @@ describe('Radio button', () => {
 
   it('should emit onChange', () => {
     const { radioButton } = getRadioButton(
-      <RadioButton onChange={handleEventMock} />
+      <RadioButton onChange={handleEventMock} />,
     );
 
     const input = radioButton?.querySelector('input');
@@ -36,7 +36,7 @@ describe('Radio button', () => {
 
   it('should emit onBlur', () => {
     const { radioButton } = getRadioButton(
-      <RadioButton onBlur={handleEventMock} />
+      <RadioButton onBlur={handleEventMock} />,
     );
 
     const input = radioButton?.querySelector('input');
@@ -49,7 +49,7 @@ describe('Radio button', () => {
 
   it('should emit onFocus', () => {
     const { radioButton } = getRadioButton(
-      <RadioButton onFocus={handleEventMock} />
+      <RadioButton onFocus={handleEventMock} />,
     );
 
     const input = radioButton?.querySelector('input');
@@ -82,7 +82,7 @@ describe('Radio button', () => {
 
   it('should render helper text if props provided', () => {
     const { label, helperText } = getRadioButton(
-      <RadioButton label="Label" helperText="Helper text" />
+      <RadioButton label="Label" helperText="Helper text" />,
     );
 
     expect(label).toHaveTextContent('Label');
@@ -98,7 +98,9 @@ describe('Radio button', () => {
 
   it('should propagate custom props', () => {
     const { radioButton } = getRadioButton(
-      <RadioButton custom={{ backgroundColor: 'background-negative-subtle' }} />
+      <RadioButton
+        custom={{ backgroundColor: 'background-negative-subtle' }}
+      />,
     );
 
     expect(radioButton).toHaveStyle('background-color: rgb(254, 245, 245)');
