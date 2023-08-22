@@ -1946,7 +1946,7 @@
     remark-slug "^6.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-essentials@^7.3.2":
+"@storybook/addon-essentials@^7.0.26":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-7.3.2.tgz#887071bbe2822ee0961f152bbd3138ea244e3ee8"
   integrity sha512-MI5wi5k/nDgAqnsS4/uibcQhMk3/mVkAAWNO+Epmg5UMCCmDch8SoX9BprEHARwwsVwXChiHAx99fXF/XacWFQ==
@@ -1975,7 +1975,7 @@
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.3.2"
 
-"@storybook/addon-interactions@^7.3.2":
+"@storybook/addon-interactions@^7.0.26":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-interactions/-/addon-interactions-7.3.2.tgz#9fa5f7db87db03538d9391a6c40d16350f6baa6e"
   integrity sha512-u2SfTyfDxJlptBfRrxOinr4Oq8xBluC7mVBdOGjKOBqenxAJojiMbvugWfuXEoLZfHWTwWgYTjDx9PXLw5xNnA==
@@ -1994,7 +1994,7 @@
     polished "^4.2.2"
     ts-dedent "^2.2.0"
 
-"@storybook/addon-links@^7.3.2":
+"@storybook/addon-links@^7.0.26":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-7.3.2.tgz#c6e1c2b35d9b9c3b8986355dc4b6ba01c2f6d29c"
   integrity sha512-xpOpb33KscvmM2Sl9nFqU3DCk3tGaoqtFKkDOzf/QlZsMq9CCn4zPNGMfOFqifBEnDGDADHbp+Uxst5i535vdQ==
@@ -2038,7 +2038,7 @@
     "@storybook/types" "7.3.2"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-styling@^1.3.6":
+"@storybook/addon-styling@^1.3.2":
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/@storybook/addon-styling/-/addon-styling-1.3.6.tgz#79353a40caeea6de63de4110caee9cbf12042275"
   integrity sha512-g4e9vLnNlpjR3hHcyC8iCtgqcWQj6IPK+HZ8PdF92O95sa0nus+NG4meahEBwCsZm6CtYV/QMymFtLnp2NvAmg==
@@ -2096,7 +2096,7 @@
     "@storybook/client-logger" "7.3.2"
     "@storybook/manager-api" "7.3.2"
 
-"@storybook/blocks@7.3.2", "@storybook/blocks@^7.3.2":
+"@storybook/blocks@7.3.2", "@storybook/blocks@^7.0.26":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/blocks/-/blocks-7.3.2.tgz#3fcc55848cdd972311d4d5b15282156ec8005204"
   integrity sha512-j/PRnvGLn0Y3VAu/t6RrU7pjenb7II7Cl/SnFW8LzjMBKXBrkFaq8BRbglzDAUtGdAa9HmJBosogenoZ9iWoBw==
@@ -2147,7 +2147,7 @@
     process "^0.11.10"
     util "^0.12.4"
 
-"@storybook/builder-vite@7.3.2":
+"@storybook/builder-vite@7.3.2", "@storybook/builder-vite@^7.0.27":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/builder-vite/-/builder-vite-7.3.2.tgz#c46cd3fe0bead18e8be1bd40fe886d63913e520c"
   integrity sha512-9xB3Z6QfDBX6Daj+LFldhavA8O7JU2E1dL6IHfaTLIamFH884Sl5Svq3GS3oh4/EbB/GifpVKEiwlvJaINCj+A==
@@ -2509,7 +2509,7 @@
   resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-7.3.2.tgz#67d266ee56286479cd1c3b113451a7907516fdbe"
   integrity sha512-63ysybmpl9UULmLu/aUwWwhjf5QEWTvnMW9r8Z3LF3sW8Z698ZsssdThzNWqw0zlwTlgnQA4ta2Df4/oVXR0+Q==
 
-"@storybook/react-vite@^7.3.2":
+"@storybook/react-vite@^7.0.26":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/react-vite/-/react-vite-7.3.2.tgz#11d905b5031812c341e5bb0eb5c9c03d1d3f5638"
   integrity sha512-lfDrcESQkrqVh1PkFgiJMrfhGYNckQ3rB2ZCvvzruHYWe/9B40EbMxGZauLg7B7M5j2Rzj+sa7Jfr3dasm+GJA==
@@ -2523,7 +2523,7 @@
     magic-string "^0.30.0"
     react-docgen "6.0.0-alpha.3"
 
-"@storybook/react@7.3.2", "@storybook/react@^7.3.2":
+"@storybook/react@7.3.2", "@storybook/react@^7.0.26":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-7.3.2.tgz#434e20910189d4f8517df1c98b1acf2496b31e97"
   integrity sha512-VMXy+soLnEW+lN1sfkkMGkmk3gnS3KLfEk0JssSlj+jGA4cPpvO+P1uGNkN8MjdiU9VaWt0aZ7uRdwx0rrfFUw==
@@ -3163,7 +3163,7 @@
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
 
-"@virtuslab/eslint-config-tetrisly@^1.2.1":
+"@virtuslab/eslint-config-tetrisly@^1.1.8":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@virtuslab/eslint-config-tetrisly/-/eslint-config-tetrisly-1.2.1.tgz#3533a6cf680cfd72be306ada438eccd215b31afb"
   integrity sha512-ALLY5ths6y2HeZFYo30tKvQksfxs1s+5ID9GgaN3gR43c7edW/rH2yJ2sBUb0fZc/iuyhrpNzKPKZNX6obGM6A==
@@ -4929,7 +4929,7 @@ eslint-plugin-react@^7.32.2:
     semver "^6.3.1"
     string.prototype.matchall "^4.0.8"
 
-eslint-plugin-storybook@^0.6.13:
+eslint-plugin-storybook@^0.6.12:
   version "0.6.13"
   resolved "https://registry.yarnpkg.com/eslint-plugin-storybook/-/eslint-plugin-storybook-0.6.13.tgz#897a9f6a9bb88c63b02f05850f30c28a9848a3f7"
   integrity sha512-smd+CS0WH1jBqUEJ3znGS7DU4ayBE9z6lkQAK2yrSUv1+rq8BT/tiI5C/rKE7rmiqiAfojtNYZRhzo5HrulccQ==
@@ -4960,7 +4960,7 @@ eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1, eslint-visitor-keys@^3.4
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz#0cd72fe8550e3c2eae156a96a4dddcd1c8ac5800"
   integrity sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==
 
-eslint@^8.44:
+eslint@^8.44.0:
   version "8.47.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.47.0.tgz#c95f9b935463fb4fad7005e626c7621052e90806"
   integrity sha512-spUQWrdPt+pRVP1TTJLmfRNJJHHZryFmptzcafwSvHsceV81djHOdnEeDmkdotZyLNjDhrOasNK8nikkoG1O8Q==
@@ -7407,11 +7407,6 @@ prettier@^2.8.0:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.8.tgz#e8c5d7e98a4305ffe3de2e1fc4aca1a71c28b1da"
   integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
 
-prettier@^3.0.0:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.2.tgz#78fcecd6d870551aa5547437cdae39d4701dca5b"
-  integrity sha512-o2YR9qtniXvwEZlOKbveKfDQVyqxbEIWn48Z8m3ZJjBjcCmUy3xZGIv+7AkaeuaTr6yPXJjwv07ZWlsWbEy1rQ==
-
 pretty-format@^27.0.2:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-27.5.1.tgz#2181879fdea51a7a5851fb39d920faa63f01d88e"
@@ -8246,7 +8241,7 @@ store2@^2.14.2:
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.14.2.tgz#56138d200f9fe5f582ad63bc2704dbc0e4a45068"
   integrity sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==
 
-storybook@^7.3.2:
+storybook@^7.0.26:
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/storybook/-/storybook-7.3.2.tgz#602960a7a084af1e6d7b0612f98afbb5e958abff"
   integrity sha512-Vf1C5pfF5NHQsb+33NeBd3gLGhcwbT+v6WqqIdARV7LSByqKiWNgJl2ATgzm1b4ERJo8sHU+EiJZIovFWEElkg==
