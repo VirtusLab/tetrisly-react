@@ -53,7 +53,7 @@ describe('TextInput', () => {
     const textInput = getTextInput(
       <TextInput
         beforeComponent={{ type: 'Icon', props: { name: '16-bolt' } }}
-      />
+      />,
     );
 
     const beforeComponent = textInput.querySelector('span');
@@ -65,7 +65,7 @@ describe('TextInput', () => {
     const textInput = getTextInput(
       <TextInput
         afterComponent={{ type: 'Icon', props: { name: '16-bolt' } }}
-      />
+      />,
     );
 
     const afterComponent = textInput.querySelector('span');
@@ -75,7 +75,7 @@ describe('TextInput', () => {
 
   it('should propagate custom props', () => {
     const textInput = getTextInput(
-      <TextInput custom={{ backgroundColor: 'background-negative-subtle' }} />
+      <TextInput custom={{ backgroundColor: 'background-negative-subtle' }} />,
     );
 
     expect(textInput).toHaveStyle('background-color: rgb(254, 245, 245)');

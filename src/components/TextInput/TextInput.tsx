@@ -23,7 +23,7 @@ export const TextInput = forwardRef<
       custom = {},
       ...rest
     },
-    inputRef
+    inputRef,
   ) => {
     const [marginProps, inputProps] = extractMarginProps<
       TextInputProps & MarginProps
@@ -114,5 +114,5 @@ export const TextInput = forwardRef<
         )}
       </tet.div>
     );
-  }
+  },
 );
