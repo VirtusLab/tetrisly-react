@@ -1,1 +1,1 @@
-export { stylesBuilder } from './stylesBuilder'
+export { stylesBuilder } from './stylesBuilder';

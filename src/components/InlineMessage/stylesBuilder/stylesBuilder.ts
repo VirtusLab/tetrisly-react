@@ -6,7 +6,7 @@ import { InlineMessageIntent } from '../InlineMessageIntent.type';
 
 export const stylesBuilder = (
   intent: InlineMessageIntent,
-  custom: InlineMessageProps['custom']
+  custom: InlineMessageProps['custom'],
 ) => {
   const styles = merge(defaultConfig, custom);
 
