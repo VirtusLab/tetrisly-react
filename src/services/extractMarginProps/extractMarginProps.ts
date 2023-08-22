@@ -51,12 +51,12 @@ type OmitMarginProps<T> = Omit<
   | 'my'
 >;
 
-export const extractMarginProps = <T extends MarginProps = MarginProps>(
+export const extractMarginProps = <T extends object = object>(
   props: T,
 ): [MarginsProps, OmitMarginProps<T>] => {
   if (!(props instanceof Object)) return [{}, {} as T];
 
-  const entries = Object.entries(props) as [keyof MarginProps, T[keyof T]][];
+  const entries = Object.entries(props) as [keyof MarginProps, object][];
   const [marginsProps, restProps] = entries.reduce(
     ([margins, rest], [key, value]) => {
       if (marginPropsKeys.includes(key)) {
