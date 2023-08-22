@@ -1,7 +1,7 @@
 import { ButtonVariant } from './types/ButtonType.type';
 import { VariantConfig } from './VariantConfig';
 
-import { BaseConfigProps } from '@/utility-types/BaseConfigProps';
+import { BaseProps } from '@/types/BaseProps';
 
 const size = {
   small: {
@@ -22,7 +22,7 @@ const size = {
     h: 'large',
     text: 'body-large',
   },
-} as const satisfies Record<'small' | 'medium' | 'large', BaseConfigProps>;
+} as const satisfies Record<'small' | 'medium' | 'large', BaseProps>;
 
 const commonConfig = {
   display: 'inline-flex',
@@ -48,7 +48,7 @@ const commonConfig = {
   },
   transition: true,
   transitionDuration: 200,
-} as const satisfies BaseConfigProps;
+} as const satisfies BaseProps;
 
 const defaultConfig = {
   ...commonConfig,

@@ -14,7 +14,7 @@ type Config = {
 export const config = {
   display: 'flex',
   alignItems: 'flex-start',
-  gap: 'component-gap-large',
+  gap: 'component-gap-xSmall',
   text: 'medium-150',
   intent: {
     none: {

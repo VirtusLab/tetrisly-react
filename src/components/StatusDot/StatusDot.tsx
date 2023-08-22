@@ -10,14 +10,15 @@ import { tet } from '@/tetrisly';
 export const StatusDot = ({
   appearance,
   stroked = false,
-  custom = {},
+  custom,
   ...rest
 }: StatusDotProps & MarginProps) => {
+  const options = custom ? merge(defaultConfig, custom) : defaultConfig;
   const {
     appearance: appearanceStyles,
     stroked: strokedStyles,
     ...restStyles
-  } = merge(defaultConfig, custom);
+  } = options;
 
   if (!isKeyOf(appearanceStyles, appearance)) {
     throw new Error(`${appearance} is not a valid appearance`);
