@@ -7,11 +7,11 @@ import { ButtonVariant } from './types/ButtonType.type';
 import { tet } from '../../tetrisly';
 import { Loader } from '../Loader';
 
-import { MarginProps } from '@/types/MarginProps';
+import type { MarginProps } from '@/types';
 
 export const Button = <
   TVariant extends ButtonVariant = 'default',
-  TAppearance extends ButtonAppearance<TVariant> = ButtonAppearance<TVariant>
+  TAppearance extends ButtonAppearance<TVariant> = ButtonAppearance<TVariant>,
 >({
   label,
   variant,

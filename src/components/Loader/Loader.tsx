@@ -11,7 +11,7 @@ export const Loader = ({
   progress,
   shape,
   size = 'medium',
-  custom = {},
+  custom,
 }: LoaderProps & MarginProps) => {
   const { svgStyles, baseStyles, progressStyles } = stylesBuilder({
     appearance,

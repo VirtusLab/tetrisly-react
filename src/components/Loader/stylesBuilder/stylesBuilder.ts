@@ -3,15 +3,16 @@ import { merge } from 'lodash';
 import { LoaderProps } from '../Loader.props';
 import { config as defaultConfig } from '../Loader.styles';
 
-type StylesBuilderProps = Omit<Required<LoaderProps>, 'progress'> & {
-  progress: number | undefined;
+type StylesBuilderProps = Omit<Required<LoaderProps>, 'custom' | 'progress'> & {
+  custom: LoaderProps['custom'];
+  progress: LoaderProps['progress'];
 };
 
 function polarToCartesian(
   centerX: number,
   centerY: number,
   radius: number,
-  angleInDegrees: number
+  angleInDegrees: number,
 ) {
   const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
 
@@ -26,7 +27,7 @@ function describeArc(
   y: number,
   radius: number,
   startAngle: number,
-  endAngle: number
+  endAngle: number,
 ) {
   const start = polarToCartesian(x, y, radius, endAngle);
   const end = polarToCartesian(x, y, radius, startAngle);
@@ -49,8 +50,10 @@ function describeArc(
   return d;
 }
 
-export function stylesBuilder({ custom = {}, ...props }: StylesBuilderProps) {
-  const config = merge(defaultConfig, custom);
+export function stylesBuilder(props: StylesBuilderProps) {
+  const config = props.custom
+    ? merge(defaultConfig, props.custom)
+    : defaultConfig;
 
   const size = config.size[props.shape][props.size];
   const { w, h, ...restSizeStyles } = size;

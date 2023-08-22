@@ -9,5 +9,5 @@ type Cases = [
   Expect<Equal<ButtonSize<'ghost'>, 'small' | 'medium' | 'large'>>,
   Expect<Equal<ButtonSize<'bare'>, 'medium' | 'large'>>,
   // @ts-expect-error - wrong variant
-  ButtonSize<'Foo'>
+  ButtonSize<'Foo'>,
 ];

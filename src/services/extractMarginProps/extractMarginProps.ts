@@ -13,12 +13,12 @@ import {
 
 interface MarginsProps
   extends MarginProps,
-    MarginLeftProps,
-    MarginBottomProps,
-    MarginTopProps,
-    MarginRightProps,
-    MarginXProps,
-    MarginYProps {}
+  MarginLeftProps,
+  MarginBottomProps,
+  MarginTopProps,
+  MarginRightProps,
+  MarginXProps,
+  MarginYProps { }
 
 const marginPropsKeys: (keyof MarginsProps)[] = [
   'm',
@@ -51,23 +51,21 @@ type OmitMarginProps<T> = Omit<
   | 'my'
 >;
 
-export const extractMarginProps = <T = object>(
+export const extractMarginProps = <T extends object = object>(
   props: T
 ): [MarginsProps, OmitMarginProps<T>] => {
   if (!(props instanceof Object)) return [{}, {} as T];
 
-  const marginsProps: MarginsProps = {};
-  const restProps: OmitMarginProps<T> = {} as OmitMarginProps<T>;
-
-  Object.entries(props).forEach(([key, value]: [string, unknown]) => {
-    if (marginPropsKeys.includes(key as keyof MarginsProps)) {
-      marginsProps[key as keyof MarginsProps] =
-        value as MarginsProps[keyof MarginsProps];
-    } else {
-      restProps[key as keyof OmitMarginProps<T>] =
-        value as OmitMarginProps<T>[keyof OmitMarginProps<T>];
-    }
-  });
+  const entries = Object.entries(props) as [keyof MarginProps, object][];
+  const [marginsProps, restProps] = entries.reduce(
+    ([margins, rest], [key, value]) => {
+      if (marginPropsKeys.includes(key)) {
+        return [{ ...margins, [key]: value }, rest];
+      }
+      return [margins, { ...rest, [key]: value }];
+    },
+    [{} as MarginProps, {} as OmitMarginProps<T>]
+  );
 
   return [marginsProps, restProps];
 };

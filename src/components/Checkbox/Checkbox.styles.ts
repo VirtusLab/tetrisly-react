@@ -16,7 +16,7 @@ export const config = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
-  gap: 'component-gap-small',
+  gap: 'component-gap-xSmall',
   minWidth: '3xSmall',
   minHeight: '3xSmall',
   color: 'content-primary',
@@ -29,12 +29,14 @@ export const config = {
   innerComponents: {
     checkboxContainer: {
       position: 'relative',
+      cursor: 'pointer',
     },
     checkbox: {
       appearance: 'none',
       display: 'block',
       w: '3xSmall',
       h: '3xSmall',
+      pointerEvents: 'none',
       backgroundColor: {
         _: 'interaction-background-formField',
         checked: {
@@ -77,11 +79,12 @@ export const config = {
       },
       transition: true,
       transitionDuration: 200,
-      cursor: 'pointer',
     },
     checkboxIcon: {
       position: 'absolute',
       color: 'interaction-inverted-normal',
+      w: '3xSmall',
+      h: '3xSmall',
       left: 0,
       top: 0,
     },
