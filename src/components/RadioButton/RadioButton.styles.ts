@@ -14,7 +14,7 @@ export const config = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
-  gap: 'component-gap-small',
+  gap: 'component-gap-xSmall',
   minWidth: '3xSmall',
   minHeight: '3xSmall',
   color: 'content-primary',

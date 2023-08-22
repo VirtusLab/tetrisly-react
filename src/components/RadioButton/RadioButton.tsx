@@ -14,7 +14,7 @@ type Props = RadioButtonProps & MarginProps;
 export const RadioButton = forwardRef<HTMLInputElement, Props>(
   (
     { isChecked, state, label, helperText, custom = {}, ...restProps },
-    radioButtonRef,
+    radioButtonRef
   ) => {
     const [marginProps, radioButtonProps] =
       extractMarginProps<Props>(restProps);
@@ -64,5 +64,5 @@ export const RadioButton = forwardRef<HTMLInputElement, Props>(
         )}
       </tet.div>
     );
-  },
+  }
 );
