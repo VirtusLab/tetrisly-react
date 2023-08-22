@@ -1,7 +1,7 @@
 export declare const config: {
     readonly display: "flex";
     readonly alignItems: "flex-start";
-    readonly gap: "component-gap-large";
+    readonly gap: "component-gap-xSmall";
     readonly text: "medium-150";
     readonly intent: {
         readonly none: {

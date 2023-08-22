@@ -1,2 +1,3 @@
-export { mergeObjects } from './mergeObjects';
-export { isKeyOf } from './isKeyOf';
+export * from './extractMarginProps';
+export * from './isKeyOf';
+export * from './mergeObjects';

@@ -29,7 +29,7 @@ export declare const config: {
             borderRadius: string;
         };
     };
-    size: Record<"small" | "medium" | "large" | "xSmall" | "2xSmall", BaseConfigProps>;
+    size: Record<"large" | "medium" | "small" | "xSmall" | "2xSmall", BaseConfigProps>;
     appearance: {
         blue: {
             emphasis: {

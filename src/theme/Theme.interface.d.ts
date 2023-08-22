@@ -1165,5 +1165,6 @@ export type States = {
     selected: string;
     loading: string;
     alert: string;
+    indeterminate: string;
 };
 export {};

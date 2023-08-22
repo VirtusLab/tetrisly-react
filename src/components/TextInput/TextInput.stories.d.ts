@@ -6,10 +6,10 @@ declare const meta: {
         type?: import("./TextInputType.type").TextInputType | undefined;
         beforeComponent?: import("../../types").InnerComponent<"Icon", import("@virtuslab/tetrisly-icons").IconProps> | import("../../types").InnerComponent<"Prefix", {
             text: string;
-        }> | import("../../types").InnerComponent<"Dropdown", Pick<import("../Button").ButtonProps<"ghost">, "label" | "onClick">> | undefined;
-        afterComponent?: import("../../types").InnerComponent<"Icon", import("@virtuslab/tetrisly-icons").IconProps> | import("../../types").InnerComponent<"Dropdown", Pick<import("../Button").ButtonProps<"ghost">, "label" | "onClick">> | import("../../types").InnerComponent<"Sufix", {
+        }> | import("../../types").InnerComponent<"Dropdown", Pick<import("../Button").ButtonProps<"ghost">, "onClick" | "label">> | undefined;
+        afterComponent?: import("../../types").InnerComponent<"Icon", import("@virtuslab/tetrisly-icons").IconProps> | import("../../types").InnerComponent<"Dropdown", Pick<import("../Button").ButtonProps<"ghost">, "onClick" | "label">> | import("../../types").InnerComponent<"Sufix", {
             text: string;
-        }> | import("../../types").InnerComponent<"Button", Pick<import("../Button").ButtonProps<"ghost">, "label" | "onClick">> | undefined;
+        }> | import("../../types").InnerComponent<"Button", Pick<import("../Button").ButtonProps<"ghost">, "onClick" | "label">> | undefined;
         state?: import("../../types").BasicInputState | undefined;
         hasClearButton?: boolean | undefined;
         custom?: import("../../utility-types/DeepPartial").DeepPartial<import("@xstyled/system").SystemProps<import("../../theme").Theme> & {
@@ -107,7 +107,7 @@ declare const meta: {
                 };
             };
         }> | undefined;
-    } & Omit<import("react").InputHTMLAttributes<HTMLInputElement>, "disabled" | "color" | "checked" | "type"> & import("@xstyled/system").MarginProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginLeftProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginBottomProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginTopProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginRightProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginXProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginYProps<import("@xstyled/system").Theme> & import("react").RefAttributes<HTMLInputElement>>;
+    } & Omit<import("react").InputHTMLAttributes<HTMLInputElement>, "color" | "checked" | "disabled" | "type"> & import("@xstyled/system").MarginProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginLeftProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginBottomProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginTopProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginRightProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginXProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginYProps<import("@xstyled/system").Theme> & import("react").RefAttributes<HTMLInputElement>>;
     tags: string[];
     args: {
         placeholder: string;

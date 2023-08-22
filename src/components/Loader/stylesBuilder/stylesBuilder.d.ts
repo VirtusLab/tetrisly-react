@@ -1,8 +1,9 @@
 import { LoaderProps } from '../Loader.props';
-type StylesBuilderProps = Omit<Required<LoaderProps>, 'progress'> & {
-    progress: number | undefined;
+type StylesBuilderProps = Omit<Required<LoaderProps>, 'custom' | 'progress'> & {
+    custom: LoaderProps['custom'];
+    progress: LoaderProps['progress'];
 };
-export declare function stylesBuilder({ custom, ...props }: StylesBuilderProps): {
+export declare function stylesBuilder(props: StylesBuilderProps): {
     svgStyles: {
         fill: "none";
         borderRadius: "large";
