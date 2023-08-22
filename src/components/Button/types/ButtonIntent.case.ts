@@ -43,5 +43,5 @@ type Cases = [
   ButtonIntent<'Bare', 'Foo'>,
 
   // @ts-expect-error - wrong variant
-  ButtonIntent<'Foo', 'primary'>
+  ButtonIntent<'Foo', 'primary'>,
 ];

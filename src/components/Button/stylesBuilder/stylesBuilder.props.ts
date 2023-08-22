@@ -7,7 +7,7 @@ import { VariantConfig } from '../VariantConfig';
 
 export type StylesBuilderProps<
   TVariant extends ButtonVariant,
-  TAppearance extends ButtonAppearance<TVariant>
+  TAppearance extends ButtonAppearance<TVariant>,
 > = {
   appearance?: TAppearance;
   variant?: TVariant;

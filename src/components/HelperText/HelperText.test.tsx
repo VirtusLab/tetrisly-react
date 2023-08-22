@@ -29,7 +29,7 @@ describe('HelperText', () => {
         intent="none"
         beforeIcon
         counter={{ current: 0, max: 0 }}
-      />
+      />,
     );
     expect(text).toHaveStyle('color: rgb(85, 85, 85);');
     expect(icon).toHaveStyle('color: rgb(85, 85, 85);');
@@ -43,7 +43,7 @@ describe('HelperText', () => {
         intent="alert"
         beforeIcon
         counter={{ current: 0, max: 0 }}
-      />
+      />,
     );
     expect(text).toHaveStyle('color: rgb(197, 52, 52);');
     expect(icon).toHaveStyle('color: rgb(197, 52, 52);');
@@ -57,7 +57,7 @@ describe('HelperText', () => {
         intent="success"
         beforeIcon
         counter={{ current: 0, max: 0 }}
-      />
+      />,
     );
     expect(text).toHaveStyle('color: rgb(29, 29, 29);');
     expect(icon).toHaveStyle('color: rgb(29, 29, 29);');
@@ -66,7 +66,7 @@ describe('HelperText', () => {
 
   it('should render icon if passed as a prop', () => {
     const { icon } = getHelperText(
-      <HelperText text="Hello there" beforeIcon />
+      <HelperText text="Hello there" beforeIcon />,
     );
     expect(icon).toBeInTheDocument();
   });
@@ -78,7 +78,7 @@ describe('HelperText', () => {
 
   it('should render counter if passed as a prop', () => {
     const { counter } = getHelperText(
-      <HelperText text="Hello there" counter={{ current: 0, max: 0 }} />
+      <HelperText text="Hello there" counter={{ current: 0, max: 0 }} />,
     );
     expect(counter).toBeInTheDocument();
   });
@@ -91,7 +91,7 @@ describe('HelperText', () => {
   it('should throw an error if wrong config is provided', () => {
     expect(() =>
       // @ts-expect-error testing wrong appearance
-      render(<HelperText intent="default" />)
+      render(<HelperText intent="default" />),
     ).toThrowError();
   });
 });

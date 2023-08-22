@@ -19,7 +19,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "styled-components": "^5.3.3"
+    "styled-components": "5.3.3"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.26",
@@ -39,23 +39,29 @@
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
-    "@virtuslab/eslint-config-tetrisly": "^1.1.8",
+    "@virtuslab/eslint-config-tetrisly": "^1.2.3",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "eslint": "^8.44.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.2",
     "jsdom": "^22.1.0",
+    "prettier": "^3.0.2",
     "storybook": "^7.0.26",
     "typescript": "^5.1.6",
     "vite": "^4.4.2",
     "vite-plugin-dts": "^3.2.0",
     "vite-tsconfig-paths": "^4.2.0",
-    "vitest": "^0.33.0"
+    "vitest": "^0.34.2"
   },
   "exports": {
     ".": {
       "import": "./dist/tetrisly-icons.es.js",
       "require": "./dist/tetrisly-icons.umd.js"
     }
+  },
+  "resolutions": {
+    "strip-ansi": "^6.0.1",
+    "string-width": "^4.2.2"
   }
 }
