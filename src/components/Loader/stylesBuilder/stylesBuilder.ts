@@ -12,7 +12,7 @@ function polarToCartesian(
   centerX: number,
   centerY: number,
   radius: number,
-  angleInDegrees: number
+  angleInDegrees: number,
 ) {
   const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
 
@@ -27,7 +27,7 @@ function describeArc(
   y: number,
   radius: number,
   startAngle: number,
-  endAngle: number
+  endAngle: number,
 ) {
   const start = polarToCartesian(x, y, radius, endAngle);
   const end = polarToCartesian(x, y, radius, startAngle);

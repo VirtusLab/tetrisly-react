@@ -13,9 +13,9 @@ import { Theme } from '@/theme';
 
 export const stylesBuilder = <
   TVariant extends ButtonVariant,
-  TAppearance extends ButtonAppearance<TVariant>
+  TAppearance extends ButtonAppearance<TVariant>,
 >(
-  props: StylesBuilderProps<TVariant, TAppearance>
+  props: StylesBuilderProps<TVariant, TAppearance>,
 ): SystemProps<Theme> => {
   const options = applyDefaults(props);
   const config = props.custom
@@ -27,14 +27,14 @@ export const stylesBuilder = <
 
   if (!isKeyOf(appearance, options.appearance))
     throw new Error(
-      `${options.appearance} is not a valid appearance for ${options.variant}`
+      `${options.appearance} is not a valid appearance for ${options.variant}`,
     );
   const { intent: intentConfig, ...appearanceProps } =
     appearance[options.appearance];
 
   if (!isKeyOf(intentConfig, options.intent)) {
     throw new Error(
-      `${options.intent} is not a valid intent for ${options.variant} ${options.appearance}`
+      `${options.intent} is not a valid intent for ${options.variant} ${options.appearance}`,
     );
   }
 

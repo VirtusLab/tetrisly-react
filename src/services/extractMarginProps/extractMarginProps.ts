@@ -52,7 +52,7 @@ type OmitMarginProps<T> = Omit<
 >;
 
 export const extractMarginProps = <T = object>(
-  props: T
+  props: T,
 ): [MarginsProps, OmitMarginProps<T>] => {
   if (!(props instanceof Object)) return [{}, {} as T];
 
