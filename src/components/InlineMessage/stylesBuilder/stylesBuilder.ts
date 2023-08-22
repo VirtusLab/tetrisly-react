@@ -1,8 +1,8 @@
 import { merge } from 'lodash';
 
-import { InlineMessageProps } from './InlineMessage.props';
-import { config as defaultConfig } from './InlineMessage.styles';
-import { InlineMessageIntent } from './InlineMessageIntent.type';
+import { InlineMessageProps } from '../InlineMessage.props';
+import { config as defaultConfig } from '../InlineMessage.styles';
+import { InlineMessageIntent } from '../InlineMessageIntent.type';
 
 export const stylesBuilder = (
   intent: InlineMessageIntent,

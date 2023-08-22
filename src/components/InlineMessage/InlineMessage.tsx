@@ -12,6 +12,7 @@ export const InlineMessage = ({
   title,
   description,
   custom,
+  ...rest
 }: InlineMessageProps & MarginProps) => {
   const {
     iconContainer: iconContainerStyles,
@@ -22,7 +23,7 @@ export const InlineMessage = ({
   } = useMemo(() => stylesBuilder(intent, custom), [intent, custom]);
 
   return (
-    <tet.div {...containerStyles} data-testid="inline-message">
+    <tet.div {...containerStyles} {...rest} data-testid="inline-message">
       <tet.span {...iconContainerStyles}>
         <Icon {...iconStyles} data-testid="inline-message-icon" />
       </tet.span>
