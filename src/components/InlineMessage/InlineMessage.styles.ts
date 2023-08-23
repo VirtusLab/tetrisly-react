@@ -1,22 +1,20 @@
-import { SystemProps } from '@xstyled/styled-components';
-
 import { InlineMessageIntent } from './InlineMessageIntent.type';
 
-import { Theme } from '@/theme';
 import { IconName } from '@/utility-types/IconName';
+import { BaseProps } from '@/types/BaseProps';
 
-type Config = {
+export type InlineMessageConfig = {
   title: {
-    intent: Record<InlineMessageIntent, SystemProps>;
-  } & SystemProps;
+    intent: Record<InlineMessageIntent, BaseProps>;
+  } & BaseProps;
   icon: {
-    intent: Record<InlineMessageIntent, SystemProps & { name: IconName<20> }>;
-  } & SystemProps;
+    intent: Record<InlineMessageIntent, { name: IconName<20> }>;
+  };
   iconContainer: {
-    intent: Record<InlineMessageIntent, SystemProps>;
-  } & SystemProps;
-  description: SystemProps;
-};
+    intent: Record<InlineMessageIntent, BaseProps>;
+  } & BaseProps;
+  description: BaseProps;
+} & BaseProps;
 
 export const config = {
   display: 'flex',
@@ -78,4 +76,4 @@ export const config = {
   description: {
     color: 'content-primary',
   },
-} as const satisfies SystemProps<Theme> & Config;
+} as const satisfies InlineMessageConfig;

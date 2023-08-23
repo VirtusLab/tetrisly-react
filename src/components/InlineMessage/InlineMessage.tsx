@@ -5,15 +5,14 @@ import { InlineMessageProps } from './InlineMessage.props';
 import { stylesBuilder } from './stylesBuilder';
 import { tet } from '../../tetrisly';
 
-import { MarginProps } from '@/types/MarginProps';
-
 export const InlineMessage = ({
   intent = 'informative',
   title,
   description,
   custom,
   ...rest
-}: InlineMessageProps & MarginProps) => {
+}: InlineMessageProps) => {
+
   const {
     iconContainer: iconContainerStyles,
     icon: iconStyles,
