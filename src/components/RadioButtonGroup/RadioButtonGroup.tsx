@@ -41,7 +41,7 @@ export const RadioButtonGroup: RadioButtonGroupComponent = ({
   const radioButtons = Children.map(children, (child) => {
     if (child?.type !== RadioButtonGroup.Item) {
       console.error(
-        'You should use only RadioButtonGroup.Item as a child of a RadioButtonGroup component.',
+        'You should use only RadioButtonGroup.Item as a child of a RadioButtonGroup component.'
       );
     }
     if (isValidElement(child)) {
@@ -51,12 +51,12 @@ export const RadioButtonGroup: RadioButtonGroupComponent = ({
   });
 
   return (
-    <tet.div {...restStyles} {...restProps} data-testid="checkbox-group">
+    <tet.div {...restStyles} {...restProps} data-testid="radio-button-group">
       {!!label && <Label label={label} />}
       <tet.div
         {...checkboxContainerStyles}
         gridTemplateColumns={`repeat(${column}, 1fr)`}
-        data-testid="checkbox-group-container"
+        data-testid="radio-button-group-container"
       >
         {radioButtons}
       </tet.div>
