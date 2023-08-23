@@ -1,7 +1,7 @@
 import { InlineMessageIntent } from './InlineMessageIntent.type';
 
-import { IconName } from '@/utility-types/IconName';
 import { BaseProps } from '@/types/BaseProps';
+import { IconName } from '@/utility-types/IconName';
 
 export type InlineMessageConfig = {
   title: {

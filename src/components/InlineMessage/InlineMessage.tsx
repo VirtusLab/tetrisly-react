@@ -12,7 +12,6 @@ export const InlineMessage = ({
   custom,
   ...rest
 }: InlineMessageProps) => {
-
   const {
     iconContainer: iconContainerStyles,
     icon: iconStyles,
