@@ -4,9 +4,9 @@ import { DividerOrientation } from './DividerOrientation.type';
 
 import { BaseProps } from '@/types/BaseProps';
 
-type Custom = {
+export type DividerConfig = {
   orientation: Record<DividerOrientation, SystemProps>;
-};
+} & BaseProps;
 
 export const config = {
   backgroundColor: 'border-default',
@@ -20,4 +20,4 @@ export const config = {
       h: '100%',
     },
   },
-} as const satisfies BaseProps & Custom;
+} satisfies DividerConfig;

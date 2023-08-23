@@ -1,8 +1,8 @@
 import { SystemProps } from '@xstyled/styled-components';
 
-import { Theme } from '@/theme';
+import { BaseProps } from '@/types/BaseProps';
 
-type Config = {
+export type CheckboxConfig = {
   innerComponents: {
     checkbox: SystemProps;
     checkboxContainer: SystemProps;
@@ -10,7 +10,7 @@ type Config = {
     label: SystemProps;
     helperText: SystemProps;
   };
-};
+} & BaseProps;
 
 export const config = {
   display: 'flex',
@@ -101,4 +101,4 @@ export const config = {
       paddingLeft: 'component-padding-2xLarge',
     },
   },
-} as const satisfies SystemProps<Theme> & Config;
+} satisfies CheckboxConfig;

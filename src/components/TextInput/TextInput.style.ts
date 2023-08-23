@@ -1,8 +1,8 @@
 import { SystemProps } from '@xstyled/styled-components';
 
-import { Theme } from '@/theme';
+import { BaseProps } from '@/types/BaseProps';
 
-type Config = {
+export type TextInputConfig = {
   innerComponents: Record<'input' | 'icon' | 'text', SystemProps>;
   spacing:
     | Record<
@@ -16,7 +16,7 @@ type Config = {
           SystemProps
         >
       >;
-};
+} & BaseProps;
 
 export const config = {
   display: 'flex',
@@ -112,4 +112,4 @@ export const config = {
       },
     },
   },
-} as const satisfies SystemProps<Theme> & Config;
+} satisfies TextInputConfig;

@@ -1,12 +1,12 @@
 import { SystemProps } from '@xstyled/styled-components';
 
 import { fromEntries } from '@/services/fromEntries';
-import { Theme } from '@/theme';
 import type { BasicAppearance, BasicIntent } from '@/types';
+import { BaseProps } from '@/types/BaseProps';
 import { basicAppearances } from '@/types/BasicAppearance';
 import { basicIntents } from '@/types/BasicIntent';
 
-type Config = {
+export type BadgeConfig = {
   appearance: Record<
     BasicAppearance,
     Record<'high' | 'medium' | 'low', SystemProps>
@@ -14,7 +14,7 @@ type Config = {
   intent: Record<BasicIntent, Record<'high' | 'medium' | 'low', SystemProps>>;
   label: SystemProps;
   icon: SystemProps;
-};
+} & BaseProps;
 
 export const config = {
   appearance: {
@@ -78,5 +78,4 @@ export const config = {
     padding: 'component-padding-xSmall',
   },
   gap: 'component-gap-xSmall',
-} as const satisfies Omit<SystemProps<Theme>, 'appearance' | 'padding'> &
-  Config;
+} satisfies BadgeConfig;

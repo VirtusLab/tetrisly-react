@@ -1,8 +1,5 @@
-import { SystemProps } from '@xstyled/styled-components';
+import { BadgeConfig } from './Badge.styles';
 
-import { config } from './Badge.styles';
-
-import { Theme } from '@/theme';
 import type { BasicAppearance, BasicIntent } from '@/types';
 import { DeepPartial } from '@/utility-types/DeepPartial';
 import { IconName } from '@/utility-types/IconName';
@@ -17,5 +14,5 @@ export type BadgeProps = Or<
     { icon: IconName<16> }
   > & {
     emphasis?: 'high' | 'medium' | 'low';
-    custom?: DeepPartial<SystemProps<Theme> & typeof config>;
+    custom?: DeepPartial<BadgeConfig>;
   };
