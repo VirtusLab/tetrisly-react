@@ -11,7 +11,6 @@ export type CheckboxItemProps = Omit<CheckboxProps, 'label' | 'helperText'> & {
 };
 
 export type CheckboxGroupProps = {
-  name: string;
   column?: number;
   label?: string;
   helperText?: string;

@@ -7,7 +7,6 @@ const meta = {
   component: CheckboxGroup,
   tags: ['autodocs'],
   args: {
-    name: 'checkboxes',
     label: 'Label',
     helperText: 'Helper text',
     children: [

@@ -1,10 +1,10 @@
 import { SystemProps } from '@xstyled/styled-components';
 
-import { Theme } from '@/theme';
+import { BaseProps } from '@/types/BaseProps';
 
-type Config = {
+export type CheckboxGroupConfig = {
   checkboxContainer: SystemProps;
-};
+} & BaseProps;
 
 export const config = {
   display: 'flex',
@@ -14,4 +14,4 @@ export const config = {
     display: 'grid',
     gap: 'component-gap-small component-gap-large',
   },
-} as const satisfies SystemProps<Theme> & Config;
+} satisfies CheckboxGroupConfig;

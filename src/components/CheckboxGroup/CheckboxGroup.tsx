@@ -1,6 +1,5 @@
 import { merge } from 'lodash';
-import * as React from 'react';
-import { Children, cloneElement, isValidElement } from 'react';
+import { Children, FC, FunctionComponent } from 'react';
 
 import type {
   CheckboxGroupProps,
@@ -16,12 +15,11 @@ import { MarginProps } from '@/types';
 
 type Props = CheckboxGroupProps & MarginProps;
 
-type CheckboxGroupComponent = React.FunctionComponent<Props> & {
-  Item: React.FC<CheckboxItemProps>;
+type CheckboxGroupComponent = FunctionComponent<Props> & {
+  Item: FC<CheckboxItemProps>;
 };
 
 export const CheckboxGroup: CheckboxGroupComponent = ({
-  name,
   column = 1,
   label,
   helperText,
@@ -33,11 +31,12 @@ export const CheckboxGroup: CheckboxGroupComponent = ({
     ? merge(defaultConfig, custom)
     : defaultConfig;
 
-  const checkboxes = Children.map(children, (child) => {
-    if (isValidElement(child)) {
-      return cloneElement(child, { name });
+  Children.map(children, (child) => {
+    if (child?.type !== CheckboxGroup.Item) {
+      console.error(
+        'You should use only CheckboxGroup.Item as a child of a CheckboxGroup component.',
+      );
     }
-    return child;
   });
 
   return (
@@ -48,13 +47,13 @@ export const CheckboxGroup: CheckboxGroupComponent = ({
         gridTemplateColumns={`repeat(${column}, 1fr)`}
         data-testid="checkbox-group-container"
       >
-        {checkboxes}
+        {children}
       </tet.div>
       {!!helperText && <HelperText text={helperText} />}
     </tet.div>
   );
 };
 
-const Item: React.FC<CheckboxItemProps> = (props) => <Checkbox {...props} />;
+const Item: FC<CheckboxItemProps> = (props) => <Checkbox {...props} />;
 
 CheckboxGroup.Item = Item;

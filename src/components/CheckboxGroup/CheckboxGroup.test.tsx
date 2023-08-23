@@ -12,15 +12,13 @@ const getCheckboxGroup = (jsx: JSX.Element) => {
 
 describe('CheckboxGroup', () => {
   it('should render the checkbox group', () => {
-    const { checkboxGroup } = getCheckboxGroup(
-      <CheckboxGroup column={1} name="name" />,
-    );
+    const { checkboxGroup } = getCheckboxGroup(<CheckboxGroup column={1} />);
     expect(checkboxGroup).toBeInTheDocument();
   });
 
   it('should render label text', () => {
     const { checkboxGroup } = getCheckboxGroup(
-      <CheckboxGroup column={1} name="name" label="Label" />,
+      <CheckboxGroup column={1} label="Label" />,
     );
 
     expect(checkboxGroup).toHaveTextContent('Label');
@@ -28,12 +26,7 @@ describe('CheckboxGroup', () => {
 
   it('should render helper text if props provided', () => {
     const { checkboxGroup, helperText } = getCheckboxGroup(
-      <CheckboxGroup
-        column={1}
-        name="name"
-        label="Label"
-        helperText="Helper text"
-      />,
+      <CheckboxGroup column={1} label="Label" helperText="Helper text" />,
     );
 
     expect(checkboxGroup).toHaveTextContent('Label');
@@ -43,7 +36,7 @@ describe('CheckboxGroup', () => {
 
   it('should not render helper text if props not provided', () => {
     const { helperText } = getCheckboxGroup(
-      <CheckboxGroup column={1} name="name" label="Label" />,
+      <CheckboxGroup column={1} label="Label" />,
     );
 
     expect(helperText).toBeNull();
@@ -51,7 +44,7 @@ describe('CheckboxGroup', () => {
 
   it('should render correct number of columns', () => {
     const { checkboxGroupContainer } = getCheckboxGroup(
-      <CheckboxGroup column={4} name="name" />,
+      <CheckboxGroup column={4} />,
     );
 
     expect(checkboxGroupContainer).toHaveStyle(
@@ -60,9 +53,7 @@ describe('CheckboxGroup', () => {
   });
 
   it('should render vertically, if no column provided', () => {
-    const { checkboxGroupContainer } = getCheckboxGroup(
-      <CheckboxGroup name="name" />,
-    );
+    const { checkboxGroupContainer } = getCheckboxGroup(<CheckboxGroup />);
 
     expect(checkboxGroupContainer).toHaveStyle(
       'grid-template-columns: repeat(1,1fr)',
@@ -71,7 +62,7 @@ describe('CheckboxGroup', () => {
 
   it('should render correct number of children', () => {
     const { checkboxGroupContainer } = getCheckboxGroup(
-      <CheckboxGroup name="name">
+      <CheckboxGroup>
         <CheckboxGroup.Item label="Label" />
         <CheckboxGroup.Item label="Label" />
         <CheckboxGroup.Item label="Label" />
@@ -84,27 +75,10 @@ describe('CheckboxGroup', () => {
     expect(checkboxGroupContainer?.children.length).toEqual(6);
   });
 
-  it('should propagate name prop to children', () => {
-    const { checkboxGroupContainer } = getCheckboxGroup(
-      <CheckboxGroup name="name">
-        <CheckboxGroup.Item label="Label" />
-        <CheckboxGroup.Item label="Label" />
-      </CheckboxGroup>,
-    );
-
-    expect(
-      checkboxGroupContainer?.children[0].querySelector('input'),
-    ).toHaveAttribute('name', 'name');
-    expect(
-      checkboxGroupContainer?.children[1].querySelector('input'),
-    ).toHaveAttribute('name', 'name');
-  });
-
   it('should propagate custom props', () => {
     const { checkboxGroup } = getCheckboxGroup(
       <CheckboxGroup
         column={1}
-        name="name"
         custom={{ backgroundColor: 'background-negative-subtle' }}
       />,
     );
