@@ -41,7 +41,7 @@ export const RadioButtonGroup: RadioButtonGroupComponent = ({
   const radioButtons = Children.map(children, (child) => {
     if (child?.type !== RadioButtonGroup.Item) {
       console.error(
-        'You should use only RadioButtonGroup.Item as a child of a RadioButtonGroup component.'
+        'You should use only RadioButtonGroup.Item as a child of a RadioButtonGroup component.',
       );
     }
     if (isValidElement(child)) {

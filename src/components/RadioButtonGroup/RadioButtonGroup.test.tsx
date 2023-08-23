@@ -13,14 +13,14 @@ const getRadioButtonGroup = (jsx: JSX.Element) => {
 describe('RadioButtonGroup', () => {
   it('should render the radio button group', () => {
     const { radioButtonGroup } = getRadioButtonGroup(
-      <RadioButtonGroup column={1} name="name" />
+      <RadioButtonGroup column={1} name="name" />,
     );
     expect(radioButtonGroup).toBeInTheDocument();
   });
 
   it('should render label text', () => {
     const { radioButtonGroup } = getRadioButtonGroup(
-      <RadioButtonGroup column={1} name="name" label="Label" />
+      <RadioButtonGroup column={1} name="name" label="Label" />,
     );
 
     expect(radioButtonGroup).toHaveTextContent('Label');
@@ -33,7 +33,7 @@ describe('RadioButtonGroup', () => {
         name="name"
         label="Label"
         helperText="Helper text"
-      />
+      />,
     );
 
     expect(radioButtonGroup).toHaveTextContent('Label');
@@ -43,7 +43,7 @@ describe('RadioButtonGroup', () => {
 
   it('should not render helper text if props not provided', () => {
     const { helperText } = getRadioButtonGroup(
-      <RadioButtonGroup column={1} name="name" label="Label" />
+      <RadioButtonGroup column={1} name="name" label="Label" />,
     );
 
     expect(helperText).toBeNull();
@@ -51,21 +51,21 @@ describe('RadioButtonGroup', () => {
 
   it('should render correct number of columns', () => {
     const { radioButtonGroupContainer } = getRadioButtonGroup(
-      <RadioButtonGroup column={4} name="name" />
+      <RadioButtonGroup column={4} name="name" />,
     );
 
     expect(radioButtonGroupContainer).toHaveStyle(
-      'grid-template-columns: repeat(4,1fr)'
+      'grid-template-columns: repeat(4,1fr)',
     );
   });
 
   it('should render vertically, if no column provided', () => {
     const { radioButtonGroupContainer } = getRadioButtonGroup(
-      <RadioButtonGroup name="name" />
+      <RadioButtonGroup name="name" />,
     );
 
     expect(radioButtonGroupContainer).toHaveStyle(
-      'grid-template-columns: repeat(1,1fr)'
+      'grid-template-columns: repeat(1,1fr)',
     );
   });
 
@@ -78,7 +78,7 @@ describe('RadioButtonGroup', () => {
         <RadioButtonGroup.Item label="Label" />
         <RadioButtonGroup.Item label="Label" />
         <RadioButtonGroup.Item label="Label" />
-      </RadioButtonGroup>
+      </RadioButtonGroup>,
     );
 
     expect(radioButtonGroupContainer?.children.length).toEqual(6);
@@ -89,14 +89,14 @@ describe('RadioButtonGroup', () => {
       <RadioButtonGroup name="name">
         <RadioButtonGroup.Item label="Label" />
         <RadioButtonGroup.Item label="Label" />
-      </RadioButtonGroup>
+      </RadioButtonGroup>,
     );
 
     expect(
-      radioButtonGroupContainer?.children[0].querySelector('input')
+      radioButtonGroupContainer?.children[0].querySelector('input'),
     ).toHaveAttribute('name', 'name');
     expect(
-      radioButtonGroupContainer?.children[1].querySelector('input')
+      radioButtonGroupContainer?.children[1].querySelector('input'),
     ).toHaveAttribute('name', 'name');
   });
 
@@ -106,11 +106,11 @@ describe('RadioButtonGroup', () => {
         column={1}
         name="name"
         custom={{ backgroundColor: 'background-negative-subtle' }}
-      />
+      />,
     );
 
     expect(radioButtonGroup).toHaveStyle(
-      'background-color: rgb(254, 245, 245)'
+      'background-color: rgb(254, 245, 245)',
     );
   });
 });
