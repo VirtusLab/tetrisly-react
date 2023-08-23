@@ -74,6 +74,6 @@ export const config = {
     },
   },
   description: {
-    color: 'content-primary',
+    color: 'content-secondary',
   },
 } as const satisfies InlineMessageConfig;
