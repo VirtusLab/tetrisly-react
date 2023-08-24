@@ -1,7 +1,6 @@
 import { InlineMessageConfig } from './InlineMessage.styles';
 import { InlineMessageIntent } from './InlineMessageIntent.type';
 
-import { MarginProps } from '@/types/MarginProps';
 import { DeepPartial } from '@/utility-types/DeepPartial';
 
 export type InlineMessageProps = {
@@ -9,4 +8,4 @@ export type InlineMessageProps = {
   title: string;
   description?: string;
   custom?: DeepPartial<InlineMessageConfig>;
-} & MarginProps;
+};
