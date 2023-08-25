@@ -8,25 +8,27 @@ export const stylesBuilder = (
   intent: InlineMessageIntent,
   custom: InlineMessageProps['custom'],
 ) => {
-  const styles = merge(defaultConfig, custom);
+  const { innerElements, ...styles } = merge(defaultConfig, custom);
 
-  const { intent: titleIntent, ...restTitle } = styles.title;
-  const { intent: iconIntent, ...restIcon } = styles.icon;
-  const { intent: iconContainerIntent, ...restIconContainer } =
-    styles.iconContainer;
+  const { intent: titleIntent, ...restTitleStyles } = innerElements.title;
+  const { intent: iconIntent, ...restIconStyles } = innerElements.icon;
+  const descriptionStyles = innerElements.description;
+  const { intent: iconContainerIntent, ...restIconContainerStyles } =
+    innerElements.iconContainer;
 
   return {
     ...styles,
-    title: {
-      ...restTitle,
+    descriptionStyles,
+    titleStyles: {
+      ...restTitleStyles,
       ...titleIntent[intent],
     },
-    icon: {
-      ...restIcon,
+    iconStyles: {
+      ...restIconStyles,
       ...iconIntent[intent],
     },
-    iconContainer: {
-      ...restIconContainer,
+    iconContainerStyles: {
+      ...restIconContainerStyles,
       ...iconContainerIntent[intent],
     },
   };

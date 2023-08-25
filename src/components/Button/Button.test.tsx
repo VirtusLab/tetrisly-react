@@ -1,6 +1,8 @@
 import { Button } from './Button';
 import { render } from '../../tests/render';
 
+import { silentThrowExpect } from '@/tests/silentThrowExpect';
+
 const getButton = (jsx: JSX.Element) => {
   const { getByRole } = render(jsx);
 
@@ -19,11 +21,11 @@ describe('Button', () => {
   });
 
   it('should throw an error if wrong config is provided', () => {
-    expect(() =>
+    silentThrowExpect(() =>
       // @ts-expect-error testing wrong appearance
       render(<Button variant="default" appearance="reverseInverted" />),
     ).toThrowError();
-    expect(() =>
+    silentThrowExpect(() =>
       render(
         // @ts-expect-error testing wrong dropdown
         <Button
