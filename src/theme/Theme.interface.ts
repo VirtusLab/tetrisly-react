@@ -736,6 +736,8 @@ export type BorderStyles = {
 };
 
 export type Sizes = {
+  '3xLarge': string | RefferenceType;
+  '2xLarge': string | RefferenceType;
   xLarge: string | RefferenceType;
   large: string | RefferenceType;
   medium: string | RefferenceType;
@@ -759,6 +761,7 @@ export type Space = {
   '250': string | RefferenceType;
   '700': string | RefferenceType;
   '800': string | RefferenceType;
+  '900': string | RefferenceType;
   '1000': string | RefferenceType;
   '1200': string | RefferenceType;
   '1500': string | RefferenceType;

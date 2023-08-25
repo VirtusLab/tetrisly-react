@@ -1,30 +1,46 @@
+import { Icon } from '@virtuslab/tetrisly-icons';
+import { MarginProps } from '@xstyled/styled-components';
+
 import { IconButtonProps } from './IconButton.props';
-import { iconButtonConfig } from './IconButton.styles';
 import { IconButtonAppearance } from './IconButtonAppearance.type';
-import { IconButtonIntent } from './IconButtonIntent.type';
-import { IconButtonSize } from './IconButtonSize.type';
+import { styleBuilder } from './styleBuilder';
 import { ButtonVariant } from '../Button/types/ButtonType.type';
+
+import { tet } from '@/tetrisly';
 
 export const IconButton = <
   TVariant extends ButtonVariant,
   TAppearance extends IconButtonAppearance<TVariant>,
 >({
-  intent = 'none' as IconButtonIntent<TAppearance>,
-  variant = 'default' as TVariant,
-  appearance = 'primary' as TAppearance,
-  size = 'medium' as IconButtonSize<TVariant>,
-}: IconButtonProps<TVariant, TAppearance>) => {
-  const styles = iconButtonConfig;
+  intent = 'none',
+  variant,
+  appearance,
+  size = 'medium',
+  icon,
+  dropdownIndicator = false,
+  state,
+  custom = {},
+  ...marginProps
+}: IconButtonProps<TVariant, TAppearance> & MarginProps) => {
+  const styles = styleBuilder({
+    intent,
+    variant: variant ?? 'default',
+    appearance: appearance ?? 'primary',
+    size,
+    dropdownIndicator,
+    custom,
+  });
   return (
-    <div>
-      IconButton with props:
-      <ul>
-        <li>appearance: {appearance}</li>
-        <li>intent: {intent}</li>
-        <li>variant: {variant}</li>
-        <li>size: {size}</li>
-        {JSON.stringify(styles)}
-      </ul>
-    </div>
+    <tet.button
+      data-testid="button"
+      {...styles}
+      disabled={['disabled', 'loading'].includes(state ?? '')}
+      data-state={state}
+      style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
+      {...marginProps}
+    >
+      <Icon name={icon} />
+      {dropdownIndicator && <Icon name="20-chevron-down" />}
+    </tet.button>
   );
 };

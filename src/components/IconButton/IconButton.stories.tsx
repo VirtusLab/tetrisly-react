@@ -8,6 +8,19 @@ import { TetDocs } from '@/docs-components/TetDocs';
 const meta = {
   component: IconButton,
   tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      description: 'Figma "Type" props',
+      table: {
+        defaultValue: { summary: 'default' },
+      },
+    },
+    appearance: {
+      table: {
+        defaultValue: { summary: 'primary' },
+      },
+    },
+  },
 
   parameters: {
     docs: {
@@ -27,4 +40,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof IconButton>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    icon: '20-placeholder',
+  },
+};
