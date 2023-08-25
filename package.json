@@ -72,7 +72,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "yarn test",
+      "yarn vitest related --run",
       "eslint --cache --fix",
       "prettier --write"
     ]
