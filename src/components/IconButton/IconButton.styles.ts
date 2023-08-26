@@ -5,26 +5,28 @@ import { ButtonVariant } from '../Button/types/ButtonType.type';
 
 import { BaseProps } from '@/types/BaseProps';
 
-type Sizes = Record<
-  IconButtonSize,
-  BaseProps & {
-    dropdownIndicator: BaseProps;
-  }
+type Sizes = Partial<
+  Record<
+    IconButtonSize,
+    BaseProps & {
+      dropdownIndicator: BaseProps;
+    }
+  >
 >;
 
 export type Intents<TAppearance extends IconButtonAppearance> = {
   [TIntent in IconButtonIntent<TAppearance>]: BaseProps;
 };
 export type IconButtonConfig = {
-  sizes: Sizes;
   variants: {
     [TVariant in ButtonVariant]: {
       appearances: {
         [TAppearance in IconButtonAppearance<TVariant>]: {
           intents?: Intents<TAppearance>;
-        };
-      } & BaseProps;
-    };
+        } & BaseProps;
+      };
+      sizes?: Sizes;
+    } & BaseProps;
   };
 } & BaseProps;
 
@@ -53,23 +55,16 @@ const sizes = {
 } satisfies Sizes;
 
 export const iconButtonConfig: IconButtonConfig = {
+  p: 'component-padding-null',
+  bg: 'action-inverted-normal',
   display: 'flex',
   gap: 'component-gap-xSmall',
   alignItems: 'center',
   justifyContent: 'center',
-  boxShadow: 'bottom-100',
+
   borderRadius: 'large',
-  borderColor: 'action-outline-normal',
   whiteSpace: 'nowrap',
-  ringInset: true,
-  ring: '100',
-  ringColor: {
-    _: 'action-outline-normal',
-    hover: 'action-outline-hover',
-    active: 'action-outline-active',
-    selected: 'action-outline-selected',
-  },
-  p: 'component-padding-null',
+
   opacity: {
     disabled: 'disabled',
   },
@@ -86,44 +81,185 @@ export const iconButtonConfig: IconButtonConfig = {
   },
   transition: true,
   transitionDuration: 200,
-  sizes,
   variants: {
     default: {
+      sizes,
+      ringInset: true,
+      ring: '100',
+      ringColor: {
+        _: 'action-outline-normal',
+        hover: 'action-outline-hover',
+        active: 'action-outline-active',
+        selected: 'action-outline-selected',
+      },
+      boxShadow: 'bottom-100',
       appearances: {
         primary: {
           intents: {
-            none: {},
-            success: {},
-            negative: {},
+            none: {
+              color: {
+                _: 'action-neutral-normal',
+                hover: 'action-neutral-hover',
+                active: 'action-neutral-active',
+                selected: 'action-neutral-selected',
+              },
+            },
+            success: {
+              color: {
+                _: 'action-success-normal',
+                hover: 'action-success-hover',
+                active: 'action-success-active',
+                selected: 'action-success-selected',
+              },
+            },
+            negative: {
+              color: {
+                _: 'action-destructive-normal',
+                hover: 'action-destructive-hover',
+                active: 'action-destructive-active',
+                selected: 'action-destructive-selected',
+              },
+            },
           },
         },
-        inverted: {},
+        inverted: {
+          bg: {
+            _: 'action-inverted-normal',
+            hover: 'action-inverted-hover',
+            active: 'action-inverted-active',
+            selected: 'action-inverted-selected',
+          },
+          color: {
+            _: 'action-neutral-normal',
+            hover: 'action-neutral-hover',
+            active: 'action-neutral-active',
+            selected: 'action-neutral-selected',
+          },
+        },
       },
     },
     ghost: {
+      sizes,
+
       appearances: {
         primary: {
+          bg: {
+            _: 'action-ghost-normal',
+            hover: 'action-ghost-hover',
+            active: 'action-ghost-active',
+            selected: 'action-ghost-selected',
+          },
           intents: {
-            none: {},
-            success: {},
-            negative: {},
+            none: {
+              color: {
+                _: 'action-neutral-normal',
+                hover: 'action-neutral-hover',
+                active: 'action-neutral-active',
+                selected: 'action-neutral-selected',
+              },
+            },
+            success: {
+              color: {
+                _: 'action-success-normal',
+                hover: 'action-success-hover',
+                active: 'action-success-active',
+                selected: 'action-success-selected',
+              },
+            },
+            negative: {
+              color: {
+                _: 'action-destructive-normal',
+                hover: 'action-destructive-hover',
+                active: 'action-destructive-active',
+                selected: 'action-destructive-selected',
+              },
+              bg: {
+                _: 'action-ghost-normal',
+                hover: 'action-ghost-destructive-hover',
+                active: 'action-ghost-destructive-active',
+                selected: 'action-ghost-destructive-selected',
+              },
+            },
           },
         },
-        inverted: {},
-        reverseInverted: {},
+        inverted: {
+          color: {
+            _: 'action-inverted-normal',
+            hover: 'action-inverted-hover',
+            active: 'action-inverted-active',
+            selected: 'action-inverted-selected',
+          },
+          bg: {
+            _: 'action-ghost-normal',
+            hover: 'action-ghost-inverted-hover',
+            active: 'action-ghost-inverted-active',
+            selected: 'action-ghost-inverted-selected',
+          },
+        },
+        reverseInverted: {
+          color: {
+            _: 'action-reverseInverted-normal',
+            hover: 'action-reverseInverted-hover',
+            active: 'action-reverseInverted-active',
+            selected: 'action-reverseInverted-selected',
+          },
+          bg: {
+            _: 'action-reverseInverted-normal',
+            hover: 'action-reverseInverted-hover',
+            active: 'action-reverseInverted-active',
+            selected: 'action-reverseInverted-selected',
+          },
+        },
       },
     },
     bare: {
+      bg: 'transparent',
+
       appearances: {
         primary: {
           intents: {
-            none: {},
-            success: {},
-            negative: {},
+            none: {
+              color: {
+                _: 'action-neutral-normal',
+                hover: 'action-neutral-hover',
+                active: 'action-neutral-active',
+                selected: 'action-neutral-selected',
+              },
+            },
+            success: {
+              color: {
+                _: 'action-success-normal',
+                hover: 'action-success-hover',
+                active: 'action-success-active',
+                selected: 'action-success-selected',
+              },
+            },
+            negative: {
+              color: {
+                _: 'action-destructive-normal',
+                hover: 'action-destructive-hover',
+                active: 'action-destructive-active',
+                selected: 'action-destructive-selected',
+              },
+            },
           },
         },
-        inverted: {},
-        reverseInverted: {},
+        inverted: {
+          color: {
+            _: 'action-inverted-normal',
+            hover: 'action-inverted-hover',
+            active: 'action-inverted-active',
+            selected: 'action-inverted-selected',
+          },
+        },
+        reverseInverted: {
+          color: {
+            _: 'action-reverseInverted-normal',
+            hover: 'action-reverseInverted-hover',
+            active: 'action-reverseInverted-active',
+            selected: 'action-reverseInverted-selected',
+          },
+        },
       },
     },
   },

@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { useEffect, useState } from 'react';
 
 import { IconButton } from './IconButton';
+import { IconButtonProps } from './IconButton.props';
 
 import { IconButtonDocs } from '@/docs-components/IconButtonDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
@@ -44,4 +46,27 @@ export const Default: Story = {
   args: {
     icon: '20-placeholder',
   },
+};
+
+const ClickableRender = (props: IconButtonProps) => {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    if (loading) {
+      setTimeout(() => setLoading(false), 1000);
+    }
+  }, [loading]);
+  return (
+    <IconButton
+      {...props}
+      state={loading ? 'loading' : undefined}
+      onClick={() => setLoading((l) => !l)}
+    />
+  );
+};
+
+export const Clickable: Story = {
+  args: {
+    icon: '20-placeholder',
+  },
+  render: ClickableRender,
 };

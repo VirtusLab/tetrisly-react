@@ -5,6 +5,7 @@ import { IconButtonProps } from './IconButton.props';
 import { IconButtonAppearance } from './IconButtonAppearance.type';
 import { styleBuilder } from './styleBuilder';
 import { ButtonVariant } from '../Button/types/ButtonType.type';
+import { Loader } from '../Loader';
 
 import { tet } from '@/tetrisly';
 
@@ -36,10 +37,17 @@ export const IconButton = <
       {...styles}
       disabled={['disabled', 'loading'].includes(state ?? '')}
       data-state={state}
-      style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
       {...marginProps}
     >
-      <Icon name={icon} />
+      {state === 'loading' ? (
+        <Loader
+          appearance={appearance === 'inverted' ? 'white' : 'greyscale'}
+          size="small"
+          shape="circle"
+        />
+      ) : (
+        <Icon name={icon} />
+      )}
       {dropdownIndicator && <Icon name="20-chevron-down" />}
     </tet.button>
   );

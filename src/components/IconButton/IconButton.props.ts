@@ -11,8 +11,9 @@ import { DeepPartial } from '@/utility-types/DeepPartial';
 import { IconName } from '@/utility-types/IconName';
 
 export type IconButtonStyleProps<
-  TVariant extends ButtonVariant,
-  TAppearance extends IconButtonAppearance<TVariant>,
+  TVariant extends ButtonVariant = ButtonVariant,
+  TAppearance extends
+    IconButtonAppearance<TVariant> = IconButtonAppearance<TVariant>,
 > = {
   variant?: TVariant;
   appearance?: TAppearance;
@@ -23,9 +24,10 @@ export type IconButtonStyleProps<
 };
 
 export type IconButtonProps<
-  TVariant extends ButtonVariant,
-  TAppearance extends IconButtonAppearance<TVariant>,
+  TVariant extends ButtonVariant = ButtonVariant,
+  TAppearance extends
+    IconButtonAppearance<TVariant> = IconButtonAppearance<TVariant>,
 > = IconButtonStyleProps<TVariant, TAppearance> & {
   icon: IconName<20>;
-  state: ButtonState;
+  state?: ButtonState;
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled' | 'color'>;
