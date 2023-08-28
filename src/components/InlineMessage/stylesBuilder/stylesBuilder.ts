@@ -4,10 +4,20 @@ import { InlineMessageProps } from '../InlineMessage.props';
 import { config as defaultConfig } from '../InlineMessage.styles';
 import { InlineMessageIntent } from '../InlineMessageIntent.type';
 
+import { BaseProps } from '@/types/BaseProps';
+import { IconName } from '@/utility-types/IconName';
+
+type InlineMessageStyleBuilder = {
+  titleStyles: BaseProps;
+  iconStyles: { name: IconName<20> };
+  iconContainerStyles: BaseProps;
+  descriptionStyles: BaseProps;
+} & BaseProps;
+
 export const stylesBuilder = (
   intent: InlineMessageIntent,
   custom: InlineMessageProps['custom'],
-) => {
+): InlineMessageStyleBuilder => {
   const { innerElements, ...styles } = merge(defaultConfig, custom);
 
   const { intent: titleIntent, ...restTitleStyles } = innerElements.title;
