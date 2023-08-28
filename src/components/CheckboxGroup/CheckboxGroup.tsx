@@ -1,5 +1,11 @@
 import { merge } from 'lodash';
-import { Children, FC, FunctionComponent } from 'react';
+import {
+  Children,
+  FC,
+  FunctionComponent,
+  isValidElement,
+  PropsWithChildren,
+} from 'react';
 
 import type {
   CheckboxGroupProps,
@@ -15,7 +21,7 @@ import { MarginProps } from '@/types';
 
 type Props = CheckboxGroupProps & MarginProps;
 
-type CheckboxGroupComponent = FunctionComponent<Props> & {
+type CheckboxGroupComponent = FunctionComponent<PropsWithChildren<Props>> & {
   Item: FC<CheckboxItemProps>;
 };
 
@@ -26,13 +32,14 @@ export const CheckboxGroup: CheckboxGroupComponent = ({
   children,
   custom,
   ...restProps
-}: Props) => {
-  const { checkboxContainer: checkboxContainerStyles, ...restStyles } = custom
-    ? merge(defaultConfig, custom)
-    : defaultConfig;
+}: PropsWithChildren<Props>) => {
+  const {
+    innerElements: { checkboxContainer: checkboxContainerStyles },
+    ...restStyles
+  } = merge(defaultConfig, custom);
 
   Children.map(children, (child) => {
-    if (child?.type !== CheckboxGroup.Item) {
+    if (isValidElement(child) && child?.type !== CheckboxGroup.Item) {
       console.error(
         'You should use only CheckboxGroup.Item as a child of a CheckboxGroup component.',
       );
