@@ -3387,10 +3387,10 @@
     eslint-plugin-react-refresh ">=0.3.4"
     prettier "^3.0.2"
 
-"@virtuslab/tetrisly-icons@^1.0.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@virtuslab/tetrisly-icons/-/tetrisly-icons-1.1.0.tgz#dc7cbe52117ec091c311ed8b72ad59922fd44637"
-  integrity sha512-qxQl+iFaPh4s7OtqYFDDStd3IGtgzAXAyDoyMkwvHPbUZpKd5tkqJ1Dvg0FNSj3DPj+LCS/8wxt6ry/J9p07HA==
+"@virtuslab/tetrisly-icons@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@virtuslab/tetrisly-icons/-/tetrisly-icons-1.1.1.tgz#e8f9e97e21c92271dbc5120758db9d2845a918fc"
+  integrity sha512-rO1W8nDm0NNfHvjHpmlsdK64bTYhqao+TdLJA1p6Bz90zkJoq+/b0bSmjwkeBKkYQb8oMPJNvShbLCPpqAa0QA==
   dependencies:
     react "^18.2.0"
     react-dom "^18.2.0"
