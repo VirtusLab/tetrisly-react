@@ -1,7 +1,12 @@
+import { IconProps } from '@virtuslab/tetrisly-icons';
 import { merge } from 'lodash';
 
 import { ToastProps } from '../Toast.props';
 import { config as defaultConfig } from '../Toast.styles';
+import { ToastIntent } from '../types';
+
+import { ButtonAppearance } from '@/components/Button/types/ButtonAppearance.type';
+import { ButtonVariant } from '@/components/Button/types/ButtonType.type';
 
 type StylesBuilderProps = Required<Pick<ToastProps, 'emphasis' | 'intent'>> & {
   custom: ToastProps['custom'];
@@ -20,33 +25,49 @@ export function stylesBuilder(props: StylesBuilderProps) {
   } = config;
 
   const containerStyles = {
-    ...restContainerStyles,
     ...intentContainerStyles[props.intent],
     ...emphasisContainerStyles[props.emphasis],
     ...(props.closeButton && closeButtonContainerStyles),
+    ...restContainerStyles,
   };
 
   const {
-    action,
     actionContainer: actionContainerStyles,
-    closeButton: closeButtonStyles,
-    icon,
+    closeButton,
     iconContainer,
     middleDot: middleDotStyles,
   } = innerElementsStyles;
 
-  const { emphasis: emphasisActionStyles, ...restActionStyles } = action;
+  const actionIntentAppearance =
+    props.intent === 'warning' ? 'reverseInverted' : 'inverted';
+  const actionAppearance =
+    props.emphasis === 'high' ? actionIntentAppearance : 'primary';
 
-  const actionStyles = {
-    ...emphasisActionStyles[props.emphasis],
-    ...restActionStyles,
+  const actionProps = {
+    appearance: actionAppearance as ButtonAppearance<'ghost'>,
+    variant: 'bare' as ButtonVariant,
   };
 
-  const { intent: intentIconStyles, ...restIconStyles } = icon;
+  const icon: { intent: Record<ToastIntent, Partial<IconProps>> } = {
+    intent: {
+      neutral: {},
+      informative: {
+        name: '20-info-fill',
+      },
+      success: {
+        name: '20-check-circle-fill',
+      },
+      warning: {
+        name: '20-warning-fill',
+      },
+      negative: {
+        name: '20-alert-fill',
+      },
+    },
+  };
 
-  const iconStyles = {
-    ...intentIconStyles[props.intent],
-    ...restIconStyles,
+  const iconProps = {
+    ...icon.intent[props.intent],
   };
 
   const { intent: intentIconContainerStyles, ...restIconContainerStyles } =
@@ -57,12 +78,20 @@ export function stylesBuilder(props: StylesBuilderProps) {
     ...restIconContainerStyles,
   };
 
+  const { intent: intentCloseButtonStyles, ...restCloseButtonStyles } =
+    closeButton;
+
+  const closeButtonStyles = {
+    ...intentCloseButtonStyles[props.intent],
+    ...restCloseButtonStyles,
+  };
+
   return {
-    actionStyles,
+    actionProps,
     actionContainerStyles,
     closeButtonStyles,
     containerStyles,
-    iconStyles,
+    iconProps,
     iconContainerStyles,
     middleDotStyles,
   };

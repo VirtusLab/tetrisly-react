@@ -1,22 +1,14 @@
-import { IconProps } from '@virtuslab/tetrisly-icons';
-
 import type { ToastIntent } from './types';
 import { ButtonProps } from '../Button';
 
 import { BaseProps } from '@/types/BaseProps';
 import { Emphasis } from '@/types/Emphasis';
 
-type EmphasisProps<T extends object = object> = Record<
-  'emphasis',
-  Record<Emphasis, BaseProps | Partial<T>>
->;
-
 export type ToastConfig = {
   emphasis: Record<Emphasis, BaseProps>;
   intent: Record<ToastIntent, BaseProps>;
   closeButton: BaseProps;
   innerElements: {
-    icon: { intent: Record<ToastIntent, Partial<IconProps>> } | BaseProps;
     iconContainer:
       | {
           intent: Record<
@@ -25,13 +17,11 @@ export type ToastConfig = {
           >;
         }
       | BaseProps;
-    action:
-      | EmphasisProps<ButtonProps<'bare'>>
-      | ButtonProps<'bare'>
-      | BaseProps;
     actionContainer: BaseProps;
-    middleDot: EmphasisProps | BaseProps;
-    closeButton: BaseProps;
+    middleDot:
+      | { emphasis: Record<Emphasis, BaseProps | Partial<ButtonProps<'bare'>>> }
+      | BaseProps;
+    closeButton: { intent: Record<ToastIntent, BaseProps> } & BaseProps;
   };
 } & BaseProps;
 
@@ -43,9 +33,7 @@ export const config = {
   gap: 'component-gap-small',
   borderRadius: 'large',
   emphasis: {
-    high: {
-      color: 'content-primary-inverted',
-    },
+    high: {},
     low: {
       backgroundColor: 'interaction-background-modeless',
       color: 'content-primary',
@@ -57,13 +45,16 @@ export const config = {
   intent: {
     neutral: {
       backgroundColor: 'background-inverted',
+      color: 'content-primary-inverted',
     },
     informative: {
       backgroundColor: 'background-informative-strong',
+      color: 'content-primary-inverted',
       pl: 'component-padding-medium',
     },
     success: {
       backgroundColor: 'background-positive-strong',
+      color: 'content-primary-inverted',
       pl: 'component-padding-medium',
     },
     warning: {
@@ -73,6 +64,7 @@ export const config = {
     },
     negative: {
       backgroundColor: 'background-negative-strong',
+      color: 'content-primary-inverted',
       pl: 'component-padding-medium',
     },
   },
@@ -80,23 +72,6 @@ export const config = {
     pr: 'component-padding-small',
   },
   innerElements: {
-    icon: {
-      intent: {
-        neutral: {},
-        informative: {
-          name: '20-info-fill',
-        },
-        success: {
-          name: '20-check-circle-fill',
-        },
-        warning: {
-          name: '20-warning-fill',
-        },
-        negative: {
-          name: '20-alert-fill',
-        },
-      },
-    },
     iconContainer: {
       intent: {
         neutral: { emphasis: { low: {}, high: {} } },
@@ -142,18 +117,6 @@ export const config = {
         },
       },
     },
-    action: {
-      emphasis: {
-        high: {
-          appearance: 'inverted',
-        },
-        low: {
-          appearance: 'primary',
-        },
-      },
-      variant: 'bare',
-      intent: 'none',
-    },
     actionContainer: {
       display: 'flex',
       alignItems: 'center',
@@ -175,6 +138,13 @@ export const config = {
     closeButton: {
       p: '6px',
       ml: 'component-padding-small',
+      intent: {
+        neutral: {},
+        informative: {},
+        success: {},
+        warning: { color: 'content-primary' },
+        negative: {},
+      },
     },
   },
 } satisfies ToastConfig;

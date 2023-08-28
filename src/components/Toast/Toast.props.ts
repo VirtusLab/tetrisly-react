@@ -5,7 +5,7 @@ import { ButtonProps } from '../Button';
 import { Emphasis } from '@/types/Emphasis';
 import { DeepPartial } from '@/utility-types/DeepPartial';
 
-type Action = Pick<
+export type Action = Pick<
   ButtonProps<'bare'>,
   'label' | 'onClick' | 'onFocus' | 'onBlur'
 >;

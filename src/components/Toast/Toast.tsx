@@ -20,11 +20,11 @@ export const Toast: FC<Props> = ({
   ...restProps
 }) => {
   const {
-    actionStyles,
+    actionProps,
     actionContainerStyles,
     closeButtonStyles,
     containerStyles,
-    iconStyles,
+    iconProps,
     iconContainerStyles,
     middleDotStyles,
   } = useMemo(
@@ -43,24 +43,25 @@ export const Toast: FC<Props> = ({
     : [action, undefined];
 
   return (
-    <tet.div {...containerStyles} {...restProps}>
-      {!!iconStyles.name && (
+    <tet.div {...containerStyles} {...restProps} data-testid="toast">
+      {!!iconProps.name && (
         <tet.span {...iconContainerStyles}>
-          <Icon {...iconStyles} />
+          <Icon {...iconProps} name={iconProps.name} />
         </tet.span>
       )}
       {text}
       {firstAction && (
         <tet.div {...actionContainerStyles}>
-          <Button {...actionStyles} {...firstAction} />
+          <Button {...actionProps} {...firstAction} />
           {secondAction && (
             <>
               <tet.div {...middleDotStyles}>&middot;</tet.div>
-              <Button {...actionStyles} {...secondAction} />
+              <Button {...actionProps} {...secondAction} />
             </>
           )}
         </tet.div>
       )}
+      {/* TODO: change icon to IconButton and add an action to it */}
       {!!onCloseClick && (
         <tet.div {...closeButtonStyles}>
           <Icon name="20-close" />
