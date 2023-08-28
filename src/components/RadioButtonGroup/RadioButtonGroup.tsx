@@ -3,8 +3,9 @@ import {
   Children,
   cloneElement,
   FC,
-  FunctionComponent,
   isValidElement,
+  PropsWithChildren,
+  ReactElement,
 } from 'react';
 
 import type {
@@ -19,13 +20,11 @@ import { RadioButton } from '../RadioButton';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
-type Props = RadioButtonGroupProps & MarginProps;
-
-type RadioButtonGroupComponent = FunctionComponent<Props> & {
+type Props = FC<PropsWithChildren<RadioButtonGroupProps & MarginProps>> & {
   Item: React.FC<RadioButtonItemProps>;
 };
 
-export const RadioButtonGroup: RadioButtonGroupComponent = ({
+export const RadioButtonGroup: Props = ({
   name,
   column = 1,
   label,
@@ -33,19 +32,22 @@ export const RadioButtonGroup: RadioButtonGroupComponent = ({
   custom,
   children,
   ...restProps
-}: Props) => {
-  const { checkboxContainer: checkboxContainerStyles, ...restStyles } = custom
-    ? merge(defaultConfig, custom)
-    : defaultConfig;
+}) => {
+  const {
+    innerElements: { radioButtonContainer: radioButtonContainerStyles },
+    ...restStyles
+  } = merge(defaultConfig, custom);
 
   const radioButtons = Children.map(children, (child) => {
-    if (child?.type !== RadioButtonGroup.Item) {
+    if (isValidElement(child) && child?.type !== RadioButtonGroup.Item) {
       console.error(
         'You should use only RadioButtonGroup.Item as a child of a RadioButtonGroup component.',
       );
     }
     if (isValidElement(child)) {
-      return cloneElement(child, { name });
+      return cloneElement(child as ReactElement<RadioButtonItemProps>, {
+        name,
+      });
     }
     return child;
   });
@@ -54,7 +56,7 @@ export const RadioButtonGroup: RadioButtonGroupComponent = ({
     <tet.div {...restStyles} {...restProps} data-testid="radio-button-group">
       {!!label && <Label label={label} />}
       <tet.div
-        {...checkboxContainerStyles}
+        {...radioButtonContainerStyles}
         gridTemplateColumns={`repeat(${column}, 1fr)`}
         data-testid="radio-button-group-container"
       >

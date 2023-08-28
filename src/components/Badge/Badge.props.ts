@@ -1,12 +1,12 @@
 import { BadgeConfig } from './Badge.styles';
 
-import type { BasicAppearance, BasicIntent } from '@/types';
+import type { Appearance, BasicIntent } from '@/types';
 import { DeepPartial } from '@/utility-types/DeepPartial';
 import { IconName } from '@/utility-types/IconName';
 import { Or } from '@/utility-types/Or';
 
 export type BadgeProps = Or<
-  { appearance: BasicAppearance },
+  { appearance: Appearance },
   { intent: BasicIntent }
 > &
   Or<

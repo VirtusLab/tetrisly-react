@@ -16,7 +16,4 @@ export type RadioButtonGroupProps = {
   label?: string;
   helperText?: string;
   custom?: DeepPartial<RadioButtonGroupConfig>;
-  children?:
-    | React.ReactElement<RadioButtonItemProps>
-    | React.ReactElement<RadioButtonItemProps>[];
 };
