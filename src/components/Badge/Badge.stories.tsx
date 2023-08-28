@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Badge } from './Badge';
 
 import { tet } from '@/tetrisly';
-import { appearances } from '@/types/appearance';
+import { appearances } from '@/types/Appearance';
 import { basicIntents } from '@/types/BasicIntent';
 
 const meta = {
