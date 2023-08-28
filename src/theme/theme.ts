@@ -713,7 +713,9 @@ const tempTheme: Omit<Theme, 'ringWidths'> = {
     dashed: 'dashed solid',
   },
   sizes: {
-    xLarge: th.space('800'),
+    '3xLarge': th.space('900'),
+    '2xLarge': th.space('800'),
+    xLarge: th.space('700'),
     large: th.space('600'),
     medium: th.space('500'),
     small: th.space('400'),
@@ -735,6 +737,7 @@ const tempTheme: Omit<Theme, 'ringWidths'> = {
     '250': '20px',
     '700': '56px',
     '800': '64px',
+    '900': '72px',
     '1000': '80px',
     '1200': '96px',
     '1500': '120px',
