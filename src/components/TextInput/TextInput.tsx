@@ -78,8 +78,12 @@ export const TextInput = forwardRef<
       useCallback(() => {
         value === undefined
           ? setInnerValue('')
+<<<<<<< HEAD
           : // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onChange?.({ target: { value: '' } } as any);
+=======
+          : onChange?.({ target: { value: '' } } as any);
+>>>>>>> f71b909 (feat: TET-130 text input hasClearButton)
       }, [onChange, value]);
 
     return (
