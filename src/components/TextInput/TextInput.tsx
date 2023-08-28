@@ -1,10 +1,19 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
 import { merge } from 'lodash';
-import { forwardRef, useRef, MouseEvent } from 'react';
+import {
+  forwardRef,
+  useRef,
+  useCallback,
+  useMemo,
+  useState,
+  ChangeEventHandler,
+  MouseEventHandler,
+} from 'react';
 
 import { TextInputProps } from './TextInput.props';
 import { config as defaultConfig } from './TextInput.style';
 import { Button } from '../Button';
+import { IconButton } from '../IconButton';
 
 import { extractMarginProps } from '@/services/extractMarginProps';
 import { tet } from '@/tetrisly';
@@ -20,21 +29,26 @@ export const TextInput = forwardRef<
       beforeComponent,
       afterComponent,
       state,
-      custom = {},
+      hasClearButton,
+      custom,
+      value,
+      onChange,
       ...rest
     },
     inputRef,
   ) => {
+    const [innerValue, setInnerValue] = useState('');
     const [marginProps, inputProps] = extractMarginProps<
       TextInputProps & MarginProps
     >(rest);
 
-    const config = merge(custom, defaultConfig);
+    const config = useMemo(() => merge(custom, defaultConfig), [custom]);
     const {
       innerComponents: {
         input: inputStyles,
         icon: iconStyles,
         text: textStyles,
+        clearButton: clearButtonStyles,
       },
       spacing,
       ...defaultStyles
@@ -42,13 +56,30 @@ export const TextInput = forwardRef<
 
     const containerRef = useRef<HTMLInputElement | null>(null);
 
-    const handleContainerClick = (e: MouseEvent) => {
-      if (e.target === containerRef.current) {
-        const input = containerRef.current?.querySelector('input');
+    const handleContainerClick: MouseEventHandler = useCallback(
+      (e) => {
+        if (e.target === containerRef.current) {
+          const input = containerRef.current?.querySelector('input');
 
-        if (input) input.focus();
-      }
-    };
+          if (input) input.focus();
+        }
+      },
+      [containerRef],
+    );
+
+    const handleOnChange: ChangeEventHandler<HTMLInputElement> = useCallback(
+      (e) => {
+        value === undefined ? setInnerValue(e.target.value) : onChange?.(e);
+      },
+      [onChange, value],
+    );
+
+    const handleOnClear: MouseEventHandler<HTMLButtonElement> =
+      useCallback(() => {
+        value === undefined
+          ? setInnerValue('')
+          : onChange?.({ target: { value: '' } } as any);
+      }, [onChange, value]);
 
     return (
       <tet.div
@@ -83,11 +114,23 @@ export const TextInput = forwardRef<
         )}
         <tet.input
           {...inputStyles}
+          value={value || innerValue}
+          onChange={handleOnChange}
           {...inputProps}
           type={type}
           disabled={state === 'disabled'}
           ref={inputRef}
+          data-testid="text-input-input"
         />
+        {!!hasClearButton && (value || innerValue) && (
+          <IconButton
+            variant="bare"
+            icon="20-close"
+            onClick={handleOnClear}
+            {...clearButtonStyles}
+            data-testid="text-input-clear-button"
+          />
+        )}
         {!!afterComponent && (
           <tet.span {...spacing.afterComponent[afterComponent.type]}>
             {afterComponent.type === 'Icon' && (
@@ -109,7 +152,6 @@ export const TextInput = forwardRef<
                 dropdownIndicator
               />
             )}
-            {/* TODO render IconButton with an clear input action if hasClearButton props is passed */}
           </tet.span>
         )}
       </tet.div>
