@@ -112,7 +112,22 @@ describe('Toast', () => {
     expect(handleEventMock).toHaveBeenCalled();
   });
 
-  // TODO: add tests for close button
+  it('should render close button', () => {
+    const toast = getToast(
+      <Toast text="Toast text" onCloseClick={handleEventMock} />,
+    );
+    const button = toast.querySelector('button');
+    expect(button).toBeInTheDocument();
+  });
+
+  it('should emit on close', () => {
+    const toast = getToast(
+      <Toast text="Toast text" onCloseClick={handleEventMock} />,
+    );
+    const button = toast.querySelector('button');
+    button?.click();
+    expect(handleEventMock).toHaveBeenCalled();
+  });
 
   it('should propagate a custom prop', () => {
     const toast = getToast(

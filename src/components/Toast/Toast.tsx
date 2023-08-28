@@ -24,6 +24,7 @@ export const Toast: FC<Props> = ({
     actionProps,
     actionContainerStyles,
     closeButtonProps,
+    closeButtonStyles,
     containerStyles,
     iconProps,
     iconContainerStyles,
@@ -42,8 +43,6 @@ export const Toast: FC<Props> = ({
   const [firstAction, secondAction] = Array.isArray(action)
     ? action
     : [action, undefined];
-
-  console.log(closeButtonProps);
 
   return (
     <tet.div {...containerStyles} {...restProps} data-testid="toast">
@@ -65,7 +64,11 @@ export const Toast: FC<Props> = ({
         </tet.div>
       )}
       {!!onCloseClick && (
-        <IconButton onClick={onCloseClick} {...closeButtonProps} />
+        <IconButton
+          onClick={onCloseClick}
+          {...closeButtonProps}
+          {...closeButtonStyles}
+        />
       )}
     </tet.div>
   );

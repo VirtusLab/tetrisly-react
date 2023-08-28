@@ -8,7 +8,6 @@ import { ToastIntent } from '../types';
 import { ButtonAppearance } from '@/components/Button/types/ButtonAppearance.type';
 import { ButtonVariant } from '@/components/Button/types/ButtonType.type';
 import { IconButtonProps } from '@/components/IconButton/IconButton.props';
-import { BaseProps } from '@/types/BaseProps';
 
 type StylesBuilderProps = Required<Pick<ToastProps, 'emphasis' | 'intent'>> & {
   custom: ToastProps['custom'];
@@ -80,19 +79,19 @@ export function stylesBuilder(props: StylesBuilderProps) {
     ...restIconContainerStyles,
   };
 
-  const closeButtonProps: IconButtonProps<'ghost'> | BaseProps = {
+  const closeButtonProps: IconButtonProps<'ghost'> = {
     size: 'small',
     appearance: 'primary',
     variant: 'ghost',
     intent: 'none',
     icon: '20-close',
-    ...closeButtonStyles,
   };
 
   return {
     actionProps,
     actionContainerStyles,
     closeButtonProps,
+    closeButtonStyles,
     containerStyles,
     iconProps,
     iconContainerStyles,

@@ -21,7 +21,7 @@ export type ToastConfig = {
     middleDot:
       | { emphasis: Record<Emphasis, BaseProps | Partial<ButtonProps<'bare'>>> }
       | BaseProps;
-    closeButton: { intent: Record<ToastIntent, BaseProps> } & BaseProps;
+    closeButton: BaseProps;
   };
 } & BaseProps;
 
