@@ -37,7 +37,13 @@ export const Button = <
       style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
       {...rest}
     >
-      {state === 'loading' && <Loader size="small" shape="circle" />}
+      {state === 'loading' && (
+        <Loader
+          appearance={appearance === 'inverted' ? 'white' : 'greyscale'}
+          size="small"
+          shape="circle"
+        />
+      )}
       {beforeIcon && state !== 'loading' && <Icon name={beforeIcon} />}
       {label}
       {dropdown && <Icon name="20-chevron-down" />}
