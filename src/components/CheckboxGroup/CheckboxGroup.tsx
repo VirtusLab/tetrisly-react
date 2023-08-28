@@ -1,11 +1,5 @@
 import { merge } from 'lodash';
-import {
-  Children,
-  FC,
-  FunctionComponent,
-  isValidElement,
-  PropsWithChildren,
-} from 'react';
+import { Children, FC, isValidElement, PropsWithChildren } from 'react';
 
 import type {
   CheckboxGroupProps,
@@ -19,20 +13,18 @@ import { Label } from '../Label';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
-type Props = CheckboxGroupProps & MarginProps;
-
-type CheckboxGroupComponent = FunctionComponent<PropsWithChildren<Props>> & {
+type Props = FC<PropsWithChildren<CheckboxGroupProps & MarginProps>> & {
   Item: FC<CheckboxItemProps>;
 };
 
-export const CheckboxGroup: CheckboxGroupComponent = ({
+export const CheckboxGroup: Props = ({
   column = 1,
   label,
   helperText,
   children,
   custom,
   ...restProps
-}: PropsWithChildren<Props>) => {
+}) => {
   const {
     innerElements: { checkboxContainer: checkboxContainerStyles },
     ...restStyles
