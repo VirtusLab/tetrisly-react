@@ -4,6 +4,7 @@ import { FC, useMemo } from 'react';
 import { stylesBuilder } from './stylesBuilder';
 import { ToastProps } from './Toast.props';
 import { Button } from '../Button';
+import { IconButton } from '../IconButton';
 
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
@@ -22,7 +23,7 @@ export const Toast: FC<Props> = ({
   const {
     actionProps,
     actionContainerStyles,
-    closeButtonStyles,
+    closeButtonProps,
     containerStyles,
     iconProps,
     iconContainerStyles,
@@ -41,6 +42,8 @@ export const Toast: FC<Props> = ({
   const [firstAction, secondAction] = Array.isArray(action)
     ? action
     : [action, undefined];
+
+  console.log(closeButtonProps);
 
   return (
     <tet.div {...containerStyles} {...restProps} data-testid="toast">
@@ -61,11 +64,8 @@ export const Toast: FC<Props> = ({
           )}
         </tet.div>
       )}
-      {/* TODO: change icon to IconButton and add an action to it */}
       {!!onCloseClick && (
-        <tet.div {...closeButtonStyles}>
-          <Icon name="20-close" />
-        </tet.div>
+        <IconButton onClick={onCloseClick} {...closeButtonProps} />
       )}
     </tet.div>
   );

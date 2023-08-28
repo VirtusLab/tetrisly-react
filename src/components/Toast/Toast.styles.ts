@@ -136,15 +136,7 @@ export const config = {
       text: 'body-medium',
     },
     closeButton: {
-      p: '6px',
       ml: 'component-padding-small',
-      intent: {
-        neutral: {},
-        informative: {},
-        success: {},
-        warning: { color: 'content-primary' },
-        negative: {},
-      },
     },
   },
 } satisfies ToastConfig;

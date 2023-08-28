@@ -7,6 +7,8 @@ import { ToastIntent } from '../types';
 
 import { ButtonAppearance } from '@/components/Button/types/ButtonAppearance.type';
 import { ButtonVariant } from '@/components/Button/types/ButtonType.type';
+import { IconButtonProps } from '@/components/IconButton/IconButton.props';
+import { BaseProps } from '@/types/BaseProps';
 
 type StylesBuilderProps = Required<Pick<ToastProps, 'emphasis' | 'intent'>> & {
   custom: ToastProps['custom'];
@@ -27,13 +29,13 @@ export function stylesBuilder(props: StylesBuilderProps) {
   const containerStyles = {
     ...intentContainerStyles[props.intent],
     ...emphasisContainerStyles[props.emphasis],
-    ...(props.closeButton && closeButtonContainerStyles),
     ...restContainerStyles,
+    ...(props.closeButton && closeButtonContainerStyles),
   };
 
   const {
     actionContainer: actionContainerStyles,
-    closeButton,
+    closeButton: closeButtonStyles,
     iconContainer,
     middleDot: middleDotStyles,
   } = innerElementsStyles;
@@ -78,18 +80,19 @@ export function stylesBuilder(props: StylesBuilderProps) {
     ...restIconContainerStyles,
   };
 
-  const { intent: intentCloseButtonStyles, ...restCloseButtonStyles } =
-    closeButton;
-
-  const closeButtonStyles = {
-    ...intentCloseButtonStyles[props.intent],
-    ...restCloseButtonStyles,
+  const closeButtonProps: IconButtonProps<'ghost'> | BaseProps = {
+    size: 'small',
+    appearance: 'primary',
+    variant: 'ghost',
+    intent: 'none',
+    icon: '20-close',
+    ...closeButtonStyles,
   };
 
   return {
     actionProps,
     actionContainerStyles,
-    closeButtonStyles,
+    closeButtonProps,
     containerStyles,
     iconProps,
     iconContainerStyles,
