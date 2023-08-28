@@ -10,3 +10,4 @@ export * from './components/RadioButton';
 export * from './components/StatusDot';
 export * from './components/TextInput';
 export * from './components/InlineMessage';
+export * from './components/IconButton';
