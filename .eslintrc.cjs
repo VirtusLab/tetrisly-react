@@ -11,5 +11,6 @@ module.exports = {
         typedefs: false,
       },
     ],
+    'react/prop-types': 'off',
   },
 };

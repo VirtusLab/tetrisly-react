@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Badge } from './Badge';
 
 import { tet } from '@/tetrisly';
-import { basicAppearances } from '@/types/BasicAppearance';
+import { appearances } from '@/types/Appearance';
 import { basicIntents } from '@/types/BasicIntent';
 
 const meta = {
@@ -43,7 +43,7 @@ export const All = () => (
   <tet.div spaceY="component-gap-small">
     <tet.p>High emphasis</tet.p>
     <tet.div display="flex" spaceX="component-gap-small">
-      {basicAppearances.map((appearance) => (
+      {appearances.map((appearance) => (
         <Badge appearance={appearance} icon="16-bolt" key={appearance} />
       ))}
     </tet.div>
@@ -54,7 +54,7 @@ export const All = () => (
     </tet.div>
     <tet.p>Medium emphasis</tet.p>
     <tet.div display="flex" spaceX="component-gap-small">
-      {basicAppearances.map((appearance) => (
+      {appearances.map((appearance) => (
         <Badge
           appearance={appearance}
           emphasis="medium"
@@ -70,7 +70,7 @@ export const All = () => (
     </tet.div>
     <tet.p>Low emphasis</tet.p>
     <tet.div display="flex" spaceX="component-gap-small">
-      {basicAppearances.map((appearance) => (
+      {appearances.map((appearance) => (
         <Badge
           appearance={appearance}
           emphasis="low"

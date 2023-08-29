@@ -1,7 +1,7 @@
 import { AvatarShape } from './AvatarShape.type';
-import { Appearance, appearances } from '../../types/Appearance';
 
 import { fromEntries } from '@/services/fromEntries';
+import { Appearance, appearances } from '@/types/Appearance';
 import { BaseProps } from '@/types/BaseProps';
 import { Emphasis } from '@/types/Emphasis';
 import { Size, sizes } from '@/types/Size';

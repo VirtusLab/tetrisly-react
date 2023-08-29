@@ -28,6 +28,12 @@ export const Alert: Story = {
   },
 };
 
+export const WithClearButton: Story = {
+  args: {
+    hasClearButton: true,
+  },
+};
+
 export const BeforeIconComponent: Story = {
   args: {
     beforeComponent: {
