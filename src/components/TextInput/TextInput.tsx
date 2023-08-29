@@ -78,12 +78,8 @@ export const TextInput = forwardRef<
       useCallback(() => {
         value === undefined
           ? setInnerValue('')
-<<<<<<< HEAD
           : // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onChange?.({ target: { value: '' } } as any);
-=======
-          : onChange?.({ target: { value: '' } } as any);
->>>>>>> f71b909 (feat: TET-130 text input hasClearButton)
       }, [onChange, value]);
 
     return (
@@ -98,7 +94,10 @@ export const TextInput = forwardRef<
         data-testid="text-input"
       >
         {!!beforeComponent && (
-          <tet.span {...spacing.beforeComponent[beforeComponent.type]}>
+          <tet.span
+            {...spacing.beforeComponent[beforeComponent.type]}
+            data-testid="text-input-beforeComponent"
+          >
             {beforeComponent.type === 'Icon' && (
               <tet.span {...iconStyles}>
                 <Icon {...beforeComponent.props} />
@@ -137,11 +136,21 @@ export const TextInput = forwardRef<
           />
         )}
         {!!afterComponent && (
-          <tet.span {...spacing.afterComponent[afterComponent.type]}>
+          <tet.span
+            {...spacing.afterComponent[afterComponent.type]}
+            data-testid="text-input-afterComponent"
+          >
             {afterComponent.type === 'Icon' && (
               <tet.span {...iconStyles}>
                 <Icon {...afterComponent.props} />
               </tet.span>
+            )}
+            {afterComponent.type === 'IconButton' && (
+              <IconButton
+                variant="ghost"
+                size="small"
+                {...afterComponent.props}
+              />
             )}
             {afterComponent.type === 'Sufix' && (
               <tet.span {...textStyles}>{afterComponent.props.text}</tet.span>
