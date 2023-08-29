@@ -13,5 +13,3 @@ export * from './components/RadioButton';
 export * from './components/RadioButtonGroup';
 export * from './components/StatusDot';
 export * from './components/TextInput';
-export * from './components/InlineMessage';
-export * from './components/IconButton';
