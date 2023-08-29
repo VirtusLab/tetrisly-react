@@ -1,2 +1,5 @@
 export { RadioButtonGroup } from './RadioButtonGroup';
-export type { RadioButtonGroupProps } from './RadioButtonGroup.props';
+export type {
+  RadioButtonGroupProps,
+  RadioButtonGroupItemProps,
+} from './RadioButtonGroup.props';

@@ -10,7 +10,7 @@ import {
 
 import type {
   RadioButtonGroupProps,
-  RadioButtonItemProps,
+  RadioButtonGroupItemProps,
 } from './RadioButtonGroup.props';
 import { config as defaultConfig } from './RadioButtonGroup.styles';
 import { HelperText } from '../HelperText';
@@ -21,7 +21,7 @@ import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
 type Props = FC<PropsWithChildren<RadioButtonGroupProps & MarginProps>> & {
-  Item: React.FC<RadioButtonItemProps>;
+  Item: React.FC<RadioButtonGroupItemProps>;
 };
 
 export const RadioButtonGroup: Props = ({
@@ -45,7 +45,7 @@ export const RadioButtonGroup: Props = ({
       );
     }
     if (isValidElement(child)) {
-      return cloneElement(child as ReactElement<RadioButtonItemProps>, {
+      return cloneElement(child as ReactElement<RadioButtonGroupItemProps>, {
         name,
       });
     }
@@ -67,6 +67,8 @@ export const RadioButtonGroup: Props = ({
   );
 };
 
-const Item: FC<RadioButtonItemProps> = (props) => <RadioButton {...props} />;
+const Item: FC<RadioButtonGroupItemProps> = (props) => (
+  <RadioButton {...props} />
+);
 
 RadioButtonGroup.Item = Item;
