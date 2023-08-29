@@ -1,11 +1,9 @@
-import { SocialButtonProps } from './SocialButton.props';
-
 import { BaseProps } from '@/types/BaseProps';
 
-type SocialButtonConfig = BaseProps & {
-  appearances: Partial<
-    Record<Exclude<SocialButtonProps['appearance'], undefined>, BaseProps>
-  >;
+export type SocialButtonAppearance = 'primary' | 'secondary';
+
+export type SocialButtonConfig = BaseProps & {
+  appearances: Partial<Record<SocialButtonAppearance, BaseProps>>;
 };
 
 export const socialButtonConfig: SocialButtonConfig = {

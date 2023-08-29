@@ -1,3 +1,10 @@
+import {
+  SocialButtonAppearance,
+  SocialButtonConfig,
+} from './SocialButton.styles';
+
+import { DeepPartial } from '@/utility-types/DeepPartial';
+
 export type SocialButtonProps = {
   platform:
     | 'Apple'
@@ -6,6 +13,7 @@ export type SocialButtonProps = {
     | 'Github'
     | 'Google'
     | 'X (Twitter)';
-  appearance?: 'primary' | 'secondary';
+  appearance?: SocialButtonAppearance;
   state?: 'disabled' | 'selected' | 'loading';
+  custom?: DeepPartial<SocialButtonConfig>;
 };
