@@ -78,7 +78,8 @@ export const TextInput = forwardRef<
       useCallback(() => {
         value === undefined
           ? setInnerValue('')
-          : onChange?.({ target: { value: '' } } as any);
+          : // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            onChange?.({ target: { value: '' } } as any);
       }, [onChange, value]);
 
     return (
