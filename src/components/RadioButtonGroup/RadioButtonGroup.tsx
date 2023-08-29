@@ -54,7 +54,12 @@ export const RadioButtonGroup: Props = ({
 
   return (
     <tet.div {...restStyles} {...restProps} data-testid="radio-button-group">
-      {!!label && <Label label={label} />}
+      {!!label &&
+        (typeof label === 'string' ? (
+          <Label label={label} />
+        ) : (
+          <Label {...label} />
+        ))}
       <tet.div
         {...radioButtonContainerStyles}
         gridTemplateColumns={`repeat(${column}, 1fr)`}
@@ -62,7 +67,12 @@ export const RadioButtonGroup: Props = ({
       >
         {radioButtons}
       </tet.div>
-      {!!helperText && <HelperText text={helperText} />}
+      {!!helperText &&
+        (typeof helperText === 'string' ? (
+          <HelperText text={helperText} />
+        ) : (
+          <HelperText {...helperText} />
+        ))}
     </tet.div>
   );
 };
