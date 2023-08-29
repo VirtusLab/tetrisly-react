@@ -30,6 +30,26 @@ const strokeWidth = style({
   key: 'strokeWidth',
 });
 
+const top = style({
+  prop: 'top',
+  key: 'space',
+});
+
+const bottom = style({
+  prop: 'bottom',
+  key: 'space',
+});
+
+const left = style({
+  prop: 'left',
+  key: 'space',
+});
+
+const right = style({
+  prop: 'right',
+  key: 'space',
+});
+
 export const { css, styled, x, createGlobalStyle } = createCss(
   compose(
     animations,
@@ -50,6 +70,10 @@ export const { css, styled, x, createGlobalStyle } = createCss(
     typography,
     opacity,
     strokeWidth,
+    top,
+    bottom,
+    left,
+    right,
   ),
 );
 
