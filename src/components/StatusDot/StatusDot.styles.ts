@@ -4,10 +4,10 @@ import { StatusDotAppearance } from './StatusDotAppearance.type';
 
 import { BaseProps } from '@/types/BaseProps';
 
-type Config = {
+export type StatusDotConfig = {
   appearance: Record<StatusDotAppearance, SystemProps>;
   stroked: SystemProps;
-};
+} & BaseProps;
 
 export const config = {
   w: '12px',
@@ -28,4 +28,4 @@ export const config = {
     ring: 'medium',
     ringColor: 'border-inverted',
   },
-} as const satisfies BaseProps & Config;
+} satisfies StatusDotConfig;
