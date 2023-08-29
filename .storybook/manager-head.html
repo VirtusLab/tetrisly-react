@@ -1,6 +1,115 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;600&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
   rel="stylesheet"
 />
+<style>
+  .search-field {
+    margin: 24px 0 !important;
+  }
+
+  #storybook-explorer-tree > div {
+    margin-left: -4px !important;
+    margin-right: -4px !important;
+  }
+
+  .sidebar-subheading {
+    padding: 0 !important;
+    margin: 0 0 4px !important;
+  }
+
+  .sidebar-subheading [data-action='collapse-root'] {
+    padding: 0 0 0 16px !important;
+    color: #4a545e !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.6px;
+    opacity: 72%;
+    text-transform: uppercase;
+  }
+
+  .sidebar-subheading [data-action='collapse-root'] span {
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 4px 0 0 !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.70041 3.98966C5.98226 3.68613 6.45681 3.66856 6.76034 3.95041L10.2603 7.20041C10.4132 7.34232 10.5 7.54145 10.5 7.75C10.5 7.95856 10.4132 8.15769 10.2603 8.2996L6.76034 11.5496C6.45681 11.8315 5.98226 11.8139 5.70041 11.5103C5.41856 11.2068 5.43613 10.7323 5.73967 10.4504L8.64779 7.75L5.73966 5.0496C5.43613 4.76775 5.41856 4.2932 5.70041 3.98966Z' fill='%234a545e'/%3E%3C/svg%3E%0A");
+  }
+
+  .sidebar-item + .sidebar-item {
+    margin-top: 2px;
+  }
+
+  .sidebar-item {
+    color: #4a545e !important;
+    padding: 8px 16px !important;
+    border-radius: 8px;
+    font-size: 13px !important;
+    line-height: 1.25;
+    transition: background-color 200ms cubic-bezier(0.08, 0.52, 0.52, 1);
+  }
+
+  .sidebar-item:hover,
+  .sidebar-item[data-selected='true'] {
+    background-color: #edf2ff !important;
+  }
+
+  .sidebar-item:focus {
+    background-color: transparent !important;
+    outline: none;
+  }
+
+  .sidebar-item:hover {
+    color: #4a545e;
+  }
+
+  button.sidebar-item {
+    font-weight: 500;
+  }
+
+  .sidebar-item[data-selected='true'] a,
+  .sidebar-item[data-selected='true'] {
+    font-weight: normal !important;
+    outline: none !important;
+  }
+
+  .sidebar-item[data-selected='true'] {
+    color: #3062d4 !important;
+  }
+
+  .sidebar-item[data-nodetype='story'],
+  .sidebar-item[data-nodetype='document'] {
+    margin-left: 12px;
+  }
+
+  .sidebar-item a {
+    padding: 0;
+  }
+
+  .sidebar-item a + a {
+    display: none;
+  }
+
+  button.sidebar-item svg,
+  button.sidebar-item span {
+    display: none;
+  }
+
+  .sidebar-item a svg {
+    margin: 1px 6px 0 0 !important;
+    padding: 0 !important;
+    color: currentColor !important;
+  }
+
+  .search-result-item svg,
+  .sidebar-item[data-selected='true'] a svg {
+    color: currentColor !important;
+  }
+
+  .sidebar-item[data-selected='true'] {
+    font-weight: 500 !important;
+  }
+</style>
