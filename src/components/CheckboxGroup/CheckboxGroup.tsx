@@ -3,7 +3,7 @@ import { Children, FC, isValidElement, PropsWithChildren } from 'react';
 
 import type {
   CheckboxGroupProps,
-  CheckboxItemProps,
+  CheckboxGroupItemProps,
 } from './CheckboxGroup.props';
 import { config as defaultConfig } from './CheckboxGroup.style';
 import { Checkbox } from '../Checkbox';
@@ -14,7 +14,7 @@ import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
 type Props = FC<PropsWithChildren<CheckboxGroupProps & MarginProps>> & {
-  Item: FC<CheckboxItemProps>;
+  Item: FC<CheckboxGroupItemProps>;
 };
 
 export const CheckboxGroup: Props = ({
@@ -40,7 +40,12 @@ export const CheckboxGroup: Props = ({
 
   return (
     <tet.div {...restStyles} {...restProps} data-testid="checkbox-group">
-      {!!label && <Label label={label} />}
+      {!!label &&
+        (typeof label === 'string' ? (
+          <Label label={label} />
+        ) : (
+          <Label {...label} />
+        ))}
       <tet.div
         {...checkboxContainerStyles}
         gridTemplateColumns={`repeat(${column}, 1fr)`}
@@ -48,11 +53,16 @@ export const CheckboxGroup: Props = ({
       >
         {children}
       </tet.div>
-      {!!helperText && <HelperText text={helperText} />}
+      {!!helperText &&
+        (typeof helperText === 'string' ? (
+          <HelperText text={helperText} />
+        ) : (
+          <HelperText {...helperText} />
+        ))}
     </tet.div>
   );
 };
 
-const Item: FC<CheckboxItemProps> = (props) => <Checkbox {...props} />;
+const Item: FC<CheckboxGroupItemProps> = (props) => <Checkbox {...props} />;
 
 CheckboxGroup.Item = Item;
