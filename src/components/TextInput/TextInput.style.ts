@@ -3,7 +3,10 @@ import { SystemProps } from '@xstyled/styled-components';
 import { Theme } from '@/theme';
 
 type Config = {
-  innerComponents: Record<'input' | 'icon' | 'text', SystemProps>;
+  innerComponents: Record<
+    'input' | 'icon' | 'text' | 'clearButton',
+    SystemProps
+  >;
   spacing:
     | Record<
         'beforeComponent',
@@ -70,6 +73,9 @@ export const config = {
     text: {
       text: 'body-medium',
       color: 'content-secondary',
+    },
+    clearButton: {
+      marginLeft: 'component-gap-small',
     },
   },
   spacing: {

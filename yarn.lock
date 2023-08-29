@@ -2614,7 +2614,7 @@
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.3.2"
 
-"@storybook/manager-api@7.3.2", "@storybook/manager-api@^7.0.12":
+"@storybook/manager-api@7.3.2", "@storybook/manager-api@^7.0.12", "@storybook/manager-api@^7.3.2":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/manager-api/-/manager-api-7.3.2.tgz#8228ce35cfc0f304e3a1c51bec3d3e0d01427a1a"
   integrity sha512-EEosLcc+CPLjorLf2+rGLBW0sH0SHVcB1yClLIzKM5Wt8Cl/0l19wNtGMooE/28SDLA4DPIl4WDnP83wRE1hsg==
@@ -2758,7 +2758,7 @@
     "@testing-library/user-event" "^14.0.0"
     ts-dedent "^2.2.0"
 
-"@storybook/theming@7.3.2", "@storybook/theming@^7.0.12":
+"@storybook/theming@7.3.2", "@storybook/theming@^7.0.12", "@storybook/theming@^7.3.2":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-7.3.2.tgz#6742697322de78831e5e67567368f82b5969a83d"
   integrity sha512-npVsnmNAtqGwl1K7vLC/hcVhL8tBC8G0vdZXEcufF0jHdQmRCUs9ZVrnR6W0LCrtmIHDaDoO7PqJVSzu2wgVxw==
@@ -3369,10 +3369,10 @@
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
 
-"@virtuslab/eslint-config-tetrisly@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@virtuslab/eslint-config-tetrisly/-/eslint-config-tetrisly-1.2.3.tgz#d1bf5a37611c57a76ad2eb6dfa53fcd691a2a677"
-  integrity sha512-qWT2VZZacyerllp5f8yNPc/ok9XLV9lxe2QjMB5hCk92fY0Hd/YS8hjSutXSR0Ru+JxX7SDlcwfH7r+252uA7Q==
+"@virtuslab/eslint-config-tetrisly@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@virtuslab/eslint-config-tetrisly/-/eslint-config-tetrisly-1.2.4.tgz#c2ee7ea4b3b559f634e2c276dda2e82cd9c6ac07"
+  integrity sha512-Ub6v52vrcigq4wBbHuwIPhWg58crP9j+paKivaPNTDjjFmx7fEfK1+5X+HCspdJ61CS+GewC+IHiEPKQIRmmhg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.57.1"
     "@typescript-eslint/parser" "^5.60.1"
