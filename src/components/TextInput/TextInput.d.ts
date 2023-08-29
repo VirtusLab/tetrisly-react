@@ -62,6 +62,9 @@ export declare const TextInput: import("react").ForwardRefExoticComponent<{
                 readonly text: "body-medium";
                 readonly color: "content-secondary";
             };
+            readonly clearButton: {
+                readonly marginLeft: "component-gap-small";
+            };
         };
         readonly spacing: {
             readonly beforeComponent: {

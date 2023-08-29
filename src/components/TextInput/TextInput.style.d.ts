@@ -51,6 +51,9 @@ export declare const config: {
             readonly text: "body-medium";
             readonly color: "content-secondary";
         };
+        readonly clearButton: {
+            readonly marginLeft: "component-gap-small";
+        };
     };
     readonly spacing: {
         readonly beforeComponent: {

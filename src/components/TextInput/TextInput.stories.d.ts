@@ -65,6 +65,9 @@ declare const meta: {
                     readonly text: "body-medium";
                     readonly color: "content-secondary";
                 };
+                readonly clearButton: {
+                    readonly marginLeft: "component-gap-small";
+                };
             };
             readonly spacing: {
                 readonly beforeComponent: {
@@ -118,6 +121,7 @@ type Story = StoryObj<typeof meta>;
 export declare const Default: Story;
 export declare const Disabled: Story;
 export declare const Alert: Story;
+export declare const WithClearButton: Story;
 export declare const BeforeIconComponent: Story;
 export declare const BeforePrefixComponent: Story;
 export declare const BeforeDropdownComponent: Story;
