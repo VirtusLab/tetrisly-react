@@ -1,97 +1,102 @@
+import { BaseProps } from '../../types/BaseProps';
+export type TextInputConfig = {
+    innerComponents: Record<'input' | 'icon' | 'text' | 'clearButton', BaseProps>;
+    spacing: Record<'beforeComponent', Record<'Icon' | 'Avatar' | 'Prefix' | 'Dropdown', BaseProps>> | Record<'afterComponent', Record<'Icon' | 'Sufix' | 'Button' | 'IconButton' | 'Dropdown', BaseProps>>;
+} & BaseProps;
 export declare const config: {
-    readonly display: "flex";
-    readonly alignItems: "center";
-    readonly h: "medium";
-    readonly padding: "component-padding-small component-padding-large";
-    readonly flexShrink: 0;
-    readonly ring: "100";
-    readonly ringColor: {
-        readonly _: "interaction-border-neutral-normal";
-        readonly hover: "interaction-border-hover";
-        readonly focus: "interaction-focus-default";
-        readonly alert: "interaction-border-alert";
+    display: "flex";
+    alignItems: "center";
+    h: string;
+    padding: string;
+    flexShrink: number;
+    ring: string;
+    ringColor: {
+        _: "interaction-border-neutral-normal";
+        hover: "interaction-border-hover";
+        focus: "interaction-focus-default";
+        alert: "interaction-border-alert";
     };
-    readonly borderRadius: "medium";
-    readonly opacity: {
-        readonly disabled: "disabled";
+    borderRadius: string;
+    opacity: {
+        disabled: "disabled";
     };
-    readonly outlineStyle: {
-        readonly focusWithin: "solid";
+    outlineStyle: {
+        focusWithin: "solid";
     };
-    readonly outlineColor: {
-        readonly focusWithin: "interaction-focus-default";
+    outlineColor: {
+        focusWithin: "interaction-focus-default";
     };
-    readonly outlineWidth: {
-        readonly focusWithin: "focus";
+    outlineWidth: {
+        focusWithin: string;
     };
-    readonly outlineOffset: {
-        readonly alert: "focus";
+    outlineOffset: {
+        alert: string;
     };
-    readonly transition: true;
-    readonly transitionDuration: 50;
-    readonly cursor: "text";
-    readonly pointerEvents: {
-        readonly disabled: "none";
+    transition: boolean;
+    transitionDuration: number;
+    cursor: "text";
+    pointerEvents: {
+        disabled: "none";
     };
-    readonly innerComponents: {
-        readonly input: {
-            readonly w: "100%";
-            readonly h: "100%";
-            readonly outline: "none";
-            readonly text: "body-medium";
-            readonly color: {
-                readonly placeholder: "content-tertiary";
+    innerComponents: {
+        input: {
+            w: string;
+            h: string;
+            outline: string;
+            text: "body-medium";
+            color: {
+                placeholder: "content-tertiary";
             };
-            readonly backgroundColor: "interaction-background-formField";
+            backgroundColor: "interaction-background-formField";
         };
-        readonly icon: {
-            readonly color: "content-secondary";
+        icon: {
+            color: "content-secondary";
         };
-        readonly text: {
-            readonly text: "body-medium";
-            readonly color: "content-secondary";
+        text: {
+            text: "body-medium";
+            color: "content-secondary";
         };
-        readonly clearButton: {
-            readonly marginLeft: "component-gap-small";
+        clearButton: {
+            marginLeft: string;
         };
     };
-    readonly spacing: {
-        readonly beforeComponent: {
-            readonly Icon: {
-                readonly marginLeft: "component-padding-medium";
-                readonly marginRight: "component-padding-small";
+    spacing: {
+        beforeComponent: {
+            Icon: {
+                marginLeft: string;
+                marginRight: string;
             };
-            readonly Avatar: {
-                readonly margin: "0 component-padding-small";
+            Avatar: {
+                margin: string;
             };
-            readonly Prefix: {
-                readonly margin: "0 component-padding-large";
+            Prefix: {
+                margin: string;
             };
-            readonly Dropdown: {
-                readonly marginLeft: "component-padding-xSmall";
-                readonly marginRight: "component-padding-small";
+            Dropdown: {
+                marginLeft: string;
+                marginRight: string;
             };
         };
-        readonly afterComponent: {
-            readonly Icon: {
-                readonly marginLeft: "component-padding-small";
-                readonly marginRight: "component-padding-large";
+        afterComponent: {
+            Icon: {
+                marginLeft: string;
+                marginRight: string;
             };
-            readonly Sufix: {
-                readonly marginLeft: "component-padding-small";
-                readonly marginRight: "component-padding-large";
+            Sufix: {
+                marginLeft: string;
+                marginRight: string;
             };
-            readonly Button: {
-                readonly marginLeft: "component-padding-small";
-                readonly marginRight: "component-padding-xSmall";
+            Button: {
+                marginLeft: string;
+                marginRight: string;
             };
-            readonly IconButton: {
-                readonly marginLeft: "component-padding-small";
-                readonly marginRight: "component-padding-xSmall";
+            IconButton: {
+                marginLeft: string;
+                marginRight: string;
             };
-            readonly Dropdown: {
-                readonly marginLeft: "component-padding-small";
-                readonly marginRight: "component-padding-xSmall";
+            Dropdown: {
+                marginLeft: string;
+                marginRight: string;
             };
         };
     };

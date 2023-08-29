@@ -1,72 +1,81 @@
+import { SystemProps } from '@xstyled/styled-components';
+import { BaseProps } from '../../types/BaseProps';
+export type RadioButtonConfig = {
+    innerComponents: {
+        radioButton: SystemProps;
+        label: SystemProps;
+        helperText: SystemProps;
+    };
+} & BaseProps;
 export declare const config: {
-    readonly display: "flex";
-    readonly flexDirection: "column";
-    readonly alignItems: "flex-start";
-    readonly gap: "component-gap-xSmall";
-    readonly minWidth: "3xSmall";
-    readonly minHeight: "3xSmall";
-    readonly color: "content-primary";
-    readonly opacity: {
-        readonly disabled: "disabled";
+    display: "flex";
+    flexDirection: "column";
+    alignItems: "flex-start";
+    gap: string;
+    minWidth: string;
+    minHeight: string;
+    color: "content-primary";
+    opacity: {
+        disabled: "disabled";
     };
-    readonly pointerEvents: {
-        readonly disabled: "none";
+    pointerEvents: {
+        disabled: "none";
     };
-    readonly innerComponents: {
-        readonly radioButton: {
-            readonly appearance: "none";
-            readonly display: "flex";
-            readonly w: "16px";
-            readonly h: "16px";
-            readonly justifyContent: "center";
-            readonly alignItems: "center";
-            readonly flexShrink: 0;
-            readonly backgroundColor: "interaction-background-formField";
-            readonly ring: {
-                readonly _: "focus";
-                readonly checked: "5px";
+    innerComponents: {
+        radioButton: {
+            appearance: "none";
+            display: "flex";
+            w: string;
+            h: string;
+            justifyContent: "center";
+            alignItems: "center";
+            flexShrink: number;
+            backgroundColor: "interaction-background-formField";
+            ring: {
+                _: string;
+                checked: string;
             };
-            readonly borderRadius: "full";
-            readonly ringInset: true;
-            readonly ringColor: {
-                readonly _: "interaction-border-neutral-normal";
-                readonly hover: "interaction-border-hover";
-                readonly checked: {
-                    readonly _: "interaction-default-normal";
-                    readonly hover: "interaction-default-hover";
+            borderRadius: string;
+            ringInset: true;
+            ringColor: {
+                _: "interaction-border-neutral-normal";
+                hover: "interaction-border-hover";
+                checked: {
+                    _: "interaction-default-normal";
+                    hover: "interaction-default-hover";
                 };
-                readonly alert: {
-                    readonly _: "interaction-border-alert";
-                    readonly hover: "interaction-border-alert";
+                alert: {
+                    _: "interaction-border-alert";
+                    hover: "interaction-border-alert";
                 };
             };
-            readonly outlineStyle: {
-                readonly focusWithin: "solid";
+            outlineStyle: {
+                focusWithin: "solid";
             };
-            readonly outlineColor: {
-                readonly focusWithin: "interaction-focus-default";
+            outlineColor: {
+                focusWithin: "interaction-focus-default";
             };
-            readonly outlineWidth: {
-                readonly focusWithin: "focus";
+            outlineWidth: {
+                focusWithin: string;
             };
-            readonly outlineOffset: {
-                readonly focusWithin: "small";
+            outlineOffset: {
+                focusWithin: string;
             };
-            readonly transition: true;
-            readonly transitionDuration: 200;
-            readonly cursor: "pointer";
+            transition: true;
+            transitionDuration: number;
+            cursor: "pointer";
         };
-        readonly label: {
-            readonly display: "flex";
-            readonly justifyContent: "center";
-            readonly alignItems: "center";
-            readonly gap: "component-gap-small";
-            readonly cursor: "pointer";
-            readonly color: "content-primary";
-            readonly text: "body-medium";
+        label: {
+            display: "flex";
+            justifyContent: "center";
+            alignItems: "center";
+            gap: string;
+            cursor: "pointer";
+            color: "content-primary";
+            text: "body-medium";
         };
-        readonly helperText: {
-            readonly paddingLeft: "component-padding-2xLarge";
+        helperText: {
+            paddingLeft: string;
         };
     };
 };

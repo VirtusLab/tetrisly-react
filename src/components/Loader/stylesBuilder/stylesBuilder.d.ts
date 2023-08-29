@@ -6,45 +6,45 @@ type StylesBuilderProps = Omit<Required<LoaderProps>, 'custom' | 'progress'> & {
 export declare function stylesBuilder(props: StylesBuilderProps): {
     svgStyles: {
         fill: "none";
-        borderRadius: "large";
+        borderRadius: string;
         viewBox: string;
-        w: 48;
-        h: 48;
+        w: number;
+        h: number;
         strokeWidth: "2";
     } | {
         fill: "none";
-        borderRadius: "large";
+        borderRadius: string;
         viewBox: string;
-        w: 32;
-        h: 32;
+        w: number;
+        h: number;
         strokeWidth: "2";
     } | {
         fill: "none";
-        borderRadius: "large";
+        borderRadius: string;
         viewBox: string;
-        w: 20;
-        h: 20;
+        w: number;
+        h: number;
         strokeWidth: "2";
     } | {
         fill: "none";
-        borderRadius: "large";
+        borderRadius: string;
         viewBox: string;
-        w: 128;
-        h: 8;
+        w: number;
+        h: number;
         strokeWidth: "8";
     } | {
         fill: "none";
-        borderRadius: "large";
+        borderRadius: string;
         viewBox: string;
-        w: 128;
-        h: 6;
+        w: number;
+        h: number;
         strokeWidth: "6";
     } | {
         fill: "none";
-        borderRadius: "large";
+        borderRadius: string;
         viewBox: string;
-        w: 128;
-        h: 4;
+        w: number;
+        h: number;
         strokeWidth: "4";
     };
     baseStyles: {
@@ -60,7 +60,7 @@ export declare function stylesBuilder(props: StylesBuilderProps): {
     } | {
         strokeLinecap: "round";
         stroke: "interaction-inverted-normal";
-        opacity: 0.4;
+        opacity: number;
         strokeWidth: "2";
         d: string;
     } | {
@@ -81,7 +81,7 @@ export declare function stylesBuilder(props: StylesBuilderProps): {
     } | {
         strokeLinecap: "round";
         stroke: "interaction-inverted-normal";
-        opacity: 0.4;
+        opacity: number;
         strokeWidth: "2";
         d: string;
     } | {
@@ -102,7 +102,7 @@ export declare function stylesBuilder(props: StylesBuilderProps): {
     } | {
         strokeLinecap: "round";
         stroke: "interaction-inverted-normal";
-        opacity: 0.4;
+        opacity: number;
         strokeWidth: "2";
         d: string;
     } | {
@@ -123,7 +123,7 @@ export declare function stylesBuilder(props: StylesBuilderProps): {
     } | {
         strokeLinecap: "round";
         stroke: "interaction-inverted-normal";
-        opacity: 0.4;
+        opacity: number;
         strokeWidth: "8";
         d: string;
     } | {
@@ -144,7 +144,7 @@ export declare function stylesBuilder(props: StylesBuilderProps): {
     } | {
         strokeLinecap: "round";
         stroke: "interaction-inverted-normal";
-        opacity: 0.4;
+        opacity: number;
         strokeWidth: "6";
         d: string;
     } | {
@@ -165,7 +165,7 @@ export declare function stylesBuilder(props: StylesBuilderProps): {
     } | {
         strokeLinecap: "round";
         stroke: "interaction-inverted-normal";
-        opacity: 0.4;
+        opacity: number;
         strokeWidth: "4";
         d: string;
     } | {

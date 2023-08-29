@@ -1,0 +1,9 @@
+import{j as o,t as m}from"./TetrislyProvider-51cc1c11.js";import{l as x}from"./lodash-f6b38868.js";import"./index-61bf1805.js";import"./_commonjsHelpers-de833af9.js";const y={backgroundColor:"border-default",orientation:{horizontal:{w:"100%",h:"1px"},vertical:{w:"1px",h:"100%"}}},a=({orientation:e="horizontal",width:u,height:h,custom:v={},...f})=>{const{orientation:i,...g}=x.merge(y,v);return o.jsx(m.hr,{...g,...f,w:u??i[e].w,h:h??i[e].h,"data-testid":"divider"})};try{a.displayName="Divider",a.__docgenInfo={description:"",displayName:"Divider",props:{orientation:{defaultValue:{value:"horizontal"},description:"",name:"orientation",required:!1,type:{name:"enum",value:[{value:'"horizontal"'},{value:'"vertical"'}]}},width:{defaultValue:null,description:"",name:"width",required:!1,type:{name:"SystemProp<string | number | object, Theme>"}},height:{defaultValue:null,description:"",name:"height",required:!1,type:{name:"SystemProp<string | number | object, Theme>"}},custom:{defaultValue:{value:"{}"},description:"",name:"custom",required:!1,type:{name:"DeepPartial<DividerConfig>"}}}}}catch{}const w={title:"Components/Divider",component:a,tags:["autodocs"]},r={},t={args:{orientation:"vertical"},render:e=>o.jsx(m.div,{h:"100px",children:o.jsx(a,{...e})})};var s,n,d;r.parameters={...r.parameters,docs:{...(s=r.parameters)==null?void 0:s.docs,source:{originalSource:"{}",...(d=(n=r.parameters)==null?void 0:n.docs)==null?void 0:d.source}}};var l,c,p;t.parameters={...t.parameters,docs:{...(l=t.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  args: {
+    orientation: 'vertical'
+  },
+  render: args => <tet.div h="100px">
+      <Divider {...args} />
+    </tet.div>
+}`,...(p=(c=t.parameters)==null?void 0:c.docs)==null?void 0:p.source}}};const S=["Default","Vertical"];export{r as Default,t as Vertical,S as __namedExportsOrder,w as default};
+//# sourceMappingURL=Divider.stories-97f9eb8e.js.map

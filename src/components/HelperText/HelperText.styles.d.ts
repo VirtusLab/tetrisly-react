@@ -1,33 +1,44 @@
+import { SystemProps } from '@xstyled/styled-components';
+import { HelperTextIntent } from './HelperTextIntent.type';
+import { BaseProps } from '../../types/BaseProps';
+import { IconName } from '../../utility-types/IconName';
+export type HelperTextConfig = {
+    intent: Record<HelperTextIntent, SystemProps>;
+    icon: Record<HelperTextIntent, SystemProps & {
+        name: IconName<16>;
+    }>;
+    iconContainer: SystemProps;
+} & BaseProps;
 export declare const config: {
-    readonly display: "flex";
-    readonly alignItems: "flex-start";
-    readonly gap: "component-gap-xSmall";
-    readonly text: "medium-150";
-    readonly intent: {
-        readonly none: {
-            readonly color: "content-secondary";
+    display: "flex";
+    alignItems: "flex-start";
+    gap: string;
+    text: "medium-150";
+    intent: {
+        none: {
+            color: "content-secondary";
         };
-        readonly alert: {
-            readonly color: "content-negative-secondary";
+        alert: {
+            color: "content-negative-secondary";
         };
-        readonly success: {
-            readonly color: "content-positive-secondary";
-        };
-    };
-    readonly icon: {
-        readonly none: {
-            readonly name: "16-info";
-        };
-        readonly alert: {
-            readonly name: "16-alert-full";
-        };
-        readonly success: {
-            readonly name: "16-check";
+        success: {
+            color: "content-positive-secondary";
         };
     };
-    readonly iconContainer: {
-        readonly display: "flex";
-        readonly alignItems: "center";
-        readonly minHeight: "2xSmall";
+    icon: {
+        none: {
+            name: "16-info";
+        };
+        alert: {
+            name: "16-alert-full";
+        };
+        success: {
+            name: "16-check";
+        };
+    };
+    iconContainer: {
+        display: "flex";
+        alignItems: "center";
+        minHeight: string;
     };
 };

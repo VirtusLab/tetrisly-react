@@ -1,6 +1,15 @@
+import { SystemProps } from '@xstyled/styled-components';
+import type { Appearance, BasicIntent } from '../../types';
+import { BaseProps } from '../../types/BaseProps';
+export type BadgeConfig = {
+    appearance: Record<Appearance, Record<'high' | 'medium' | 'low', SystemProps>>;
+    intent: Record<BasicIntent, Record<'high' | 'medium' | 'low', SystemProps>>;
+    label: SystemProps;
+    icon: SystemProps;
+} & BaseProps;
 export declare const config: {
-    readonly appearance: {
-        readonly blue: {
+    appearance: {
+        blue: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -14,7 +23,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly green: {
+        green: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -28,7 +37,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly grey: {
+        grey: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -42,7 +51,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly red: {
+        red: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -56,7 +65,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly orange: {
+        orange: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -70,7 +79,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly raspberry: {
+        raspberry: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -84,7 +93,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly magenta: {
+        magenta: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -98,7 +107,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly purple: {
+        purple: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -112,7 +121,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly grape: {
+        grape: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -126,7 +135,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly violet: {
+        violet: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -140,7 +149,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly cyan: {
+        cyan: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -154,7 +163,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly teal: {
+        teal: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -168,7 +177,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly aquamarine: {
+        aquamarine: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -182,7 +191,7 @@ export declare const config: {
                 backgroundColor: "nonSemantic-grey-background-onSubtle" | "nonSemantic-red-background-onSubtle" | "nonSemantic-raspberry-background-onSubtle" | "nonSemantic-magenta-background-onSubtle" | "nonSemantic-purple-background-onSubtle" | "nonSemantic-grape-background-onSubtle" | "nonSemantic-violet-background-onSubtle" | "nonSemantic-blue-background-onSubtle" | "nonSemantic-cyan-background-onSubtle" | "nonSemantic-teal-background-onSubtle" | "nonSemantic-aquamarine-background-onSubtle" | "nonSemantic-green-background-onSubtle" | "nonSemantic-emerald-background-onSubtle" | "nonSemantic-orange-background-onSubtle";
             };
         };
-        readonly emerald: {
+        emerald: {
             high: {
                 color: "nonSemantic-white-content-primary";
                 backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
@@ -197,8 +206,8 @@ export declare const config: {
             };
         };
     };
-    readonly intent: {
-        readonly neutral: {
+    intent: {
+        neutral: {
             high: {
                 color: import("@xstyled/system").SystemProp<import("@xstyled/system").Color<import("@xstyled/system").Theme>, import("@xstyled/system").Theme> | undefined;
                 backgroundColor: "background-neutral-strong" | "background-informative-strong" | "background-positive-strong" | "background-warning-strong" | "background-negative-strong";
@@ -212,7 +221,7 @@ export declare const config: {
                 backgroundColor: "background-neutral-onSubtle" | "background-informative-onSubtle" | "background-positive-onSubtle" | "background-warning-onSubtle" | "background-negative-onSubtle";
             };
         };
-        readonly informative: {
+        informative: {
             high: {
                 color: import("@xstyled/system").SystemProp<import("@xstyled/system").Color<import("@xstyled/system").Theme>, import("@xstyled/system").Theme> | undefined;
                 backgroundColor: "background-neutral-strong" | "background-informative-strong" | "background-positive-strong" | "background-warning-strong" | "background-negative-strong";
@@ -226,7 +235,7 @@ export declare const config: {
                 backgroundColor: "background-neutral-onSubtle" | "background-informative-onSubtle" | "background-positive-onSubtle" | "background-warning-onSubtle" | "background-negative-onSubtle";
             };
         };
-        readonly positive: {
+        positive: {
             high: {
                 color: import("@xstyled/system").SystemProp<import("@xstyled/system").Color<import("@xstyled/system").Theme>, import("@xstyled/system").Theme> | undefined;
                 backgroundColor: "background-neutral-strong" | "background-informative-strong" | "background-positive-strong" | "background-warning-strong" | "background-negative-strong";
@@ -240,7 +249,7 @@ export declare const config: {
                 backgroundColor: "background-neutral-onSubtle" | "background-informative-onSubtle" | "background-positive-onSubtle" | "background-warning-onSubtle" | "background-negative-onSubtle";
             };
         };
-        readonly warning: {
+        warning: {
             high: {
                 color: import("@xstyled/system").SystemProp<import("@xstyled/system").Color<import("@xstyled/system").Theme>, import("@xstyled/system").Theme> | undefined;
                 backgroundColor: "background-neutral-strong" | "background-informative-strong" | "background-positive-strong" | "background-warning-strong" | "background-negative-strong";
@@ -254,7 +263,7 @@ export declare const config: {
                 backgroundColor: "background-neutral-onSubtle" | "background-informative-onSubtle" | "background-positive-onSubtle" | "background-warning-onSubtle" | "background-negative-onSubtle";
             };
         };
-        readonly negative: {
+        negative: {
             high: {
                 color: import("@xstyled/system").SystemProp<import("@xstyled/system").Color<import("@xstyled/system").Theme>, import("@xstyled/system").Theme> | undefined;
                 backgroundColor: "background-neutral-strong" | "background-informative-strong" | "background-positive-strong" | "background-warning-strong" | "background-negative-strong";
@@ -269,17 +278,17 @@ export declare const config: {
             };
         };
     };
-    readonly display: "flex";
-    readonly w: "fit-content";
-    readonly h: "xSmall";
-    readonly borderRadius: "large";
-    readonly flexShrink: 0;
-    readonly alignItems: "center";
-    readonly label: {
-        readonly padding: "component-padding-small";
+    display: "flex";
+    w: string;
+    h: string;
+    borderRadius: string;
+    flexShrink: number;
+    alignItems: "center";
+    label: {
+        padding: string;
     };
-    readonly icon: {
-        readonly padding: "component-padding-xSmall";
+    icon: {
+        padding: string;
     };
-    readonly gap: "component-gap-xSmall";
+    gap: string;
 };

@@ -1,7 +1,5 @@
-import { SystemProps } from '@xstyled/styled-components';
-import { config } from './HelperText.styles';
+import { HelperTextConfig } from './HelperText.styles';
 import { HelperTextIntent } from './HelperTextIntent.type';
-import { Theme } from '../../theme';
 import { DeepPartial } from '../../utility-types/DeepPartial';
 export type HelperTextProps = {
     intent?: HelperTextIntent;
@@ -11,5 +9,5 @@ export type HelperTextProps = {
     };
     beforeIcon?: boolean;
     text: string;
-    custom?: DeepPartial<SystemProps<Theme> & typeof config>;
+    custom?: DeepPartial<HelperTextConfig>;
 };

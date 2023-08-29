@@ -1,80 +1,90 @@
+import { SystemProps } from '@xstyled/styled-components';
+import { SvgProperties } from 'csstype';
+import type { LoaderAppearance, LoaderShape, LoaderSize } from './types';
+import { BaseProps } from '../../types/BaseProps';
+export type LoaderConfig = {
+    size: Record<LoaderShape, Record<LoaderSize, SystemProps & Pick<SvgProperties, 'strokeWidth'>>>;
+    appearance: Record<LoaderAppearance, Record<'base' | 'progress', SystemProps>>;
+    svg: SystemProps;
+    progress: SystemProps & Pick<SvgProperties, 'strokeLinecap'>;
+} & BaseProps;
 export declare const config: {
-    readonly size: {
-        readonly circle: {
-            readonly large: {
-                readonly w: 48;
-                readonly h: 48;
-                readonly strokeWidth: "2";
+    size: {
+        circle: {
+            large: {
+                w: number;
+                h: number;
+                strokeWidth: "2";
             };
-            readonly medium: {
-                readonly w: 32;
-                readonly h: 32;
-                readonly strokeWidth: "2";
+            medium: {
+                w: number;
+                h: number;
+                strokeWidth: "2";
             };
-            readonly small: {
-                readonly w: 20;
-                readonly h: 20;
-                readonly strokeWidth: "2";
-            };
-        };
-        readonly bar: {
-            readonly large: {
-                readonly w: 128;
-                readonly h: 8;
-                readonly strokeWidth: "8";
-            };
-            readonly medium: {
-                readonly w: 128;
-                readonly h: 6;
-                readonly strokeWidth: "6";
-            };
-            readonly small: {
-                readonly w: 128;
-                readonly h: 4;
-                readonly strokeWidth: "4";
+            small: {
+                w: number;
+                h: number;
+                strokeWidth: "2";
             };
         };
-    };
-    readonly appearance: {
-        readonly primary: {
-            readonly base: {
-                readonly stroke: "interaction-neutral-subtle-normal";
+        bar: {
+            large: {
+                w: number;
+                h: number;
+                strokeWidth: "8";
             };
-            readonly progress: {
-                readonly stroke: "interaction-default-normal";
+            medium: {
+                w: number;
+                h: number;
+                strokeWidth: "6";
             };
-        };
-        readonly inverted: {
-            readonly base: {
-                readonly stroke: "interaction-inverted-normal";
-            };
-            readonly progress: {
-                readonly stroke: "interaction-default-normal";
-            };
-        };
-        readonly white: {
-            readonly base: {
-                readonly stroke: "interaction-inverted-normal";
-                readonly opacity: 0.4;
-            };
-            readonly progress: {
-                readonly stroke: "interaction-inverted-normal";
-            };
-        };
-        readonly greyscale: {
-            readonly base: {
-                readonly stroke: "interaction-neutral-subtle-normal";
-            };
-            readonly progress: {
-                readonly stroke: "interaction-neutral-normal";
+            small: {
+                w: number;
+                h: number;
+                strokeWidth: "4";
             };
         };
     };
-    readonly svg: {
-        readonly fill: "none";
-        readonly borderRadius: "large";
+    appearance: {
+        primary: {
+            base: {
+                stroke: "interaction-neutral-subtle-normal";
+            };
+            progress: {
+                stroke: "interaction-default-normal";
+            };
+        };
+        inverted: {
+            base: {
+                stroke: "interaction-inverted-normal";
+            };
+            progress: {
+                stroke: "interaction-default-normal";
+            };
+        };
+        white: {
+            base: {
+                stroke: "interaction-inverted-normal";
+                opacity: number;
+            };
+            progress: {
+                stroke: "interaction-inverted-normal";
+            };
+        };
+        greyscale: {
+            base: {
+                stroke: "interaction-neutral-subtle-normal";
+            };
+            progress: {
+                stroke: "interaction-neutral-normal";
+            };
+        };
     };
-    readonly progress: {
-        readonly strokeLinecap: "round";
+    svg: {
+        fill: "none";
+        borderRadius: string;
+    };
+    progress: {
+        strokeLinecap: "round";
     };
 };

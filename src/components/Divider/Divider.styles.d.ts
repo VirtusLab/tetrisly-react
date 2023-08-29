@@ -1,13 +1,19 @@
+import { SystemProps } from '@xstyled/styled-components';
+import { DividerOrientation } from './DividerOrientation.type';
+import { BaseProps } from '../../types/BaseProps';
+export type DividerConfig = {
+    orientation: Record<DividerOrientation, SystemProps>;
+} & BaseProps;
 export declare const config: {
-    readonly backgroundColor: "border-default";
-    readonly orientation: {
-        readonly horizontal: {
-            readonly w: "100%";
-            readonly h: "1px";
+    backgroundColor: "border-default";
+    orientation: {
+        horizontal: {
+            w: string;
+            h: string;
         };
-        readonly vertical: {
-            readonly w: "1px";
-            readonly h: "100%";
+        vertical: {
+            w: string;
+            h: string;
         };
     };
 };

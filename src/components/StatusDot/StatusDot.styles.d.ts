@@ -1,20 +1,27 @@
+import { SystemProps } from '@xstyled/styled-components';
+import { StatusDotAppearance } from './StatusDotAppearance.type';
+import { BaseProps } from '../../types/BaseProps';
+export type StatusDotConfig = {
+    appearance: Record<StatusDotAppearance, SystemProps>;
+    stroked: SystemProps;
+} & BaseProps;
 export declare const config: {
-    readonly w: "12px";
-    readonly h: "12px";
-    readonly borderRadius: "full";
-    readonly appearance: {
-        readonly red: {
-            readonly backgroundColor: "nonSemantic-red-background-strong";
+    w: string;
+    h: string;
+    borderRadius: string;
+    appearance: {
+        red: {
+            backgroundColor: "nonSemantic-red-background-strong";
         };
-        readonly green: {
-            readonly backgroundColor: "nonSemantic-green-background-strong";
+        green: {
+            backgroundColor: "nonSemantic-green-background-strong";
         };
-        readonly orange: {
-            readonly backgroundColor: "nonSemantic-orange-background-strong";
+        orange: {
+            backgroundColor: "nonSemantic-orange-background-strong";
         };
     };
-    readonly stroked: {
-        readonly ring: "medium";
-        readonly ringColor: "border-inverted";
+    stroked: {
+        ring: string;
+        ringColor: "border-inverted";
     };
 };
