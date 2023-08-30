@@ -2,14 +2,26 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Badge } from './Badge';
 
-import { tet } from '@/tetrisly';
-import { appearances } from '@/types/Appearance';
-import { basicIntents } from '@/types/BasicIntent';
+import { BadgeDocs } from '@/docs-components/BadgeDocs';
+import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
   title: 'Components/Badge',
   component: Badge,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'A small, visually distinct element used to display numbers, small pieces of information, or statuses. Badges are often paired with icons or other components to convey relevant information or updates.',
+      },
+      page: () => (
+        <TetDocs docs="https://docs.tetrisly.com/components/list/badge">
+          <BadgeDocs />
+        </TetDocs>
+      ),
+    },
+  },
 } satisfies Meta<typeof Badge>;
 
 export default meta;
@@ -38,51 +50,3 @@ export const LabelIcons: Story = {
     afterIcon: '16-bolt',
   },
 };
-
-export const All = () => (
-  <tet.div spaceY="component-gap-small">
-    <tet.p>High emphasis</tet.p>
-    <tet.div display="flex" spaceX="component-gap-small">
-      {appearances.map((appearance) => (
-        <Badge appearance={appearance} icon="16-bolt" key={appearance} />
-      ))}
-    </tet.div>
-    <tet.div display="flex" spaceX="component-gap-small">
-      {basicIntents.map((intent) => (
-        <Badge intent={intent} icon="16-bolt" key={intent} />
-      ))}
-    </tet.div>
-    <tet.p>Medium emphasis</tet.p>
-    <tet.div display="flex" spaceX="component-gap-small">
-      {appearances.map((appearance) => (
-        <Badge
-          appearance={appearance}
-          emphasis="medium"
-          icon="16-bolt"
-          key={appearance}
-        />
-      ))}
-    </tet.div>
-    <tet.div display="flex" spaceX="component-gap-small">
-      {basicIntents.map((intent) => (
-        <Badge intent={intent} emphasis="medium" icon="16-bolt" key={intent} />
-      ))}
-    </tet.div>
-    <tet.p>Low emphasis</tet.p>
-    <tet.div display="flex" spaceX="component-gap-small">
-      {appearances.map((appearance) => (
-        <Badge
-          appearance={appearance}
-          emphasis="low"
-          icon="16-bolt"
-          key={appearance}
-        />
-      ))}
-    </tet.div>
-    <tet.div display="flex" spaceX="component-gap-small">
-      {basicIntents.map((intent) => (
-        <Badge intent={intent} emphasis="low" icon="16-bolt" key={intent} />
-      ))}
-    </tet.div>
-  </tet.div>
-);

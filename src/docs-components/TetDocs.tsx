@@ -1,4 +1,4 @@
-import { Primary, Controls, Stories, Unstyled, useOf } from '@storybook/blocks';
+import { Primary, Controls, Stories, useOf, Unstyled } from '@storybook/blocks';
 import { FC, PropsWithChildren } from 'react';
 
 import { Hero } from './common/Hero';
@@ -23,7 +23,7 @@ export const TetDocs: FC<PropsWithChildren<{ docs: string }>> = ({
     <>
       <Unstyled>
         <TetrislyProvider>
-          <tet.div w="888px">
+          <tet.div minWidth="888px">
             <Hero
               component={title.split('/').pop() ?? ''}
               description={description}
