@@ -2,14 +2,14 @@ import { SystemProps } from '@xstyled/styled-components';
 
 import { HelperTextIntent } from './HelperTextIntent.type';
 
-import { Theme } from '@/theme';
+import { BaseProps } from '@/types/BaseProps';
 import { IconName } from '@/utility-types/IconName';
 
-type Config = {
+export type HelperTextConfig = {
   intent: Record<HelperTextIntent, SystemProps>;
   icon: Record<HelperTextIntent, SystemProps & { name: IconName<16> }>;
   iconContainer: SystemProps;
-};
+} & BaseProps;
 
 export const config = {
   display: 'flex',
@@ -43,4 +43,4 @@ export const config = {
     alignItems: 'center',
     minHeight: '2xSmall',
   },
-} as const satisfies SystemProps<Theme> & Config;
+} satisfies HelperTextConfig;

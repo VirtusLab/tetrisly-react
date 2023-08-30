@@ -2,13 +2,13 @@ import { SystemProps } from '@xstyled/styled-components';
 
 import { BaseProps } from '@/types/BaseProps';
 
-type Config = {
+export type RadioButtonConfig = {
   innerComponents: {
     radioButton: SystemProps;
     label: SystemProps;
     helperText: SystemProps;
   };
-};
+} & BaseProps;
 
 export const config = {
   display: 'flex',
@@ -81,4 +81,4 @@ export const config = {
       paddingLeft: 'component-padding-2xLarge',
     },
   },
-} as const satisfies BaseProps & Config;
+} satisfies RadioButtonConfig;
