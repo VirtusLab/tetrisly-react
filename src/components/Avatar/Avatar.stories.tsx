@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from './Avatar';
-import { appearances } from '../../types/Appearance';
 
 import { AvatarDocs } from '@/docs-components/AvatarDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
+import { appearances } from '@/types/Appearance';
 
 const meta = {
   component: Avatar,

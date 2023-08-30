@@ -5,7 +5,7 @@ import type { LoaderAppearance, LoaderShape, LoaderSize } from './types';
 
 import { BaseProps } from '@/types/BaseProps';
 
-type Config = {
+export type LoaderConfig = {
   size: Record<
     LoaderShape,
     Record<LoaderSize, SystemProps & Pick<SvgProperties, 'strokeWidth'>>
@@ -16,7 +16,7 @@ type Config = {
   >;
   svg: SystemProps;
   progress: SystemProps & Pick<SvgProperties, 'strokeLinecap'>;
-};
+} & BaseProps;
 
 export const config = {
   size: {
@@ -97,4 +97,4 @@ export const config = {
   progress: {
     strokeLinecap: 'round',
   },
-} as const satisfies BaseProps & Config;
+} satisfies LoaderConfig;

@@ -1,25 +1,20 @@
-import { SystemProps } from '@xstyled/styled-components';
+import { BaseProps } from '@/types/BaseProps';
 
-import { Theme } from '@/theme';
-
-type Config = {
-  innerComponents: Record<
-    'input' | 'icon' | 'text' | 'clearButton',
-    SystemProps
-  >;
+export type TextInputConfig = {
+  innerComponents: Record<'input' | 'icon' | 'text' | 'clearButton', BaseProps>;
   spacing:
     | Record<
         'beforeComponent',
-        Record<'Icon' | 'Avatar' | 'Prefix' | 'Dropdown', SystemProps>
+        Record<'Icon' | 'Avatar' | 'Prefix' | 'Dropdown', BaseProps>
       >
     | Record<
         'afterComponent',
         Record<
           'Icon' | 'Sufix' | 'Button' | 'IconButton' | 'Dropdown',
-          SystemProps
+          BaseProps
         >
       >;
-};
+} & BaseProps;
 
 export const config = {
   display: 'flex',
@@ -118,4 +113,4 @@ export const config = {
       },
     },
   },
-} as const satisfies SystemProps<Theme> & Config;
+} satisfies TextInputConfig;

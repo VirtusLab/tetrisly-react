@@ -1,8 +1,9 @@
 import { SystemProps } from '@xstyled/styled-components';
 
 import { Theme } from '@/theme';
+import { BaseProps } from '@/types/BaseProps';
 
-type Config = SystemProps<Theme> & TooltipConfig & OptionalConfig;
+export type LabelConfig = BaseProps & TooltipConfig & OptionalConfig;
 
 type TooltipConfig = {
   tooltip: SystemProps<Theme>;
@@ -27,4 +28,4 @@ export const config = {
   optional: {
     color: 'content-tertiary',
   },
-} as const satisfies Config;
+} satisfies LabelConfig;

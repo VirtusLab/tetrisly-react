@@ -1,13 +1,11 @@
 import { IconProps } from '@virtuslab/tetrisly-icons';
-import { SystemProps } from '@xstyled/styled-components';
 import { InputHTMLAttributes } from 'react';
 
-import { config } from './TextInput.style';
+import { TextInputConfig } from './TextInput.style';
 import { TextInputType } from './TextInputType.type';
 import { ButtonProps } from '../Button';
 import { IconButtonProps } from '../IconButton/IconButton.props';
 
-import { Theme } from '@/theme';
 import type { BasicInputState } from '@/types';
 import { InnerComponent } from '@/types/InnerComponent';
 import { DeepPartial } from '@/utility-types/DeepPartial';
@@ -44,7 +42,7 @@ export type TextInputProps = {
     | TextInputProps.InnerComponents.Dropdown;
   state?: BasicInputState;
   hasClearButton?: boolean;
-  custom?: DeepPartial<SystemProps<Theme> & typeof config>;
+  custom?: DeepPartial<TextInputConfig>;
 } & Omit<
   InputHTMLAttributes<HTMLInputElement>,
   'checked' | 'disabled' | 'color' | 'type'
