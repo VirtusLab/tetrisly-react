@@ -18,6 +18,10 @@ export const customPropTester = (
   const { innerElements = {}, props = {} } = options;
 
   describe('CustomPropTester', () => {
+    afterEach(() => {
+      vi.restoreAllMocks();
+    });
+
     it(`Top Level style`, () => {
       const { queryByTestId } = render(
         applyProps(Component, { custom: customProp }),
