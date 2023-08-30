@@ -1,9 +1,9 @@
 import { merge } from 'lodash';
-import { FC, PropsWithChildren, useRef } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 import { PopoverProps } from './Popover.props';
 import { config as defaultConfig } from './Popover.styles';
-import { useIsPopoverContentVisible } from './useIsPopoverContentVisible';
+import { useIsPopoverVisible } from './useIsPopoverVisible';
 
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
@@ -28,14 +28,12 @@ export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
     ...contentStyles,
   };
 
-  const anchorRef = useRef<HTMLDivElement>(null);
-
-  const isVisible = useIsPopoverContentVisible(isOpen, anchorRef);
+  const { isVisible, hoverHandlers } = useIsPopoverVisible(isOpen);
 
   return (
     <tet.div {...containerStyles} {...restProps} data-testid="popover">
       {isVisible && <tet.div {...allContentStyles}>{content}</tet.div>}
-      <tet.div ref={anchorRef}>{children}</tet.div>
+      <tet.div {...hoverHandlers}>{children}</tet.div>
     </tet.div>
   );
 };
