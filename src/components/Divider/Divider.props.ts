@@ -1,6 +1,6 @@
-import { SystemProp, SystemProps } from '@xstyled/styled-components';
+import { SystemProp } from '@xstyled/styled-components';
 
-import { config } from './Divider.styles';
+import { DividerConfig } from './Divider.styles';
 
 import { Theme } from '@/theme';
 import { DeepPartial } from '@/utility-types/DeepPartial';
@@ -17,5 +17,5 @@ export type DividerProps = (
       height?: never;
     }
 ) & {
-  custom?: DeepPartial<SystemProps<Theme> & typeof config>;
+  custom?: DeepPartial<DividerConfig>;
 };

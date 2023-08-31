@@ -2610,7 +2610,7 @@
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.4.0"
 
-"@storybook/manager-api@7.4.0", "@storybook/manager-api@^7.0.12":
+"@storybook/manager-api@7.4.0":
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/@storybook/manager-api/-/manager-api-7.4.0.tgz#aee0153df1583459b7e1e64e1d8c46fb49a584c8"
   integrity sha512-sBfkkt0eZGTozeKrbzMtWLEOQrgqdk24OUJlkc2IDaucR1CBNjoCMjNeYg7cLDw0rXE8W3W3AdWtJnfsUbLMAQ==
@@ -2629,6 +2629,27 @@
     semver "^7.3.7"
     store2 "^2.14.2"
     telejson "^7.2.0"
+    ts-dedent "^2.0.0"
+
+"@storybook/manager-api@^7.0.12", "@storybook/manager-api@^7.3.2":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@storybook/manager-api/-/manager-api-7.3.2.tgz#8228ce35cfc0f304e3a1c51bec3d3e0d01427a1a"
+  integrity sha512-EEosLcc+CPLjorLf2+rGLBW0sH0SHVcB1yClLIzKM5Wt8Cl/0l19wNtGMooE/28SDLA4DPIl4WDnP83wRE1hsg==
+  dependencies:
+    "@storybook/channels" "7.3.2"
+    "@storybook/client-logger" "7.3.2"
+    "@storybook/core-events" "7.3.2"
+    "@storybook/csf" "^0.1.0"
+    "@storybook/global" "^5.0.0"
+    "@storybook/router" "7.3.2"
+    "@storybook/theming" "7.3.2"
+    "@storybook/types" "7.3.2"
+    dequal "^2.0.2"
+    lodash "^4.17.21"
+    memoizerific "^1.11.3"
+    semver "^7.3.7"
+    store2 "^2.14.2"
+    telejson "^7.0.3"
     ts-dedent "^2.0.0"
 
 "@storybook/manager@7.4.0":
@@ -2754,13 +2775,23 @@
     "@testing-library/user-event" "^14.0.0"
     ts-dedent "^2.2.0"
 
-"@storybook/theming@7.4.0", "@storybook/theming@^7.0.12":
+"@storybook/theming@7.4.0":
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-7.4.0.tgz#f5d9f8f55c41e08c0f50b57d9fb0e159ed595274"
   integrity sha512-eLjEf6G3cqlegfutF/iUrec9LrUjKDj7K4ZhGdACWrf7bQcODs99EK62e9/d8GNKr4b+QMSEuM6XNGaqdPnuzQ==
   dependencies:
     "@emotion/use-insertion-effect-with-fallbacks" "^1.0.0"
     "@storybook/client-logger" "7.4.0"
+    "@storybook/global" "^5.0.0"
+    memoizerific "^1.11.3"
+
+"@storybook/theming@^7.0.12", "@storybook/theming@^7.3.2":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-7.3.2.tgz#6742697322de78831e5e67567368f82b5969a83d"
+  integrity sha512-npVsnmNAtqGwl1K7vLC/hcVhL8tBC8G0vdZXEcufF0jHdQmRCUs9ZVrnR6W0LCrtmIHDaDoO7PqJVSzu2wgVxw==
+  dependencies:
+    "@emotion/use-insertion-effect-with-fallbacks" "^1.0.0"
+    "@storybook/client-logger" "7.3.2"
     "@storybook/global" "^5.0.0"
     memoizerific "^1.11.3"
 
@@ -3382,10 +3413,10 @@
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
 
-"@virtuslab/eslint-config-tetrisly@^1.2.3":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@virtuslab/eslint-config-tetrisly/-/eslint-config-tetrisly-1.2.5.tgz#d997aa2448980c65a85fcb0c6b523927c59c0f37"
-  integrity sha512-wj7q+ls5QzHqP80RY+GrLAkeTyN4mhLXI3Re993xOKd99YXBtGJaLEL8MfSWjIYmvSEs58G8K/VlmSF86rdgpw==
+"@virtuslab/eslint-config-tetrisly@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@virtuslab/eslint-config-tetrisly/-/eslint-config-tetrisly-1.2.4.tgz#c2ee7ea4b3b559f634e2c276dda2e82cd9c6ac07"
+  integrity sha512-Ub6v52vrcigq4wBbHuwIPhWg58crP9j+paKivaPNTDjjFmx7fEfK1+5X+HCspdJ61CS+GewC+IHiEPKQIRmmhg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.57.1"
     "@typescript-eslint/parser" "^5.60.1"
