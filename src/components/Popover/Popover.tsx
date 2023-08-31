@@ -17,7 +17,7 @@ export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
   isOpen,
   custom,
   children,
-  width,
+  width = 'fit-content',
   ...restProps
 }) => {
   const {

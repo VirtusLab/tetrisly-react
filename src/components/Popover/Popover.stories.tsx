@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Popover } from './Popover';
+import { Avatar } from '../Avatar/Avatar';
 import { Button } from '../Button';
+import { Label } from '../Label/Label';
 
 import { TetDocs } from '@/docs-components/TetDocs';
 import { tet } from '@/tetrisly';
@@ -49,5 +51,22 @@ export const Default: Story = {};
 export const Open: Story = {
   args: {
     isOpen: true,
+  },
+};
+
+export const CustomContent: Story = {
+  args: {
+    content: (
+      <tet.div display="flex" alignItems="center" gap="component-gap-large">
+        <Avatar initials="JD" size="medium" />
+        <Label label="John Doe" />
+        <Button
+          appearance="secondary"
+          label="Following"
+          beforeIcon="20-check-large"
+        />
+      </tet.div>
+    ),
+    width: '300px',
   },
 };
