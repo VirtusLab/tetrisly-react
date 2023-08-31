@@ -1,12 +1,9 @@
 /// <reference types="react" />
+import { TextInputProps } from './TextInput.props';
 export declare const TextInput: import("react").ForwardRefExoticComponent<{
     type?: import("./TextInputType.type").TextInputType | undefined;
-    beforeComponent?: import("../../types").InnerComponent<"Icon", import("@virtuslab/tetrisly-icons").IconProps> | import("../../types").InnerComponent<"Prefix", {
-        text: string;
-    }> | import("../../types").InnerComponent<"Dropdown", Pick<import("../Button").ButtonProps<"ghost">, "onClick" | "label">> | undefined;
-    afterComponent?: import("../../types").InnerComponent<"Icon", import("@virtuslab/tetrisly-icons").IconProps> | import("../../types").InnerComponent<"Dropdown", Pick<import("../Button").ButtonProps<"ghost">, "onClick" | "label">> | import("../../types").InnerComponent<"Sufix", {
-        text: string;
-    }> | import("../../types").InnerComponent<"Button", Pick<import("../Button").ButtonProps<"ghost">, "onClick" | "label">> | undefined;
+    beforeComponent?: TextInputProps.InnerComponents.Icon | TextInputProps.InnerComponents.Dropdown | TextInputProps.InnerComponents.Prefix | undefined;
+    afterComponent?: TextInputProps.InnerComponents.Icon | TextInputProps.InnerComponents.IconButton | TextInputProps.InnerComponents.Dropdown | TextInputProps.InnerComponents.Sufix | TextInputProps.InnerComponents.Button | undefined;
     state?: import("../../types").BasicInputState | undefined;
     hasClearButton?: boolean | undefined;
     custom?: import("../../utility-types/DeepPartial").DeepPartial<import("./TextInput.style").TextInputConfig> | undefined;

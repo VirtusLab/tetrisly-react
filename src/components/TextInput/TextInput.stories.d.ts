@@ -4,12 +4,8 @@ declare const meta: {
     title: string;
     component: import("react").ForwardRefExoticComponent<{
         type?: import("./TextInputType.type").TextInputType | undefined;
-        beforeComponent?: import("../../types").InnerComponent<"Icon", import("@virtuslab/tetrisly-icons").IconProps> | import("../../types").InnerComponent<"Prefix", {
-            text: string;
-        }> | import("../../types").InnerComponent<"Dropdown", Pick<import("../Button").ButtonProps<"ghost">, "onClick" | "label">> | undefined;
-        afterComponent?: import("../../types").InnerComponent<"Icon", import("@virtuslab/tetrisly-icons").IconProps> | import("../../types").InnerComponent<"Dropdown", Pick<import("../Button").ButtonProps<"ghost">, "onClick" | "label">> | import("../../types").InnerComponent<"Sufix", {
-            text: string;
-        }> | import("../../types").InnerComponent<"Button", Pick<import("../Button").ButtonProps<"ghost">, "onClick" | "label">> | undefined;
+        beforeComponent?: import("./TextInput.props").TextInputProps.InnerComponents.Icon | import("./TextInput.props").TextInputProps.InnerComponents.Dropdown | import("./TextInput.props").TextInputProps.InnerComponents.Prefix | undefined;
+        afterComponent?: import("./TextInput.props").TextInputProps.InnerComponents.Icon | import("./TextInput.props").TextInputProps.InnerComponents.IconButton | import("./TextInput.props").TextInputProps.InnerComponents.Dropdown | import("./TextInput.props").TextInputProps.InnerComponents.Sufix | import("./TextInput.props").TextInputProps.InnerComponents.Button | undefined;
         state?: import("../../types").BasicInputState | undefined;
         hasClearButton?: boolean | undefined;
         custom?: import("../../utility-types/DeepPartial").DeepPartial<import("./TextInput.style").TextInputConfig> | undefined;
@@ -30,5 +26,6 @@ export declare const BeforePrefixComponent: Story;
 export declare const BeforeDropdownComponent: Story;
 export declare const AfterDropdownComponent: Story;
 export declare const AfterIconComponent: Story;
+export declare const AfterIconButtonComponent: Story;
 export declare const AfterPrefixComponent: Story;
 export declare const AfterButtonComponent: Story;
