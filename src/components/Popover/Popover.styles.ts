@@ -72,7 +72,7 @@ export const config = {
           top: '50%',
         },
         end: {
-          transform: 'translate(100%, -10ł0%)',
+          transform: 'translate(100%, -100%)',
           top: '50%',
         },
       },
@@ -90,7 +90,8 @@ export const config = {
       backgroundColor: 'interaction-background-modeless',
       borderRadius: 'large',
       zIndex: 1000,
-      transition: 'opacity 0.3s ease-in-out',
+      transition: true,
+      transitionDuration: 200,
     },
   },
 } satisfies PopoverConfig;
