@@ -12,8 +12,8 @@ const getSearchInput = (jsx: JSX.Element) => {
     textInput: getByTestId('text-input'),
     input: getByTestId('text-input-input') as HTMLInputElement,
     clearButton: queryByTestId('text-input-clear-button'),
-    beforeComponent: queryByTestId('text-input-beforeComponent'),
-    afterComponent: queryByTestId('text-input-afterComponent'),
+    beforeComponent: queryByTestId('text-input-before-component'),
+    afterComponent: queryByTestId('text-input-after-component'),
   };
 };
 

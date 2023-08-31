@@ -96,7 +96,7 @@ export const TextInput = forwardRef<
         {!!beforeComponent && (
           <tet.span
             {...spacing.beforeComponent[beforeComponent.type]}
-            data-testid="text-input-beforeComponent"
+            data-testid="text-input-before-component"
           >
             {beforeComponent.type === 'Icon' && (
               <tet.span {...iconStyles}>
@@ -138,7 +138,7 @@ export const TextInput = forwardRef<
         {!!afterComponent && (
           <tet.span
             {...spacing.afterComponent[afterComponent.type]}
-            data-testid="text-input-afterComponent"
+            data-testid="text-input-after-component"
           >
             {afterComponent.type === 'Icon' && (
               <tet.span {...iconStyles}>
