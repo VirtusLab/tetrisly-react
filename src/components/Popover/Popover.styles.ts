@@ -11,6 +11,7 @@ export type PopoverConfig = {
 
 export const config = {
   position: 'relative',
+  display: 'inline-flex',
   origin: {
     top: {
       align: {
@@ -89,6 +90,7 @@ export const config = {
       backgroundColor: 'interaction-background-modeless',
       borderRadius: 'large',
       zIndex: 1000,
+      transition: 'opacity 0.3s ease-in-out',
     },
   },
 } satisfies PopoverConfig;

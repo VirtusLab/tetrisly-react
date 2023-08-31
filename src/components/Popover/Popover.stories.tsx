@@ -13,6 +13,7 @@ const meta = {
   args: {
     content:
       'Everything in Tetrisly contains Auto Layout. Moreover, we’ve redefined all variants and we have created brand-new components.',
+    width: '320px',
   },
   parameters: {
     docs: {

@@ -17,6 +17,7 @@ export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
   isOpen,
   custom,
   children,
+  width,
   ...restProps
 }) => {
   const {
@@ -34,17 +35,22 @@ export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
   const offsetProps = { [origin]: `-${space}` };
 
   return (
-    <tet.div {...containerStyles} {...restProps} data-testid="popover">
-      {isOpen === undefined ? (
-        <AnchorWrapper>{children}</AnchorWrapper>
-      ) : (
-        children
-      )}
-      {isOpen !== false && (
-        <tet.div {...offsetProps} {...allContentStyles}>
-          {content}
-        </tet.div>
-      )}
-    </tet.div>
+    <AnchorWrapper
+      isOpen={isOpen}
+      {...containerStyles}
+      {...restProps}
+      data-testid="popover"
+    >
+      <tet.div
+        w={width}
+        {...offsetProps}
+        {...allContentStyles}
+        opacity={isOpen === false ? '0' : '1'}
+        data-testid="popover-content"
+      >
+        {content}
+      </tet.div>
+      {children}
+    </AnchorWrapper>
   );
 };

@@ -1,3 +1,4 @@
+import { SystemProp } from '@xstyled/styled-components';
 import { ReactNode } from 'react';
 
 import { PopoverConfig } from './Popover.styles';
@@ -12,5 +13,7 @@ export type PopoverProps = {
   align?: PopoverAlign;
   origin?: PopoverOrigin;
   isOpen?: boolean;
+  /** width of a popover content */
+  width?: SystemProp<string | number | object | (string & object), Theme>;
   custom?: DeepPartial<PopoverConfig>;
 };
