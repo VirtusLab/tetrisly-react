@@ -9,18 +9,13 @@ export type ToastConfig = {
   intent: Record<ToastIntent, BaseProps>;
   closeButton: BaseProps;
   innerElements: {
-    iconContainer:
-      | {
-          intent: Record<
-            ToastIntent,
-            { emphasis: Record<Emphasis, BaseProps> }
-          >;
-        }
-      | BaseProps;
+    iconContainer: {
+      intent: Record<ToastIntent, { emphasis: Record<Emphasis, BaseProps> }>;
+    } & BaseProps;
     actionContainer: BaseProps;
-    middleDot:
-      | { emphasis: Record<Emphasis, BaseProps | Partial<ButtonProps<'bare'>>> }
-      | BaseProps;
+    middleDot: {
+      emphasis: Record<Emphasis, BaseProps | Partial<ButtonProps<'bare'>>>;
+    } & BaseProps;
     closeButton: BaseProps;
   };
 } & BaseProps;

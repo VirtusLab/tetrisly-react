@@ -1,3 +1,5 @@
+import { MouseEvent } from 'react';
+
 import { ToastConfig } from './Toast.styles';
 import { ToastIntent } from './types';
 import { ButtonProps } from '../Button';
@@ -15,6 +17,6 @@ export type ToastProps = {
   emphasis?: Emphasis;
   intent?: ToastIntent;
   action?: Action | [Action, Action | never];
-  onCloseClick?: (e: React.MouseEvent) => void;
+  onCloseClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   custom?: DeepPartial<ToastConfig>;
 };

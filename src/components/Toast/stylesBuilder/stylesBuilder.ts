@@ -8,13 +8,31 @@ import { ToastIntent } from '../types';
 import { ButtonAppearance } from '@/components/Button/types/ButtonAppearance.type';
 import { ButtonVariant } from '@/components/Button/types/ButtonType.type';
 import { IconButtonProps } from '@/components/IconButton/IconButton.props';
+import { IconButtonAppearance } from '@/components/IconButton/IconButtonAppearance.type';
+import { BaseProps } from '@/types/BaseProps';
 
 type StylesBuilderProps = Required<Pick<ToastProps, 'emphasis' | 'intent'>> & {
   custom: ToastProps['custom'];
   closeButton: boolean;
 };
 
-export function stylesBuilder(props: StylesBuilderProps) {
+type ToastStylesBuilder = {
+  actionProps: {
+    appearance: ButtonAppearance<'ghost'>;
+    variant: ButtonVariant;
+  };
+  actionContainerStyles: BaseProps;
+  closeButtonProps: IconButtonProps<'ghost'>;
+  closeButtonStyles: BaseProps;
+  containerStyles: BaseProps;
+  iconProps: Partial<IconProps>;
+  iconContainerStyles: BaseProps;
+  middleDotStyles: BaseProps;
+};
+
+export const stylesBuilder = (
+  props: StylesBuilderProps,
+): ToastStylesBuilder => {
   const config = merge(defaultConfig, props.custom);
 
   const {
@@ -25,7 +43,7 @@ export function stylesBuilder(props: StylesBuilderProps) {
     ...restContainerStyles
   } = config;
 
-  const containerStyles = {
+  const containerStyles: BaseProps = {
     ...intentContainerStyles[props.intent],
     ...emphasisContainerStyles[props.emphasis],
     ...restContainerStyles,
@@ -39,13 +57,13 @@ export function stylesBuilder(props: StylesBuilderProps) {
     middleDot: middleDotStyles,
   } = innerElementsStyles;
 
-  const actionIntentAppearance =
+  const buttonIntentAppearance =
     props.intent === 'warning' ? 'reverseInverted' : 'inverted';
-  const actionAppearance =
-    props.emphasis === 'high' ? actionIntentAppearance : 'primary';
+  const buttonAppearance =
+    props.emphasis === 'high' ? buttonIntentAppearance : 'primary';
 
   const actionProps = {
-    appearance: actionAppearance as ButtonAppearance<'ghost'>,
+    appearance: buttonAppearance as ButtonAppearance<'ghost'>,
     variant: 'bare' as ButtonVariant,
   };
 
@@ -67,21 +85,21 @@ export function stylesBuilder(props: StylesBuilderProps) {
     },
   };
 
-  const iconProps = {
+  const iconProps: Partial<IconProps> = {
     ...icon.intent[props.intent],
   };
 
   const { intent: intentIconContainerStyles, ...restIconContainerStyles } =
     iconContainer;
 
-  const iconContainerStyles = {
+  const iconContainerStyles: BaseProps = {
     ...intentIconContainerStyles[props.intent].emphasis[props.emphasis],
     ...restIconContainerStyles,
   };
 
   const closeButtonProps: IconButtonProps<'ghost'> = {
     size: 'small',
-    appearance: 'primary',
+    appearance: buttonAppearance as IconButtonAppearance<'ghost'>,
     variant: 'ghost',
     intent: 'none',
     icon: '20-close',
@@ -97,4 +115,4 @@ export function stylesBuilder(props: StylesBuilderProps) {
     iconContainerStyles,
     middleDotStyles,
   };
-}
+};
