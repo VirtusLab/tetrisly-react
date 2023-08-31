@@ -25,7 +25,6 @@ export const config = {
   alignItems: 'center',
   p: 'component-padding-medium component-padding-large',
   padding: 'component-padding-medium component-padding-large',
-  gap: 'component-gap-small',
   borderRadius: 'large',
   emphasis: {
     high: {},
@@ -111,13 +110,14 @@ export const config = {
           },
         },
       },
+      mr: 'component-gap-small',
     },
     actionContainer: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       gap: 'component-gap-small',
-      ml: 'component-padding-large',
+      ml: 'component-gap-xLarge',
     },
     middleDot: {
       emphasis: {
@@ -131,7 +131,7 @@ export const config = {
       text: 'body-medium',
     },
     closeButton: {
-      ml: 'component-padding-small',
+      ml: 'component-padding-large',
     },
   },
 } satisfies ToastConfig;

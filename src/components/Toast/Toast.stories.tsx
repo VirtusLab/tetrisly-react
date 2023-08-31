@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Toast } from './Toast';
@@ -11,9 +12,11 @@ const meta = {
     action: [
       {
         label: 'Action',
+        onClick: action('onClick'),
       },
       {
         label: 'Action',
+        onClick: action('onClick'),
       },
     ],
   },

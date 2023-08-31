@@ -6,7 +6,6 @@ import { config as defaultConfig } from '../Toast.styles';
 import { ToastIntent } from '../types';
 
 import { ButtonAppearance } from '@/components/Button/types/ButtonAppearance.type';
-import { ButtonVariant } from '@/components/Button/types/ButtonType.type';
 import { IconButtonProps } from '@/components/IconButton/IconButton.props';
 import { IconButtonAppearance } from '@/components/IconButton/IconButtonAppearance.type';
 import { BaseProps } from '@/types/BaseProps';
@@ -18,11 +17,10 @@ type StylesBuilderProps = Required<Pick<ToastProps, 'emphasis' | 'intent'>> & {
 
 type ToastStylesBuilder = {
   actionProps: {
-    appearance: ButtonAppearance<'ghost'>;
-    variant: ButtonVariant;
+    appearance: ButtonAppearance<'bare'>;
   };
   actionContainerStyles: BaseProps;
-  closeButtonProps: IconButtonProps<'ghost'>;
+  closeButtonProps: Partial<IconButtonProps<'ghost'>>;
   closeButtonStyles: BaseProps;
   containerStyles: BaseProps;
   iconProps: Partial<IconProps>;
@@ -63,8 +61,7 @@ export const stylesBuilder = (
     props.emphasis === 'high' ? buttonIntentAppearance : 'primary';
 
   const actionProps = {
-    appearance: buttonAppearance as ButtonAppearance<'ghost'>,
-    variant: 'bare' as ButtonVariant,
+    appearance: buttonAppearance as ButtonAppearance<'bare'>,
   };
 
   const icon: { intent: Record<ToastIntent, Partial<IconProps>> } = {
@@ -97,12 +94,8 @@ export const stylesBuilder = (
     ...restIconContainerStyles,
   };
 
-  const closeButtonProps: IconButtonProps<'ghost'> = {
-    size: 'small',
+  const closeButtonProps: Partial<IconButtonProps<'ghost'>> = {
     appearance: buttonAppearance as IconButtonAppearance<'ghost'>,
-    variant: 'ghost',
-    intent: 'none',
-    icon: '20-close',
   };
 
   return {

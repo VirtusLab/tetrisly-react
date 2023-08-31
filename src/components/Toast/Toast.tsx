@@ -54,17 +54,21 @@ export const Toast: FC<Props> = ({
       {text}
       {firstAction && (
         <tet.div {...actionContainerStyles}>
-          <Button {...actionProps} {...firstAction} />
+          <Button variant="bare" {...actionProps} {...firstAction} />
           {secondAction && (
             <>
               <tet.div {...middleDotStyles}>&middot;</tet.div>
-              <Button {...actionProps} {...secondAction} />
+              <Button variant="bare" {...actionProps} {...secondAction} />
             </>
           )}
         </tet.div>
       )}
       {!!onCloseClick && (
         <IconButton
+          size="small"
+          variant="ghost"
+          intent="none"
+          icon="20-close"
           onClick={onCloseClick}
           {...closeButtonProps}
           {...closeButtonStyles}
