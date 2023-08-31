@@ -2,11 +2,10 @@ import { useSpace } from '@xstyled/styled-components';
 import { merge } from 'lodash';
 import { FC, PropsWithChildren } from 'react';
 
-import { AnchorWrapper } from './AnchorWrapper';
+import { AnchorWrapper, PopoverContent } from './AnchorWrapper.styled';
 import { PopoverProps } from './Popover.props';
 import { config as defaultConfig } from './Popover.styles';
 
-import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
 export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
@@ -41,7 +40,7 @@ export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
       {...restProps}
       data-testid="popover"
     >
-      <tet.div
+      <PopoverContent
         w={width}
         {...offsetProps}
         {...allContentStyles}
@@ -49,7 +48,7 @@ export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
         data-testid="popover-content"
       >
         {content}
-      </tet.div>
+      </PopoverContent>
       {children}
     </AnchorWrapper>
   );

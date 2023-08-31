@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Popover } from './Popover';
-import { Avatar } from '../Avatar/Avatar';
+import { Avatar } from '../Avatar';
 import { Button } from '../Button';
-import { Label } from '../Label/Label';
+import { Label } from '../Label';
 
 import { TetDocs } from '@/docs-components/TetDocs';
 import { tet } from '@/tetrisly';

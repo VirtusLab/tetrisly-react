@@ -106,29 +106,35 @@ describe('Popover', () => {
   });
 
   it('should render correct offset (top)', () => {
-    const { content } = getPopover(<Popover content="Popover" offset="25px" />);
-    expect(content).toHaveStyle('top: -25px');
+    const { content } = getPopover(
+      <Popover content="Popover" offset="component-gap-large" />,
+    );
+    expect(content).toHaveStyle('top: -16px');
   });
 
   it('should render correct offset (bottom)', () => {
     const { content } = getPopover(
-      <Popover content="Popover" origin="bottom" offset="25px" />,
+      <Popover
+        content="Popover"
+        origin="bottom"
+        offset="component-gap-large"
+      />,
     );
-    expect(content).toHaveStyle('bottom: -25px');
+    expect(content).toHaveStyle('bottom: -16px');
   });
 
   it('should render correct offset (left)', () => {
     const { content } = getPopover(
-      <Popover content="Popover" origin="left" offset="25px" />,
+      <Popover content="Popover" origin="left" offset="component-gap-large" />,
     );
-    expect(content).toHaveStyle('left: -25px');
+    expect(content).toHaveStyle('left: -16px');
   });
 
   it('should render correct offset (right)', () => {
     const { content } = getPopover(
-      <Popover content="Popover" origin="right" offset="25px" />,
+      <Popover content="Popover" origin="right" offset="component-gap-large" />,
     );
-    expect(content).toHaveStyle('right: -25px');
+    expect(content).toHaveStyle('right: -16px');
   });
 
   it('should propagate custom props', () => {
