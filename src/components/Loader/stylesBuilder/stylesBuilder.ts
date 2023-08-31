@@ -50,7 +50,7 @@ function describeArc(
   return d;
 }
 
-export function stylesBuilder(props: StylesBuilderProps) {
+export const stylesBuilder = (props: StylesBuilderProps) => {
   const config = props.custom
     ? merge(defaultConfig, props.custom)
     : defaultConfig;
@@ -98,4 +98,4 @@ export function stylesBuilder(props: StylesBuilderProps) {
   };
 
   return { svgStyles, baseStyles, progressStyles };
-}
+};

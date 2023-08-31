@@ -89,6 +89,17 @@ export const AfterIconComponent: Story = {
   },
 };
 
+export const AfterIconButtonComponent: Story = {
+  args: {
+    afterComponent: {
+      type: 'IconButton',
+      props: {
+        icon: '20-filter',
+      },
+    },
+  },
+};
+
 export const AfterPrefixComponent: Story = {
   args: {
     afterComponent: {
