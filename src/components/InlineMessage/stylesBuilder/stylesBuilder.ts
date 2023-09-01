@@ -1,10 +1,7 @@
 import { merge } from 'lodash';
 
 import { InlineMessageProps } from '../InlineMessage.props';
-import {
-  config as defaultConfig,
-  resolveIconName,
-} from '../InlineMessage.styles';
+import { defaultConfig, resolveIconName } from '../InlineMessage.styles';
 import { InlineMessageIntent } from '../InlineMessageIntent.type';
 
 import { BaseProps } from '@/types/BaseProps';
@@ -15,7 +12,6 @@ type InlineMessageStyleBuilder = {
   title: BaseProps;
   iconContainer: BaseProps;
   description: BaseProps;
-  icon: { name: IconName<20> };
 };
 
 export const stylesBuilder = (
@@ -29,21 +25,16 @@ export const stylesBuilder = (
   const { intent: iconContainerIntent, ...restIconContainerStyles } =
     iconContainer;
 
-  const name = resolveIconName(intent);
-
   return {
     container,
     description,
     title: {
-      ...restTitleStyles,
       ...titleIntent[intent],
-    },
-    icon: {
-      name,
+      ...restTitleStyles,
     },
     iconContainer: {
-      ...restIconContainerStyles,
       ...iconContainerIntent[intent],
+      ...restIconContainerStyles,
     },
   };
 };

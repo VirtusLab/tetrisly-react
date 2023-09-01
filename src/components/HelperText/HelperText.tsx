@@ -1,11 +1,11 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { merge } from 'lodash';
+import { useMemo } from 'react';
 
 import { HelperTextProps } from './HelperText.props';
-import { config as defaultConfig } from './HelperText.styles';
+import { resolveIconName } from './HelperText.styles';
+import { stylesBuilder } from './stylesBuilder';
 import { tet } from '../../tetrisly';
 
-import { isKeyOf } from '@/services';
 import { MarginProps } from '@/types/MarginProps';
 
 export const HelperText = ({
@@ -14,30 +14,19 @@ export const HelperText = ({
   counter,
   text,
   custom,
-  ...rest
+  ...restProps
 }: HelperTextProps & MarginProps) => {
-  const options = custom ? merge(defaultConfig, custom) : defaultConfig;
-  const {
-    intent: intentStyles,
-    icon: iconStyles,
-    iconContainer: iconContainerStyles,
-    ...restStyles
-  } = options;
-
-  if (!isKeyOf(intentStyles, intent)) {
-    throw new Error(`${intent} is not a valid intent`);
-  }
-
-  const styles = {
-    ...restStyles,
-    ...intentStyles[intent],
-  };
+  const styles = useMemo(() => stylesBuilder(intent, custom), [intent, custom]);
+  const name = resolveIconName(intent);
 
   return (
-    <tet.div {...styles} {...rest} data-testid="helper-text">
+    <tet.div {...styles.container} {...restProps} data-testid="helper-text">
       {beforeIcon && (
-        <tet.span {...iconContainerStyles}>
-          <Icon {...iconStyles[intent]} data-testid="helper-text-icon" />
+        <tet.span
+          {...styles.iconContainer}
+          data-testid="helper-text-iconContainer"
+        >
+          <Icon name={name} data-testid="helper-text-icon" />
         </tet.span>
       )}
       {text}

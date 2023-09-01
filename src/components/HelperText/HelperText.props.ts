@@ -11,5 +11,5 @@ export type HelperTextProps = {
   };
   beforeIcon?: boolean;
   text: string;
-  custom?: DeepPartial<HelperTextConfig>;
+  custom?: HelperTextConfig;
 };

@@ -15,7 +15,7 @@ export type InlineMessageConfig = {
   };
 } & BaseProps;
 
-export const config = {
+export const defaultConfig = {
   display: 'flex',
   alignItems: 'flex-start',
   gap: 'component-gap-small',
@@ -62,7 +62,7 @@ export const config = {
       display: 'inline-block',
     },
   },
-} as const satisfies InlineMessageConfig;
+} satisfies InlineMessageConfig;
 
 export const resolveIconName = (intent: InlineMessageIntent): IconName<20> => {
   const iconConfig: Record<InlineMessageIntent, IconName<20>> = {

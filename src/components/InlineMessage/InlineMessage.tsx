@@ -2,6 +2,7 @@ import { Icon } from '@virtuslab/tetrisly-icons';
 import { FC, useMemo } from 'react';
 
 import { InlineMessageProps } from './InlineMessage.props';
+import { resolveIconName } from './InlineMessage.styles';
 import { stylesBuilder } from './stylesBuilder';
 import { tet } from '../../tetrisly';
 
@@ -15,6 +16,7 @@ export const InlineMessage: FC<InlineMessageProps & MarginProps> = ({
   ...restProps
 }) => {
   const styles = useMemo(() => stylesBuilder(intent, custom), [intent, custom]);
+  const name = resolveIconName(intent);
 
   return (
     <tet.div {...styles.container} {...restProps} data-testid="inline-message">
@@ -22,7 +24,7 @@ export const InlineMessage: FC<InlineMessageProps & MarginProps> = ({
         {...styles.iconContainer}
         data-testid="inline-message-iconContainer"
       >
-        <Icon {...styles.icon} data-testid="inline-message-icon" />
+        <Icon name={name} data-testid="inline-message-icon" />
       </tet.span>
       <tet.span>
         <tet.span {...styles.title} data-testid="inline-message-title">

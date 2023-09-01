@@ -1,6 +1,7 @@
 import { HelperText } from './HelperText';
 import { render } from '../../tests/render';
 
+import { customPropTester } from '@/tests/customPropTester';
 import { silentThrowExpect } from '@/tests/silentThrowExpect';
 
 const getHelperText = (jsx: JSX.Element) => {
@@ -14,6 +15,16 @@ const getHelperText = (jsx: JSX.Element) => {
 };
 
 describe('HelperText', () => {
+  customPropTester(<HelperText text="Hello there" beforeIcon />, {
+    containerId: 'helper-text',
+    props: {
+      intent: ['none', 'success', 'alert'],
+    },
+    innerElements: {
+      iconContainer: [],
+    },
+  });
+
   it('should render the helper text', () => {
     const { text } = getHelperText(<HelperText text="Hello there" />);
     expect(text).toBeInTheDocument();
@@ -88,12 +99,5 @@ describe('HelperText', () => {
   it('should not render counter if not passed as a prop', () => {
     const { counter } = getHelperText(<HelperText text="Hello there" />);
     expect(counter).toBeNull();
-  });
-
-  it('should throw an error if wrong config is provided', () => {
-    silentThrowExpect(() =>
-      // @ts-expect-error testing wrong appearance
-      render(<HelperText intent="default" />),
-    ).toThrowError();
   });
 });
