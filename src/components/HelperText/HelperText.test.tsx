@@ -2,7 +2,6 @@ import { HelperText } from './HelperText';
 import { render } from '../../tests/render';
 
 import { customPropTester } from '@/tests/customPropTester';
-import { silentThrowExpect } from '@/tests/silentThrowExpect';
 
 const getHelperText = (jsx: JSX.Element) => {
   const { queryByTestId } = render(jsx);
