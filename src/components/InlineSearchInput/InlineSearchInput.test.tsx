@@ -13,7 +13,6 @@ const getInlineSearchInput = (jsx: JSX.Element) => {
     input: getByTestId('text-input-input') as HTMLInputElement,
     clearButton: queryByTestId('text-input-clear-button'),
     beforeComponent: queryByTestId('text-input-before-component'),
-    afterComponent: queryByTestId('text-input-after-component'),
   };
 };
 
@@ -67,16 +66,6 @@ describe('InlineSearchInput', () => {
     const { beforeComponent } = getInlineSearchInput(<InlineSearchInput />);
 
     expect(beforeComponent).toBeInTheDocument();
-  });
-
-  it('should render afterComponent', () => {
-    const { afterComponent } = getInlineSearchInput(
-      <InlineSearchInput
-        afterComponent={{ type: 'IconButton', props: { icon: '20-filter' } }}
-      />,
-    );
-
-    expect(afterComponent).toBeInTheDocument();
   });
 
   it('should propagate custom props', () => {

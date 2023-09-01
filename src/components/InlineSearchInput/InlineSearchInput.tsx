@@ -1,10 +1,13 @@
 import { merge } from 'lodash';
 import { FC, useMemo } from 'react';
 
+import { InlineSearchInputProps } from './InlineSearchInput.props';
 import { defaultConfig } from './InlineSearchInput.styles';
 import { SearchInput, SearchInputProps } from '../SearchInput';
 
-export const InlineSearchInput: FC<SearchInputProps> = ({
+import { MarginProps } from '@/types';
+
+export const InlineSearchInput: FC<InlineSearchInputProps & MarginProps> = ({
   custom,
   ...restProps
 }) => {
