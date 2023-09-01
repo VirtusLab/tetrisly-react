@@ -14,3 +14,4 @@ export * from './components/StatusDot';
 export * from './components/TextInput';
 export * from './components/InlineMessage';
 export * from './components/SearchInput';
+export * from './components/InlineSearchInput';
