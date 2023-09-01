@@ -3,7 +3,7 @@ import { FC, useMemo } from 'react';
 
 import { InlineSearchInputProps } from './InlineSearchInput.props';
 import { defaultConfig } from './InlineSearchInput.styles';
-import { SearchInput, SearchInputProps } from '../SearchInput';
+import { SearchInput } from '../SearchInput';
 
 import { MarginProps } from '@/types';
 
