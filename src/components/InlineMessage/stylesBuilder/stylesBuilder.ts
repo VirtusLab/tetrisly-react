@@ -1,11 +1,10 @@
 import { merge } from 'lodash';
 
 import { InlineMessageProps } from '../InlineMessage.props';
-import { defaultConfig, resolveIconName } from '../InlineMessage.styles';
+import { defaultConfig } from '../InlineMessage.styles';
 import { InlineMessageIntent } from '../InlineMessageIntent.type';
 
 import { BaseProps } from '@/types/BaseProps';
-import { IconName } from '@/utility-types/IconName';
 
 type InlineMessageStyleBuilder = {
   container: BaseProps;
