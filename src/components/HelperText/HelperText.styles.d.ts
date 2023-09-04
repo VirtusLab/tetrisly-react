@@ -1,15 +1,13 @@
-import { SystemProps } from '@xstyled/styled-components';
 import { HelperTextIntent } from './HelperTextIntent.type';
 import { BaseProps } from '../../types/BaseProps';
 import { IconName } from '../../utility-types/IconName';
 export type HelperTextConfig = {
-    intent: Record<HelperTextIntent, SystemProps>;
-    icon: Record<HelperTextIntent, SystemProps & {
-        name: IconName<16>;
-    }>;
-    iconContainer: SystemProps;
+    intent?: Partial<Record<HelperTextIntent, BaseProps>>;
+    innerElements?: {
+        iconContainer?: BaseProps;
+    };
 } & BaseProps;
-export declare const config: {
+export declare const defaultConfig: {
     display: "flex";
     alignItems: "flex-start";
     gap: string;
@@ -25,20 +23,12 @@ export declare const config: {
             color: "content-positive-secondary";
         };
     };
-    icon: {
-        none: {
-            name: "16-info";
+    innerElements: {
+        iconContainer: {
+            display: "flex";
+            alignItems: "center";
+            minHeight: string;
         };
-        alert: {
-            name: "16-alert-full";
-        };
-        success: {
-            name: "16-check";
-        };
-    };
-    iconContainer: {
-        display: "flex";
-        alignItems: "center";
-        minHeight: string;
     };
 };
+export declare const resolveIconName: (intent: HelperTextIntent) => IconName<16>;
