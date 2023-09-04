@@ -1,4 +1,5 @@
 import { SystemProp } from '@xstyled/styled-components';
+import { Property } from 'csstype';
 import { ReactNode } from 'react';
 
 import { PopoverConfig } from './Popover.styles';
@@ -14,6 +15,6 @@ export type PopoverProps = {
   origin?: PopoverOrigin;
   isOpen?: boolean;
   /** Width of a content container */
-  width?: SystemProp<string | number | object | (string & object), Theme>;
+  width?: SystemProp<Property.Width<number>, Theme>;
   custom?: DeepPartial<PopoverConfig>;
 };
