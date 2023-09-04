@@ -3,7 +3,7 @@ import { BaseProps } from '@/types/BaseProps';
 export type SocialButtonAppearance = 'primary' | 'secondary';
 
 export type SocialButtonConfig = BaseProps & {
-  appearances: Partial<Record<SocialButtonAppearance, BaseProps>>;
+  appearance: Partial<Record<SocialButtonAppearance, BaseProps>>;
 };
 
 export const socialButtonConfig: SocialButtonConfig = {
@@ -24,7 +24,7 @@ export const socialButtonConfig: SocialButtonConfig = {
     active: 0.6,
     disabled: 0.5,
   },
-  appearances: {
+  appearance: {
     secondary: {
       ringInset: true,
       ring: '100',

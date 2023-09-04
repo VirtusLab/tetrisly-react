@@ -7,9 +7,18 @@ import {
 
 import { DeepPartial } from '@/utility-types/DeepPartial';
 
+export const platforms = [
+  'Apple',
+  'Facebook',
+  'Figma',
+  'Github',
+  'Google',
+  'X',
+] as const;
+
 export type SocialButtonProps = {
   content?: string;
-  platform: 'Apple' | 'Facebook' | 'Figma' | 'Github' | 'Google' | 'X';
+  platform: (typeof platforms)[number];
   appearance?: SocialButtonAppearance;
   state?: 'disabled' | 'loading';
   custom?: DeepPartial<SocialButtonConfig>;

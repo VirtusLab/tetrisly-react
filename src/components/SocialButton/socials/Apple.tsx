@@ -8,6 +8,7 @@ import { tet } from '@/tetrisly';
 export const Apple: FC<SocialProps> = ({ fill, loading }) => (
   <WithLoader loading={loading}>
     <tet.svg
+      data-testid="apple-icon"
       xmlns="http://www.w3.org/2000/svg"
       width="20"
       height="20"

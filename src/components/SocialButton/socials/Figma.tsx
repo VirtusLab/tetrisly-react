@@ -6,6 +6,7 @@ import { WithLoader } from './WithLoader';
 export const Figma: FC<SocialProps> = ({ fill, loading }) => (
   <WithLoader loading={loading}>
     <svg
+      data-testid="figma-icon"
       xmlns="http://www.w3.org/2000/svg"
       width="14"
       height="20"

@@ -21,7 +21,10 @@ export const SocialButton: FC<Props> = ({
   const social = socials[platform];
 
   const [appearancesStyles, styles] = useMemo(() => {
-    const { appearances, ...baseStyles } = merge(socialButtonConfig, custom);
+    const { appearance: appearances, ...baseStyles } = merge(
+      socialButtonConfig,
+      custom,
+    );
     return [appearances[appearance] ?? {}, baseStyles] as const;
   }, [appearance, custom]);
   return (

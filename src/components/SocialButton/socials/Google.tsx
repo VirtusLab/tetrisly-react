@@ -7,6 +7,7 @@ import { tet } from '@/tetrisly';
 
 export const Google: FC<SocialProps> = ({ loading }) => (
   <tet.div
+    data-testid="google-icon"
     ml="-10px"
     display="flex"
     padding="100"

@@ -1,9 +1,12 @@
 import { vi } from 'vitest';
 
 import { SocialButton } from './SocialButton';
+import { platforms } from './SocialButton.props';
 import { fireEvent, render } from '../../tests/render';
 
 import { SocialButtonProps } from '.';
+
+import { customPropTester } from '@/tests/customPropTester/customPropTester';
 
 const handleEventMock = vi.fn();
 
@@ -74,5 +77,34 @@ describe('SocialButton', () => {
     });
 
     expect(socialButton).toHaveTextContent('Get on board with Apple');
+  });
+
+  it("should render loader if state is 'loading'", () => {
+    const { queryByTestId } = render(
+      <SocialButton platform="Apple" state="loading" />,
+    );
+
+    const loader = queryByTestId('loader');
+
+    expect(loader).toBeInTheDocument();
+  });
+
+  it('should render different platform icons depending on passed props', () => {
+    platforms.forEach((platform) => {
+      const { queryByTestId } = render(<SocialButton platform={platform} />);
+
+      const icon = queryByTestId(`${platform.toLowerCase()}-icon`);
+
+      expect(icon).toBeInTheDocument();
+    });
+  });
+
+  it('should propagate custom props', () => {
+    customPropTester(<SocialButton platform="Apple" />, {
+      containerId: 'social-button',
+      props: {
+        appearance: ['primary', 'secondary'],
+      },
+    });
   });
 });

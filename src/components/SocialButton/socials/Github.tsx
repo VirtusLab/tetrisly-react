@@ -6,6 +6,7 @@ import { WithLoader } from './WithLoader';
 export const Github: FC<SocialProps> = ({ fill, loading }) => (
   <WithLoader loading={loading}>
     <svg
+      data-testid="github-icon"
       xmlns="http://www.w3.org/2000/svg"
       width="20"
       height="20"
