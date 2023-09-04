@@ -1,8 +1,6 @@
 import { HelperTextConfig } from './HelperText.styles';
 import { HelperTextIntent } from './HelperTextIntent.type';
 
-import { DeepPartial } from '@/utility-types/DeepPartial';
-
 export type HelperTextProps = {
   intent?: HelperTextIntent;
   counter?: {
@@ -11,5 +9,5 @@ export type HelperTextProps = {
   };
   beforeIcon?: boolean;
   text: string;
-  custom?: DeepPartial<HelperTextConfig>;
+  custom?: HelperTextConfig;
 };
