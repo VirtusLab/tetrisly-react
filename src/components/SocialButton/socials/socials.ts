@@ -29,7 +29,7 @@ export const socials = {
     Icon: Google,
     color: '#468BEF',
   },
-  'X (Twitter)': {
+  X: {
     Icon: Twitter,
     color: '#000',
   },

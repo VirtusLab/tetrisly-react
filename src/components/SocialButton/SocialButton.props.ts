@@ -6,14 +6,9 @@ import {
 import { DeepPartial } from '@/utility-types/DeepPartial';
 
 export type SocialButtonProps = {
-  platform:
-    | 'Apple'
-    | 'Facebook'
-    | 'Figma'
-    | 'Github'
-    | 'Google'
-    | 'X (Twitter)';
+  content?: string;
+  platform: 'Apple' | 'Facebook' | 'Figma' | 'Github' | 'Google' | 'X';
   appearance?: SocialButtonAppearance;
-  state?: 'disabled' | 'selected' | 'loading';
+  state?: 'disabled' | 'loading';
   custom?: DeepPartial<SocialButtonConfig>;
 };

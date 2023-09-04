@@ -22,6 +22,7 @@ export const socialButtonConfig: SocialButtonConfig = {
     _: 1,
     hover: 0.8,
     active: 0.6,
+    disabled: 0.5,
   },
   appearances: {
     secondary: {
