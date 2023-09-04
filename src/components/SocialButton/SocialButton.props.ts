@@ -1,3 +1,5 @@
+import { ButtonHTMLAttributes } from 'react';
+
 import {
   SocialButtonAppearance,
   SocialButtonConfig,
@@ -11,4 +13,4 @@ export type SocialButtonProps = {
   appearance?: SocialButtonAppearance;
   state?: 'disabled' | 'loading';
   custom?: DeepPartial<SocialButtonConfig>;
-};
+} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'>;

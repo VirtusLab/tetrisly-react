@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { ButtonHTMLAttributes, FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 
 import { SocialButtonProps } from './SocialButton.props';
 import { socialButtonConfig } from './SocialButton.styles';
@@ -8,9 +8,7 @@ import { socials } from './socials';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
-type Props = SocialButtonProps &
-  MarginProps &
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'>;
+type Props = SocialButtonProps & MarginProps;
 
 export const SocialButton: FC<Props> = ({
   platform,
@@ -28,6 +26,7 @@ export const SocialButton: FC<Props> = ({
   }, [appearance, custom]);
   return (
     <tet.button
+      data-testid="social-button"
       {...styles}
       {...appearancesStyles}
       {...rest}
