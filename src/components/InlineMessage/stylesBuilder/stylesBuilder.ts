@@ -1,33 +1,39 @@
 import { merge } from 'lodash';
 
 import { InlineMessageProps } from '../InlineMessage.props';
-import { config as defaultConfig } from '../InlineMessage.styles';
+import { defaultConfig } from '../InlineMessage.styles';
 import { InlineMessageIntent } from '../InlineMessageIntent.type';
+
+import { BaseProps } from '@/types/BaseProps';
+
+type InlineMessageStyleBuilder = {
+  container: BaseProps;
+  title: BaseProps;
+  iconContainer: BaseProps;
+  description: BaseProps;
+};
 
 export const stylesBuilder = (
   intent: InlineMessageIntent,
   custom: InlineMessageProps['custom'],
-) => {
-  const styles = merge(defaultConfig, custom);
+): InlineMessageStyleBuilder => {
+  const { innerElements, ...container } = merge(defaultConfig, custom);
+  const { description, title, iconContainer } = innerElements;
 
-  const { intent: titleIntent, ...restTitle } = styles.title;
-  const { intent: iconIntent, ...restIcon } = styles.icon;
-  const { intent: iconContainerIntent, ...restIconContainer } =
-    styles.iconContainer;
+  const { intent: titleIntent, ...restTitleStyles } = title;
+  const { intent: iconContainerIntent, ...restIconContainerStyles } =
+    iconContainer;
 
   return {
-    ...styles,
+    container,
+    description,
     title: {
-      ...restTitle,
       ...titleIntent[intent],
-    },
-    icon: {
-      ...restIcon,
-      ...iconIntent[intent],
+      ...restTitleStyles,
     },
     iconContainer: {
-      ...restIconContainer,
       ...iconContainerIntent[intent],
+      ...restIconContainerStyles,
     },
   };
 };
