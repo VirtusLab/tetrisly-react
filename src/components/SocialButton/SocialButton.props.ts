@@ -5,8 +5,6 @@ import {
   SocialButtonConfig,
 } from './SocialButton.styles';
 
-import { DeepPartial } from '@/utility-types/DeepPartial';
-
 export const platforms = [
   'Apple',
   'Facebook',
@@ -21,5 +19,5 @@ export type SocialButtonProps = {
   platform: (typeof platforms)[number];
   appearance?: SocialButtonAppearance;
   state?: 'disabled' | 'loading';
-  custom?: DeepPartial<SocialButtonConfig>;
+  custom?: SocialButtonConfig;
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'>;

@@ -8,9 +8,7 @@ import { socials } from './socials';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
-type Props = SocialButtonProps & MarginProps;
-
-export const SocialButton: FC<Props> = ({
+export const SocialButton: FC<SocialButtonProps & MarginProps> = ({
   platform,
   appearance = 'primary',
   custom,
@@ -25,7 +23,7 @@ export const SocialButton: FC<Props> = ({
       socialButtonConfig,
       custom,
     );
-    return [appearances[appearance] ?? {}, baseStyles] as const;
+    return [appearances?.[appearance], baseStyles] as const;
   }, [appearance, custom]);
   return (
     <tet.button
