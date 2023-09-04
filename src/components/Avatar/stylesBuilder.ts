@@ -5,7 +5,7 @@ import { AvatarConfig } from './Avatar.styles';
 
 import { DeepPartial } from '@/utility-types/DeepPartial';
 
-export function stylesBuilder({
+export const stylesBuilder = ({
   config: originalConfig,
   custom,
   variant,
@@ -15,7 +15,7 @@ export function stylesBuilder({
   variant: Required<
     Pick<AvatarProps, 'appearance' | 'emphasis' | 'shape' | 'size'>
   >;
-}) {
+}) => {
   const {
     appearance: appearanceStyles,
     shape: shapeStyles,
@@ -30,4 +30,4 @@ export function stylesBuilder({
     ...shapeStyles[shape],
     ...sizeStyles[size],
   };
-}
+};

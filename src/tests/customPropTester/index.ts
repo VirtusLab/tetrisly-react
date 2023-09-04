@@ -1,0 +1,1 @@
+export { customPropTester } from './customPropTester';
