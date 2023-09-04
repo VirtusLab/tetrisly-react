@@ -1,6 +1,8 @@
 import { Popover } from './Popover';
 import { render } from '../../tests/render';
 
+import { customPropTester } from '@/tests/customPropTester';
+
 const getPopover = (jsx: JSX.Element) => {
   const { queryByTestId } = render(jsx);
   return {
@@ -10,6 +12,17 @@ const getPopover = (jsx: JSX.Element) => {
 };
 
 describe('Popover', () => {
+  customPropTester(<Popover content="Popover" />, {
+    containerId: 'popover',
+    props: {
+      align: ['center', 'start', 'end'],
+      origin: ['bottom', 'top', 'left', 'right'],
+    },
+    innerElements: {
+      content: [],
+    },
+  });
+
   it('should render the popover', () => {
     const { popover } = getPopover(<Popover content="Popover" />);
     expect(popover).toBeInTheDocument();
@@ -135,16 +148,5 @@ describe('Popover', () => {
       <Popover content="Popover" origin="right" offset="component-gap-large" />,
     );
     expect(content).toHaveStyle('right: -16px');
-  });
-
-  it('should propagate custom props', () => {
-    const { popover } = getPopover(
-      <Popover
-        content="Popover"
-        custom={{ backgroundColor: 'background-negative-subtle' }}
-      />,
-    );
-
-    expect(popover).toHaveStyle('background-color: rgb(254, 245, 245)');
   });
 });

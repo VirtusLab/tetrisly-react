@@ -6,7 +6,6 @@ import { PopoverConfig } from './Popover.styles';
 import type { PopoverAlign, PopoverOrigin } from './types';
 
 import { Theme } from '@/theme';
-import { DeepPartial } from '@/utility-types/DeepPartial';
 
 export type PopoverProps = {
   content: string | ReactNode;
@@ -16,5 +15,5 @@ export type PopoverProps = {
   isOpen?: boolean;
   /** Width of a content container */
   width?: SystemProp<Property.Width<number>, Theme>;
-  custom?: DeepPartial<PopoverConfig>;
+  custom?: PopoverConfig;
 };

@@ -3,9 +3,11 @@ import { PopoverAlign, PopoverOrigin } from './types';
 import { BaseProps } from '@/types/BaseProps';
 
 export type PopoverConfig = {
-  origin: Record<PopoverOrigin, { align: Record<PopoverAlign, BaseProps> }>;
-  innerElements: {
-    content: BaseProps;
+  origin?: Partial<
+    Record<PopoverOrigin, { align: Partial<Record<PopoverAlign, BaseProps>> }>
+  >;
+  innerElements?: {
+    content?: BaseProps;
   };
 } & BaseProps;
 
