@@ -1,6 +1,8 @@
 import { Badge } from './Badge';
 import { render } from '../../tests/render';
 
+import { silentThrowExpect } from '@/tests/silentThrowExpect';
+
 const getBadge = (jsx: JSX.Element) => {
   const { getByTestId } = render(jsx);
 
@@ -61,7 +63,7 @@ describe('Badge', () => {
   });
 
   it('should throw an error if wrong config is provided', () => {
-    expect(() =>
+    silentThrowExpect(() =>
       // @ts-expect-error testing wrong appearance
       render(<Badge />),
     ).toThrowError();

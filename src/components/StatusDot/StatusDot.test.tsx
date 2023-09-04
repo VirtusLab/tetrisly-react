@@ -1,6 +1,8 @@
 import { StatusDot } from './StatusDot';
 import { render } from '../../tests/render';
 
+import { silentThrowExpect } from '@/tests/silentThrowExpect';
+
 const getStatusDot = (jsx: JSX.Element) => {
   const { getByTestId } = render(jsx);
   return getByTestId('status-dot');
@@ -37,7 +39,7 @@ describe('StatusDot', () => {
   });
 
   it('should throw an error if wrong config is provided', () => {
-    expect(() =>
+    silentThrowExpect(() =>
       // @ts-expect-error testing wrong appearance
       render(<StatusDot appearance="reverseInverted" />),
     ).toThrowError();

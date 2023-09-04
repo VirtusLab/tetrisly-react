@@ -1,6 +1,8 @@
 import { InlineMessage } from './InlineMessage';
 import { render } from '../../tests/render';
 
+import { customPropTester } from '@/tests/customPropTester/customPropTester';
+
 const getInlineMessage = (jsx: JSX.Element) => {
   const { queryByTestId } = render(jsx);
 
@@ -12,6 +14,18 @@ const getInlineMessage = (jsx: JSX.Element) => {
 };
 
 describe('InlineMessage', () => {
+  customPropTester(<InlineMessage title="Title" description="Description" />, {
+    containerId: 'inline-message',
+    props: {
+      intent: ['informative', 'success', 'warning', 'negative'],
+    },
+    innerElements: {
+      title: ['intent'],
+      iconContainer: ['intent'],
+      description: [],
+    },
+  });
+
   it('should render the inline message', () => {
     const { title, description } = getInlineMessage(
       <InlineMessage title="Title" />,
