@@ -27,19 +27,25 @@ export const AlertBanner: FC<AlertBannerProps & MarginProps> = ({
 
   return (
     <tet.div {...styles.container} {...restProps}>
-      <Icon name={name} />
+      <tet.span {...styles.iconContainer}>
+        <Icon name={name} />
+      </tet.span>
       {text}
-      {/* {firstAction && (
-        <tet.div {...actionContainerStyles}>
-          <Button variant="bare" {...actionProps} {...firstAction} />
+      {firstAction && (
+        <tet.div {...styles.actionContainer}>
+          <Button variant="bare" {...styles.actionProps} {...firstAction} />
           {secondAction && (
             <>
-              <tet.div {...middleDotStyles}>&middot;</tet.div>
-              <Button variant="bare" {...actionProps} {...secondAction} />
+              <tet.div>&middot;</tet.div>
+              <Button
+                variant="bare"
+                {...styles.actionProps}
+                {...secondAction}
+              />
             </>
           )}
         </tet.div>
-      )} */}
+      )}
       {!!onCloseClick && (
         <IconButton
           size="small"
@@ -47,6 +53,8 @@ export const AlertBanner: FC<AlertBannerProps & MarginProps> = ({
           intent="none"
           icon="20-close"
           onClick={onCloseClick}
+          {...styles.closeButton}
+          {...styles.closeButtonProps}
         />
       )}
     </tet.div>

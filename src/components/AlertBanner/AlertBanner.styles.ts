@@ -5,6 +5,11 @@ import { IconName } from '@/utility-types/IconName';
 
 export type AlertBannerConfig = {
   intent?: Partial<Record<AlertBannerIntent, BaseProps>>;
+  innerElements?: {
+    iconContainer?: BaseProps;
+    actionContainer?: BaseProps;
+    closeButton?: BaseProps;
+  };
 } & BaseProps;
 
 export const defaultConfig = {
@@ -29,6 +34,21 @@ export const defaultConfig = {
     negative: {
       backgroundColor: 'background-negative-strong',
       color: 'content-primary-inverted',
+    },
+  },
+  innerElements: {
+    iconContainer: {
+      mr: 'component-gap-small',
+    },
+    actionContainer: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 'component-gap-small',
+      ml: 'component-gap-large',
+    },
+    closeButton: {
+      marginLeft: 'auto',
     },
   },
 } satisfies AlertBannerConfig;
