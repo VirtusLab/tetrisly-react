@@ -4,7 +4,6 @@ import { ButtonHTMLAttributes, FC, useMemo } from 'react';
 import { SocialButtonProps } from './SocialButton.props';
 import { socialButtonConfig } from './SocialButton.styles';
 import { socials } from './socials';
-import { Loader } from '../Loader';
 
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
@@ -37,11 +36,11 @@ export const SocialButton: FC<Props> = ({
       style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
       bg={appearance === 'primary' ? social.color : 'action-inverted-normal'}
     >
-      {state === 'loading' ? (
-        <Loader shape="circle" size="small" appearance="greyscale" />
-      ) : (
-        <social.Icon fill={appearance === 'primary' ? 'white' : social.color} />
-      )}
+      <social.Icon
+        loading={state === 'loading'}
+        fill={appearance === 'primary' ? 'white' : social.color}
+      />
+
       <tet.span
         color={
           appearance === 'primary'

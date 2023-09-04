@@ -1,10 +1,11 @@
-import { FC, SVGProps } from 'react';
+import { FC } from 'react';
 
 import { Apple } from './Apple';
 import { Facebook } from './Facebook';
 import { Figma } from './Figma';
 import { Github } from './Github';
 import { Google } from './Google';
+import { SocialProps } from './SocialProps';
 import { Twitter } from './Twitter';
 import { SocialButtonProps } from '../SocialButton.props';
 
@@ -36,7 +37,7 @@ export const socials = {
 } as const satisfies Record<
   SocialButtonProps['platform'],
   {
-    Icon: FC<{ fill: SVGProps<SVGSVGElement>['fill'] }>;
+    Icon: FC<SocialProps>;
     color: string;
   }
 >;

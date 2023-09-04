@@ -94,13 +94,13 @@ export const SecondaryGoogle: Story = {
 
 export const PrimaryTwitter: Story = {
   args: {
-    platform: 'X (Twitter)',
+    platform: 'X',
   },
 };
 
 export const SecondaryTwitter: Story = {
   args: {
-    platform: 'X (Twitter)',
+    platform: 'X',
     appearance: 'secondary',
   },
 };
