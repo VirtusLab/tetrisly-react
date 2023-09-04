@@ -1,5 +1,0 @@
-{
-  "editor.formatOnSave": true,
-  // Runs Prettier, then ESLint
-  "editor.codeActionsOnSave": ["source.fixAll.eslint"]
-}

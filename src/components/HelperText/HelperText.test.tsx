@@ -1,6 +1,8 @@
 import { HelperText } from './HelperText';
 import { render } from '../../tests/render';
 
+import { silentThrowExpect } from '@/tests/silentThrowExpect';
+
 const getHelperText = (jsx: JSX.Element) => {
   const { queryByTestId } = render(jsx);
 
@@ -89,7 +91,7 @@ describe('HelperText', () => {
   });
 
   it('should throw an error if wrong config is provided', () => {
-    expect(() =>
+    silentThrowExpect(() =>
       // @ts-expect-error testing wrong appearance
       render(<HelperText intent="default" />),
     ).toThrowError();
