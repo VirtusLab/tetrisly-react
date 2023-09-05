@@ -15,4 +15,5 @@ export * from './components/RadioButtonGroup';
 export * from './components/SearchInput';
 export * from './components/StatusDot';
 export * from './components/TextInput';
+export * from './components/InlineSearchInput';
 export * from './components/Toast';
