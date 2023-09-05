@@ -1,12 +1,13 @@
 import { BadgeConfig } from './Badge.styles';
-import type { Appearance, BasicIntent } from '../../types';
-import { DeepPartial } from '../../utility-types/DeepPartial';
+import { BadgeAppearance } from './BadgeAppearance.type';
+import { BadgeEmphasis } from './BadgeEmphasis.type';
+import { BadgeIntent } from './BadgeIntent.type';
 import { IconName } from '../../utility-types/IconName';
 import { Or } from '../../utility-types/Or';
 export type BadgeProps = Or<{
-    appearance: Appearance;
+    appearance?: BadgeAppearance;
 }, {
-    intent: BasicIntent;
+    intent?: BadgeIntent;
 }> & Or<{
     label: string;
     beforeIcon?: IconName<16>;
@@ -14,6 +15,6 @@ export type BadgeProps = Or<{
 }, {
     icon: IconName<16>;
 }> & {
-    emphasis?: 'high' | 'medium' | 'low';
-    custom?: DeepPartial<BadgeConfig>;
+    emphasis?: BadgeEmphasis;
+    custom?: BadgeConfig;
 };

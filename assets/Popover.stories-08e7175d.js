@@ -1,0 +1,27 @@
+import{s as x,t as s,c as E,u as O,j as e}from"./TetrislyProvider-e2de8794.js";import{l as T}from"./lodash-f6b38868.js";import{A as J}from"./Avatar-d4719061.js";import{B as b}from"./Button-dc8f78a9.js";import{L}from"./Label-c2bb215c.js";import{T as $}from"./TetDocs-ae844f58.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./tetrisly-icons.es-3ae3ef26.js";import"./isKeyOf-b77e0457.js";import"./index-81a3469c.js";import"./Loader-52d55376.js";import"./index-09f7022a.js";import"./iframe-b1ee6b60.js";import"../sb-preview/runtime.js";import"./index-ffc7e5ff.js";import"./index-d37d4223.js";import"./index-356e4a49.js";const i=x(s.div)``,z=x(s.div)`
+  ${({isOpen:t})=>t===void 0&&E`
+      ${i} {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &:hover ${i} {
+        opacity: 1;
+        pointer-events: all;
+      }
+    `}
+`,B={position:"relative",display:"inline-flex",origin:{top:{align:{start:{transform:"translate(0%, -100%)",left:"50%"},center:{transform:"translate(-50%, -100%)",left:"50%"},end:{transform:"translate(-100%, -100%)",left:"50%"}}},bottom:{align:{start:{transform:"translate(0%, 100%)",left:"50%"},center:{transform:"translate(-50%, 100%)",left:"50%"},end:{transform:"translate(-100%, 100%)",left:"50%"}}},left:{align:{start:{transform:"translate(-100%, 0%)",top:"50%"},center:{transform:"translate(-100%, -50%)",top:"50%"},end:{transform:"translate(-100%, -100%)",top:"50%"}}},right:{align:{start:{transform:"translate(100%, 0%)",top:"50%"},center:{transform:"translate(100%, -50%)",top:"50%"},end:{transform:"translate(100%, -100%)",top:"50%"}}}},innerElements:{content:{position:"absolute",text:"body-medium",color:"content-secondary",padding:"component-padding-large",ring:"focus",ringColor:"border-defaultA",boxShadow:"bottom-300",backgroundColor:"interaction-background-modeless",borderRadius:"large",zIndex:1e3,transition:!0,transitionDuration:200}}},n=({align:t="center",origin:l="top",offset:w="component-gap-large",content:j,isOpen:p,custom:C,children:S,width:P="fit-content",..._})=>{const{origin:D,innerElements:{content:k},...q}=T.merge(B,C),A={...D[l].align[t],...k},I=O(w),V={[l]:`-${I}`};return e.jsxs(z,{isOpen:p,...q,..._,"data-testid":"popover",children:[e.jsx(i,{w:P,...V,...A,opacity:p===!1?"0":"1","data-testid":"popover-content",children:j}),S]})};try{n.displayName="Popover",n.__docgenInfo={description:"",displayName:"Popover",props:{content:{defaultValue:null,description:"",name:"content",required:!0,type:{name:"ReactNode"}},offset:{defaultValue:{value:"component-gap-large"},description:"",name:"offset",required:!1,type:{name:"SystemProp<keyof Space, Theme>"}},align:{defaultValue:{value:"center"},description:"",name:"align",required:!1,type:{name:"enum",value:[{value:'"center"'},{value:'"end"'},{value:'"start"'}]}},origin:{defaultValue:{value:"top"},description:"",name:"origin",required:!1,type:{name:"enum",value:[{value:'"top"'},{value:'"right"'},{value:'"bottom"'},{value:'"left"'}]}},isOpen:{defaultValue:null,description:"",name:"isOpen",required:!1,type:{name:"boolean"}},width:{defaultValue:{value:"fit-content"},description:"Width of a content container",name:"width",required:!1,type:{name:"SystemProp<Width<number>, Theme>"}},custom:{defaultValue:null,description:"",name:"custom",required:!1,type:{name:"PopoverConfig"}}}}}catch{}const ne={title:"Components/Popover",component:n,tags:["autodocs"],args:{content:"Everything in Tetrisly contains Auto Layout. Moreover, we’ve redefined all variants and we have created brand-new components.",width:"320px"},parameters:{docs:{description:{component:"A temporary, floating modal view that displays additional information or options when a user interacts with a specific element. Popovers can be triggered by various actions, such as hovering, clicking, or focusing."},page:()=>e.jsx($,{docs:"https://docs.tetrisly.com/components/in-progress/popover"})}},render:t=>e.jsx(s.div,{h:"320px",w:"100%",display:"flex",justifyContent:"center",alignItems:"center",children:e.jsx(n,{...t,children:e.jsx(b,{label:"Click me"})})})},o={},a={args:{isOpen:!0}},r={args:{content:e.jsxs(s.div,{display:"flex",alignItems:"center",gap:"component-gap-large",children:[e.jsx(J,{initials:"JD",size:"medium"}),e.jsx(L,{label:"John Doe"}),e.jsx(b,{appearance:"secondary",label:"Following",beforeIcon:"20-check-large"})]}),width:"300px"}};var c,m,d;o.parameters={...o.parameters,docs:{...(c=o.parameters)==null?void 0:c.docs,source:{originalSource:"{}",...(d=(m=o.parameters)==null?void 0:m.docs)==null?void 0:d.source}}};var u,f,g;a.parameters={...a.parameters,docs:{...(u=a.parameters)==null?void 0:u.docs,source:{originalSource:`{
+  args: {
+    isOpen: true
+  }
+}`,...(g=(f=a.parameters)==null?void 0:f.docs)==null?void 0:g.source}}};var v,y,h;r.parameters={...r.parameters,docs:{...(v=r.parameters)==null?void 0:v.docs,source:{originalSource:`{
+  args: {
+    content: <tet.div display="flex" alignItems="center" gap="component-gap-large">
+        <Avatar initials="JD" size="medium" />
+        <Label label="John Doe" />
+        <Button appearance="secondary" label="Following" beforeIcon="20-check-large" />
+      </tet.div>,
+    width: '300px'
+  }
+}`,...(h=(y=r.parameters)==null?void 0:y.docs)==null?void 0:h.source}}};const se=["Default","Open","CustomContent"];export{r as CustomContent,o as Default,a as Open,se as __namedExportsOrder,ne as default};
+//# sourceMappingURL=Popover.stories-08e7175d.js.map
