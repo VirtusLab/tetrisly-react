@@ -3,7 +3,6 @@ import { BadgeAppearance } from './BadgeAppearance.type';
 import { BadgeEmphasis } from './BadgeEmphasis.type';
 import { BadgeIntent } from './BadgeIntent.type';
 
-import { DeepPartial } from '@/utility-types/DeepPartial';
 import { IconName } from '@/utility-types/IconName';
 import { Or } from '@/utility-types/Or';
 
@@ -16,5 +15,5 @@ export type BadgeProps = Or<
     { icon: IconName<16> }
   > & {
     emphasis?: BadgeEmphasis;
-    custom?: DeepPartial<BadgeConfig>;
+    custom?: BadgeConfig;
   };

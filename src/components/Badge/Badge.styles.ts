@@ -4,15 +4,19 @@ import { BadgeIntent } from './BadgeIntent.type';
 import { BaseProps } from '@/types/BaseProps';
 
 export type BadgeConfig = {
-  appearance: Record<
-    BadgeAppearance,
-    Record<'high' | 'medium' | 'low', BaseProps>
+  appearance?: Partial<
+    Record<
+      BadgeAppearance,
+      Partial<Record<'high' | 'medium' | 'low', BaseProps>>
+    >
   >;
-  intent: Record<BadgeIntent, Record<'high' | 'medium' | 'low', BaseProps>>;
-  hasLabel: BaseProps;
+  intent?: Partial<
+    Record<BadgeIntent, Partial<Record<'high' | 'medium' | 'low', BaseProps>>>
+  >;
+  hasLabel?: BaseProps;
   innerElements?: {
-    label: BaseProps;
-    iconContainer: BaseProps;
+    label?: BaseProps;
+    iconContainer?: BaseProps;
   };
 } & BaseProps;
 
