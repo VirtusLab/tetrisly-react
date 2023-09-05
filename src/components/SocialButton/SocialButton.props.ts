@@ -20,4 +20,4 @@ export type SocialButtonProps = {
   appearance?: SocialButtonAppearance;
   state?: 'disabled' | 'loading';
   custom?: SocialButtonConfig;
-} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'>;
+} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color' | 'disabled'>;
