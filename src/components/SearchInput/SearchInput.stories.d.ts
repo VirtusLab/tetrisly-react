@@ -1,7 +1,8 @@
 /// <reference types="react" />
 import type { StoryObj } from '@storybook/react';
 declare const meta: {
-    component: import("react").FC<Omit<import("../TextInput").TextInputProps, "type" | "beforeComponent" | "afterComponent"> & {
+    component: import("react").FC<Omit<import("../TextInput").TextInputProps, "type" | "state" | "beforeComponent" | "afterComponent"> & {
+        state?: "disabled" | undefined;
         afterComponent?: import("../TextInput").TextInputProps.InnerComponents.IconButton | import("../TextInput").TextInputProps.InnerComponents.Dropdown | undefined;
     } & import("@xstyled/system").MarginProps<import("@xstyled/system").Theme>>;
     tags: string[];
