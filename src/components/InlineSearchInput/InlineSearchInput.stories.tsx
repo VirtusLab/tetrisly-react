@@ -9,7 +9,6 @@ const meta = {
   component: InlineSearchInput,
   tags: ['autodocs'],
   argTypes: {},
-
   parameters: {
     docs: {
       description: {
