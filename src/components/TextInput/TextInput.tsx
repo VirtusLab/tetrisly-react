@@ -6,6 +6,7 @@ import {
   useState,
   ChangeEventHandler,
   MouseEventHandler,
+  ChangeEvent,
 } from 'react';
 
 import { TextInputProps } from './TextInput.props';
@@ -67,18 +68,17 @@ export const TextInput = forwardRef<
 
     const handleOnChange: ChangeEventHandler<HTMLInputElement> = useCallback(
       (e) => {
-        value === undefined ? setInnerValue(e.target.value) : onChange?.(e);
+        setInnerValue(e.target.value);
+        onChange?.(e);
       },
-      [onChange, value],
+      [onChange],
     );
 
     const handleOnClear: MouseEventHandler<HTMLButtonElement> =
       useCallback(() => {
-        value === undefined
-          ? setInnerValue('')
-          : // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            onChange?.({ target: { value: '' } } as any);
-      }, [onChange, value]);
+        setInnerValue('');
+        onChange?.({ target: { value: '' } } as ChangeEvent<HTMLInputElement>);
+      }, [onChange]);
 
     return (
       <tet.div
