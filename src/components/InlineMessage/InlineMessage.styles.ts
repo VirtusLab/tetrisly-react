@@ -4,21 +4,18 @@ import { BaseProps } from '@/types/BaseProps';
 import { IconName } from '@/utility-types/IconName';
 
 export type InlineMessageConfig = {
-  innerElements: {
-    title: {
-      intent: Record<InlineMessageIntent, BaseProps>;
+  innerElements?: {
+    title?: {
+      intent?: Partial<Record<InlineMessageIntent, BaseProps>>;
     } & BaseProps;
-    icon: {
-      intent: Record<InlineMessageIntent, { name: IconName<20> }>;
-    };
-    iconContainer: {
-      intent: Record<InlineMessageIntent, BaseProps>;
+    iconContainer?: {
+      intent?: Partial<Record<InlineMessageIntent, BaseProps>>;
     } & BaseProps;
-    description: BaseProps;
+    description?: BaseProps;
   };
 } & BaseProps;
 
-export const config = {
+export const defaultConfig = {
   display: 'flex',
   alignItems: 'flex-start',
   gap: 'component-gap-small',
@@ -38,22 +35,6 @@ export const config = {
         },
         negative: {
           color: 'content-negative-primary',
-        },
-      },
-    },
-    icon: {
-      intent: {
-        informative: {
-          name: '20-info-fill',
-        },
-        success: {
-          name: '20-check-circle-fill',
-        },
-        warning: {
-          name: '20-warning-fill',
-        },
-        negative: {
-          name: '20-alert-fill',
         },
       },
     },
@@ -81,4 +62,15 @@ export const config = {
       display: 'inline-block',
     },
   },
-} as const satisfies InlineMessageConfig;
+} satisfies InlineMessageConfig;
+
+export const resolveIconName = (intent: InlineMessageIntent): IconName<20> => {
+  const iconConfig: Record<InlineMessageIntent, IconName<20>> = {
+    informative: '20-info-fill',
+    success: '20-check-circle-fill',
+    warning: '20-warning-fill',
+    negative: '20-alert-fill',
+  };
+
+  return iconConfig[intent];
+};
