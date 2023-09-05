@@ -1,3 +1,4 @@
+export * from './components/AlertBanner';
 export * from './components/Avatar';
 export * from './components/Badge';
 export * from './components/Button';
@@ -15,4 +16,5 @@ export * from './components/RadioButtonGroup';
 export * from './components/SearchInput';
 export * from './components/StatusDot';
 export * from './components/TextInput';
+export * from './components/InlineSearchInput';
 export * from './components/Toast';

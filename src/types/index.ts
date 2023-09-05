@@ -1,4 +1,5 @@
 export type { AbstractTheme } from './AbstractTheme';
+export type { Action, ActionProp } from './Action';
 export type { Appearance } from './Appearance';
 export type { BasicInputState } from './BasicInputState';
 export type { BasicIntent } from './BasicIntent';
