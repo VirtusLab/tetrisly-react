@@ -16,17 +16,18 @@ export type CounterConfig = {
 
 export const defaultConfig = {
   display: 'inline-flex',
+  flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  borderRadius: '50px',
+  borderRadius: 'full',
   padding: '0 component-padding-xSmall',
   minWidth: '20px',
   text: 'body-small',
+  textAlign: 'center',
   emphasis: {
     high: {
       appearance: {
         default: {
-          ringInset: true,
           ring: 'small',
           ringColor: 'border-neutral-strong',
           backgroundColor: 'background-default',
@@ -57,7 +58,6 @@ export const defaultConfig = {
     low: {
       appearance: {
         default: {
-          ringInset: true,
           ring: 'small',
           ringColor: 'border-neutral-subtle',
           backgroundColor: 'background-default',

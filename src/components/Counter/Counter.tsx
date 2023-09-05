@@ -15,5 +15,9 @@ export const Counter: FC<CounterProps> = ({
     () => stylesBuilder(appearance, emphasis, custom),
     [appearance, emphasis, custom],
   );
-  return <tet.div {...styles}>{number}</tet.div>;
+  return (
+    <tet.div {...styles} data-testid="counter">
+      {number}
+    </tet.div>
+  );
 };
