@@ -29,7 +29,7 @@ export const config = {
     focus: 'interaction-focus-default',
     alert: 'interaction-border-alert',
   },
-  borderRadius: 'medium',
+  borderRadius: 'large',
   opacity: {
     disabled: 'disabled',
   },

@@ -42,7 +42,7 @@ export const TextInput = forwardRef<
       TextInputProps & MarginProps
     >(rest);
 
-    const config = useMemo(() => merge(custom, defaultConfig), [custom]);
+    const config = useMemo(() => merge(defaultConfig, custom), [custom]);
     const {
       innerComponents: {
         input: inputStyles,
