@@ -1,52 +1,42 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
+import { FC, useMemo } from 'react';
 
 import { BadgeProps } from './Badge.props';
-import { defaultConfig } from './Badge.styles';
+import { stylesBuilder } from './stylesBuilder';
 
-import { mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
-export const Badge = ({
+export const Badge: FC<BadgeProps & MarginProps> = ({
   appearance,
-  intent,
+  intent = 'neutral',
   emphasis = 'high',
-  beforeIcon,
-  afterIcon,
   icon,
+  beforeIcon = icon,
+  afterIcon,
   label,
   custom,
   ...restProps
-}: BadgeProps & MarginProps) => {
-  const config = mergeConfigWithCustom({ defaultConfig, custom });
-  const {
-    appearance: appearanceStyles,
-    intent: intentStyles,
-    label: labelStyles,
-    icon: iconStyles,
-    ...restStyles
-  } = config;
+}) => {
+  const hasLabel = !!label;
+  const styles = useMemo(
+    () => stylesBuilder(custom, intent, emphasis, hasLabel, appearance),
+    [custom, intent, emphasis, hasLabel, appearance],
+  );
 
-  if (!appearance && !intent) {
-    throw new Error('Badge needs to have defined appearance or intent prop');
-  }
-
-  const color = appearance
-    ? appearanceStyles[appearance][emphasis]
-    : intentStyles[intent][emphasis];
-  const padding = label ? labelStyles : iconStyles;
   return (
-    <tet.div
-      {...color}
-      {...padding}
-      {...restStyles}
-      {...restProps}
-      data-testid="badge"
-    >
-      {!!beforeIcon && <Icon name={beforeIcon} data-testid="badge-icon" />}
-      {!!icon && <Icon name={icon} data-testid="badge-icon" />}
-      {label}
-      {!!afterIcon && <Icon name={afterIcon} data-testid="badge-icon" />}
+    <tet.div {...styles.container} {...restProps} data-testid="badge">
+      {!!beforeIcon && (
+        <tet.span {...styles.iconContainer}>
+          <Icon name={beforeIcon} data-testid="badge-icon" />
+        </tet.span>
+      )}
+      {!!label && <tet.span {...styles.label}>{label}</tet.span>}
+      {!!afterIcon && (
+        <tet.span {...styles.iconContainer}>
+          <Icon name={afterIcon} data-testid="badge-icon" />
+        </tet.span>
+      )}
     </tet.div>
   );
 };

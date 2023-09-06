@@ -3,8 +3,32 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Badge } from './Badge';
 
 import { tet } from '@/tetrisly';
-import { appearances } from '@/types/Appearance';
-import { basicIntents } from '@/types/BasicIntent';
+
+const APPEARANCES = [
+  'blue',
+  'green',
+  'grey',
+  'red',
+  'orange',
+  'raspberry',
+  'magenta',
+  'purple',
+  'grape',
+  'violet',
+  'cyan',
+  'teal',
+  'aquamarine',
+  'emerald',
+  'outline',
+] as const;
+
+const INTENTS = [
+  'neutral',
+  'informative',
+  'positive',
+  'warning',
+  'negative',
+] as const;
 
 const meta = {
   title: 'Components/Badge',
@@ -43,18 +67,18 @@ export const All = () => (
   <tet.div spaceY="component-gap-small">
     <tet.p>High emphasis</tet.p>
     <tet.div display="flex" spaceX="component-gap-small">
-      {appearances.map((appearance) => (
+      {APPEARANCES.filter((a) => a !== 'outline').map((appearance) => (
         <Badge appearance={appearance} icon="16-bolt" key={appearance} />
       ))}
     </tet.div>
     <tet.div display="flex" spaceX="component-gap-small">
-      {basicIntents.map((intent) => (
+      {INTENTS.map((intent) => (
         <Badge intent={intent} icon="16-bolt" key={intent} />
       ))}
     </tet.div>
     <tet.p>Medium emphasis</tet.p>
     <tet.div display="flex" spaceX="component-gap-small">
-      {appearances.map((appearance) => (
+      {APPEARANCES.map((appearance) => (
         <Badge
           appearance={appearance}
           emphasis="medium"
@@ -64,13 +88,13 @@ export const All = () => (
       ))}
     </tet.div>
     <tet.div display="flex" spaceX="component-gap-small">
-      {basicIntents.map((intent) => (
+      {INTENTS.map((intent) => (
         <Badge intent={intent} emphasis="medium" icon="16-bolt" key={intent} />
       ))}
     </tet.div>
     <tet.p>Low emphasis</tet.p>
     <tet.div display="flex" spaceX="component-gap-small">
-      {appearances.map((appearance) => (
+      {APPEARANCES.filter((a) => a !== 'outline').map((appearance) => (
         <Badge
           appearance={appearance}
           emphasis="low"
@@ -80,7 +104,7 @@ export const All = () => (
       ))}
     </tet.div>
     <tet.div display="flex" spaceX="component-gap-small">
-      {basicIntents.map((intent) => (
+      {INTENTS.map((intent) => (
         <Badge intent={intent} emphasis="low" icon="16-bolt" key={intent} />
       ))}
     </tet.div>
