@@ -31,13 +31,26 @@ export const InlineBanner: FC<InlineBannerProps & MarginProps> = ({
 
   return (
     <tet.div {...styles.container} {...restProps} data-testid="inline-banner">
-      <tet.span {...styles.iconContainer}>
+      <tet.span
+        {...styles.iconContainer}
+        data-testid="inline-banner-iconContainer"
+      >
         <Icon name={iconName} />
       </tet.span>
-      <tet.div {...styles.contentContainer}>
-        <tet.span {...styles.title}>{title}</tet.span>
+      <tet.div
+        {...styles.contentContainer}
+        data-testid="inline-banner-contentContainer"
+      >
+        <tet.span {...styles.title} data-testid="inline-banner-title">
+          {title}
+        </tet.span>
         {!!description && (
-          <tet.span {...styles.description}>{description}</tet.span>
+          <tet.span
+            {...styles.description}
+            data-testid="inline-banner-description"
+          >
+            {description}
+          </tet.span>
         )}
         {firstAction && (
           <tet.div
@@ -71,7 +84,7 @@ export const InlineBanner: FC<InlineBannerProps & MarginProps> = ({
           icon="20-close"
           onClick={onCloseClick}
           {...styles.closeButton}
-          data-testid="alert-banner-closeButton"
+          data-testid="inline-banner-closeButton"
         />
       )}
     </tet.div>
