@@ -13,4 +13,5 @@ const memoizedMerge = memoize(
 export const mergeConfigWithCustom = <T, K>({
   defaultConfig,
   custom,
-}: Params<T, K>): T => memoizedMerge(defaultConfig, custom);
+}: Params<T, K>): T =>
+  custom ? memoizedMerge(defaultConfig, custom) : defaultConfig;
