@@ -7,6 +7,7 @@ export * from './components/CheckboxGroup';
 export * from './components/Divider';
 export * from './components/HelperText';
 export * from './components/IconButton';
+export * from './components/InlineBanner';
 export * from './components/InlineMessage';
 export * from './components/Label';
 export * from './components/Loader';
