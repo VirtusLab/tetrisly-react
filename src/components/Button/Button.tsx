@@ -26,14 +26,14 @@ export const Button = <
   beforeIcon,
   ...rest
 }: ButtonProps<TVariant, TAppearance> & MarginProps) => {
-  if (dropdown && afterIcon) {
-    throw new Error('Button cannot have both dropdown indicator and afterIcon');
-  }
-
   const styles = useMemo(
     () => stylesBuilder({ variant, appearance, intent, size, custom }),
     [variant, appearance, intent, size, custom],
   );
+
+  if (dropdown && afterIcon) {
+    throw new Error('Button cannot have both dropdown indicator and afterIcon');
+  }
 
   return (
     <tet.button
