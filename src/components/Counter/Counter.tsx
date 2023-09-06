@@ -1,22 +1,25 @@
 import { FC, useMemo } from 'react';
 
-import { CounterProps } from './Counter.props';
+import type { CounterProps } from './Counter.props';
 import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
+import type { MarginProps } from '@/types';
 
-export const Counter: FC<CounterProps> = ({
+export const Counter: FC<CounterProps & MarginProps> = ({
   number,
   appearance = 'default',
   emphasis = 'low',
   custom,
+  ...restProps
 }) => {
   const styles = useMemo(
-    () => stylesBuilder(appearance, emphasis, custom),
+    () => stylesBuilder({ appearance, emphasis, custom }),
     [appearance, emphasis, custom],
   );
+
   return (
-    <tet.div {...styles.container} data-testid="counter">
+    <tet.div {...styles.container} {...restProps} data-testid="counter">
       {number}
     </tet.div>
   );

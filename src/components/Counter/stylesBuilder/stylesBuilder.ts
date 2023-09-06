@@ -6,15 +6,21 @@ import { CounterAppearance } from '../types';
 import { BaseProps } from '@/types/BaseProps';
 import { Emphasis } from '@/types/Emphasis';
 
+type CounterStylesBuilderParams = {
+  appearance: CounterAppearance;
+  emphasis: Emphasis;
+  custom?: CounterConfig;
+};
+
 type CounterStylesBuilder = {
   container: BaseProps;
 };
 
-export const stylesBuilder = (
-  appearance: CounterAppearance,
-  emphasis: Emphasis,
-  custom?: CounterConfig,
-): CounterStylesBuilder => {
+export const stylesBuilder = ({
+  appearance,
+  emphasis,
+  custom,
+}: CounterStylesBuilderParams): CounterStylesBuilder => {
   const { appearance: appearanceStyles, ...restStyles } = merge(
     defaultConfig,
     custom,
@@ -24,7 +30,7 @@ export const stylesBuilder = (
 
   return {
     container: {
-      ...(emphasisStyles?.[emphasis] ?? {}),
+      ...emphasisStyles[emphasis],
       ...restStyles,
     },
   };
