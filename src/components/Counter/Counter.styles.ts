@@ -4,11 +4,11 @@ import type { BaseProps } from '@/types/BaseProps';
 import { Emphasis } from '@/types/Emphasis';
 
 export type CounterConfig = {
-  emphasis?: Partial<
+  appearance?: Partial<
     Record<
-      Emphasis,
+      CounterAppearance,
       {
-        appearance?: Partial<Record<CounterAppearance, BaseProps>>;
+        emphasis?: Partial<Record<Emphasis, BaseProps>>;
       }
     >
   >;
@@ -24,62 +24,78 @@ export const defaultConfig = {
   minWidth: '20px',
   text: 'body-small',
   textAlign: 'center',
-  emphasis: {
-    high: {
-      appearance: {
-        default: {
+  appearance: {
+    default: {
+      emphasis: {
+        high: {
           ring: 'small',
           ringColor: 'border-neutral-strong',
           backgroundColor: 'background-default',
           color: 'content-primary',
         },
-        red: {
-          backgroundColor: 'nonSemantic-red-background-strong',
-          color: 'nonSemantic-white-content-primary',
-        },
-        grey: {
-          backgroundColor: 'nonSemantic-grey-background-strong',
-          color: 'nonSemantic-white-content-primary',
-        },
-        blue: {
-          backgroundColor: 'nonSemantic-blue-background-strong',
-          color: 'nonSemantic-white-content-primary',
-        },
-        green: {
-          backgroundColor: 'nonSemantic-green-background-strong',
-          color: 'nonSemantic-white-content-primary',
-        },
-        orange: {
-          backgroundColor: 'nonSemantic-orange-background-strong',
-          color: 'nonSemantic-grey-content-primary',
-        },
-      },
-    },
-    low: {
-      appearance: {
-        default: {
+        low: {
           ring: 'small',
           ringColor: 'border-neutral-subtle',
           backgroundColor: 'background-default',
           color: 'content-primary',
         },
-        red: {
+      },
+    },
+    red: {
+      emphasis: {
+        high: {
+          backgroundColor: 'nonSemantic-red-background-strong',
+          color: 'nonSemantic-white-content-primary',
+        },
+        low: {
           backgroundColor: 'nonSemantic-red-background-onSubtle',
           color: 'nonSemantic-grey-content-primary',
         },
-        grey: {
+      },
+    },
+    grey: {
+      emphasis: {
+        high: {
+          backgroundColor: 'nonSemantic-grey-background-strong',
+          color: 'nonSemantic-white-content-primary',
+        },
+        low: {
           backgroundColor: 'nonSemantic-grey-background-onSubtle',
           color: 'nonSemantic-grey-content-primary',
         },
-        blue: {
+      },
+    },
+    blue: {
+      emphasis: {
+        high: {
+          backgroundColor: 'nonSemantic-blue-background-strong',
+          color: 'nonSemantic-white-content-primary',
+        },
+        low: {
           backgroundColor: 'nonSemantic-blue-background-onSubtle',
           color: 'nonSemantic-grey-content-primary',
         },
-        green: {
+      },
+    },
+    green: {
+      emphasis: {
+        high: {
+          backgroundColor: 'nonSemantic-green-background-strong',
+          color: 'nonSemantic-white-content-primary',
+        },
+        low: {
           backgroundColor: 'nonSemantic-green-background-onSubtle',
           color: 'nonSemantic-grey-content-primary',
         },
-        orange: {
+      },
+    },
+    orange: {
+      emphasis: {
+        high: {
+          backgroundColor: 'nonSemantic-orange-background-strong',
+          color: 'nonSemantic-grey-content-primary',
+        },
+        low: {
           backgroundColor: 'nonSemantic-orange-background-onSubtle',
           color: 'nonSemantic-grey-content-primary',
         },

@@ -3,22 +3,29 @@ import { merge } from 'lodash';
 import { CounterConfig, defaultConfig } from '../Counter.styles';
 import { CounterAppearance } from '../types';
 
+import { BaseProps } from '@/types/BaseProps';
 import { Emphasis } from '@/types/Emphasis';
+
+type CounterStylesBuilder = {
+  container: BaseProps;
+};
 
 export const stylesBuilder = (
   appearance: CounterAppearance,
   emphasis: Emphasis,
   custom?: CounterConfig,
-) => {
-  const { emphasis: emphasisStyles, ...restStyles } = merge(
+): CounterStylesBuilder => {
+  const { appearance: appearanceStyles, ...restStyles } = merge(
     defaultConfig,
     custom,
   );
 
-  const { appearance: appearanceStyles } = emphasisStyles[emphasis];
+  const { emphasis: emphasisStyles } = appearanceStyles[appearance];
 
   return {
-    ...(appearanceStyles?.[appearance] ?? {}),
-    ...restStyles,
+    container: {
+      ...(emphasisStyles?.[emphasis] ?? {}),
+      ...restStyles,
+    },
   };
 };

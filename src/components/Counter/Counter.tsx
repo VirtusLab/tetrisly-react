@@ -16,7 +16,7 @@ export const Counter: FC<CounterProps> = ({
     [appearance, emphasis, custom],
   );
   return (
-    <tet.div {...styles} data-testid="counter">
+    <tet.div {...styles.container} data-testid="counter">
       {number}
     </tet.div>
   );
