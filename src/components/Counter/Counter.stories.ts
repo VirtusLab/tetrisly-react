@@ -46,7 +46,11 @@ export const Orange: Story = {
   },
 };
 
-export const DefaultHigh: Story = {};
+export const DefaultHigh: Story = {
+  args: {
+    emphasis: 'high',
+  },
+};
 
 export const RedHigh: Story = {
   args: {
