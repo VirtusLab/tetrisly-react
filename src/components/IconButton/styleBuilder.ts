@@ -1,14 +1,9 @@
-import { merge } from 'lodash';
-
 import { IconButtonStyleProps } from './IconButton.props';
-import {
-  IconButtonConfig,
-  Intents,
-  iconButtonConfig,
-} from './IconButton.styles';
+import { defaultConfig, Intents } from './IconButton.styles';
 import { IconButtonAppearance } from './IconButtonAppearance.type';
 import { ButtonVariant } from '../Button/types/ButtonType.type';
 
+import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
 
 export function styleBuilder<
@@ -17,10 +12,11 @@ export function styleBuilder<
 >(
   props: Required<Omit<IconButtonStyleProps<TVariant, TAppearance>, 'icon'>>,
 ): BaseProps {
-  const { variants, ...styles } = merge(
-    iconButtonConfig,
-    props.custom ?? {},
-  ) as IconButtonConfig;
+  const { variants, ...styles } = mergeConfigWithCustom({
+    defaultConfig,
+    custom: props.custom,
+  });
+
   const variant = variants[props.variant];
   const { appearances, sizes, ...variantStyles } = variant;
   const appearance = appearances[props.appearance];

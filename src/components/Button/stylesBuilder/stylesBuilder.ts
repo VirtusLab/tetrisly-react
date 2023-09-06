@@ -1,5 +1,4 @@
 import { SystemProps } from '@xstyled/styled-components';
-import { merge } from 'lodash';
 
 import { applyDefaults } from './applyDefaults';
 import { StylesBuilderProps } from './stylesBuilder.props';
@@ -8,7 +7,7 @@ import { ButtonAppearance } from '../types/ButtonAppearance.type';
 import { ButtonVariant } from '../types/ButtonType.type';
 import { VariantConfig } from '../VariantConfig';
 
-import { isKeyOf } from '@/services';
+import { isKeyOf, mergeConfigWithCustom } from '@/services';
 import { Theme } from '@/theme';
 
 export const stylesBuilder = <
@@ -18,9 +17,7 @@ export const stylesBuilder = <
   props: StylesBuilderProps<TVariant, TAppearance>,
 ): SystemProps<Theme> => {
   const options = applyDefaults(props);
-  const config = props.custom
-    ? merge(defaultConfig, props.custom)
-    : defaultConfig;
+  const config = mergeConfigWithCustom({ defaultConfig, custom: props.custom });
   const { appearance, size, ...rest } = config[
     options.variant
   ] as VariantConfig<TVariant>;

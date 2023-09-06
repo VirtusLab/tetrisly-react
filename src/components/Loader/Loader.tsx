@@ -1,4 +1,5 @@
 import { MarginProps } from '@xstyled/styled-components';
+import { useMemo } from 'react';
 
 import { AnimatedPath } from './AnimatedPath';
 import { LoaderProps } from './Loader.props';
@@ -13,13 +14,17 @@ export const Loader = ({
   size = 'medium',
   custom,
 }: LoaderProps & MarginProps) => {
-  const { svgStyles, baseStyles, progressStyles } = stylesBuilder({
-    appearance,
-    progress,
-    shape,
-    size,
-    custom,
-  });
+  const { svgStyles, baseStyles, progressStyles } = useMemo(
+    () =>
+      stylesBuilder({
+        appearance,
+        progress,
+        shape,
+        size,
+        custom,
+      }),
+    [appearance, progress, shape, size, custom],
+  );
   return (
     <tet.svg
       {...svgStyles}

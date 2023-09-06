@@ -18,7 +18,7 @@ export type AvatarConfig = {
   >;
 } & BaseProps;
 
-export const config = {
+export const defaultConfig = {
   nestedImage: {
     w: '100%',
     h: '100%',

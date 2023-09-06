@@ -16,7 +16,7 @@ export type TextInputConfig = {
       >;
 } & BaseProps;
 
-export const config = {
+export const defaultConfig = {
   display: 'flex',
   alignItems: 'center',
   h: 'medium',

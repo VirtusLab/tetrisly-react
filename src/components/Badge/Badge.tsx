@@ -1,9 +1,9 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { merge } from 'lodash';
 
 import { BadgeProps } from './Badge.props';
-import { config as defaultConfig } from './Badge.styles';
+import { defaultConfig } from './Badge.styles';
 
+import { mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
@@ -15,10 +15,10 @@ export const Badge = ({
   afterIcon,
   icon,
   label,
-  custom = {},
+  custom,
   ...restProps
 }: BadgeProps & MarginProps) => {
-  const config = merge(defaultConfig, custom);
+  const config = mergeConfigWithCustom({ defaultConfig, custom });
   const {
     appearance: appearanceStyles,
     intent: intentStyles,

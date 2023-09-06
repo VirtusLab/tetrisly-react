@@ -1,4 +1,3 @@
-import lodash from 'lodash';
 import { vi } from 'vitest';
 
 import { applyProps } from './applyProps';
@@ -34,14 +33,6 @@ export const customPropTester = (
       }
 
       expect(topLevelElement).toHaveStyle('border-top-color: rgb(255, 0, 0)');
-    });
-
-    it('should custom prop be called as second argument in merge', () => {
-      const spy = vi.spyOn(lodash, 'merge');
-
-      render(applyProps(Component, { custom: { p: 'randomValue' } }));
-
-      expect(spy.mock.calls[0][1]).toEqual({ p: 'randomValue' });
     });
 
     Object.entries(innerElements).forEach(

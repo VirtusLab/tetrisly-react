@@ -16,7 +16,7 @@ export type BadgeConfig = {
   icon: SystemProps;
 } & BaseProps;
 
-export const config = {
+export const defaultConfig = {
   appearance: {
     ...fromEntries(
       appearances.map((basicAppearance) => [

@@ -18,7 +18,7 @@ export type LoaderConfig = {
   progress: SystemProps & Pick<SvgProperties, 'strokeLinecap'>;
 } & BaseProps;
 
-export const config = {
+export const defaultConfig = {
   size: {
     circle: {
       large: {
