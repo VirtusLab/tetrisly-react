@@ -15,11 +15,8 @@ const getBadgeIcon = (jsx: JSX.Element) => {
   return queryAllByTestId('badge-icon');
 };
 
-describe('Badge', () => {
-  /* 
-    TODO: Extends customPropTester of posibility to test 2 level dependency [intent/appearance, emphasis]
-   */
-  customPropTester(<Badge label="Label" />, {
+describe.only('Badge', () => {
+  customPropTester(<Badge label="Label" beforeIcon="16-alert-full" />, {
     containerId: 'badge',
     props: {
       intent: ['neutral', 'informative', 'positive', 'warning', 'negative'],
@@ -42,7 +39,14 @@ describe('Badge', () => {
       ],
       emphasis: ['high', 'medium', 'low'],
     },
-    innerElements: {},
+    innerElements: {
+      _: [
+        ['intent', 'emphasis'],
+        ['appearance', 'emphasis'],
+      ],
+      label: [],
+      iconContainer: [],
+    },
   });
 
   it('should render the badge', () => {

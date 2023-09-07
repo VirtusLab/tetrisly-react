@@ -14,6 +14,7 @@ export const customPropTester = (
   options: Options,
 ) => {
   const customProp = generateCustomProp(options);
+
   const { innerElements = {}, props = {} } = options;
 
   describe('CustomPropTester', () => {
@@ -48,34 +49,63 @@ export const customPropTester = (
 
     Object.entries(innerElements).forEach(
       ([innerComponentName, innerComponentVariants]) => {
-        describe(`InnerComponent - ${innerComponentName}`, () => {
+        const componentName =
+          innerComponentName === '_' ? 'container' : innerComponentName;
+        const testId = `${options.containerId}${
+          innerComponentName === '_' ? '' : `-${innerComponentName}`
+        }`;
+
+        describe(`InnerComponent - ${componentName}`, () => {
           it(`Top Level style`, () => {
             const { queryByTestId } = render(
               applyProps(Component, { custom: customProp }),
             );
 
-            const testId = `${options.containerId}-${innerComponentName}`;
             const element = queryByTestId(testId);
 
             expect(element).toHaveStyle('border-left-color: rgb(0, 0, 0)');
           });
 
           innerComponentVariants.forEach((propsName) => {
-            props[propsName].forEach((propsValue) => {
-              it(`Variant [${propsName} = ${propsValue}]`, () => {
-                const { queryByTestId } = render(
-                  applyProps(Component, {
-                    custom: customProp,
-                    [propsName]: propsValue,
-                  }),
-                );
+            if (typeof propsName === 'string') {
+              props[propsName].forEach((propsValue) => {
+                it(`Variant [${propsName} = ${propsValue}]`, () => {
+                  const { queryByTestId } = render(
+                    applyProps(Component, {
+                      custom: customProp,
+                      [propsName]: propsValue,
+                    }),
+                  );
+                  const element = queryByTestId(testId);
 
-                const testId = `${options.containerId}-${innerComponentName}`;
-                const element = queryByTestId(testId);
-
-                expect(element).toHaveStyle('border-left-color: rgb(0, 0, 0)');
+                  expect(element).toHaveStyle(
+                    'border-left-color: rgb(0, 0, 0)',
+                  );
+                });
               });
-            });
+            } else {
+              const propsName0 = propsName[0];
+              const propsName1 = propsName[1];
+
+              props[propsName0].forEach((propsValue0) => {
+                props[propsName1].forEach((propsValue1) => {
+                  it(`Variant [${propsName0} = ${propsValue0}][${propsName1} = ${propsValue1}]`, () => {
+                    const { queryByTestId } = render(
+                      applyProps(Component, {
+                        custom: customProp,
+                        [propsName0]: propsValue0,
+                        [propsName1]: propsValue1,
+                      }),
+                    );
+                    const element = queryByTestId(testId);
+
+                    expect(element).toHaveStyle(
+                      'border-right-color: rgb(19, 19, 19)',
+                    );
+                  });
+                });
+              });
+            }
           });
         });
       },
