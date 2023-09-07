@@ -15,7 +15,7 @@ const getBadgeIcon = (jsx: JSX.Element) => {
   return queryAllByTestId('badge-icon');
 };
 
-describe.only('Badge', () => {
+describe('Badge', () => {
   customPropTester(<Badge label="Label" beforeIcon="16-alert-full" />, {
     containerId: 'badge',
     props: {
