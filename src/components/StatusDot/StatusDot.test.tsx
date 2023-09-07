@@ -1,7 +1,7 @@
 import { StatusDot } from './StatusDot';
 import { render } from '../../tests/render';
 
-import { silentThrowExpect } from '@/tests/silentThrowExpect';
+import { customPropTester } from '@/tests/customPropTester';
 
 const getStatusDot = (jsx: JSX.Element) => {
   const { getByTestId } = render(jsx);
@@ -38,10 +38,11 @@ describe('StatusDot', () => {
     );
   });
 
-  it('should throw an error if wrong config is provided', () => {
-    silentThrowExpect(() =>
-      // @ts-expect-error testing wrong appearance
-      render(<StatusDot appearance="reverseInverted" />),
-    ).toThrowError();
+  customPropTester(<StatusDot />, {
+    containerId: 'status-dot',
+    props: {
+      appearance: ['red', 'green', 'blue'],
+      stroked: [],
+    },
   });
 });
