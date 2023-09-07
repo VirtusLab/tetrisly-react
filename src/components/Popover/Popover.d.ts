@@ -1,4 +1,4 @@
 import { FC, PropsWithChildren } from 'react';
-import { PopoverProps } from './Popover.props';
-import { MarginProps } from '../../types';
+import type { PopoverProps } from './Popover.props';
+import type { MarginProps } from '../../types';
 export declare const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>>;
