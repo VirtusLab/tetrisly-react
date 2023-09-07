@@ -1,12 +1,11 @@
 import { useSpace } from '@xstyled/styled-components';
-import { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren, useMemo } from 'react';
 
 import { AnchorWrapper, PopoverContent } from './AnchorWrapper.styled';
-import { PopoverProps } from './Popover.props';
-import { defaultConfig } from './Popover.styles';
+import type { PopoverProps } from './Popover.props';
+import { stylesBuilder } from './stylesBuilder';
 
-import { mergeConfigWithCustom } from '@/services';
-import { MarginProps } from '@/types';
+import type { MarginProps } from '@/types';
 
 export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
   align = 'center',
@@ -19,16 +18,10 @@ export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
   width = 'fit-content',
   ...restProps
 }) => {
-  const {
-    origin: originStyles,
-    innerElements: { content: contentStyles },
-    ...containerStyles
-  } = mergeConfigWithCustom({ defaultConfig, custom });
-
-  const allContentStyles = {
-    ...originStyles[origin].align[align],
-    ...contentStyles,
-  };
+  const styles = useMemo(
+    () => stylesBuilder({ origin, align, custom }),
+    [origin, align, custom],
+  );
 
   const space = useSpace(offset);
   const offsetProps = { [origin]: `-${space}` };
@@ -36,14 +29,14 @@ export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
   return (
     <AnchorWrapper
       isOpen={isOpen}
-      {...containerStyles}
+      {...styles.container}
       {...restProps}
       data-testid="popover"
     >
       <PopoverContent
-        w={width}
+        {...styles.content}
         {...offsetProps}
-        {...allContentStyles}
+        w={width}
         opacity={isOpen === false ? '0' : '1'}
         data-testid="popover-content"
       >
