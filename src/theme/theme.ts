@@ -691,7 +691,7 @@ const tempTheme: Omit<Theme, 'ringWidths'> = {
     '25': '2px',
     '50': '4px',
     '100': '8px',
-    '999': '50%',
+    '999': '9999px',
     '150': '12px',
     small: th.radius('25'),
     medium: th.radius('50'),
