@@ -30,8 +30,8 @@ export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
     <AnchorWrapper
       isOpen={isOpen}
       {...styles.container}
-      {...restProps}
       data-testid="popover"
+      {...restProps}
     >
       <PopoverContent
         {...styles.content}
