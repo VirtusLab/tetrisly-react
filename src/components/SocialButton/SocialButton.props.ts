@@ -15,7 +15,7 @@ export const platforms = [
 ] as const;
 
 export type SocialButtonProps = {
-  label?: string;
+  label: string;
   platform: (typeof platforms)[number];
   appearance?: SocialButtonAppearance;
   state?: 'disabled' | 'loading';

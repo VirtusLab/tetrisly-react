@@ -10,7 +10,12 @@ import { customPropTester } from '@/tests/customPropTester/customPropTester';
 
 const handleEventMock = vi.fn();
 
-const getSocialButton = (props: SocialButtonProps = { platform: 'Apple' }) => {
+const getSocialButton = (
+  props: SocialButtonProps = {
+    platform: 'Apple',
+    label: 'Sign in with Apple',
+  },
+) => {
   const { queryByTestId } = render(<SocialButton {...props} />);
 
   return {
@@ -29,6 +34,7 @@ describe('SocialButton', () => {
     const { socialButton } = getSocialButton({
       platform: 'Apple',
       onClick: handleEventMock,
+      label: 'Sign in with Apple',
     });
 
     if (socialButton) {
@@ -42,6 +48,7 @@ describe('SocialButton', () => {
     const { socialButton } = getSocialButton({
       platform: 'Apple',
       onBlur: handleEventMock,
+      label: 'Sign in with Apple',
     });
 
     if (socialButton) {
@@ -55,6 +62,7 @@ describe('SocialButton', () => {
     const { socialButton } = getSocialButton({
       platform: 'Apple',
       onFocus: handleEventMock,
+      label: 'Sign in with Apple',
     });
 
     if (socialButton) {
@@ -64,16 +72,10 @@ describe('SocialButton', () => {
     expect(handleEventMock).toHaveBeenCalled();
   });
 
-  it('should render default text if none is provided', () => {
-    const { socialButton } = getSocialButton();
-
-    expect(socialButton).toHaveTextContent('Sign in with Apple');
-  });
-
-  it('should render content if passed', () => {
+  it('should render label ', () => {
     const { socialButton } = getSocialButton({
       platform: 'Apple',
-      label: 'Get on board with',
+      label: 'Get on board with Apple',
     });
 
     expect(socialButton).toHaveTextContent('Get on board with Apple');
@@ -81,7 +83,11 @@ describe('SocialButton', () => {
 
   it("should render loader if state is 'loading'", () => {
     const { queryByTestId } = render(
-      <SocialButton platform="Apple" state="loading" />,
+      <SocialButton
+        platform="Apple"
+        state="loading"
+        label="Sign in with Apple"
+      />,
     );
 
     const loader = queryByTestId('loader');
@@ -91,7 +97,9 @@ describe('SocialButton', () => {
 
   it('should render different platform icons depending on passed props', () => {
     platforms.forEach((platform) => {
-      const { queryByTestId } = render(<SocialButton platform={platform} />);
+      const { queryByTestId } = render(
+        <SocialButton label={`Sign in with ${platform}`} platform={platform} />,
+      );
 
       const icon = queryByTestId(`${platform.toLowerCase()}-icon`);
 
@@ -99,10 +107,13 @@ describe('SocialButton', () => {
     });
   });
 
-  customPropTester(<SocialButton platform="Apple" />, {
-    containerId: 'social-button',
-    props: {
-      appearance: ['primary', 'secondary'],
+  customPropTester(
+    <SocialButton platform="Apple" label="Sign In with Apple" />,
+    {
+      containerId: 'social-button',
+      props: {
+        appearance: ['primary', 'secondary'],
+      },
     },
-  });
+  );
 });

@@ -13,7 +13,7 @@ export const SocialButton: FC<SocialButtonProps & MarginProps> = ({
   appearance = 'primary',
   custom,
   state,
-  label = 'Sign in with',
+  label,
   ...rest
 }) => {
   const social = socials[platform];
@@ -48,7 +48,7 @@ export const SocialButton: FC<SocialButtonProps & MarginProps> = ({
             : 'action-neutral-normal'
         }
       >
-        {label} {platform}
+        {label}
       </tet.span>
     </tet.button>
   );
