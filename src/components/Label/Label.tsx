@@ -23,7 +23,7 @@ export const Label = ({
   } = options;
 
   return (
-    <tet.div {...labelStyles} {...rest} data-testid="label">
+    <tet.div {...labelStyles} data-testid="label" {...rest}>
       {label}
       {!!optional && (
         <tet.span {...optionalStyles} data-testid="label-optional">

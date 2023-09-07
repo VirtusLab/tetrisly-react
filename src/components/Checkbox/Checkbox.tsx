@@ -11,7 +11,7 @@ import { extractMarginProps } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
-export const CheckboxIcon = styled(tet.div)`
+export const CheckboxContainer = styled(tet.div)`
   input + div > #checkmark {
     display: none;
     pointer-events: none;
@@ -65,9 +65,12 @@ export const Checkbox = forwardRef<
     }, [checkboxInternalRef, label]);
 
     const input = (
-      <CheckboxIcon {...styles.checkboxContainer}>
+      <CheckboxContainer
+        {...styles.checkboxContainer}
+        data-testid="checkbox-checkboxContainer"
+      >
         <tet.input
-          {...styles.checkbox}
+          {...styles.input}
           type="checkbox"
           ref={checkboxRef}
           checked={isChecked}
@@ -77,11 +80,15 @@ export const Checkbox = forwardRef<
           data-testid="checkbox-input"
           {...checkboxProps}
         />
-        <tet.div {...styles.checkboxIcon} onClick={handleInputChange}>
+        <tet.div
+          {...styles.checkboxIcon}
+          onClick={handleInputChange}
+          data-testid="checkbox-checkboxIcon"
+        >
           {isIndeterminate && <Icon name="16-minus" />}
           <Icon name="16-check" id="checkmark" />
         </tet.div>
-      </CheckboxIcon>
+      </CheckboxContainer>
     );
 
     return (
@@ -105,10 +112,11 @@ export const Checkbox = forwardRef<
         )}
         {!!helperText && (
           <HelperText
-            {...styles.helperText}
+            custom={styles.helperText}
             intent={state === 'alert' ? 'alert' : 'none'}
             beforeIcon={state === 'alert'}
             text={helperText}
+            data-testid="checkbox-helperText"
           />
         )}
       </tet.div>

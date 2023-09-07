@@ -1,16 +1,26 @@
 import { CheckboxGroup } from './CheckboxGroup';
 import { render } from '../../tests/render';
 
+import { customPropTester } from '@/tests/customPropTester';
+
 const getCheckboxGroup = (jsx: JSX.Element) => {
   const { queryByTestId } = render(jsx);
   return {
     checkboxGroup: queryByTestId('checkbox-group'),
     checkboxGroupContainer: queryByTestId('checkbox-group-container'),
-    helperText: queryByTestId('helper-text'),
+    helperText: queryByTestId('checkbox-group-helperText'),
   };
 };
 
 describe('CheckboxGroup', () => {
+  customPropTester(<CheckboxGroup label="Label" helperText="Helper Text" />, {
+    containerId: 'checkbox-group',
+    innerElements: {
+      label: [],
+      helperText: [],
+    },
+  });
+
   it('should render the checkbox group', () => {
     const { checkboxGroup } = getCheckboxGroup(<CheckboxGroup column={1} />);
     expect(checkboxGroup).toBeInTheDocument();

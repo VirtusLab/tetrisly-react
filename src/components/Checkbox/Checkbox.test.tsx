@@ -13,14 +13,21 @@ const getCheckbox = (jsx: JSX.Element) => {
   return {
     checkbox: getByTestId('checkbox'),
     label: queryByTestId('checkbox-label'),
-    helperText: queryByTestId('helper-text'),
+    helperText: queryByTestId('checkbox-helperText'),
     input: getByTestId('checkbox-input') as HTMLInputElement,
   };
 };
 
 describe('Checkbox', () => {
-  customPropTester(<Checkbox />, {
+  customPropTester(<Checkbox label="Label" helperText="Helper Text" />, {
     containerId: 'checkbox',
+    innerElements: {
+      input: [],
+      checkboxContainer: [],
+      checkboxIcon: [],
+      label: [],
+      helperText: [],
+    },
   });
 
   beforeEach(() => {

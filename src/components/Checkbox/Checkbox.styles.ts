@@ -6,7 +6,7 @@ import { BaseProps } from '@/types/BaseProps';
 
 export type CheckboxConfig = {
   innerElements?: {
-    checkbox?: SystemProps;
+    input?: SystemProps;
     checkboxContainer?: BaseProps;
     checkboxIcon?: BaseProps;
     label?: BaseProps;
@@ -33,7 +33,7 @@ export const defaultConfig = {
       position: 'relative',
       cursor: 'pointer',
     },
-    checkbox: {
+    input: {
       appearance: 'none',
       display: 'block',
       w: '3xSmall',

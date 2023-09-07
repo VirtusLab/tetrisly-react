@@ -7,7 +7,7 @@ import { BaseProps } from '@/types/BaseProps';
 
 type CheckboxStylesBuilder = {
   container: BaseProps;
-  checkbox: SystemProps;
+  input: SystemProps;
   checkboxContainer: BaseProps;
   checkboxIcon: BaseProps;
   label: BaseProps;
@@ -17,21 +17,20 @@ type CheckboxStylesBuilder = {
 export const stylesBuilder = (
   custom?: CheckboxConfig,
 ): CheckboxStylesBuilder => {
-  const options = mergeConfigWithCustom({ defaultConfig, custom });
   const {
     innerElements: {
-      checkbox,
+      input,
       checkboxContainer,
       checkboxIcon,
       label,
       helperText,
     },
     ...container
-  } = options;
+  } = mergeConfigWithCustom({ defaultConfig, custom });
 
   return {
     container,
-    checkbox,
+    input,
     checkboxContainer,
     checkboxIcon,
     label,
