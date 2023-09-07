@@ -13,7 +13,7 @@ export const SocialButton: FC<SocialButtonProps & MarginProps> = ({
   custom,
   state,
   label,
-  ...rest
+  ...restProps
 }) => {
   const social = socials[platform];
 
@@ -26,7 +26,7 @@ export const SocialButton: FC<SocialButtonProps & MarginProps> = ({
       data-testid="social-button"
       {...styles}
       {...appearancesStyles}
-      {...rest}
+      {...restProps}
       disabled={['disabled', 'loading'].includes(state ?? '')}
       data-state={state}
       style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
