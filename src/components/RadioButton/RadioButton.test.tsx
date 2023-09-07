@@ -3,6 +3,8 @@ import { vi } from 'vitest';
 import { RadioButton } from './RadioButton';
 import { fireEvent, render } from '../../tests/render';
 
+import { customPropTester } from '@/tests/customPropTester';
+
 const handleEventMock = vi.fn();
 
 const getRadioButton = (jsx: JSX.Element) => {
@@ -96,13 +98,16 @@ describe('Radio button', () => {
     expect(helperText).toBeNull();
   });
 
-  it('should propagate custom props', () => {
-    const { radioButton } = getRadioButton(
-      <RadioButton
-        custom={{ backgroundColor: 'background-negative-subtle' }}
-      />,
-    );
-
-    expect(radioButton).toHaveStyle('background-color: rgb(254, 245, 245)');
+  customPropTester(<RadioButton label="label" helperText="helpertext" />, {
+    containerId: 'radio-button',
+    props: {
+      align: ['center', 'start', 'end'],
+      origin: ['bottom', 'top', 'left', 'right'],
+    },
+    innerElements: {
+      radioButton: [],
+      label: [],
+      helperText: [],
+    },
   });
 });

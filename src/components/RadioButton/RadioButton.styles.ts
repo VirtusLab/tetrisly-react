@@ -3,10 +3,10 @@ import { SystemProps } from '@xstyled/styled-components';
 import { BaseProps } from '@/types/BaseProps';
 
 export type RadioButtonConfig = {
-  innerComponents: {
-    radioButton: SystemProps;
-    label: SystemProps;
-    helperText: SystemProps;
+  innerElements?: {
+    radioButton?: SystemProps;
+    label?: SystemProps;
+    helperText?: SystemProps;
   };
 } & BaseProps;
 
@@ -24,7 +24,7 @@ export const defaultConfig = {
   pointerEvents: {
     disabled: 'none',
   },
-  innerComponents: {
+  innerElements: {
     radioButton: {
       appearance: 'none',
       display: 'flex',
