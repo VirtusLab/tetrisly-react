@@ -1,9 +1,8 @@
-import { merge } from 'lodash';
 import { FC, useMemo } from 'react';
 
 import { SocialButtonProps } from './SocialButton.props';
-import { socialButtonConfig } from './SocialButton.styles';
 import { socials } from './socials';
+import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
@@ -18,13 +17,10 @@ export const SocialButton: FC<SocialButtonProps & MarginProps> = ({
 }) => {
   const social = socials[platform];
 
-  const [appearancesStyles, styles] = useMemo(() => {
-    const { appearance: appearances, ...baseStyles } = merge(
-      socialButtonConfig,
-      custom,
-    );
-    return [appearances?.[appearance], baseStyles] as const;
-  }, [appearance, custom]);
+  const [appearancesStyles, styles] = useMemo(
+    () => stylesBuilder(custom, appearance),
+    [appearance, custom],
+  );
   return (
     <tet.button
       data-testid="social-button"
