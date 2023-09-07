@@ -12,7 +12,7 @@ export type CheckboxConfig = {
   };
 } & BaseProps;
 
-export const config = {
+export const defaultConfig = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',

@@ -1,9 +1,8 @@
-import { merge } from 'lodash';
-
 import { InlineMessageProps } from '../InlineMessage.props';
 import { defaultConfig } from '../InlineMessage.styles';
 import { InlineMessageIntent } from '../InlineMessageIntent.type';
 
+import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
 
 type InlineMessageStyleBuilder = {
@@ -17,7 +16,11 @@ export const stylesBuilder = (
   intent: InlineMessageIntent,
   custom: InlineMessageProps['custom'],
 ): InlineMessageStyleBuilder => {
-  const { innerElements, ...container } = merge(defaultConfig, custom);
+  const { innerElements, ...container } = mergeConfigWithCustom({
+    defaultConfig,
+    custom,
+  });
+
   const { description, title, iconContainer } = innerElements;
 
   const { intent: titleIntent, ...restTitleStyles } = title;

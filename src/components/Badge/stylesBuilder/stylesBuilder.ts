@@ -1,11 +1,10 @@
-import { merge } from 'lodash';
-
 import { BadgeProps } from '../Badge.props';
 import { defaultConfig } from '../Badge.styles';
 import { BadgeAppearance } from '../BadgeAppearance.type';
 import { BadgeEmphasis } from '../BadgeEmphasis.type';
 import { BadgeIntent } from '../BadgeIntent.type';
 
+import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCutom';
 import { BaseProps } from '@/types/BaseProps';
 
 type BadgeStylesBuilder = {
@@ -27,7 +26,7 @@ export const stylesBuilder = (
     intent: containerIntent,
     appearance: containerAppearance,
     ...container
-  } = merge(defaultConfig, custom);
+  } = mergeConfigWithCustom({ defaultConfig, custom });
 
   const containerStyles = appearance
     ? containerAppearance[appearance][emphasis]

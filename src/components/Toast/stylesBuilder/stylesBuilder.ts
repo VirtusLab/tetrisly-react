@@ -1,13 +1,13 @@
 import { IconProps } from '@virtuslab/tetrisly-icons';
-import { merge } from 'lodash';
 
 import { ToastProps } from '../Toast.props';
-import { config as defaultConfig } from '../Toast.styles';
+import { defaultConfig } from '../Toast.styles';
 import { ToastIntent } from '../types';
 
 import { ButtonAppearance } from '@/components/Button/types/ButtonAppearance.type';
 import { IconButtonProps } from '@/components/IconButton/IconButton.props';
 import { IconButtonAppearance } from '@/components/IconButton/IconButtonAppearance.type';
+import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
 
 type StylesBuilderProps = Required<Pick<ToastProps, 'emphasis' | 'intent'>> & {
@@ -28,10 +28,11 @@ type ToastStylesBuilder = {
   middleDotStyles: BaseProps;
 };
 
-export const stylesBuilder = (
-  props: StylesBuilderProps,
-): ToastStylesBuilder => {
-  const config = merge(defaultConfig, props.custom);
+export const stylesBuilder = ({
+  custom,
+  ...props
+}: StylesBuilderProps): ToastStylesBuilder => {
+  const config = mergeConfigWithCustom({ defaultConfig, custom });
 
   const {
     emphasis: emphasisContainerStyles,

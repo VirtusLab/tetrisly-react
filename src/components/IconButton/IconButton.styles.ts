@@ -54,7 +54,7 @@ const sizes = {
   },
 } satisfies Sizes;
 
-export const iconButtonConfig: IconButtonConfig = {
+export const defaultConfig: IconButtonConfig = {
   text: 'body-medium',
   p: 'component-padding-null',
   bg: 'action-inverted-normal',

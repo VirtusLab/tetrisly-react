@@ -1,20 +1,19 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { merge } from 'lodash';
 import {
   forwardRef,
   useRef,
   useCallback,
-  useMemo,
   useState,
   ChangeEventHandler,
   MouseEventHandler,
 } from 'react';
 
 import { TextInputProps } from './TextInput.props';
-import { config as defaultConfig } from './TextInput.style';
+import { defaultConfig } from './TextInput.style';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 
+import { mergeConfigWithCustom } from '@/services';
 import { extractMarginProps } from '@/services/extractMarginProps';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
@@ -42,7 +41,6 @@ export const TextInput = forwardRef<
       TextInputProps & MarginProps
     >(rest);
 
-    const config = useMemo(() => merge(defaultConfig, custom), [custom]);
     const {
       innerComponents: {
         input: inputStyles,
@@ -52,7 +50,7 @@ export const TextInput = forwardRef<
       },
       spacing,
       ...defaultStyles
-    } = config;
+    } = mergeConfigWithCustom({ defaultConfig, custom });
 
     const containerRef = useRef<HTMLInputElement | null>(null);
 

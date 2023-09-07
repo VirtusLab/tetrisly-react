@@ -17,15 +17,14 @@ export const SocialButton: FC<SocialButtonProps & MarginProps> = ({
 }) => {
   const social = socials[platform];
 
-  const [appearancesStyles, styles] = useMemo(
-    () => stylesBuilder(custom, appearance),
+  const styles = useMemo(
+    () => stylesBuilder(appearance, custom),
     [appearance, custom],
   );
   return (
     <tet.button
       data-testid="social-button"
       {...styles}
-      {...appearancesStyles}
       {...restProps}
       disabled={['disabled', 'loading'].includes(state ?? '')}
       data-state={state}

@@ -1,17 +1,13 @@
-import { merge } from 'lodash';
+import { AvatarProps } from '../Avatar.props';
+import { defaultConfig } from '../Avatar.styles';
 
-import { AvatarProps } from './Avatar.props';
-import { AvatarConfig } from './Avatar.styles';
-
-import { DeepPartial } from '@/utility-types/DeepPartial';
+import { mergeConfigWithCustom } from '@/services';
 
 export const stylesBuilder = ({
-  config: originalConfig,
   custom,
   variant,
 }: {
-  config: AvatarConfig;
-  custom: DeepPartial<AvatarConfig>;
+  custom: AvatarProps['custom'];
   variant: Required<
     Pick<AvatarProps, 'appearance' | 'emphasis' | 'shape' | 'size'>
   >;
@@ -21,7 +17,7 @@ export const stylesBuilder = ({
     shape: shapeStyles,
     size: sizeStyles,
     ...base
-  } = merge(originalConfig, custom);
+  } = mergeConfigWithCustom({ defaultConfig, custom });
   const { appearance, emphasis, shape, size } = variant;
 
   return {

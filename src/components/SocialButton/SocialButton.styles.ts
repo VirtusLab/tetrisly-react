@@ -6,7 +6,7 @@ export type SocialButtonConfig = BaseProps & {
   appearance?: Partial<Record<SocialButtonAppearance, BaseProps>>;
 };
 
-export const socialButtonConfig: SocialButtonConfig = {
+export const defaultConfig = {
   display: 'inline-flex',
   gap: 'component-gap-small',
   h: 'medium',
@@ -37,4 +37,4 @@ export const socialButtonConfig: SocialButtonConfig = {
     },
     primary: {},
   },
-};
+} satisfies SocialButtonConfig;

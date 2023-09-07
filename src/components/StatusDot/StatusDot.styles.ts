@@ -9,7 +9,7 @@ export type StatusDotConfig = {
   stroked: SystemProps;
 } & BaseProps;
 
-export const config = {
+export const defaultConfig = {
   w: '12px',
   h: '12px',
   borderRadius: 'full',

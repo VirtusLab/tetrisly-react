@@ -1,15 +1,15 @@
-import { merge } from 'lodash';
 import { Children, FC, isValidElement, PropsWithChildren } from 'react';
 
 import type {
   CheckboxGroupProps,
   CheckboxGroupItemProps,
 } from './CheckboxGroup.props';
-import { config as defaultConfig } from './CheckboxGroup.style';
+import { defaultConfig } from './CheckboxGroup.style';
 import { Checkbox } from '../Checkbox';
 import { HelperText } from '../HelperText';
 import { Label } from '../Label';
 
+import { mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
@@ -28,7 +28,7 @@ export const CheckboxGroup: Props = ({
   const {
     innerElements: { checkboxContainer: checkboxContainerStyles },
     ...restStyles
-  } = merge(defaultConfig, custom);
+  } = mergeConfigWithCustom({ defaultConfig, custom });
 
   Children.map(children, (child) => {
     if (isValidElement(child) && child?.type !== CheckboxGroup.Item) {
