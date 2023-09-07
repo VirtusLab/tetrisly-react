@@ -73,7 +73,7 @@ describe('SocialButton', () => {
   it('should render content if passed', () => {
     const { socialButton } = getSocialButton({
       platform: 'Apple',
-      content: 'Get on board with',
+      label: 'Get on board with',
     });
 
     expect(socialButton).toHaveTextContent('Get on board with Apple');
@@ -99,12 +99,10 @@ describe('SocialButton', () => {
     });
   });
 
-  it('should propagate custom props', () => {
-    customPropTester(<SocialButton platform="Apple" />, {
-      containerId: 'social-button',
-      props: {
-        appearance: ['primary', 'secondary'],
-      },
-    });
+  customPropTester(<SocialButton platform="Apple" />, {
+    containerId: 'social-button',
+    props: {
+      appearance: ['primary', 'secondary'],
+    },
   });
 });
