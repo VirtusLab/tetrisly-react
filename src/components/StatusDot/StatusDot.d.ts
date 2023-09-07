@@ -1,3 +1,4 @@
-import { MarginProps } from '@xstyled/styled-components';
-import { StatusDotProps } from './StatusDot.props';
-export declare const StatusDot: ({ appearance, stroked, custom, ...rest }: StatusDotProps & MarginProps) => import("react/jsx-runtime").JSX.Element;
+import { FC } from 'react';
+import type { StatusDotProps } from './StatusDot.props';
+import type { MarginProps } from '../../types';
+export declare const StatusDot: FC<StatusDotProps & MarginProps>;

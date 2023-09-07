@@ -1,9 +1,8 @@
-import { SystemProps } from '@xstyled/styled-components';
-import { StatusDotAppearance } from './StatusDotAppearance.type';
-import { BaseProps } from '../../types/BaseProps';
+import type { StatusDotAppearance } from './types';
+import type { BaseProps } from '../../types/BaseProps';
 export type StatusDotConfig = {
-    appearance: Record<StatusDotAppearance, SystemProps>;
-    stroked: SystemProps;
+    appearance?: Partial<Record<StatusDotAppearance, BaseProps>>;
+    stroked?: BaseProps;
 } & BaseProps;
 export declare const defaultConfig: {
     w: string;

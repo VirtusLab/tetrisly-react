@@ -1,1 +1,0 @@
-{"version":3,"file":"isKeyOf-b77e0457.js","sources":["../../src/services/isKeyOf.ts"],"sourcesContent":["export const isKeyOf = <T extends object>(\n  obj: T,\n  key: string,\n): key is Exclude<keyof T, number | symbol> => key in obj;\n"],"names":["isKeyOf","obj","key"],"mappings":"AAAO,MAAMA,EAAU,CACrBC,EACAC,IAC6CA,KAAOD"}
