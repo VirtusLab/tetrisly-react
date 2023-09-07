@@ -8,7 +8,7 @@ export type CheckboxGroupConfig = {
   };
 } & BaseProps;
 
-export const config = {
+export const defaultConfig = {
   display: 'flex',
   flexDirection: 'column',
   gap: 'component-gap-small',

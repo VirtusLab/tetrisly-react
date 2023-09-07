@@ -1,14 +1,13 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
 import styled from '@xstyled/styled-components';
-import { merge } from 'lodash';
 import { forwardRef, useId } from 'react';
 
 import type { CheckboxProps } from './Checkbox.props';
-import { config as defaultConfig } from './Checkbox.styles';
+import { defaultConfig } from './Checkbox.styles';
 import { useIndeterminate } from './hooks';
 import { HelperText } from '../HelperText';
 
-import { extractMarginProps } from '@/services';
+import { extractMarginProps, mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
@@ -40,7 +39,7 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
   ) => {
     const [marginProps, checkboxProps] = extractMarginProps<Props>(restProps);
 
-    const options = custom ? merge(defaultConfig, custom) : defaultConfig;
+    const options = mergeConfigWithCustom({ defaultConfig, custom });
     const {
       innerComponents: {
         checkbox: checkboxStyles,

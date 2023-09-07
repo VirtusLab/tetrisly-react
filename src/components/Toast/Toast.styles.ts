@@ -20,7 +20,7 @@ export type ToastConfig = {
   };
 } & BaseProps;
 
-export const config = {
+export const defaultConfig = {
   display: 'inline-flex',
   alignItems: 'center',
   p: 'component-padding-medium component-padding-large',

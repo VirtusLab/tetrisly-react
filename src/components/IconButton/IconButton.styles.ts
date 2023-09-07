@@ -54,14 +54,14 @@ const sizes = {
   },
 } satisfies Sizes;
 
-export const iconButtonConfig: IconButtonConfig = {
+export const defaultConfig: IconButtonConfig = {
+  text: 'body-medium',
   p: 'component-padding-null',
   bg: 'action-inverted-normal',
   display: 'flex',
   gap: 'component-gap-xSmall',
   alignItems: 'center',
   justifyContent: 'center',
-
   borderRadius: 'large',
   whiteSpace: 'nowrap',
 
