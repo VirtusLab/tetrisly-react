@@ -1,7 +1,7 @@
 import { StatusDot } from './StatusDot';
 import { render } from '../../tests/render';
 
-import { silentThrowExpect } from '@/tests/silentThrowExpect';
+import { customPropTester } from '@/tests/customPropTester';
 
 const getStatusDot = (jsx: JSX.Element) => {
   const { getByTestId } = render(jsx);
@@ -10,7 +10,7 @@ const getStatusDot = (jsx: JSX.Element) => {
 
 describe('StatusDot', () => {
   it('should render the status dot', () => {
-    const statusDot = getStatusDot(<StatusDot appearance="red" />);
+    const statusDot = getStatusDot(<StatusDot />);
     expect(statusDot).toBeInTheDocument();
   });
 
@@ -30,18 +30,17 @@ describe('StatusDot', () => {
   });
 
   it('should render border', () => {
-    const statusDotStroked = getStatusDot(
-      <StatusDot appearance="green" stroked />,
-    );
+    const statusDotStroked = getStatusDot(<StatusDot stroked />);
     expect(statusDotStroked).toHaveStyle(
       'box-shadow: var(--x-ring-shadow,0 0 #0000),var(--x-shadow,0 0 #0000);',
     );
   });
 
-  it('should throw an error if wrong config is provided', () => {
-    silentThrowExpect(() =>
-      // @ts-expect-error testing wrong appearance
-      render(<StatusDot appearance="reverseInverted" />),
-    ).toThrowError();
+  customPropTester(<StatusDot />, {
+    containerId: 'status-dot',
+    props: {
+      appearance: ['red', 'green', 'blue'],
+      stroked: [],
+    },
   });
 });
