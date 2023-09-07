@@ -1,17 +1,12 @@
-import { SystemProps } from '@xstyled/styled-components';
+import type { BaseProps } from '@/types/BaseProps';
 
-import { Theme } from '@/theme';
-import { BaseProps } from '@/types/BaseProps';
-
-export type LabelConfig = BaseProps & TooltipConfig & OptionalConfig;
-
-type TooltipConfig = {
-  tooltip: SystemProps<Theme>;
-};
-
-type OptionalConfig = {
-  optional: SystemProps<Theme>;
-};
+export type LabelConfig = {
+  innerElements?: {
+    tooltip?: BaseProps;
+    optional?: BaseProps;
+    action?: BaseProps;
+  };
+} & BaseProps;
 
 export const defaultConfig = {
   text: 'medium-175',
@@ -19,13 +14,18 @@ export const defaultConfig = {
   display: 'flex',
   alignItems: 'flex-start',
   gap: 'component-gap-xSmall',
-  tooltip: {
-    color: 'content-secondary',
-    display: 'flex',
-    alignItems: 'center',
-    minHeight: 'xSmall',
-  },
-  optional: {
-    color: 'content-tertiary',
+  innerElements: {
+    tooltip: {
+      color: 'content-secondary',
+      display: 'flex',
+      alignItems: 'center',
+      minHeight: 'xSmall',
+    },
+    optional: {
+      color: 'content-tertiary',
+    },
+    action: {
+      ml: 'auto',
+    },
   },
 } satisfies LabelConfig;

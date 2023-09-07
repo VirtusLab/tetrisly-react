@@ -1,50 +1,46 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
+import { FC, useMemo } from 'react';
 
-import { LabelProps } from './Label.props';
-import { defaultConfig } from './Label.styles';
-// import { Button } from '../Button';
+import type { LabelProps } from './Label.props';
+import { stylesBuilder } from './stylesBuilder';
+import { Button } from '../Button';
 
-import { mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
-export const Label = ({
+export const Label: FC<LabelProps & MarginProps> = ({
   label,
   tooltip,
+  action,
   optional,
   custom,
-  ...rest
-}: LabelProps & MarginProps) => {
-  const options = mergeConfigWithCustom({ defaultConfig, custom });
-  const {
-    optional: optionalStyles,
-    tooltip: tooltipStyles,
-    ...labelStyles
-  } = options;
+  ...restProps
+}) => {
+  const styles = useMemo(() => stylesBuilder(custom), [custom]);
 
   return (
-    <tet.div {...labelStyles} {...rest} data-testid="label">
+    <tet.label {...styles.label} {...restProps} data-testid="label">
       {label}
       {!!optional && (
-        <tet.span {...optionalStyles} data-testid="label-optional">
+        <tet.span {...styles.optional} data-testid="label-optional">
           {optional}
         </tet.span>
       )}
       {/* TODO: add tooltip instead of bare icon, when we get one */}
       {tooltip && (
-        <tet.span {...tooltipStyles} data-testid="label-tooltip">
+        <tet.span {...styles.tooltip} data-testid="label-tooltip">
           <Icon name="16-info" />
         </tet.span>
       )}
-      {/* TODO: add action when we discuss how they should behave */}
-      {/* {!!action && (
+      {!!action && (
         <Button
           variant="bare"
+          appearance="primary"
           {...action}
-          marginLeft="auto"
+          {...styles.action}
           data-testid="label-action"
         />
-      )} */}
-    </tet.div>
+      )}
+    </tet.label>
   );
 };
