@@ -19,7 +19,7 @@ export const Counter: FC<CounterProps & MarginProps> = ({
   );
 
   return (
-    <tet.div {...styles.container} {...restProps} data-testid="counter">
+    <tet.div {...styles.container} data-testid="counter" {...restProps}>
       {number}
     </tet.div>
   );

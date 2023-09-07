@@ -18,6 +18,6 @@ export const StatusDot: FC<StatusDotProps & MarginProps> = ({
   );
 
   return (
-    <tet.div {...styles.container} {...restProps} data-testid="status-dot" />
+    <tet.div {...styles.container} data-testid="status-dot" {...restProps} />
   );
 };

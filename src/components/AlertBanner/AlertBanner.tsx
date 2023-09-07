@@ -26,7 +26,7 @@ export const AlertBanner: FC<AlertBannerProps & MarginProps> = ({
     : [action, undefined];
 
   return (
-    <tet.div {...styles.container} {...restProps} data-testid="alert-banner">
+    <tet.div {...styles.container} data-testid="alert-banner" {...restProps}>
       <tet.span
         {...styles.iconContainer}
         data-testid="alert-banner-iconContainer"

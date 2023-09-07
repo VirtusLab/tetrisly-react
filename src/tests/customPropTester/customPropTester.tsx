@@ -35,6 +35,17 @@ export const customPropTester = (
       expect(topLevelElement).toHaveStyle('border-top-color: rgb(255, 0, 0)');
     });
 
+    it('should be possible to set data-testid', () => {
+      const dataTestId = 'custom-data-test-id';
+      const { getByTestId } = render(
+        applyProps(Component, { 'data-testid': dataTestId }),
+      );
+
+      const container = getByTestId(dataTestId);
+
+      expect(container).toBeInTheDocument();
+    });
+
     Object.entries(innerElements).forEach(
       ([innerComponentName, innerComponentVariants]) => {
         describe(`InnerComponent - ${innerComponentName}`, () => {

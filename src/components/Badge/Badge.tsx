@@ -25,7 +25,7 @@ export const Badge: FC<BadgeProps & MarginProps> = ({
   );
 
   return (
-    <tet.div {...styles.container} {...restProps} data-testid="badge">
+    <tet.div {...styles.container} data-testid="badge" {...restProps}>
       {!!beforeIcon && (
         <tet.span {...styles.iconContainer}>
           <Icon name={beforeIcon} data-testid="badge-icon" />
