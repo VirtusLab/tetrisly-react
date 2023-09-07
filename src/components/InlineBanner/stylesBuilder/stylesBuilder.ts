@@ -1,9 +1,8 @@
-import { merge } from 'lodash';
-
 import type { InlineBannerProps } from '../InlineBanner.props';
 import { defaultConfig } from '../InlineBanner.styles';
 import type { InlineBannerIntent } from '../types';
 
+import { mergeConfigWithCustom } from '@/services';
 import type { BaseProps } from '@/types';
 
 type StylesBuilderParams = {
@@ -39,7 +38,7 @@ export const stylesBuilder = ({
     },
     spacing,
     ...restProps
-  } = merge(defaultConfig, custom);
+  } = mergeConfigWithCustom({ defaultConfig, custom });
 
   const { intent: intentTitleStyles, ...restTitleStyles } = title;
   const titleStyles = {

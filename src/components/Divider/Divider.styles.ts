@@ -8,7 +8,7 @@ export type DividerConfig = {
   orientation: Record<DividerOrientation, SystemProps>;
 } & BaseProps;
 
-export const config = {
+export const defaultConfig = {
   backgroundColor: 'border-default',
   orientation: {
     horizontal: {

@@ -1,11 +1,11 @@
 import { useSpace } from '@xstyled/styled-components';
-import { merge } from 'lodash';
 import { FC, PropsWithChildren } from 'react';
 
 import { AnchorWrapper, PopoverContent } from './AnchorWrapper.styled';
 import { PopoverProps } from './Popover.props';
-import { config as defaultConfig } from './Popover.styles';
+import { defaultConfig } from './Popover.styles';
 
+import { mergeConfigWithCustom } from '@/services';
 import { MarginProps } from '@/types';
 
 export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
@@ -23,7 +23,7 @@ export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
     origin: originStyles,
     innerElements: { content: contentStyles },
     ...containerStyles
-  } = merge(defaultConfig, custom);
+  } = mergeConfigWithCustom({ defaultConfig, custom });
 
   const allContentStyles = {
     ...originStyles[origin].align[align],

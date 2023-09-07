@@ -1,4 +1,5 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
+import { useMemo } from 'react';
 
 import { ButtonProps } from './Button.props';
 import { stylesBuilder } from './stylesBuilder/stylesBuilder';
@@ -25,13 +26,19 @@ export const Button = <
   beforeIcon,
   ...rest
 }: ButtonProps<TVariant, TAppearance> & MarginProps) => {
+  const styles = useMemo(
+    () => stylesBuilder({ variant, appearance, intent, size, custom }),
+    [variant, appearance, intent, size, custom],
+  );
+
   if (dropdown && afterIcon) {
     throw new Error('Button cannot have both dropdown indicator and afterIcon');
   }
+
   return (
     <tet.button
       data-testid="button"
-      {...stylesBuilder({ variant, appearance, intent, size, custom })}
+      {...styles}
       disabled={['disabled', 'loading'].includes(state ?? '')}
       data-state={state}
       style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}

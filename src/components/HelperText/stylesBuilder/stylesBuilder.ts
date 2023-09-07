@@ -1,9 +1,8 @@
-import { merge } from 'lodash';
-
 import { HelperTextProps } from '../HelperText.props';
 import { defaultConfig } from '../HelperText.styles';
 import { HelperTextIntent } from '../HelperTextIntent.type';
 
+import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
 
 type HelperTextStyleBuilder = {
@@ -19,7 +18,8 @@ export const stylesBuilder = (
     innerElements,
     intent: containerIntent,
     ...container
-  } = merge(defaultConfig, custom);
+  } = mergeConfigWithCustom({ defaultConfig, custom });
+
   const { iconContainer } = innerElements;
 
   return {

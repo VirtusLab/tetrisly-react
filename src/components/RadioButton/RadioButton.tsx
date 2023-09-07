@@ -1,11 +1,10 @@
-import { merge } from 'lodash';
 import { forwardRef, useId } from 'react';
 
 import { RadioButtonProps } from './RadioButton.props';
-import { config as defaultConfig } from './RadioButton.styles';
+import { defaultConfig } from './RadioButton.styles';
 import { HelperText } from '../HelperText';
 
-import { extractMarginProps } from '@/services';
+import { extractMarginProps, mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
@@ -26,7 +25,7 @@ export const RadioButton = forwardRef<HTMLInputElement, Props>(
         helperText: helperTextStyles,
       },
       ...restStyles
-    } = merge(defaultConfig, custom);
+    } = mergeConfigWithCustom({ defaultConfig, custom });
 
     const radioButtonId = useId();
 

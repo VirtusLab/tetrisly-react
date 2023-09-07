@@ -13,7 +13,7 @@ type OptionalConfig = {
   optional: SystemProps<Theme>;
 };
 
-export const config = {
+export const defaultConfig = {
   text: 'medium-175',
   color: 'content-primary',
   display: 'flex',

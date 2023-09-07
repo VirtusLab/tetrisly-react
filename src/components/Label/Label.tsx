@@ -1,10 +1,10 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { merge } from 'lodash';
 
 import { LabelProps } from './Label.props';
-import { config as defaultConfig } from './Label.styles';
+import { defaultConfig } from './Label.styles';
 // import { Button } from '../Button';
 
+import { mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
@@ -15,7 +15,7 @@ export const Label = ({
   custom,
   ...rest
 }: LabelProps & MarginProps) => {
-  const options = custom ? merge(defaultConfig, custom) : defaultConfig;
+  const options = mergeConfigWithCustom({ defaultConfig, custom });
   const {
     optional: optionalStyles,
     tooltip: tooltipStyles,

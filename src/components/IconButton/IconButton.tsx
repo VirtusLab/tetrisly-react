@@ -1,5 +1,6 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
 import { MarginProps } from '@xstyled/styled-components';
+import { useMemo } from 'react';
 
 import { IconButtonProps } from './IconButton.props';
 import { IconButtonAppearance } from './IconButtonAppearance.type';
@@ -23,14 +24,18 @@ export const IconButton = <
   custom = {},
   ...marginProps
 }: IconButtonProps<TVariant, TAppearance> & MarginProps) => {
-  const styles = styleBuilder({
-    intent,
-    variant: variant ?? 'default',
-    appearance: appearance ?? 'primary',
-    size,
-    dropdownIndicator,
-    custom,
-  });
+  const styles = useMemo(
+    () =>
+      styleBuilder({
+        intent,
+        variant: variant ?? 'default',
+        appearance: appearance ?? 'primary',
+        size,
+        dropdownIndicator,
+        custom,
+      }),
+    [intent, variant, appearance, size, dropdownIndicator, custom],
+  );
   return (
     <tet.button
       data-testid="button"

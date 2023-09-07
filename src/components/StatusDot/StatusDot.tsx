@@ -1,10 +1,9 @@
 import { MarginProps } from '@xstyled/styled-components';
-import { merge } from 'lodash';
 
 import { StatusDotProps } from './StatusDot.props';
-import { config as defaultConfig } from './StatusDot.styles';
+import { defaultConfig } from './StatusDot.styles';
 
-import { isKeyOf } from '@/services';
+import { isKeyOf, mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 
 export const StatusDot = ({
@@ -13,12 +12,11 @@ export const StatusDot = ({
   custom,
   ...rest
 }: StatusDotProps & MarginProps) => {
-  const options = custom ? merge(defaultConfig, custom) : defaultConfig;
   const {
     appearance: appearanceStyles,
     stroked: strokedStyles,
     ...restStyles
-  } = options;
+  } = mergeConfigWithCustom({ defaultConfig, custom });
 
   if (!isKeyOf(appearanceStyles, appearance)) {
     throw new Error(`${appearance} is not a valid appearance`);
