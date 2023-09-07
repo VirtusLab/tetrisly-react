@@ -5,7 +5,7 @@ export type StatusDotConfig = {
     appearance: Record<StatusDotAppearance, SystemProps>;
     stroked: SystemProps;
 } & BaseProps;
-export declare const config: {
+export declare const defaultConfig: {
     w: string;
     h: string;
     borderRadius: string;

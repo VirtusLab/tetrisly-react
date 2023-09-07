@@ -3,7 +3,7 @@ type StylesBuilderProps = Omit<Required<LoaderProps>, 'custom' | 'progress'> & {
     custom: LoaderProps['custom'];
     progress: LoaderProps['progress'];
 };
-export declare const stylesBuilder: (props: StylesBuilderProps) => {
+export declare const stylesBuilder: ({ custom, ...props }: StylesBuilderProps) => {
     svgStyles: {
         fill: "none";
         borderRadius: string;

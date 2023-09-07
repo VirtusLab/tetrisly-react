@@ -3,7 +3,7 @@ export type TextInputConfig = {
     innerComponents: Record<'input' | 'icon' | 'text' | 'clearButton', BaseProps>;
     spacing: Record<'beforeComponent', Record<'Icon' | 'Avatar' | 'Prefix' | 'Dropdown', BaseProps>> | Record<'afterComponent', Record<'Icon' | 'Sufix' | 'Button' | 'IconButton' | 'Dropdown', BaseProps>>;
 } & BaseProps;
-export declare const config: {
+export declare const defaultConfig: {
     display: "flex";
     alignItems: "center";
     h: string;

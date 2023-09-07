@@ -21,5 +21,5 @@ export type IconButtonConfig = {
         } & BaseProps;
     };
 } & BaseProps;
-export declare const iconButtonConfig: IconButtonConfig;
+export declare const defaultConfig: IconButtonConfig;
 export {};

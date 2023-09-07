@@ -19,5 +19,5 @@ type ToastStylesBuilder = {
     iconContainerStyles: BaseProps;
     middleDotStyles: BaseProps;
 };
-export declare const stylesBuilder: (props: StylesBuilderProps) => ToastStylesBuilder;
+export declare const stylesBuilder: ({ custom, ...props }: StylesBuilderProps) => ToastStylesBuilder;
 export {};

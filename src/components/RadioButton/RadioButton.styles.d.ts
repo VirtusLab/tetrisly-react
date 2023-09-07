@@ -7,7 +7,7 @@ export type RadioButtonConfig = {
         helperText: SystemProps;
     };
 } & BaseProps;
-export declare const config: {
+export declare const defaultConfig: {
     display: "flex";
     flexDirection: "column";
     alignItems: "flex-start";

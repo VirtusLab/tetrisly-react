@@ -4,7 +4,7 @@ export type RadioButtonGroupConfig = {
         radioButtonContainer: BaseProps;
     };
 } & BaseProps;
-export declare const config: {
+export declare const defaultConfig: {
     display: "flex";
     flexDirection: "column";
     gap: string;

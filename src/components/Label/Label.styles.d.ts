@@ -8,7 +8,7 @@ type TooltipConfig = {
 type OptionalConfig = {
     optional: SystemProps<Theme>;
 };
-export declare const config: {
+export declare const defaultConfig: {
     text: "medium-175";
     color: "content-primary";
     display: "flex";

@@ -8,7 +8,7 @@ export type PopoverConfig = {
         content?: BaseProps;
     };
 } & BaseProps;
-export declare const config: {
+export declare const defaultConfig: {
     position: "relative";
     display: "inline-flex";
     origin: {

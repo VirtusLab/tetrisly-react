@@ -5,7 +5,7 @@ export type CheckboxGroupConfig = {
         checkboxContainer: SystemProps;
     };
 } & BaseProps;
-export declare const config: {
+export declare const defaultConfig: {
     display: "flex";
     flexDirection: "column";
     gap: string;

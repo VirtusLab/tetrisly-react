@@ -19,7 +19,7 @@ export type ToastConfig = {
         closeButton: BaseProps;
     };
 } & BaseProps;
-export declare const config: {
+export declare const defaultConfig: {
     display: "inline-flex";
     alignItems: "center";
     p: string;

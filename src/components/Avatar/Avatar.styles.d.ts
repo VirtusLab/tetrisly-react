@@ -11,7 +11,7 @@ export type AvatarConfig = {
         emphasis: Record<Emphasis, BaseProps>;
     }>;
 } & BaseProps;
-export declare const config: {
+export declare const defaultConfig: {
     nestedImage: {
         w: string;
         h: string;

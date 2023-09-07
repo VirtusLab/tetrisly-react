@@ -4,7 +4,7 @@ import { BaseProps } from '../../types/BaseProps';
 export type DividerConfig = {
     orientation: Record<DividerOrientation, SystemProps>;
 } & BaseProps;
-export declare const config: {
+export declare const defaultConfig: {
     backgroundColor: "border-default";
     orientation: {
         horizontal: {
