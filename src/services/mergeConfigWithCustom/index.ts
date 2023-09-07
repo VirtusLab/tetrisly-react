@@ -1,0 +1,1 @@
+export { mergeConfigWithCustom } from './mergeConfigWithCutom';

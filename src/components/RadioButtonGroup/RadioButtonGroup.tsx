@@ -1,4 +1,3 @@
-import { merge } from 'lodash';
 import {
   Children,
   cloneElement,
@@ -12,11 +11,12 @@ import type {
   RadioButtonGroupProps,
   RadioButtonGroupItemProps,
 } from './RadioButtonGroup.props';
-import { config as defaultConfig } from './RadioButtonGroup.styles';
+import { defaultConfig } from './RadioButtonGroup.styles';
 import { HelperText } from '../HelperText';
 import { Label } from '../Label';
 import { RadioButton } from '../RadioButton';
 
+import { mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
@@ -36,7 +36,7 @@ export const RadioButtonGroup: Props = ({
   const {
     innerElements: { radioButtonContainer: radioButtonContainerStyles },
     ...restStyles
-  } = merge(defaultConfig, custom);
+  } = mergeConfigWithCustom({ defaultConfig, custom });
 
   const radioButtons = Children.map(children, (child) => {
     if (isValidElement(child) && child?.type !== RadioButtonGroup.Item) {

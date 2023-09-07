@@ -1,8 +1,7 @@
-import { merge } from 'lodash';
-
 import { DividerProps } from './Divider.props';
-import { config as defaultConfig } from './Divider.styles';
+import { defaultConfig } from './Divider.styles';
 
+import { mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
@@ -13,10 +12,9 @@ export const Divider = ({
   custom = {},
   ...restProps
 }: DividerProps & MarginProps) => {
-  const { orientation: orientationStyles, ...restStyles } = merge(
-    defaultConfig,
-    custom,
-  );
+  const { orientation: orientationStyles, ...restStyles } =
+    mergeConfigWithCustom({ defaultConfig, custom });
+
   return (
     <tet.hr
       {...restStyles}

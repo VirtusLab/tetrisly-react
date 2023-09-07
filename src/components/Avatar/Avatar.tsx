@@ -1,7 +1,6 @@
-import { FC, ImgHTMLAttributes } from 'react';
+import { FC, ImgHTMLAttributes, useMemo } from 'react';
 
 import { AvatarProps } from './Avatar.props';
-import { config } from './Avatar.styles';
 import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
@@ -16,11 +15,14 @@ export const Avatar: FC<AvatarProps> = ({
   initials,
   ...rest
 }) => {
-  const { nestedImage, ...styles } = stylesBuilder({
-    config,
-    custom,
-    variant: { appearance, emphasis, shape, size },
-  });
+  const { nestedImage, ...styles } = useMemo(
+    () =>
+      stylesBuilder({
+        custom,
+        variant: { appearance, emphasis, shape, size },
+      }),
+    [custom, appearance, emphasis, shape, size],
+  );
 
   const [img, marginProps] = extractImage(rest);
 

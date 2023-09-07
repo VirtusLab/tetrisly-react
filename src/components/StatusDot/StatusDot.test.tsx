@@ -10,7 +10,7 @@ const getStatusDot = (jsx: JSX.Element) => {
 
 describe('StatusDot', () => {
   it('should render the status dot', () => {
-    const statusDot = getStatusDot(<StatusDot appearance="red" />);
+    const statusDot = getStatusDot(<StatusDot />);
     expect(statusDot).toBeInTheDocument();
   });
 
@@ -30,9 +30,7 @@ describe('StatusDot', () => {
   });
 
   it('should render border', () => {
-    const statusDotStroked = getStatusDot(
-      <StatusDot appearance="green" stroked />,
-    );
+    const statusDotStroked = getStatusDot(<StatusDot stroked />);
     expect(statusDotStroked).toHaveStyle(
       'box-shadow: var(--x-ring-shadow,0 0 #0000),var(--x-shadow,0 0 #0000);',
     );

@@ -1,9 +1,8 @@
-import { merge } from 'lodash';
-
 import type { StatusDotProps } from '../StatusDot.props';
 import { defaultConfig } from '../StatusDot.styles';
 import { StatusDotAppearance } from '../types';
 
+import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
 
 type StylesBuilderParams = {
@@ -21,7 +20,7 @@ export const stylesBuilder = ({
   stroked,
   custom,
 }: StylesBuilderParams): StatusDotStylesBuilder => {
-  const config = merge(defaultConfig, custom);
+  const config = mergeConfigWithCustom({ defaultConfig, custom });
 
   const {
     appearance: appearanceStyles,

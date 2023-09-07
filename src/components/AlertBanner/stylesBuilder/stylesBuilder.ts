@@ -1,5 +1,3 @@
-import { merge } from 'lodash';
-
 import { AlertBannerProps } from '../AlertBanner.props';
 import { defaultConfig } from '../AlertBanner.styles';
 import { AlertBannerIntent } from '../types';
@@ -8,6 +6,7 @@ import { ButtonProps } from '@/components/Button';
 import { ButtonAppearance } from '@/components/Button/types/ButtonAppearance.type';
 import { IconButtonProps } from '@/components/IconButton/IconButton.props';
 import { IconButtonAppearance } from '@/components/IconButton/IconButtonAppearance.type';
+import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
 
 type AlertBannerStylesBuilder = {
@@ -27,7 +26,7 @@ export const stylesBuilder = (
     intent: intentStyles,
     innerElements: { iconContainer, actionContainer, closeButton },
     ...restStyles
-  } = merge(defaultConfig, custom);
+  } = mergeConfigWithCustom({ defaultConfig, custom });
 
   const actionProps = {
     appearance: (intent === 'warning'

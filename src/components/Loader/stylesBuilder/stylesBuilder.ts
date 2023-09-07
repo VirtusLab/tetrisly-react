@@ -1,7 +1,7 @@
-import { merge } from 'lodash';
-
 import { LoaderProps } from '../Loader.props';
-import { config as defaultConfig } from '../Loader.styles';
+import { defaultConfig } from '../Loader.styles';
+
+import { mergeConfigWithCustom } from '@/services';
 
 type StylesBuilderProps = Omit<Required<LoaderProps>, 'custom' | 'progress'> & {
   custom: LoaderProps['custom'];
@@ -50,10 +50,8 @@ function describeArc(
   return d;
 }
 
-export const stylesBuilder = (props: StylesBuilderProps) => {
-  const config = props.custom
-    ? merge(defaultConfig, props.custom)
-    : defaultConfig;
+export const stylesBuilder = ({ custom, ...props }: StylesBuilderProps) => {
+  const config = mergeConfigWithCustom({ defaultConfig, custom });
 
   const size = config.size[props.shape][props.size];
   const { w, h, ...restSizeStyles } = size;
