@@ -1,8 +1,8 @@
-import { BaseProps } from '@/types/BaseProps';
+import type { BaseProps } from '@/types/BaseProps';
 
 export type RadioButtonGroupConfig = {
-  innerElements: {
-    radioButtonContainer: BaseProps;
+  innerElements?: {
+    radioButtonContainer?: BaseProps;
   };
 } & BaseProps;
 

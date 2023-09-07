@@ -78,7 +78,7 @@ export const defaultConfig = {
       text: 'body-medium',
     },
     helperText: {
-      paddingLeft: 'component-padding-2xLarge',
+      pl: 'component-padding-2xLarge',
     },
   },
 } satisfies RadioButtonConfig;

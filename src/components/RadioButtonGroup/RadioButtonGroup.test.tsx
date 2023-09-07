@@ -1,11 +1,15 @@
 import { RadioButtonGroup } from './RadioButtonGroup';
 import { render } from '../../tests/render';
 
+import { customPropTester } from '@/tests/customPropTester';
+
 const getRadioButtonGroup = (jsx: JSX.Element) => {
   const { queryByTestId } = render(jsx);
   return {
     radioButtonGroup: queryByTestId('radio-button-group'),
-    radioButtonGroupContainer: queryByTestId('radio-button-group-container'),
+    radioButtonGroupContainer: queryByTestId(
+      'radio-button-group-radioButtonContainer',
+    ),
     helperText: queryByTestId('helper-text'),
   };
 };
@@ -100,17 +104,10 @@ describe('RadioButtonGroup', () => {
     ).toHaveAttribute('name', 'name');
   });
 
-  it('should propagate custom props', () => {
-    const { radioButtonGroup } = getRadioButtonGroup(
-      <RadioButtonGroup
-        column={1}
-        name="name"
-        custom={{ backgroundColor: 'background-negative-subtle' }}
-      />,
-    );
-
-    expect(radioButtonGroup).toHaveStyle(
-      'background-color: rgb(254, 245, 245)',
-    );
+  customPropTester(<RadioButtonGroup name="radiobuttongroup" />, {
+    containerId: 'radio-button-group',
+    innerElements: {
+      radioButtonContainer: [],
+    },
   });
 });
