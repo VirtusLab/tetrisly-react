@@ -41,7 +41,7 @@ export const CheckboxGroup: Props = ({
   });
 
   return (
-    <tet.div {...styles.container} {...restProps} data-testid="checkbox-group">
+    <tet.div {...styles.container} data-testid="checkbox-group" {...restProps}>
       {!!label &&
         (typeof label === 'string' ? (
           <Label

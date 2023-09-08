@@ -94,9 +94,9 @@ export const Checkbox = forwardRef<
     return (
       <tet.div
         {...styles.container}
-        {...marginProps}
         data-state={state}
         data-testid="checkbox"
+        {...marginProps}
       >
         {label ? (
           <tet.label
