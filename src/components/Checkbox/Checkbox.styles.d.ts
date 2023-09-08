@@ -1,12 +1,13 @@
 import { SystemProps } from '@xstyled/styled-components';
+import { HelperTextConfig } from '../HelperText/HelperText.styles';
 import { BaseProps } from '../../types/BaseProps';
 export type CheckboxConfig = {
-    innerComponents: {
-        checkbox: SystemProps;
-        checkboxContainer: SystemProps;
-        checkboxIcon: SystemProps;
-        label: SystemProps;
-        helperText: SystemProps;
+    innerElements?: {
+        input?: SystemProps;
+        checkboxContainer?: BaseProps;
+        checkboxIcon?: BaseProps;
+        label?: BaseProps;
+        helperText?: HelperTextConfig;
     };
 } & BaseProps;
 export declare const defaultConfig: {
@@ -23,12 +24,12 @@ export declare const defaultConfig: {
     pointerEvents: {
         disabled: "none";
     };
-    innerComponents: {
+    innerElements: {
         checkboxContainer: {
             position: "relative";
             cursor: "pointer";
         };
-        checkbox: {
+        input: {
             appearance: "none";
             display: "block";
             w: string;

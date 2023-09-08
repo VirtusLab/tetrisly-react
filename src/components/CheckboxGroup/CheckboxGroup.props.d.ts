@@ -8,7 +8,7 @@ export type CheckboxGroupItemProps = Omit<CheckboxProps, 'label' | 'helperText'>
 };
 export type CheckboxGroupProps = {
     column?: number;
-    label?: string | Pick<LabelProps, 'label' | 'tooltip' | 'optional'>;
-    helperText?: string | Pick<HelperTextProps, 'intent' | 'text' | 'beforeIcon' | 'counter'>;
+    label?: string | Omit<LabelProps, 'custom'>;
+    helperText?: string | Omit<HelperTextProps, 'custom'>;
     custom?: DeepPartial<CheckboxGroupConfig>;
 };
