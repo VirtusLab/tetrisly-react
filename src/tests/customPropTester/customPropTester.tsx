@@ -2,6 +2,7 @@ import { vi } from 'vitest';
 
 import { applyProps } from './applyProps';
 import { generateCustomProp } from './generateCustomProp';
+import { generateVariants } from './generateVariants';
 import { Options } from './options.type';
 import { render } from '../render';
 
@@ -14,8 +15,7 @@ export const customPropTester = (
   options: Options,
 ) => {
   const customProp = generateCustomProp(options);
-
-  const { innerElements = {}, props = {} } = options;
+  const componentVariants = generateVariants(options);
 
   describe('CustomPropTester', () => {
     afterEach(() => {
@@ -47,68 +47,32 @@ export const customPropTester = (
       expect(container).toBeInTheDocument();
     });
 
-    Object.entries(innerElements).forEach(
-      ([innerComponentName, innerComponentVariants]) => {
-        const componentName =
-          innerComponentName === '_' ? 'container' : innerComponentName;
-        const testId = `${options.containerId}${
-          innerComponentName === '_' ? '' : `-${innerComponentName}`
-        }`;
+    componentVariants.forEach(({ componentName, testId, variants }) => {
+      describe(`InnerComponent - ${componentName}`, () => {
+        it(`Top Level style`, () => {
+          const { queryByTestId } = render(
+            applyProps(Component, { custom: customProp }),
+          );
 
-        describe(`InnerComponent - ${componentName}`, () => {
-          it(`Top Level style`, () => {
+          const element = queryByTestId(testId);
+
+          expect(element).toHaveStyle('z-index: 1');
+        });
+
+        variants.forEach(({ name, expectedStyle, variantProps }) => {
+          it(`Variant ${name}`, () => {
             const { queryByTestId } = render(
-              applyProps(Component, { custom: customProp }),
+              applyProps(Component, {
+                custom: customProp,
+                ...variantProps,
+              }),
             );
-
             const element = queryByTestId(testId);
 
-            expect(element).toHaveStyle('border-left-color: rgb(0, 0, 0)');
-          });
-
-          innerComponentVariants.forEach((propsName) => {
-            if (typeof propsName === 'string') {
-              props[propsName].forEach((propsValue) => {
-                it(`Variant [${propsName} = ${propsValue}]`, () => {
-                  const { queryByTestId } = render(
-                    applyProps(Component, {
-                      custom: customProp,
-                      [propsName]: propsValue,
-                    }),
-                  );
-                  const element = queryByTestId(testId);
-
-                  expect(element).toHaveStyle(
-                    'border-left-color: rgb(0, 0, 0)',
-                  );
-                });
-              });
-            } else {
-              const propsName0 = propsName[0];
-              const propsName1 = propsName[1];
-
-              props[propsName0].forEach((propsValue0) => {
-                props[propsName1].forEach((propsValue1) => {
-                  it(`Variant [${propsName0} = ${propsValue0}][${propsName1} = ${propsValue1}]`, () => {
-                    const { queryByTestId } = render(
-                      applyProps(Component, {
-                        custom: customProp,
-                        [propsName0]: propsValue0,
-                        [propsName1]: propsValue1,
-                      }),
-                    );
-                    const element = queryByTestId(testId);
-
-                    expect(element).toHaveStyle(
-                      'border-right-color: rgb(128, 0, 128)',
-                    );
-                  });
-                });
-              });
-            }
+            expect(element).toHaveStyle(expectedStyle);
           });
         });
-      },
-    );
+      });
+    });
   });
 };

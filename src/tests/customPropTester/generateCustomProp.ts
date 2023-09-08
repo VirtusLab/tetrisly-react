@@ -54,7 +54,7 @@ export const generateCustomProp = ({
     return {
       ...acc0,
       [key0]: {
-        borderLeftColor: 'black',
+        zIndex: 1,
         ...variants,
       },
     };
