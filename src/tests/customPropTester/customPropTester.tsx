@@ -100,7 +100,7 @@ export const customPropTester = (
                     const element = queryByTestId(testId);
 
                     expect(element).toHaveStyle(
-                      'border-right-color: rgb(19, 19, 19)',
+                      'border-right-color: rgb(128, 0, 128)',
                     );
                   });
                 });
