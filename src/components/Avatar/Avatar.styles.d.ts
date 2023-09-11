@@ -1,21 +1,18 @@
-import { AvatarShape } from './AvatarShape.type';
-import { Appearance } from '../../types/Appearance';
-import { BaseProps } from '../../types/BaseProps';
+import type { AvatarAppearance, AvatarShape } from './types';
+import type { BaseProps } from '../../types/BaseProps';
 import { Emphasis } from '../../types/Emphasis';
 import { Size } from '../../types/Size';
 export type AvatarConfig = {
-    nestedImage: BaseProps;
-    shape: Record<AvatarShape, BaseProps>;
-    size: Record<Size, BaseProps>;
-    appearance: Record<Appearance | 'image', {
-        emphasis: Record<Emphasis, BaseProps>;
-    }>;
+    shape?: Partial<Record<AvatarShape, BaseProps>>;
+    size?: Partial<Record<Size, BaseProps>>;
+    appearance?: Partial<Record<AvatarAppearance, {
+        emphasis?: Partial<Record<Emphasis, BaseProps>>;
+    }>>;
+    innerElements?: {
+        image?: BaseProps;
+    };
 } & BaseProps;
 export declare const defaultConfig: {
-    nestedImage: {
-        w: string;
-        h: string;
-    };
     overflow: "hidden";
     position: "relative";
     display: "flex";
@@ -29,41 +26,49 @@ export declare const defaultConfig: {
             borderRadius: string;
         };
     };
-    size: Record<"small" | "medium" | "large" | "xSmall" | "2xSmall", BaseProps>;
+    size: {
+        large: {
+            w: string;
+            h: string;
+            text: "body-large";
+        };
+        medium: {
+            w: string;
+            h: string;
+            text: "body-medium";
+        };
+        small: {
+            w: string;
+            h: string;
+            text: "body-small";
+        };
+        xSmall: {
+            w: string;
+            h: string;
+            text: "body-strong-xSmall";
+        };
+        '2xSmall': {
+            w: string;
+            h: string;
+            text: "body-strong-xSmall";
+        };
+    };
     appearance: {
-        aquamarine: {
+        image: {
             emphasis: {
-                high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
-                };
-                low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
-                };
+                high: {};
+                low: {};
             };
         };
         blue: {
             emphasis: {
                 high: {
                     color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
+                    backgroundColor: "nonSemantic-blue-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
-                };
-            };
-        };
-        cyan: {
-            emphasis: {
-                high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
-                };
-                low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
+                    color: "nonSemantic-blue-content-primary";
+                    backgroundColor: "nonSemantic-blue-background-muted";
                 };
             };
         };
@@ -71,11 +76,11 @@ export declare const defaultConfig: {
             emphasis: {
                 high: {
                     color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
+                    backgroundColor: "nonSemantic-green-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
+                    color: "nonSemantic-green-content-primary";
+                    backgroundColor: "nonSemantic-green-background-muted";
                 };
             };
         };
@@ -83,47 +88,11 @@ export declare const defaultConfig: {
             emphasis: {
                 high: {
                     color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
+                    backgroundColor: "nonSemantic-grey-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
-                };
-            };
-        };
-        magenta: {
-            emphasis: {
-                high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
-                };
-                low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
-                };
-            };
-        };
-        orange: {
-            emphasis: {
-                high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
-                };
-                low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
-                };
-            };
-        };
-        purple: {
-            emphasis: {
-                high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
-                };
-                low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
+                    color: "nonSemantic-grey-content-primary";
+                    backgroundColor: "nonSemantic-grey-background-muted";
                 };
             };
         };
@@ -131,35 +100,23 @@ export declare const defaultConfig: {
             emphasis: {
                 high: {
                     color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
+                    backgroundColor: "nonSemantic-red-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
+                    color: "nonSemantic-red-content-primary";
+                    backgroundColor: "nonSemantic-red-background-muted";
                 };
             };
         };
-        teal: {
+        orange: {
             emphasis: {
                 high: {
                     color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
+                    backgroundColor: "nonSemantic-orange-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
-                };
-            };
-        };
-        violet: {
-            emphasis: {
-                high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
-                };
-                low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
+                    color: "nonSemantic-orange-content-primary";
+                    backgroundColor: "nonSemantic-orange-background-muted";
                 };
             };
         };
@@ -167,11 +124,35 @@ export declare const defaultConfig: {
             emphasis: {
                 high: {
                     color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
+                    backgroundColor: "nonSemantic-raspberry-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
+                    color: "nonSemantic-raspberry-content-primary";
+                    backgroundColor: "nonSemantic-raspberry-background-muted";
+                };
+            };
+        };
+        magenta: {
+            emphasis: {
+                high: {
+                    color: "nonSemantic-white-content-primary";
+                    backgroundColor: "nonSemantic-magenta-background-strong";
+                };
+                low: {
+                    color: "nonSemantic-magenta-content-primary";
+                    backgroundColor: "nonSemantic-magenta-background-muted";
+                };
+            };
+        };
+        purple: {
+            emphasis: {
+                high: {
+                    color: "nonSemantic-white-content-primary";
+                    backgroundColor: "nonSemantic-purple-background-strong";
+                };
+                low: {
+                    color: "nonSemantic-purple-content-primary";
+                    backgroundColor: "nonSemantic-purple-background-muted";
                 };
             };
         };
@@ -179,11 +160,59 @@ export declare const defaultConfig: {
             emphasis: {
                 high: {
                     color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
+                    backgroundColor: "nonSemantic-grape-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
+                    color: "nonSemantic-grape-content-primary";
+                    backgroundColor: "nonSemantic-grape-background-muted";
+                };
+            };
+        };
+        violet: {
+            emphasis: {
+                high: {
+                    color: "nonSemantic-white-content-primary";
+                    backgroundColor: "nonSemantic-violet-background-strong";
+                };
+                low: {
+                    color: "nonSemantic-violet-content-primary";
+                    backgroundColor: "nonSemantic-violet-background-muted";
+                };
+            };
+        };
+        cyan: {
+            emphasis: {
+                high: {
+                    color: "nonSemantic-white-content-primary";
+                    backgroundColor: "nonSemantic-cyan-background-strong";
+                };
+                low: {
+                    color: "nonSemantic-cyan-content-primary";
+                    backgroundColor: "nonSemantic-cyan-background-muted";
+                };
+            };
+        };
+        teal: {
+            emphasis: {
+                high: {
+                    color: "nonSemantic-white-content-primary";
+                    backgroundColor: "nonSemantic-teal-background-strong";
+                };
+                low: {
+                    color: "nonSemantic-teal-content-primary";
+                    backgroundColor: "nonSemantic-teal-background-muted";
+                };
+            };
+        };
+        aquamarine: {
+            emphasis: {
+                high: {
+                    color: "nonSemantic-white-content-primary";
+                    backgroundColor: "nonSemantic-aquamarine-background-strong";
+                };
+                low: {
+                    color: "nonSemantic-aquamarine-content-primary";
+                    backgroundColor: "nonSemantic-aquamarine-background-muted";
                 };
             };
         };
@@ -191,19 +220,19 @@ export declare const defaultConfig: {
             emphasis: {
                 high: {
                     color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong" | "nonSemantic-red-background-strong" | "nonSemantic-raspberry-background-strong" | "nonSemantic-magenta-background-strong" | "nonSemantic-purple-background-strong" | "nonSemantic-grape-background-strong" | "nonSemantic-violet-background-strong" | "nonSemantic-blue-background-strong" | "nonSemantic-cyan-background-strong" | "nonSemantic-teal-background-strong" | "nonSemantic-aquamarine-background-strong" | "nonSemantic-green-background-strong" | "nonSemantic-emerald-background-strong" | "nonSemantic-orange-background-strong";
+                    backgroundColor: "nonSemantic-emerald-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-grey-content-primary" | "nonSemantic-red-content-primary" | "nonSemantic-raspberry-content-primary" | "nonSemantic-magenta-content-primary" | "nonSemantic-purple-content-primary" | "nonSemantic-grape-content-primary" | "nonSemantic-violet-content-primary" | "nonSemantic-blue-content-primary" | "nonSemantic-cyan-content-primary" | "nonSemantic-teal-content-primary" | "nonSemantic-aquamarine-content-primary" | "nonSemantic-green-content-primary" | "nonSemantic-emerald-content-primary" | "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted" | "nonSemantic-red-background-muted" | "nonSemantic-raspberry-background-muted" | "nonSemantic-magenta-background-muted" | "nonSemantic-purple-background-muted" | "nonSemantic-grape-background-muted" | "nonSemantic-violet-background-muted" | "nonSemantic-blue-background-muted" | "nonSemantic-cyan-background-muted" | "nonSemantic-teal-background-muted" | "nonSemantic-aquamarine-background-muted" | "nonSemantic-green-background-muted" | "nonSemantic-emerald-background-muted" | "nonSemantic-orange-background-muted";
+                    color: "nonSemantic-emerald-content-primary";
+                    backgroundColor: "nonSemantic-emerald-background-muted";
                 };
             };
         };
+    };
+    innerElements: {
         image: {
-            emphasis: {
-                high: {};
-                low: {};
-            };
+            w: string;
+            h: string;
         };
     };
 };

@@ -1,3 +1,4 @@
 import { FC } from 'react';
-import { AvatarProps } from './Avatar.props';
-export declare const Avatar: FC<AvatarProps>;
+import type { AvatarProps } from './Avatar.props';
+import type { MarginProps } from '../../types/MarginProps';
+export declare const Avatar: FC<AvatarProps & MarginProps>;
