@@ -20,7 +20,7 @@ export const HelperText: FC<HelperTextProps & MarginProps> = ({
   const name = resolveIconName(intent);
 
   return (
-    <tet.div {...styles.container} {...restProps} data-testid="helper-text">
+    <tet.div {...styles.container} data-testid="helper-text" {...restProps}>
       {beforeIcon && (
         <tet.span
           {...styles.iconContainer}

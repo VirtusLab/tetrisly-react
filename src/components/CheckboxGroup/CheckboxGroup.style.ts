@@ -1,10 +1,15 @@
 import { SystemProps } from '@xstyled/styled-components';
 
+import { HelperTextConfig } from '../HelperText/HelperText.styles';
+import { LabelConfig } from '../Label/Label.styles';
+
 import { BaseProps } from '@/types/BaseProps';
 
 export type CheckboxGroupConfig = {
-  innerElements: {
-    checkboxContainer: SystemProps;
+  innerElements?: {
+    checkboxContainer?: SystemProps;
+    label?: LabelConfig;
+    helperText?: HelperTextConfig;
   };
 } & BaseProps;
 
@@ -17,5 +22,7 @@ export const defaultConfig = {
       display: 'grid',
       gap: 'component-gap-small component-gap-large',
     },
+    label: {},
+    helperText: {},
   },
 } satisfies CheckboxGroupConfig;

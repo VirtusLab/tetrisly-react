@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StatusDot } from './StatusDot';
 
 const meta = {
-  title: 'Components/Status Dot',
+  title: 'Components/StatusDot',
   component: StatusDot,
   tags: ['autodocs'],
 } satisfies Meta<typeof StatusDot>;

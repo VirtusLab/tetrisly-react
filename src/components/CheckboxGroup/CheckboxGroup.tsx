@@ -1,15 +1,20 @@
-import { Children, FC, isValidElement, PropsWithChildren } from 'react';
+import {
+  Children,
+  FC,
+  isValidElement,
+  PropsWithChildren,
+  useMemo,
+} from 'react';
 
 import type {
   CheckboxGroupProps,
   CheckboxGroupItemProps,
 } from './CheckboxGroup.props';
-import { defaultConfig } from './CheckboxGroup.style';
+import { stylesBuilder } from './stylesBuilder';
 import { Checkbox } from '../Checkbox';
 import { HelperText } from '../HelperText';
 import { Label } from '../Label';
 
-import { mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
@@ -25,10 +30,7 @@ export const CheckboxGroup: Props = ({
   custom,
   ...restProps
 }) => {
-  const {
-    innerElements: { checkboxContainer: checkboxContainerStyles },
-    ...restStyles
-  } = mergeConfigWithCustom({ defaultConfig, custom });
+  const styles = useMemo(() => stylesBuilder(custom), [custom]);
 
   Children.map(children, (child) => {
     if (isValidElement(child) && child?.type !== CheckboxGroup.Item) {
@@ -39,15 +41,23 @@ export const CheckboxGroup: Props = ({
   });
 
   return (
-    <tet.div {...restStyles} {...restProps} data-testid="checkbox-group">
+    <tet.div {...styles.container} data-testid="checkbox-group" {...restProps}>
       {!!label &&
         (typeof label === 'string' ? (
-          <Label label={label} />
+          <Label
+            label={label}
+            custom={styles.label}
+            data-testid="checkbox-group-label"
+          />
         ) : (
-          <Label {...label} />
+          <Label
+            {...label}
+            custom={styles.label}
+            data-testid="checkbox-group-label"
+          />
         ))}
       <tet.div
-        {...checkboxContainerStyles}
+        {...styles.checkboxContainer}
         gridTemplateColumns={`repeat(${column}, 1fr)`}
         data-testid="checkbox-group-container"
       >
@@ -55,14 +65,20 @@ export const CheckboxGroup: Props = ({
       </tet.div>
       {!!helperText &&
         (typeof helperText === 'string' ? (
-          <HelperText text={helperText} />
+          <HelperText
+            text={helperText}
+            custom={styles.helperText}
+            data-testid="checkbox-group-helperText"
+          />
         ) : (
-          <HelperText {...helperText} />
+          <HelperText
+            {...helperText}
+            custom={styles.helperText}
+            data-testid="checkbox-group-helperText"
+          />
         ))}
     </tet.div>
   );
 };
 
-const Item: FC<CheckboxGroupItemProps> = (props) => <Checkbox {...props} />;
-
-CheckboxGroup.Item = Item;
+CheckboxGroup.Item = Checkbox as FC<CheckboxGroupItemProps>;

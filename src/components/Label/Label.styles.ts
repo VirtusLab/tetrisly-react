@@ -6,11 +6,11 @@ import { BaseProps } from '@/types/BaseProps';
 export type LabelConfig = BaseProps & TooltipConfig & OptionalConfig;
 
 type TooltipConfig = {
-  tooltip: SystemProps<Theme>;
+  tooltip?: SystemProps<Theme>;
 };
 
 type OptionalConfig = {
-  optional: SystemProps<Theme>;
+  optional?: SystemProps<Theme>;
 };
 
 export const defaultConfig = {
