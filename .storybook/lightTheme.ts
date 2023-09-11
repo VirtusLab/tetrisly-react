@@ -1,5 +1,7 @@
 import { create } from '@storybook/theming/create';
 
+const REPOSITORY_NAME = process?.env?.REPOSITORY_NAME;
+
 export default create({
   base: 'light',
   colorPrimary: '#272E35',
@@ -10,7 +12,7 @@ export default create({
 
   // Branding
   brandTitle: 'Tetrisly - React Components',
-  brandImage: '/logo.svg',
+  brandImage: `${REPOSITORY_NAME ? '/' + REPOSITORY_NAME : ''}/logo.svg`,
 
   // UI
   appBg: '#ffffff',
