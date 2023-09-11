@@ -30,7 +30,7 @@ export const InlineBanner: FC<InlineBannerProps & MarginProps> = ({
   const iconName = useMemo(() => resolveIconName(intent), [intent]);
 
   return (
-    <tet.div {...styles.container} {...restProps} data-testid="inline-banner">
+    <tet.div {...styles.container} data-testid="inline-banner" {...restProps}>
       <tet.span
         {...styles.iconContainer}
         data-testid="inline-banner-iconContainer"

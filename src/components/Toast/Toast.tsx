@@ -46,7 +46,7 @@ export const Toast: FC<Props> = ({
   const iconName = useMemo(() => resolveIconName(intent), [intent]);
 
   return (
-    <tet.div {...containerStyles} {...restProps} data-testid="toast">
+    <tet.div {...containerStyles} data-testid="toast" {...restProps}>
       {!!iconName && (
         <tet.span {...iconContainerStyles}>
           <Icon name={iconName} />

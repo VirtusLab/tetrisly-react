@@ -20,7 +20,7 @@ const meta = {
         onClick: action('onClick'),
       },
     ],
-    onCloseClick: () => {},
+    onCloseClick: action('onCloseClick'),
   },
 } satisfies Meta<typeof InlineBanner>;
 
