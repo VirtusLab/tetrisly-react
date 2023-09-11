@@ -1,12 +1,13 @@
-import { LabelConfig } from './Label.styles';
-// import { ButtonProps } from '../Button';
+import type { LabelHTMLAttributes } from 'react';
 
-import { DeepPartial } from '@/utility-types/DeepPartial';
+import type { LabelConfig } from './Label.styles';
+
+import type { Action } from '@/types';
 
 export type LabelProps = {
   label: string;
-  // action?: ButtonProps<'bare'>;
+  action?: Action;
   tooltip?: boolean;
   optional?: string;
-  custom?: DeepPartial<LabelConfig>;
-};
+  custom?: LabelConfig;
+} & Omit<LabelHTMLAttributes<HTMLLabelElement>, 'color'>;
