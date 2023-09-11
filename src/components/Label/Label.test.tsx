@@ -1,12 +1,15 @@
 import { Label } from './Label';
 import { render } from '../../tests/render';
 
+import { customPropTester } from '@/tests/customPropTester';
+
 const getLabel = (jsx: JSX.Element) => {
   const { queryByTestId } = render(jsx);
 
   return {
     label: queryByTestId('label'),
     optional: queryByTestId('label-optional'),
+    action: queryByTestId('label-action'),
     tooltip: queryByTestId('label-tooltip'),
   };
 };
@@ -44,6 +47,18 @@ describe('Label', () => {
     expect(tooltip).toBeNull();
   });
 
+  it('should render action if a prop passed', () => {
+    const { action } = getLabel(
+      <Label label="Hello there" action={{ label: 'Action' }} />,
+    );
+    expect(action).toBeInTheDocument();
+  });
+
+  it('should not render action if a prop not passed', () => {
+    const { action } = getLabel(<Label label="Hello there" />);
+    expect(action).toBeNull();
+  });
+
   it('should render correct colors', () => {
     const { label, optional, tooltip } = getLabel(
       <Label label="Hello there" optional="optional" tooltip />,
@@ -52,4 +67,21 @@ describe('Label', () => {
     expect(optional).toHaveStyle('color: rgb(126, 126, 126);');
     expect(tooltip).toHaveStyle('color: rgb(85, 85, 85)');
   });
+
+  customPropTester(
+    <Label
+      label="Hello there"
+      optional="optional"
+      tooltip
+      action={{ label: 'Action' }}
+    />,
+    {
+      containerId: 'label',
+      innerElements: {
+        optional: [],
+        tooltip: [],
+        action: [],
+      },
+    },
+  );
 });

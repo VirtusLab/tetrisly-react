@@ -28,9 +28,20 @@ export const Tooltip: Story = {
   },
 };
 
+export const Action: Story = {
+  args: {
+    action: {
+      label: 'Action',
+    },
+  },
+};
+
 export const All: Story = {
   args: {
     optional: '(optional)',
     tooltip: true,
+    action: {
+      label: 'Action',
+    },
   },
 };
