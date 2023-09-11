@@ -10,7 +10,7 @@ const getRadioButtonGroup = (jsx: JSX.Element) => {
     radioButtonGroupContainer: queryByTestId(
       'radio-button-group-radioButtonContainer',
     ),
-    helperText: queryByTestId('helper-text'),
+    helperText: queryByTestId('radio-button-group-helperText'),
   };
 };
 
@@ -104,10 +104,19 @@ describe('RadioButtonGroup', () => {
     ).toHaveAttribute('name', 'name');
   });
 
-  customPropTester(<RadioButtonGroup name="radiobuttongroup" />, {
-    containerId: 'radio-button-group',
-    innerElements: {
-      radioButtonContainer: [],
+  customPropTester(
+    <RadioButtonGroup
+      name="radiobuttongroup"
+      label="label"
+      helperText="helper text"
+    />,
+    {
+      containerId: 'radio-button-group',
+      innerElements: {
+        radioButtonContainer: [],
+        label: [],
+        helperText: [],
+      },
     },
-  });
+  );
 });

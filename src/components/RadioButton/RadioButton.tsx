@@ -8,15 +8,15 @@ import { extractMarginProps } from '@/services';
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types';
 
-type Props = RadioButtonProps & MarginProps;
-
-export const RadioButton = forwardRef<HTMLInputElement, Props>(
+export const RadioButton = forwardRef<
+  HTMLInputElement,
+  RadioButtonProps & MarginProps
+>(
   (
     { isChecked, state, label, helperText, custom, ...restProps },
     radioButtonRef,
   ) => {
-    const [marginProps, radioButtonProps] =
-      extractMarginProps<Props>(restProps);
+    const [marginProps, radioButtonProps] = extractMarginProps(restProps);
 
     const styles = useMemo(() => stylesBuilder(custom), [custom]);
 
@@ -31,17 +31,17 @@ export const RadioButton = forwardRef<HTMLInputElement, Props>(
         disabled={state === 'disabled'}
         data-state={state}
         {...styles.radioButton}
-        {...radioButtonProps}
         data-testid="radio-button-radioButton"
+        {...radioButtonProps}
       />
     );
 
     return (
       <tet.div
         {...styles.container}
-        {...marginProps}
         data-state={state}
         data-testid="radio-button"
+        {...marginProps}
       >
         {label ? (
           <tet.label

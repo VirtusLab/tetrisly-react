@@ -52,14 +52,22 @@ export const RadioButtonGroup: Props = ({
   return (
     <tet.div
       {...styles.container}
-      {...restProps}
       data-testid="radio-button-group"
+      {...restProps}
     >
       {!!label &&
         (typeof label === 'string' ? (
-          <Label label={label} />
+          <Label
+            label={label}
+            custom={styles.label}
+            data-testid="radio-button-group-label"
+          />
         ) : (
-          <Label {...label} />
+          <Label
+            {...label}
+            custom={styles.label}
+            data-testid="radio-button-group-label"
+          />
         ))}
       <tet.div
         {...styles.radioButtonContainer}
@@ -70,9 +78,17 @@ export const RadioButtonGroup: Props = ({
       </tet.div>
       {!!helperText &&
         (typeof helperText === 'string' ? (
-          <HelperText text={helperText} />
+          <HelperText
+            text={helperText}
+            custom={styles.helperText}
+            data-testid="radio-button-group-helperText"
+          />
         ) : (
-          <HelperText {...helperText} />
+          <HelperText
+            {...helperText}
+            custom={styles.helperText}
+            data-testid="radio-button-group-helperText"
+          />
         ))}
     </tet.div>
   );

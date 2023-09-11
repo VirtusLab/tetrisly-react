@@ -100,10 +100,6 @@ describe('Radio button', () => {
 
   customPropTester(<RadioButton label="label" helperText="helpertext" />, {
     containerId: 'radio-button',
-    props: {
-      align: ['center', 'start', 'end'],
-      origin: ['bottom', 'top', 'left', 'right'],
-    },
     innerElements: {
       radioButton: [],
       label: [],
