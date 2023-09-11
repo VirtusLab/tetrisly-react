@@ -12,17 +12,6 @@ const getPopover = (jsx: JSX.Element) => {
 };
 
 describe('Popover', () => {
-  customPropTester(<Popover content="Popover" />, {
-    containerId: 'popover',
-    props: {
-      align: ['center', 'start', 'end'],
-      origin: ['bottom', 'top', 'left', 'right'],
-    },
-    innerElements: {
-      content: [],
-    },
-  });
-
   it('should render the popover', () => {
     const { popover } = getPopover(<Popover content="Popover" />);
     expect(popover).toBeInTheDocument();
@@ -148,5 +137,16 @@ describe('Popover', () => {
       <Popover content="Popover" origin="right" offset="component-gap-large" />,
     );
     expect(content).toHaveStyle('right: -16px');
+  });
+
+  customPropTester(<Popover content="Popover" />, {
+    containerId: 'popover',
+    props: {
+      align: ['center', 'start', 'end'],
+      origin: ['bottom', 'top', 'left', 'right'],
+    },
+    innerElements: {
+      content: [],
+    },
   });
 });
