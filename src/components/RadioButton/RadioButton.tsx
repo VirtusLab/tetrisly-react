@@ -4,7 +4,7 @@ import type { RadioButtonProps } from './RadioButton.props';
 import { stylesBuilder } from './stylesBuilder';
 import { HelperText } from '../HelperText';
 
-import { extractMarginProps } from '@/services';
+import { extractInputProps } from '@/services';
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types';
 
@@ -16,7 +16,7 @@ export const RadioButton = forwardRef<
     { isChecked, state, label, helperText, custom, ...restProps },
     radioButtonRef,
   ) => {
-    const [marginProps, radioButtonProps] = extractMarginProps(restProps);
+    const [radioButtonProps, containerProps] = extractInputProps(restProps);
 
     const styles = useMemo(() => stylesBuilder(custom), [custom]);
 
@@ -41,7 +41,7 @@ export const RadioButton = forwardRef<
         {...styles.container}
         data-state={state}
         data-testid="radio-button"
-        {...marginProps}
+        {...containerProps}
       >
         {label ? (
           <tet.label
