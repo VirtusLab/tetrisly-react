@@ -1,21 +1,21 @@
 import { SystemProp } from '@xstyled/styled-components';
+import type { Property } from 'csstype';
 
-import { DividerConfig } from './Divider.styles';
+import type { DividerConfig } from './Divider.styles';
 
-import { Theme } from '@/theme';
-import { DeepPartial } from '@/utility-types/DeepPartial';
+import type { Theme } from '@/theme';
 
 export type DividerProps = (
   | {
       orientation: 'vertical';
       width?: never;
-      height?: SystemProp<string | number | object | (string & object), Theme>;
+      height?: SystemProp<Property.Height<number>, Theme>;
     }
   | {
       orientation?: 'horizontal';
-      width?: SystemProp<string | number | object | (string & object), Theme>;
+      width?: SystemProp<Property.Width<number>, Theme>;
       height?: never;
     }
 ) & {
-  custom?: DeepPartial<DividerConfig>;
+  custom?: DividerConfig;
 };
