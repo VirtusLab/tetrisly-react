@@ -1,3 +1,4 @@
-import { LabelProps } from './Label.props';
+import { FC } from 'react';
+import type { LabelProps } from './Label.props';
 import { MarginProps } from '../../types/MarginProps';
-export declare const Label: ({ label, tooltip, optional, custom, ...rest }: LabelProps & MarginProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Label: FC<LabelProps & MarginProps>;
