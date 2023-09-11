@@ -25,9 +25,9 @@ describe('TextInput', () => {
     expect(textInput).toBeInTheDocument();
   });
 
-  it('should emit onChange', () => {
+  it('should emit onChange and not change value', () => {
     const { input } = getTextInput(
-      <TextInput value="" onChange={handleEventMock} />,
+      <TextInput value="Value" onChange={handleEventMock} />,
     );
 
     if (input) {
@@ -35,6 +35,18 @@ describe('TextInput', () => {
     }
 
     expect(handleEventMock).toHaveBeenCalled();
+    expect(input.value).toBe('Value');
+  });
+
+  it('should emit onChange and change value', () => {
+    const { input } = getTextInput(<TextInput onChange={handleEventMock} />);
+
+    if (input) {
+      fireEvent.change(input, { target: { value: 'Value' } });
+    }
+
+    expect(handleEventMock).toHaveBeenCalled();
+    expect(input.value).toBe('Value');
   });
 
   it('should emit onBlur', () => {

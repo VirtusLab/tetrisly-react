@@ -19,7 +19,7 @@ export const InlineMessage: FC<InlineMessageProps & MarginProps> = ({
   const name = resolveIconName(intent);
 
   return (
-    <tet.div {...styles.container} {...restProps} data-testid="inline-message">
+    <tet.div {...styles.container} data-testid="inline-message" {...restProps}>
       <tet.span
         {...styles.iconContainer}
         data-testid="inline-message-iconContainer"

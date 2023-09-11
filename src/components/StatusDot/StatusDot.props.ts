@@ -1,10 +1,8 @@
-import { StatusDotConfig } from './StatusDot.styles';
-import { StatusDotAppearance } from './StatusDotAppearance.type';
-
-import { DeepPartial } from '@/utility-types/DeepPartial';
+import type { StatusDotConfig } from './StatusDot.styles';
+import type { StatusDotAppearance } from './types';
 
 export type StatusDotProps = {
-  appearance: StatusDotAppearance;
+  appearance?: StatusDotAppearance;
   stroked?: boolean;
-  custom?: DeepPartial<StatusDotConfig>;
+  custom?: StatusDotConfig;
 };

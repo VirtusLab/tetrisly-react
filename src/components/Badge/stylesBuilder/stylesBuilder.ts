@@ -29,8 +29,8 @@ export const stylesBuilder = (
   } = mergeConfigWithCustom({ defaultConfig, custom });
 
   const containerStyles = appearance
-    ? containerAppearance[appearance][emphasis]
-    : containerIntent[intent][emphasis];
+    ? containerAppearance[appearance].emphasis[emphasis]
+    : containerIntent[intent].emphasis[emphasis];
 
   return {
     container: {
