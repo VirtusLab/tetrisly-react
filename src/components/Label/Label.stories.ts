@@ -40,5 +40,8 @@ export const All: Story = {
   args: {
     optional: '(optional)',
     tooltip: true,
+    action: {
+      label: 'Action',
+    },
   },
 };

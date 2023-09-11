@@ -1,27 +1,22 @@
-import { DividerProps } from './Divider.props';
-import { defaultConfig } from './Divider.styles';
+import { FC, useMemo } from 'react';
 
-import { mergeConfigWithCustom } from '@/services';
+import type { DividerProps } from './Divider.props';
+import { stylesBuilder } from './stylesBuilder';
+
 import { tet } from '@/tetrisly';
-import { MarginProps } from '@/types/MarginProps';
+import type { MarginProps } from '@/types';
 
-export const Divider = ({
+export const Divider: FC<DividerProps & MarginProps> = ({
   orientation = 'horizontal',
   width,
   height,
   custom = {},
   ...restProps
-}: DividerProps & MarginProps) => {
-  const { orientation: orientationStyles, ...restStyles } =
-    mergeConfigWithCustom({ defaultConfig, custom });
-
-  return (
-    <tet.hr
-      {...restStyles}
-      {...restProps}
-      w={width ?? orientationStyles[orientation].w}
-      h={height ?? orientationStyles[orientation].h}
-      data-testid="divider"
-    />
+}) => {
+  const styles = useMemo(
+    () => stylesBuilder({ orientation, width, height, custom }),
+    [orientation, width, height, custom],
   );
+
+  return <tet.hr {...styles.container} data-testid="divider" {...restProps} />;
 };

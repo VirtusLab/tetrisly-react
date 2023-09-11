@@ -19,7 +19,7 @@ export const Label: FC<LabelProps & MarginProps> = ({
   const styles = useMemo(() => stylesBuilder(custom), [custom]);
 
   return (
-    <tet.label {...styles.label} {...restProps} data-testid="label">
+    <tet.label {...styles.label} data-testid="label" {...restProps}>
       {label}
       {!!optional && (
         <tet.span {...styles.optional} data-testid="label-optional">
