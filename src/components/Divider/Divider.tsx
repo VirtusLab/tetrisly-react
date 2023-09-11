@@ -18,5 +18,5 @@ export const Divider: FC<DividerProps & MarginProps> = ({
     [orientation, width, height, custom],
   );
 
-  return <tet.hr {...styles.container} {...restProps} data-testid="divider" />;
+  return <tet.hr {...styles.container} data-testid="divider" {...restProps} />;
 };
