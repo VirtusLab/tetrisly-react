@@ -19,11 +19,10 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
   core: {},
-  async viteFinal(config, { configType }) {
+  async viteFinal(config) {
     if (!config.plugins) {
       config.plugins = [];
     }
-
     config.plugins.push(tsconfigPaths.default());
 
     return config;
