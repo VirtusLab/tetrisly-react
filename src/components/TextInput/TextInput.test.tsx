@@ -3,6 +3,8 @@ import { vi } from 'vitest';
 import { TextInput } from './TextInput';
 import { fireEvent, render } from '../../tests/render';
 
+import { customPropTester } from '@/tests/customPropTester';
+
 const handleEventMock = vi.fn();
 
 const getTextInput = (jsx: JSX.Element) => {
@@ -18,6 +20,10 @@ const getTextInput = (jsx: JSX.Element) => {
 describe('TextInput', () => {
   beforeEach(() => {
     handleEventMock.mockClear();
+  });
+
+  customPropTester(<TextInput />, {
+    containerId: 'text-input',
   });
 
   it('should render the text input', () => {

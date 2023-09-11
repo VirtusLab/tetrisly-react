@@ -7,14 +7,14 @@ import {
   ChangeEventHandler,
   MouseEventHandler,
   ChangeEvent,
+  useMemo,
 } from 'react';
 
+import { stylesBuilder } from './stylesBuilder';
 import { TextInputProps } from './TextInput.props';
-import { defaultConfig } from './TextInput.style';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 
-import { mergeConfigWithCustom } from '@/services';
 import { extractMarginProps } from '@/services/extractMarginProps';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
@@ -38,20 +38,13 @@ export const TextInput = forwardRef<
     inputRef,
   ) => {
     const [innerValue, setInnerValue] = useState('');
+    const styles = useMemo(
+      () => stylesBuilder(custom, beforeComponent?.type, afterComponent?.type),
+      [afterComponent?.type, beforeComponent?.type, custom],
+    );
     const [marginProps, inputProps] = extractMarginProps<
       TextInputProps & MarginProps
     >(rest);
-
-    const {
-      innerComponents: {
-        input: inputStyles,
-        icon: iconStyles,
-        text: textStyles,
-        clearButton: clearButtonStyles,
-      },
-      spacing,
-      ...defaultStyles
-    } = mergeConfigWithCustom({ defaultConfig, custom });
 
     const containerRef = useRef<HTMLInputElement | null>(null);
 
@@ -84,25 +77,25 @@ export const TextInput = forwardRef<
       <tet.div
         ref={containerRef}
         onClick={handleContainerClick}
-        {...defaultStyles}
+        {...styles.container}
         pl={!!beforeComponent && '0'}
         pr={!!afterComponent && '0'}
-        {...marginProps}
-        data-state={state}
         data-testid="text-input"
+        data-state={state}
+        {...marginProps}
       >
         {!!beforeComponent && (
           <tet.span
-            {...spacing.beforeComponent[beforeComponent.type]}
+            {...styles.beforeComponent}
             data-testid="text-input-before-component"
           >
             {beforeComponent.type === 'Icon' && (
-              <tet.span {...iconStyles}>
+              <tet.span {...styles.icon}>
                 <Icon {...beforeComponent.props} />
               </tet.span>
             )}
             {beforeComponent.type === 'Prefix' && (
-              <tet.span {...textStyles}>{beforeComponent.props.text}</tet.span>
+              <tet.span {...styles.text}>{beforeComponent.props.text}</tet.span>
             )}
             {beforeComponent.type === 'Dropdown' && (
               <Button
@@ -115,31 +108,31 @@ export const TextInput = forwardRef<
           </tet.span>
         )}
         <tet.input
-          {...inputStyles}
+          {...styles.input}
           value={value || innerValue}
           onChange={handleOnChange}
+          data-testid="text-input-input"
           {...inputProps}
           type={type}
           disabled={state === 'disabled'}
           ref={inputRef}
-          data-testid="text-input-input"
         />
         {!!hasClearButton && (value || innerValue) && (
           <IconButton
             variant="bare"
             icon="20-close"
             onClick={handleOnClear}
-            {...clearButtonStyles}
+            {...styles.clearButton}
             data-testid="text-input-clear-button"
           />
         )}
         {!!afterComponent && (
           <tet.span
-            {...spacing.afterComponent[afterComponent.type]}
+            {...styles.afterComponent}
             data-testid="text-input-after-component"
           >
             {afterComponent.type === 'Icon' && (
-              <tet.span {...iconStyles}>
+              <tet.span {...styles.icon}>
                 <Icon {...afterComponent.props} />
               </tet.span>
             )}
@@ -151,7 +144,7 @@ export const TextInput = forwardRef<
               />
             )}
             {afterComponent.type === 'Sufix' && (
-              <tet.span {...textStyles}>{afterComponent.props.text}</tet.span>
+              <tet.span {...styles.text}>{afterComponent.props.text}</tet.span>
             )}
             {afterComponent.type === 'Button' && (
               <Button size="small" variant="ghost" label="Label" />

@@ -1,19 +1,25 @@
 import { BaseProps } from '@/types/BaseProps';
 
 export type TextInputConfig = {
-  innerComponents: Record<'input' | 'icon' | 'text' | 'clearButton', BaseProps>;
-  spacing:
-    | Record<
-        'beforeComponent',
+  innerElements?: {
+    input?: BaseProps;
+    icon?: BaseProps;
+    text?: BaseProps;
+    clearButton?: BaseProps;
+    beforeComponent?: {
+      spacing?: Partial<
         Record<'Icon' | 'Avatar' | 'Prefix' | 'Dropdown', BaseProps>
-      >
-    | Record<
-        'afterComponent',
+      >;
+    } & BaseProps;
+    afterComponent?: {
+      spacing?: Partial<
         Record<
           'Icon' | 'Sufix' | 'Button' | 'IconButton' | 'Dropdown',
           BaseProps
         >
       >;
+    } & BaseProps;
+  };
 } & BaseProps;
 
 export const defaultConfig = {
@@ -51,7 +57,7 @@ export const defaultConfig = {
   pointerEvents: {
     disabled: 'none',
   },
-  innerComponents: {
+  innerElements: {
     input: {
       w: '100%',
       h: '100%',
@@ -72,44 +78,46 @@ export const defaultConfig = {
     clearButton: {
       marginLeft: 'component-gap-small',
     },
-  },
-  spacing: {
     beforeComponent: {
-      Icon: {
-        marginLeft: 'component-padding-medium',
-        marginRight: 'component-padding-small',
-      },
-      Avatar: {
-        margin: '0 component-padding-small',
-      },
-      Prefix: {
-        margin: '0 component-padding-large',
-      },
-      Dropdown: {
-        marginLeft: 'component-padding-xSmall',
-        marginRight: 'component-padding-small',
+      spacing: {
+        Icon: {
+          marginLeft: 'component-padding-medium',
+          marginRight: 'component-padding-small',
+        },
+        Avatar: {
+          margin: '0 component-padding-small',
+        },
+        Prefix: {
+          margin: '0 component-padding-large',
+        },
+        Dropdown: {
+          marginLeft: 'component-padding-xSmall',
+          marginRight: 'component-padding-small',
+        },
       },
     },
     afterComponent: {
-      Icon: {
-        marginLeft: 'component-padding-small',
-        marginRight: 'component-padding-large',
-      },
-      Sufix: {
-        marginLeft: 'component-padding-small',
-        marginRight: 'component-padding-large',
-      },
-      Button: {
-        marginLeft: 'component-padding-small',
-        marginRight: 'component-padding-xSmall',
-      },
-      IconButton: {
-        marginLeft: 'component-padding-small',
-        marginRight: 'component-padding-xSmall',
-      },
-      Dropdown: {
-        marginLeft: 'component-padding-small',
-        marginRight: 'component-padding-xSmall',
+      spacing: {
+        Icon: {
+          marginLeft: 'component-padding-small',
+          marginRight: 'component-padding-large',
+        },
+        Sufix: {
+          marginLeft: 'component-padding-small',
+          marginRight: 'component-padding-large',
+        },
+        Button: {
+          marginLeft: 'component-padding-small',
+          marginRight: 'component-padding-xSmall',
+        },
+        IconButton: {
+          marginLeft: 'component-padding-small',
+          marginRight: 'component-padding-xSmall',
+        },
+        Dropdown: {
+          marginLeft: 'component-padding-small',
+          marginRight: 'component-padding-xSmall',
+        },
       },
     },
   },

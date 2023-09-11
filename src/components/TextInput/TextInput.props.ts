@@ -8,7 +8,6 @@ import { IconButtonProps } from '../IconButton/IconButton.props';
 
 import type { BasicInputState } from '@/types';
 import { InnerComponent } from '@/types/InnerComponent';
-import { DeepPartial } from '@/utility-types/DeepPartial';
 
 export namespace TextInputProps.InnerComponents {
   export type Icon = InnerComponent<'Icon', IconProps>;
@@ -42,7 +41,7 @@ export type TextInputProps = {
     | TextInputProps.InnerComponents.Dropdown;
   state?: BasicInputState;
   hasClearButton?: boolean;
-  custom?: DeepPartial<TextInputConfig>;
+  custom?: TextInputConfig;
 } & Omit<
   InputHTMLAttributes<HTMLInputElement>,
   'checked' | 'disabled' | 'color' | 'type'
