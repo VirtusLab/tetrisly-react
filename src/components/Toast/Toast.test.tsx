@@ -24,10 +24,11 @@ describe('Toast', () => {
       containerId: 'toast',
       props: {
         emphasis: ['low', 'high'],
-        intent: ['neutral', 'informative', 'success', 'warning', 'negative'],
+        intent: ['informative', 'success', 'warning', 'negative'],
       },
       innerElements: {
-        iconContainer: [],
+        _: ['intent', 'emphasis'],
+        iconContainer: [['intent', 'emphasis']],
         actionContainer: [],
         middleDot: ['emphasis'],
         closeButton: [],
