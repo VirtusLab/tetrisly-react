@@ -1,8 +1,7 @@
 import { LoaderProps } from '../Loader.props';
-import { defaultConfig } from '../Loader.styles';
+import { defaultConfig, SVGProps } from '../Loader.styles';
 
 import { mergeConfigWithCustom } from '@/services';
-import { BaseProps } from '@/types/BaseProps';
 
 type StylesBuilderProps = Omit<Required<LoaderProps>, 'custom' | 'progress'> & {
   custom: LoaderProps['custom'];
@@ -10,9 +9,9 @@ type StylesBuilderProps = Omit<Required<LoaderProps>, 'custom' | 'progress'> & {
 };
 
 type LoaderStylesBuilder = {
-  container: BaseProps;
-  base: BaseProps;
-  progress: BaseProps;
+  container: SVGProps;
+  base: SVGProps;
+  progress: SVGProps;
 };
 
 const ANIMATED_PROGRESS_VALUE = 0.4;

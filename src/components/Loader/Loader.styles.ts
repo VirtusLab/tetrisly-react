@@ -1,11 +1,38 @@
-import { SvgProperties } from 'csstype';
+import { ThemeColor } from '@xstyled/styled-components';
+import type { Property } from 'csstype';
 
 import type { LoaderAppearance, LoaderShape, LoaderSize } from './types';
 
+import { Theme } from '@/theme';
 import { BaseProps } from '@/types/BaseProps';
 
-export type SVGProps = BaseProps &
-  Pick<SvgProperties, 'strokeWidth' | 'strokeLinecap'>;
+export type SVGProps = Omit<
+  BaseProps,
+  | 'opacity'
+  | 'display'
+  | 'order'
+  | 'cursor'
+  | 'pointerEvents'
+  | 'overflow'
+  | 'visibility'
+  | 'fill'
+  | 'transform'
+  | 'rotate'
+  | 'scale'
+  | 'stroke'
+  | 'fontFamily'
+  | 'fontSize'
+  | 'fontStyle'
+  | 'fontStyle'
+  | 'fontVariant'
+  | 'fontWeight'
+  | 'letterSpacing'
+  | 'textDecoration'
+> & {
+  fill?: ThemeColor<Theme> | Property.Fill;
+  strokeWidth?: Property.StrokeWidth<string | number>;
+  strokeLinecap?: 'inherit' | 'round' | 'butt' | 'square';
+};
 
 export type LoaderConfig = {
   shape?: Partial<
