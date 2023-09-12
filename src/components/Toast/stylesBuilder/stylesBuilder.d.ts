@@ -1,4 +1,3 @@
-import { IconProps } from '@virtuslab/tetrisly-icons';
 import { ToastProps } from '../Toast.props';
 import { ButtonAppearance } from '../../../components/Button/types/ButtonAppearance.type';
 import { IconButtonProps } from '../../../components/IconButton/IconButton.props';
@@ -15,7 +14,6 @@ type ToastStylesBuilder = {
     closeButtonProps: Partial<IconButtonProps<'ghost'>>;
     closeButtonStyles: BaseProps;
     containerStyles: BaseProps;
-    iconProps: Partial<IconProps>;
     iconContainerStyles: BaseProps;
     middleDotStyles: BaseProps;
 };

@@ -45,7 +45,7 @@ export declare const defaultConfig: {
             ml: string;
         };
         closeButton: {
-            marginLeft: string;
+            ml: string;
         };
     };
 };

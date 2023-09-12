@@ -2,6 +2,7 @@ import type { ToastIntent } from './types';
 import { ButtonProps } from '../Button';
 import { BaseProps } from '../../types/BaseProps';
 import { Emphasis } from '../../types/Emphasis';
+import { IconName } from '../../utility-types/IconName';
 export type ToastConfig = {
     emphasis: Record<Emphasis, BaseProps>;
     intent: Record<ToastIntent, BaseProps>;
@@ -139,3 +140,4 @@ export declare const defaultConfig: {
         };
     };
 };
+export declare const resolveIconName: (intent: ToastIntent) => IconName<20> | null;
