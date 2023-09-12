@@ -47,13 +47,11 @@ export const stylesBuilder = (
     clearButton,
     beforeComponent: {
       ...beforeComponentStyles,
-      ...(beforeComponentType
-        ? beforeComponentSpacing[beforeComponentType]
-        : {}),
+      ...(beforeComponentType && beforeComponentSpacing[beforeComponentType]),
     },
     afterComponent: {
       ...afterComponentStyles,
-      ...(afterComponentType ? afterComponentSpacing[afterComponentType] : {}),
+      ...(afterComponentType && afterComponentSpacing[afterComponentType]),
     },
   };
 };
