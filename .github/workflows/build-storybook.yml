@@ -11,6 +11,8 @@ jobs:
   deploy:
     name: Deploy Storybook to GitHub Pages
     runs-on: ubuntu-latest
+    env:
+      STORYBOOK_HOST: ${{ vars.STORYBOOK_HOST }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
