@@ -1,8 +1,5 @@
-import { IconProps } from '@virtuslab/tetrisly-icons';
-
 import { ToastProps } from '../Toast.props';
 import { defaultConfig } from '../Toast.styles';
-import { ToastIntent } from '../types';
 
 import { ButtonAppearance } from '@/components/Button/types/ButtonAppearance.type';
 import { IconButtonProps } from '@/components/IconButton/IconButton.props';
@@ -23,7 +20,6 @@ type ToastStylesBuilder = {
   closeButtonProps: Partial<IconButtonProps<'ghost'>>;
   closeButtonStyles: BaseProps;
   containerStyles: BaseProps;
-  iconProps: Partial<IconProps>;
   iconContainerStyles: BaseProps;
   middleDotStyles: BaseProps;
 };
@@ -65,28 +61,6 @@ export const stylesBuilder = ({
     appearance: buttonAppearance as ButtonAppearance<'bare'>,
   };
 
-  const icon: { intent: Record<ToastIntent, Partial<IconProps>> } = {
-    intent: {
-      neutral: {},
-      informative: {
-        name: '20-info-fill',
-      },
-      success: {
-        name: '20-check-circle-fill',
-      },
-      warning: {
-        name: '20-warning-fill',
-      },
-      negative: {
-        name: '20-alert-fill',
-      },
-    },
-  };
-
-  const iconProps: Partial<IconProps> = {
-    ...icon.intent[props.intent],
-  };
-
   const { intent: intentIconContainerStyles, ...restIconContainerStyles } =
     iconContainer;
 
@@ -105,7 +79,6 @@ export const stylesBuilder = ({
     closeButtonProps,
     closeButtonStyles,
     containerStyles,
-    iconProps,
     iconContainerStyles,
     middleDotStyles,
   };

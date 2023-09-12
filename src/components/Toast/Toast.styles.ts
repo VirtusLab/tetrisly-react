@@ -3,6 +3,7 @@ import { ButtonProps } from '../Button';
 
 import { BaseProps } from '@/types/BaseProps';
 import { Emphasis } from '@/types/Emphasis';
+import { IconName } from '@/utility-types/IconName';
 
 export type ToastConfig = {
   emphasis: Record<Emphasis, BaseProps>;
@@ -135,3 +136,15 @@ export const defaultConfig = {
     },
   },
 } satisfies ToastConfig;
+
+export const resolveIconName = (intent: ToastIntent): IconName<20> | null => {
+  const iconConfig: Record<ToastIntent, IconName<20> | null> = {
+    neutral: null,
+    informative: '20-info-fill',
+    success: '20-check-circle-fill',
+    warning: '20-warning-fill',
+    negative: '20-alert-fill',
+  };
+
+  return iconConfig[intent];
+};

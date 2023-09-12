@@ -3,9 +3,11 @@ import { FC, useMemo } from 'react';
 
 import { stylesBuilder } from './stylesBuilder';
 import { ToastProps } from './Toast.props';
+import { resolveIconName } from './Toast.styles';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 
+import { useAction } from '@/hooks';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
@@ -26,7 +28,6 @@ export const Toast: FC<Props> = ({
     closeButtonProps,
     closeButtonStyles,
     containerStyles,
-    iconProps,
     iconContainerStyles,
     middleDotStyles,
   } = useMemo(
@@ -40,15 +41,15 @@ export const Toast: FC<Props> = ({
     [custom, emphasis, intent, onCloseClick],
   );
 
-  const [firstAction, secondAction] = Array.isArray(action)
-    ? action
-    : [action, undefined];
+  const [firstAction, secondAction] = useAction(action);
+
+  const iconName = useMemo(() => resolveIconName(intent), [intent]);
 
   return (
-    <tet.div {...containerStyles} {...restProps} data-testid="toast">
-      {!!iconProps.name && (
+    <tet.div {...containerStyles} data-testid="toast" {...restProps}>
+      {!!iconName && (
         <tet.span {...iconContainerStyles}>
-          <Icon {...iconProps} name={iconProps.name} />
+          <Icon name={iconName} />
         </tet.span>
       )}
       {text}
