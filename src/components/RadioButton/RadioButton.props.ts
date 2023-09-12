@@ -1,6 +1,6 @@
-import { InputHTMLAttributes } from 'react';
+import type { InputHTMLAttributes } from 'react';
 
-import { RadioButtonConfig } from './RadioButton.styles';
+import type { RadioButtonConfig } from './RadioButton.styles';
 
 export type RadioButtonProps = {
   isChecked?: boolean;
@@ -11,6 +11,6 @@ export type RadioButtonProps = {
   'checked' | 'disabled' | 'color' | 'type'
 > &
   (
-    | { label?: string; helperText?: undefined }
+    | { label?: string; helperText?: never }
     | { label: string; helperText?: string }
   );

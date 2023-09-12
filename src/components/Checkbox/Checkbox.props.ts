@@ -1,6 +1,6 @@
-import { InputHTMLAttributes } from 'react';
+import type { InputHTMLAttributes } from 'react';
 
-import { CheckboxConfig } from './Checkbox.styles';
+import type { CheckboxConfig } from './Checkbox.styles';
 
 export type CheckboxProps = {
   isChecked?: boolean;
@@ -12,6 +12,6 @@ export type CheckboxProps = {
   'checked' | 'disabled' | 'color' | 'type'
 > &
   (
-    | { label?: string; helperText?: undefined }
+    | { label?: string; helperText?: never }
     | { label: string; helperText?: string }
   );

@@ -56,16 +56,13 @@ export const RadioButton = forwardRef<
           input
         )}
         {!!helperText && (
-          <tet.span
-            {...styles.helperText}
+          <HelperText
+            custom={styles.helperText}
+            intent={state === 'alert' ? 'alert' : 'none'}
+            beforeIcon={state === 'alert'}
+            text={helperText}
             data-testid="radio-button-helperText"
-          >
-            <HelperText
-              intent={state === 'alert' ? 'alert' : 'none'}
-              beforeIcon={state === 'alert'}
-              text={helperText}
-            />
-          </tet.span>
+          />
         )}
       </tet.div>
     );

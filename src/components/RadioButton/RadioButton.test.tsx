@@ -13,7 +13,7 @@ const getRadioButton = (jsx: JSX.Element) => {
   return {
     radioButton: queryByTestId('radio-button'),
     label: queryByTestId('radio-button-label'),
-    helperText: queryByTestId('helper-text'),
+    helperText: queryByTestId('radio-button-helperText'),
   };
 };
 

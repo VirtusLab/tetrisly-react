@@ -1,12 +1,14 @@
-import { SystemProps } from '@xstyled/styled-components';
+import type { SystemProps } from '@xstyled/styled-components';
 
-import { BaseProps } from '@/types/BaseProps';
+import type { HelperTextConfig } from '../HelperText/HelperText.styles';
+
+import type { BaseProps } from '@/types/BaseProps';
 
 export type RadioButtonConfig = {
   innerElements?: {
     radioButton?: SystemProps;
-    label?: SystemProps;
-    helperText?: SystemProps;
+    label?: BaseProps;
+    helperText?: HelperTextConfig;
   };
 } & BaseProps;
 
