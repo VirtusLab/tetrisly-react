@@ -1,100 +1,103 @@
-import { SystemProps } from '@xstyled/styled-components';
 import { SvgProperties } from 'csstype';
 
 import type { LoaderAppearance, LoaderShape, LoaderSize } from './types';
 
 import { BaseProps } from '@/types/BaseProps';
 
+export type SVGProps = BaseProps &
+  Pick<SvgProperties, 'strokeWidth' | 'strokeLinecap'>;
+
 export type LoaderConfig = {
-  size: Record<
-    LoaderShape,
-    Record<LoaderSize, SystemProps & Pick<SvgProperties, 'strokeWidth'>>
+  shape?: Partial<
+    Record<LoaderShape, { size?: Partial<Record<LoaderSize, SVGProps>> }>
   >;
-  appearance: Record<
-    LoaderAppearance,
-    Record<'base' | 'progress', SystemProps>
-  >;
-  svg: SystemProps;
-  progress: SystemProps & Pick<SvgProperties, 'strokeLinecap'>;
+  innerElements?: {
+    base?: {
+      appearance?: Partial<Record<LoaderAppearance, BaseProps>>;
+    } & SVGProps;
+    progress?: {
+      appearance?: Partial<Record<LoaderAppearance, BaseProps>>;
+    } & SVGProps;
+  };
 } & BaseProps;
 
 export const defaultConfig = {
-  size: {
+  fill: 'none',
+  borderRadius: 'large',
+  shape: {
     circle: {
-      large: {
-        w: 48,
-        h: 48,
-        strokeWidth: '2',
-      },
-      medium: {
-        w: 32,
-        h: 32,
-        strokeWidth: '2',
-      },
-      small: {
-        w: 20,
-        h: 20,
-        strokeWidth: '2',
+      size: {
+        large: {
+          w: 48,
+          h: 48,
+          strokeWidth: '2',
+        },
+        medium: {
+          w: 32,
+          h: 32,
+          strokeWidth: '2',
+        },
+        small: {
+          w: 20,
+          h: 20,
+          strokeWidth: '2',
+        },
       },
     },
     bar: {
-      large: {
-        w: 128,
-        h: 8,
-        strokeWidth: '8',
-      },
-      medium: {
-        w: 128,
-        h: 6,
-        strokeWidth: '6',
-      },
-      small: {
-        w: 128,
-        h: 4,
-        strokeWidth: '4',
-      },
-    },
-  },
-  appearance: {
-    primary: {
-      base: {
-        stroke: 'interaction-neutral-subtle-normal',
-      },
-      progress: {
-        stroke: 'interaction-default-normal',
-      },
-    },
-    inverted: {
-      base: {
-        stroke: 'interaction-inverted-normal',
-      },
-      progress: {
-        stroke: 'interaction-default-normal',
-      },
-    },
-    white: {
-      base: {
-        stroke: 'interaction-inverted-normal',
-        opacity: 0.4,
-      },
-      progress: {
-        stroke: 'interaction-inverted-normal',
-      },
-    },
-    greyscale: {
-      base: {
-        stroke: 'interaction-neutral-subtle-normal',
-      },
-      progress: {
-        stroke: 'interaction-neutral-normal',
+      size: {
+        large: {
+          w: 128,
+          h: 8,
+          strokeWidth: '8',
+        },
+        medium: {
+          w: 128,
+          h: 6,
+          strokeWidth: '6',
+        },
+        small: {
+          w: 128,
+          h: 4,
+          strokeWidth: '4',
+        },
       },
     },
   },
-  svg: {
-    fill: 'none',
-    borderRadius: 'large',
-  },
-  progress: {
-    strokeLinecap: 'round',
+  innerElements: {
+    base: {
+      appearance: {
+        primary: {
+          stroke: 'interaction-neutral-subtle-normal',
+        },
+        inverted: {
+          stroke: 'interaction-inverted-normal',
+        },
+        white: {
+          stroke: 'interaction-inverted-normal',
+          opacity: 0.4,
+        },
+        greyscale: {
+          stroke: 'interaction-neutral-subtle-normal',
+        },
+      },
+    },
+    progress: {
+      strokeLinecap: 'round',
+      appearance: {
+        primary: {
+          stroke: 'interaction-default-normal',
+        },
+        inverted: {
+          stroke: 'interaction-default-normal',
+        },
+        white: {
+          stroke: 'interaction-inverted-normal',
+        },
+        greyscale: {
+          stroke: 'interaction-neutral-normal',
+        },
+      },
+    },
   },
 } satisfies LoaderConfig;
