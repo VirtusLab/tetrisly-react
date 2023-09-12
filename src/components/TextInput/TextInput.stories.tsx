@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TextInput } from './TextInput';
 
 const meta = {
-  title: 'Components/Text Input',
+  title: 'Components/TextInput',
   component: TextInput,
   tags: ['autodocs'],
   args: {

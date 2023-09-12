@@ -13,7 +13,7 @@ export const defaultConfig: SearchInputProps['custom'] = {
   ringColor: {
     _: 'unset',
   },
-  innerComponents: {
+  innerElements: {
     input: {
       w: 'unset',
       h: 'unset',
@@ -22,11 +22,11 @@ export const defaultConfig: SearchInputProps['custom'] = {
       padding: 'unset',
       display: 'inline-block',
     },
-  },
-  spacing: {
     beforeComponent: {
-      Icon: {
-        marginLeft: 'component-padding-small',
+      spacing: {
+        Icon: {
+          marginLeft: 'component-padding-small',
+        },
       },
     },
   },

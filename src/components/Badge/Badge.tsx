@@ -20,7 +20,7 @@ export const Badge: FC<BadgeProps & MarginProps> = ({
 }) => {
   const hasLabel = !!label;
   const styles = useMemo(
-    () => stylesBuilder(custom, intent, emphasis, hasLabel, appearance),
+    () => stylesBuilder(intent, emphasis, custom, hasLabel, appearance),
     [custom, intent, emphasis, hasLabel, appearance],
   );
 

@@ -1,5 +1,4 @@
-import { BadgeProps } from '../Badge.props';
-import { defaultConfig } from '../Badge.styles';
+import { BadgeConfig, defaultConfig } from '../Badge.styles';
 import { BadgeAppearance } from '../BadgeAppearance.type';
 import { BadgeEmphasis } from '../BadgeEmphasis.type';
 import { BadgeIntent } from '../BadgeIntent.type';
@@ -14,9 +13,9 @@ type BadgeStylesBuilder = {
 };
 
 export const stylesBuilder = (
-  custom: BadgeProps['custom'],
   intent: BadgeIntent,
   emphasis: BadgeEmphasis,
+  custom?: BadgeConfig,
   hasLabel?: boolean,
   appearance?: BadgeAppearance,
 ): BadgeStylesBuilder => {
