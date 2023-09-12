@@ -1,7 +1,96 @@
-import { ButtonVariant } from './types/ButtonType.type';
-import { VariantConfig } from './VariantConfig';
-
 import { BaseProps } from '@/types/BaseProps';
+
+export type DefaultButtonConfig = {
+  appearance?: {
+    primary?: {
+      intent?: {
+        none?: BaseProps;
+        success?: BaseProps;
+        destructive?: BaseProps;
+      };
+    } & BaseProps;
+    secondary?: {
+      intent?: {
+        none?: BaseProps;
+        success?: BaseProps;
+        destructive?: BaseProps;
+      };
+    } & BaseProps;
+    inverted?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+  };
+  size?: {
+    small?: BaseProps;
+    medium?: BaseProps;
+    large?: BaseProps;
+  };
+} & BaseProps;
+
+export type GhostButtonConfig = {
+  appearance?: {
+    primary?: {
+      intent?: {
+        none?: BaseProps;
+        success?: BaseProps;
+        destructive?: BaseProps;
+      };
+    } & BaseProps;
+    secondary?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+    inverted?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+    reverseInverted?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+  };
+  size?: {
+    small?: BaseProps;
+    medium?: BaseProps;
+    large?: BaseProps;
+  };
+} & BaseProps;
+
+export type BareButtonConfig = {
+  appearance?: {
+    primary?: {
+      intent?: {
+        none?: BaseProps;
+        success?: BaseProps;
+        destructive?: BaseProps;
+      };
+    } & BaseProps;
+    secondary?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+    inverted?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+    reverseInverted?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+  };
+  size?: {
+    medium?: BaseProps;
+    large?: BaseProps;
+  };
+} & BaseProps;
 
 const size = {
   small: {
@@ -48,9 +137,9 @@ const commonConfig = {
   },
   transition: true,
   transitionDuration: 200,
-} as const satisfies BaseProps;
+} satisfies BaseProps;
 
-const defaultConfig = {
+const defaultButtonConfig = {
   ...commonConfig,
   boxShadow: 'bottom-100',
   appearance: {
@@ -144,9 +233,9 @@ const defaultConfig = {
     },
   },
   size,
-} as const satisfies VariantConfig<'default'>;
+} satisfies DefaultButtonConfig;
 
-const ghostConfig = {
+const ghostButtonConfig = {
   ...commonConfig,
   backgroundColor: {
     _: 'transparent',
@@ -227,9 +316,9 @@ const ghostConfig = {
     },
   },
   size,
-} as const satisfies VariantConfig<'ghost'>;
+} satisfies GhostButtonConfig;
 
-const bareConfig = {
+const bareButtonConfig = {
   ...commonConfig,
   p: 0,
   backgroundColor: 'transparent',
@@ -305,10 +394,16 @@ const bareConfig = {
     medium: { text: 'body-medium' },
     large: { text: 'body-large' },
   },
-} as const satisfies VariantConfig<'bare'>;
+} satisfies BareButtonConfig;
 
-export const config = {
-  default: defaultConfig,
-  ghost: ghostConfig,
-  bare: bareConfig,
-} as const satisfies Record<ButtonVariant, unknown>;
+export type ButtonConfig = {
+  default?: DefaultButtonConfig;
+  ghost?: GhostButtonConfig;
+  bare?: BareButtonConfig;
+};
+
+export const defaultConfig = {
+  default: defaultButtonConfig,
+  ghost: ghostButtonConfig,
+  bare: bareButtonConfig,
+} satisfies ButtonConfig;

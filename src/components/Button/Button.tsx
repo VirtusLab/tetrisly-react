@@ -1,31 +1,27 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { useMemo } from 'react';
+import { FC, useMemo } from 'react';
 
 import { ButtonProps } from './Button.props';
-import { stylesBuilder } from './stylesBuilder/stylesBuilder';
-import { ButtonAppearance } from './types/ButtonAppearance.type';
-import { ButtonVariant } from './types/ButtonType.type';
+import { stylesBuilder } from './stylesBuilder';
 import { tet } from '../../tetrisly';
 import { Loader } from '../Loader';
 
 import type { MarginProps } from '@/types';
 
-export const Button = <
-  TVariant extends ButtonVariant = 'default',
-  TAppearance extends ButtonAppearance<TVariant> = ButtonAppearance<TVariant>,
->({
-  label,
-  variant,
-  appearance,
-  intent,
+export const Button: FC<ButtonProps & MarginProps> = ({
+  variant = 'default',
+  appearance = 'secondary',
+  intent = 'none',
+  size = 'medium',
+  label = 'Click me',
+  children = label,
   state,
-  size,
   custom,
   dropdownIndicator: dropdown,
   afterIcon,
   beforeIcon,
   ...rest
-}: ButtonProps<TVariant, TAppearance> & MarginProps) => {
+}) => {
   const styles = useMemo(
     () => stylesBuilder({ variant, appearance, intent, size, custom }),
     [variant, appearance, intent, size, custom],
@@ -38,7 +34,7 @@ export const Button = <
   return (
     <tet.button
       data-testid="button"
-      {...styles}
+      {...styles.container}
       disabled={['disabled', 'loading'].includes(state ?? '')}
       data-state={state}
       style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
@@ -52,7 +48,7 @@ export const Button = <
         />
       )}
       {beforeIcon && state !== 'loading' && <Icon name={beforeIcon} />}
-      {label}
+      {children}
       {dropdown && <Icon name="20-chevron-down" />}
       {afterIcon && <Icon name={afterIcon} />}
     </tet.button>

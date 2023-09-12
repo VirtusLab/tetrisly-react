@@ -1,48 +1,74 @@
-import { SystemProps } from '@xstyled/styled-components';
+import { ButtonProps } from '../Button.props';
+import { defaultConfig } from '../Button.styles';
 
-import { applyDefaults } from './applyDefaults';
-import { StylesBuilderProps } from './stylesBuilder.props';
-import { config as defaultConfig } from '../Button.styles';
-import { ButtonAppearance } from '../types/ButtonAppearance.type';
-import { ButtonVariant } from '../types/ButtonType.type';
-import { VariantConfig } from '../VariantConfig';
+import { fallbackKey, mergeConfigWithCustom } from '@/services';
+import { BaseProps } from '@/types/BaseProps';
 
-import { isKeyOf, mergeConfigWithCustom } from '@/services';
-import { Theme } from '@/theme';
+type ButtonStylesBulderInput = {
+  appearance: NonNullable<ButtonProps['appearance']>;
+  variant: NonNullable<ButtonProps['variant']>;
+  intent: NonNullable<ButtonProps['intent']>;
+  size: NonNullable<ButtonProps['size']>;
+  custom?: ButtonProps['custom'];
+};
 
-export const stylesBuilder = <
-  TVariant extends ButtonVariant,
-  TAppearance extends ButtonAppearance<TVariant>,
->(
-  props: StylesBuilderProps<TVariant, TAppearance>,
-): SystemProps<Theme> => {
-  const options = applyDefaults(props);
-  const config = mergeConfigWithCustom({ defaultConfig, custom: props.custom });
-  const { appearance, size, ...rest } = config[
-    options.variant
-  ] as VariantConfig<TVariant>;
+type ButtonStylesBuilder = {
+  container: BaseProps;
+};
 
-  if (!isKeyOf(appearance, options.appearance))
-    throw new Error(
-      `${options.appearance} is not a valid appearance for ${options.variant}`,
-    );
-  const { intent: intentConfig, ...appearanceProps } =
-    appearance[options.appearance];
+export const stylesBuilder = (
+  props: ButtonStylesBulderInput,
+): ButtonStylesBuilder => {
+  const variants = mergeConfigWithCustom({
+    defaultConfig,
+    custom: props.custom,
+  });
+  const { appearance, size, ...container } = variants[props.variant];
 
-  if (!isKeyOf(intentConfig, options.intent)) {
-    throw new Error(
-      `${options.intent} is not a valid intent for ${options.variant} ${options.appearance}`,
-    );
-  }
+  // if (!isKeyOf(size, props.size))
+  // throw new Error(`${props.size} is not a valid size for ${props.variant}`);
+  // const sizeStyles = size[props.size]
 
-  const intentProps = intentConfig[options.intent];
+  const sizeStyles = fallbackKey(
+    size,
+    props.size,
+    'medium',
+    `Button props warning: '${props.size}' is not a valid size for '${props.variant}' variant, using 'medium' as size fallback`,
+  );
 
-  const sizes = isKeyOf(size, options.size) ? size[options.size] : {};
+  // if (!isKeyOf(appearance, props.appearance))
+  //   throw new Error(
+  //     `${props.appearance} is not a valid appearance for ${props.variant}`,
+  //   );
+  // const { intent, ...appearanceStyles } = appearance[props.appearance];
+
+  const { intent, ...appearanceStyles } = fallbackKey(
+    appearance,
+    props.appearance,
+    'secondary',
+    `Button props warning: '${props.appearance}' is not a valid appearance for '${props.variant}' variant, using 'secondary' as appearance fallback`,
+  );
+
+  // if (!isKeyOf(intent, props.intent)) {
+  //   throw new Error(
+  //     `${props.intent} is not a valid intent for ${props.variant} ${props.appearance}`,
+  //   );
+  // }
+  // const intentStyles = intent[props.intent];
+
+  const intentStyles = fallbackKey(
+    intent,
+    props.intent,
+    'none',
+    `Button props warning: '${props.intent}' is not a valid intent for '${props.variant}' variant and '${props.appearance}' appearance, using 'none' as intent fallback`,
+  );
 
   return {
-    ...rest,
-    ...appearanceProps,
-    ...intentProps,
-    ...sizes,
-  } as const;
+    container: {
+      ...container,
+      ...sizeStyles,
+      ...appearanceStyles,
+      ...intentStyles,
+    },
+  };
 };
