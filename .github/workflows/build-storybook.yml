@@ -22,7 +22,7 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build Storybook
         env:
-          STORYBOOK_HOST: ${{ vars.STORYBOOK_HOST }}
+          STORYBOOK_HOST: tetrisly-react
         run: yarn build-storybook
 
       # Popular action to deploy to GitHub Pages:
