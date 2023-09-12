@@ -7,7 +7,7 @@ import { useIndeterminate } from './hooks';
 import { stylesBuilder } from './stylesBuilder';
 import { HelperText } from '../HelperText';
 
-import { extractMarginProps } from '@/services';
+import { extractInputProps } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
@@ -42,7 +42,7 @@ export const Checkbox = forwardRef<
     const checkboxId = useId();
     const checkboxInternalRef = useIndeterminate(isIndeterminate);
 
-    const [marginProps, checkboxProps] = extractMarginProps(restProps);
+    const [checkboxProps, containerProps] = extractInputProps(restProps);
 
     const checkboxRef = useCallback(
       (instance: HTMLInputElement | null) => {
@@ -96,7 +96,7 @@ export const Checkbox = forwardRef<
         {...styles.container}
         data-state={state}
         data-testid="checkbox"
-        {...marginProps}
+        {...containerProps}
       >
         {label ? (
           <tet.label

@@ -1,31 +1,24 @@
-import { forwardRef, useId } from 'react';
+import { forwardRef, useId, useMemo } from 'react';
 
-import { RadioButtonProps } from './RadioButton.props';
-import { defaultConfig } from './RadioButton.styles';
+import type { RadioButtonProps } from './RadioButton.props';
+import { stylesBuilder } from './stylesBuilder';
 import { HelperText } from '../HelperText';
 
-import { extractMarginProps, mergeConfigWithCustom } from '@/services';
+import { extractInputProps } from '@/services';
 import { tet } from '@/tetrisly';
-import { MarginProps } from '@/types/MarginProps';
+import type { MarginProps } from '@/types';
 
-type Props = RadioButtonProps & MarginProps;
-
-export const RadioButton = forwardRef<HTMLInputElement, Props>(
+export const RadioButton = forwardRef<
+  HTMLInputElement,
+  RadioButtonProps & MarginProps
+>(
   (
-    { isChecked, state, label, helperText, custom = {}, ...restProps },
+    { isChecked, state, label, helperText, custom, ...restProps },
     radioButtonRef,
   ) => {
-    const [marginProps, radioButtonProps] =
-      extractMarginProps<Props>(restProps);
+    const [radioButtonProps, containerProps] = extractInputProps(restProps);
 
-    const {
-      innerComponents: {
-        radioButton: radioButtonStyles,
-        label: labelStyles,
-        helperText: helperTextStyles,
-      },
-      ...restStyles
-    } = mergeConfigWithCustom({ defaultConfig, custom });
+    const styles = useMemo(() => stylesBuilder(custom), [custom]);
 
     const radioButtonId = useId();
 
@@ -37,22 +30,23 @@ export const RadioButton = forwardRef<HTMLInputElement, Props>(
         checked={isChecked}
         disabled={state === 'disabled'}
         data-state={state}
+        {...styles.radioButton}
+        data-testid="radio-button-radioButton"
         {...radioButtonProps}
-        {...radioButtonStyles}
       />
     );
 
     return (
       <tet.div
-        {...restStyles}
-        {...marginProps}
+        {...styles.container}
         data-state={state}
         data-testid="radio-button"
+        {...containerProps}
       >
         {label ? (
           <tet.label
             htmlFor={radioButtonId}
-            {...labelStyles}
+            {...styles.label}
             data-testid="radio-button-label"
           >
             {input}
@@ -63,10 +57,11 @@ export const RadioButton = forwardRef<HTMLInputElement, Props>(
         )}
         {!!helperText && (
           <HelperText
+            custom={styles.helperText}
             intent={state === 'alert' ? 'alert' : 'none'}
             beforeIcon={state === 'alert'}
-            {...helperTextStyles}
             text={helperText}
+            data-testid="radio-button-helperText"
           />
         )}
       </tet.div>
