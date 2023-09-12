@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build Storybook
-         env:
+        env:
           STORYBOOK_HOST: ${{ vars.STORYBOOK_HOST }}
         run: yarn build-storybook
 
