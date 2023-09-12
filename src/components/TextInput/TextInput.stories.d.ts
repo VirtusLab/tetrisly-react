@@ -8,7 +8,7 @@ declare const meta: {
         afterComponent?: import("./TextInput.props").TextInputProps.InnerComponents.Icon | import("./TextInput.props").TextInputProps.InnerComponents.IconButton | import("./TextInput.props").TextInputProps.InnerComponents.Dropdown | import("./TextInput.props").TextInputProps.InnerComponents.Sufix | import("./TextInput.props").TextInputProps.InnerComponents.Button | undefined;
         state?: import("../../types").BasicInputState | undefined;
         hasClearButton?: boolean | undefined;
-        custom?: import("../../utility-types/DeepPartial").DeepPartial<import("./TextInput.style").TextInputConfig> | undefined;
+        custom?: import("./TextInput.style").TextInputConfig | undefined;
     } & Omit<import("react").InputHTMLAttributes<HTMLInputElement>, "color" | "checked" | "disabled" | "type"> & import("@xstyled/system").MarginProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginLeftProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginBottomProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginTopProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginRightProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginXProps<import("@xstyled/system").Theme> & import("@xstyled/system").MarginYProps<import("@xstyled/system").Theme> & import("react").RefAttributes<HTMLInputElement>>;
     tags: string[];
     args: {

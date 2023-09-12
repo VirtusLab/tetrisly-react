@@ -1,4 +1,4 @@
-import { BadgeProps } from '../Badge.props';
+import { BadgeConfig } from '../Badge.styles';
 import { BadgeAppearance } from '../BadgeAppearance.type';
 import { BadgeEmphasis } from '../BadgeEmphasis.type';
 import { BadgeIntent } from '../BadgeIntent.type';
@@ -8,5 +8,5 @@ type BadgeStylesBuilder = {
     iconContainer: BaseProps;
     label: BaseProps;
 };
-export declare const stylesBuilder: (custom: BadgeProps['custom'], intent: BadgeIntent, emphasis: BadgeEmphasis, hasLabel?: boolean, appearance?: BadgeAppearance) => BadgeStylesBuilder;
+export declare const stylesBuilder: (intent: BadgeIntent, emphasis: BadgeEmphasis, custom?: BadgeConfig, hasLabel?: boolean, appearance?: BadgeAppearance) => BadgeStylesBuilder;
 export {};

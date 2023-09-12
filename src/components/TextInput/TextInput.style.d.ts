@@ -1,7 +1,17 @@
 import { BaseProps } from '../../types/BaseProps';
 export type TextInputConfig = {
-    innerComponents: Record<'input' | 'icon' | 'text' | 'clearButton', BaseProps>;
-    spacing: Record<'beforeComponent', Record<'Icon' | 'Avatar' | 'Prefix' | 'Dropdown', BaseProps>> | Record<'afterComponent', Record<'Icon' | 'Sufix' | 'Button' | 'IconButton' | 'Dropdown', BaseProps>>;
+    innerElements?: {
+        input?: BaseProps;
+        icon?: BaseProps;
+        text?: BaseProps;
+        clearButton?: BaseProps;
+        beforeComponent?: {
+            spacing?: Partial<Record<'Icon' | 'Avatar' | 'Prefix' | 'Dropdown', BaseProps>>;
+        } & BaseProps;
+        afterComponent?: {
+            spacing?: Partial<Record<'Icon' | 'Sufix' | 'Button' | 'IconButton' | 'Dropdown', BaseProps>>;
+        } & BaseProps;
+    };
 } & BaseProps;
 export declare const defaultConfig: {
     display: "flex";
@@ -38,7 +48,7 @@ export declare const defaultConfig: {
     pointerEvents: {
         disabled: "none";
     };
-    innerComponents: {
+    innerElements: {
         input: {
             w: string;
             h: string;
@@ -59,44 +69,46 @@ export declare const defaultConfig: {
         clearButton: {
             marginLeft: string;
         };
-    };
-    spacing: {
         beforeComponent: {
-            Icon: {
-                marginLeft: string;
-                marginRight: string;
-            };
-            Avatar: {
-                margin: string;
-            };
-            Prefix: {
-                margin: string;
-            };
-            Dropdown: {
-                marginLeft: string;
-                marginRight: string;
+            spacing: {
+                Icon: {
+                    marginLeft: string;
+                    marginRight: string;
+                };
+                Avatar: {
+                    margin: string;
+                };
+                Prefix: {
+                    margin: string;
+                };
+                Dropdown: {
+                    marginLeft: string;
+                    marginRight: string;
+                };
             };
         };
         afterComponent: {
-            Icon: {
-                marginLeft: string;
-                marginRight: string;
-            };
-            Sufix: {
-                marginLeft: string;
-                marginRight: string;
-            };
-            Button: {
-                marginLeft: string;
-                marginRight: string;
-            };
-            IconButton: {
-                marginLeft: string;
-                marginRight: string;
-            };
-            Dropdown: {
-                marginLeft: string;
-                marginRight: string;
+            spacing: {
+                Icon: {
+                    marginLeft: string;
+                    marginRight: string;
+                };
+                Sufix: {
+                    marginLeft: string;
+                    marginRight: string;
+                };
+                Button: {
+                    marginLeft: string;
+                    marginRight: string;
+                };
+                IconButton: {
+                    marginLeft: string;
+                    marginRight: string;
+                };
+                Dropdown: {
+                    marginLeft: string;
+                    marginRight: string;
+                };
             };
         };
     };
