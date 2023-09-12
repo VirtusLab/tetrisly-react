@@ -7,6 +7,7 @@ import { stylesBuilder } from './stylesBuilder';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 
+import { useAction } from '@/hooks';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
@@ -19,11 +20,10 @@ export const AlertBanner: FC<AlertBannerProps & MarginProps> = ({
   ...restProps
 }) => {
   const styles = useMemo(() => stylesBuilder(intent, custom), [intent, custom]);
-  const name = resolveIconName(intent);
 
-  const [firstAction, secondAction] = Array.isArray(action)
-    ? action
-    : [action, undefined];
+  const [firstAction, secondAction] = useAction(action);
+
+  const iconName = useMemo(() => resolveIconName(intent), [intent]);
 
   return (
     <tet.div {...styles.container} data-testid="alert-banner" {...restProps}>
@@ -31,7 +31,7 @@ export const AlertBanner: FC<AlertBannerProps & MarginProps> = ({
         {...styles.iconContainer}
         data-testid="alert-banner-iconContainer"
       >
-        <Icon name={name} />
+        <Icon name={iconName} />
       </tet.span>
       {text}
       {firstAction && (

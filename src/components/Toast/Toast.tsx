@@ -7,6 +7,7 @@ import { resolveIconName } from './Toast.styles';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 
+import { useAction } from '@/hooks';
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types';
 
@@ -30,9 +31,7 @@ export const Toast: FC<ToastProps & MarginProps> = ({
     [custom, emphasis, intent, onCloseClick],
   );
 
-  const [firstAction, secondAction] = Array.isArray(action)
-    ? action
-    : [action, undefined];
+  const [firstAction, secondAction] = useAction(action);
 
   const iconName = useMemo(() => resolveIconName(intent), [intent]);
 
