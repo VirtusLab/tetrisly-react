@@ -1,13 +1,12 @@
-import { InputHTMLAttributes } from 'react';
-import { RadioButtonConfig } from './RadioButton.styles';
-import { DeepPartial } from '../../utility-types/DeepPartial';
+import type { InputHTMLAttributes } from 'react';
+import type { RadioButtonConfig } from './RadioButton.styles';
 export type RadioButtonProps = {
     isChecked?: boolean;
     state?: 'alert' | 'disabled';
-    custom?: DeepPartial<RadioButtonConfig>;
+    custom?: RadioButtonConfig;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'checked' | 'disabled' | 'color' | 'type'> & ({
     label?: string;
-    helperText?: undefined;
+    helperText?: never;
 } | {
     label: string;
     helperText?: string;
