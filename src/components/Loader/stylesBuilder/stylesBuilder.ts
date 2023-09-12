@@ -2,10 +2,17 @@ import { LoaderProps } from '../Loader.props';
 import { defaultConfig } from '../Loader.styles';
 
 import { mergeConfigWithCustom } from '@/services';
+import { BaseProps } from '@/types/BaseProps';
 
 type StylesBuilderProps = Omit<Required<LoaderProps>, 'custom' | 'progress'> & {
   custom: LoaderProps['custom'];
   progress: LoaderProps['progress'];
+};
+
+type LoaderStylesBuilder = {
+  container: BaseProps;
+  base: BaseProps;
+  progress: BaseProps;
 };
 
 const ANIMATED_PROGRESS_VALUE = 0.4;
@@ -52,7 +59,10 @@ const describeArc = (
   return d;
 };
 
-export const stylesBuilder = ({ custom, ...props }: StylesBuilderProps) => {
+export const stylesBuilder = ({
+  custom,
+  ...props
+}: StylesBuilderProps): LoaderStylesBuilder => {
   const config = mergeConfigWithCustom({ defaultConfig, custom });
 
   const {
