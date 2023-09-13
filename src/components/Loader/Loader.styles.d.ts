@@ -1,90 +1,103 @@
-import { SystemProps } from '@xstyled/styled-components';
-import { SvgProperties } from 'csstype';
+import { ThemeColor } from '@xstyled/styled-components';
+import type { Property } from 'csstype';
 import type { LoaderAppearance, LoaderShape, LoaderSize } from './types';
+import { Theme } from '../../theme';
 import { BaseProps } from '../../types/BaseProps';
+export type SVGProps = Omit<BaseProps, 'opacity' | 'display' | 'order' | 'cursor' | 'pointerEvents' | 'overflow' | 'visibility' | 'fill' | 'transform' | 'rotate' | 'scale' | 'stroke' | 'fontFamily' | 'fontSize' | 'fontStyle' | 'fontStyle' | 'fontVariant' | 'fontWeight' | 'letterSpacing' | 'textDecoration'> & {
+    fill?: ThemeColor<Theme> | Property.Fill;
+    strokeWidth?: Property.StrokeWidth<string | number>;
+    strokeLinecap?: 'inherit' | 'round' | 'butt' | 'square';
+};
 export type LoaderConfig = {
-    size: Record<LoaderShape, Record<LoaderSize, SystemProps & Pick<SvgProperties, 'strokeWidth'>>>;
-    appearance: Record<LoaderAppearance, Record<'base' | 'progress', SystemProps>>;
-    svg: SystemProps;
-    progress: SystemProps & Pick<SvgProperties, 'strokeLinecap'>;
+    shape?: Partial<Record<LoaderShape, {
+        size?: Partial<Record<LoaderSize, SVGProps>>;
+    }>>;
+    innerElements?: {
+        base?: {
+            appearance?: Partial<Record<LoaderAppearance, BaseProps>>;
+        } & SVGProps;
+        progress?: {
+            appearance?: Partial<Record<LoaderAppearance, BaseProps>>;
+        } & SVGProps;
+    };
 } & BaseProps;
 export declare const defaultConfig: {
-    size: {
+    fill: "none";
+    borderRadius: string;
+    shape: {
         circle: {
-            large: {
-                w: number;
-                h: number;
-                strokeWidth: "2";
-            };
-            medium: {
-                w: number;
-                h: number;
-                strokeWidth: "2";
-            };
-            small: {
-                w: number;
-                h: number;
-                strokeWidth: "2";
+            size: {
+                large: {
+                    w: number;
+                    h: number;
+                    strokeWidth: string;
+                };
+                medium: {
+                    w: number;
+                    h: number;
+                    strokeWidth: string;
+                };
+                small: {
+                    w: number;
+                    h: number;
+                    strokeWidth: string;
+                };
             };
         };
         bar: {
-            large: {
-                w: number;
-                h: number;
-                strokeWidth: "8";
-            };
-            medium: {
-                w: number;
-                h: number;
-                strokeWidth: "6";
-            };
-            small: {
-                w: number;
-                h: number;
-                strokeWidth: "4";
-            };
-        };
-    };
-    appearance: {
-        primary: {
-            base: {
-                stroke: "interaction-neutral-subtle-normal";
-            };
-            progress: {
-                stroke: "interaction-default-normal";
-            };
-        };
-        inverted: {
-            base: {
-                stroke: "interaction-inverted-normal";
-            };
-            progress: {
-                stroke: "interaction-default-normal";
-            };
-        };
-        white: {
-            base: {
-                stroke: "interaction-inverted-normal";
-                opacity: number;
-            };
-            progress: {
-                stroke: "interaction-inverted-normal";
-            };
-        };
-        greyscale: {
-            base: {
-                stroke: "interaction-neutral-subtle-normal";
-            };
-            progress: {
-                stroke: "interaction-neutral-normal";
+            size: {
+                large: {
+                    w: number;
+                    h: number;
+                    strokeWidth: string;
+                };
+                medium: {
+                    w: number;
+                    h: number;
+                    strokeWidth: string;
+                };
+                small: {
+                    w: number;
+                    h: number;
+                    strokeWidth: string;
+                };
             };
         };
     };
-    svg: {
-        fill: "none";
-        borderRadius: string;
-    };
-    progress: {
-        strokeLinecap: "round";
+    innerElements: {
+        base: {
+            appearance: {
+                primary: {
+                    stroke: "interaction-neutral-subtle-normal";
+                };
+                inverted: {
+                    stroke: "interaction-inverted-normal";
+                };
+                white: {
+                    stroke: "interaction-inverted-normal";
+                    opacity: number;
+                };
+                greyscale: {
+                    stroke: "interaction-neutral-subtle-normal";
+                };
+            };
+        };
+        progress: {
+            strokeLinecap: "round";
+            appearance: {
+                primary: {
+                    stroke: "interaction-default-normal";
+                };
+                inverted: {
+                    stroke: "interaction-default-normal";
+                };
+                white: {
+                    stroke: "interaction-inverted-normal";
+                };
+                greyscale: {
+                    stroke: "interaction-neutral-normal";
+                };
+            };
+        };
     };
 };

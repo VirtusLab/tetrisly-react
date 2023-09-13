@@ -1,3 +1,4 @@
 import { MarginProps } from '@xstyled/styled-components';
+import { FC } from 'react';
 import { LoaderProps } from './Loader.props';
-export declare const Loader: ({ appearance, progress, shape, size, custom, }: LoaderProps & MarginProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Loader: FC<LoaderProps & MarginProps>;

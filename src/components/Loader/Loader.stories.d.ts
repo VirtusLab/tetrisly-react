@@ -1,7 +1,8 @@
+/// <reference types="react" />
 import { StoryObj } from '@storybook/react';
 declare const meta: {
     title: string;
-    component: ({ appearance, progress, shape, size, custom, }: import("./Loader.props").LoaderProps & import("@xstyled/system").MarginProps<import("@xstyled/system").Theme>) => import("react/jsx-runtime").JSX.Element;
+    component: import("react").FC<import("./Loader.props").LoaderProps & import("@xstyled/system").MarginProps<import("@xstyled/system").Theme>>;
     tags: string[];
 };
 export default meta;
