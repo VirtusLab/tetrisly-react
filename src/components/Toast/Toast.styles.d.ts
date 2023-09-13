@@ -1,23 +1,22 @@
-import type { ToastIntent } from './types';
-import { ButtonProps } from '../Button';
-import { BaseProps } from '../../types/BaseProps';
-import { Emphasis } from '../../types/Emphasis';
-import { IconName } from '../../utility-types/IconName';
+import type { ToastEmphasis, ToastIntent } from './types';
+import type { ButtonProps } from '../Button';
+import type { BaseProps } from '../../types/BaseProps';
+import type { IconName } from '../../utility-types/IconName';
 export type ToastConfig = {
-    emphasis: Record<Emphasis, BaseProps>;
-    intent: Record<ToastIntent, BaseProps>;
-    closeButton: BaseProps;
-    innerElements: {
-        iconContainer: {
-            intent: Record<ToastIntent, {
-                emphasis: Record<Emphasis, BaseProps>;
-            }>;
+    emphasis?: Partial<Record<ToastEmphasis, BaseProps>>;
+    intent?: Partial<Record<ToastIntent, BaseProps>>;
+    closeButton?: BaseProps;
+    innerElements?: {
+        iconContainer?: {
+            intent: Partial<Record<ToastIntent, {
+                emphasis: Partial<Record<ToastEmphasis, BaseProps>>;
+            }>>;
         } & BaseProps;
-        actionContainer: BaseProps;
-        middleDot: {
-            emphasis: Record<Emphasis, BaseProps | Partial<ButtonProps<'bare'>>>;
+        actionContainer?: BaseProps;
+        middleDot?: {
+            emphasis: Partial<Record<ToastEmphasis, BaseProps | Partial<ButtonProps<'bare'>>>>;
         } & BaseProps;
-        closeButton: BaseProps;
+        closeButton?: BaseProps;
     };
 } & BaseProps;
 export declare const defaultConfig: {

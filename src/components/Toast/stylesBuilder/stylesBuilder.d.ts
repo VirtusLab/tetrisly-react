@@ -1,21 +1,15 @@
-import { ToastProps } from '../Toast.props';
-import { ButtonAppearance } from '../../../components/Button/types/ButtonAppearance.type';
-import { IconButtonProps } from '../../../components/IconButton/IconButton.props';
-import { BaseProps } from '../../../types/BaseProps';
+import type { ToastProps } from '../Toast.props';
+import type { BaseProps } from '../../../types/BaseProps';
 type StylesBuilderProps = Required<Pick<ToastProps, 'emphasis' | 'intent'>> & {
+    onCloseClick: ToastProps['onCloseClick'];
     custom: ToastProps['custom'];
-    closeButton: boolean;
 };
 type ToastStylesBuilder = {
-    actionProps: {
-        appearance: ButtonAppearance<'bare'>;
-    };
-    actionContainerStyles: BaseProps;
-    closeButtonProps: Partial<IconButtonProps<'ghost'>>;
-    closeButtonStyles: BaseProps;
-    containerStyles: BaseProps;
-    iconContainerStyles: BaseProps;
-    middleDotStyles: BaseProps;
+    container: BaseProps;
+    actionContainer: BaseProps;
+    closeButton: BaseProps;
+    iconContainer: BaseProps;
+    middleDot: BaseProps;
 };
 export declare const stylesBuilder: ({ custom, ...props }: StylesBuilderProps) => ToastStylesBuilder;
 export {};
