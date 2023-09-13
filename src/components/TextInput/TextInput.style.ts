@@ -31,7 +31,7 @@ export const defaultConfig = {
   ring: 'small',
   ringColor: {
     _: 'interaction-border-neutral-normal',
-    hover: 'interaction-border-hover',
+    hoverWithoutButton: 'interaction-border-hover',
     alert: 'interaction-border-alert',
   },
   borderRadius: 'large',
