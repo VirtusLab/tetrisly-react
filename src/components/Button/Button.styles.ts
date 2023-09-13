@@ -23,9 +23,9 @@ export type DefaultButtonConfig = {
     } & BaseProps;
   };
   size?: {
-    small?: BaseProps;
-    medium?: BaseProps;
-    large?: BaseProps;
+    small?: { hasDropdownIndicator?: BaseProps } & BaseProps;
+    medium?: { hasDropdownIndicator?: BaseProps } & BaseProps;
+    large?: { hasDropdownIndicator?: BaseProps } & BaseProps;
   };
 } & BaseProps;
 
@@ -55,9 +55,9 @@ export type GhostButtonConfig = {
     } & BaseProps;
   };
   size?: {
-    small?: BaseProps;
-    medium?: BaseProps;
-    large?: BaseProps;
+    small?: { hasDropdownIndicator?: BaseProps } & BaseProps;
+    medium?: { hasDropdownIndicator?: BaseProps } & BaseProps;
+    large?: { hasDropdownIndicator?: BaseProps } & BaseProps;
   };
 } & BaseProps;
 
@@ -87,8 +87,8 @@ export type BareButtonConfig = {
     } & BaseProps;
   };
   size?: {
-    medium?: BaseProps;
-    large?: BaseProps;
+    medium?: { hasDropdownIndicator?: BaseProps } & BaseProps;
+    large?: { hasDropdownIndicator?: BaseProps } & BaseProps;
   };
 } & BaseProps;
 
@@ -98,20 +98,26 @@ const size = {
     pr: '150',
     h: 'small',
     text: 'body-medium',
+    hasDropdownIndicator: {},
   },
   medium: {
     pl: '150',
     pr: '200',
     h: 'medium',
     text: 'body-medium',
+    hasDropdownIndicator: {},
   },
   large: {
     pl: '150',
     pr: '200',
     h: 'large',
     text: 'body-large',
+    hasDropdownIndicator: {},
   },
-} as const satisfies Record<'small' | 'medium' | 'large', BaseProps>;
+} as const satisfies Record<
+  'small' | 'medium' | 'large',
+  { hasDropdownIndicator?: BaseProps } & BaseProps
+>;
 
 const commonConfig = {
   display: 'inline-flex',
@@ -391,8 +397,8 @@ const bareButtonConfig = {
     },
   },
   size: {
-    medium: { text: 'body-medium' },
-    large: { text: 'body-large' },
+    medium: { text: 'body-medium', hasDropdownIndicator: {} },
+    large: { text: 'body-large', hasDropdownIndicator: {} },
   },
 } satisfies BareButtonConfig;
 

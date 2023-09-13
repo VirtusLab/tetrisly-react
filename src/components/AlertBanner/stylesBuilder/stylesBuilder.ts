@@ -4,7 +4,6 @@ import { AlertBannerIntent } from '../types';
 
 import { ButtonProps } from '@/components/Button';
 import { IconButtonProps } from '@/components/IconButton/IconButton.props';
-import { IconButtonAppearance } from '@/components/IconButton/IconButtonAppearance.type';
 import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
 
@@ -14,7 +13,7 @@ type AlertBannerStylesBuilder = {
   actionContainer: BaseProps;
   closeButton: BaseProps;
   actionProps: Partial<ButtonProps>;
-  closeButtonProps: Partial<IconButtonProps<'ghost'>>;
+  closeButtonProps: Partial<IconButtonProps>;
 };
 
 export const stylesBuilder = (
@@ -32,9 +31,7 @@ export const stylesBuilder = (
   };
 
   const closeButtonProps = {
-    appearance: (intent === 'warning'
-      ? 'primary'
-      : 'inverted') as IconButtonAppearance<'ghost'>,
+    appearance: intent === 'warning' ? 'primary' : 'inverted',
   };
 
   return {
@@ -45,7 +42,7 @@ export const stylesBuilder = (
     iconContainer,
     actionContainer,
     actionProps: actionProps as Partial<ButtonProps>,
-    closeButtonProps,
+    closeButtonProps: closeButtonProps as Partial<IconButtonProps>,
     closeButton,
   };
 };

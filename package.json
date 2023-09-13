@@ -74,6 +74,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
+      "yarn vitest related --run",
       "eslint --cache --fix",
       "prettier --write"
     ]

@@ -24,8 +24,16 @@ export const Button: FC<ButtonProps & MarginProps> = ({
   ...rest
 }) => {
   const styles = useMemo(
-    () => stylesBuilder({ variant, appearance, intent, size, custom }),
-    [variant, appearance, intent, size, custom],
+    () =>
+      stylesBuilder({
+        variant,
+        appearance,
+        intent,
+        size,
+        hasDropdownIndicator: dropdown,
+        custom,
+      }),
+    [variant, appearance, intent, size, dropdown, custom],
   );
 
   if (dropdown && afterIcon) {

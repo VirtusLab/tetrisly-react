@@ -9,6 +9,7 @@ type ButtonStylesBulderInput = {
   variant: NonNullable<ButtonProps['variant']>;
   intent: NonNullable<ButtonProps['intent']>;
   size: NonNullable<ButtonProps['size']>;
+  hasDropdownIndicator?: ButtonProps['hasDropdownIndicator'];
   custom?: ButtonProps['custom'];
 };
 
@@ -25,7 +26,7 @@ export const stylesBuilder = (
   });
   const { appearance, size, ...container } = variants[props.variant];
 
-  const sizeStyles = fallbackKey(
+  const { hasDropdownIndicator, ...sizeStyles } = fallbackKey(
     size,
     props.size,
     'medium',
@@ -50,6 +51,7 @@ export const stylesBuilder = (
     container: {
       ...container,
       ...sizeStyles,
+      ...(props.hasDropdownIndicator && hasDropdownIndicator),
       ...appearanceStyles,
       ...intentStyles,
     },
