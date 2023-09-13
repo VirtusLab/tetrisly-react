@@ -1,4 +1,3 @@
-import { MarginProps } from '@xstyled/styled-components';
 import { useMemo } from 'react';
 
 import { AnimatedPath } from './AnimatedPath';
@@ -6,6 +5,7 @@ import { LoaderProps } from './Loader.props';
 import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
+import { MarginProps } from '@/types';
 
 export const Loader = ({
   appearance = 'primary',
