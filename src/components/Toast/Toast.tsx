@@ -2,18 +2,16 @@ import { Icon } from '@virtuslab/tetrisly-icons';
 import { FC, useMemo } from 'react';
 
 import { stylesBuilder } from './stylesBuilder';
-import { ToastProps } from './Toast.props';
+import type { ToastProps } from './Toast.props';
 import { resolveIconName } from './Toast.styles';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 
 import { useAction } from '@/hooks';
 import { tet } from '@/tetrisly';
-import { MarginProps } from '@/types';
+import type { MarginProps } from '@/types';
 
-type Props = ToastProps & MarginProps;
-
-export const Toast: FC<Props> = ({
+export const Toast: FC<ToastProps & MarginProps> = ({
   text,
   emphasis = 'low',
   intent = 'neutral',
@@ -22,21 +20,13 @@ export const Toast: FC<Props> = ({
   custom,
   ...restProps
 }) => {
-  const {
-    actionProps,
-    actionContainerStyles,
-    closeButtonProps,
-    closeButtonStyles,
-    containerStyles,
-    iconContainerStyles,
-    middleDotStyles,
-  } = useMemo(
+  const styles = useMemo(
     () =>
       stylesBuilder({
         custom,
         emphasis,
         intent,
-        closeButton: !!onCloseClick,
+        onCloseClick,
       }),
     [custom, emphasis, intent, onCloseClick],
   );
@@ -45,21 +35,36 @@ export const Toast: FC<Props> = ({
 
   const iconName = useMemo(() => resolveIconName(intent), [intent]);
 
+  const appearance = useMemo(() => {
+    const buttonIntentAppearance =
+      intent === 'warning' ? 'reverseInverted' : 'inverted';
+    return emphasis === 'high' ? buttonIntentAppearance : 'primary';
+  }, [intent, emphasis]);
+
   return (
-    <tet.div {...containerStyles} data-testid="toast" {...restProps}>
+    <tet.div {...styles.container} data-testid="toast" {...restProps}>
       {!!iconName && (
-        <tet.span {...iconContainerStyles}>
+        <tet.span {...styles.iconContainer} data-testid="toast-iconContainer">
           <Icon name={iconName} />
         </tet.span>
       )}
       {text}
       {firstAction && (
-        <tet.div {...actionContainerStyles}>
-          <Button variant="bare" {...actionProps} {...firstAction} />
+        <tet.div
+          {...styles.actionContainer}
+          data-testid="toast-actionContainer"
+        >
+          <Button variant="bare" appearance={appearance} {...firstAction} />
           {secondAction && (
             <>
-              <tet.div {...middleDotStyles}>&middot;</tet.div>
-              <Button variant="bare" {...actionProps} {...secondAction} />
+              <tet.div {...styles.middleDot} data-testid="toast-middleDot">
+                &middot;
+              </tet.div>
+              <Button
+                variant="bare"
+                appearance={appearance}
+                {...secondAction}
+              />
             </>
           )}
         </tet.div>
@@ -71,8 +76,9 @@ export const Toast: FC<Props> = ({
           intent="none"
           icon="20-close"
           onClick={onCloseClick}
-          {...closeButtonProps}
-          {...closeButtonStyles}
+          appearance={appearance}
+          {...styles.closeButton}
+          data-testid="toast-closeButton"
         />
       )}
     </tet.div>

@@ -1,17 +1,15 @@
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
-import { ToastConfig } from './Toast.styles';
-import { ToastIntent } from './types';
+import type { ToastConfig } from './Toast.styles';
+import type { ToastEmphasis, ToastIntent } from './types';
 
-import { ActionProp } from '@/types';
-import { Emphasis } from '@/types/Emphasis';
-import { DeepPartial } from '@/utility-types/DeepPartial';
+import type { ActionProp } from '@/types';
 
 export type ToastProps = {
   text: string;
-  emphasis?: Emphasis;
+  emphasis?: ToastEmphasis;
   intent?: ToastIntent;
   action?: ActionProp;
   onCloseClick?: (e: MouseEvent<HTMLButtonElement>) => void;
-  custom?: DeepPartial<ToastConfig>;
+  custom?: ToastConfig;
 };

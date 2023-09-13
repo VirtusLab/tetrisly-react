@@ -1,7 +1,9 @@
 import { vi } from 'vitest';
 
 import { Toast } from './Toast';
-import { render } from '../../tests/render';
+import { fireEvent, render } from '../../tests/render';
+
+import { customPropTester } from '@/tests/customPropTester';
 
 const getToast = (jsx: JSX.Element) => {
   const { getByTestId } = render(jsx);
@@ -11,6 +13,33 @@ const getToast = (jsx: JSX.Element) => {
 const handleEventMock = vi.fn();
 
 describe('Toast', () => {
+  customPropTester(
+    <Toast
+      text="text"
+      intent="informative"
+      action={[{ label: 'Label' }, { label: 'Label' }]}
+      onCloseClick={handleEventMock}
+    />,
+    {
+      containerId: 'toast',
+      props: {
+        emphasis: ['low', 'high'],
+        intent: ['informative', 'success', 'warning', 'negative'],
+      },
+      innerElements: {
+        _: ['intent', 'emphasis'],
+        iconContainer: [['intent', 'emphasis']],
+        actionContainer: [],
+        middleDot: ['emphasis'],
+        closeButton: [],
+      },
+    },
+  );
+
+  beforeEach(() => {
+    handleEventMock.mockReset();
+  });
+
   it('should render the toast', () => {
     const toast = getToast(<Toast text="Toast text" />);
     expect(toast).toBeInTheDocument();
@@ -84,7 +113,9 @@ describe('Toast', () => {
       />,
     );
     const button = toast.querySelector('button');
-    button?.click();
+    if (button) {
+      fireEvent.click(button);
+    }
     expect(handleEventMock).toHaveBeenCalled();
   });
 
@@ -96,7 +127,9 @@ describe('Toast', () => {
       />,
     );
     const button = toast.querySelector('button');
-    button?.focus();
+    if (button) {
+      fireEvent.focus(button);
+    }
     expect(handleEventMock).toHaveBeenCalled();
   });
 
@@ -108,7 +141,9 @@ describe('Toast', () => {
       />,
     );
     const button = toast.querySelector('button');
-    button?.blur();
+    if (button) {
+      fireEvent.blur(button);
+    }
     expect(handleEventMock).toHaveBeenCalled();
   });
 
@@ -127,16 +162,5 @@ describe('Toast', () => {
     const button = toast.querySelector('button');
     button?.click();
     expect(handleEventMock).toHaveBeenCalled();
-  });
-
-  it('should propagate a custom prop', () => {
-    const toast = getToast(
-      <Toast
-        text="Toast text"
-        custom={{ color: 'background-negative-subtle' }}
-      />,
-    );
-
-    expect(toast).toHaveStyle('color: rgb(254, 245, 245)');
   });
 });
