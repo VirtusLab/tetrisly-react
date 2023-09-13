@@ -1,5 +1,5 @@
 import { LoaderProps } from '../Loader.props';
-import { defaultConfig } from '../Loader.styles';
+import { defaultConfig, SVGProps } from '../Loader.styles';
 
 import { mergeConfigWithCustom } from '@/services';
 
@@ -8,27 +8,35 @@ type StylesBuilderProps = Omit<Required<LoaderProps>, 'custom' | 'progress'> & {
   progress: LoaderProps['progress'];
 };
 
-function polarToCartesian(
+type LoaderStylesBuilder = {
+  container: SVGProps;
+  base: SVGProps;
+  progress: SVGProps;
+};
+
+const ANIMATED_PROGRESS_VALUE = 0.4;
+
+const polarToCartesian = (
   centerX: number,
   centerY: number,
   radius: number,
   angleInDegrees: number,
-) {
+) => {
   const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
 
   return {
     x: centerX + radius * Math.cos(angleInRadians),
     y: centerY + radius * Math.sin(angleInRadians),
   };
-}
+};
 
-function describeArc(
+const describeArc = (
   x: number,
   y: number,
   radius: number,
   startAngle: number,
   endAngle: number,
-) {
+) => {
   const start = polarToCartesian(x, y, radius, endAngle);
   const end = polarToCartesian(x, y, radius, startAngle);
   const largeArcFlag = endAngle - startAngle <= 180 ? '0' : '1';
@@ -48,52 +56,67 @@ function describeArc(
   ].join(' ');
 
   return d;
-}
+};
 
-export const stylesBuilder = ({ custom, ...props }: StylesBuilderProps) => {
+export const stylesBuilder = ({
+  custom,
+  ...props
+}: StylesBuilderProps): LoaderStylesBuilder => {
   const config = mergeConfigWithCustom({ defaultConfig, custom });
 
-  const size = config.size[props.shape][props.size];
-  const { w, h, ...restSizeStyles } = size;
-  const svgSizeStyles = {
-    ...size,
+  const {
+    shape,
+    innerElements: { base, progress },
+    ...restContainerStyles
+  } = config;
+
+  const sizeStyles = shape[props.shape].size[props.size];
+  const { w, h, ...restSizeStyles } = sizeStyles;
+  const containerSizeStyles = {
+    ...sizeStyles,
     viewBox: `0 0 ${w} ${h}`,
   };
 
-  const progress = Math.min(Math.max(props.progress ?? 0.4, 0), 1);
+  const progressValue = Math.min(
+    Math.max(props.progress ?? ANIMATED_PROGRESS_VALUE, 0),
+    1,
+  );
 
-  const baseSizeStyles = {
+  const basePathStyles = {
     d:
       props.shape === 'circle'
         ? describeArc(w / 2, w / 2, w / 2 - 3, 0, 359.99)
         : `M 0 ${h / 2} H ${w}`,
   };
 
-  const progressSizeStyles = {
+  const progressPathStyles = {
     d:
       props.shape === 'circle'
-        ? describeArc(w / 2, w / 2, w / 2 - 3, 0, 359.99 * progress)
-        : `M 0 ${h / 2} H ${progress * w}`,
+        ? describeArc(w / 2, w / 2, w / 2 - 3, 0, 359.99 * progressValue)
+        : `M 0 ${h / 2} H ${progressValue * w}`,
   };
 
-  const svgStyles = {
-    ...svgSizeStyles,
-    ...config.svg,
-  };
+  const { appearance: baseAppearanceStyles, ...restBaseStyles } = base;
 
-  const baseStyles = {
-    ...baseSizeStyles,
-    ...restSizeStyles,
-    ...config.appearance[props.appearance].base,
-    ...config.progress,
-  };
+  const { appearance: progressAppearanceStyles, ...restProgressStyles } =
+    progress;
 
-  const progressStyles = {
-    ...progressSizeStyles,
-    ...restSizeStyles,
-    ...config.appearance[props.appearance].progress,
-    ...config.progress,
+  return {
+    container: {
+      ...containerSizeStyles,
+      ...restContainerStyles,
+    },
+    base: {
+      ...basePathStyles,
+      ...restSizeStyles,
+      ...baseAppearanceStyles[props.appearance],
+      ...restBaseStyles,
+    },
+    progress: {
+      ...progressPathStyles,
+      ...restSizeStyles,
+      ...progressAppearanceStyles[props.appearance],
+      ...restProgressStyles,
+    },
   };
-
-  return { svgStyles, baseStyles, progressStyles };
 };
