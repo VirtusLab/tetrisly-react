@@ -87,7 +87,7 @@ export const DefaultAfterIcon: Story = {
 export const DefaultDropdown: Story = {
   ...Default,
   args: {
-    dropdownIndicator: true,
+    hasDropdownIndicator: true,
   },
 };
 

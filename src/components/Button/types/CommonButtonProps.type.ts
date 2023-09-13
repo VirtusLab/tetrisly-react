@@ -21,7 +21,7 @@ type ButtonHTMLProps = Omit<
 
 type DropdownOrAfterIcon = Or<
   { afterIcon?: IconName<20> },
-  { dropdownIndicator?: boolean }
+  { hasDropdownIndicator?: boolean }
 >;
 
 export type CommonButtonProps = CommonProps &

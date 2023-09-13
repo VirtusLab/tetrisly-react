@@ -6,6 +6,7 @@ import { stylesBuilder } from './stylesBuilder';
 import { tet } from '../../tetrisly';
 import { Loader } from '../Loader';
 
+import { warnInDevelopment } from '@/services';
 import type { MarginProps } from '@/types';
 
 export const Button: FC<ButtonProps & MarginProps> = ({
@@ -13,11 +14,11 @@ export const Button: FC<ButtonProps & MarginProps> = ({
   appearance = 'secondary',
   intent = 'none',
   size = 'medium',
-  label = 'Click me',
+  label = 'Click',
   children = label,
   state,
   custom,
-  dropdownIndicator: dropdown,
+  hasDropdownIndicator: dropdown,
   afterIcon,
   beforeIcon,
   ...rest
@@ -28,7 +29,9 @@ export const Button: FC<ButtonProps & MarginProps> = ({
   );
 
   if (dropdown && afterIcon) {
-    throw new Error('Button cannot have both dropdown indicator and afterIcon');
+    warnInDevelopment(
+      'Button cannot have both dropdown indicator and afterIcon',
+    );
   }
 
   return (
@@ -50,7 +53,7 @@ export const Button: FC<ButtonProps & MarginProps> = ({
       {beforeIcon && state !== 'loading' && <Icon name={beforeIcon} />}
       {children}
       {dropdown && <Icon name="20-chevron-down" />}
-      {afterIcon && <Icon name={afterIcon} />}
+      {afterIcon && !dropdown && <Icon name={afterIcon} />}
     </tet.button>
   );
 };
