@@ -8,7 +8,7 @@ type BareSecondaryInvertedReverseInverted = {
   intent?: 'none';
 };
 
-export type BareButtonProps = {
+export type PartialBareButtonProps = {
   variant?: 'bare';
   size?: 'medium' | 'large';
 } & (BarePrimary | BareSecondaryInvertedReverseInverted);

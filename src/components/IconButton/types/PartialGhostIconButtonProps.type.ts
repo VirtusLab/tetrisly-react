@@ -1,4 +1,4 @@
-export type GhostIconButtonProps = {
+export type PartialGhostIconButtonProps = {
   variant?: 'ghost';
   appearance?: 'primary' | 'inverted' | 'reverseInverted';
   intent?: 'none';

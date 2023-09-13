@@ -1,7 +1,20 @@
-import { BareIconButtonProps } from './types/BareIconButtonProps.type';
 import { CommonIconButtonProps } from './types/CommonIconButtonProps.type';
-import { DefaultIconButtonProps } from './types/DefaultIconButtonProps.type';
-import { GhostIconButtonProps } from './types/GhostIconButtonProps.type';
+import { PartialBareIconButtonProps } from './types/PartialBareIconButtonProps.type';
+import { PartialDefaultIconButtonProps } from './types/PartialDefaultIconButtonProps.type';
+import { PartialGhostIconButtonProps } from './types/PartialGhostIconButtonProps.type';
 
 export type IconButtonProps = CommonIconButtonProps &
-  (DefaultIconButtonProps | GhostIconButtonProps | BareIconButtonProps);
+  (
+    | PartialDefaultIconButtonProps
+    | PartialGhostIconButtonProps
+    | PartialBareIconButtonProps
+  );
+
+export type DefaultIconButtonProps = CommonIconButtonProps &
+  PartialDefaultIconButtonProps;
+
+export type GhostIconButtonProps = CommonIconButtonProps &
+  PartialGhostIconButtonProps;
+
+export type BareIconButtonProps = CommonIconButtonProps &
+  PartialBareIconButtonProps;

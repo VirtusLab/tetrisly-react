@@ -2,8 +2,8 @@ import { AlertBannerProps } from '../AlertBanner.props';
 import { defaultConfig } from '../AlertBanner.styles';
 import { AlertBannerIntent } from '../types';
 
-import { ButtonProps } from '@/components/Button';
-import { IconButtonProps } from '@/components/IconButton/IconButton.props';
+import { BareButtonProps } from '@/components/Button/Button.props';
+import { GhostIconButtonProps } from '@/components/IconButton/IconButton.props';
 import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
 
@@ -12,8 +12,8 @@ type AlertBannerStylesBuilder = {
   iconContainer: BaseProps;
   actionContainer: BaseProps;
   closeButton: BaseProps;
-  actionProps: Partial<ButtonProps>;
-  closeButtonProps: Partial<IconButtonProps>;
+  actionProps: Partial<BareButtonProps>;
+  closeButtonProps: Partial<GhostIconButtonProps>;
 };
 
 export const stylesBuilder = (
@@ -41,8 +41,8 @@ export const stylesBuilder = (
     },
     iconContainer,
     actionContainer,
-    actionProps: actionProps as Partial<ButtonProps>,
-    closeButtonProps: closeButtonProps as Partial<IconButtonProps>,
+    actionProps: actionProps as Partial<BareButtonProps>,
+    closeButtonProps: closeButtonProps as Partial<GhostIconButtonProps>,
     closeButton,
   };
 };

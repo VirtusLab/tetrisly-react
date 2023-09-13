@@ -8,7 +8,7 @@ type GhostSecondaryInvertedReverseInverted = {
   intent?: 'none';
 };
 
-export type GhostButtonProps = {
+export type PartialGhostButtonProps = {
   variant?: 'ghost';
   size?: 'small' | 'medium' | 'large';
 } & (GhostPrimary | GhostSecondaryInvertedReverseInverted);

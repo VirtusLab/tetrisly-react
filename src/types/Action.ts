@@ -1,7 +1,7 @@
 import { ButtonProps } from '@/components/Button';
 
 export type Action = Pick<
-  ButtonProps<'bare'>,
+  ButtonProps,
   'label' | 'onClick' | 'onFocus' | 'onBlur'
 >;
 

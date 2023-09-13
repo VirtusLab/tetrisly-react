@@ -1,4 +1,4 @@
-export type BareIconButtonProps = {
+export type PartialBareIconButtonProps = {
   variant?: 'bare';
   appearance?: 'primary' | 'inverted' | 'reverseInverted';
   intent?: 'none';

@@ -8,7 +8,7 @@ type DefaultInverted = {
   intent?: 'none';
 };
 
-export type DefaultIconButtonProps = {
+export type PartialDefaultIconButtonProps = {
   variant?: 'default';
   size?: 'small' | 'medium' | 'large';
 } & (DefaultPrimary | DefaultInverted);
