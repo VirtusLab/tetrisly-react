@@ -1,0 +1,1 @@
+export { extractInputProps } from './extractInputProps';

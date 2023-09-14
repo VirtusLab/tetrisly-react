@@ -1,12 +1,14 @@
-import { SystemProps } from '@xstyled/styled-components';
+import type { SystemProps } from '@xstyled/styled-components';
 
-import { BaseProps } from '@/types/BaseProps';
+import type { HelperTextConfig } from '../HelperText/HelperText.styles';
+
+import type { BaseProps } from '@/types/BaseProps';
 
 export type RadioButtonConfig = {
-  innerComponents: {
-    radioButton: SystemProps;
-    label: SystemProps;
-    helperText: SystemProps;
+  innerElements?: {
+    radioButton?: SystemProps;
+    label?: BaseProps;
+    helperText?: HelperTextConfig;
   };
 } & BaseProps;
 
@@ -24,7 +26,7 @@ export const defaultConfig = {
   pointerEvents: {
     disabled: 'none',
   },
-  innerComponents: {
+  innerElements: {
     radioButton: {
       appearance: 'none',
       display: 'flex',
@@ -78,7 +80,7 @@ export const defaultConfig = {
       text: 'body-medium',
     },
     helperText: {
-      paddingLeft: 'component-padding-2xLarge',
+      pl: 'component-padding-2xLarge',
     },
   },
 } satisfies RadioButtonConfig;

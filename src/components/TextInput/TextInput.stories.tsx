@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TextInput } from './TextInput';
 
 const meta = {
-  title: 'Components/Text Input',
+  title: 'Components/TextInput',
   component: TextInput,
   tags: ['autodocs'],
   args: {
@@ -40,6 +40,17 @@ export const BeforeIconComponent: Story = {
       type: 'Icon',
       props: {
         name: '20-bolt',
+      },
+    },
+  },
+};
+
+export const BeforeAvatarComponent: Story = {
+  args: {
+    beforeComponent: {
+      type: 'Avatar',
+      props: {
+        initials: 'A',
       },
     },
   },
@@ -100,7 +111,7 @@ export const AfterIconButtonComponent: Story = {
   },
 };
 
-export const AfterPrefixComponent: Story = {
+export const AfterSufixComponent: Story = {
   args: {
     afterComponent: {
       type: 'Sufix',

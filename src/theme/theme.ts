@@ -1156,6 +1156,8 @@ const tempTheme: Omit<Theme, 'ringWidths'> = {
     disabled: '&:disabled, &[aria-disabled=true], &[data-state="disabled"]',
     selected: '&[data-state="selected"]',
     loading: '&[data-state="loading"]',
+    hoverWithoutButton:
+      '&:hover:not(:has(button:hover), &:invalid, &[data-state="alert"])',
     alert: '&:invalid, &[data-state="alert"]',
     indeterminate: '&:indeterminate',
   },

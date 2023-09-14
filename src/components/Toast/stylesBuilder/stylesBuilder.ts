@@ -1,30 +1,20 @@
-import { IconProps } from '@virtuslab/tetrisly-icons';
-
-import { ToastProps } from '../Toast.props';
+import type { ToastProps } from '../Toast.props';
 import { defaultConfig } from '../Toast.styles';
-import { ToastIntent } from '../types';
 
-import { BareButtonProps } from '@/components/Button/Button.props';
-import { GhostIconButtonProps } from '@/components/IconButton/IconButton.props';
 import { mergeConfigWithCustom } from '@/services';
-import { BaseProps } from '@/types/BaseProps';
+import type { BaseProps } from '@/types/BaseProps';
 
 type StylesBuilderProps = Required<Pick<ToastProps, 'emphasis' | 'intent'>> & {
+  onCloseClick: ToastProps['onCloseClick'];
   custom: ToastProps['custom'];
-  closeButton: boolean;
 };
 
 type ToastStylesBuilder = {
-  actionProps: {
-    appearance: BareButtonProps['appearance'];
-  };
-  actionContainerStyles: BaseProps;
-  closeButtonProps: Partial<GhostIconButtonProps>;
-  closeButtonStyles: BaseProps;
-  containerStyles: BaseProps;
-  iconProps: Partial<IconProps>;
-  iconContainerStyles: BaseProps;
-  middleDotStyles: BaseProps;
+  container: BaseProps;
+  actionContainer: BaseProps;
+  closeButton: BaseProps;
+  iconContainer: BaseProps;
+  middleDot: BaseProps;
 };
 
 export const stylesBuilder = ({
@@ -37,75 +27,36 @@ export const stylesBuilder = ({
     emphasis: emphasisContainerStyles,
     intent: intentContainerStyles,
     closeButton: closeButtonContainerStyles,
-    innerElements: innerElementsStyles,
+    innerElements: {
+      actionContainer,
+      closeButton,
+      iconContainer: iconContainerStyles,
+      middleDot,
+    },
     ...restContainerStyles
   } = config;
 
-  const containerStyles: BaseProps = {
+  const container = {
     ...intentContainerStyles[props.intent],
     ...emphasisContainerStyles[props.emphasis],
     ...restContainerStyles,
-    ...(props.closeButton && closeButtonContainerStyles),
-  };
 
-  const {
-    actionContainer: actionContainerStyles,
-    closeButton: closeButtonStyles,
-    iconContainer,
-    middleDot: middleDotStyles,
-  } = innerElementsStyles;
-
-  const buttonIntentAppearance =
-    props.intent === 'warning' ? 'reverseInverted' : 'inverted';
-  const buttonAppearance =
-    props.emphasis === 'high' ? buttonIntentAppearance : 'primary';
-
-  const actionProps = {
-    appearance: buttonAppearance as BareButtonProps['appearance'],
-  };
-
-  const icon: { intent: Record<ToastIntent, Partial<IconProps>> } = {
-    intent: {
-      neutral: {},
-      informative: {
-        name: '20-info-fill',
-      },
-      success: {
-        name: '20-check-circle-fill',
-      },
-      warning: {
-        name: '20-warning-fill',
-      },
-      negative: {
-        name: '20-alert-fill',
-      },
-    },
-  };
-
-  const iconProps: Partial<IconProps> = {
-    ...icon.intent[props.intent],
+    ...(!!props.onCloseClick && closeButtonContainerStyles),
   };
 
   const { intent: intentIconContainerStyles, ...restIconContainerStyles } =
-    iconContainer;
+    iconContainerStyles;
 
-  const iconContainerStyles: BaseProps = {
+  const iconContainer = {
     ...intentIconContainerStyles[props.intent].emphasis[props.emphasis],
     ...restIconContainerStyles,
   };
 
-  const closeButtonProps: Partial<GhostIconButtonProps> = {
-    appearance: buttonAppearance,
-  };
-
   return {
-    actionProps,
-    actionContainerStyles,
-    closeButtonProps,
-    closeButtonStyles,
-    containerStyles,
-    iconProps,
-    iconContainerStyles,
-    middleDotStyles,
+    container,
+    actionContainer,
+    iconContainer,
+    closeButton,
+    middleDot,
   };
 };

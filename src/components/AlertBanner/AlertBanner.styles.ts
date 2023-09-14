@@ -48,7 +48,7 @@ export const defaultConfig = {
       ml: 'component-gap-large',
     },
     closeButton: {
-      marginLeft: 'auto',
+      ml: 'auto',
     },
   },
 } satisfies AlertBannerConfig;

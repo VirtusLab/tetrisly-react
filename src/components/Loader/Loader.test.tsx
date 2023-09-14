@@ -1,6 +1,8 @@
 import { Loader } from './Loader';
 import { render } from '../../tests/render';
 
+import { customPropTester } from '@/tests/customPropTester';
+
 const getLoader = (jsx: JSX.Element) => {
   const { queryByTestId } = render(jsx);
 
@@ -12,6 +14,20 @@ const getLoader = (jsx: JSX.Element) => {
 };
 
 describe('Loader', () => {
+  customPropTester(<Loader shape="circle" />, {
+    containerId: 'loader',
+    props: {
+      size: ['small', 'medium', 'big'],
+      appearance: ['primary', 'white', 'inverted', 'greyscale'],
+      shape: ['circle', 'bar'],
+    },
+    innerElements: {
+      _: [['shape', 'size']],
+      base: ['appearance'],
+      progress: ['appearance'],
+    },
+  });
+
   it('should render the loader', () => {
     const { loader } = getLoader(<Loader shape="circle" />);
     expect(loader).toBeInTheDocument();
