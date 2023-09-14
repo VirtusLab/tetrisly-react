@@ -1168,6 +1168,7 @@ export type States = {
     selected: string;
     loading: string;
     alert: string;
+    hoverWithoutButton: string;
     indeterminate: string;
 };
 export {};

@@ -22,8 +22,7 @@ export declare const defaultConfig: {
     ring: string;
     ringColor: {
         _: "interaction-border-neutral-normal";
-        hover: "interaction-border-hover";
-        focus: "interaction-focus-default";
+        hoverWithoutButton: "interaction-border-hover";
         alert: "interaction-border-alert";
     };
     borderRadius: string;
@@ -31,13 +30,13 @@ export declare const defaultConfig: {
         disabled: "disabled";
     };
     outlineStyle: {
-        focusWithin: "solid";
+        '&:has(input:focus)': string;
     };
     outlineColor: {
         focusWithin: "interaction-focus-default";
     };
     outlineWidth: {
-        focusWithin: string;
+        '&:has(input:focus)': string;
     };
     outlineOffset: {
         alert: string;

@@ -28,5 +28,5 @@ export declare const BeforeDropdownComponent: Story;
 export declare const AfterDropdownComponent: Story;
 export declare const AfterIconComponent: Story;
 export declare const AfterIconButtonComponent: Story;
-export declare const AfterPrefixComponent: Story;
+export declare const AfterSufixComponent: Story;
 export declare const AfterButtonComponent: Story;
