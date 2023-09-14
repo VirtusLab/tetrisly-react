@@ -4,7 +4,7 @@ declare const meta: {
     title: string;
     component: import("react").ForwardRefExoticComponent<{
         type?: import("./TextInputType.type").TextInputType | undefined;
-        beforeComponent?: import("./TextInput.props").TextInputProps.InnerComponents.Icon | import("./TextInput.props").TextInputProps.InnerComponents.Dropdown | import("./TextInput.props").TextInputProps.InnerComponents.Prefix | undefined;
+        beforeComponent?: import("./TextInput.props").TextInputProps.InnerComponents.Icon | import("./TextInput.props").TextInputProps.InnerComponents.Dropdown | import("./TextInput.props").TextInputProps.InnerComponents.Prefix | import("./TextInput.props").TextInputProps.InnerComponents.Avatar | undefined;
         afterComponent?: import("./TextInput.props").TextInputProps.InnerComponents.Icon | import("./TextInput.props").TextInputProps.InnerComponents.IconButton | import("./TextInput.props").TextInputProps.InnerComponents.Dropdown | import("./TextInput.props").TextInputProps.InnerComponents.Sufix | import("./TextInput.props").TextInputProps.InnerComponents.Button | undefined;
         state?: import("../../types").BasicInputState | undefined;
         hasClearButton?: boolean | undefined;
@@ -22,6 +22,7 @@ export declare const Disabled: Story;
 export declare const Alert: Story;
 export declare const WithClearButton: Story;
 export declare const BeforeIconComponent: Story;
+export declare const BeforeAvatarComponent: Story;
 export declare const BeforePrefixComponent: Story;
 export declare const BeforeDropdownComponent: Story;
 export declare const AfterDropdownComponent: Story;
