@@ -16,7 +16,7 @@ import { Avatar } from '../Avatar';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 
-import { extractMarginProps } from '@/services/extractMarginProps';
+import { extractInputProps } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
@@ -34,7 +34,7 @@ export const TextInput = forwardRef<
       custom,
       value,
       onChange,
-      ...rest
+      ...restProps
     },
     inputRef,
   ) => {
@@ -43,9 +43,7 @@ export const TextInput = forwardRef<
       () => stylesBuilder(custom, beforeComponent?.type, afterComponent?.type),
       [afterComponent?.type, beforeComponent?.type, custom],
     );
-    const [marginProps, inputProps] = extractMarginProps<
-      TextInputProps & MarginProps
-    >(rest);
+    const [textInputProps, containerProps] = extractInputProps(restProps);
 
     const containerRef = useRef<HTMLInputElement | null>(null);
 
@@ -53,8 +51,7 @@ export const TextInput = forwardRef<
       (e) => {
         if (e.target === containerRef.current) {
           const input = containerRef.current?.querySelector('input');
-
-          if (input) input.focus();
+          input?.focus();
         }
       },
       [containerRef],
@@ -83,7 +80,8 @@ export const TextInput = forwardRef<
         pr={!!afterComponent && '0'}
         data-testid="text-input"
         data-state={state}
-        {...marginProps}
+        tabIndex={0}
+        {...containerProps}
       >
         {!!beforeComponent && (
           <tet.span
@@ -116,7 +114,7 @@ export const TextInput = forwardRef<
           value={value || innerValue}
           onChange={handleOnChange}
           data-testid="text-input-input"
-          {...inputProps}
+          {...textInputProps}
           type={type}
           disabled={state === 'disabled'}
           ref={inputRef}

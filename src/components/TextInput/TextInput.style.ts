@@ -28,11 +28,10 @@ export const defaultConfig = {
   h: 'medium',
   padding: 'component-padding-small component-padding-large',
   flexShrink: 0,
-  ring: '100',
+  ring: 'small',
   ringColor: {
     _: 'interaction-border-neutral-normal',
-    hover: 'interaction-border-hover',
-    focus: 'interaction-focus-default',
+    hoverWithoutButton: 'interaction-border-hover',
     alert: 'interaction-border-alert',
   },
   borderRadius: 'large',
@@ -40,13 +39,13 @@ export const defaultConfig = {
     disabled: 'disabled',
   },
   outlineStyle: {
-    focusWithin: 'solid',
+    '&:has(input:focus)': 'solid',
   },
   outlineColor: {
     focusWithin: 'interaction-focus-default',
   },
   outlineWidth: {
-    focusWithin: 'focus',
+    '&:has(input:focus)': 'focus',
   },
   outlineOffset: {
     alert: 'focus',

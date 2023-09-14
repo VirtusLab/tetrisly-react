@@ -111,7 +111,7 @@ export const AfterIconButtonComponent: Story = {
   },
 };
 
-export const AfterPrefixComponent: Story = {
+export const AfterSufixComponent: Story = {
   args: {
     afterComponent: {
       type: 'Sufix',
