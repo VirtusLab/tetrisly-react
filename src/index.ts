@@ -16,6 +16,7 @@ export * from './components/Popover';
 export * from './components/RadioButton';
 export * from './components/RadioButtonGroup';
 export * from './components/SearchInput';
+export * from './components/Select';
 export * from './components/StatusDot';
 export * from './components/TextInput';
 export * from './components/InlineSearchInput';

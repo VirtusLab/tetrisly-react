@@ -1,4 +1,3 @@
-import { MarginProps } from '@xstyled/styled-components';
 import { FC, useMemo } from 'react';
 
 import { AnimatedProgress } from './AnimatedProgress';
@@ -6,6 +5,7 @@ import { LoaderProps } from './Loader.props';
 import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
+import { MarginProps } from '@/types';
 
 export const Loader: FC<LoaderProps & MarginProps> = ({
   appearance = 'primary',
