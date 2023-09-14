@@ -31,9 +31,20 @@ export const Button: FC<ButtonProps & MarginProps> = ({
         intent,
         size,
         hasDropdownIndicator: dropdown,
+        hasBeforeIcon: !!beforeIcon,
+        hasAfterIcon: !!afterIcon,
         custom,
       }),
-    [variant, appearance, intent, size, dropdown, custom],
+    [
+      variant,
+      appearance,
+      intent,
+      size,
+      dropdown,
+      beforeIcon,
+      afterIcon,
+      custom,
+    ],
   );
 
   if (dropdown && afterIcon) {

@@ -10,6 +10,8 @@ type ButtonStylesBulderInput = {
   intent: NonNullable<ButtonProps['intent']>;
   size: NonNullable<ButtonProps['size']>;
   hasDropdownIndicator?: ButtonProps['hasDropdownIndicator'];
+  hasBeforeIcon?: boolean;
+  hasAfterIcon?: boolean;
   custom?: ButtonProps['custom'];
 };
 
@@ -26,12 +28,13 @@ export const stylesBuilder = (
   });
   const { appearance, size, ...container } = variants[props.variant];
 
-  const { hasDropdownIndicator, ...sizeStyles } = fallbackKey(
-    size,
-    props.size,
-    'medium',
-    `Button props warning: '${props.size}' is not a valid size for '${props.variant}' variant, using 'medium' as size fallback`,
-  );
+  const { hasDropdownIndicator, hasBeforeIcon, hasAfterIcon, ...sizeStyles } =
+    fallbackKey(
+      size,
+      props.size,
+      'medium',
+      `Button props warning: '${props.size}' is not a valid size for '${props.variant}' variant, using 'medium' as size fallback`,
+    );
 
   const { intent, ...appearanceStyles } = fallbackKey(
     appearance,
@@ -52,6 +55,8 @@ export const stylesBuilder = (
       ...container,
       ...sizeStyles,
       ...(props.hasDropdownIndicator && hasDropdownIndicator),
+      ...(props.hasAfterIcon && hasAfterIcon),
+      ...(props.hasBeforeIcon && hasBeforeIcon),
       ...appearanceStyles,
       ...intentStyles,
     },

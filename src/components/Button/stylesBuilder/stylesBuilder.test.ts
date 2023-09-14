@@ -42,8 +42,7 @@ describe('stylesBuilder', () => {
           disabled: 'none',
           loading: 'none',
         },
-        pl: '150',
-        pr: '200',
+        px: 'component-padding-large',
         h: 'medium',
 
         text: 'body-medium',

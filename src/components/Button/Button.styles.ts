@@ -23,9 +23,21 @@ export type DefaultButtonConfig = {
     } & BaseProps;
   };
   size?: {
-    small?: { hasDropdownIndicator?: BaseProps } & BaseProps;
-    medium?: { hasDropdownIndicator?: BaseProps } & BaseProps;
-    large?: { hasDropdownIndicator?: BaseProps } & BaseProps;
+    small?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+    medium?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+    large?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
   };
 } & BaseProps;
 
@@ -55,9 +67,21 @@ export type GhostButtonConfig = {
     } & BaseProps;
   };
   size?: {
-    small?: { hasDropdownIndicator?: BaseProps } & BaseProps;
-    medium?: { hasDropdownIndicator?: BaseProps } & BaseProps;
-    large?: { hasDropdownIndicator?: BaseProps } & BaseProps;
+    small?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+    medium?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+    large?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
   };
 } & BaseProps;
 
@@ -87,36 +111,63 @@ export type BareButtonConfig = {
     } & BaseProps;
   };
   size?: {
-    medium?: { hasDropdownIndicator?: BaseProps } & BaseProps;
-    large?: { hasDropdownIndicator?: BaseProps } & BaseProps;
+    medium?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+    large?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
   };
 } & BaseProps;
 
 const size = {
   small: {
-    pl: '100',
-    pr: '150',
+    px: 'component-padding-medium',
     h: 'small',
     text: 'body-medium',
     hasDropdownIndicator: {},
+    hasBeforeIcon: {
+      pl: 'component-padding-small',
+    },
+    hasAfterIcon: {
+      pr: 'component-padding-small',
+    },
   },
   medium: {
-    pl: '150',
-    pr: '200',
+    px: 'component-padding-large',
     h: 'medium',
     text: 'body-medium',
     hasDropdownIndicator: {},
+    hasBeforeIcon: {
+      pl: 'component-padding-medium',
+    },
+    hasAfterIcon: {
+      pr: 'component-padding-medium',
+    },
   },
   large: {
-    pl: '150',
-    pr: '200',
+    px: 'component-padding-large',
     h: 'large',
     text: 'body-large',
     hasDropdownIndicator: {},
+    hasBeforeIcon: {
+      pl: 'component-padding-medium',
+    },
+    hasAfterIcon: {
+      pr: 'component-padding-medium',
+    },
   },
 } as const satisfies Record<
   'small' | 'medium' | 'large',
-  { hasDropdownIndicator?: BaseProps } & BaseProps
+  {
+    hasDropdownIndicator?: BaseProps;
+    hasBeforeIcon?: BaseProps;
+    hasAfterIcon?: BaseProps;
+  } & BaseProps
 >;
 
 const commonConfig = {
@@ -397,8 +448,18 @@ const bareButtonConfig = {
     },
   },
   size: {
-    medium: { text: 'body-medium', hasDropdownIndicator: {} },
-    large: { text: 'body-large', hasDropdownIndicator: {} },
+    medium: {
+      text: 'body-medium',
+      hasDropdownIndicator: {},
+      hasBeforeIcon: {},
+      hasAfterIcon: {},
+    },
+    large: {
+      text: 'body-large',
+      hasDropdownIndicator: {},
+      hasBeforeIcon: {},
+      hasAfterIcon: {},
+    },
   },
 } satisfies BareButtonConfig;
 
