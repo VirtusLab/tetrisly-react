@@ -8,20 +8,21 @@ import type {
   AvatarSize,
 } from './types';
 
-export type AvatarProps = (
-  | {
-      img: Omit<ImgHTMLAttributes<HTMLImageElement>, 'color'>;
-      appearance: 'image';
-      emphasis?: 'low';
-      initials?: never;
-    }
-  | {
-      img?: never;
-      appearance?: AvatarAppearanceColors;
-      emphasis?: AvatarEmphasis;
-      initials: string;
-    }
-) & {
+export type AvatarImageProps = {
+  img: Omit<ImgHTMLAttributes<HTMLImageElement>, 'color'>;
+  appearance: 'image';
+  emphasis?: 'low';
+  initials?: never;
+};
+
+export type AvatarInitialProps = {
+  img?: never;
+  appearance?: AvatarAppearanceColors;
+  emphasis?: AvatarEmphasis;
+  initials: string;
+};
+
+export type AvatarProps = (AvatarImageProps | AvatarInitialProps) & {
   shape?: AvatarShape;
   size?: AvatarSize;
   custom?: AvatarConfig;

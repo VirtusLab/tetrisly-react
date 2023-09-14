@@ -45,6 +45,17 @@ export const BeforeIconComponent: Story = {
   },
 };
 
+export const BeforeAvatarComponent: Story = {
+  args: {
+    beforeComponent: {
+      type: 'Avatar',
+      props: {
+        initials: 'A',
+      },
+    },
+  },
+};
+
 export const BeforePrefixComponent: Story = {
   args: {
     beforeComponent: {
@@ -100,7 +111,7 @@ export const AfterIconButtonComponent: Story = {
   },
 };
 
-export const AfterPrefixComponent: Story = {
+export const AfterSufixComponent: Story = {
   args: {
     afterComponent: {
       type: 'Sufix',

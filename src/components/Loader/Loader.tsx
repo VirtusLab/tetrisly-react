@@ -1,20 +1,21 @@
-import { MarginProps } from '@xstyled/styled-components';
-import { useMemo } from 'react';
+import { FC, useMemo } from 'react';
 
-import { AnimatedPath } from './AnimatedPath';
+import { AnimatedProgress } from './AnimatedProgress';
 import { LoaderProps } from './Loader.props';
 import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
+import { MarginProps } from '@/types';
 
-export const Loader = ({
+export const Loader: FC<LoaderProps & MarginProps> = ({
   appearance = 'primary',
   progress,
   shape,
   size = 'medium',
   custom,
-}: LoaderProps & MarginProps) => {
-  const { svgStyles, baseStyles, progressStyles } = useMemo(
+  ...restProps
+}) => {
+  const styles = useMemo(
     () =>
       stylesBuilder({
         appearance,
@@ -25,21 +26,23 @@ export const Loader = ({
       }),
     [appearance, progress, shape, size, custom],
   );
+
   return (
     <tet.svg
-      {...svgStyles}
+      {...styles.container}
       xmlns="http://www.w3.org/2000/svg"
       data-testid="loader"
+      {...restProps}
     >
-      <tet.path {...baseStyles} data-testid="loader-base" />
+      <tet.path {...styles.base} data-testid="loader-base" />
       {progress === undefined ? (
-        <AnimatedPath
+        <AnimatedProgress
           shape={shape}
-          {...progressStyles}
+          {...styles.progress}
           data-testid="loader-progress"
         />
       ) : (
-        <tet.path {...progressStyles} data-testid="loader-progress" />
+        <tet.path {...styles.progress} data-testid="loader-progress" />
       )}
     </tet.svg>
   );

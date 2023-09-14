@@ -20,7 +20,7 @@ const animationBar = keyframes`
   }
 `;
 
-export const AnimatedPath = styled(tet.path)<{
+export const AnimatedProgress = styled(tet.path)<{
   shape: string;
 }>`
   aspect-ratio: 1;

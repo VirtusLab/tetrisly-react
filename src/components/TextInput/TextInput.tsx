@@ -12,6 +12,7 @@ import {
 
 import { stylesBuilder } from './stylesBuilder';
 import { TextInputProps } from './TextInput.props';
+import { Avatar } from '../Avatar';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 
@@ -102,6 +103,9 @@ export const TextInput = forwardRef<
                 label={beforeComponent.props.label}
                 dropdownIndicator
               />
+            )}
+            {beforeComponent.type === 'Avatar' && (
+              <Avatar {...beforeComponent.props} shape="square" size="xSmall" />
             )}
           </tet.span>
         )}

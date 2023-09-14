@@ -1,5 +1,4 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { MarginProps } from '@xstyled/styled-components';
 import { useMemo } from 'react';
 
 import { IconButtonProps } from './IconButton.props';
@@ -9,6 +8,7 @@ import { ButtonVariant } from '../Button/types/ButtonType.type';
 import { Loader } from '../Loader';
 
 import { tet } from '@/tetrisly';
+import { MarginProps } from '@/types';
 
 export const IconButton = <
   TVariant extends ButtonVariant,
