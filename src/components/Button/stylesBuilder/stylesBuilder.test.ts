@@ -31,10 +31,13 @@ describe('stylesBuilder', () => {
         opacity: {
           disabled: 'disabled',
         },
+        outline: {
+          focus: 'solid',
+        },
         outlineColor: {
           focus: 'interaction-focus-default',
         },
-        outlineOffset: 2,
+        outlineOffset: 1,
         outlineWidth: {
           focus: 'focus',
         },

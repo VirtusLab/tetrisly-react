@@ -50,13 +50,21 @@ export const stylesBuilder = (
     `Button props warning: '${props.intent}' is not a valid intent for '${props.variant}' variant and '${props.appearance}' appearance, using 'none' as intent fallback`,
   );
 
+  const withDropdownIndicatorStyles: BaseProps = props.hasDropdownIndicator
+    ? hasDropdownIndicator
+    : {};
+  const withAfterIconStyles: BaseProps = props.hasAfterIcon ? hasAfterIcon : {};
+  const withBeforeIconStyles: BaseProps = props.hasBeforeIcon
+    ? hasBeforeIcon
+    : {};
+
   return {
     container: {
       ...container,
       ...sizeStyles,
-      ...(props.hasDropdownIndicator && hasDropdownIndicator),
-      ...(props.hasAfterIcon && hasAfterIcon),
-      ...(props.hasBeforeIcon && hasBeforeIcon),
+      ...withDropdownIndicatorStyles,
+      ...withAfterIconStyles,
+      ...withBeforeIconStyles,
       ...appearanceStyles,
       ...intentStyles,
     },
