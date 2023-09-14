@@ -129,7 +129,9 @@ const size = {
     px: 'component-padding-medium',
     h: 'small',
     text: 'body-medium',
-    hasDropdownIndicator: {},
+    hasDropdownIndicator: {
+      pr: 'component-padding-small',
+    },
     hasBeforeIcon: {
       pl: 'component-padding-small',
     },
@@ -141,7 +143,9 @@ const size = {
     px: 'component-padding-large',
     h: 'medium',
     text: 'body-medium',
-    hasDropdownIndicator: {},
+    hasDropdownIndicator: {
+      pr: 'component-padding-medium',
+    },
     hasBeforeIcon: {
       pl: 'component-padding-medium',
     },
@@ -153,7 +157,9 @@ const size = {
     px: 'component-padding-large',
     h: 'large',
     text: 'body-large',
-    hasDropdownIndicator: {},
+    hasDropdownIndicator: {
+      pr: 'component-padding-medium',
+    },
     hasBeforeIcon: {
       pl: 'component-padding-medium',
     },
@@ -175,11 +181,13 @@ const commonConfig = {
   gap: '100',
   justifyContent: 'center',
   alignItems: 'center',
-  borderRadius: 'medium',
   textAlign: 'center',
   whiteSpace: 'nowrap',
   opacity: {
     disabled: 'disabled',
+  },
+  outline: {
+    focus: 'solid',
   },
   outlineColor: {
     focus: 'interaction-focus-default',
@@ -187,7 +195,7 @@ const commonConfig = {
   outlineWidth: {
     focus: 'focus',
   },
-  outlineOffset: 2,
+  outlineOffset: 1,
   pointerEvents: {
     loading: 'none',
     disabled: 'none',
@@ -198,6 +206,7 @@ const commonConfig = {
 
 const defaultButtonConfig = {
   ...commonConfig,
+  borderRadius: 'medium',
   boxShadow: 'bottom-100',
   appearance: {
     primary: {
@@ -294,6 +303,7 @@ const defaultButtonConfig = {
 
 const ghostButtonConfig = {
   ...commonConfig,
+  borderRadius: 'medium',
   backgroundColor: {
     _: 'transparent',
     hover: 'action-ghost-hover',
@@ -346,9 +356,9 @@ const ghostButtonConfig = {
         none: {
           backgroundColor: {
             _: 'action-ghost-normal',
-            hover: 'action-ghost-hover',
-            active: 'action-ghost-active',
-            selected: 'action-ghost-selected',
+            hover: 'action-ghost-inverted-hover',
+            active: 'action-ghost-inverted-active',
+            selected: 'action-ghost-inverted-selected',
           },
           color: {
             _: 'action-inverted-normal',
@@ -377,7 +387,8 @@ const ghostButtonConfig = {
 
 const bareButtonConfig = {
   ...commonConfig,
-  p: 0,
+  outlineOffset: 0,
+  p: 25,
   backgroundColor: 'transparent',
   appearance: {
     primary: {

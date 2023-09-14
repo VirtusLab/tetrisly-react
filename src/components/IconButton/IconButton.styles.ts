@@ -4,28 +4,46 @@ const size = {
   small: {
     w: 'small',
     h: 'small',
-    pl: 'unset',
-    pr: 'unset',
+    px: 'unset',
     hasDropdownIndicator: {
       w: 'xLarge',
+      pr: 'unset',
+    },
+    hasBeforeIcon: {
+      pl: 'unset',
+    },
+    hasAfterIcon: {
+      pr: 'unset',
     },
   },
   medium: {
     w: 'medium',
     h: 'medium',
-    pl: 'unset',
-    pr: 'unset',
+    px: 'unset',
     hasDropdownIndicator: {
       w: '2xLarge',
+      pr: 'unset',
+    },
+    hasBeforeIcon: {
+      pl: 'unset',
+    },
+    hasAfterIcon: {
+      pr: 'unset',
     },
   },
   large: {
     w: 'large',
     h: 'large',
-    pl: 'unset',
-    pr: 'unset',
+    px: 'unset',
     hasDropdownIndicator: {
       h: '3xLarge',
+      pr: 'unset',
+    },
+    hasBeforeIcon: {
+      pl: 'unset',
+    },
+    hasAfterIcon: {
+      pr: 'unset',
     },
   },
 };

@@ -140,6 +140,7 @@ export const BareLoading: Story = {
   ...Bare,
   args: {
     state: 'loading',
+    variant: 'bare',
   },
 };
 
@@ -147,6 +148,7 @@ export const BareDisabled: Story = {
   ...Bare,
   args: {
     state: 'disabled',
+    variant: 'bare',
   },
 };
 
