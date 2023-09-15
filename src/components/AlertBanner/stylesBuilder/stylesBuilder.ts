@@ -28,11 +28,11 @@ export const stylesBuilder = (
 
   const actionProps = {
     appearance: intent === 'warning' ? 'reverseInverted' : 'inverted',
-  };
+  } as const;
 
   const closeButtonProps = {
     appearance: intent === 'warning' ? 'primary' : 'inverted',
-  };
+  } as const;
 
   return {
     container: {
@@ -41,8 +41,8 @@ export const stylesBuilder = (
     },
     iconContainer,
     actionContainer,
-    actionProps: actionProps as Partial<BareButtonProps>,
-    closeButtonProps: closeButtonProps as Partial<GhostIconButtonProps>,
+    actionProps,
+    closeButtonProps,
     closeButton,
   };
 };
