@@ -1,25 +1,143 @@
-import { IconButtonAppearance } from './IconButtonAppearance.type';
-import { IconButtonIntent } from './IconButtonIntent.type';
-import { IconButtonSize } from './IconButtonSize.type';
-import { ButtonVariant } from '../Button/types/ButtonType.type';
-import { BaseProps } from '../../types/BaseProps';
-type Sizes = Partial<Record<IconButtonSize, BaseProps & {
-    dropdownIndicator: BaseProps;
-}>>;
-export type Intents<TAppearance extends IconButtonAppearance> = {
-    [TIntent in IconButtonIntent<TAppearance>]: BaseProps;
-};
-export type IconButtonConfig = {
-    variants: {
-        [TVariant in ButtonVariant]: {
-            appearances: {
-                [TAppearance in IconButtonAppearance<TVariant>]: {
-                    intents?: Intents<TAppearance>;
-                } & BaseProps;
+export declare const defaultConfig: {
+    default: {
+        size: {
+            small: {
+                w: string;
+                h: string;
+                px: string;
+                hasDropdownIndicator: {
+                    w: string;
+                    pr: string;
+                };
+                hasBeforeIcon: {
+                    pl: string;
+                };
+                hasAfterIcon: {
+                    pr: string;
+                };
             };
-            sizes?: Sizes;
-        } & BaseProps;
+            medium: {
+                w: string;
+                h: string;
+                px: string;
+                hasDropdownIndicator: {
+                    w: string;
+                    pr: string;
+                };
+                hasBeforeIcon: {
+                    pl: string;
+                };
+                hasAfterIcon: {
+                    pr: string;
+                };
+            };
+            large: {
+                w: string;
+                h: string;
+                px: string;
+                hasDropdownIndicator: {
+                    h: string;
+                    pr: string;
+                };
+                hasBeforeIcon: {
+                    pl: string;
+                };
+                hasAfterIcon: {
+                    pr: string;
+                };
+            };
+        };
+        p: string;
+        gap: string;
+        borderRadius: string;
     };
-} & BaseProps;
-export declare const defaultConfig: IconButtonConfig;
-export {};
+    ghost: {
+        size: {
+            small: {
+                w: string;
+                h: string;
+                px: string;
+                hasDropdownIndicator: {
+                    w: string;
+                    pr: string;
+                };
+                hasBeforeIcon: {
+                    pl: string;
+                };
+                hasAfterIcon: {
+                    pr: string;
+                };
+            };
+            medium: {
+                w: string;
+                h: string;
+                px: string;
+                hasDropdownIndicator: {
+                    w: string;
+                    pr: string;
+                };
+                hasBeforeIcon: {
+                    pl: string;
+                };
+                hasAfterIcon: {
+                    pr: string;
+                };
+            };
+            large: {
+                w: string;
+                h: string;
+                px: string;
+                hasDropdownIndicator: {
+                    h: string;
+                    pr: string;
+                };
+                hasBeforeIcon: {
+                    pl: string;
+                };
+                hasAfterIcon: {
+                    pr: string;
+                };
+            };
+        };
+        p: string;
+        gap: string;
+        borderRadius: string;
+    };
+    bare: {
+        size: {
+            medium: {
+                w: string;
+                h: string;
+                px: string;
+                hasDropdownIndicator: {
+                    w: string;
+                    pr: string;
+                };
+                hasBeforeIcon: {
+                    pl: string;
+                };
+                hasAfterIcon: {
+                    pr: string;
+                };
+            };
+            large: {
+                w: string;
+                h: string;
+                px: string;
+                hasDropdownIndicator: {
+                    w: string;
+                    pr: string;
+                };
+                hasBeforeIcon: {
+                    pl: string;
+                };
+                hasAfterIcon: {
+                    pr: string;
+                };
+            };
+        };
+        p: string;
+        gap: string;
+        borderRadius: string;
+    };
+};

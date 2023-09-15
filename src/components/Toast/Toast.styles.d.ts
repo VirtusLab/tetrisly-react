@@ -1,5 +1,5 @@
 import type { ToastEmphasis, ToastIntent } from './types';
-import type { ButtonProps } from '../Button';
+import { BareButtonProps } from '../Button/Button.props';
 import type { BaseProps } from '../../types/BaseProps';
 import type { IconName } from '../../utility-types/IconName';
 export type ToastConfig = {
@@ -14,7 +14,7 @@ export type ToastConfig = {
         } & BaseProps;
         actionContainer?: BaseProps;
         middleDot?: {
-            emphasis: Partial<Record<ToastEmphasis, BaseProps | Partial<ButtonProps<'bare'>>>>;
+            emphasis: Partial<Record<ToastEmphasis, BaseProps | Partial<BareButtonProps>>>;
         } & BaseProps;
         closeButton?: BaseProps;
     };

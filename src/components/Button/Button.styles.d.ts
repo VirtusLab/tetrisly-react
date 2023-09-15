@@ -1,360 +1,549 @@
-export declare const config: {
-    readonly default: {
-        readonly boxShadow: "bottom-100";
-        readonly appearance: {
-            readonly primary: {
-                readonly color: "action-inverted-normal";
-                readonly intent: {
-                    readonly none: {
-                        readonly backgroundColor: {
-                            readonly _: "action-primary-normal";
-                            readonly hover: "action-primary-hover";
-                            readonly active: "action-primary-active";
-                            readonly selected: "action-primary-selected";
+import { BaseProps } from '../../types/BaseProps';
+export type DefaultButtonConfig = {
+    appearance?: {
+        primary?: {
+            intent?: {
+                none?: BaseProps;
+                success?: BaseProps;
+                destructive?: BaseProps;
+            };
+        } & BaseProps;
+        secondary?: {
+            intent?: {
+                none?: BaseProps;
+                success?: BaseProps;
+                destructive?: BaseProps;
+            };
+        } & BaseProps;
+        inverted?: {
+            intent?: {
+                none?: BaseProps;
+            };
+        } & BaseProps;
+    };
+    size?: {
+        small?: {
+            hasDropdownIndicator?: BaseProps;
+            hasBeforeIcon?: BaseProps;
+            hasAfterIcon?: BaseProps;
+        } & BaseProps;
+        medium?: {
+            hasDropdownIndicator?: BaseProps;
+            hasBeforeIcon?: BaseProps;
+            hasAfterIcon?: BaseProps;
+        } & BaseProps;
+        large?: {
+            hasDropdownIndicator?: BaseProps;
+            hasBeforeIcon?: BaseProps;
+            hasAfterIcon?: BaseProps;
+        } & BaseProps;
+    };
+} & BaseProps;
+export type GhostButtonConfig = {
+    appearance?: {
+        primary?: {
+            intent?: {
+                none?: BaseProps;
+                success?: BaseProps;
+                destructive?: BaseProps;
+            };
+        } & BaseProps;
+        secondary?: {
+            intent?: {
+                none?: BaseProps;
+            };
+        } & BaseProps;
+        inverted?: {
+            intent?: {
+                none?: BaseProps;
+            };
+        } & BaseProps;
+        reverseInverted?: {
+            intent?: {
+                none?: BaseProps;
+            };
+        } & BaseProps;
+    };
+    size?: {
+        small?: {
+            hasDropdownIndicator?: BaseProps;
+            hasBeforeIcon?: BaseProps;
+            hasAfterIcon?: BaseProps;
+        } & BaseProps;
+        medium?: {
+            hasDropdownIndicator?: BaseProps;
+            hasBeforeIcon?: BaseProps;
+            hasAfterIcon?: BaseProps;
+        } & BaseProps;
+        large?: {
+            hasDropdownIndicator?: BaseProps;
+            hasBeforeIcon?: BaseProps;
+            hasAfterIcon?: BaseProps;
+        } & BaseProps;
+    };
+} & BaseProps;
+export type BareButtonConfig = {
+    appearance?: {
+        primary?: {
+            intent?: {
+                none?: BaseProps;
+                success?: BaseProps;
+                destructive?: BaseProps;
+            };
+        } & BaseProps;
+        secondary?: {
+            intent?: {
+                none?: BaseProps;
+            };
+        } & BaseProps;
+        inverted?: {
+            intent?: {
+                none?: BaseProps;
+            };
+        } & BaseProps;
+        reverseInverted?: {
+            intent?: {
+                none?: BaseProps;
+            };
+        } & BaseProps;
+    };
+    size?: {
+        medium?: {
+            hasDropdownIndicator?: BaseProps;
+            hasBeforeIcon?: BaseProps;
+            hasAfterIcon?: BaseProps;
+        } & BaseProps;
+        large?: {
+            hasDropdownIndicator?: BaseProps;
+            hasBeforeIcon?: BaseProps;
+            hasAfterIcon?: BaseProps;
+        } & BaseProps;
+    };
+} & BaseProps;
+export type ButtonConfig = {
+    default?: DefaultButtonConfig;
+    ghost?: GhostButtonConfig;
+    bare?: BareButtonConfig;
+};
+export declare const defaultConfig: {
+    default: {
+        borderRadius: string;
+        boxShadow: "bottom-100";
+        appearance: {
+            primary: {
+                color: "action-inverted-normal";
+                intent: {
+                    none: {
+                        backgroundColor: {
+                            _: "action-primary-normal";
+                            hover: "action-primary-hover";
+                            active: "action-primary-active";
+                            selected: "action-primary-selected";
                         };
                     };
-                    readonly success: {
-                        readonly backgroundColor: {
-                            readonly _: "action-success-normal";
-                            readonly hover: "action-success-hover";
-                            readonly active: "action-success-active";
-                            readonly selected: "action-success-selected";
+                    success: {
+                        backgroundColor: {
+                            _: "action-success-normal";
+                            hover: "action-success-hover";
+                            active: "action-success-active";
+                            selected: "action-success-selected";
                         };
                     };
-                    readonly destructive: {
-                        readonly backgroundColor: {
-                            readonly _: "action-destructive-normal";
-                            readonly hover: "action-destructive-hover";
-                            readonly active: "action-destructive-active";
-                            readonly selected: "action-destructive-selected";
+                    destructive: {
+                        backgroundColor: {
+                            _: "action-destructive-normal";
+                            hover: "action-destructive-hover";
+                            active: "action-destructive-active";
+                            selected: "action-destructive-selected";
                         };
                     };
                 };
             };
-            readonly secondary: {
-                readonly backgroundColor: "action-inverted-normal";
-                readonly ringInset: true;
-                readonly ring: "100";
-                readonly ringColor: {
-                    readonly _: "action-outline-normal";
-                    readonly hover: "action-outline-hover";
-                    readonly active: "action-outline-active";
-                    readonly selected: "action-outline-selected";
+            secondary: {
+                backgroundColor: "action-inverted-normal";
+                ringInset: true;
+                ring: string;
+                ringColor: {
+                    _: "action-outline-normal";
+                    hover: "action-outline-hover";
+                    active: "action-outline-active";
+                    selected: "action-outline-selected";
                 };
-                readonly intent: {
-                    readonly none: {
-                        readonly color: {
-                            readonly _: "action-neutral-normal";
-                            readonly hover: "action-neutral-hover";
-                            readonly active: "action-neutral-active";
-                            readonly selected: "action-neutral-selected";
+                intent: {
+                    none: {
+                        color: {
+                            _: "action-neutral-normal";
+                            hover: "action-neutral-hover";
+                            active: "action-neutral-active";
+                            selected: "action-neutral-selected";
                         };
                     };
-                    readonly success: {
-                        readonly color: {
-                            readonly _: "action-success-normal";
-                            readonly hover: "action-success-hover";
-                            readonly active: "action-success-active";
-                            readonly selected: "action-success-selected";
+                    success: {
+                        color: {
+                            _: "action-success-normal";
+                            hover: "action-success-hover";
+                            active: "action-success-active";
+                            selected: "action-success-selected";
                         };
                     };
-                    readonly destructive: {
-                        readonly color: {
-                            readonly _: "action-destructive-normal";
-                            readonly hover: "action-destructive-hover";
-                            readonly active: "action-destructive-active";
-                            readonly selected: "action-destructive-selected";
+                    destructive: {
+                        color: {
+                            _: "action-destructive-normal";
+                            hover: "action-destructive-hover";
+                            active: "action-destructive-active";
+                            selected: "action-destructive-selected";
                         };
                     };
                 };
             };
-            readonly inverted: {
-                readonly intent: {
-                    readonly none: {
-                        readonly backgroundColor: {
-                            readonly _: "action-inverted-normal";
-                            readonly hover: "action-inverted-hover";
-                            readonly active: "action-inverted-active";
-                            readonly selected: "action-inverted-selected";
+            inverted: {
+                intent: {
+                    none: {
+                        backgroundColor: {
+                            _: "action-inverted-normal";
+                            hover: "action-inverted-hover";
+                            active: "action-inverted-active";
+                            selected: "action-inverted-selected";
                         };
-                        readonly color: {
-                            readonly _: "action-neutral-normal";
-                            readonly hover: "action-neutral-hover";
-                            readonly active: "action-neutral-active";
-                            readonly selected: "action-neutral-selected";
+                        color: {
+                            _: "action-neutral-normal";
+                            hover: "action-neutral-hover";
+                            active: "action-neutral-active";
+                            selected: "action-neutral-selected";
                         };
                     };
                 };
             };
         };
-        readonly size: {
+        size: {
             readonly small: {
-                readonly pl: "100";
-                readonly pr: "150";
+                readonly px: "component-padding-medium";
                 readonly h: "small";
                 readonly text: "body-medium";
+                readonly hasDropdownIndicator: {
+                    readonly pr: "component-padding-small";
+                };
+                readonly hasBeforeIcon: {
+                    readonly pl: "component-padding-small";
+                };
+                readonly hasAfterIcon: {
+                    readonly pr: "component-padding-small";
+                };
             };
             readonly medium: {
-                readonly pl: "150";
-                readonly pr: "200";
+                readonly px: "component-padding-large";
                 readonly h: "medium";
                 readonly text: "body-medium";
+                readonly hasDropdownIndicator: {
+                    readonly pr: "component-padding-medium";
+                };
+                readonly hasBeforeIcon: {
+                    readonly pl: "component-padding-medium";
+                };
+                readonly hasAfterIcon: {
+                    readonly pr: "component-padding-medium";
+                };
             };
             readonly large: {
-                readonly pl: "150";
-                readonly pr: "200";
+                readonly px: "component-padding-large";
                 readonly h: "large";
                 readonly text: "body-large";
+                readonly hasDropdownIndicator: {
+                    readonly pr: "component-padding-medium";
+                };
+                readonly hasBeforeIcon: {
+                    readonly pl: "component-padding-medium";
+                };
+                readonly hasAfterIcon: {
+                    readonly pr: "component-padding-medium";
+                };
             };
         };
-        readonly display: "inline-flex";
-        readonly gap: "100";
-        readonly justifyContent: "center";
-        readonly alignItems: "center";
-        readonly borderRadius: "medium";
-        readonly textAlign: "center";
-        readonly whiteSpace: "nowrap";
-        readonly opacity: {
-            readonly disabled: "disabled";
+        display: "inline-flex";
+        gap: string;
+        justifyContent: "center";
+        alignItems: "center";
+        textAlign: "center";
+        whiteSpace: "nowrap";
+        opacity: {
+            disabled: "disabled";
         };
-        readonly outlineColor: {
-            readonly focus: "interaction-focus-default";
+        outline: {
+            focus: string;
         };
-        readonly outlineWidth: {
-            readonly focus: "focus";
+        outlineColor: {
+            focus: "interaction-focus-default";
         };
-        readonly outlineOffset: 2;
-        readonly pointerEvents: {
-            readonly loading: "none";
-            readonly disabled: "none";
+        outlineWidth: {
+            focus: string;
         };
-        readonly transition: true;
-        readonly transitionDuration: 200;
+        outlineOffset: number;
+        pointerEvents: {
+            loading: "none";
+            disabled: "none";
+        };
+        transition: boolean;
+        transitionDuration: number;
     };
-    readonly ghost: {
-        readonly backgroundColor: {
-            readonly _: "transparent";
-            readonly hover: "action-ghost-hover";
-            readonly active: "action-ghost-active";
-            readonly selected: "action-ghost-selected";
+    ghost: {
+        borderRadius: string;
+        backgroundColor: {
+            _: "transparent";
+            hover: "action-ghost-hover";
+            active: "action-ghost-active";
+            selected: "action-ghost-selected";
         };
-        readonly appearance: {
-            readonly primary: {
-                readonly intent: {
-                    readonly none: {
-                        readonly color: {
-                            readonly _: "action-primary-normal";
-                            readonly hover: "action-primary-hover";
-                            readonly active: "action-primary-active";
-                            readonly selected: "action-primary-selected";
+        appearance: {
+            primary: {
+                intent: {
+                    none: {
+                        color: {
+                            _: "action-primary-normal";
+                            hover: "action-primary-hover";
+                            active: "action-primary-active";
+                            selected: "action-primary-selected";
                         };
                     };
-                    readonly success: {
-                        readonly color: {
-                            readonly _: "action-success-normal";
-                            readonly hover: "action-success-hover";
-                            readonly active: "action-success-active";
-                            readonly selected: "action-success-selected";
+                    success: {
+                        color: {
+                            _: "action-success-normal";
+                            hover: "action-success-hover";
+                            active: "action-success-active";
+                            selected: "action-success-selected";
                         };
                     };
-                    readonly destructive: {
-                        readonly color: {
-                            readonly _: "action-destructive-normal";
-                            readonly hover: "action-destructive-hover";
-                            readonly active: "action-destructive-active";
-                            readonly selected: "action-destructive-selected";
-                        };
-                    };
-                };
-            };
-            readonly secondary: {
-                readonly intent: {
-                    readonly none: {
-                        readonly color: {
-                            readonly _: "action-neutral-normal";
-                            readonly hover: "action-neutral-hover";
-                            readonly active: "action-neutral-active";
-                            readonly selected: "action-neutral-selected";
+                    destructive: {
+                        color: {
+                            _: "action-destructive-normal";
+                            hover: "action-destructive-hover";
+                            active: "action-destructive-active";
+                            selected: "action-destructive-selected";
                         };
                     };
                 };
             };
-            readonly inverted: {
-                readonly intent: {
-                    readonly none: {
-                        readonly backgroundColor: {
-                            readonly _: "action-ghost-normal";
-                            readonly hover: "action-ghost-hover";
-                            readonly active: "action-ghost-active";
-                            readonly selected: "action-ghost-selected";
-                        };
-                        readonly color: {
-                            readonly _: "action-inverted-normal";
-                            readonly hover: "action-inverted-hover";
-                            readonly active: "action-inverted-active";
-                            readonly selected: "action-inverted-selected";
+            secondary: {
+                intent: {
+                    none: {
+                        color: {
+                            _: "action-neutral-normal";
+                            hover: "action-neutral-hover";
+                            active: "action-neutral-active";
+                            selected: "action-neutral-selected";
                         };
                     };
                 };
             };
-            readonly reverseInverted: {
-                readonly intent: {
-                    readonly none: {
-                        readonly color: {
-                            readonly _: "action-reverseInverted-normal";
-                            readonly hover: "action-reverseInverted-hover";
-                            readonly active: "action-reverseInverted-active";
-                            readonly selected: "action-reverseInverted-selected";
+            inverted: {
+                intent: {
+                    none: {
+                        backgroundColor: {
+                            _: "action-ghost-normal";
+                            hover: "action-ghost-inverted-hover";
+                            active: "action-ghost-inverted-active";
+                            selected: "action-ghost-inverted-selected";
+                        };
+                        color: {
+                            _: "action-inverted-normal";
+                            hover: "action-inverted-hover";
+                            active: "action-inverted-active";
+                            selected: "action-inverted-selected";
+                        };
+                    };
+                };
+            };
+            reverseInverted: {
+                intent: {
+                    none: {
+                        color: {
+                            _: "action-reverseInverted-normal";
+                            hover: "action-reverseInverted-hover";
+                            active: "action-reverseInverted-active";
+                            selected: "action-reverseInverted-selected";
                         };
                     };
                 };
             };
         };
-        readonly size: {
+        size: {
             readonly small: {
-                readonly pl: "100";
-                readonly pr: "150";
+                readonly px: "component-padding-medium";
                 readonly h: "small";
                 readonly text: "body-medium";
+                readonly hasDropdownIndicator: {
+                    readonly pr: "component-padding-small";
+                };
+                readonly hasBeforeIcon: {
+                    readonly pl: "component-padding-small";
+                };
+                readonly hasAfterIcon: {
+                    readonly pr: "component-padding-small";
+                };
             };
             readonly medium: {
-                readonly pl: "150";
-                readonly pr: "200";
+                readonly px: "component-padding-large";
                 readonly h: "medium";
                 readonly text: "body-medium";
+                readonly hasDropdownIndicator: {
+                    readonly pr: "component-padding-medium";
+                };
+                readonly hasBeforeIcon: {
+                    readonly pl: "component-padding-medium";
+                };
+                readonly hasAfterIcon: {
+                    readonly pr: "component-padding-medium";
+                };
             };
             readonly large: {
-                readonly pl: "150";
-                readonly pr: "200";
+                readonly px: "component-padding-large";
                 readonly h: "large";
                 readonly text: "body-large";
+                readonly hasDropdownIndicator: {
+                    readonly pr: "component-padding-medium";
+                };
+                readonly hasBeforeIcon: {
+                    readonly pl: "component-padding-medium";
+                };
+                readonly hasAfterIcon: {
+                    readonly pr: "component-padding-medium";
+                };
             };
         };
-        readonly display: "inline-flex";
-        readonly gap: "100";
-        readonly justifyContent: "center";
-        readonly alignItems: "center";
-        readonly borderRadius: "medium";
-        readonly textAlign: "center";
-        readonly whiteSpace: "nowrap";
-        readonly opacity: {
-            readonly disabled: "disabled";
+        display: "inline-flex";
+        gap: string;
+        justifyContent: "center";
+        alignItems: "center";
+        textAlign: "center";
+        whiteSpace: "nowrap";
+        opacity: {
+            disabled: "disabled";
         };
-        readonly outlineColor: {
-            readonly focus: "interaction-focus-default";
+        outline: {
+            focus: string;
         };
-        readonly outlineWidth: {
-            readonly focus: "focus";
+        outlineColor: {
+            focus: "interaction-focus-default";
         };
-        readonly outlineOffset: 2;
-        readonly pointerEvents: {
-            readonly loading: "none";
-            readonly disabled: "none";
+        outlineWidth: {
+            focus: string;
         };
-        readonly transition: true;
-        readonly transitionDuration: 200;
+        outlineOffset: number;
+        pointerEvents: {
+            loading: "none";
+            disabled: "none";
+        };
+        transition: boolean;
+        transitionDuration: number;
     };
-    readonly bare: {
-        readonly p: 0;
-        readonly backgroundColor: "transparent";
-        readonly appearance: {
-            readonly primary: {
-                readonly intent: {
-                    readonly none: {
-                        readonly color: {
-                            readonly _: "action-primary-normal";
-                            readonly hover: "action-primary-hover";
-                            readonly active: "action-primary-active";
-                            readonly selected: "action-primary-selected";
+    bare: {
+        outlineOffset: number;
+        p: number;
+        backgroundColor: "transparent";
+        appearance: {
+            primary: {
+                intent: {
+                    none: {
+                        color: {
+                            _: "action-primary-normal";
+                            hover: "action-primary-hover";
+                            active: "action-primary-active";
+                            selected: "action-primary-selected";
                         };
                     };
-                    readonly success: {
-                        readonly color: {
-                            readonly _: "action-success-normal";
-                            readonly hover: "action-success-hover";
-                            readonly active: "action-success-active";
-                            readonly selected: "action-success-selected";
+                    success: {
+                        color: {
+                            _: "action-success-normal";
+                            hover: "action-success-hover";
+                            active: "action-success-active";
+                            selected: "action-success-selected";
                         };
                     };
-                    readonly destructive: {
-                        readonly color: {
-                            readonly _: "action-destructive-normal";
-                            readonly hover: "action-destructive-hover";
-                            readonly active: "action-destructive-active";
-                            readonly selected: "action-destructive-selected";
-                        };
-                    };
-                };
-            };
-            readonly secondary: {
-                readonly intent: {
-                    readonly none: {
-                        readonly color: {
-                            readonly _: "action-neutral-normal";
-                            readonly hover: "action-neutral-hover";
-                            readonly active: "action-neutral-active";
-                            readonly selected: "action-neutral-selected";
+                    destructive: {
+                        color: {
+                            _: "action-destructive-normal";
+                            hover: "action-destructive-hover";
+                            active: "action-destructive-active";
+                            selected: "action-destructive-selected";
                         };
                     };
                 };
             };
-            readonly inverted: {
-                readonly intent: {
-                    readonly none: {
-                        readonly color: {
-                            readonly _: "action-inverted-normal";
-                            readonly hover: "action-inverted-hover";
-                            readonly active: "action-inverted-active";
-                            readonly selected: "action-inverted-selected";
+            secondary: {
+                intent: {
+                    none: {
+                        color: {
+                            _: "action-neutral-normal";
+                            hover: "action-neutral-hover";
+                            active: "action-neutral-active";
+                            selected: "action-neutral-selected";
                         };
                     };
                 };
-                readonly textDecoration: "underline";
             };
-            readonly reverseInverted: {
-                readonly intent: {
-                    readonly none: {
-                        readonly color: {
-                            readonly _: "action-reverseInverted-normal";
-                            readonly hover: "action-reverseInverted-hover";
-                            readonly active: "action-reverseInverted-active";
-                            readonly selected: "action-reverseInverted-selected";
+            inverted: {
+                intent: {
+                    none: {
+                        color: {
+                            _: "action-inverted-normal";
+                            hover: "action-inverted-hover";
+                            active: "action-inverted-active";
+                            selected: "action-inverted-selected";
                         };
                     };
                 };
-                readonly textDecoration: "underline";
+                textDecoration: "underline";
+            };
+            reverseInverted: {
+                intent: {
+                    none: {
+                        color: {
+                            _: "action-reverseInverted-normal";
+                            hover: "action-reverseInverted-hover";
+                            active: "action-reverseInverted-active";
+                            selected: "action-reverseInverted-selected";
+                        };
+                    };
+                };
+                textDecoration: "underline";
             };
         };
-        readonly size: {
-            readonly medium: {
-                readonly text: "body-medium";
+        size: {
+            medium: {
+                text: "body-medium";
+                hasDropdownIndicator: {};
+                hasBeforeIcon: {};
+                hasAfterIcon: {};
             };
-            readonly large: {
-                readonly text: "body-large";
+            large: {
+                text: "body-large";
+                hasDropdownIndicator: {};
+                hasBeforeIcon: {};
+                hasAfterIcon: {};
             };
         };
-        readonly display: "inline-flex";
-        readonly gap: "100";
-        readonly justifyContent: "center";
-        readonly alignItems: "center";
-        readonly borderRadius: "medium";
-        readonly textAlign: "center";
-        readonly whiteSpace: "nowrap";
-        readonly opacity: {
-            readonly disabled: "disabled";
+        display: "inline-flex";
+        gap: string;
+        justifyContent: "center";
+        alignItems: "center";
+        textAlign: "center";
+        whiteSpace: "nowrap";
+        opacity: {
+            disabled: "disabled";
         };
-        readonly outlineColor: {
-            readonly focus: "interaction-focus-default";
+        outline: {
+            focus: string;
         };
-        readonly outlineWidth: {
-            readonly focus: "focus";
+        outlineColor: {
+            focus: "interaction-focus-default";
         };
-        readonly outlineOffset: 2;
-        readonly pointerEvents: {
-            readonly loading: "none";
-            readonly disabled: "none";
+        outlineWidth: {
+            focus: string;
         };
-        readonly transition: true;
-        readonly transitionDuration: 200;
+        pointerEvents: {
+            loading: "none";
+            disabled: "none";
+        };
+        transition: boolean;
+        transitionDuration: number;
     };
 };
