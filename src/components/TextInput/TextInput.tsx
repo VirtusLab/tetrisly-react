@@ -101,7 +101,7 @@ export const TextInput = forwardRef<
                 size="small"
                 variant="ghost"
                 label={beforeComponent.props.label}
-                dropdownIndicator
+                hasDropdownIndicator
               />
             )}
             {beforeComponent.type === 'Avatar' && (
@@ -156,7 +156,7 @@ export const TextInput = forwardRef<
                 size="small"
                 variant="ghost"
                 label={afterComponent.props.label}
-                dropdownIndicator
+                hasDropdownIndicator
               />
             )}
           </tet.span>

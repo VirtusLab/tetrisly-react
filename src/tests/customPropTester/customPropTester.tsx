@@ -14,7 +14,10 @@ export const customPropTester = (
   Component: React.ReactNode,
   options: Options,
 ) => {
-  const customProp = generateCustomProp(options);
+  const customMapper = options.customMapper
+    ? options.customMapper
+    : (a: object) => a;
+  const customProp = customMapper(generateCustomProp(options));
   const componentVariants = generateVariants(options);
 
   describe('CustomPropTester', () => {

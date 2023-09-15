@@ -2,10 +2,8 @@ import { AlertBannerProps } from '../AlertBanner.props';
 import { defaultConfig } from '../AlertBanner.styles';
 import { AlertBannerIntent } from '../types';
 
-import { ButtonProps } from '@/components/Button';
-import { ButtonAppearance } from '@/components/Button/types/ButtonAppearance.type';
-import { IconButtonProps } from '@/components/IconButton/IconButton.props';
-import { IconButtonAppearance } from '@/components/IconButton/IconButtonAppearance.type';
+import { BareButtonProps } from '@/components/Button/Button.props';
+import { GhostIconButtonProps } from '@/components/IconButton/IconButton.props';
 import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
 
@@ -14,8 +12,8 @@ type AlertBannerStylesBuilder = {
   iconContainer: BaseProps;
   actionContainer: BaseProps;
   closeButton: BaseProps;
-  actionProps: Partial<ButtonProps<'ghost'>>;
-  closeButtonProps: Partial<IconButtonProps<'ghost'>>;
+  actionProps: Partial<BareButtonProps>;
+  closeButtonProps: Partial<GhostIconButtonProps>;
 };
 
 export const stylesBuilder = (
@@ -29,16 +27,12 @@ export const stylesBuilder = (
   } = mergeConfigWithCustom({ defaultConfig, custom });
 
   const actionProps = {
-    appearance: (intent === 'warning'
-      ? 'reverseInverted'
-      : 'inverted') as ButtonAppearance<'ghost'>,
-  };
+    appearance: intent === 'warning' ? 'reverseInverted' : 'inverted',
+  } as const;
 
   const closeButtonProps = {
-    appearance: (intent === 'warning'
-      ? 'primary'
-      : 'inverted') as IconButtonAppearance<'ghost'>,
-  };
+    appearance: intent === 'warning' ? 'primary' : 'inverted',
+  } as const;
 
   return {
     container: {

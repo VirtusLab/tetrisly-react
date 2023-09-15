@@ -1,14 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { Button } from './Button';
-import { ButtonAppearance } from './types/ButtonAppearance.type';
-import { ButtonIntent } from './types/ButtonIntent.type';
-import { ButtonSize } from './types/ButtonSize.type';
-import { ButtonVariant } from './types/ButtonType.type';
+import { ButtonProps } from './Button.props';
 import { tet } from '../../tetrisly';
-
-import { ButtonProps } from '.';
 
 const meta = {
   title: 'Components/Button',
@@ -34,13 +29,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const ButtonWithLoading = <
-  TVariant extends ButtonVariant,
-  TAppearance extends ButtonAppearance<TVariant>,
->({
-  state,
-  ...props
-}: ButtonProps<TVariant, TAppearance>) => {
+const ButtonWithLoading: FC<ButtonProps> = ({ state, ...props }) => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -98,7 +87,7 @@ export const DefaultAfterIcon: Story = {
 export const DefaultDropdown: Story = {
   ...Default,
   args: {
-    dropdownIndicator: true,
+    hasDropdownIndicator: true,
   },
 };
 
@@ -151,6 +140,7 @@ export const BareLoading: Story = {
   ...Bare,
   args: {
     state: 'loading',
+    variant: 'bare',
   },
 };
 
@@ -158,6 +148,7 @@ export const BareDisabled: Story = {
   ...Bare,
   args: {
     state: 'disabled',
+    variant: 'bare',
   },
 };
 
@@ -168,17 +159,6 @@ const controlDisabled = {
 };
 
 const entries = Object.entries as <T>(o: T) => [keyof T, T[keyof T]][];
-type Combinations = {
-  [variant in ButtonVariant]: {
-    appearance: {
-      [appearance in ButtonAppearance<variant>]: ButtonIntent<
-        variant,
-        appearance
-      >[];
-    };
-    size: ButtonSize<variant>[];
-  };
-};
 
 const combinations = {
   default: {
@@ -207,7 +187,7 @@ const combinations = {
     },
     size: ['medium', 'large'],
   },
-} satisfies Combinations;
+};
 
 export const AllOptions: Story = {
   argTypes: {
@@ -310,7 +290,9 @@ export const AllOptions: Story = {
                           key: `${variant}-${appearanceOption}-${intent}-${size}`,
                         };
 
-                        return <ButtonWithLoading {...props} />;
+                        return (
+                          <ButtonWithLoading {...(props as ButtonProps)} />
+                        );
                       })}
                     </tet.div>
                   </tet.div>

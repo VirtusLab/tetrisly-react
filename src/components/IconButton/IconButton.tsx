@@ -1,59 +1,35 @@
-import { Icon } from '@virtuslab/tetrisly-icons';
-import { useMemo } from 'react';
+import { MarginProps } from '@xstyled/styled-components';
+import { FC } from 'react';
 
 import { IconButtonProps } from './IconButton.props';
-import { IconButtonAppearance } from './IconButtonAppearance.type';
-import { styleBuilder } from './styleBuilder';
-import { ButtonVariant } from '../Button/types/ButtonType.type';
-import { Loader } from '../Loader';
+import { defaultConfig } from './IconButton.styles';
+import { Button, ButtonProps } from '../Button';
 
-import { tet } from '@/tetrisly';
-import { MarginProps } from '@/types';
+import { mergeConfigWithCustom } from '@/services';
 
-export const IconButton = <
-  TVariant extends ButtonVariant,
-  TAppearance extends IconButtonAppearance<TVariant>,
->({
-  intent = 'none',
-  variant,
-  appearance,
-  size = 'medium',
-  icon,
-  dropdownIndicator = false,
-  state,
-  custom = {},
-  ...marginProps
-}: IconButtonProps<TVariant, TAppearance> & MarginProps) => {
-  const styles = useMemo(
-    () =>
-      styleBuilder({
-        intent,
-        variant: variant ?? 'default',
-        appearance: appearance ?? 'primary',
-        size,
-        dropdownIndicator,
-        custom,
-      }),
-    [intent, variant, appearance, size, dropdownIndicator, custom],
-  );
-  return (
-    <tet.button
-      data-testid="button"
-      {...styles}
-      disabled={['disabled', 'loading'].includes(state ?? '')}
-      data-state={state}
-      {...marginProps}
-    >
-      {state === 'loading' ? (
-        <Loader
-          appearance={appearance === 'inverted' ? 'white' : 'greyscale'}
-          size="small"
-          shape="circle"
-        />
-      ) : (
-        <Icon name={icon} />
-      )}
-      {dropdownIndicator && <Icon name="20-chevron-down" />}
-    </tet.button>
-  );
+const mapperIconButtonPropsToButtonProps = ({
+  children,
+  ...props
+}: IconButtonProps): ButtonProps => {
+  const appearance =
+    props.appearance === 'primary' ? 'secondary' : props.appearance;
+  const intent = props.intent === 'negative' ? 'destructive' : props.intent;
+  const beforeIcon = props.icon;
+
+  return {
+    ...props,
+    appearance,
+    intent,
+    beforeIcon,
+    label: '',
+  } as ButtonProps;
+};
+
+export const IconButton: FC<IconButtonProps & MarginProps> = (props) => {
+  const buttonProps = mapperIconButtonPropsToButtonProps(props);
+  const custom = mergeConfigWithCustom({
+    defaultConfig,
+    custom: buttonProps.custom,
+  });
+  return <Button {...buttonProps} custom={custom} />;
 };

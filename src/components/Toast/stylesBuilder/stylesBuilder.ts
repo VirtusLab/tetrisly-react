@@ -40,6 +40,7 @@ export const stylesBuilder = ({
     ...intentContainerStyles[props.intent],
     ...emphasisContainerStyles[props.emphasis],
     ...restContainerStyles,
+
     ...(!!props.onCloseClick && closeButtonContainerStyles),
   };
 
