@@ -22,12 +22,7 @@ import {
 } from '@/components/Button/types/ButtonType.type';
 import { tet } from '@/tetrisly';
 
-const LoadingButton = <
-  TVariant extends ButtonVariant,
-  TAppearance extends ButtonAppearance<TVariant>,
->(
-  props: ButtonProps<TVariant, TAppearance>,
-) => {
+const LoadingButton = (props: ButtonProps) => {
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     if (isLoading) {
@@ -45,13 +40,7 @@ const LoadingButton = <
   );
 };
 
-const ButtonSizes = <
-  TVariant extends ButtonVariant,
-  TAppearance extends ButtonAppearance<TVariant>,
->({
-  variant,
-  ...buttonProps
-}: ButtonProps<TVariant, TAppearance>) => (
+const ButtonSizes = ({ variant, ...buttonProps }: ButtonProps) => (
   <tet.div
     display="flex"
     flexBasis="150px"
@@ -63,7 +52,7 @@ const ButtonSizes = <
     gap="400"
     py="500"
   >
-    {getButtonSizes(variant!).map((size) => (
+    {getButtonSizes(variant).map((size) => (
       <LoadingButton
         size={size}
         key={size}
@@ -71,6 +60,7 @@ const ButtonSizes = <
         {...buttonProps}
       />
     ))}
+    <Button label="Click" variant="bare" />
   </tet.div>
 );
 

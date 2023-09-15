@@ -1,34 +1,23 @@
-import { MarginProps } from '@xstyled/styled-components';
-import { merge } from 'lodash';
+import { FC, useMemo } from 'react';
 
-import { StatusDotProps } from './StatusDot.props';
-import { config as defaultConfig } from './StatusDot.styles';
+import type { StatusDotProps } from './StatusDot.props';
+import { stylesBuilder } from './stylesBuilder';
 
-import { isKeyOf } from '@/services';
 import { tet } from '@/tetrisly';
+import type { MarginProps } from '@/types';
 
-export const StatusDot = ({
-  appearance,
+export const StatusDot: FC<StatusDotProps & MarginProps> = ({
+  appearance = 'red',
   stroked = false,
   custom,
-  ...rest
-}: StatusDotProps & MarginProps) => {
-  const options = custom ? merge(defaultConfig, custom) : defaultConfig;
-  const {
-    appearance: appearanceStyles,
-    stroked: strokedStyles,
-    ...restStyles
-  } = options;
+  ...restProps
+}) => {
+  const styles = useMemo(
+    () => stylesBuilder({ appearance, stroked, custom }),
+    [appearance, stroked, custom],
+  );
 
-  if (!isKeyOf(appearanceStyles, appearance)) {
-    throw new Error(`${appearance} is not a valid appearance`);
-  }
-
-  const styles = {
-    ...restStyles,
-    ...appearanceStyles[appearance],
-    ...(stroked ? strokedStyles : {}),
-  };
-
-  return <tet.div {...styles} {...rest} data-testid="status-dot" />;
+  return (
+    <tet.div {...styles.container} data-testid="status-dot" {...restProps} />
+  );
 };

@@ -3,6 +3,8 @@ import { vi } from 'vitest';
 import { TextInput } from './TextInput';
 import { fireEvent, render } from '../../tests/render';
 
+import { customPropTester } from '@/tests/customPropTester';
+
 const handleEventMock = vi.fn();
 
 const getTextInput = (jsx: JSX.Element) => {
@@ -20,14 +22,18 @@ describe('TextInput', () => {
     handleEventMock.mockClear();
   });
 
+  customPropTester(<TextInput />, {
+    containerId: 'text-input',
+  });
+
   it('should render the text input', () => {
     const { textInput } = getTextInput(<TextInput />);
     expect(textInput).toBeInTheDocument();
   });
 
-  it('should emit onChange', () => {
+  it('should emit onChange and not change value', () => {
     const { input } = getTextInput(
-      <TextInput value="" onChange={handleEventMock} />,
+      <TextInput value="Value" onChange={handleEventMock} />,
     );
 
     if (input) {
@@ -35,6 +41,18 @@ describe('TextInput', () => {
     }
 
     expect(handleEventMock).toHaveBeenCalled();
+    expect(input.value).toBe('Value');
+  });
+
+  it('should emit onChange and change value', () => {
+    const { input } = getTextInput(<TextInput onChange={handleEventMock} />);
+
+    if (input) {
+      fireEvent.change(input, { target: { value: 'Value' } });
+    }
+
+    expect(handleEventMock).toHaveBeenCalled();
+    expect(input.value).toBe('Value');
   });
 
   it('should emit onBlur', () => {

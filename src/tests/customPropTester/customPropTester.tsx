@@ -1,8 +1,8 @@
-import lodash from 'lodash';
 import { vi } from 'vitest';
 
 import { applyProps } from './applyProps';
 import { generateCustomProp } from './generateCustomProp';
+import { generateVariants } from './generateVariants';
 import { Options } from './options.type';
 import { render } from '../render';
 
@@ -14,8 +14,11 @@ export const customPropTester = (
   Component: React.ReactNode,
   options: Options,
 ) => {
-  const customProp = generateCustomProp(options);
-  const { innerElements = {}, props = {} } = options;
+  const customMapper = options.customMapper
+    ? options.customMapper
+    : (a: object) => a;
+  const customProp = customMapper(generateCustomProp(options));
+  const componentVariants = generateVariants(options);
 
   describe('CustomPropTester', () => {
     afterEach(() => {
@@ -36,47 +39,43 @@ export const customPropTester = (
       expect(topLevelElement).toHaveStyle('border-top-color: rgb(255, 0, 0)');
     });
 
-    it('should custom prop be called as second argument in merge', () => {
-      const spy = vi.spyOn(lodash, 'merge');
+    it('should be possible to set data-testid', () => {
+      const dataTestId = 'custom-data-test-id';
+      const { getByTestId } = render(
+        applyProps(Component, { 'data-testid': dataTestId }),
+      );
 
-      render(applyProps(Component, { custom: { p: 'randomValue' } }));
+      const container = getByTestId(dataTestId);
 
-      expect(spy.mock.calls[0][1]).toEqual({ p: 'randomValue' });
+      expect(container).toBeInTheDocument();
     });
 
-    Object.entries(innerElements).forEach(
-      ([innerComponentName, innerComponentVariants]) => {
-        describe(`InnerComponent - ${innerComponentName}`, () => {
-          it(`Top Level style`, () => {
-            const { queryByTestId } = render(
-              applyProps(Component, { custom: customProp }),
-            );
+    componentVariants.forEach(({ componentName, testId, variants }) => {
+      describe(`InnerComponent - ${componentName}`, () => {
+        it(`Top Level style`, () => {
+          const { queryByTestId } = render(
+            applyProps(Component, { custom: customProp }),
+          );
 
-            const testId = `${options.containerId}-${innerComponentName}`;
+          const element = queryByTestId(testId);
+
+          expect(element).toHaveStyle('z-index: 1');
+        });
+
+        variants.forEach(({ name, expectedStyle, variantProps }) => {
+          it(`Variant ${name}`, () => {
+            const { queryByTestId } = render(
+              applyProps(Component, {
+                custom: customProp,
+                ...variantProps,
+              }),
+            );
             const element = queryByTestId(testId);
 
-            expect(element).toHaveStyle('border-left-color: rgb(0, 0, 0)');
-          });
-
-          innerComponentVariants.forEach((propsName) => {
-            props[propsName].forEach((propsValue) => {
-              it(`Variant [${propsName} = ${propsValue}]`, () => {
-                const { queryByTestId } = render(
-                  applyProps(Component, {
-                    custom: customProp,
-                    [propsName]: propsValue,
-                  }),
-                );
-
-                const testId = `${options.containerId}-${innerComponentName}`;
-                const element = queryByTestId(testId);
-
-                expect(element).toHaveStyle('border-left-color: rgb(0, 0, 0)');
-              });
-            });
+            expect(element).toHaveStyle(expectedStyle);
           });
         });
-      },
-    );
+      });
+    });
   });
 };

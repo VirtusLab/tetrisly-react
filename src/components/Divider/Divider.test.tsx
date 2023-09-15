@@ -1,6 +1,8 @@
 import { Divider } from './Divider';
 import { render } from '../../tests/render';
 
+import { customPropTester } from '@/tests/customPropTester';
+
 const getDivider = (jsx: JSX.Element) => {
   const { getByTestId } = render(jsx);
   return getByTestId('divider');
@@ -34,11 +36,10 @@ describe('Divider', () => {
     expect(divider).toHaveStyle('height: 10px');
   });
 
-  it('should propagate a custom prop', () => {
-    const divider = getDivider(
-      <Divider custom={{ color: 'background-negative-subtle' }} />,
-    );
-
-    expect(divider).toHaveStyle('color: rgb(254, 245, 245)');
+  customPropTester(<Divider />, {
+    containerId: 'divider',
+    props: {
+      orientation: ['horizontal', 'vertical'],
+    },
   });
 });

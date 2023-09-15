@@ -1,28 +1,29 @@
-import { ImgHTMLAttributes } from 'react';
+import type { ImgHTMLAttributes } from 'react';
 
-import { AvatarConfig } from './Avatar.styles';
-import { AvatarShape } from './AvatarShape.type';
-import { Appearance } from '../../types/Appearance';
+import type { AvatarConfig } from './Avatar.styles';
+import type {
+  AvatarAppearanceColors,
+  AvatarEmphasis,
+  AvatarShape,
+  AvatarSize,
+} from './types';
 
-import { Emphasis } from '@/types/Emphasis';
-import { MarginProps } from '@/types/MarginProps';
-import { Size } from '@/types/Size';
-import { DeepPartial } from '@/utility-types/DeepPartial';
+export type AvatarImageProps = {
+  img: Omit<ImgHTMLAttributes<HTMLImageElement>, 'color'>;
+  appearance: 'image';
+  emphasis?: 'low';
+  initials?: never;
+};
 
-export type AvatarProps = (
-  | {
-      img: Omit<ImgHTMLAttributes<HTMLImageElement>, 'color'>;
-      appearance: 'image';
-      emphasis?: 'low';
-      initials?: never;
-    }
-  | {
-      appearance?: Appearance;
-      emphasis?: Emphasis;
-      initials: string;
-    }
-) & {
+export type AvatarInitialProps = {
+  img?: never;
+  appearance?: AvatarAppearanceColors;
+  emphasis?: AvatarEmphasis;
+  initials: string;
+};
+
+export type AvatarProps = (AvatarImageProps | AvatarInitialProps) & {
   shape?: AvatarShape;
-  size?: Size;
-  custom?: DeepPartial<AvatarConfig>;
-} & MarginProps;
+  size?: AvatarSize;
+  custom?: AvatarConfig;
+};

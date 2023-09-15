@@ -1,20 +1,17 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
 import styled from '@xstyled/styled-components';
-import { merge } from 'lodash';
-import { forwardRef, useId } from 'react';
+import { forwardRef, useCallback, useId, useMemo } from 'react';
 
 import type { CheckboxProps } from './Checkbox.props';
-import { config as defaultConfig } from './Checkbox.styles';
 import { useIndeterminate } from './hooks';
+import { stylesBuilder } from './stylesBuilder';
 import { HelperText } from '../HelperText';
 
-import { extractMarginProps } from '@/services';
+import { extractInputProps } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
-type Props = CheckboxProps & MarginProps;
-
-export const CheckboxIcon = styled(tet.div)`
+export const CheckboxContainer = styled(tet.div)`
   input + div > #checkmark {
     display: none;
     pointer-events: none;
@@ -25,7 +22,10 @@ export const CheckboxIcon = styled(tet.div)`
   }
 `;
 
-export const Checkbox = forwardRef<HTMLInputElement, Props>(
+export const Checkbox = forwardRef<
+  HTMLInputElement,
+  CheckboxProps & MarginProps
+>(
   (
     {
       isChecked,
@@ -38,72 +38,70 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
     },
     checkboxForwardRef,
   ) => {
-    const [marginProps, checkboxProps] = extractMarginProps<Props>(restProps);
-
-    const options = custom ? merge(defaultConfig, custom) : defaultConfig;
-    const {
-      innerComponents: {
-        checkbox: checkboxStyles,
-        checkboxContainer: checkboxContainerStyles,
-        checkboxIcon: checkboxIconStyles,
-        label: labelStyles,
-        helperText: helperTextStyles,
-      },
-      ...defaultStyles
-    } = options;
-
+    const styles = useMemo(() => stylesBuilder(custom), [custom]);
     const checkboxId = useId();
-
     const checkboxInternalRef = useIndeterminate(isIndeterminate);
 
-    const checkboxRef = (instance: HTMLInputElement | null) => {
-      checkboxInternalRef.current = instance;
-      if (typeof checkboxForwardRef === 'function') {
-        checkboxForwardRef(instance);
-      } else if (checkboxForwardRef) {
-        // eslint-disable-next-line no-param-reassign
-        checkboxForwardRef.current = instance;
-      }
-    };
+    const [checkboxProps, containerProps] = extractInputProps(restProps);
 
-    const handleInputChange = () => {
-      checkboxInternalRef.current?.click();
-      checkboxInternalRef.current?.focus();
-    };
+    const checkboxRef = useCallback(
+      (instance: HTMLInputElement | null) => {
+        checkboxInternalRef.current = instance;
+        if (typeof checkboxForwardRef === 'function') {
+          checkboxForwardRef(instance);
+        } else if (checkboxForwardRef) {
+          // eslint-disable-next-line no-param-reassign
+          checkboxForwardRef.current = instance;
+        }
+      },
+      [checkboxForwardRef, checkboxInternalRef],
+    );
+
+    const handleInputChange = useCallback(() => {
+      if (!label) {
+        checkboxInternalRef.current?.click();
+        checkboxInternalRef.current?.focus();
+      }
+    }, [checkboxInternalRef, label]);
 
     const input = (
-      <CheckboxIcon {...checkboxContainerStyles}>
+      <CheckboxContainer
+        {...styles.checkboxContainer}
+        data-testid="checkbox-checkboxContainer"
+      >
         <tet.input
+          {...styles.input}
           type="checkbox"
           ref={checkboxRef}
           checked={isChecked}
           disabled={state === 'disabled'}
           data-state={state}
           id={checkboxId}
+          data-testid="checkbox-input"
           {...checkboxProps}
-          {...checkboxStyles}
         />
         <tet.div
-          {...checkboxIconStyles}
-          onClick={() => !label && handleInputChange()}
+          {...styles.checkboxIcon}
+          onClick={handleInputChange}
+          data-testid="checkbox-checkboxIcon"
         >
           {isIndeterminate && <Icon name="16-minus" />}
           <Icon name="16-check" id="checkmark" />
         </tet.div>
-      </CheckboxIcon>
+      </CheckboxContainer>
     );
 
     return (
       <tet.div
-        {...defaultStyles}
-        {...marginProps}
+        {...styles.container}
         data-state={state}
         data-testid="checkbox"
+        {...containerProps}
       >
         {label ? (
           <tet.label
+            {...styles.label}
             htmlFor={checkboxId}
-            {...labelStyles}
             data-testid="checkbox-label"
           >
             {input}
@@ -114,10 +112,11 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
         )}
         {!!helperText && (
           <HelperText
+            custom={styles.helperText}
             intent={state === 'alert' ? 'alert' : 'none'}
             beforeIcon={state === 'alert'}
-            {...helperTextStyles}
             text={helperText}
+            data-testid="checkbox-helperText"
           />
         )}
       </tet.div>

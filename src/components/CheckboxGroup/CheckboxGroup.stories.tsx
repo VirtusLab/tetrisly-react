@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CheckboxGroup } from './CheckboxGroup';
 
 const meta = {
-  title: 'Components/Checkbox Group',
+  title: 'Components/CheckboxGroup',
   component: CheckboxGroup,
   tags: ['autodocs'],
   args: {

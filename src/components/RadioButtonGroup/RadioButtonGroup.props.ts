@@ -1,9 +1,7 @@
-import { RadioButtonGroupConfig } from './RadioButtonGroup.styles';
-import { HelperTextProps } from '../HelperText/HelperText.props';
-import { LabelProps } from '../Label/Label.props';
-import { RadioButtonProps } from '../RadioButton/RadioButton.props';
+import type { RadioButtonGroupConfig } from './RadioButtonGroup.styles';
+import type { RadioButtonProps } from '../RadioButton';
 
-import { DeepPartial } from '@/utility-types/DeepPartial';
+import type { HelperTextProp, LabelProp } from '@/types';
 
 export type RadioButtonGroupItemProps = Omit<
   RadioButtonProps,
@@ -15,9 +13,7 @@ export type RadioButtonGroupItemProps = Omit<
 export type RadioButtonGroupProps = {
   name: string;
   column?: number;
-  label?: string | Pick<LabelProps, 'label' | 'tooltip' | 'optional'>;
-  helperText?:
-    | string
-    | Pick<HelperTextProps, 'intent' | 'text' | 'beforeIcon' | 'counter'>;
-  custom?: DeepPartial<RadioButtonGroupConfig>;
+  label?: LabelProp;
+  helperText?: HelperTextProp;
+  custom?: RadioButtonGroupConfig;
 };

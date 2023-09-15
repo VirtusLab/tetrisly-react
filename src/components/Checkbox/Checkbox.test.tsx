@@ -3,28 +3,45 @@ import { vi } from 'vitest';
 import { Checkbox } from './Checkbox';
 import { fireEvent, render } from '../../tests/render';
 
+import { customPropTester } from '@/tests/customPropTester';
+
 const handleEventMock = vi.fn();
 
 const getCheckbox = (jsx: JSX.Element) => {
-  const { queryByTestId } = render(jsx);
+  const { getByTestId, queryByTestId } = render(jsx);
 
   return {
-    checkbox: queryByTestId('checkbox'),
+    checkbox: getByTestId('checkbox'),
     label: queryByTestId('checkbox-label'),
-    helperText: queryByTestId('helper-text'),
+    helperText: queryByTestId('checkbox-helperText'),
+    input: getByTestId('checkbox-input') as HTMLInputElement,
   };
 };
 
 describe('Checkbox', () => {
+  customPropTester(<Checkbox label="Label" helperText="Helper Text" />, {
+    containerId: 'checkbox',
+    innerElements: {
+      input: [],
+      checkboxContainer: [],
+      checkboxIcon: [],
+      label: [],
+      helperText: [],
+    },
+  });
+
+  beforeEach(() => {
+    handleEventMock.mockReset();
+  });
+
   it('should render the checkbox', () => {
     const { checkbox } = getCheckbox(<Checkbox />);
     expect(checkbox).toBeInTheDocument();
   });
 
   it('should emit onChange', () => {
-    const { checkbox } = getCheckbox(<Checkbox onChange={handleEventMock} />);
+    const { input } = getCheckbox(<Checkbox onChange={handleEventMock} />);
 
-    const input = checkbox?.querySelector('input');
     if (input) {
       fireEvent.click(input);
     }
@@ -33,9 +50,8 @@ describe('Checkbox', () => {
   });
 
   it('should emit onBlur', () => {
-    const { checkbox } = getCheckbox(<Checkbox onBlur={handleEventMock} />);
+    const { input } = getCheckbox(<Checkbox onBlur={handleEventMock} />);
 
-    const input = checkbox?.querySelector('input');
     if (input) {
       fireEvent.blur(input);
     }
@@ -44,9 +60,8 @@ describe('Checkbox', () => {
   });
 
   it('should emit onFocus', () => {
-    const { checkbox } = getCheckbox(<Checkbox onFocus={handleEventMock} />);
+    const { input } = getCheckbox(<Checkbox onFocus={handleEventMock} />);
 
-    const input = checkbox?.querySelector('input');
     if (input) {
       fireEvent.focus(input);
     }
@@ -55,11 +70,9 @@ describe('Checkbox', () => {
   });
 
   it('should have indeterminate state', () => {
-    const { checkbox } = getCheckbox(<Checkbox isIndeterminate />);
+    const { input } = getCheckbox(<Checkbox isIndeterminate />);
 
-    const input = checkbox?.querySelector('input');
-
-    expect(input?.indeterminate).toBeTruthy();
+    expect(input.indeterminate).toBeTruthy();
 
     if (input) {
       fireEvent.click(input);
@@ -69,9 +82,7 @@ describe('Checkbox', () => {
   });
 
   it('should have checked state', () => {
-    const { checkbox } = getCheckbox(<Checkbox isChecked />);
-
-    const input = checkbox?.querySelector('input');
+    const { input } = getCheckbox(<Checkbox isChecked readOnly />);
 
     expect(input?.checked).toBeTruthy();
 
@@ -110,5 +121,29 @@ describe('Checkbox', () => {
     );
 
     expect(checkbox).toHaveStyle('background-color: rgb(254, 245, 245)');
+  });
+
+  it('should emit onChange and not change value', () => {
+    const { input } = getCheckbox(
+      <Checkbox isChecked onChange={handleEventMock} />,
+    );
+
+    if (input) {
+      fireEvent.click(input);
+    }
+
+    expect(handleEventMock).toHaveBeenCalled();
+    expect(input.checked).toBe(true);
+  });
+
+  it('should emit onChange and change value', () => {
+    const { input } = getCheckbox(<Checkbox onChange={handleEventMock} />);
+
+    if (input) {
+      fireEvent.click(input);
+    }
+
+    expect(handleEventMock).toHaveBeenCalled();
+    expect(input.checked).toBe(true);
   });
 });

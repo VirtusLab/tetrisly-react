@@ -1,4 +1,3 @@
-import { merge } from 'lodash';
 import {
   Children,
   cloneElement,
@@ -6,19 +5,20 @@ import {
   isValidElement,
   PropsWithChildren,
   ReactElement,
+  useMemo,
 } from 'react';
 
 import type {
   RadioButtonGroupProps,
   RadioButtonGroupItemProps,
 } from './RadioButtonGroup.props';
-import { config as defaultConfig } from './RadioButtonGroup.styles';
+import { stylesBuilder } from './stylesBuilder';
 import { HelperText } from '../HelperText';
 import { Label } from '../Label';
 import { RadioButton } from '../RadioButton';
 
 import { tet } from '@/tetrisly';
-import { MarginProps } from '@/types';
+import type { MarginProps } from '@/types';
 
 type Props = FC<PropsWithChildren<RadioButtonGroupProps & MarginProps>> & {
   Item: React.FC<RadioButtonGroupItemProps>;
@@ -33,10 +33,7 @@ export const RadioButtonGroup: Props = ({
   children,
   ...restProps
 }) => {
-  const {
-    innerElements: { radioButtonContainer: radioButtonContainerStyles },
-    ...restStyles
-  } = merge(defaultConfig, custom);
+  const styles = useMemo(() => stylesBuilder(custom), [custom]);
 
   const radioButtons = Children.map(children, (child) => {
     if (isValidElement(child) && child?.type !== RadioButtonGroup.Item) {
@@ -53,25 +50,45 @@ export const RadioButtonGroup: Props = ({
   });
 
   return (
-    <tet.div {...restStyles} {...restProps} data-testid="radio-button-group">
+    <tet.div
+      {...styles.container}
+      data-testid="radio-button-group"
+      {...restProps}
+    >
       {!!label &&
         (typeof label === 'string' ? (
-          <Label label={label} />
+          <Label
+            label={label}
+            custom={styles.label}
+            data-testid="radio-button-group-label"
+          />
         ) : (
-          <Label {...label} />
+          <Label
+            {...label}
+            custom={styles.label}
+            data-testid="radio-button-group-label"
+          />
         ))}
       <tet.div
-        {...radioButtonContainerStyles}
+        {...styles.radioButtonContainer}
         gridTemplateColumns={`repeat(${column}, 1fr)`}
-        data-testid="radio-button-group-container"
+        data-testid="radio-button-group-radioButtonContainer"
       >
         {radioButtons}
       </tet.div>
       {!!helperText &&
         (typeof helperText === 'string' ? (
-          <HelperText text={helperText} />
+          <HelperText
+            text={helperText}
+            custom={styles.helperText}
+            data-testid="radio-button-group-helperText"
+          />
         ) : (
-          <HelperText {...helperText} />
+          <HelperText
+            {...helperText}
+            custom={styles.helperText}
+            data-testid="radio-button-group-helperText"
+          />
         ))}
     </tet.div>
   );

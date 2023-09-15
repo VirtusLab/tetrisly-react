@@ -1,21 +1,22 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { merge } from 'lodash';
 import {
   forwardRef,
   useRef,
   useCallback,
-  useMemo,
   useState,
   ChangeEventHandler,
   MouseEventHandler,
+  ChangeEvent,
+  useMemo,
 } from 'react';
 
+import { stylesBuilder } from './stylesBuilder';
 import { TextInputProps } from './TextInput.props';
-import { config as defaultConfig } from './TextInput.style';
+import { Avatar } from '../Avatar';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 
-import { extractMarginProps } from '@/services/extractMarginProps';
+import { extractInputProps } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
@@ -33,26 +34,16 @@ export const TextInput = forwardRef<
       custom,
       value,
       onChange,
-      ...rest
+      ...restProps
     },
     inputRef,
   ) => {
     const [innerValue, setInnerValue] = useState('');
-    const [marginProps, inputProps] = extractMarginProps<
-      TextInputProps & MarginProps
-    >(rest);
-
-    const config = useMemo(() => merge(custom, defaultConfig), [custom]);
-    const {
-      innerComponents: {
-        input: inputStyles,
-        icon: iconStyles,
-        text: textStyles,
-        clearButton: clearButtonStyles,
-      },
-      spacing,
-      ...defaultStyles
-    } = config;
+    const styles = useMemo(
+      () => stylesBuilder(custom, beforeComponent?.type, afterComponent?.type),
+      [afterComponent?.type, beforeComponent?.type, custom],
+    );
+    const [textInputProps, containerProps] = extractInputProps(restProps);
 
     const containerRef = useRef<HTMLInputElement | null>(null);
 
@@ -60,8 +51,7 @@ export const TextInput = forwardRef<
       (e) => {
         if (e.target === containerRef.current) {
           const input = containerRef.current?.querySelector('input');
-
-          if (input) input.focus();
+          input?.focus();
         }
       },
       [containerRef],
@@ -69,79 +59,82 @@ export const TextInput = forwardRef<
 
     const handleOnChange: ChangeEventHandler<HTMLInputElement> = useCallback(
       (e) => {
-        value === undefined ? setInnerValue(e.target.value) : onChange?.(e);
+        setInnerValue(e.target.value);
+        onChange?.(e);
       },
-      [onChange, value],
+      [onChange],
     );
 
     const handleOnClear: MouseEventHandler<HTMLButtonElement> =
       useCallback(() => {
-        value === undefined
-          ? setInnerValue('')
-          : // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            onChange?.({ target: { value: '' } } as any);
-      }, [onChange, value]);
+        setInnerValue('');
+        onChange?.({ target: { value: '' } } as ChangeEvent<HTMLInputElement>);
+      }, [onChange]);
 
     return (
       <tet.div
         ref={containerRef}
         onClick={handleContainerClick}
-        {...defaultStyles}
+        {...styles.container}
         pl={!!beforeComponent && '0'}
         pr={!!afterComponent && '0'}
-        {...marginProps}
-        data-state={state}
         data-testid="text-input"
+        data-state={state}
+        tabIndex={0}
+        {...containerProps}
       >
         {!!beforeComponent && (
           <tet.span
-            {...spacing.beforeComponent[beforeComponent.type]}
+            {...styles.beforeComponent}
             data-testid="text-input-before-component"
           >
             {beforeComponent.type === 'Icon' && (
-              <tet.span {...iconStyles}>
+              <tet.span {...styles.icon}>
                 <Icon {...beforeComponent.props} />
               </tet.span>
             )}
             {beforeComponent.type === 'Prefix' && (
-              <tet.span {...textStyles}>{beforeComponent.props.text}</tet.span>
+              <tet.span {...styles.text}>{beforeComponent.props.text}</tet.span>
             )}
             {beforeComponent.type === 'Dropdown' && (
               <Button
                 size="small"
                 variant="ghost"
                 label={beforeComponent.props.label}
-                dropdownIndicator
+                hasDropdownIndicator
               />
+            )}
+            {beforeComponent.type === 'Avatar' && (
+              <Avatar {...beforeComponent.props} shape="square" size="xSmall" />
             )}
           </tet.span>
         )}
         <tet.input
-          {...inputStyles}
+          {...styles.input}
           value={value || innerValue}
           onChange={handleOnChange}
-          {...inputProps}
+          data-testid="text-input-input"
+          {...textInputProps}
           type={type}
           disabled={state === 'disabled'}
           ref={inputRef}
-          data-testid="text-input-input"
         />
         {!!hasClearButton && (value || innerValue) && (
           <IconButton
             variant="bare"
             icon="20-close"
             onClick={handleOnClear}
-            {...clearButtonStyles}
+            {...styles.clearButton}
             data-testid="text-input-clear-button"
           />
         )}
         {!!afterComponent && (
           <tet.span
-            {...spacing.afterComponent[afterComponent.type]}
+            {...styles.afterComponent}
             data-testid="text-input-after-component"
           >
             {afterComponent.type === 'Icon' && (
-              <tet.span {...iconStyles}>
+              <tet.span {...styles.icon}>
                 <Icon {...afterComponent.props} />
               </tet.span>
             )}
@@ -153,7 +146,7 @@ export const TextInput = forwardRef<
               />
             )}
             {afterComponent.type === 'Sufix' && (
-              <tet.span {...textStyles}>{afterComponent.props.text}</tet.span>
+              <tet.span {...styles.text}>{afterComponent.props.text}</tet.span>
             )}
             {afterComponent.type === 'Button' && (
               <Button size="small" variant="ghost" label="Label" />
@@ -163,7 +156,7 @@ export const TextInput = forwardRef<
                 size="small"
                 variant="ghost"
                 label={afterComponent.props.label}
-                dropdownIndicator
+                hasDropdownIndicator
               />
             )}
           </tet.span>

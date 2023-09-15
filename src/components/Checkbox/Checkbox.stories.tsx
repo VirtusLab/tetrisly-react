@@ -24,9 +24,6 @@ export const Checked: Story = {
 
 export const Indeterminate = () => {
   const [mainChecked, setMainChecked] = useState(false);
-
-  const checkboxRef = useRef<HTMLInputElement | null>(null);
-
   const [checkbox1Value, setCheckbox1Value] = useState(false);
   const [checkbox2Value, setCheckbox2Value] = useState(true);
 
@@ -44,7 +41,6 @@ export const Indeterminate = () => {
   return (
     <tet.div display="flex" flexDirection="column" gap="component-gap-small">
       <Checkbox
-        ref={checkboxRef}
         isIndeterminate={!mainChecked && (checkbox1Value || checkbox2Value)}
         isChecked={mainChecked}
         onChange={(e) => setMainChecked(e.target.checked)}

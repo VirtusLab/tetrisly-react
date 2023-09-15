@@ -1,14 +1,12 @@
-import { SystemProps } from '@xstyled/styled-components';
+import type { DividerOrientation } from './types';
 
-import { DividerOrientation } from './DividerOrientation.type';
-
-import { BaseProps } from '@/types/BaseProps';
+import type { BaseProps } from '@/types/BaseProps';
 
 export type DividerConfig = {
-  orientation: Record<DividerOrientation, SystemProps>;
+  orientation?: Partial<Record<DividerOrientation, BaseProps>>;
 } & BaseProps;
 
-export const config = {
+export const defaultConfig = {
   backgroundColor: 'border-default',
   orientation: {
     horizontal: {

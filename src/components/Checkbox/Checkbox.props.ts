@@ -1,19 +1,17 @@
-import { InputHTMLAttributes } from 'react';
+import type { InputHTMLAttributes } from 'react';
 
-import { CheckboxConfig } from './Checkbox.styles';
-
-import { DeepPartial } from '@/utility-types/DeepPartial';
+import type { CheckboxConfig } from './Checkbox.styles';
 
 export type CheckboxProps = {
   isChecked?: boolean;
   isIndeterminate?: boolean;
   state?: 'alert' | 'disabled';
-  custom?: DeepPartial<CheckboxConfig>;
+  custom?: CheckboxConfig;
 } & Omit<
   InputHTMLAttributes<HTMLInputElement>,
   'checked' | 'disabled' | 'color' | 'type'
 > &
   (
-    | { label?: string; helperText?: undefined }
+    | { label?: string; helperText?: never }
     | { label: string; helperText?: string }
   );

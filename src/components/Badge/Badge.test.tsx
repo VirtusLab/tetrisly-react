@@ -1,7 +1,7 @@
 import { Badge } from './Badge';
 import { render } from '../../tests/render';
 
-import { silentThrowExpect } from '@/tests/silentThrowExpect';
+import { customPropTester } from '@/tests/customPropTester';
 
 const getBadge = (jsx: JSX.Element) => {
   const { getByTestId } = render(jsx);
@@ -16,6 +16,39 @@ const getBadgeIcon = (jsx: JSX.Element) => {
 };
 
 describe('Badge', () => {
+  customPropTester(<Badge label="Label" beforeIcon="16-alert-full" />, {
+    containerId: 'badge',
+    props: {
+      intent: ['neutral', 'informative', 'positive', 'warning', 'negative'],
+      appearance: [
+        'blue',
+        'green',
+        'grey',
+        'red',
+        'orange',
+        'raspberry',
+        'magenta',
+        'purple',
+        'grape',
+        'violet',
+        'cyan',
+        'teal',
+        'aquamarine',
+        'emerald',
+        'outline',
+      ],
+      emphasis: ['high', 'medium', 'low'],
+    },
+    innerElements: {
+      _: [
+        ['intent', 'emphasis'],
+        ['appearance', 'emphasis'],
+      ],
+      label: [],
+      iconContainer: [],
+    },
+  });
+
   it('should render the badge', () => {
     const badge = getBadge(<Badge appearance="blue" label="Label" />);
     expect(badge).toBeInTheDocument();
@@ -60,24 +93,5 @@ describe('Badge', () => {
   it('should not render the icon if prop isnt provided', () => {
     const icon = getBadgeIcon(<Badge appearance="blue" label="Label" />);
     expect(icon).toHaveLength(0);
-  });
-
-  it('should throw an error if wrong config is provided', () => {
-    silentThrowExpect(() =>
-      // @ts-expect-error testing wrong appearance
-      render(<Badge />),
-    ).toThrowError();
-  });
-
-  it('should propagate custom props', () => {
-    const badge = getBadge(
-      <Badge
-        appearance="blue"
-        label="label"
-        custom={{ backgroundColor: 'background-negative-subtle' }}
-      />,
-    );
-
-    expect(badge).toHaveStyle('background-color: rgb(254, 245, 245)');
   });
 });

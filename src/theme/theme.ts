@@ -691,7 +691,7 @@ const tempTheme: Omit<Theme, 'ringWidths'> = {
     '25': '2px',
     '50': '4px',
     '100': '8px',
-    '999': '50%',
+    '999': '9999px',
     '150': '12px',
     small: th.radius('25'),
     medium: th.radius('50'),
@@ -1156,6 +1156,8 @@ const tempTheme: Omit<Theme, 'ringWidths'> = {
     disabled: '&:disabled, &[aria-disabled=true], &[data-state="disabled"]',
     selected: '&[data-state="selected"]',
     loading: '&[data-state="loading"]',
+    hoverWithoutButton:
+      '&:hover:not(:has(button:hover), &:invalid, &[data-state="alert"])',
     alert: '&:invalid, &[data-state="alert"]',
     indeterminate: '&:indeterminate',
   },

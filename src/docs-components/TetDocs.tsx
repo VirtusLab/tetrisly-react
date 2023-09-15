@@ -5,7 +5,7 @@ import { Hero } from './common/Hero';
 
 import { TetrislyProvider, tet } from '@/tetrisly';
 
-export const TetDocs: FC<PropsWithChildren<{ docs: string }>> = ({
+export const TetDocs: FC<PropsWithChildren<{ docs: string | null }>> = ({
   children,
   docs,
 }) => {

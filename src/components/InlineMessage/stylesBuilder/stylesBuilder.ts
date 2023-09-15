@@ -1,45 +1,42 @@
-import { merge } from 'lodash';
-
 import { InlineMessageProps } from '../InlineMessage.props';
-import { config as defaultConfig } from '../InlineMessage.styles';
+import { defaultConfig } from '../InlineMessage.styles';
 import { InlineMessageIntent } from '../InlineMessageIntent.type';
 
+import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
-import { IconName } from '@/utility-types/IconName';
 
 type InlineMessageStyleBuilder = {
-  titleStyles: BaseProps;
-  iconStyles: { name: IconName<20> };
-  iconContainerStyles: BaseProps;
-  descriptionStyles: BaseProps;
-} & BaseProps;
+  container: BaseProps;
+  title: BaseProps;
+  iconContainer: BaseProps;
+  description: BaseProps;
+};
 
 export const stylesBuilder = (
   intent: InlineMessageIntent,
   custom: InlineMessageProps['custom'],
 ): InlineMessageStyleBuilder => {
-  const { innerElements, ...styles } = merge(defaultConfig, custom);
+  const { innerElements, ...container } = mergeConfigWithCustom({
+    defaultConfig,
+    custom,
+  });
 
-  const { intent: titleIntent, ...restTitleStyles } = innerElements.title;
-  const { intent: iconIntent, ...restIconStyles } = innerElements.icon;
-  const descriptionStyles = innerElements.description;
+  const { description, title, iconContainer } = innerElements;
+
+  const { intent: titleIntent, ...restTitleStyles } = title;
   const { intent: iconContainerIntent, ...restIconContainerStyles } =
-    innerElements.iconContainer;
+    iconContainer;
 
   return {
-    ...styles,
-    descriptionStyles,
-    titleStyles: {
-      ...restTitleStyles,
+    container,
+    description,
+    title: {
       ...titleIntent[intent],
+      ...restTitleStyles,
     },
-    iconStyles: {
-      ...restIconStyles,
-      ...iconIntent[intent],
-    },
-    iconContainerStyles: {
-      ...restIconContainerStyles,
+    iconContainer: {
       ...iconContainerIntent[intent],
+      ...restIconContainerStyles,
     },
   };
 };

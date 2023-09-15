@@ -1,28 +1,180 @@
-import { ButtonVariant } from './types/ButtonType.type';
-import { VariantConfig } from './VariantConfig';
-
 import { BaseProps } from '@/types/BaseProps';
+
+export type DefaultButtonConfig = {
+  appearance?: {
+    primary?: {
+      intent?: {
+        none?: BaseProps;
+        success?: BaseProps;
+        destructive?: BaseProps;
+      };
+    } & BaseProps;
+    secondary?: {
+      intent?: {
+        none?: BaseProps;
+        success?: BaseProps;
+        destructive?: BaseProps;
+      };
+    } & BaseProps;
+    inverted?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+  };
+  size?: {
+    small?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+    medium?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+    large?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+  };
+} & BaseProps;
+
+export type GhostButtonConfig = {
+  appearance?: {
+    primary?: {
+      intent?: {
+        none?: BaseProps;
+        success?: BaseProps;
+        destructive?: BaseProps;
+      };
+    } & BaseProps;
+    secondary?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+    inverted?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+    reverseInverted?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+  };
+  size?: {
+    small?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+    medium?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+    large?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+  };
+} & BaseProps;
+
+export type BareButtonConfig = {
+  appearance?: {
+    primary?: {
+      intent?: {
+        none?: BaseProps;
+        success?: BaseProps;
+        destructive?: BaseProps;
+      };
+    } & BaseProps;
+    secondary?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+    inverted?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+    reverseInverted?: {
+      intent?: {
+        none?: BaseProps;
+      };
+    } & BaseProps;
+  };
+  size?: {
+    medium?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+    large?: {
+      hasDropdownIndicator?: BaseProps;
+      hasBeforeIcon?: BaseProps;
+      hasAfterIcon?: BaseProps;
+    } & BaseProps;
+  };
+} & BaseProps;
 
 const size = {
   small: {
-    pl: '100',
-    pr: '150',
+    px: 'component-padding-medium',
     h: 'small',
     text: 'body-medium',
+    hasDropdownIndicator: {
+      pr: 'component-padding-small',
+    },
+    hasBeforeIcon: {
+      pl: 'component-padding-small',
+    },
+    hasAfterIcon: {
+      pr: 'component-padding-small',
+    },
   },
   medium: {
-    pl: '150',
-    pr: '200',
+    px: 'component-padding-large',
     h: 'medium',
     text: 'body-medium',
+    hasDropdownIndicator: {
+      pr: 'component-padding-medium',
+    },
+    hasBeforeIcon: {
+      pl: 'component-padding-medium',
+    },
+    hasAfterIcon: {
+      pr: 'component-padding-medium',
+    },
   },
   large: {
-    pl: '150',
-    pr: '200',
+    px: 'component-padding-large',
     h: 'large',
     text: 'body-large',
+    hasDropdownIndicator: {
+      pr: 'component-padding-medium',
+    },
+    hasBeforeIcon: {
+      pl: 'component-padding-medium',
+    },
+    hasAfterIcon: {
+      pr: 'component-padding-medium',
+    },
   },
-} as const satisfies Record<'small' | 'medium' | 'large', BaseProps>;
+} as const satisfies Record<
+  'small' | 'medium' | 'large',
+  {
+    hasDropdownIndicator?: BaseProps;
+    hasBeforeIcon?: BaseProps;
+    hasAfterIcon?: BaseProps;
+  } & BaseProps
+>;
 
 const commonConfig = {
   display: 'inline-flex',
@@ -30,11 +182,13 @@ const commonConfig = {
   w: 'fit-content',
   justifyContent: 'center',
   alignItems: 'center',
-  borderRadius: 'medium',
   textAlign: 'center',
   whiteSpace: 'nowrap',
   opacity: {
     disabled: 'disabled',
+  },
+  outline: {
+    focus: 'solid',
   },
   outlineColor: {
     focus: 'interaction-focus-default',
@@ -42,17 +196,18 @@ const commonConfig = {
   outlineWidth: {
     focus: 'focus',
   },
-  outlineOffset: 2,
+  outlineOffset: 1,
   pointerEvents: {
     loading: 'none',
     disabled: 'none',
   },
   transition: true,
   transitionDuration: 200,
-} as const satisfies BaseProps;
+} satisfies BaseProps;
 
-const defaultConfig = {
+const defaultButtonConfig = {
   ...commonConfig,
+  borderRadius: 'medium',
   boxShadow: 'bottom-100',
   appearance: {
     primary: {
@@ -145,10 +300,11 @@ const defaultConfig = {
     },
   },
   size,
-} as const satisfies VariantConfig<'default'>;
+} satisfies DefaultButtonConfig;
 
-const ghostConfig = {
+const ghostButtonConfig = {
   ...commonConfig,
+  borderRadius: 'medium',
   backgroundColor: {
     _: 'transparent',
     hover: 'action-ghost-hover',
@@ -228,11 +384,12 @@ const ghostConfig = {
     },
   },
   size,
-} as const satisfies VariantConfig<'ghost'>;
+} satisfies GhostButtonConfig;
 
-const bareConfig = {
+const bareButtonConfig = {
   ...commonConfig,
-  p: 0,
+  outlineOffset: 0,
+  p: 25,
   backgroundColor: 'transparent',
   appearance: {
     primary: {
@@ -303,13 +460,29 @@ const bareConfig = {
     },
   },
   size: {
-    medium: { text: 'body-medium' },
-    large: { text: 'body-large' },
+    medium: {
+      text: 'body-medium',
+      hasDropdownIndicator: {},
+      hasBeforeIcon: {},
+      hasAfterIcon: {},
+    },
+    large: {
+      text: 'body-large',
+      hasDropdownIndicator: {},
+      hasBeforeIcon: {},
+      hasAfterIcon: {},
+    },
   },
-} as const satisfies VariantConfig<'bare'>;
+} satisfies BareButtonConfig;
 
-export const config = {
-  default: defaultConfig,
-  ghost: ghostConfig,
-  bare: bareConfig,
-} as const satisfies Record<ButtonVariant, unknown>;
+export type ButtonConfig = {
+  default?: DefaultButtonConfig;
+  ghost?: GhostButtonConfig;
+  bare?: BareButtonConfig;
+};
+
+export const defaultConfig = {
+  default: defaultButtonConfig,
+  ghost: ghostButtonConfig,
+  bare: bareButtonConfig,
+} satisfies ButtonConfig;

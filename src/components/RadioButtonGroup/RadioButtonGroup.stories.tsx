@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { RadioButtonGroup } from './RadioButtonGroup';
 
 const meta = {
-  title: 'Components/Radio Button Group',
+  title: 'Components/RadioButtonGroup',
   component: RadioButtonGroup,
   tags: ['autodocs'],
   args: {

@@ -1,9 +1,7 @@
-import { CheckboxGroupConfig } from './CheckboxGroup.style';
-import { CheckboxProps } from '../Checkbox/Checkbox.props';
-import { HelperTextProps } from '../HelperText/HelperText.props';
-import { LabelProps } from '../Label/Label.props';
+import type { CheckboxGroupConfig } from './CheckboxGroup.style';
+import type { CheckboxProps } from '../Checkbox';
 
-import { DeepPartial } from '@/utility-types/DeepPartial';
+import type { HelperTextProp, LabelProp } from '@/types';
 
 export type CheckboxGroupItemProps = Omit<
   CheckboxProps,
@@ -14,9 +12,7 @@ export type CheckboxGroupItemProps = Omit<
 
 export type CheckboxGroupProps = {
   column?: number;
-  label?: string | Pick<LabelProps, 'label' | 'tooltip' | 'optional'>;
-  helperText?:
-    | string
-    | Pick<HelperTextProps, 'intent' | 'text' | 'beforeIcon' | 'counter'>;
-  custom?: DeepPartial<CheckboxGroupConfig>;
+  label?: LabelProp;
+  helperText?: HelperTextProp;
+  custom?: CheckboxGroupConfig;
 };
