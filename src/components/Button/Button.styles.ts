@@ -27,6 +27,7 @@ const size = {
 const commonConfig = {
   display: 'inline-flex',
   gap: '100',
+  w: 'fit-content',
   justifyContent: 'center',
   alignItems: 'center',
   borderRadius: 'medium',
@@ -200,9 +201,9 @@ const ghostConfig = {
         none: {
           backgroundColor: {
             _: 'action-ghost-normal',
-            hover: 'action-ghost-hover',
-            active: 'action-ghost-active',
-            selected: 'action-ghost-selected',
+            hover: 'action-ghost-inverted-hover',
+            active: 'action-ghost-inverted-active',
+            selected: 'action-ghost-inverted-selected',
           },
           color: {
             _: 'action-inverted-normal',

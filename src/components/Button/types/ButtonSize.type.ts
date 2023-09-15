@@ -6,10 +6,10 @@ export type ButtonSize<TVariant extends ButtonVariant> = TVariant extends 'bare'
 
 export const getButtonSizes = <TVariant extends ButtonVariant>(
   variant: TVariant,
-): ButtonSize<TVariant> => {
+): ButtonSize<TVariant>[] => {
   if (variant === 'bare') {
-    return ['medium', 'large'] as unknown as ButtonSize<TVariant>;
+    return ['medium', 'large'] as ButtonSize<TVariant>[];
   }
 
-  return ['small', 'medium', 'large'] as unknown as ButtonSize<TVariant>;
+  return ['small', 'medium', 'large'] as ButtonSize<TVariant>[];
 };

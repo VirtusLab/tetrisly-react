@@ -13,17 +13,12 @@ export type ButtonAppearance<TVariant extends ButtonVariant> =
 
 export const getButtonAppearances = <TVariant extends ButtonVariant>(
   variant: TVariant,
-): ButtonAppearance<TVariant> => {
-  if (variant === 'default')
-    return [
-      'primary',
-      'secondary',
-      'inverted',
-    ] as unknown as ButtonAppearance<TVariant>;
-  return [
-    'primary',
-    'secondary',
-    'inverted',
-    'reverseInverted',
-  ] as unknown as ButtonAppearance<TVariant>;
-};
+): ButtonAppearance<TVariant>[] =>
+  (variant === 'default'
+    ? ['primary', 'secondary', 'inverted']
+    : [
+        'primary',
+        'secondary',
+        'inverted',
+        'reverseInverted',
+      ]) as ButtonAppearance<TVariant>[];

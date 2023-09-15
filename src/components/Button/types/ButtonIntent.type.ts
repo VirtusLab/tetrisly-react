@@ -42,12 +42,12 @@ export const getButtonIntents = <
 >(
   variant: TVariant,
   appearance: TAppearance,
-): ButtonIntent<TVariant, TAppearance> => {
-  const full = ['none', 'success', 'negative'] as unknown as ButtonIntent<
+): ButtonIntent<TVariant, TAppearance>[] => {
+  const full = ['none', 'success', 'destructive'] as ButtonIntent<
     TVariant,
     TAppearance
-  >;
-  const none = ['none'] as unknown as ButtonIntent<TVariant, TAppearance>;
+  >[];
+  const none = ['none'] as ButtonIntent<TVariant, TAppearance>[];
   if (appearance === 'primary') return full;
   if (appearance === 'secondary') {
     if (variant === 'default') return full;
