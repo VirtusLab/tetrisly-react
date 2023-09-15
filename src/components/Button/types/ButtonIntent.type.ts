@@ -35,3 +35,25 @@ export type ButtonIntent<
     ? 'none'
     : never
   : never;
+
+export const getButtonIntents = <
+  TVariant extends ButtonVariant,
+  TAppearance extends ButtonAppearance<TVariant>,
+>(
+  variant: TVariant,
+  appearance: TAppearance,
+): ButtonIntent<TVariant, TAppearance> => {
+  const full = ['none', 'success', 'negative'] as unknown as ButtonIntent<
+    TVariant,
+    TAppearance
+  >;
+  const none = ['none'] as unknown as ButtonIntent<TVariant, TAppearance>;
+  if (appearance === 'primary') return full;
+  if (appearance === 'secondary') {
+    if (variant === 'default') return full;
+    return none;
+  }
+  if (appearance === 'inverted' || appearance === 'reverseInverted')
+    return none;
+  return full;
+};
