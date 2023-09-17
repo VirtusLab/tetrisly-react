@@ -7,7 +7,7 @@ import { IconName } from '@/utility-types/IconName';
 import { Or } from '@/utility-types/Or';
 
 type CommonProps = {
-  label: string;
+  label?: string;
   children?: string;
   state?: ButtonState;
   custom?: ButtonConfig;

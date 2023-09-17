@@ -1,7 +1,6 @@
 import { capitalize } from 'lodash';
 
-import { H2 } from './common/H2';
-import { H3 } from './common/H3';
+import { SectionHeader } from './common/SectionHeader';
 import { States } from './common/States';
 
 import { emphases } from '@/components/Badge/Badge.props';
@@ -21,13 +20,17 @@ export const BadgeDocs = () => (
         borderBottomWidth="1px"
         borderBottomColor="#9747FF"
       >
-        <H2 my="auto">{capitalize(emphasis)} Emphasis</H2>
+        <SectionHeader variant="H1" my="auto" as="h2">
+          {capitalize(emphasis)} Emphasis
+        </SectionHeader>
         <tet.div
           px="1000"
           borderBottomWidth="1px"
           borderBottomColor="border-neutral-subtle"
         >
-          <H3>Intent</H3>
+          <SectionHeader variant="H2" as="h3">
+            Intent
+          </SectionHeader>
           <States states={basicIntents} gap="500" itemWidth="96px" />
           <tet.div py="500" display="flex" gap="39px">
             {basicIntents.map((intent) => (
@@ -44,7 +47,9 @@ export const BadgeDocs = () => (
           </tet.div>
         </tet.div>
         <tet.div px="1000">
-          <H3>Appearance</H3>
+          <SectionHeader variant="H2" as="h3">
+            Appearance
+          </SectionHeader>
 
           <tet.div overflowX="scroll">
             <States states={appearances} gap="500" itemWidth="96px" />

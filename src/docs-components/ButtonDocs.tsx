@@ -1,9 +1,7 @@
 import { startCase } from 'lodash';
 import { FC, useState, useEffect } from 'react';
 
-import { H1 } from './common/H1';
-import { H2 } from './common/H2';
-import { H3 } from './common/H3';
+import { SectionHeader } from './common/SectionHeader';
 
 import { Button, ButtonProps } from '@/components/Button';
 import { tet } from '@/tetrisly';
@@ -125,7 +123,9 @@ export const ButtonDocs: FC = () => (
   <>
     {variants.map((variant) => (
       <tet.section key={variant} display="flex" pt="500" flexDirection="column">
-        <H1 as="h2">{startCase(variant)}</H1>
+        <SectionHeader variant="Hero" as="h2">
+          {startCase(variant)}
+        </SectionHeader>
         {getButtonAppearances(variant).map((appearance) => (
           <tet.div
             key={appearance}
@@ -133,13 +133,14 @@ export const ButtonDocs: FC = () => (
             flexDirection="column"
             bg={appearance === 'inverted' ? 'background-inverted' : undefined}
           >
-            <H2
+            <SectionHeader
+              variant="H2"
               inverted={appearance === 'inverted'}
               as="h3"
               borderBottom="neutral-strong"
             >
               {startCase(appearance)}
-            </H2>
+            </SectionHeader>
 
             {getButtonIntents(variant, appearance).map((intent) => (
               <tet.div
@@ -151,9 +152,13 @@ export const ButtonDocs: FC = () => (
                 borderBottomWidth="1px"
                 borderBottomColor="border-neutral-subtle"
               >
-                <H3 as="h4" inverted={appearance === 'inverted'}>
+                <SectionHeader
+                  variant="H3"
+                  as="h4"
+                  inverted={appearance === 'inverted'}
+                >
                   Intent: {startCase(intent)}
-                </H3>
+                </SectionHeader>
                 <ButtonRow
                   variant={variant}
                   appearance={appearance}

@@ -1,7 +1,6 @@
 import { capitalize } from 'lodash';
 
-import { H2 } from './common/H2';
-import { H3 } from './common/H3';
+import { SectionHeader } from './common/SectionHeader';
 import { Avatar } from '../components/Avatar/Avatar';
 import { AvatarProps } from '../components/Avatar/Avatar.props';
 import { appearances } from '../types/Appearance';
@@ -30,7 +29,9 @@ export const AvatarDocs = () => (
   <>
     {emphasises.map((emphasis) => (
       <tet.section key={emphasis} pb="component-padding-4xLarge" py="500">
-        <H2>{capitalize(emphasis)} Emphasis</H2>
+        <SectionHeader variant="H1" as="h2">
+          {capitalize(emphasis)} Emphasis
+        </SectionHeader>
         <tet.div
           display="flex"
           gap="80px"
@@ -39,11 +40,11 @@ export const AvatarDocs = () => (
         >
           {shapes.map((shape) => (
             <tet.div key={shape} display="flex" flexDirection="column">
-              <H3>
+              <SectionHeader variant="H2" as="h3">
                 {shape === 'rounded'
                   ? 'Shape: Rounded (Default)'
                   : 'Shape: Square'}
-              </H3>
+              </SectionHeader>
               <tet.hr />
               <tet.div
                 display="flex"

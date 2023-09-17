@@ -3,12 +3,27 @@ import { useLayoutEffect, useRef, useState } from 'react';
 
 import { Checkbox } from './Checkbox';
 
+import { CheckboxDocs } from '@/docs-components/CheckboxDocs';
+import { TetDocs } from '@/docs-components/TetDocs';
 import { tet } from '@/tetrisly';
 
 const meta = {
   title: 'Components/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'A component that allows users to select one or multiple options from a set. Checkboxes present a clear visual indication of the selected state, making them ideal for forms and settings.',
+      },
+      page: () => (
+        <TetDocs docs="https://docs.tetrisly.com/components/list/checkbox">
+          <CheckboxDocs />
+        </TetDocs>
+      ),
+    },
+  },
 } satisfies Meta<typeof Checkbox>;
 
 export default meta;
