@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { startCase } from 'lodash';
 import { FC, useState, useEffect } from 'react';
 
@@ -7,19 +6,6 @@ import { H2 } from './common/H2';
 import { H3 } from './common/H3';
 
 import { Button, ButtonProps } from '@/components/Button';
-import {
-  ButtonAppearance,
-  getButtonAppearances,
-} from '@/components/Button/types/ButtonAppearance.type';
-import {
-  ButtonIntent,
-  getButtonIntents,
-} from '@/components/Button/types/ButtonIntent.type';
-import { getButtonSizes } from '@/components/Button/types/ButtonSize.type';
-import {
-  ButtonVariant,
-  variants,
-} from '@/components/Button/types/ButtonType.type';
 import { tet } from '@/tetrisly';
 
 const LoadingButton = (props: ButtonProps) => {
@@ -40,6 +26,13 @@ const LoadingButton = (props: ButtonProps) => {
   );
 };
 
+const getButtonSizes = (variant: ButtonProps['variant']) => {
+  if (variant === 'bare') {
+    return ['medium', 'large'] as const;
+  }
+  return ['small', 'medium', 'large'] as const;
+};
+
 const ButtonSizes = ({ variant, ...buttonProps }: ButtonProps) => (
   <tet.div
     display="flex"
@@ -54,74 +47,79 @@ const ButtonSizes = ({ variant, ...buttonProps }: ButtonProps) => (
   >
     {getButtonSizes(variant).map((size) => (
       <LoadingButton
-        size={size}
         key={size}
-        variant={variant}
-        {...buttonProps}
+        {...({ ...buttonProps, size, variant } as ButtonProps)}
       />
     ))}
-    <Button label="Click" variant="bare" />
   </tet.div>
 );
 
-const ButtonRow = <
-  TVariant extends ButtonVariant,
-  TAppearance extends ButtonAppearance<TVariant>,
->({
-  variant,
-  appearance,
-  intent,
-}: {
-  variant: TVariant;
-  appearance: TAppearance;
-  intent: ButtonIntent<TVariant, TAppearance>;
-}) => (
-  <tet.div display="flex" gap="500" overflowX="scroll">
-    <ButtonSizes
-      variant={variant}
-      appearance={appearance}
-      intent={intent}
-      label="Button label"
-    />
-    <ButtonSizes
-      variant={variant}
-      appearance={appearance}
-      intent={intent}
-      label="Button label"
-      beforeIcon="20-placeholder"
-    />
-    <ButtonSizes
-      variant={variant}
-      appearance={appearance}
-      intent={intent}
-      label="Button label"
-      afterIcon="20-placeholder"
-    />
-    <ButtonSizes
-      variant={variant}
-      appearance={appearance}
-      intent={intent}
-      label="Button label"
-      beforeIcon="20-placeholder"
-      afterIcon="20-placeholder"
-    />
-    <ButtonSizes
-      variant={variant}
-      appearance={appearance}
-      intent={intent}
-      label="Button label"
-      dropdownIndicator
-    />
-    <ButtonSizes
-      variant={variant}
-      appearance={appearance}
-      intent={intent}
-      label="Button label"
-      beforeIcon="20-placeholder"
-      dropdownIndicator
-    />
-  </tet.div>
-);
+type ButtonRowProps = Pick<ButtonProps, 'variant' | 'appearance' | 'intent'>;
+
+const ButtonRow = ({ variant, appearance, intent }: ButtonRowProps) => {
+  const baseProps = { variant, appearance, intent } as ButtonProps;
+  return (
+    <tet.div display="flex" gap="500" overflowX="scroll">
+      <ButtonSizes {...baseProps} label="Button label" />
+      <ButtonSizes
+        {...baseProps}
+        label="Button label"
+        beforeIcon="20-placeholder"
+      />
+      <ButtonSizes
+        {...({
+          ...baseProps,
+          label: 'Button label',
+          afterIcon: '20-placeholder',
+        } as ButtonProps)}
+      />
+      <ButtonSizes
+        {...({
+          ...baseProps,
+          label: 'Button label',
+          beforeIcon: '20-placeholder',
+          afterIcon: '20-placeholder',
+        } as ButtonProps)}
+      />
+      <ButtonSizes
+        {...({
+          ...baseProps,
+          label: 'Button label',
+          hasDropdownIndicator: true,
+        } as ButtonProps)}
+      />
+      <ButtonSizes
+        {...({
+          ...baseProps,
+          label: 'Button label',
+          beforeIcon: '20-placeholder',
+          hasDropdownIndicator: true,
+        } as ButtonProps)}
+      />
+    </tet.div>
+  );
+};
+
+const variants = ['default', 'ghost', 'bare'] as const;
+
+const getButtonAppearances = (variant: ButtonProps['variant']) => {
+  if (variant === 'default') {
+    return ['primary', 'secondary', 'inverted'] as const;
+  }
+  return ['primary', 'secondary', 'inverted', 'reverseInverted'] as const;
+};
+
+const getButtonIntents = (
+  variant: ButtonProps['variant'],
+  appearance: ButtonProps['appearance'],
+) => {
+  if (
+    (variant === 'default' && appearance === 'secondary') ||
+    appearance === 'primary'
+  )
+    return ['none', 'success', 'destructive'] as const;
+  return ['none'] as const;
+};
 
 export const ButtonDocs: FC = () => (
   <>
