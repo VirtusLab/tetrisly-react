@@ -40,7 +40,7 @@ export const AvatarDocs = () => (
         >
           {shapes.map((shape) => (
             <tet.div key={shape} display="flex" flexDirection="column">
-              <SectionHeader variant="H2" as="h3">
+              <SectionHeader variant="H2" as="h3" py="500">
                 {shape === 'rounded'
                   ? 'Shape: Rounded (Default)'
                   : 'Shape: Square'}
