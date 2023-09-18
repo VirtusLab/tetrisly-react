@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import { SectionHeader } from './common/SectionHeader';
+import { States } from './common/States';
 
 import { Checkbox, CheckboxProps } from '@/components/Checkbox';
 import { tet } from '@/tetrisly';
@@ -19,6 +20,7 @@ export const CheckboxDocs: FC = () => (
         <SectionHeader variant="H1" as="h2">
           {state}
         </SectionHeader>
+
         {[
           { label: false, helperText: false },
           { label: true, helperText: false },
@@ -31,7 +33,17 @@ export const CheckboxDocs: FC = () => (
               py="500"
               labels={getLabels(label, helperText)}
             />
-            <tet.div display="flex" alignItems="center" justifyContent="center">
+            <States
+              states={['normal', 'disabled', 'alert']}
+              flexBasis="130px"
+              gap="500"
+            />
+            <tet.div
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              gap="500"
+            >
               <tet.div flexBasis="130px" flexGrow="1" flexShrink="0">
                 <Checkbox
                   isChecked={state === 'Checked'}

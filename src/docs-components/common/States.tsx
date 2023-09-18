@@ -1,16 +1,21 @@
-import { GapProps, WidthProps } from '@xstyled/styled-components';
+import {
+  FlexBasisProps,
+  GapProps,
+  WidthProps,
+} from '@xstyled/styled-components';
 import { FC } from 'react';
 
 import { tet } from '@/tetrisly';
 
 export const States: FC<{
   states: string[] | readonly string[];
-  gap: GapProps['gap'];
-  itemWidth: WidthProps['w'];
-}> = ({ states, gap, itemWidth }) => (
+  gap?: GapProps['gap'];
+  itemWidth?: WidthProps['w'];
+  flexBasis?: FlexBasisProps['flexBasis'];
+}> = ({ states, gap, itemWidth, flexBasis }) => (
   <tet.div display="flex" gap={gap} py="300">
     {states.map((state) => (
-      <tet.div w={itemWidth} flexShrink="0">
+      <tet.div w={itemWidth} flexShrink="0" flexBasis={flexBasis} flexGrow="1">
         <tet.span text="body-medium">
           <tet.mark
             borderRadius="small"
