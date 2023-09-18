@@ -28,7 +28,7 @@ export const BadgeDocs = () => (
           borderBottomWidth="1px"
           borderBottomColor="border-neutral-subtle"
         >
-          <SectionHeader variant="H2" as="h3">
+          <SectionHeader variant="H2" as="h3" py="500">
             Intent
           </SectionHeader>
           <States states={basicIntents} gap="500" itemWidth="96px" />
@@ -47,7 +47,7 @@ export const BadgeDocs = () => (
           </tet.div>
         </tet.div>
         <tet.div px="1000">
-          <SectionHeader variant="H2" as="h3">
+          <SectionHeader variant="H2" as="h3" py="500">
             Appearance
           </SectionHeader>
 
