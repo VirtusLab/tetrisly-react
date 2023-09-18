@@ -3,8 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { InlineBanner } from './InlineBanner';
 
+import { InlineBannerDocs } from '@/docs-components/InlineBannerDocs';
+import { TetDocs } from '@/docs-components/TetDocs';
+
 const meta = {
-  title: 'Components/InlineBanner',
+  title: 'InlineBanner',
   component: InlineBanner,
   tags: ['autodocs'],
   args: {
@@ -21,6 +24,19 @@ const meta = {
       },
     ],
     onCloseClick: action('onCloseClick'),
+  },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'A narrow visual element that displays relevant messages or prompts within the context of the main content. Often used to show alerts, promotions, or feature highlights.',
+      },
+      page: () => (
+        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/inlinebanner">
+          <InlineBannerDocs />
+        </TetDocs>
+      ),
+    },
   },
 } satisfies Meta<typeof InlineBanner>;
 

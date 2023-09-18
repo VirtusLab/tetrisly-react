@@ -6,7 +6,7 @@ import { IconButtonDocs } from '@/docs-components/IconButtonDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
-  title: 'Components/SocialButton',
+  title: 'SocialButton',
   component: SocialButton,
   tags: ['autodocs'],
   parameters: {

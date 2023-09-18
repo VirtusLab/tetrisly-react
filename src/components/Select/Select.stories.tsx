@@ -2,9 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Select } from './Select';
 
+import { SelectDocs } from '@/docs-components/SelectDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
+  title: 'Select',
   component: Select,
   tags: ['autodocs'],
   args: {
@@ -19,7 +21,9 @@ const meta = {
           'A component that allows users to choose one or more options from a list, typically presented as a dropdown or pop-up menu. Select components are commonly used in forms and settings.',
       },
       page: () => (
-        <TetDocs docs="https://docs.tetrisly.com/components/list/select" />
+        <TetDocs docs="https://docs.tetrisly.com/components/list/select">
+          <SelectDocs />
+        </TetDocs>
       ),
     },
   },

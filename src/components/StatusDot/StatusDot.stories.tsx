@@ -2,10 +2,22 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { StatusDot } from './StatusDot';
 
+import { StatusDotDocs } from '@/docs-components/StatusDotDocs';
+import { TetDocs } from '@/docs-components/TetDocs';
+
 const meta = {
-  title: 'Components/StatusDot',
+  title: 'Global Primitives / StatusDot',
   component: StatusDot,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      page: () => (
+        <TetDocs docs={null}>
+          <StatusDotDocs />
+        </TetDocs>
+      ),
+    },
+  },
 } satisfies Meta<typeof StatusDot>;
 
 export default meta;

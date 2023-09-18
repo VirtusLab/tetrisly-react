@@ -8,7 +8,7 @@ import { TetDocs } from '@/docs-components/TetDocs';
 import { tet } from '@/tetrisly';
 
 const meta = {
-  title: 'Components/Checkbox',
+  title: 'Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
   parameters: {

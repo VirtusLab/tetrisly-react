@@ -6,7 +6,7 @@ import { BadgeDocs } from '@/docs-components/BadgeDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
-  title: 'Components/Badge',
+  title: 'Badge',
   component: Badge,
   tags: ['autodocs'],
   parameters: {

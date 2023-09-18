@@ -3,8 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Toast } from './Toast';
 
+import { TetDocs } from '@/docs-components/TetDocs';
+import { ToastDocs } from '@/docs-components/ToastDocs';
+
 const meta = {
-  title: 'Components/Toast',
+  title: 'Toast',
   component: Toast,
   tags: ['autodocs'],
   args: {
@@ -19,6 +22,19 @@ const meta = {
         onClick: action('onClick'),
       },
     ],
+  },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'A temporary, non-intrusive notification displayed to provide users with feedback, alerts, or updates. Toasts are typically placed at the edge of the screen and disappear automatically after a set duration or when the user interacts with them.',
+      },
+      page: () => (
+        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/toast">
+          <ToastDocs />
+        </TetDocs>
+      ),
+    },
   },
 } satisfies Meta<typeof Toast>;
 

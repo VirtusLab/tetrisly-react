@@ -2,12 +2,28 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Counter } from './Counter';
 
+import { CounterDocs } from '@/docs-components/CounterDocs';
+import { TetDocs } from '@/docs-components/TetDocs';
+
 const meta = {
-  title: 'Components/Counter',
+  title: 'Counter',
   component: Counter,
   tags: ['autodocs'],
   args: {
     number: 24,
+  },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'A numerical indicator displaying the current count of items, events, or actions. Counters can be used to show unread messages, items in a shopping cart, or other quantities that require the user’s attention.',
+      },
+      page: () => (
+        <TetDocs docs="https://docs.tetrisly.com/components/list/counter">
+          <CounterDocs />
+        </TetDocs>
+      ),
+    },
   },
 } satisfies Meta<typeof Counter>;
 

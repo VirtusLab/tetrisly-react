@@ -6,7 +6,7 @@ import { ButtonDocs } from '@/docs-components/ButtonDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
-  title: 'Components/Button',
+  title: 'Button',
   component: Button,
   tags: ['autodocs'],
   args: {

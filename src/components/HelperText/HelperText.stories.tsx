@@ -2,8 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { HelperText } from './HelperText';
 
+import { HelperTextDocs } from '@/docs-components/HelperTextDocs';
+import { TetDocs } from '@/docs-components/TetDocs';
+
 const meta = {
-  title: 'Components/HelperText',
+  title: 'Global Primitives / HelperText',
   component: HelperText,
   tags: ['autodocs'],
   args: {
@@ -15,6 +18,18 @@ const meta = {
       options: ['none', 'alert', 'success'],
       defaultValue: 'none',
       control: { type: 'radio' },
+    },
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: '',
+      },
+      page: () => (
+        <TetDocs docs={null}>
+          <HelperTextDocs />
+        </TetDocs>
+      ),
     },
   },
 } satisfies Meta<typeof HelperText>;

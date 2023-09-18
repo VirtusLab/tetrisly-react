@@ -2,8 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { InlineMessage } from './InlineMessage';
 
+import { InlineMessageDocs } from '@/docs-components/InlineMessageDocs';
+import { TetDocs } from '@/docs-components/TetDocs';
+
 const meta = {
-  title: 'Components/InlineMessage',
+  title: 'InlineMessage',
   component: InlineMessage,
   tags: ['autodocs'],
   args: {
@@ -16,6 +19,19 @@ const meta = {
       options: ['informative', 'success', 'warning', 'negative'],
       defaultValue: 'informative',
       control: { type: 'radio' },
+    },
+  },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'A concise, contextual message displayed within the UI to provide users with feedback, guidance, or supplementary information. Inline messages often use color and iconography to convey tone or importance.',
+      },
+      page: () => (
+        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/inlinemessage">
+          <InlineMessageDocs />
+        </TetDocs>
+      ),
     },
   },
 } satisfies Meta<typeof InlineMessage>;
