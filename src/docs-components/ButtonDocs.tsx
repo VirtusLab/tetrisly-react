@@ -34,7 +34,7 @@ const getButtonSizes = (variant: ButtonProps['variant']) => {
 const ButtonSizes = ({ variant, ...buttonProps }: ButtonProps) => (
   <tet.div
     display="flex"
-    flexBasis="150px"
+    flexBasis="180px"
     flexGrow="1"
     flexShrink="0"
     alignItems="flex-start"
@@ -57,7 +57,7 @@ type ButtonRowProps = Pick<ButtonProps, 'variant' | 'appearance' | 'intent'>;
 const ButtonRow = ({ variant, appearance, intent }: ButtonRowProps) => {
   const baseProps = { variant, appearance, intent } as ButtonProps;
   return (
-    <tet.div display="flex" gap="500" overflowX="scroll">
+    <tet.div display="flex" gap="300" overflowX="scroll">
       <ButtonSizes {...baseProps} label="Button label" />
       <ButtonSizes
         {...baseProps}
@@ -137,6 +137,8 @@ export const ButtonDocs: FC = () => (
               variant="H2"
               inverted={appearance === 'inverted'}
               as="h3"
+              px="1000"
+              py="500"
               borderBottom="neutral-strong"
             >
               {startCase(appearance)}
@@ -155,6 +157,7 @@ export const ButtonDocs: FC = () => (
                 <SectionHeader
                   variant="H3"
                   as="h4"
+                  pt="500"
                   inverted={appearance === 'inverted'}
                 >
                   Intent: {startCase(intent)}
