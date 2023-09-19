@@ -22,9 +22,6 @@ const meta = {
   },
   parameters: {
     docs: {
-      description: {
-        component: '',
-      },
       page: () => (
         <TetDocs docs={null}>
           <HelperTextDocs />
