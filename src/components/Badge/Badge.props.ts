@@ -6,8 +6,6 @@ import { BadgeIntent } from './BadgeIntent.type';
 import { IconName } from '@/utility-types/IconName';
 import { Or } from '@/utility-types/Or';
 
-export const emphases = ['high', 'medium', 'low'] as const;
-
 export type BadgeProps = Or<
   { appearance?: BadgeAppearance },
   { intent?: BadgeIntent }

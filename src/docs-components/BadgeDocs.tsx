@@ -3,11 +3,12 @@ import { capitalize } from 'lodash';
 import { SectionHeader } from './common/SectionHeader';
 import { States } from './common/States';
 
-import { emphases } from '@/components/Badge/Badge.props';
 import { Badge } from '@/index';
 import { tet } from '@/tetrisly';
 import { appearances } from '@/types/Appearance';
 import { basicIntents } from '@/types/BasicIntent';
+
+export const emphases = ['high', 'medium', 'low'] as const;
 
 export const BadgeDocs = () => (
   <>
