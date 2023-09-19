@@ -9,7 +9,13 @@ const meta = {
   title: 'Global Primitives / StatusDot',
   component: StatusDot,
   tags: ['autodocs'],
+  args: {
+    stroked: false,
+  },
   parameters: {
+    backgrounds: {
+      default: 'dark',
+    },
     docs: {
       page: () => (
         <TetDocs docs={null}>
