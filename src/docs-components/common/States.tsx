@@ -15,7 +15,13 @@ export const States: FC<{
 }> = ({ states, gap, itemWidth, flexBasis }) => (
   <tet.div display="flex" gap={gap} py="300">
     {states.map((state) => (
-      <tet.div w={itemWidth} flexShrink="0" flexBasis={flexBasis} flexGrow="1">
+      <tet.div
+        key={state}
+        w={itemWidth}
+        flexShrink="0"
+        flexBasis={flexBasis}
+        flexGrow="1"
+      >
         <tet.span text="body-medium">
           <tet.mark
             borderRadius="small"
