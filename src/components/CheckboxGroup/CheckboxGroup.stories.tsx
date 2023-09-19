@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { CheckboxGroup } from './CheckboxGroup';
 
-import { AlertBannerDocs } from '@/docs-components/AlertBannerDocs';
+import { CheckboxGroupDocs } from '@/docs-components/CheckboxGroupDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
@@ -31,7 +31,7 @@ const meta = {
       },
       page: () => (
         <TetDocs docs="https://docs.tetrisly.com/components/list/checkbox">
-          <AlertBannerDocs />
+          <CheckboxGroupDocs />
         </TetDocs>
       ),
     },
