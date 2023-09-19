@@ -3,6 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { SocialButton } from './SocialButton';
 
 import { IconButtonDocs } from '@/docs-components/IconButtonDocs';
+import { SocialButtonDocs } from '@/docs-components/SocialButtonDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
@@ -17,7 +18,7 @@ const meta = {
       },
       page: () => (
         <TetDocs docs="https://docs.tetrisly.com/components/in-progress/iconbutton">
-          <IconButtonDocs />
+          <SocialButtonDocs />
         </TetDocs>
       ),
     },
