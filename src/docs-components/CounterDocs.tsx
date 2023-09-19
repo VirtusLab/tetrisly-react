@@ -30,7 +30,7 @@ export const CounterDocs = () => (
           <tet.div py="500">
             <States
               states={appearances.map(capitalize)}
-              itemWidth="96px"
+              flexBasis="96px"
               gap="40px"
             />
             <tet.div display="flex" gap="40px">
