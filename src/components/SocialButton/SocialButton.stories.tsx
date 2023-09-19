@@ -17,7 +17,7 @@ const meta = {
           'The Social Button triggers an event or action connected with the social media platforms.',
       },
       page: () => (
-        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/iconbutton">
+        <TetDocs docs={null}>
           <SocialButtonDocs />
         </TetDocs>
       ),
