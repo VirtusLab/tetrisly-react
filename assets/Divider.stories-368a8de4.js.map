@@ -1,0 +1,1 @@
+{"version":3,"file":"Divider.stories-368a8de4.js","sources":["../../src/docs-components/DividerDocs.tsx"],"sourcesContent":["import { tet } from '@/tetrisly';\n\nexport const DividerDocs = () => <tet.div />;\n"],"names":["DividerDocs","jsx","tet"],"mappings":"+XAEO,MAAMA,EAAc,IAAOC,EAAA,IAAAC,EAAI,IAAJ,CAAA,CAAQ;;;;;;;"}

@@ -17,6 +17,11 @@ declare const meta: {
             };
         };
     };
+    parameters: {
+        docs: {
+            page: () => import("react/jsx-runtime").JSX.Element;
+        };
+    };
 };
 export default meta;
 type Story = StoryObj<typeof meta>;

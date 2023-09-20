@@ -1,6 +1,7 @@
 /// <reference types="react" />
 import type { StoryObj } from '@storybook/react';
 declare const meta: {
+    title: string;
     component: import("react").FC<Omit<import("../TextInput").TextInputProps, "type" | "state" | "beforeComponent" | "afterComponent"> & {
         state?: "disabled" | undefined;
         afterComponent?: import("../TextInput").TextInputProps.InnerComponents.IconButton | import("../TextInput").TextInputProps.InnerComponents.Dropdown | undefined;

@@ -12,6 +12,14 @@ declare const meta: {
         helperText: string;
         children: import("react/jsx-runtime").JSX.Element[];
     };
+    parameters: {
+        docs: {
+            description: {
+                component: string;
+            };
+            page: () => import("react/jsx-runtime").JSX.Element;
+        };
+    };
 };
 export default meta;
 type Story = StoryObj<typeof meta>;

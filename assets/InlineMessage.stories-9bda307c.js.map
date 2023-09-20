@@ -1,0 +1,1 @@
+{"version":3,"file":"InlineMessage.stories-9bda307c.js","sources":["../../src/docs-components/InlineMessageDocs.tsx"],"sourcesContent":["import { tet } from '@/tetrisly';\n\nexport const InlineMessageDocs = () => <tet.div />;\n"],"names":["InlineMessageDocs","jsx","tet"],"mappings":"6aAEO,MAAMA,EAAoB,IAAOC,EAAA,IAAAC,EAAI,IAAJ,CAAA,CAAQ;;;;;;;;;;;;;;;;"}

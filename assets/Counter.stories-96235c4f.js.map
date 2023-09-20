@@ -1,0 +1,1 @@
+{"version":3,"file":"Counter.stories-96235c4f.js","sources":["../../src/docs-components/CounterDocs.tsx"],"sourcesContent":["import { tet } from '@/tetrisly';\n\nexport const CounterDocs = () => <tet.div />;\n"],"names":["CounterDocs","jsx","tet"],"mappings":"+XAEO,MAAMA,EAAc,IAAOC,EAAA,IAAAC,EAAI,IAAJ,CAAA,CAAQ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"}

@@ -261,6 +261,7 @@ export declare const defaultConfig: {
         };
         display: "inline-flex";
         gap: string;
+        w: string;
         justifyContent: "center";
         alignItems: "center";
         textAlign: "center";
@@ -411,6 +412,7 @@ export declare const defaultConfig: {
         };
         display: "inline-flex";
         gap: string;
+        w: string;
         justifyContent: "center";
         alignItems: "center";
         textAlign: "center";
@@ -523,6 +525,7 @@ export declare const defaultConfig: {
         };
         display: "inline-flex";
         gap: string;
+        w: string;
         justifyContent: "center";
         alignItems: "center";
         textAlign: "center";

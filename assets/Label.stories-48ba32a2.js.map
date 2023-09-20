@@ -1,0 +1,1 @@
+{"version":3,"file":"Label.stories-48ba32a2.js","sources":["../../src/docs-components/LabelDocs.tsx"],"sourcesContent":["import { tet } from '@/tetrisly';\n\nexport const LabelDocs = () => <tet.div />;\n"],"names":["LabelDocs","jsx","tet"],"mappings":"sfAEO,MAAMA,EAAY,IAAOC,EAAA,IAAAC,EAAI,IAAJ,CAAA,CAAQ;;;;;;;;;;;;;;;;;;;;;;"}

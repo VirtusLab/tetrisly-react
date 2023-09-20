@@ -1,0 +1,1 @@
+{"version":3,"file":"SearchInput.stories-d54c3a92.js","sources":["../../src/docs-components/SearchInputDocs.tsx"],"sourcesContent":["import { tet } from '@/tetrisly';\n\nexport const SearchInputDocs = () => <tet.div />;\n"],"names":["SearchInputDocs","jsx","tet"],"mappings":"mpBAEO,MAAMA,EAAkB,IAAOC,EAAA,IAAAC,EAAI,IAAJ,CAAA,CAAQ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"}

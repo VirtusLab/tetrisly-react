@@ -1,0 +1,1 @@
+{"version":3,"file":"RadioButton.stories-8516aade.js","sources":["../../src/docs-components/RadioButtonDocs.tsx"],"sourcesContent":["import { tet } from '@/tetrisly';\n\nexport const RadioButtonDocs = () => <tet.div />;\n"],"names":["RadioButtonDocs","jsx","tet"],"mappings":"ofAEO,MAAMA,EAAkB,IAAOC,EAAA,IAAAC,EAAI,IAAJ,CAAA,CAAQ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"}

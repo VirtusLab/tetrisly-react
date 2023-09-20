@@ -1,0 +1,1 @@
+{"version":3,"file":"AlertBanner.stories-13b3ecf3.js","sources":["../../src/docs-components/AlertBannerDocs.tsx"],"sourcesContent":["import { tet } from '@/tetrisly';\n\nexport const AlertBannerDocs = () => <tet.div />;\n"],"names":["AlertBannerDocs","jsx","tet"],"mappings":"8mBAEO,MAAMA,EAAkB,IAAOC,EAAA,IAAAC,EAAI,IAAJ,CAAA,CAAQ;;;;;;;;;;;;"}

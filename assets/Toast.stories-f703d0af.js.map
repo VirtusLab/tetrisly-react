@@ -1,0 +1,1 @@
+{"version":3,"file":"Toast.stories-f703d0af.js","sources":["../../src/docs-components/ToastDocs.tsx"],"sourcesContent":["import { tet } from '@/tetrisly';\n\nexport const ToastDocs = () => <tet.div />;\n"],"names":["ToastDocs","jsx","tet"],"mappings":"6mBAEO,MAAMA,EAAY,IAAOC,EAAA,IAAAC,EAAI,IAAJ,CAAA,CAAQ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"}

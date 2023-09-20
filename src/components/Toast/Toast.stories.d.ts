@@ -14,6 +14,14 @@ declare const meta: {
             onClick: import("@storybook/addon-actions").HandlerFunction;
         }];
     };
+    parameters: {
+        docs: {
+            description: {
+                component: string;
+            };
+            page: () => import("react/jsx-runtime").JSX.Element;
+        };
+    };
 };
 export default meta;
 type Story = StoryObj<typeof meta>;

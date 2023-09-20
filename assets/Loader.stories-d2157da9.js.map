@@ -1,0 +1,1 @@
+{"version":3,"file":"Loader.stories-d2157da9.js","sources":["../../src/docs-components/LoaderDocs.tsx"],"sourcesContent":["import { tet } from '@/tetrisly';\n\nexport const LoaderDocs = () => <tet.div />;\n"],"names":["LoaderDocs","jsx","tet"],"mappings":"0YAEO,MAAMA,EAAa,IAAOC,EAAA,IAAAC,EAAI,IAAJ,CAAA,CAAQ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"}
