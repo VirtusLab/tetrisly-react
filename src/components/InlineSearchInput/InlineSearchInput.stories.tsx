@@ -6,6 +6,7 @@ import { InlineSearchInput } from './InlineSearchInput';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
+  title: 'InlineSearchInput',
   component: InlineSearchInput,
   tags: ['autodocs'],
   argTypes: {},
@@ -16,7 +17,9 @@ const meta = {
           'A distinctive text input field that allows users to search for content on a website or application, by entering keywords, phrases, or other search terms. Search Inputs often include a search icon and may provide autocomplete suggestions or filters to refine results.',
       },
       page: () => (
-        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/searchinput" />
+        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/searchinput">
+          <InlineSearchInput />
+        </TetDocs>
       ),
     },
   },

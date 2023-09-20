@@ -52,6 +52,7 @@ describe('stylesBuilder', () => {
         textAlign: 'center',
         transition: true,
         transitionDuration: 200,
+        w: 'fit-content',
         whiteSpace: 'nowrap',
       },
     });

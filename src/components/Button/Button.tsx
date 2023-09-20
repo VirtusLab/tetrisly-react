@@ -14,7 +14,7 @@ export const Button: FC<ButtonProps & MarginProps> = ({
   appearance = 'secondary',
   intent = 'none',
   size = 'medium',
-  label = 'Click',
+  label,
   children = label,
   state,
   custom,

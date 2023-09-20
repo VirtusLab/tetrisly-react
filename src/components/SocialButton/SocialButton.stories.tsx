@@ -2,11 +2,11 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { SocialButton } from './SocialButton';
 
-import { IconButtonDocs } from '@/docs-components/IconButtonDocs';
+import { SocialButtonDocs } from '@/docs-components/SocialButtonDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
-  title: 'Components/SocialButton',
+  title: 'SocialButton',
   component: SocialButton,
   tags: ['autodocs'],
   parameters: {
@@ -16,8 +16,8 @@ const meta = {
           'The Social Button triggers an event or action connected with the social media platforms.',
       },
       page: () => (
-        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/iconbutton">
-          <IconButtonDocs />
+        <TetDocs docs={null}>
+          <SocialButtonDocs />
         </TetDocs>
       ),
     },

@@ -2,10 +2,26 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { RadioButton } from './RadioButton';
 
+import { RadioButtonDocs } from '@/docs-components/RadioButtonDocs';
+import { TetDocs } from '@/docs-components/TetDocs';
+
 const meta = {
-  title: 'Components/RadioButton',
+  title: 'RadioButton',
   component: RadioButton,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'A component that enables users to choose a single option from a set of mutually exclusive choices. Radio buttons provide clear visual feedback for the selected state, and are commonly used in forms and settings.',
+      },
+      page: () => (
+        <TetDocs docs="https://docs.tetrisly.com/components/list/radiobutton">
+          <RadioButtonDocs />
+        </TetDocs>
+      ),
+    },
+  },
 } satisfies Meta<typeof RadioButton>;
 
 export default meta;

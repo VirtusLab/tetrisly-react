@@ -1,3 +1,6 @@
+import { capitalize } from 'lodash';
+
+import { SectionHeader } from './common/SectionHeader';
 import { Avatar } from '../components/Avatar/Avatar';
 import { AvatarProps } from '../components/Avatar/Avatar.props';
 import { appearances } from '../types/Appearance';
@@ -25,24 +28,23 @@ const RowAvatar = ({ size: _, ...props }: AvatarProps) => (
 export const AvatarDocs = () => (
   <>
     {emphasises.map((emphasis) => (
-      <tet.section key={emphasis} pb="component-padding-4xLarge" px="1000">
-        <tet.h2 py="500" text="header-3xLarge">
+      <tet.section key={emphasis} pb="component-padding-4xLarge" py="500">
+        <SectionHeader variant="H1" as="h2">
           {capitalize(emphasis)} Emphasis
-        </tet.h2>
-        <tet.div display="flex" gap="80px" justifyContent="space-between">
+        </SectionHeader>
+        <tet.div
+          display="flex"
+          gap="80px"
+          justifyContent="space-between"
+          px="1000"
+        >
           {shapes.map((shape) => (
             <tet.div key={shape} display="flex" flexDirection="column">
-              <tet.h3
-                py="component-padding-2xLarge"
-                color="content-secondary"
-                text="body-large"
-                borderBottomWidth="1px"
-                borderBottomColor="border-default"
-              >
+              <SectionHeader variant="H2" as="h3" py="500">
                 {shape === 'rounded'
                   ? 'Shape: Rounded (Default)'
                   : 'Shape: Square'}
-              </tet.h3>
+              </SectionHeader>
               <tet.hr />
               <tet.div
                 display="flex"
@@ -76,7 +78,3 @@ export const AvatarDocs = () => (
     ))}
   </>
 );
-
-function capitalize(string: string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}

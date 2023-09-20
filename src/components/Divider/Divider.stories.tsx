@@ -2,12 +2,27 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Divider } from './Divider';
 
+import { DividerDocs } from '@/docs-components/DividerDocs';
+import { TetDocs } from '@/docs-components/TetDocs';
 import { tet } from '@/tetrisly';
 
 const meta = {
-  title: 'Components/Divider',
+  title: 'Divider',
   component: Divider,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'A visual separator that breaks up content or UI elements within a layout. Dividers help to create hierarchy and structure, improving readability and organization of content on the page.',
+      },
+      page: () => (
+        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/divider">
+          <DividerDocs />
+        </TetDocs>
+      ),
+    },
+  },
 } satisfies Meta<typeof Divider>;
 
 export default meta;

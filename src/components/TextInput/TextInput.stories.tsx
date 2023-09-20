@@ -2,12 +2,28 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { TextInput } from './TextInput';
 
+import { TetDocs } from '@/docs-components/TetDocs';
+import { TextInputDocs } from '@/docs-components/TextInputDocs';
+
 const meta = {
-  title: 'Components/TextInput',
+  title: 'TextInput',
   component: TextInput,
   tags: ['autodocs'],
   args: {
     placeholder: 'Placeholder',
+  },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'A versatile and interactive element. Buttons allow users to perform actions and navigate through an application. They come in various styles and sizes, providing clear visual cues and feedback to users.',
+      },
+      page: () => (
+        <TetDocs docs="https://docs.tetrisly.com/components/list/textinput">
+          <TextInputDocs />
+        </TetDocs>
+      ),
+    },
   },
 } satisfies Meta<typeof TextInput>;
 

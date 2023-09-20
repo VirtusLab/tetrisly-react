@@ -3,10 +3,26 @@ import { useEffect, useState } from 'react';
 
 import { Loader } from './Loader';
 
+import { LoaderDocs } from '@/docs-components/LoaderDocs';
+import { TetDocs } from '@/docs-components/TetDocs';
+
 const meta = {
-  title: 'Components/Loader',
+  title: 'Loader',
   component: Loader,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'A distinctive text input field that allows users to search for content on a website or application, by entering keywords, phrases, or other search terms. Search Inputs often include a search icon and may provide autocomplete suggestions or filters to refine results.',
+      },
+      page: () => (
+        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/loader">
+          <LoaderDocs />
+        </TetDocs>
+      ),
+    },
+  },
 } satisfies Meta<typeof Loader>;
 
 export default meta;

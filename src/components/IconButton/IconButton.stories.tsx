@@ -8,6 +8,7 @@ import { IconButtonDocs } from '@/docs-components/IconButtonDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
+  title: 'IconButton',
   component: IconButton,
   tags: ['autodocs'],
   argTypes: {

@@ -27,7 +27,7 @@ export const defaultConfig = {
   display: 'flex',
   w: 'fit-content',
   h: 'xSmall',
-  borderRadius: 'large',
+  borderRadius: 'medium',
   flexShrink: 0,
   alignItems: 'center',
   gap: 'component-gap-xSmall',

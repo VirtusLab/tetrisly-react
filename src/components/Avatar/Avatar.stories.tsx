@@ -7,6 +7,7 @@ import { TetDocs } from '@/docs-components/TetDocs';
 import { appearances } from '@/types/Appearance';
 
 const meta = {
+  title: 'Avatar',
   component: Avatar,
   tags: ['autodocs'],
   args: {

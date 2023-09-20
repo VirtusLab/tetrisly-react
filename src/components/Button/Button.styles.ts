@@ -179,6 +179,7 @@ const size = {
 const commonConfig = {
   display: 'inline-flex',
   gap: '100',
+  w: 'fit-content',
   justifyContent: 'center',
   alignItems: 'center',
   textAlign: 'center',

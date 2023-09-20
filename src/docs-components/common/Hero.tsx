@@ -7,7 +7,7 @@ import { tet } from '@/tetrisly';
 
 type HeroProps = {
   component: string;
-  description: string;
+  description: string | null;
   docs: string | null;
 };
 
@@ -40,9 +40,11 @@ export const Hero: FC<HeroProps> = ({ component, description, docs }) => (
         flexDirection="column"
       >
         <tet.h1 text="hero-medium">{component}</tet.h1>
-        <tet.p color="content-secondary" text="body-large">
-          {description}
-        </tet.p>
+        {description && (
+          <tet.p color="content-secondary" text="body-large">
+            {description}
+          </tet.p>
+        )}
       </tet.div>
       {docs && (
         <tet.a
