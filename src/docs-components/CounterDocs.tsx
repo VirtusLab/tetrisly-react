@@ -19,12 +19,7 @@ const appearances = [
 export const CounterDocs = () => (
   <>
     {emphases.map((emphasis) => (
-      <tet.section
-        key={emphasis}
-        py="500"
-        borderBottomWidth="1px"
-        borderBottomColor="#9747FF"
-      >
+      <tet.section key={emphasis} py="500">
         <SectionHeader variant="H1" as="h2">
           {capitalize(emphasis)} Emphasis
           <tet.div py="500">

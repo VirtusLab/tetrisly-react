@@ -18,10 +18,8 @@ export const BadgeDocs = () => (
         display="flex"
         padding="40px 0px"
         flexDirection="column"
-        borderBottomWidth="1px"
-        borderBottomColor="#9747FF"
       >
-        <SectionHeader variant="H1" my="auto" as="h2">
+        <SectionHeader px="1000" variant="H1" my="auto" as="h2">
           {capitalize(emphasis)} Emphasis
         </SectionHeader>
         <tet.div

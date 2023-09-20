@@ -29,7 +29,7 @@ export const AvatarDocs = () => (
   <>
     {emphasises.map((emphasis) => (
       <tet.section key={emphasis} pb="component-padding-4xLarge" py="500">
-        <SectionHeader variant="H1" as="h2">
+        <SectionHeader px="1000" variant="H1" as="h2">
           {capitalize(emphasis)} Emphasis
         </SectionHeader>
         <tet.div

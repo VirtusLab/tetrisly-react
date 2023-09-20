@@ -1,4 +1,5 @@
 import { action } from '@storybook/addon-actions';
+import { capitalize } from 'lodash';
 
 import { SectionHeader } from './common/SectionHeader';
 
@@ -10,13 +11,9 @@ const intents = ['none', 'positive', 'warning', 'negative'] as const;
 export const AlertBannerDocs = () => (
   <>
     {intents.map((intent) => (
-      <tet.section
-        key={intent}
-        borderBottomWidth="1px"
-        borderBottomColor="#9747FF"
-      >
-        <SectionHeader py="500" variant="H1">
-          Intent: {intent}
+      <tet.section key={intent}>
+        <SectionHeader px="1000" py="500" variant="H1">
+          Intent: {capitalize(intent)}
         </SectionHeader>
         <tet.div px="1000">
           <SectionHeader py="500" variant="H2">

@@ -38,7 +38,6 @@ export const SectionHeader = ({
     return (
       <tet.h1
         text="header-4xLarge"
-        px="1000"
         py="500"
         color={inverted ? 'content-primary-inverted' : 'content-primary'}
         {...(props as BaseProps)}
@@ -49,15 +48,13 @@ export const SectionHeader = ({
   }
   if (variant === 'H1') {
     return (
-      <tet.div px="1000">
-        <tet.h2
-          text="header-3xLarge"
-          color={inverted ? 'content-primary-inverted' : 'content-primary'}
-          {...(props as BaseProps)}
-        >
-          {label}
-        </tet.h2>
-      </tet.div>
+      <tet.h2
+        text="header-3xLarge"
+        color={inverted ? 'content-primary-inverted' : 'content-primary'}
+        {...(props as BaseProps)}
+      >
+        {label}
+      </tet.h2>
     );
   }
   if (variant === 'H2') {

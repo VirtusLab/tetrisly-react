@@ -1,4 +1,3 @@
-import { MarginProps } from '@xstyled/styled-components';
 import { FC } from 'react';
 
 import { IconButtonProps } from './IconButton.props';
@@ -6,6 +5,7 @@ import { defaultConfig } from './IconButton.styles';
 import { Button, ButtonProps } from '../Button';
 
 import { mergeConfigWithCustom } from '@/services';
+import { MarginProps } from '@/types';
 
 const mapperIconButtonPropsToButtonProps = ({
   children,
@@ -13,14 +13,12 @@ const mapperIconButtonPropsToButtonProps = ({
 }: IconButtonProps): ButtonProps => {
   const appearance =
     props.appearance === 'primary' ? 'secondary' : props.appearance;
-  const intent = props.intent === 'negative' ? 'destructive' : props.intent;
-  const beforeIcon = props.icon;
 
   return {
     ...props,
     appearance,
-    intent,
-    beforeIcon,
+    intent: props.intent,
+    beforeIcon: props.icon,
     label: '',
   } as ButtonProps;
 };

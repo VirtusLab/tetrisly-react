@@ -63,11 +63,7 @@ export const Button: FC<ButtonProps & MarginProps> = ({
       {...rest}
     >
       {state === 'loading' && (
-        <Loader
-          appearance={appearance === 'inverted' ? 'white' : 'greyscale'}
-          size="small"
-          shape="circle"
-        />
+        <Loader appearance="greyscale" size="small" shape="circle" />
       )}
       {beforeIcon && state !== 'loading' && <Icon name={beforeIcon} />}
       {children}

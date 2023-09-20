@@ -16,12 +16,7 @@ const getLabels = (label: boolean, helperText: boolean) => [
 export const CheckboxDocs: FC = () => (
   <tet.div>
     {['Unchecked', 'Checked', 'Indeterminate'].map((state) => (
-      <tet.section
-        key={state}
-        borderBottomWidth="1px"
-        borderBottomColor="#9747FF"
-        py="500"
-      >
+      <tet.section key={state} py="500">
         <SectionHeader variant="H1" as="h2">
           {state}
         </SectionHeader>
