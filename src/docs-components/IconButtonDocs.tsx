@@ -1,4 +1,4 @@
-import { capitalize } from 'lodash';
+import { capitalize, startCase } from 'lodash';
 import { ComponentProps } from 'react';
 
 import { SectionHeader } from './common/SectionHeader';
@@ -52,7 +52,7 @@ export const IconButtonDocs = () => (
                 py="500"
                 px="1000"
               >
-                {capitalize(appearance)}
+                {startCase(appearance)}
               </SectionHeader>
               {getIntents(appearance).map((intent) => {
                 const iconButtonProps = {
@@ -71,6 +71,7 @@ export const IconButtonDocs = () => (
                       <SectionHeader
                         variant="H2"
                         as="h4"
+                        inverted={appearance === 'inverted'}
                         labels={[
                           `Intent: ${capitalize(intent)}`,
                           'Dropdown: false',
@@ -82,6 +83,7 @@ export const IconButtonDocs = () => (
                       <SectionHeader
                         variant="H2"
                         as="h4"
+                        inverted={appearance === 'inverted'}
                         labels={[
                           `Intent: ${capitalize(intent)}`,
                           'Dropdown: true',
