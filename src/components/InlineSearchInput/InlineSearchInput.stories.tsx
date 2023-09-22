@@ -3,13 +3,21 @@ import { ChangeEventHandler, useState } from 'react';
 
 import { InlineSearchInput } from './InlineSearchInput';
 
+import { InlineSearchInputDocs } from '@/docs-components/InlineSearchInputDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
   title: 'InlineSearchInput',
   component: InlineSearchInput,
   tags: ['autodocs'],
-  argTypes: {},
+  argTypes: {
+    state: {
+      control: {
+        type: 'select',
+        options: ['normal', 'disabled'],
+      },
+    },
+  },
   parameters: {
     docs: {
       description: {
@@ -18,7 +26,7 @@ const meta = {
       },
       page: () => (
         <TetDocs docs="https://docs.tetrisly.com/components/in-progress/searchinput">
-          <InlineSearchInput />
+          <InlineSearchInputDocs />
         </TetDocs>
       ),
     },
