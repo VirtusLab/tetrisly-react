@@ -6,7 +6,7 @@ import { tet } from '@/tetrisly';
 export const CheckboxGroupDocs = () => (
   <>
     <tet.section display="flex" flexDirection="column" justifyContent="center">
-      <SectionHeader variant="H1" as="h2">
+      <SectionHeader variant="H1" as="h2" px="1000" py="500">
         Horizontal Group
       </SectionHeader>
       <CheckboxGroup
@@ -28,7 +28,7 @@ export const CheckboxGroupDocs = () => (
     </tet.section>
 
     <tet.section display="flex" flexDirection="column" justifyContent="center">
-      <SectionHeader variant="H1" as="h2">
+      <SectionHeader variant="H1" as="h2" px="1000" py="500">
         Vertical Group
       </SectionHeader>
       <CheckboxGroup
