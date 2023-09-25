@@ -17,7 +17,7 @@ export const CheckboxDocs: FC = () => (
   <tet.div>
     {['Unchecked', 'Checked', 'Indeterminate'].map((state) => (
       <tet.section key={state} py="500">
-        <SectionHeader variant="H1" as="h2">
+        <SectionHeader variant="H1" as="h2" px="1000" py="500">
           {state}
         </SectionHeader>
 
