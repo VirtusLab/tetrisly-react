@@ -18,7 +18,8 @@ export const Hero: FC<HeroProps> = ({ component, description, docs }) => (
     flexDirection="column"
   >
     <tet.div
-      p="component-padding-6xLarge"
+      px="600"
+      py="1000"
       background="linear-gradient(225deg, #FEF1E7 0%, #DDF3F9 100%);"
       borderRadius="xLarge"
     >
