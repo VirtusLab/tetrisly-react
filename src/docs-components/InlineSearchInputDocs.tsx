@@ -1,4 +1,3 @@
-import { SectionHeader } from './common/SectionHeader';
 import { States } from './common/States';
 
 import { InlineSearchInput } from '@/components/InlineSearchInput';
