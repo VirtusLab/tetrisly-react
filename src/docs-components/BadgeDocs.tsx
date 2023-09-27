@@ -18,7 +18,6 @@ export const BadgeDocs = () => (
         display="flex"
         padding="40px 0px"
         flexDirection="column"
-      >
         <SectionHeader px="1000" variant="H1" my="auto" as="h2">
           {capitalize(emphasis)} Emphasis
         </SectionHeader>
