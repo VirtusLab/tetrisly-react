@@ -30,14 +30,17 @@ export const BadgeDocs = () => (
           <SectionHeader variant="H2" as="h3" py="500">
             Intent
           </SectionHeader>
-          <States states={basicIntents} gap="500" itemWidth="96px" />
-          <tet.div py="500" display="flex" gap="39px">
+          <States states={basicIntents} gap="500" flexBasis="100" />
+          <tet.div py="500" display="flex" gap="500">
             {basicIntents.map((intent) => (
               <tet.div
                 key={intent}
                 display="flex"
                 flexDirection="column"
                 gap="400"
+                flexBasis="100"
+                flexShrink="0"
+                flexGrow="1"
               >
                 <Badge intent={intent} label="Badge Text" />
                 <Badge intent={intent} icon="16-bolt" />
