@@ -3,7 +3,7 @@ import { capitalize } from 'lodash';
 import { SectionHeader } from './common/SectionHeader';
 import { States } from './common/States';
 
-import { Badge } from '@/index';
+import { Badge } from '@/components/Badge';
 import { tet } from '@/tetrisly';
 import { appearances } from '@/types/Appearance';
 import { basicIntents } from '@/types/BasicIntent';
@@ -18,6 +18,7 @@ export const BadgeDocs = () => (
         display="flex"
         padding="40px 0px"
         flexDirection="column"
+      >
         <SectionHeader px="1000" variant="H1" my="auto" as="h2">
           {capitalize(emphasis)} Emphasis
         </SectionHeader>
