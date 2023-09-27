@@ -1,1 +1,0 @@
-{"version":3,"file":"Popover.stories-6d3135cb.js","sources":["../../src/docs-components/PopoverDocs.tsx"],"sourcesContent":["import { tet } from '@/tetrisly';\n\nexport const PopoverDocs = () => <tet.div />;\n"],"names":["PopoverDocs","jsx","tet"],"mappings":"0lBAEO,MAAMA,EAAc,IAAOC,EAAA,IAAAC,EAAI,IAAJ,CAAA,CAAQ;;;;;;;;;;;;;"}

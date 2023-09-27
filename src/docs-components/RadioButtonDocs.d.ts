@@ -1,1 +1,2 @@
-export declare const RadioButtonDocs: () => import("react/jsx-runtime").JSX.Element;
+import { FC } from 'react';
+export declare const RadioButtonDocs: FC;

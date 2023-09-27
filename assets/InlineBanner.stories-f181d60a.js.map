@@ -1,1 +1,0 @@
-{"version":3,"file":"InlineBanner.stories-f181d60a.js","sources":["../../src/docs-components/InlineBannerDocs.tsx"],"sourcesContent":["import { tet } from '@/tetrisly';\n\nexport const InlineBannerDocs = () => <tet.div />;\n"],"names":["InlineBannerDocs","jsx","tet"],"mappings":"onBAEO,MAAMA,EAAmB,IAAOC,EAAA,IAAAC,EAAI,IAAJ,CAAA,CAAQ;;;;;;;;;;;;;;;;"}

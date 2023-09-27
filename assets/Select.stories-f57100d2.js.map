@@ -1,1 +1,0 @@
-{"version":3,"file":"Select.stories-f57100d2.js","sources":["../../src/docs-components/SelectDocs.tsx"],"sourcesContent":["import { tet } from '@/tetrisly';\n\nexport const SelectDocs = () => <tet.div />;\n"],"names":["SelectDocs","jsx","tet"],"mappings":"koBAEO,MAAMA,EAAa,IAAOC,EAAA,IAAAC,EAAI,IAAJ,CAAA,CAAQ;;;;;;;;;;;;;;;;;;;;;;;;;;"}

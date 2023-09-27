@@ -1,1 +1,1 @@
-export declare const InlineSearchInput: () => import("react/jsx-runtime").JSX.Element;
+export declare const InlineSearchInputDocs: () => import("react/jsx-runtime").JSX.Element;

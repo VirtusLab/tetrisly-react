@@ -7,7 +7,6 @@ declare const meta: {
     };
     tags: string[];
     args: {
-        name: string;
         label: string;
         helperText: string;
         children: import("react/jsx-runtime").JSX.Element[];
