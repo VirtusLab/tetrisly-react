@@ -13,7 +13,10 @@ type HeroProps = {
 
 export const Hero: FC<HeroProps> = ({ component, description, docs }) => (
   <tet.section
-    p="component-padding-3xLarge"
+    p={{
+      xs: 'component-padding-xLarge',
+      md: 'component-padding-3xLarge',
+    }}
     display="flex"
     flexDirection="column"
   >
