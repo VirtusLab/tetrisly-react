@@ -18,19 +18,37 @@ export const Hero: FC<HeroProps> = ({ component, description, docs }) => (
     flexDirection="column"
   >
     <tet.div
-      px="600"
-      py="1000"
+      px={{ md: '600', sm: '400', _: '200' }}
+      py={{ md: '1000', sm: '600', _: '400' }}
       background="linear-gradient(225deg, #FEF1E7 0%, #DDF3F9 100%);"
       borderRadius="xLarge"
     >
-      <tet.div display="flex" justifyContent="space-between">
+      <tet.div
+        display="flex"
+        flexDirection={{
+          sm: 'row',
+          _: 'column-reverse',
+        }}
+        gap="200"
+        justifyContent="space-between"
+      >
         <tet.div display="flex" gap="component-gap-medium" alignItems="center">
           <TetrislyMark />
-          <tet.span text="body-small" color="content-secondary">
+          <tet.span
+            text={{ md: 'body-small', _: 'body-xSmall' }}
+            color="content-secondary"
+          >
             Components
           </tet.span>
         </tet.div>
-        <tet.a href="https://tetrisly.com/" target="_blank">
+        <tet.a
+          href="https://tetrisly.com/"
+          target="_blank"
+          display={{
+            sm: 'block',
+            _: 'none',
+          }}
+        >
           <Logo />
         </tet.a>
       </tet.div>
@@ -40,9 +58,16 @@ export const Hero: FC<HeroProps> = ({ component, description, docs }) => (
         gap="component-gap-large"
         flexDirection="column"
       >
-        <tet.h1 text="hero-medium">{component}</tet.h1>
+        <tet.h1
+          text={{ md: 'hero-medium', sm: 'header-3xLarge', _: 'header-large' }}
+        >
+          {component}
+        </tet.h1>
         {description && (
-          <tet.p color="content-secondary" text="body-large">
+          <tet.p
+            color="content-secondary"
+            text={{ md: 'body-large', _: 'body-small' }}
+          >
             {description}
           </tet.p>
         )}
@@ -53,6 +78,7 @@ export const Hero: FC<HeroProps> = ({ component, description, docs }) => (
           target="_blank"
           rel="noreferrer"
           color="action-primary-normal"
+          text={{ md: 'body-medium', _: 'body-small' }}
         >
           View documentation
         </tet.a>

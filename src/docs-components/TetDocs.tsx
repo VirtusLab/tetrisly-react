@@ -35,7 +35,7 @@ export const TetDocs: FC<PropsWithChildren<{ docs: string | null }>> = ({
     <>
       <Unstyled>
         <TetrislyProvider>
-          <tet.div minWidth="888px">
+          <tet.div maxWidth="888px">
             <Hero
               component={title.split('/').pop() ?? ''}
               description={description}

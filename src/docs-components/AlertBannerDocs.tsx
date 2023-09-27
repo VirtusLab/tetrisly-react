@@ -12,16 +12,16 @@ export const AlertBannerDocs = () => (
   <>
     {intents.map((intent) => (
       <tet.section key={intent}>
-        <SectionHeader px="1000" py="500" variant="H1">
+        <SectionHeader px={{ md: '1000', _: '500' }} py="500" variant="H1">
           Intent: {capitalize(intent)}
         </SectionHeader>
-        <tet.div px="1000">
+        <tet.div px={{ md: '1000', _: '500' }}>
           <SectionHeader py="500" variant="H2">
             Action: No
           </SectionHeader>
           <AlertBanner text="Alert text" intent={intent} />
         </tet.div>
-        <tet.div px="1000">
+        <tet.div px={{ md: '1000', _: '500' }}>
           <SectionHeader py="500" variant="H2">
             Action: Yes
           </SectionHeader>

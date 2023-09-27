@@ -20,7 +20,7 @@ export const Cols: FC<ColsProps> = ({
 }) => (
   <tet.div
     display="grid"
-    gridTemplateColumns={`repeat(${columns}, 1fr)`}
+    gridTemplateColumns={{ md: `repeat(${columns}, 1fr)`, _: '1fr' }}
     gap={gap}
     {...restProps}
   >
