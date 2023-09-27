@@ -1,5 +1,6 @@
 import { capitalize } from 'lodash';
 
+import { Cols } from './common/Cols';
 import { SectionHeader } from './common/SectionHeader';
 import { Avatar } from '../components/Avatar/Avatar';
 import { AvatarProps } from '../components/Avatar/Avatar.props';
@@ -29,15 +30,10 @@ export const AvatarDocs = () => (
   <>
     {emphasises.map((emphasis) => (
       <tet.section key={emphasis} pb="component-padding-4xLarge" py="500">
-        <SectionHeader variant="H1" as="h2">
+        <SectionHeader px={{ md: '1000', _: '500' }} variant="H1" as="h2">
           {capitalize(emphasis)} Emphasis
         </SectionHeader>
-        <tet.div
-          display="flex"
-          gap="80px"
-          justifyContent="space-between"
-          px="1000"
-        >
+        <Cols gap="80px" px={{ md: '1000', _: '500' }}>
           {shapes.map((shape) => (
             <tet.div key={shape} display="flex" flexDirection="column">
               <SectionHeader variant="H2" as="h3" py="500">
@@ -73,7 +69,7 @@ export const AvatarDocs = () => (
               </tet.div>
             </tet.div>
           ))}
-        </tet.div>
+        </Cols>
       </tet.section>
     ))}
   </>

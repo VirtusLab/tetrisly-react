@@ -10,7 +10,6 @@ const meta = {
   component: RadioButtonGroup,
   tags: ['autodocs'],
   args: {
-    name: 'radiobuttons',
     label: 'Label',
     helperText: 'Helper text',
     children: [
@@ -46,11 +45,13 @@ type Story = StoryObj<typeof meta>;
 export const Horizontal: Story = {
   args: {
     column: 4,
+    name: 'my-radio-group',
   },
 };
 
 export const Vertical: Story = {
   args: {
     column: 1,
+    name: 'another-radio-group',
   },
 };

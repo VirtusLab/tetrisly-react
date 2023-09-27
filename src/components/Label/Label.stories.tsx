@@ -2,7 +2,6 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { Label } from './Label';
 
-import { LabelDocs } from '@/docs-components/LabelDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
@@ -14,11 +13,7 @@ const meta = {
   },
   parameters: {
     docs: {
-      page: () => (
-        <TetDocs docs={null}>
-          <LabelDocs />
-        </TetDocs>
-      ),
+      page: () => <TetDocs docs={null} />,
     },
   },
 } satisfies Meta<typeof Label>;

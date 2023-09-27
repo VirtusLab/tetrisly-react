@@ -1,5 +1,4 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import type { MarginProps } from '@xstyled/styled-components';
 import { FC, useMemo } from 'react';
 
 import type { InlineBannerProps } from './InlineBanner.props';
@@ -10,6 +9,7 @@ import { IconButton } from '../IconButton';
 
 import { useAction } from '@/hooks';
 import { tet } from '@/tetrisly/tetrisly';
+import type { MarginProps } from '@/types';
 
 export const InlineBanner: FC<InlineBannerProps & MarginProps> = ({
   title,

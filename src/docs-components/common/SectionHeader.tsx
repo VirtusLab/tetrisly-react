@@ -37,8 +37,7 @@ export const SectionHeader = ({
   if (variant === 'Hero') {
     return (
       <tet.h1
-        text="header-4xLarge"
-        px="1000"
+        text={{ md: 'header-4xLarge', _: 'header-xLarge' }}
         py="500"
         color={inverted ? 'content-primary-inverted' : 'content-primary'}
         {...(props as BaseProps)}
@@ -49,15 +48,13 @@ export const SectionHeader = ({
   }
   if (variant === 'H1') {
     return (
-      <tet.div px="1000">
-        <tet.h2
-          text="header-3xLarge"
-          color={inverted ? 'content-primary-inverted' : 'content-primary'}
-          {...(props as BaseProps)}
-        >
-          {label}
-        </tet.h2>
-      </tet.div>
+      <tet.h2
+        text={{ md: 'header-3xLarge', _: 'header-large' }}
+        color={inverted ? 'content-primary-inverted' : 'content-primary'}
+        {...(props as BaseProps)}
+      >
+        {label}
+      </tet.h2>
     );
   }
   if (variant === 'H2') {
@@ -70,7 +67,7 @@ export const SectionHeader = ({
         }
       >
         <tet.h3
-          text="body-large"
+          text={{ md: 'body-large', _: 'body-medium' }}
           color={inverted ? 'content-secondary-inverted' : 'content-secondary'}
           {...(props as BaseProps)}
         >
@@ -82,7 +79,7 @@ export const SectionHeader = ({
   if (variant === 'H3') {
     return (
       <tet.h4
-        text="body-medium"
+        text={{ md: 'body-medium', _: 'body-small' }}
         color="content-secondary"
         {...(props as BaseProps)}
       >

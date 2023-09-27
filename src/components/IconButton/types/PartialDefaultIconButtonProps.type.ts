@@ -1,6 +1,6 @@
 type DefaultPrimary = {
   appearance?: 'primary';
-  intent?: 'none' | 'success' | 'negative';
+  intent?: 'none' | 'success' | 'destructive';
 };
 
 type DefaultInverted = {
