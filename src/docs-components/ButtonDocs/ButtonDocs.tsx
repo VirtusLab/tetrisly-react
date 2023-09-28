@@ -32,7 +32,7 @@ export const ButtonDocs: FC = () => (
   <>
     {variants.map((variant) => (
       <tet.section key={variant} display="flex" pt="500" flexDirection="column">
-        <SectionHeader variant="Hero" as="h2">
+        <SectionHeader variant="Hero" as="h2" px="1000">
           {startCase(variant)}
         </SectionHeader>
         {getButtonAppearances(variant).map((appearance) => (
