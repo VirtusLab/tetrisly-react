@@ -1,9 +1,7 @@
 import { capitalize } from 'lodash';
-import { useRef, useState } from 'react';
 
 import { Cols } from './common/Cols';
 import { SectionHeader } from './common/SectionHeader';
-import { Label, TextInput } from '..';
 
 import { Loader } from '@/components/Loader';
 import { LoaderAppearance, LoaderShape } from '@/components/Loader/types';
