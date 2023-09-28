@@ -5,6 +5,7 @@ import { Avatar } from '../Avatar';
 import { Button } from '../Button';
 import { Label } from '../Label';
 
+import { PopoverDocs } from '@/docs-components/PopoverDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 import { tet } from '@/tetrisly';
 
@@ -47,7 +48,9 @@ const meta = {
           'A temporary, floating modal view that displays additional information or options when a user interacts with a specific element. Popovers can be triggered by various actions, such as hovering, clicking, or focusing.',
       },
       page: () => (
-        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/popover" />
+        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/popover">
+          <PopoverDocs />
+        </TetDocs>
       ),
     },
   },

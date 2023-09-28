@@ -35,7 +35,7 @@ export const TetDocs: FC<PropsWithChildren<{ docs: string | null }>> = ({
     <>
       <Unstyled>
         <TetrislyProvider>
-          <tet.div maxWidth="888px">
+          <tet.div overflow={{ xs: 'scroll', md: 'visible' }} maxWidth="888px">
             <Hero
               component={title.split('/').pop() ?? ''}
               description={description}

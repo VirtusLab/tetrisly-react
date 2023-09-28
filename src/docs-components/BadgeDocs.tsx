@@ -3,7 +3,7 @@ import { capitalize } from 'lodash';
 import { SectionHeader } from './common/SectionHeader';
 import { States } from './common/States';
 
-import { Badge } from '@/index';
+import { Badge } from '@/components/Badge';
 import { tet } from '@/tetrisly';
 import { appearances } from '@/types/Appearance';
 import { basicIntents } from '@/types/BasicIntent';
