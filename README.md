@@ -55,7 +55,10 @@ To run tests, run the following command
 
 ## Documentation
 
-[Documentation](https://linktodocumentation)
+<div style="background-color: black; width: fit-content; padding: 10px">
+<img src="public/logo_docs.svg" />
+</div>
+If you want to dive deeper into the components Tetrisly offers, check out our official documentation: [Tetrisly Docs](https://docs.tetrisly.com/)
 
 ## Usage/Examples
 
@@ -77,7 +80,7 @@ Here, we will link a demo page of what you can do with Tetrisly
 
 ## VirtusLab
 
-<div align="left">
+<div align="left" style="background-color: black; width: fit-content">
 <a href="https://virtuslab.com/"><img src="public/VLLogo.png" width="100" alt="VirtusLab"></a>
 </div>
 
