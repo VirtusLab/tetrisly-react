@@ -1,9 +1,18 @@
 {
-  "name": "tetrisly-react",
-  "private": true,
+  "name": "@virtuslab/tetrisly-react",
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://virtuslab.github.io/tetrisly-react",
+  "main": "dist/tetrisly-react.umd.js",
+  "module": "dist/tetrisly-react.es.js",
+  "types": "dist/tetrisly-react.es.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "scripts": {
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -11,7 +20,8 @@
     "test": "vitest run",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@commitlint/cli": "^17.7.1",
@@ -26,6 +36,8 @@
     "styled-components": "5.3.3"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@storybook/addon-essentials": "^7.0.26",
     "@storybook/addon-interactions": "^7.0.26",
     "@storybook/addon-links": "^7.0.26",
@@ -55,6 +67,7 @@
     "jsdom": "^22.1.0",
     "lint-staged": ">=10",
     "prettier": "^3.0.2",
+    "semantic-release": "^22.0.5",
     "storybook": "^7.0.26",
     "typescript": "^5.1.6",
     "vite": "^4.4.2",
@@ -63,11 +76,9 @@
     "vitest": "^0.34.2",
     "zod": "^3.22.2"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/tetrisly-icons.es.js",
-      "require": "./dist/tetrisly-icons.umd.js"
-    }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VirtusLab/tetrisly-react.git"
   },
   "resolutions": {
     "strip-ansi": "^6.0.1",
