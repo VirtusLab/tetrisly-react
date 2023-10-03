@@ -15,6 +15,11 @@ import { IconButton } from '../IconButton';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
+const KEYBOARD_KEYS = {
+  Enter: 'Enter',
+  Space: ' ',
+};
+
 export const Tag: FC<TagProps & MarginProps> = ({
   label,
   state,
@@ -31,25 +36,25 @@ export const Tag: FC<TagProps & MarginProps> = ({
     [custom, hasOnClick],
   );
 
+  const containerRef = useRef<HTMLSpanElement | null>(null);
+  const handleOnKeyDown: KeyboardEventHandler<HTMLSpanElement> = useCallback(
+    (e) => {
+      if (
+        e.target === containerRef.current &&
+        (e.key === KEYBOARD_KEYS.Enter || e.key === KEYBOARD_KEYS.Space)
+      ) {
+        onClick?.(e);
+      }
+    },
+    [containerRef, onClick],
+  );
+
   const handleOnCloseClick: MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
       onCloseClick?.(e);
       e.stopPropagation();
     },
     [onCloseClick],
-  );
-
-  const containerRef = useRef<HTMLSpanElement | null>(null);
-  const handleOnKeyDown: KeyboardEventHandler<HTMLSpanElement> = useCallback(
-    (e) => {
-      if (
-        e.target === containerRef.current &&
-        (e.key === 'Enter' || e.key === ' ')
-      ) {
-        onClick?.(e);
-      }
-    },
-    [containerRef, onClick],
   );
 
   return (
@@ -69,7 +74,7 @@ export const Tag: FC<TagProps & MarginProps> = ({
           size="2xSmall"
           {...beforeComponent.props}
           {...styles.avatar}
-          data-testid="tag-before-component"
+          data-testid="tag-avatar"
         />
       )}
       <tet.p
@@ -83,14 +88,14 @@ export const Tag: FC<TagProps & MarginProps> = ({
       >
         {label}
       </tet.p>
-      {!!onCloseClick && (
+      {hasCloseButton && (
         <IconButton
           icon="20-close"
           variant="bare"
           onClick={handleOnCloseClick}
           state={state}
           {...styles.closeButton}
-          data-testid="tag-icon-button"
+          data-testid="tag-iconButton"
         />
       )}
     </tet.span>

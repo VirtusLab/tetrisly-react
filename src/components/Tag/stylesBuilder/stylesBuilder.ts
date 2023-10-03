@@ -16,15 +16,18 @@ export const stylesBuilder = (
 ): TagStylesBuilder => {
   const {
     hasOnClick: hasOnClickStyles,
-    innerElements: { label, closeButton },
-    beforeComponent: { avatar },
+    innerElements: {
+      label,
+      closeButton,
+      beforeComponent: { avatar },
+    },
     ...container
   } = mergeConfigWithCustom({ defaultConfig, custom });
 
   return {
     container: {
       ...container,
-      ...(hasOnClick ? hasOnClickStyles : {}),
+      ...(hasOnClick && hasOnClickStyles),
     },
     label,
     avatar,
