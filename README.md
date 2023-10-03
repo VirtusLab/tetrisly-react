@@ -2,7 +2,7 @@
 
 # Tetrisly React
 
-🧩 Simplify your React applications with Tetrisly! Designed for effortless integration, Tetrisly offers user-friendly components that will enhance your projects. Plus, it's fully compatible with Figma for a seamless design and development experience.
+🧩 Tetrisly offers user-friendly components designed for effortless integration. Plus, it's fully compatible with Figma for a seamless design and development experience.
 
 If you want to know more about Tetrisly, check out our website: [tetrisly.com](https://tetrisly.com/)
 
@@ -19,6 +19,48 @@ Install my-project with npm (you can do the same with yarn, pnpm or any other pa
 
 ```bash
   npm install @virtuslab/tetrisly-react
+```
+
+## Setup
+
+After installing the package, you need to wrap your application in the `TetrislyProvider` component. This will provide the theme and other context to your application.
+
+```typescript
+import { TetrislyProvider } from '@virtuslab/tetrisly-react';
+
+function App() {
+  return (
+    <TetrislyProvider>
+      <YourApp />
+    </TetrislyProvider>
+  )
+}
+```
+
+TetrislyProvider accepts optional prop `theme` which can be used to override default theme.
+
+You can check out how this object looks like here: [Tetrisly Theme](src/theme/theme.ts)
+
+```typescript
+import { TetrislyProvider } from '@virtuslab/tetrisly-react';
+
+function App() {
+  return (
+    <TetrislyProvider theme={{ colors: { primary: 'red' } }}>
+      <YourApp />
+    </TetrislyProvider>
+  )
+}
+```
+
+## Usage/Examples
+
+```typescript
+import { Button } from '@virtuslab/tetrisly-react';
+
+function App() {
+  return <Button label="Hello Tetrisly" />
+}
 ```
 
 ## Run Locally
@@ -61,15 +103,15 @@ To run tests, run the following command
 
 If you want to dive deeper into the components Tetrisly offers, check out our official documentation: [Tetrisly Docs](https://docs.tetrisly.com/)
 
-## Usage/Examples
+You can also check out our Storybook, which is our Documentation for React components (now in progress): [Tetrisly Storybook](https://virtuslab.github.io/tetrisly-react/?path=/docs/alertbanner--docs)
 
-```typescript
-import { Button } from '@virtuslab/tetrisly-react';
+## Getting Help
 
-function App() {
-  return <Button label="Hello Tetrisly" />
-}
-```
+If at any point you need help, feel lost, or have some feedback for us, you can create issues on our GitHub repository, or reach out to us on out Discord Server: [Tetrisly Discord](https://discord.gg/MPefZwUZUu)
+
+## Testimonials
+
+If you to share with us your thoughts on Tetrisly, or showcase what you have built with it (it could be any aspect of our product, not only the React library), you can do it here: [Senja Tetrisly Testimonials](https://senja.io/p/tetrisly/r/NfsRmn)
 
 ## License
 
