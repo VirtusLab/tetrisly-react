@@ -11,6 +11,8 @@ If you want to know more about Tetrisly, check out our website: [tetrisly.com](h
 - [React 18](https://react.dev/)
 - [xstyled](https://xstyled.dev/)
 
+We've desided to use `xstyled` for styling our components. If you are interested in our reasoning, check out our article on this topic: [Style Wars: Tailwind vs. CSS-in-JS in Design Systems Implementation](https://medium.com/tetrisly/style-wars-tailwind-vs-css-in-js-in-design-systems-implementation-de6015ee2695)
+
 ## Installation
 
 Install my-project with npm (you can do the same with yarn, pnpm or any other package manager)
@@ -55,9 +57,8 @@ To run tests, run the following command
 
 ## Documentation
 
-<div style="background-color: black; width: fit-content; padding: 10px">
 <img src="public/logo_docs.svg" />
-</div>
+
 If you want to dive deeper into the components Tetrisly offers, check out our official documentation: [Tetrisly Docs](https://docs.tetrisly.com/)
 
 ## Usage/Examples
@@ -72,16 +73,4 @@ function App() {
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
-
-## Demo
-
-Here, we will link a demo page of what you can do with Tetrisly
-
-## VirtusLab
-
-<div align="left" style="background-color: black; width: fit-content">
-<a href="https://virtuslab.com/"><img src="public/VLLogo.png" width="100" alt="VirtusLab"></a>
-</div>
-
-We are proud to be a part of VirtusLab
+We are using the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/) for our library of components
