@@ -1,7 +1,7 @@
 name: Release
 on:
   push:
-    branches: ['main', 'latest', 'beta']
+    branches: ['+([0-9])?(.{+([0-9]),x}).x', 'main', 'next', 'next-major', 'beta', 'alpha']
 
 permissions:
   contents: read # for checkout
