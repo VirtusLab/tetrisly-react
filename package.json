@@ -14,6 +14,9 @@
     "registry": "https://npm.pkg.github.com",
     "access": "restricted"
   },
+  "engines": {
+    "node": "18.17.x"
+  },
   "scripts": {
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
