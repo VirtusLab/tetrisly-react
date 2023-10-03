@@ -11,8 +11,8 @@ const getTag = (jsx: JSX.Element) => {
   return {
     tag: getByTestId('tag'),
     label: getByTestId('tag-label'),
-    avatar: queryByTestId('tag-before-component'),
-    closeButton: queryByTestId('tag-icon-button'),
+    avatar: queryByTestId('tag-avatar'),
+    closeButton: queryByTestId('tag-iconButton'),
   };
 };
 

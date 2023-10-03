@@ -23,6 +23,7 @@ const RenderTag = ({
       label="Tag"
       state={state === ':normal' ? undefined : (state as TagProps['state'])}
       onCloseClick={header === 'Remove button: Yes' ? () => null : undefined}
+      onClick={() => null}
       beforeComponent={
         label === 'Before component: Avatar'
           ? {
