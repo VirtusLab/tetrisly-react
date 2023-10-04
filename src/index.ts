@@ -22,3 +22,4 @@ export * from './components/SocialButton';
 export * from './components/StatusDot';
 export * from './components/TextInput';
 export * from './components/Toast';
+export * from './tetrisly';
