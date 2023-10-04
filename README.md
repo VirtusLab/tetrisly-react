@@ -2,7 +2,7 @@
 
 # Tetrisly React
 
-🧩 Tetrisly offers user-friendly components designed for effortless integration. Plus, it's fully compatible with Figma for a seamless design and development experience.
+🧩 Tetrisly offers user-friendly components designed for effortless integration. Plus, it's fully compatible with fully compatible with Tetrisly for Figma with a seamless design and development experience in mind.
 
 If you want to know more about Tetrisly, check out our website: [tetrisly.com](https://tetrisly.com/)
 
@@ -111,7 +111,7 @@ If at any point you need help, feel lost, or have some feedback for us, you can 
 
 ## Testimonials
 
-If you to share with us your thoughts on Tetrisly, or showcase what you have built with it (it could be any aspect of our product, not only the React library), you can do it here: [Senja Tetrisly Testimonials](https://senja.io/p/tetrisly/r/NfsRmn)
+If you want to share with us your thoughts on Tetrisly, or showcase what you have built with it (it could be any aspect of our product, not only the React library), you can do it here: [Tetrisly Testimonials Form](https://senja.io/p/tetrisly/r/NfsRmn)
 
 ## License
 
