@@ -1,0 +1,33 @@
+on:
+  workflow_dispatch:
+name: Prepare Release [Manual]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-rc:
+    name: Release Candidate
+    runs-on: ubuntu-latest
+    environment: 
+      name: rc
+    steps:
+      - name: Prepare Pull Request
+        uses: google-github-actions/release-please-action@v3.7.12
+        id: release
+        with:
+          release-type: node
+          package-name: "@virtuslab/tetrisly-react"
+          prerelease: true
+      - uses: actions/checkout@v4
+        with: 
+          ref: ${{ fromJson(steps.release.outputs.pr).headBranchName }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: 'https://registry.npmjs.org'
+      - name: Publish Release Candidate
+        run: npm publish --tag rc
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
