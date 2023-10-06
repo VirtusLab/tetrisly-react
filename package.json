@@ -1,6 +1,6 @@
 {
   "name": "@virtuslab/tetrisly-react",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "homepage": "https://virtuslab.github.io/tetrisly-react",
   "main": "dist/tetrisly-react.umd.js",
