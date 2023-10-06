@@ -19,5 +19,6 @@ module.exports = {
     'jira-ticket': [2, 'always'],
     'subject-case': [0],
     'footer-max-line-length': [0],
+    'body-max-line-length': [0],
   },
 };
