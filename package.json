@@ -81,6 +81,12 @@
     "react-dom": "^18.0.0",
     "styled-components": "^5.0.0"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/tetrisly-react.js",
+      "require": "./dist/tetrisly-react.umd.cjs"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/VirtusLab/tetrisly-react.git"
