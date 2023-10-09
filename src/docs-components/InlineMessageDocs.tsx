@@ -11,13 +11,13 @@ const intents = ['informative', 'success', 'warning', 'negative'] as const;
 export const InlineMessageDocs = () => (
   <>
     {intents.map((intent) => (
-      <tet.section key={intent}>
-        <SectionHeader variant="H1" as="h2">
+      <tet.section key={intent} px="1000" py="500">
+        <SectionHeader variant="H1" as="h2" py="500">
           Intent: {capitalize(intent)}
         </SectionHeader>
         <Cols>
           <tet.div>
-            <SectionHeader variant="H2" as="h3">
+            <SectionHeader variant="H2" as="h3" py="500">
               Description: Yes
             </SectionHeader>
             <InlineMessage
@@ -27,7 +27,7 @@ export const InlineMessageDocs = () => (
             />
           </tet.div>
           <tet.div>
-            <SectionHeader variant="H2" as="h3">
+            <SectionHeader variant="H2" as="h3" py="500">
               Description: No
             </SectionHeader>
             <InlineMessage intent={intent} title="Title" />
