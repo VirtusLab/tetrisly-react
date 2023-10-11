@@ -6,9 +6,9 @@ import { tet } from '@/tetrisly';
 const states = ['normal', 'disabled'] as const;
 
 export const InlineSearchInputDocs = () => (
-  <tet.section px="1000">
-    <States states={states} gap="500" />
-    <tet.div display="flex" gap="500">
+  <tet.section px="$dimension-1000">
+    <States states={states} gap="$dimension-500" />
+    <tet.div display="flex" gap="$dimension-500">
       {states.map((state) => (
         <tet.div
           key={state}

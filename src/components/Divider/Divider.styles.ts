@@ -7,7 +7,7 @@ export type DividerConfig = {
 } & BaseProps;
 
 export const defaultConfig = {
-  backgroundColor: 'border-default',
+  backgroundColor: '$color-border-default',
   orientation: {
     horizontal: {
       w: '100%',

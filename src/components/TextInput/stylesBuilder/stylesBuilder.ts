@@ -1,4 +1,4 @@
-import { TextInputConfig, defaultConfig } from '../TextInput.style';
+import { TextInputConfig, defaultConfig } from '../TextInput.styles';
 
 import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCutom';
 import { BaseProps } from '@/types/BaseProps';

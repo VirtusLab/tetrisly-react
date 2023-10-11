@@ -13,7 +13,7 @@ export const States: FC<{
   itemWidth?: WidthProps['w'];
   flexBasis?: FlexBasisProps['flexBasis'];
 }> = ({ states, gap, itemWidth, flexBasis }) => (
-  <tet.div display="flex" gap={gap} py="300">
+  <tet.div display="flex" gap={gap} py="$dimension-300">
     {states.map((state) => (
       <tet.div
         key={state}
@@ -22,12 +22,12 @@ export const States: FC<{
         flexBasis={flexBasis}
         flexGrow="1"
       >
-        <tet.span text="body-medium">
+        <tet.span text="$typo-body-medium">
           <tet.mark
-            borderRadius="small"
-            bg="nonSemantic-orange-background-onSubtle"
-            px="component-padding-2xSmall"
-            color="content-primary"
+            borderRadius="$border-radius-small"
+            bg="$color-nonSemantic-orange-background-onSubtle"
+            px="$space-component-padding-2xSmall"
+            color="$color-content-primary"
           >
             {state}
           </tet.mark>

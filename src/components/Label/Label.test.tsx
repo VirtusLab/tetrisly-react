@@ -63,9 +63,9 @@ describe('Label', () => {
     const { label, optional, tooltip } = getLabel(
       <Label label="Hello there" optional="optional" tooltip />,
     );
-    expect(label).toHaveStyle('color: rgb(39, 39, 39)');
-    expect(optional).toHaveStyle('color: rgb(126, 126, 126);');
-    expect(tooltip).toHaveStyle('color: rgb(85, 85, 85)');
+    expect(label).toHaveStyle('color: rgb(39, 46, 53)');
+    expect(optional).toHaveStyle('color: rgb(126, 140, 154)');
+    expect(tooltip).toHaveStyle('color: rgb(85, 95, 109)');
   });
 
   customPropTester(

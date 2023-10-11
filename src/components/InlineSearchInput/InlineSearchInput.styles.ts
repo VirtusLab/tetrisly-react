@@ -2,10 +2,10 @@ import { SearchInputProps } from '../SearchInput';
 
 export const defaultConfig: SearchInputProps['custom'] = {
   display: 'inline-flex',
-  h: 'small',
-  padding: 'component-padding-xSmall component-padding-small',
+  h: '$size-small',
+  padding: '$space-component-padding-xSmall $space-component-padding-small',
   backgroundColor: {
-    hover: 'interaction-ghost-hover',
+    hover: '$color-interaction-ghost-hover',
   },
   ring: {
     _: 'unset',
@@ -25,7 +25,7 @@ export const defaultConfig: SearchInputProps['custom'] = {
     beforeComponent: {
       spacing: {
         Icon: {
-          marginLeft: 'component-padding-small',
+          marginLeft: '$space-component-padding-small',
         },
       },
     },

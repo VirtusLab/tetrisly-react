@@ -43,9 +43,9 @@ describe('HelperText', () => {
         counter={{ current: 0, max: 0 }}
       />,
     );
-    expect(text).toHaveStyle('color: rgb(85, 85, 85);');
-    expect(icon).toHaveStyle('color: rgb(85, 85, 85);');
-    expect(counter).toHaveStyle('color: rgb(85, 85, 85);');
+    expect(text).toHaveStyle('color: rgb(85, 95, 109);');
+    expect(icon).toHaveStyle('color: rgb(85, 95, 109);');
+    expect(counter).toHaveStyle('color: rgb(85, 95, 109);');
   });
 
   it('should render correct intent color (alert)', () => {
@@ -71,9 +71,9 @@ describe('HelperText', () => {
         counter={{ current: 0, max: 0 }}
       />,
     );
-    expect(text).toHaveStyle('color: rgb(29, 29, 29);');
-    expect(icon).toHaveStyle('color: rgb(29, 29, 29);');
-    expect(counter).toHaveStyle('color: rgb(29, 29, 29);');
+    expect(text).toHaveStyle('color: rgb(29, 124, 77);');
+    expect(icon).toHaveStyle('color: rgb(29, 124, 77);');
+    expect(counter).toHaveStyle('color: rgb(29, 124, 77);');
   });
 
   it('should render icon if passed as a prop', () => {

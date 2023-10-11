@@ -10,7 +10,7 @@ import type { MarginProps } from '@/types';
 export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
   align = 'center',
   origin = 'top',
-  offset = 'component-gap-large',
+  offset = '$space-component-gap-large',
   content,
   isOpen,
   custom,

@@ -117,7 +117,9 @@ describe('Checkbox', () => {
 
   it('should propagate custom props', () => {
     const { checkbox } = getCheckbox(
-      <Checkbox custom={{ backgroundColor: 'background-negative-subtle' }} />,
+      <Checkbox
+        custom={{ backgroundColor: '$color-background-negative-subtle' }}
+      />,
     );
 
     expect(checkbox).toHaveStyle('background-color: rgb(254, 245, 245)');

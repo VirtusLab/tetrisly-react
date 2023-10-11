@@ -76,31 +76,31 @@ describe('Loader', () => {
 
   it('should render correct appearance', () => {
     const { base, progress } = getLoader(<Loader shape="circle" />);
-    expect(base).toHaveStyle('stroke: hsla(204,20%,95%,1);');
-    expect(progress).toHaveStyle('stroke: hsla(222,66%,51%,1);');
+    expect(base).toHaveStyle('stroke: #f0f3f5;');
+    expect(progress).toHaveStyle('stroke: #3062d4;');
   });
 
   it('should render correct appearance (greyscale)', () => {
     const { base, progress } = getLoader(
       <Loader shape="circle" appearance="greyscale" />,
     );
-    expect(base).toHaveStyle('stroke: hsla(204,20%,95%,1); ');
-    expect(progress).toHaveStyle('stroke: hsla(210,12%,33%,1);');
+    expect(base).toHaveStyle('stroke: #f0f3f5;');
+    expect(progress).toHaveStyle('stroke: #4a545e;');
   });
 
   it('should render correct appearance (inverted)', () => {
     const { base, progress } = getLoader(
       <Loader shape="circle" appearance="inverted" />,
     );
-    expect(base).toHaveStyle('stroke: hsla(0,0%,100%,1);');
-    expect(progress).toHaveStyle('stroke: hsla(222,66%,51%,1);');
+    expect(base).toHaveStyle('stroke: #ffffff;');
+    expect(progress).toHaveStyle('stroke: #3062d4;;');
   });
 
   it('should render correct appearance (white)', () => {
     const { base, progress } = getLoader(
       <Loader shape="circle" appearance="white" />,
     );
-    expect(base).toHaveStyle('stroke: hsla(0,0%,100%,1);');
-    expect(progress).toHaveStyle('stroke: hsla(0,0%,100%,1);');
+    expect(base).toHaveStyle('stroke: #ffffff;');
+    expect(progress).toHaveStyle('stroke: #ffffff;;');
   });
 });

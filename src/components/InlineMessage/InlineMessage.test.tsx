@@ -46,9 +46,9 @@ describe('InlineMessage', () => {
     const { title, description, icon } = getInlineMessage(
       <InlineMessage title="Title" description="Description" />,
     );
-    expect(title).toHaveStyle('color: rgb(17, 17, 17);');
-    expect(icon).toHaveStyle('color: rgb(48, 48, 48);');
-    expect(description).toHaveStyle('color: rgb(85, 85, 85);');
+    expect(title).toHaveStyle('color: rgb(17, 57, 151);');
+    expect(icon).toHaveStyle('color: rgb(48, 98, 212);');
+    expect(description).toHaveStyle('color: rgb(85, 95, 109);');
   });
 
   it('should render correct intent color (success)', () => {
@@ -59,9 +59,9 @@ describe('InlineMessage', () => {
         description="Description"
       />,
     );
-    expect(title).toHaveStyle('color: rgb(14, 14, 14);');
-    expect(icon).toHaveStyle('color: rgb(29, 29, 29);');
-    expect(description).toHaveStyle('color: rgb(85, 85, 85);');
+    expect(title).toHaveStyle('color: rgb(14, 78, 48);');
+    expect(icon).toHaveStyle('color: rgb(29, 124, 77);');
+    expect(description).toHaveStyle('color: rgb(85, 95, 109);');
   });
 
   it('should render correct intent color (warning)', () => {
@@ -72,9 +72,9 @@ describe('InlineMessage', () => {
         description="Description"
       />,
     );
-    expect(title).toHaveStyle('color: rgb(16, 16, 16);');
-    expect(icon).toHaveStyle('color: rgb(56, 56, 56);');
-    expect(description).toHaveStyle('color: rgb(85, 85, 85);');
+    expect(title).toHaveStyle('color: rgb(122, 69, 16);');
+    expect(icon).toHaveStyle('color: rgb(245, 150, 56);');
+    expect(description).toHaveStyle('color: rgb(85, 95, 109);');
   });
 
   it('should render correct intent color (negative)', () => {
@@ -87,6 +87,6 @@ describe('InlineMessage', () => {
     );
     expect(title).toHaveStyle('color: rgb(111, 32, 32);');
     expect(icon).toHaveStyle('color: rgb(197, 52, 52);');
-    expect(description).toHaveStyle('color: rgb(85, 85, 85);');
+    expect(description).toHaveStyle('color: rgb(85, 95, 109);');
   });
 });

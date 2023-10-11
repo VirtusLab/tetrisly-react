@@ -14,17 +14,17 @@ type HeroProps = {
 export const Hero: FC<HeroProps> = ({ component, description, docs }) => (
   <tet.section
     p={{
-      xs: 'component-padding-xLarge',
-      md: 'component-padding-3xLarge',
+      xs: '$space-component-padding-xLarge',
+      md: '$space-component-padding-3xLarge',
     }}
     display="flex"
     flexDirection="column"
   >
     <tet.div
-      px={{ md: '600', sm: '400', _: '200' }}
-      py={{ md: '1000', sm: '600', _: '400' }}
+      px={{ md: '$dimension-600', sm: '$dimension-400', _: '$dimension-200' }}
+      py={{ md: '$dimension-1000', sm: '$dimension-600', _: '$dimension-400' }}
       background="linear-gradient(225deg, #FEF1E7 0%, #DDF3F9 100%);"
-      borderRadius="xLarge"
+      borderRadius="$border-radius-xLarge"
     >
       <tet.div
         display="flex"
@@ -32,14 +32,18 @@ export const Hero: FC<HeroProps> = ({ component, description, docs }) => (
           sm: 'row',
           _: 'column-reverse',
         }}
-        gap="200"
+        gap="$dimension-200"
         justifyContent="space-between"
       >
-        <tet.div display="flex" gap="component-gap-medium" alignItems="center">
+        <tet.div
+          display="flex"
+          gap="$space-component-gap-medium"
+          alignItems="center"
+        >
           <TetrislyMark />
           <tet.span
-            text={{ md: 'body-small', _: 'body-xSmall' }}
-            color="content-secondary"
+            text={{ md: '$typo-body-small', _: '$typo-body-xSmall' }}
+            color="$color-content-secondary"
           >
             Components
           </tet.span>
@@ -56,20 +60,24 @@ export const Hero: FC<HeroProps> = ({ component, description, docs }) => (
         </tet.a>
       </tet.div>
       <tet.div
-        my="component-gap-xLarge"
+        my="$space-component-gap-xLarge"
         display="flex"
-        gap="component-gap-large"
+        gap="$space-component-gap-large"
         flexDirection="column"
       >
         <tet.h1
-          text={{ md: 'hero-medium', sm: 'header-3xLarge', _: 'header-large' }}
+          text={{
+            md: '$typo-hero-medium',
+            sm: '$typo-header-3xLarge',
+            _: '$typo-header-large',
+          }}
         >
           {component}
         </tet.h1>
         {description && (
           <tet.p
-            color="content-secondary"
-            text={{ md: 'body-large', _: 'body-small' }}
+            color="$color-content-secondary"
+            text={{ md: '$typo-body-large', _: '$typo-body-small' }}
           >
             {description}
           </tet.p>
@@ -80,8 +88,8 @@ export const Hero: FC<HeroProps> = ({ component, description, docs }) => (
           href={docs}
           target="_blank"
           rel="noreferrer"
-          color="action-primary-normal"
-          text={{ md: 'body-medium', _: 'body-small' }}
+          color="$color-action-primary-normal"
+          text={{ md: '$typo-body-medium', _: '$typo-body-small' }}
         >
           View documentation
         </tet.a>

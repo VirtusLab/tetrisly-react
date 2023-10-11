@@ -30,47 +30,47 @@ export type ToastConfig = {
 export const defaultConfig = {
   display: 'inline-flex',
   alignItems: 'center',
-  p: 'component-padding-medium component-padding-large',
-  padding: 'component-padding-medium component-padding-large',
-  borderRadius: 'large',
+  p: '$space-component-padding-medium $space-component-padding-large',
+  padding: '$space-component-padding-medium $space-component-padding-large',
+  borderRadius: '$border-radius-large',
   emphasis: {
     high: {},
     low: {
-      backgroundColor: 'interaction-background-modeless',
-      color: 'content-primary',
-      ringColor: 'border-defaultA',
-      ring: 'small',
-      boxShadow: 'bottom-200',
+      backgroundColor: '$color-interaction-background-modeless',
+      color: '$color-content-primary',
+      ringColor: '$color-border-defaultA',
+      ring: '$border-width-small',
+      boxShadow: '$elevation-bottom-200',
     },
   },
   intent: {
     neutral: {
-      backgroundColor: 'background-inverted',
-      color: 'content-primary-inverted',
+      backgroundColor: '$color-background-inverted',
+      color: '$color-content-primary-inverted',
     },
     informative: {
-      backgroundColor: 'background-informative-strong',
-      color: 'content-primary-inverted',
-      pl: 'component-padding-medium',
+      backgroundColor: '$color-background-informative-strong',
+      color: '$color-content-primary-inverted',
+      pl: '$space-component-padding-medium',
     },
     success: {
-      backgroundColor: 'background-positive-strong',
-      color: 'content-primary-inverted',
-      pl: 'component-padding-medium',
+      backgroundColor: '$color-background-positive-strong',
+      color: '$color-content-primary-inverted',
+      pl: '$space-component-padding-medium',
     },
     warning: {
-      backgroundColor: 'background-warning-strong',
-      color: 'content-primary',
-      pl: 'component-padding-medium',
+      backgroundColor: '$color-background-warning-strong',
+      color: '$color-content-primary',
+      pl: '$space-component-padding-medium',
     },
     negative: {
-      backgroundColor: 'background-negative-strong',
-      color: 'content-primary-inverted',
-      pl: 'component-padding-medium',
+      backgroundColor: '$color-background-negative-strong',
+      color: '$color-content-primary-inverted',
+      pl: '$space-component-padding-medium',
     },
   },
   closeButton: {
-    pr: 'component-padding-small',
+    pr: '$space-component-padding-small',
   },
   innerElements: {
     iconContainer: {
@@ -79,66 +79,66 @@ export const defaultConfig = {
         informative: {
           emphasis: {
             low: {
-              color: 'content-informative-secondary',
+              color: '$color-content-informative-secondary',
             },
             high: {
-              color: 'content-primary-inverted',
+              color: '$color-content-primary-inverted',
             },
           },
         },
         success: {
           emphasis: {
             low: {
-              color: 'content-positive-secondary',
+              color: '$color-content-positive-secondary',
             },
             high: {
-              color: 'content-primary-inverted',
+              color: '$color-content-primary-inverted',
             },
           },
         },
         warning: {
           emphasis: {
             low: {
-              color: 'content-warning-secondary',
+              color: '$color-content-warning-secondary',
             },
             high: {
-              color: 'content-primary',
+              color: '$color-content-primary',
             },
           },
         },
         negative: {
           emphasis: {
             low: {
-              color: 'content-negative-secondary',
+              color: '$color-content-negative-secondary',
             },
             high: {
-              color: 'content-primary-inverted',
+              color: '$color-content-primary-inverted',
             },
           },
         },
       },
-      mr: 'component-gap-small',
+      mr: '$space-component-gap-small',
     },
     actionContainer: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: 'component-gap-small',
-      ml: 'component-gap-xLarge',
+      gap: '$space-component-gap-small',
+      ml: '$space-component-gap-xLarge',
     },
     middleDot: {
       emphasis: {
         high: {
-          color: 'content-secondary-inverted',
+          color: '$color-content-secondary-inverted',
         },
         low: {
-          color: 'content-tertiary',
+          color: '$color-content-tertiary',
         },
       },
-      text: 'body-medium',
+      text: '$typo-body-medium',
     },
     closeButton: {
-      ml: 'component-padding-large',
+      ml: '$space-component-padding-large',
     },
   },
 } satisfies ToastConfig;

@@ -29,14 +29,22 @@ const RowAvatar = ({ size: _, ...props }: AvatarProps) => (
 export const AvatarDocs = () => (
   <>
     {emphasises.map((emphasis) => (
-      <tet.section key={emphasis} pb="component-padding-4xLarge" py="500">
-        <SectionHeader px={{ md: '1000', _: '500' }} variant="H1" as="h2">
+      <tet.section
+        key={emphasis}
+        pb="$space-component-padding-4xLarge"
+        py="$dimension-500"
+      >
+        <SectionHeader
+          px={{ md: '$dimension-1000', _: '$dimension-500' }}
+          variant="H1"
+          as="h2"
+        >
           {capitalize(emphasis)} Emphasis
         </SectionHeader>
-        <Cols gap="80px" px={{ md: '1000', _: '500' }}>
+        <Cols gap="80px" px={{ md: '$dimension-1000', _: '$dimension-500' }}>
           {shapes.map((shape) => (
             <tet.div key={shape} display="flex" flexDirection="column">
-              <SectionHeader variant="H2" as="h3" py="500">
+              <SectionHeader variant="H2" as="h3" py="$dimension-500">
                 {shape === 'rounded'
                   ? 'Shape: Rounded (Default)'
                   : 'Shape: Square'}
@@ -45,8 +53,8 @@ export const AvatarDocs = () => (
               <tet.div
                 display="flex"
                 flexDirection="column"
-                gap="component-gap-xLarge"
-                py="component-padding-2xLarge"
+                gap="$space-component-gap-xLarge"
+                py="$space-component-padding-2xLarge"
               >
                 {emphasis === 'low' && (
                   <RowAvatar

@@ -10,11 +10,11 @@ export const Google: FC<SocialProps> = ({ loading }) => (
     data-testid="google-icon"
     ml="-10px"
     display="flex"
-    padding="100"
+    padding="$dimension-100"
     justifyContent="center"
     alignItems="center"
-    borderRadius="medium"
-    bg="action-inverted-normal"
+    borderRadius="$border-radius-medium"
+    bg="$color-action-inverted-normal"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

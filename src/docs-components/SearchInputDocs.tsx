@@ -33,12 +33,12 @@ const afterComponentsMap = {
 export const SearchInputDocs = () => (
   <>
     {afterComponents.map((afterComponent) => (
-      <tet.section px="1000" key={afterComponent}>
-        <SectionHeader variant="H2" as="h2" py="500">
+      <tet.section px="$dimension-1000" key={afterComponent}>
+        <SectionHeader variant="H2" as="h2" py="$dimension-500">
           AfterComponent: {afterComponent}
         </SectionHeader>
-        <States states={states} gap="500" />
-        <tet.div display="flex" gap="500">
+        <States states={states} gap="$dimension-500" />
+        <tet.div display="flex" gap="$dimension-500">
           {states.map((state) => (
             <tet.div
               key={state}

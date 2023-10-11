@@ -31,8 +31,13 @@ const getButtonIntents = (
 export const ButtonDocs: FC = () => (
   <>
     {variants.map((variant) => (
-      <tet.section key={variant} display="flex" pt="500" flexDirection="column">
-        <SectionHeader variant="Hero" as="h2" px="1000">
+      <tet.section
+        key={variant}
+        display="flex"
+        pt="$dimension-500"
+        flexDirection="column"
+      >
+        <SectionHeader variant="Hero" as="h2" px="$dimension-1000">
           {startCase(variant)}
         </SectionHeader>
         {getButtonAppearances(variant).map((appearance) => (
@@ -40,15 +45,19 @@ export const ButtonDocs: FC = () => (
             key={appearance}
             display="flex"
             flexDirection="column"
-            bg={appearance === 'inverted' ? 'background-inverted' : undefined}
+            bg={
+              appearance === 'inverted'
+                ? '$color-background-inverted'
+                : undefined
+            }
           >
             <SectionHeader
               variant="H2"
               inverted={appearance === 'inverted'}
               as="h3"
-              px="1000"
-              py="500"
-              borderBottom="neutral-strong"
+              px="$dimension-1000"
+              py="$dimension-500"
+              borderBottom="$color-neutral-strong"
             >
               {startCase(appearance)}
             </SectionHeader>
@@ -58,15 +67,15 @@ export const ButtonDocs: FC = () => (
                 key={intent}
                 display="flex"
                 flexDirection="column"
-                px="1000"
-                pb="500"
+                px="$dimension-1000"
+                pb="$dimension-500"
                 borderBottomWidth="1px"
-                borderBottomColor="border-neutral-subtle"
+                borderBottomColor="$color-border-neutral-subtle"
               >
                 <SectionHeader
                   variant="H3"
                   as="h4"
-                  pt="500"
+                  pt="$dimension-500"
                   inverted={appearance === 'inverted'}
                 >
                   Intent: {startCase(intent)}

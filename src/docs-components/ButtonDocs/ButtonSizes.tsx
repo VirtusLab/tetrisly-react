@@ -19,8 +19,8 @@ export const ButtonSizes = ({ variant, ...buttonProps }: ButtonProps) => (
     alignItems="flex-start"
     justifyContent="center"
     flexDirection="column"
-    gap="400"
-    py="500"
+    gap="$dimension-400"
+    py="$dimension-500"
   >
     {getButtonSizes(variant).map((size) => (
       <LoadingButton
