@@ -139,34 +139,34 @@ describe('InlineBanner', () => {
     const { inlineBanner } = getInlineBanner(
       <InlineBanner title="title" intent="none" />,
     );
-    expect(inlineBanner).toHaveStyle('background-color: rgb(245,245,245);');
+    expect(inlineBanner).toHaveStyle('background-color: rgb(245, 247, 249);');
   });
 
   it('should render correct intent color (informative)', () => {
     const { inlineBanner } = getInlineBanner(
       <InlineBanner title="title" intent="informative" />,
     );
-    expect(inlineBanner).toHaveStyle('background-color: rgb(245,245,245);');
+    expect(inlineBanner).toHaveStyle('background-color: rgb(245, 248, 255);');
   });
 
   it('should render correct intent color (success)', () => {
     const { inlineBanner } = getInlineBanner(
       <InlineBanner title="title" intent="success" />,
     );
-    expect(inlineBanner).toHaveStyle('background-color: rgb(244,244,244);');
+    expect(inlineBanner).toHaveStyle('background-color: rgb(244, 251, 247);');
   });
 
   it('should render correct intent color (warning)', () => {
     const { inlineBanner } = getInlineBanner(
       <InlineBanner title="title" intent="warning" />,
     );
-    expect(inlineBanner).toHaveStyle('background-color: rgb(235,235,235);');
+    expect(inlineBanner).toHaveStyle('background-color: rgb(255, 245, 235);');
   });
 
   it('should render correct intent color (negative)', () => {
     const { inlineBanner } = getInlineBanner(
       <InlineBanner title="title" intent="negative" />,
     );
-    expect(inlineBanner).toHaveStyle('background-color: rgb(254,245,245);');
+    expect(inlineBanner).toHaveStyle('background-color: rgb(254, 245, 245);');
   });
 });

@@ -89,7 +89,7 @@ describe('CheckboxGroup', () => {
     const { checkboxGroup } = getCheckboxGroup(
       <CheckboxGroup
         column={1}
-        custom={{ backgroundColor: 'background-negative-subtle' }}
+        custom={{ backgroundColor: '$color-background-negative-subtle' }}
       />,
     );
 

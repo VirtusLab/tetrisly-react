@@ -17,16 +17,20 @@ const intents = [
 export const InlineBannerDocs = () => (
   <>
     {intents.map((intent) => (
-      <tet.section key={intent} px="1000" py="500">
+      <tet.section key={intent} px="$dimension-1000" py="$dimension-500">
         <SectionHeader variant="H1" as="h2">
           Intent: {startCase(intent)}
-          <tet.div display="grid" gridTemplateColumns="1fr 1fr" gap="1000">
+          <tet.div
+            display="grid"
+            gridTemplateColumns="1fr 1fr"
+            gap="$dimension-1000"
+          >
             <tet.div>
-              <SectionHeader variant="H2" as="h3" py="500">
+              <SectionHeader variant="H2" as="h3" py="$dimension-500">
                 Close Button: No
               </SectionHeader>
               <InlineBanner
-                mt="500"
+                mt="$dimension-500"
                 title="Title"
                 description="Description"
                 intent={intent}
@@ -37,11 +41,11 @@ export const InlineBannerDocs = () => (
               />
             </tet.div>
             <tet.div>
-              <SectionHeader variant="H2" as="h3" py="500">
+              <SectionHeader variant="H2" as="h3" py="$dimension-500">
                 Close Button: Yes
               </SectionHeader>
               <InlineBanner
-                mt="500"
+                mt="$dimension-500"
                 title="Title"
                 description="Description"
                 intent={intent}

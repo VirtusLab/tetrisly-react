@@ -16,6 +16,11 @@ type ProviderProps = PropsWithChildren<{
 }>;
 
 const GlobalStyle = createGlobalStyle`
+  * {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+
   /* clears the ‘X’ from Internet Explorer */
   input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
   input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }

@@ -8,16 +8,16 @@ export type SocialButtonConfig = BaseProps & {
 
 export const defaultConfig = {
   display: 'inline-flex',
-  gap: 'component-gap-small',
-  h: 'medium',
-  py: 'component-padding-small',
-  pr: 'component-padding-large',
-  pl: 'component-padding-medium',
+  gap: '$space-component-gap-small',
+  h: '$size-medium',
+  py: '$space-component-padding-small',
+  pr: '$space-component-padding-large',
+  pl: '$space-component-padding-medium',
   justifyContent: 'center',
   alignItems: 'center',
   flexShrink: 0,
-  borderRadius: 'large',
-  boxShadow: 'bottom-100',
+  borderRadius: '$border-radius-large',
+  boxShadow: '$elevation-bottom-100',
   opacity: {
     _: 1,
     hover: 0.8,
@@ -27,12 +27,12 @@ export const defaultConfig = {
   appearance: {
     secondary: {
       ringInset: true,
-      ring: '100',
+      ring: '$border-width-small',
       ringColor: {
-        _: 'action-outline-normal',
-        hover: 'action-outline-hover',
-        active: 'action-outline-active',
-        selected: 'action-outline-selected',
+        _: '$color-action-outline-normal',
+        hover: '$color-action-outline-hover',
+        active: '$color-action-outline-active',
+        selected: '$color-action-outline-selected',
       },
     },
     primary: {},

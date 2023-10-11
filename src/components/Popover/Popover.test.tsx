@@ -109,7 +109,7 @@ describe('Popover', () => {
 
   it('should render correct offset (top)', () => {
     const { content } = getPopover(
-      <Popover content="Popover" offset="component-gap-large" />,
+      <Popover content="Popover" offset="$space-component-gap-large" />,
     );
     expect(content).toHaveStyle('top: -16px');
   });
@@ -119,7 +119,7 @@ describe('Popover', () => {
       <Popover
         content="Popover"
         origin="bottom"
-        offset="component-gap-large"
+        offset="$space-component-gap-large"
       />,
     );
     expect(content).toHaveStyle('bottom: -16px');
@@ -127,14 +127,22 @@ describe('Popover', () => {
 
   it('should render correct offset (left)', () => {
     const { content } = getPopover(
-      <Popover content="Popover" origin="left" offset="component-gap-large" />,
+      <Popover
+        content="Popover"
+        origin="left"
+        offset="$space-component-gap-large"
+      />,
     );
     expect(content).toHaveStyle('left: -16px');
   });
 
   it('should render correct offset (right)', () => {
     const { content } = getPopover(
-      <Popover content="Popover" origin="right" offset="component-gap-large" />,
+      <Popover
+        content="Popover"
+        origin="right"
+        offset="$space-component-gap-large"
+      />,
     );
     expect(content).toHaveStyle('right: -16px');
   });

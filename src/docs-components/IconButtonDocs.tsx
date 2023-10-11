@@ -36,21 +36,25 @@ export const IconButtonDocs = () => (
   <>
     {variants.map((variant) => (
       <tet.section key={variant}>
-        <SectionHeader variant="Hero" as="h2" px="1000">
+        <SectionHeader variant="Hero" as="h2" px="$dimension-1000">
           {capitalize(variant)}
         </SectionHeader>
         <tet.div>
           {getAppearances(variant).map((appearance) => (
             <tet.div
               key={`${variant}${appearance}`}
-              bg={appearance === 'inverted' ? 'background-inverted' : undefined}
+              bg={
+                appearance === 'inverted'
+                  ? '$color-background-inverted'
+                  : undefined
+              }
             >
               <SectionHeader
                 inverted={appearance === 'inverted'}
                 variant="H1"
                 as="h3"
-                py="500"
-                px="1000"
+                py="$dimension-500"
+                px="$dimension-1000"
               >
                 {startCase(appearance)}
               </SectionHeader>
@@ -64,10 +68,10 @@ export const IconButtonDocs = () => (
                   <tet.div
                     display="grid"
                     gridTemplateColumns="1fr 1fr"
-                    px="1000"
+                    px="$dimension-1000"
                     key={`${variant}${appearance}${intent}`}
                   >
-                    <tet.div py="500">
+                    <tet.div py="$dimension-500">
                       <SectionHeader
                         variant="H2"
                         as="h4"
@@ -77,9 +81,12 @@ export const IconButtonDocs = () => (
                           'Dropdown: false',
                         ]}
                       />
-                      <LoadingIconButton mt="500" {...iconButtonProps} />
+                      <LoadingIconButton
+                        mt="$dimension-500"
+                        {...iconButtonProps}
+                      />
                     </tet.div>
-                    <tet.div py="500">
+                    <tet.div py="$dimension-500">
                       <SectionHeader
                         variant="H2"
                         as="h4"
@@ -90,7 +97,7 @@ export const IconButtonDocs = () => (
                         ]}
                       />
                       <LoadingIconButton
-                        mt="500"
+                        mt="$dimension-500"
                         {...iconButtonProps}
                         hasDropdownIndicator
                       />

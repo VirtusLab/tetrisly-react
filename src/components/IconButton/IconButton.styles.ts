@@ -2,11 +2,11 @@ import { ButtonConfig } from '../Button/Button.styles';
 
 const size = {
   small: {
-    w: 'small',
-    h: 'small',
+    w: '$size-small',
+    h: '$size-small',
     px: 'unset',
     hasDropdownIndicator: {
-      w: 'xLarge',
+      w: '$size-xLarge',
       pr: 'unset',
     },
     hasBeforeIcon: {
@@ -17,11 +17,11 @@ const size = {
     },
   },
   medium: {
-    w: 'medium',
-    h: 'medium',
+    w: '$size-medium',
+    h: '$size-medium',
     px: 'unset',
     hasDropdownIndicator: {
-      w: '2xLarge',
+      w: '$size-2xLarge',
       pr: 'unset',
     },
     hasBeforeIcon: {
@@ -32,11 +32,11 @@ const size = {
     },
   },
   large: {
-    w: 'large',
-    h: 'large',
+    w: '$size-large',
+    h: '$size-large',
     px: 'unset',
     hasDropdownIndicator: {
-      h: '3xLarge',
+      h: '$size-3xLarge',
       pr: 'unset',
     },
     hasBeforeIcon: {
@@ -49,9 +49,9 @@ const size = {
 };
 
 const config = {
-  p: 'component-padding-null',
-  gap: 'component-gap-xSmall',
-  borderRadius: 'large',
+  p: '$space-component-padding-null',
+  gap: '$space-component-gap-xSmall',
+  borderRadius: '$border-radius-large',
 };
 
 export const defaultConfig = {

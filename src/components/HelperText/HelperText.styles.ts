@@ -13,24 +13,24 @@ export type HelperTextConfig = {
 export const defaultConfig = {
   display: 'flex',
   alignItems: 'flex-start',
-  gap: 'component-gap-xSmall',
-  text: 'medium-150',
+  gap: '$space-component-gap-xSmall',
+  text: '$typo-body-small',
   intent: {
     none: {
-      color: 'content-secondary',
+      color: '$color-content-secondary',
     },
     alert: {
-      color: 'content-negative-secondary',
+      color: '$color-content-negative-secondary',
     },
     success: {
-      color: 'content-positive-secondary',
+      color: '$color-content-positive-secondary',
     },
   },
   innerElements: {
     iconContainer: {
       display: 'flex',
       alignItems: 'center',
-      minHeight: '2xSmall',
+      minHeight: '$size-2xSmall',
     },
   },
 } satisfies HelperTextConfig;

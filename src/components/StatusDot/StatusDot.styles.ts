@@ -10,20 +10,20 @@ export type StatusDotConfig = {
 export const defaultConfig = {
   w: '12px',
   h: '12px',
-  borderRadius: 'full',
+  borderRadius: '$border-radius-full',
   appearance: {
     red: {
-      backgroundColor: 'nonSemantic-red-background-strong',
+      backgroundColor: '$color-nonSemantic-red-background-strong',
     },
     green: {
-      backgroundColor: 'nonSemantic-green-background-strong',
+      backgroundColor: '$color-nonSemantic-green-background-strong',
     },
     orange: {
-      backgroundColor: 'nonSemantic-orange-background-strong',
+      backgroundColor: '$color-nonSemantic-orange-background-strong',
     },
   },
   stroked: {
-    ring: 'medium',
-    ringColor: 'border-inverted',
+    ring: '$border-width-medium',
+    ringColor: '$color-border-inverted',
   },
 } satisfies StatusDotConfig;

@@ -54,7 +54,11 @@ export const Indeterminate = () => {
   }, [mainChecked]);
 
   return (
-    <tet.div display="flex" flexDirection="column" gap="component-gap-small">
+    <tet.div
+      display="flex"
+      flexDirection="column"
+      gap="$space-component-gap-small"
+    >
       <Checkbox
         isIndeterminate={!mainChecked && (checkbox1Value || checkbox2Value)}
         isChecked={mainChecked}

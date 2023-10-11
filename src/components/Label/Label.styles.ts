@@ -9,20 +9,20 @@ export type LabelConfig = {
 } & BaseProps;
 
 export const defaultConfig = {
-  text: 'medium-175',
-  color: 'content-primary',
+  text: '$typo-body-medium',
+  color: '$color-content-primary',
   display: 'flex',
   alignItems: 'flex-start',
-  gap: 'component-gap-xSmall',
+  gap: '$space-component-gap-xSmall',
   innerElements: {
     tooltip: {
-      color: 'content-secondary',
+      color: '$color-content-secondary',
       display: 'flex',
       alignItems: 'center',
-      minHeight: 'xSmall',
+      minHeight: '$size-xSmall',
     },
     optional: {
-      color: 'content-tertiary',
+      color: '$color-content-tertiary',
     },
     action: {
       ml: 'auto',

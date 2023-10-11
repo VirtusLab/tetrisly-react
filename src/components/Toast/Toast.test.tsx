@@ -49,7 +49,7 @@ describe('Toast', () => {
     const toast = getToast(
       <Toast intent="neutral" emphasis="high" text="Toast text" />,
     );
-    expect(toast).toHaveStyle('background-color: rgb(39, 39, 39)');
+    expect(toast).toHaveStyle('background-color: rgb(39, 46, 53)');
     expect(toast).toHaveStyle('color: rgb(255, 255, 255)');
   });
 
@@ -57,7 +57,7 @@ describe('Toast', () => {
     const toast = getToast(
       <Toast intent="informative" emphasis="high" text="Toast text" />,
     );
-    expect(toast).toHaveStyle('background-color: rgb(48, 48, 48)');
+    expect(toast).toHaveStyle('background-color: rgb(48, 98, 212)');
     expect(toast).toHaveStyle('color: rgb(255, 255, 255)');
   });
 
@@ -65,7 +65,7 @@ describe('Toast', () => {
     const toast = getToast(
       <Toast intent="neutral" emphasis="high" text="Toast text" />,
     );
-    expect(toast).toHaveStyle('background-color: rgb(39, 39, 39)');
+    expect(toast).toHaveStyle('background-color: rgb(39, 46, 53)');
     expect(toast).toHaveStyle('color: rgb(255, 255, 255)');
   });
 
@@ -73,8 +73,8 @@ describe('Toast', () => {
     const toast = getToast(
       <Toast intent="warning" emphasis="high" text="Toast text" />,
     );
-    expect(toast).toHaveStyle('background-color: rgb(56, 56, 56)');
-    expect(toast).toHaveStyle('color: rgb(39, 39, 39)');
+    expect(toast).toHaveStyle('background-color: rgb(245, 150, 56)');
+    expect(toast).toHaveStyle('color: rgb(39, 46, 53)');
   });
 
   it('should render correct colors (negative)', () => {
