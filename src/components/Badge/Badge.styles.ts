@@ -35,6 +35,7 @@ export const defaultConfig = {
   hasLabel: {
     px: '$space-component-padding-small',
   },
+  text: '$typo-body-medium',
   appearance: {
     blue: {
       emphasis: {
@@ -47,7 +48,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-blue-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-blue-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-blue-background-onSubtle',
         },
       },
@@ -63,7 +64,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-green-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-green-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-green-background-onSubtle',
         },
       },
@@ -95,7 +96,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-red-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-red-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-red-background-onSubtle',
         },
       },
@@ -103,7 +104,7 @@ export const defaultConfig = {
     orange: {
       emphasis: {
         high: {
-          color: '$color-nonSemantic-white-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-orange-background-strong',
         },
         medium: {
@@ -111,7 +112,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-orange-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-orange-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-orange-background-onSubtle',
         },
       },
@@ -127,7 +128,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-raspberry-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-raspberry-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-raspberry-background-onSubtle',
         },
       },
@@ -143,7 +144,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-magenta-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-magenta-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-magenta-background-onSubtle',
         },
       },
@@ -159,7 +160,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-purple-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-purple-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-purple-background-onSubtle',
         },
       },
@@ -175,7 +176,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-grape-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-grape-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-grape-background-onSubtle',
         },
       },
@@ -191,7 +192,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-violet-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-violet-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-violet-background-onSubtle',
         },
       },
@@ -207,7 +208,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-cyan-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-cyan-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-cyan-background-onSubtle',
         },
       },
@@ -223,7 +224,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-teal-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-teal-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-teal-background-onSubtle',
         },
       },
@@ -239,7 +240,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-aquamarine-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-aquamarine-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-aquamarine-background-onSubtle',
         },
       },
@@ -255,7 +256,7 @@ export const defaultConfig = {
           backgroundColor: '$color-nonSemantic-emerald-background-muted',
         },
         low: {
-          color: '$color-nonSemantic-emerald-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-emerald-background-onSubtle',
         },
       },
@@ -295,7 +296,7 @@ export const defaultConfig = {
           backgroundColor: '$color-background-neutral-muted',
         },
         low: {
-          color: '$color-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-background-neutral-onSubtle',
         },
       },
@@ -311,7 +312,7 @@ export const defaultConfig = {
           backgroundColor: '$color-background-informative-muted',
         },
         low: {
-          color: '$color-content-informative-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-background-informative-onSubtle',
         },
       },
@@ -327,7 +328,7 @@ export const defaultConfig = {
           backgroundColor: '$color-background-positive-muted',
         },
         low: {
-          color: '$color-content-positive-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-background-positive-onSubtle',
         },
       },
@@ -343,7 +344,7 @@ export const defaultConfig = {
           backgroundColor: '$color-background-warning-muted',
         },
         low: {
-          color: '$color-content-warning-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-background-warning-onSubtle',
         },
       },
@@ -359,7 +360,7 @@ export const defaultConfig = {
           backgroundColor: '$color-background-negative-muted',
         },
         low: {
-          color: '$color-content-negative-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-background-negative-onSubtle',
         },
       },

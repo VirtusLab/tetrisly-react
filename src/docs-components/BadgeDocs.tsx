@@ -46,8 +46,8 @@ export const BadgeDocs = () => (
                 flexShrink="0"
                 flexGrow="1"
               >
-                <Badge intent={intent} label="Badge Text" />
-                <Badge intent={intent} icon="16-bolt" />
+                <Badge intent={intent} emphasis={emphasis} label="Badge Text" />
+                <Badge intent={intent} emphasis={emphasis} icon="16-bolt" />
               </tet.div>
             ))}
           </tet.div>
@@ -72,8 +72,16 @@ export const BadgeDocs = () => (
                   gap="$dimension-400"
                   flexShrink="0"
                 >
-                  <Badge appearance={appearance} label="Badge Text" />
-                  <Badge appearance={appearance} icon="16-bolt" />
+                  <Badge
+                    appearance={appearance}
+                    emphasis={emphasis}
+                    label="Badge Text"
+                  />
+                  <Badge
+                    appearance={appearance}
+                    emphasis={emphasis}
+                    icon="16-bolt"
+                  />
                 </tet.div>
               ))}
             </tet.div>
