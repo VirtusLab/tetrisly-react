@@ -128,70 +128,73 @@ export type ButtonConfig = {
 export declare const defaultConfig: {
     default: {
         borderRadius: string;
-        boxShadow: "bottom-100";
+        boxShadow: "$elevation-bottom-100";
         appearance: {
             primary: {
-                color: "action-inverted-normal";
+                color: "$color-action-inverted-normal";
                 intent: {
                     none: {
                         backgroundColor: {
-                            _: "action-primary-normal";
-                            hover: "action-primary-hover";
-                            active: "action-primary-active";
-                            selected: "action-primary-selected";
+                            _: "$color-action-primary-normal";
+                            hover: "$color-action-primary-hover";
+                            active: "$color-action-primary-active";
+                            selected: "$color-action-primary-selected";
+                            loading: "$color-action-primary-loading";
                         };
                     };
                     success: {
                         backgroundColor: {
-                            _: "action-success-normal";
-                            hover: "action-success-hover";
-                            active: "action-success-active";
-                            selected: "action-success-selected";
+                            _: "$color-action-success-normal";
+                            hover: "$color-action-success-hover";
+                            active: "$color-action-success-active";
+                            selected: "$color-action-success-selected";
+                            loading: "$color-action-success-loading";
                         };
                     };
                     destructive: {
                         backgroundColor: {
-                            _: "action-destructive-normal";
-                            hover: "action-destructive-hover";
-                            active: "action-destructive-active";
-                            selected: "action-destructive-selected";
+                            _: "$color-action-destructive-normal";
+                            hover: "$color-action-destructive-hover";
+                            active: "$color-action-destructive-active";
+                            selected: "$color-action-destructive-selected";
+                            loading: "$color-action-destructive-loading";
                         };
                     };
                 };
             };
             secondary: {
-                backgroundColor: "action-inverted-normal";
+                backgroundColor: "$color-action-inverted-normal";
                 ringInset: true;
                 ring: string;
                 ringColor: {
-                    _: "action-outline-normal";
-                    hover: "action-outline-hover";
-                    active: "action-outline-active";
-                    selected: "action-outline-selected";
+                    _: "$color-action-outline-normal";
+                    hover: "$color-action-outline-hover";
+                    active: "$color-action-outline-active";
+                    selected: "$color-action-outline-selected";
                 };
                 intent: {
                     none: {
                         color: {
-                            _: "action-neutral-normal";
-                            hover: "action-neutral-hover";
-                            active: "action-neutral-active";
-                            selected: "action-neutral-selected";
+                            _: "$color-action-neutral-normal";
+                            hover: "$color-action-neutral-hover";
+                            active: "$color-action-neutral-active";
+                            selected: "$color-action-neutral-selected";
                         };
                     };
                     success: {
                         color: {
-                            _: "action-success-normal";
-                            hover: "action-success-hover";
-                            active: "action-success-active";
-                            selected: "action-success-selected";
+                            _: "$color-action-success-normal";
+                            hover: "$color-action-success-hover";
+                            active: "$color-action-success-active";
+                            selected: "$color-action-success-selected";
                         };
                     };
                     destructive: {
                         color: {
-                            _: "action-destructive-normal";
-                            hover: "action-destructive-hover";
-                            active: "action-destructive-active";
-                            selected: "action-destructive-selected";
+                            _: "$color-action-destructive-normal";
+                            hover: "$color-action-destructive-hover";
+                            active: "$color-action-destructive-active";
+                            selected: "$color-action-destructive-selected";
                         };
                     };
                 };
@@ -200,16 +203,17 @@ export declare const defaultConfig: {
                 intent: {
                     none: {
                         backgroundColor: {
-                            _: "action-inverted-normal";
-                            hover: "action-inverted-hover";
-                            active: "action-inverted-active";
-                            selected: "action-inverted-selected";
+                            _: "$color-action-inverted-normal";
+                            hover: "$color-action-inverted-hover";
+                            active: "$color-action-inverted-active";
+                            selected: "$color-action-inverted-selected";
+                            loading: "$color-action-inverted-loading";
                         };
                         color: {
-                            _: "action-neutral-normal";
-                            hover: "action-neutral-hover";
-                            active: "action-neutral-active";
-                            selected: "action-neutral-selected";
+                            _: "$color-action-neutral-normal";
+                            hover: "$color-action-neutral-hover";
+                            active: "$color-action-neutral-active";
+                            selected: "$color-action-neutral-selected";
                         };
                     };
                 };
@@ -217,45 +221,45 @@ export declare const defaultConfig: {
         };
         size: {
             readonly small: {
-                readonly px: "component-padding-medium";
-                readonly h: "small";
-                readonly text: "body-medium";
+                readonly px: "$space-component-padding-medium";
+                readonly h: "$size-small";
+                readonly text: "$typo-body-medium";
                 readonly hasDropdownIndicator: {
-                    readonly pr: "component-padding-small";
+                    readonly pr: "$space-component-padding-small";
                 };
                 readonly hasBeforeIcon: {
-                    readonly pl: "component-padding-small";
+                    readonly pl: "$space-component-padding-small";
                 };
                 readonly hasAfterIcon: {
-                    readonly pr: "component-padding-small";
+                    readonly pr: "$space-component-padding-small";
                 };
             };
             readonly medium: {
-                readonly px: "component-padding-large";
-                readonly h: "medium";
-                readonly text: "body-medium";
+                readonly px: "$space-component-padding-large";
+                readonly h: "$size-medium";
+                readonly text: "$typo-body-medium";
                 readonly hasDropdownIndicator: {
-                    readonly pr: "component-padding-medium";
+                    readonly pr: "$space-component-padding-medium";
                 };
                 readonly hasBeforeIcon: {
-                    readonly pl: "component-padding-medium";
+                    readonly pl: "$space-component-padding-medium";
                 };
                 readonly hasAfterIcon: {
-                    readonly pr: "component-padding-medium";
+                    readonly pr: "$space-component-padding-medium";
                 };
             };
             readonly large: {
-                readonly px: "component-padding-large";
-                readonly h: "large";
-                readonly text: "body-large";
+                readonly px: "$space-component-padding-large";
+                readonly h: "$size-large";
+                readonly text: "$typo-body-large";
                 readonly hasDropdownIndicator: {
-                    readonly pr: "component-padding-medium";
+                    readonly pr: "$space-component-padding-medium";
                 };
                 readonly hasBeforeIcon: {
-                    readonly pl: "component-padding-medium";
+                    readonly pl: "$space-component-padding-medium";
                 };
                 readonly hasAfterIcon: {
-                    readonly pr: "component-padding-medium";
+                    readonly pr: "$space-component-padding-medium";
                 };
             };
         };
@@ -267,13 +271,13 @@ export declare const defaultConfig: {
         textAlign: "center";
         whiteSpace: "nowrap";
         opacity: {
-            disabled: "disabled";
+            disabled: "$opacity-disabled";
         };
         outline: {
             focus: string;
         };
         outlineColor: {
-            focus: "interaction-focus-default";
+            focus: "$color-interaction-focus-default";
         };
         outlineWidth: {
             focus: string;
@@ -290,35 +294,35 @@ export declare const defaultConfig: {
         borderRadius: string;
         backgroundColor: {
             _: "transparent";
-            hover: "action-ghost-hover";
-            active: "action-ghost-active";
-            selected: "action-ghost-selected";
+            hover: "$color-action-ghost-hover";
+            active: "$color-action-ghost-active";
+            selected: "$color-action-ghost-selected";
         };
         appearance: {
             primary: {
                 intent: {
                     none: {
                         color: {
-                            _: "action-primary-normal";
-                            hover: "action-primary-hover";
-                            active: "action-primary-active";
-                            selected: "action-primary-selected";
+                            _: "$color-action-primary-normal";
+                            hover: "$color-action-primary-hover";
+                            active: "$color-action-primary-active";
+                            selected: "$color-action-primary-selected";
                         };
                     };
                     success: {
                         color: {
-                            _: "action-success-normal";
-                            hover: "action-success-hover";
-                            active: "action-success-active";
-                            selected: "action-success-selected";
+                            _: "$color-action-success-normal";
+                            hover: "$color-action-success-hover";
+                            active: "$color-action-success-active";
+                            selected: "$color-action-success-selected";
                         };
                     };
                     destructive: {
                         color: {
-                            _: "action-destructive-normal";
-                            hover: "action-destructive-hover";
-                            active: "action-destructive-active";
-                            selected: "action-destructive-selected";
+                            _: "$color-action-destructive-normal";
+                            hover: "$color-action-destructive-hover";
+                            active: "$color-action-destructive-active";
+                            selected: "$color-action-destructive-selected";
                         };
                     };
                 };
@@ -327,10 +331,10 @@ export declare const defaultConfig: {
                 intent: {
                     none: {
                         color: {
-                            _: "action-neutral-normal";
-                            hover: "action-neutral-hover";
-                            active: "action-neutral-active";
-                            selected: "action-neutral-selected";
+                            _: "$color-action-neutral-normal";
+                            hover: "$color-action-neutral-hover";
+                            active: "$color-action-neutral-active";
+                            selected: "$color-action-neutral-selected";
                         };
                     };
                 };
@@ -339,16 +343,16 @@ export declare const defaultConfig: {
                 intent: {
                     none: {
                         backgroundColor: {
-                            _: "action-ghost-normal";
-                            hover: "action-ghost-inverted-hover";
-                            active: "action-ghost-inverted-active";
-                            selected: "action-ghost-inverted-selected";
+                            _: "$color-action-ghost-normal";
+                            hover: "$color-action-ghost-inverted-hover";
+                            active: "$color-action-ghost-inverted-active";
+                            selected: "$color-action-ghost-inverted-selected";
                         };
                         color: {
-                            _: "action-inverted-normal";
-                            hover: "action-inverted-hover";
-                            active: "action-inverted-active";
-                            selected: "action-inverted-selected";
+                            _: "$color-action-inverted-normal";
+                            hover: "$color-action-inverted-hover";
+                            active: "$color-action-inverted-active";
+                            selected: "$color-action-inverted-selected";
                         };
                     };
                 };
@@ -357,10 +361,10 @@ export declare const defaultConfig: {
                 intent: {
                     none: {
                         color: {
-                            _: "action-reverseInverted-normal";
-                            hover: "action-reverseInverted-hover";
-                            active: "action-reverseInverted-active";
-                            selected: "action-reverseInverted-selected";
+                            _: "$color-action-reverseInverted-normal";
+                            hover: "$color-action-reverseInverted-hover";
+                            active: "$color-action-reverseInverted-active";
+                            selected: "$color-action-reverseInverted-selected";
                         };
                     };
                 };
@@ -368,45 +372,45 @@ export declare const defaultConfig: {
         };
         size: {
             readonly small: {
-                readonly px: "component-padding-medium";
-                readonly h: "small";
-                readonly text: "body-medium";
+                readonly px: "$space-component-padding-medium";
+                readonly h: "$size-small";
+                readonly text: "$typo-body-medium";
                 readonly hasDropdownIndicator: {
-                    readonly pr: "component-padding-small";
+                    readonly pr: "$space-component-padding-small";
                 };
                 readonly hasBeforeIcon: {
-                    readonly pl: "component-padding-small";
+                    readonly pl: "$space-component-padding-small";
                 };
                 readonly hasAfterIcon: {
-                    readonly pr: "component-padding-small";
+                    readonly pr: "$space-component-padding-small";
                 };
             };
             readonly medium: {
-                readonly px: "component-padding-large";
-                readonly h: "medium";
-                readonly text: "body-medium";
+                readonly px: "$space-component-padding-large";
+                readonly h: "$size-medium";
+                readonly text: "$typo-body-medium";
                 readonly hasDropdownIndicator: {
-                    readonly pr: "component-padding-medium";
+                    readonly pr: "$space-component-padding-medium";
                 };
                 readonly hasBeforeIcon: {
-                    readonly pl: "component-padding-medium";
+                    readonly pl: "$space-component-padding-medium";
                 };
                 readonly hasAfterIcon: {
-                    readonly pr: "component-padding-medium";
+                    readonly pr: "$space-component-padding-medium";
                 };
             };
             readonly large: {
-                readonly px: "component-padding-large";
-                readonly h: "large";
-                readonly text: "body-large";
+                readonly px: "$space-component-padding-large";
+                readonly h: "$size-large";
+                readonly text: "$typo-body-large";
                 readonly hasDropdownIndicator: {
-                    readonly pr: "component-padding-medium";
+                    readonly pr: "$space-component-padding-medium";
                 };
                 readonly hasBeforeIcon: {
-                    readonly pl: "component-padding-medium";
+                    readonly pl: "$space-component-padding-medium";
                 };
                 readonly hasAfterIcon: {
-                    readonly pr: "component-padding-medium";
+                    readonly pr: "$space-component-padding-medium";
                 };
             };
         };
@@ -418,13 +422,13 @@ export declare const defaultConfig: {
         textAlign: "center";
         whiteSpace: "nowrap";
         opacity: {
-            disabled: "disabled";
+            disabled: "$opacity-disabled";
         };
         outline: {
             focus: string;
         };
         outlineColor: {
-            focus: "interaction-focus-default";
+            focus: "$color-interaction-focus-default";
         };
         outlineWidth: {
             focus: string;
@@ -439,33 +443,33 @@ export declare const defaultConfig: {
     };
     bare: {
         outlineOffset: number;
-        p: number;
+        p: string;
         backgroundColor: "transparent";
         appearance: {
             primary: {
                 intent: {
                     none: {
                         color: {
-                            _: "action-primary-normal";
-                            hover: "action-primary-hover";
-                            active: "action-primary-active";
-                            selected: "action-primary-selected";
+                            _: "$color-action-primary-normal";
+                            hover: "$color-action-primary-hover";
+                            active: "$color-action-primary-active";
+                            selected: "$color-action-primary-selected";
                         };
                     };
                     success: {
                         color: {
-                            _: "action-success-normal";
-                            hover: "action-success-hover";
-                            active: "action-success-active";
-                            selected: "action-success-selected";
+                            _: "$color-action-success-normal";
+                            hover: "$color-action-success-hover";
+                            active: "$color-action-success-active";
+                            selected: "$color-action-success-selected";
                         };
                     };
                     destructive: {
                         color: {
-                            _: "action-destructive-normal";
-                            hover: "action-destructive-hover";
-                            active: "action-destructive-active";
-                            selected: "action-destructive-selected";
+                            _: "$color-action-destructive-normal";
+                            hover: "$color-action-destructive-hover";
+                            active: "$color-action-destructive-active";
+                            selected: "$color-action-destructive-selected";
                         };
                     };
                 };
@@ -474,10 +478,10 @@ export declare const defaultConfig: {
                 intent: {
                     none: {
                         color: {
-                            _: "action-neutral-normal";
-                            hover: "action-neutral-hover";
-                            active: "action-neutral-active";
-                            selected: "action-neutral-selected";
+                            _: "$color-action-neutral-normal";
+                            hover: "$color-action-neutral-hover";
+                            active: "$color-action-neutral-active";
+                            selected: "$color-action-neutral-selected";
                         };
                     };
                 };
@@ -486,10 +490,10 @@ export declare const defaultConfig: {
                 intent: {
                     none: {
                         color: {
-                            _: "action-inverted-normal";
-                            hover: "action-inverted-hover";
-                            active: "action-inverted-active";
-                            selected: "action-inverted-selected";
+                            _: "$color-action-inverted-normal";
+                            hover: "$color-action-inverted-hover";
+                            active: "$color-action-inverted-active";
+                            selected: "$color-action-inverted-selected";
                         };
                     };
                 };
@@ -499,10 +503,10 @@ export declare const defaultConfig: {
                 intent: {
                     none: {
                         color: {
-                            _: "action-reverseInverted-normal";
-                            hover: "action-reverseInverted-hover";
-                            active: "action-reverseInverted-active";
-                            selected: "action-reverseInverted-selected";
+                            _: "$color-action-reverseInverted-normal";
+                            hover: "$color-action-reverseInverted-hover";
+                            active: "$color-action-reverseInverted-active";
+                            selected: "$color-action-reverseInverted-selected";
                         };
                     };
                 };
@@ -511,13 +515,13 @@ export declare const defaultConfig: {
         };
         size: {
             medium: {
-                text: "body-medium";
+                text: "$typo-body-medium";
                 hasDropdownIndicator: {};
                 hasBeforeIcon: {};
                 hasAfterIcon: {};
             };
             large: {
-                text: "body-large";
+                text: "$typo-body-large";
                 hasDropdownIndicator: {};
                 hasBeforeIcon: {};
                 hasAfterIcon: {};
@@ -531,13 +535,13 @@ export declare const defaultConfig: {
         textAlign: "center";
         whiteSpace: "nowrap";
         opacity: {
-            disabled: "disabled";
+            disabled: "$opacity-disabled";
         };
         outline: {
             focus: string;
         };
         outlineColor: {
-            focus: "interaction-focus-default";
+            focus: "$color-interaction-focus-default";
         };
         outlineWidth: {
             focus: string;

@@ -14,23 +14,23 @@ export declare const defaultConfig: {
     pl: string;
     display: "flex";
     alignItems: "center";
-    text: "body-medium";
+    text: "$typo-body-medium";
     intent: {
         none: {
-            backgroundColor: "background-neutral-strong";
-            color: "content-primary-inverted";
+            backgroundColor: "$color-background-neutral-strong";
+            color: "$color-content-primary-inverted";
         };
         positive: {
-            backgroundColor: "background-positive-strong";
-            color: "content-primary-inverted";
+            backgroundColor: "$color-background-positive-strong";
+            color: "$color-content-primary-inverted";
         };
         warning: {
-            backgroundColor: "background-warning-strong";
-            color: "content-primary";
+            backgroundColor: "$color-background-warning-strong";
+            color: "$color-content-primary";
         };
         negative: {
-            backgroundColor: "background-negative-strong";
-            color: "content-primary-inverted";
+            backgroundColor: "$color-background-negative-strong";
+            color: "$color-content-primary-inverted";
         };
     };
     innerElements: {

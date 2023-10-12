@@ -15,9 +15,9 @@ export declare const defaultConfig: {
     gap: string;
     minWidth: string;
     minHeight: string;
-    color: "content-primary";
+    color: "$color-content-primary";
     opacity: {
-        disabled: "disabled";
+        disabled: "$opacity-disabled";
     };
     pointerEvents: {
         disabled: "none";
@@ -31,7 +31,7 @@ export declare const defaultConfig: {
             justifyContent: "center";
             alignItems: "center";
             flexShrink: number;
-            backgroundColor: "interaction-background-formField";
+            backgroundColor: "$color-interaction-background-formField";
             ring: {
                 _: string;
                 checked: string;
@@ -39,22 +39,22 @@ export declare const defaultConfig: {
             borderRadius: string;
             ringInset: true;
             ringColor: {
-                _: "interaction-border-neutral-normal";
-                hover: "interaction-border-hover";
+                _: "$color-interaction-border-neutral-normal";
+                hover: "$color-interaction-border-hover";
                 checked: {
-                    _: "interaction-default-normal";
-                    hover: "interaction-default-hover";
+                    _: "$color-interaction-default-normal";
+                    hover: "$color-interaction-default-hover";
                 };
                 alert: {
-                    _: "interaction-border-alert";
-                    hover: "interaction-border-alert";
+                    _: "$color-interaction-border-alert";
+                    hover: "$color-interaction-border-alert";
                 };
             };
             outlineStyle: {
                 focusWithin: "solid";
             };
             outlineColor: {
-                focusWithin: "interaction-focus-default";
+                focusWithin: "$color-interaction-focus-default";
             };
             outlineWidth: {
                 focusWithin: string;
@@ -72,8 +72,8 @@ export declare const defaultConfig: {
             alignItems: "center";
             gap: string;
             cursor: "pointer";
-            color: "content-primary";
-            text: "body-medium";
+            color: "$color-content-primary";
+            text: "$typo-body-medium";
         };
         helperText: {
             pl: string;

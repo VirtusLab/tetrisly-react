@@ -30,27 +30,27 @@ export declare const defaultConfig: {
         large: {
             w: string;
             h: string;
-            text: "body-large";
+            text: "$typo-body-large";
         };
         medium: {
             w: string;
             h: string;
-            text: "body-medium";
+            text: "$typo-body-medium";
         };
         small: {
             w: string;
             h: string;
-            text: "body-small";
+            text: "$typo-body-small";
         };
         xSmall: {
             w: string;
             h: string;
-            text: "body-strong-xSmall";
+            text: "$typo-body-strong-xSmall";
         };
         '2xSmall': {
             w: string;
             h: string;
-            text: "body-strong-xSmall";
+            text: "$typo-body-strong-xSmall";
         };
     };
     appearance: {
@@ -63,168 +63,168 @@ export declare const defaultConfig: {
         blue: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-blue-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-blue-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-blue-content-primary";
-                    backgroundColor: "nonSemantic-blue-background-muted";
+                    color: "$color-nonSemantic-blue-content-primary";
+                    backgroundColor: "$color-nonSemantic-blue-background-muted";
                 };
             };
         };
         green: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-green-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-green-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-green-content-primary";
-                    backgroundColor: "nonSemantic-green-background-muted";
+                    color: "$color-nonSemantic-green-content-primary";
+                    backgroundColor: "$color-nonSemantic-green-background-muted";
                 };
             };
         };
         grey: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-grey-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-grey-content-primary";
-                    backgroundColor: "nonSemantic-grey-background-muted";
+                    color: "$color-nonSemantic-grey-content-primary";
+                    backgroundColor: "$color-nonSemantic-grey-background-muted";
                 };
             };
         };
         red: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-red-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-red-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-red-content-primary";
-                    backgroundColor: "nonSemantic-red-background-muted";
+                    color: "$color-nonSemantic-red-content-primary";
+                    backgroundColor: "$color-nonSemantic-red-background-muted";
                 };
             };
         };
         orange: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-orange-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-orange-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-orange-content-primary";
-                    backgroundColor: "nonSemantic-orange-background-muted";
+                    color: "$color-nonSemantic-orange-content-primary";
+                    backgroundColor: "$color-nonSemantic-orange-background-muted";
                 };
             };
         };
         raspberry: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-raspberry-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-raspberry-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-raspberry-content-primary";
-                    backgroundColor: "nonSemantic-raspberry-background-muted";
+                    color: "$color-nonSemantic-raspberry-content-primary";
+                    backgroundColor: "$color-nonSemantic-raspberry-background-muted";
                 };
             };
         };
         magenta: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-magenta-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-magenta-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-magenta-content-primary";
-                    backgroundColor: "nonSemantic-magenta-background-muted";
+                    color: "$color-nonSemantic-magenta-content-primary";
+                    backgroundColor: "$color-nonSemantic-magenta-background-muted";
                 };
             };
         };
         purple: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-purple-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-purple-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-purple-content-primary";
-                    backgroundColor: "nonSemantic-purple-background-muted";
+                    color: "$color-nonSemantic-purple-content-primary";
+                    backgroundColor: "$color-nonSemantic-purple-background-muted";
                 };
             };
         };
         grape: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-grape-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-grape-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-grape-content-primary";
-                    backgroundColor: "nonSemantic-grape-background-muted";
+                    color: "$color-nonSemantic-grape-content-primary";
+                    backgroundColor: "$color-nonSemantic-grape-background-muted";
                 };
             };
         };
         violet: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-violet-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-violet-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-violet-content-primary";
-                    backgroundColor: "nonSemantic-violet-background-muted";
+                    color: "$color-nonSemantic-violet-content-primary";
+                    backgroundColor: "$color-nonSemantic-violet-background-muted";
                 };
             };
         };
         cyan: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-cyan-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-cyan-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-cyan-content-primary";
-                    backgroundColor: "nonSemantic-cyan-background-muted";
+                    color: "$color-nonSemantic-cyan-content-primary";
+                    backgroundColor: "$color-nonSemantic-cyan-background-muted";
                 };
             };
         };
         teal: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-teal-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-teal-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-teal-content-primary";
-                    backgroundColor: "nonSemantic-teal-background-muted";
+                    color: "$color-nonSemantic-teal-content-primary";
+                    backgroundColor: "$color-nonSemantic-teal-background-muted";
                 };
             };
         };
         aquamarine: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-aquamarine-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-aquamarine-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-aquamarine-content-primary";
-                    backgroundColor: "nonSemantic-aquamarine-background-muted";
+                    color: "$color-nonSemantic-aquamarine-content-primary";
+                    backgroundColor: "$color-nonSemantic-aquamarine-background-muted";
                 };
             };
         };
         emerald: {
             emphasis: {
                 high: {
-                    color: "nonSemantic-white-content-primary";
-                    backgroundColor: "nonSemantic-emerald-background-strong";
+                    color: "$color-nonSemantic-white-content-primary";
+                    backgroundColor: "$color-nonSemantic-emerald-background-strong";
                 };
                 low: {
-                    color: "nonSemantic-emerald-content-primary";
-                    backgroundColor: "nonSemantic-emerald-background-muted";
+                    color: "$color-nonSemantic-emerald-content-primary";
+                    backgroundColor: "$color-nonSemantic-emerald-background-muted";
                 };
             };
         };

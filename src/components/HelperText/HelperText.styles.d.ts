@@ -11,16 +11,16 @@ export declare const defaultConfig: {
     display: "flex";
     alignItems: "flex-start";
     gap: string;
-    text: "medium-150";
+    text: "$typo-body-small";
     intent: {
         none: {
-            color: "content-secondary";
+            color: "$color-content-secondary";
         };
         alert: {
-            color: "content-negative-secondary";
+            color: "$color-content-negative-secondary";
         };
         success: {
-            color: "content-positive-secondary";
+            color: "$color-content-positive-secondary";
         };
     };
     innerElements: {

@@ -14,7 +14,7 @@ export declare const defaultConfig: {
     alignItems: "center";
     flexShrink: number;
     borderRadius: string;
-    boxShadow: "bottom-100";
+    boxShadow: "$elevation-bottom-100";
     opacity: {
         _: number;
         hover: number;
@@ -26,10 +26,10 @@ export declare const defaultConfig: {
             ringInset: true;
             ring: string;
             ringColor: {
-                _: "action-outline-normal";
-                hover: "action-outline-hover";
-                active: "action-outline-active";
-                selected: "action-outline-selected";
+                _: "$color-action-outline-normal";
+                hover: "$color-action-outline-hover";
+                active: "$color-action-outline-active";
+                selected: "$color-action-outline-selected";
             };
         };
         primary: {};

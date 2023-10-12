@@ -16,22 +16,22 @@ export declare const defaultConfig: {
     display: "flex";
     alignItems: "flex-start";
     gap: string;
-    text: "medium-175";
+    text: "$typo-body-medium";
     innerElements: {
         title: {
             marginRight: string;
             intent: {
                 informative: {
-                    color: "content-informative-primary";
+                    color: "$color-content-informative-primary";
                 };
                 success: {
-                    color: "content-positive-primary";
+                    color: "$color-content-positive-primary";
                 };
                 warning: {
-                    color: "content-warning-primary";
+                    color: "$color-content-warning-primary";
                 };
                 negative: {
-                    color: "content-negative-primary";
+                    color: "$color-content-negative-primary";
                 };
             };
         };
@@ -41,21 +41,21 @@ export declare const defaultConfig: {
             minHeight: string;
             intent: {
                 informative: {
-                    color: "content-informative-secondary";
+                    color: "$color-content-informative-secondary";
                 };
                 success: {
-                    color: "content-positive-secondary";
+                    color: "$color-content-positive-secondary";
                 };
                 warning: {
-                    color: "content-warning-secondary";
+                    color: "$color-content-warning-secondary";
                 };
                 negative: {
-                    color: "content-negative-secondary";
+                    color: "$color-content-negative-secondary";
                 };
             };
         };
         description: {
-            color: "content-secondary";
+            color: "$color-content-secondary";
             display: "inline-block";
         };
     };

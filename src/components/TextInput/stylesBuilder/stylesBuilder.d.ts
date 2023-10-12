@@ -1,4 +1,4 @@
-import { TextInputConfig } from '../TextInput.style';
+import { TextInputConfig } from '../TextInput.styles';
 import { BaseProps } from '../../../types/BaseProps';
 type TextInputStylesBuilder = {
     container: BaseProps;

@@ -7,20 +7,20 @@ export type LabelConfig = {
     };
 } & BaseProps;
 export declare const defaultConfig: {
-    text: "medium-175";
-    color: "content-primary";
+    text: "$typo-body-medium";
+    color: "$color-content-primary";
     display: "flex";
     alignItems: "flex-start";
     gap: string;
     innerElements: {
         tooltip: {
-            color: "content-secondary";
+            color: "$color-content-secondary";
             display: "flex";
             alignItems: "center";
             minHeight: string;
         };
         optional: {
-            color: "content-tertiary";
+            color: "$color-content-tertiary";
         };
         action: {
             ml: string;

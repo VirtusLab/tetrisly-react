@@ -68,17 +68,17 @@ export declare const defaultConfig: {
         base: {
             appearance: {
                 primary: {
-                    stroke: "interaction-neutral-subtle-normal";
+                    stroke: "$color-interaction-neutral-subtle-normal";
                 };
                 inverted: {
-                    stroke: "interaction-inverted-normal";
+                    stroke: "$color-interaction-inverted-normal";
                 };
                 white: {
-                    stroke: "interaction-inverted-normal";
+                    stroke: "$color-interaction-inverted-normal";
                     opacity: number;
                 };
                 greyscale: {
-                    stroke: "interaction-neutral-subtle-normal";
+                    stroke: "$color-interaction-neutral-subtle-normal";
                 };
             };
         };
@@ -86,16 +86,16 @@ export declare const defaultConfig: {
             strokeLinecap: "round";
             appearance: {
                 primary: {
-                    stroke: "interaction-default-normal";
+                    stroke: "$color-interaction-default-normal";
                 };
                 inverted: {
-                    stroke: "interaction-default-normal";
+                    stroke: "$color-interaction-default-normal";
                 };
                 white: {
-                    stroke: "interaction-inverted-normal";
+                    stroke: "$color-interaction-inverted-normal";
                 };
                 greyscale: {
-                    stroke: "interaction-neutral-normal";
+                    stroke: "$color-interaction-neutral-normal";
                 };
             };
         };

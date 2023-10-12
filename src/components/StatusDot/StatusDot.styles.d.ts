@@ -10,17 +10,17 @@ export declare const defaultConfig: {
     borderRadius: string;
     appearance: {
         red: {
-            backgroundColor: "nonSemantic-red-background-strong";
+            backgroundColor: "$color-nonSemantic-red-background-strong";
         };
         green: {
-            backgroundColor: "nonSemantic-green-background-strong";
+            backgroundColor: "$color-nonSemantic-green-background-strong";
         };
         orange: {
-            backgroundColor: "nonSemantic-orange-background-strong";
+            backgroundColor: "$color-nonSemantic-orange-background-strong";
         };
     };
     stroked: {
         ring: string;
-        ringColor: "border-inverted";
+        ringColor: "$color-border-inverted";
     };
 };

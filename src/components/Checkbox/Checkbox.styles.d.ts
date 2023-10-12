@@ -17,9 +17,9 @@ export declare const defaultConfig: {
     gap: string;
     minWidth: string;
     minHeight: string;
-    color: "content-primary";
+    color: "$color-content-primary";
     opacity: {
-        disabled: "disabled";
+        disabled: "$opacity-disabled";
     };
     pointerEvents: {
         disabled: "none";
@@ -36,30 +36,29 @@ export declare const defaultConfig: {
             h: string;
             pointerEvents: "none";
             backgroundColor: {
-                _: "interaction-background-formField";
+                _: "$color-interaction-background-formField";
                 checked: {
-                    _: "interaction-default-normal";
-                    hover: "interaction-default-hover";
+                    _: "$color-interaction-default-normal";
+                    hover: "$color-interaction-default-hover";
                 };
                 indeterminate: {
-                    _: "interaction-default-normal";
-                    hover: "interaction-default-hover";
+                    _: "$color-interaction-default-normal";
+                    hover: "$color-interaction-default-hover";
                 };
             };
-            color: "white";
             ring: string;
             borderRadius: string;
             ringInset: true;
             ringColor: {
-                _: "interaction-border-neutral-normal";
-                hover: "interaction-border-hover";
+                _: "$color-interaction-border-neutral-normal";
+                hover: "$color-interaction-border-hover";
                 checked: {
-                    _: "interaction-ghost-normal";
-                    hover: "interaction-ghost-normal";
+                    _: "$color-interaction-ghost-normal";
+                    hover: "$color-interaction-ghost-normal";
                 };
                 alert: {
-                    _: "interaction-border-alert";
-                    hover: "interaction-border-alert";
+                    _: "$color-interaction-border-alert";
+                    hover: "$color-interaction-border-alert";
                 };
                 indeterminate: "transparent";
             };
@@ -67,7 +66,7 @@ export declare const defaultConfig: {
                 focusWithin: "solid";
             };
             outlineColor: {
-                focusWithin: "interaction-focus-default";
+                focusWithin: "$color-interaction-focus-default";
             };
             outlineWidth: {
                 focusWithin: string;
@@ -80,7 +79,7 @@ export declare const defaultConfig: {
         };
         checkboxIcon: {
             position: "absolute";
-            color: "interaction-inverted-normal";
+            color: "$color-interaction-inverted-normal";
             w: string;
             h: string;
             left: number;
@@ -92,8 +91,8 @@ export declare const defaultConfig: {
             alignItems: "center";
             gap: string;
             cursor: "pointer";
-            color: "content-primary";
-            text: "body-medium";
+            color: "$color-content-primary";
+            text: "$typo-body-medium";
         };
         helperText: {
             paddingLeft: string;

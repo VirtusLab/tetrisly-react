@@ -80,13 +80,13 @@ export declare const defaultConfig: {
     innerElements: {
         content: {
             position: "absolute";
-            text: "body-medium";
-            color: "content-secondary";
+            text: "$typo-body-medium";
+            color: "$color-content-secondary";
             padding: string;
             ring: string;
-            ringColor: "border-defaultA";
-            boxShadow: "bottom-300";
-            backgroundColor: "interaction-background-modeless";
+            ringColor: "$color-border-defaultA";
+            boxShadow: "$elevation-bottom-300";
+            backgroundColor: "$color-interaction-background-modeless";
             borderRadius: string;
             zIndex: number;
             transition: boolean;

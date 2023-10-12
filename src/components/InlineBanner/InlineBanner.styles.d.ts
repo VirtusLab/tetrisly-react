@@ -28,24 +28,24 @@ export declare const defaultConfig: {
     ringInset: true;
     intent: {
         none: {
-            backgroundColor: "background-neutral-subtle";
-            ringColor: "border-neutral-subtle";
+            backgroundColor: "$color-background-neutral-subtle";
+            ringColor: "$color-border-neutral-subtle";
         };
         informative: {
-            backgroundColor: "background-informative-subtle";
-            ringColor: "border-informative-subtle";
+            backgroundColor: "$color-background-informative-subtle";
+            ringColor: "$color-border-informative-subtle";
         };
         success: {
-            backgroundColor: "background-positive-subtle";
-            ringColor: "border-positive-subtle";
+            backgroundColor: "$color-background-positive-subtle";
+            ringColor: "$color-border-positive-subtle";
         };
         warning: {
-            backgroundColor: "background-warning-subtle";
-            ringColor: "border-warning-subtle";
+            backgroundColor: "$color-background-warning-subtle";
+            ringColor: "$color-border-warning-subtle";
         };
         negative: {
-            backgroundColor: "background-negative-subtle";
-            ringColor: "border-negative-subtle";
+            backgroundColor: "$color-background-negative-subtle";
+            ringColor: "$color-border-negative-subtle";
         };
     };
     innerElements: {
@@ -55,19 +55,19 @@ export declare const defaultConfig: {
             alignItems: "center";
             intent: {
                 none: {
-                    color: "content-secondary";
+                    color: "$color-content-secondary";
                 };
                 informative: {
-                    color: "content-informative-secondary";
+                    color: "$color-content-informative-secondary";
                 };
                 success: {
-                    color: "content-positive-secondary";
+                    color: "$color-content-positive-secondary";
                 };
                 warning: {
-                    color: "content-warning-secondary";
+                    color: "$color-content-warning-secondary";
                 };
                 negative: {
-                    color: "content-negative-secondary";
+                    color: "$color-content-negative-secondary";
                 };
             };
         };
@@ -81,27 +81,27 @@ export declare const defaultConfig: {
             mt: string;
         };
         description: {
-            color: "content-secondary";
-            text: "body-medium";
+            color: "$color-content-secondary";
+            text: "$typo-body-medium";
         };
         title: {
-            text: "body-strong-medium";
+            text: "$typo-body-strong-medium";
             mb: string;
             intent: {
                 none: {
-                    color: "content-primary";
+                    color: "$color-content-primary";
                 };
                 informative: {
-                    color: "content-informative-primary";
+                    color: "$color-content-informative-primary";
                 };
                 success: {
-                    color: "content-positive-primary";
+                    color: "$color-content-positive-primary";
                 };
                 warning: {
-                    color: "content-warning-primary";
+                    color: "$color-content-warning-primary";
                 };
                 negative: {
-                    color: "content-negative-primary";
+                    color: "$color-content-negative-primary";
                 };
             };
         };

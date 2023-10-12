@@ -4,7 +4,7 @@ export type DividerConfig = {
     orientation?: Partial<Record<DividerOrientation, BaseProps>>;
 } & BaseProps;
 export declare const defaultConfig: {
-    backgroundColor: "border-default";
+    backgroundColor: "$color-border-default";
     orientation: {
         horizontal: {
             w: string;
