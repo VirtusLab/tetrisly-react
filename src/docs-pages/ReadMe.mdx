@@ -2,5 +2,4 @@ import { Meta, Markdown } from '@storybook/addon-docs';
 import readme from '@/../README.md?raw';
 
 <Meta title="Docs/ReadMe" />
-
-<Markdown>{readme}</Markdown>
+<Markdown>{readme.replaceAll('./public', '')}</Markdown>
