@@ -53,6 +53,20 @@ function App() {
 }
 ```
 
+### Default font
+
+Tetrisly uses [Inter](https://fonts.google.com/specimen/Inter) font as default. To add it to your app you should link it
+in your root `.html` file:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;600&display=swap"
+  rel="stylesheet"
+/>
+```
+
 ## Usage/Examples
 
 ```typescript
