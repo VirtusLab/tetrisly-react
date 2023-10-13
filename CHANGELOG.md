@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.0.0...v1.1.0) (2023-10-13)
+
+
+### Features
+
+* changelog and reame pages in storybook NO-JIRA ([#85](https://github.com/VirtusLab/tetrisly-react/issues/85)) ([5bd9825](https://github.com/VirtusLab/tetrisly-react/commit/5bd9825e7e99492f608a91b9f65807d6c39987f3))
+
+
+### Bug Fixes
+
+* images paths in readme NO-JIRA ([#86](https://github.com/VirtusLab/tetrisly-react/issues/86)) ([6557317](https://github.com/VirtusLab/tetrisly-react/commit/6557317f6edea19fce4bf7a53d1708aaaa5689bc))
+
 ## 1.0.0 (2023-10-12)
 
 
