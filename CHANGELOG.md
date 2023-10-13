@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.1.0...v1.2.0) (2023-10-13)
+
+
+### Features
+
+* tag component ([#91](https://github.com/VirtusLab/tetrisly-react/issues/91)) ([a9ba9ab](https://github.com/VirtusLab/tetrisly-react/commit/a9ba9abbb96f13cde9a4be6174436c798234dbba))
+
 ## [1.1.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.0.0...v1.1.0) (2023-10-13)
 
 
