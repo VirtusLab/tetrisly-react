@@ -1,4 +1,4 @@
-<img src="./public/header.svg" width="100%" alt="css-in-readme">
+<img src="https://storybook.tetrisly.com/header.svg" width="100%" alt="css-in-readme">
 
 # Tetrisly React
 
@@ -15,17 +15,25 @@ We've desided to use `xstyled` for styling our components. If you are interested
 
 ## Installation
 
-Install tetrisly-react with npm (you can do the same with yarn, pnpm or any other package manager)
+Install `tetrisly-react`` with npm (you can do the same with yarn, pnpm or any other package manager)
 
 ```bash
   npm install @virtuslab/tetrisly-react
 ```
 
+and dependencies:
+
+```bash
+  npm install styled-components @xstyled/styled-components
+```
+
 ## Setup
+
+### TetrislyProvider
 
 After installing the package, you need to wrap your application in the `TetrislyProvider` component. This will provide the theme and other context to your application.
 
-```typescript
+```jsx
 import { TetrislyProvider } from '@virtuslab/tetrisly-react';
 
 function App() {
@@ -33,34 +41,112 @@ function App() {
     <TetrislyProvider>
       <YourApp />
     </TetrislyProvider>
-  )
+  );
 }
 ```
 
 TetrislyProvider accepts optional prop `theme` which can be used to override default theme.
 
-You can check out how this object looks like here: [Tetrisly Theme](src/theme/theme.ts)
-
-```typescript
+```jsx
 import { TetrislyProvider } from '@virtuslab/tetrisly-react';
 
 function App() {
   return (
-    <TetrislyProvider theme={{ colors: { primary: 'red' } }}>
+    <TetrislyProvider
+      theme={{
+        colors: {
+          '$color-semantic-brand--4': th.color('$color-raspberry--4'),
+          '$color-semantic-brand--3': th.color('$color-raspberry--3'),
+          '$color-semantic-brand--2': th.color('$color-raspberry--2'),
+          '$color-semantic-brand--1': th.color('$color-raspberry--1'),
+          '$color-semantic-brand-0': th.color('$color-raspberry-0'),
+          '$color-semantic-brand-+1': th.color('$color-raspberry-+1'),
+          '$color-semantic-brand-+2': th.color('$color-raspberry-+2'),
+          '$color-semantic-brand-+3': th.color('$color-raspberry-+3'),
+          '$color-semantic-brand-+4': th.color('$color-raspberry-+4'),
+          '$color-semantic-brand-+5': th.color('$color-raspberry-+5'),
+          '$color-semantic-brand-+6': th.color('$color-raspberry-+6'),
+          '$color-semantic-brand-+7': th.color('$color-raspberry-+7'),
+          '$color-semantic-brand-+8': th.color('$color-raspberry-+8'),
+        },
+      }}
+    >
       <YourApp />
     </TetrislyProvider>
-  )
+  );
 }
 ```
 
-## Usage/Examples
+### Default theme
 
-```typescript
-import { Button } from '@virtuslab/tetrisly-react';
+Our default theme contains all of fundamental Tetrisly Design Tokens, you can use it with `xstyled` props to easy set up
+your design. See `tet.*` utility [example of use](#tet-utility).
 
-function App() {
-  return <Button label="Hello Tetrisly" />
-}
+Here you can see the
+[default theme](https://github.com/VirtusLab/@tetrisly/react/blob/development/src/theme/defaultTheme.ts) or a complete
+list of theme options.
+
+### Default font
+
+Tetrisly uses [Inter](https://fonts.google.com/specimen/Inter) font as default. To add it to your app you should link it
+in your root `.html` file:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;600&display=swap"
+  rel="stylesheet"
+/>
+```
+
+## `tet.*` utility
+
+`tet` function is our extension of xstyled `x.*` utility. Both has the same API, but we will add some extra features in
+near future. You can read more [here](https://xstyled.dev/docs/utility-props/).
+
+### Example of use
+
+```jsx
+import {
+  TetrislyProvider,
+  Button,
+  theme,
+  tet,
+} from '@virtuslab/tetrisly-react';
+
+const App = () => (
+  <TetrislyProvider>
+    <tet.div
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      h="100vh"
+    >
+      <tet.div>
+        <tet.h1
+          textAlign="center"
+          mb="$dimension-200"
+          text="$typo-header-4xLarge"
+          color="$color-content-primary"
+        >
+          Hello world!
+        </tet.h1>
+        <tet.div display="flex" justifyContent="center" alignItems="center">
+          <a
+            href="https://storybook.tetrisly.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button label="Go to Storybook" appearance="primary" />
+          </a>
+        </tet.div>
+      </tet.div>
+    </tet.div>
+  </TetrislyProvider>
+);
+
+export default App;
 ```
 
 ## Run Locally
@@ -99,11 +185,18 @@ To run tests, run the following command
 
 ## Documentation
 
-<img src="./public/logo_docs.svg" />
+<img src="https://storybook.tetrisly.com/logo-docs.svg" />
 
 If you want to dive deeper into the components Tetrisly offers, check out our official documentation: [Tetrisly Docs](https://docs.tetrisly.com/)
 
 You can also check out our Storybook, which is our Documentation for React components (now in progress): [Tetrisly Storybook](https://virtuslab.github.io/tetrisly-react/?path=/docs/alertbanner--docs)
+
+### Useful links
+
+- [Tetrisly Storybook](https://storybook.tetrisly.com/)
+- [Tetrisly Figma Docs](https://docs.tetrisly.com/)
+- [Tetrisly Figma Preview](https://tetrisly.com/preview)
+- [xstyled Docs](https://xstyled.dev/)
 
 ## Getting Help
 
@@ -116,3 +209,9 @@ If you want to share with us your thoughts on Tetrisly, or showcase what you hav
 ## License
 
 We are using the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/) for our library of components
+
+## VirtusLab
+
+<img src="https://storybook.tetrisly.com/logo-virtuslab.svg" />
+
+Meet [VirtusLab](https://virtuslab.com/), the visionary team behind Tetrisly for React and the Tetrisly design system. Trusted by clients, they excel in product design, design systems and front-end engineering, creating mission-critical solutions across the product lifecycle.
