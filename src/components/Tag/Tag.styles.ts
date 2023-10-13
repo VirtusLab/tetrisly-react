@@ -12,31 +12,32 @@ export type TagConfig = {
 } & BaseProps;
 
 const backgroundColor = {
-  hover: 'interaction-neutral-subtle-hover',
-  active: 'interaction-neutral-subtle-active',
-  focus: 'interaction-neutral-subtle-normal',
+  hover: '$color-interaction-neutral-subtle-hover',
+  active: '$color-interaction-neutral-subtle-active',
+  focus: '$color-interaction-neutral-subtle-normal',
 };
+
 export const defaultConfig = {
   display: 'inline-flex',
-  h: 'xSmall',
+  h: '$size-xSmall',
   alignItems: 'center',
-  borderRadius: 'medium',
-  backgroundColor: 'interaction-neutral-subtle-normal',
+  borderRadius: '$border-radius-medium',
+  backgroundColor: '$color-interaction-neutral-subtle-normal',
   opacity: {
-    disabled: 50,
+    disabled: '$opacity-disabled',
   },
   cursor: 'default',
   outlineColor: {
-    focus: 'interaction-focus-default',
+    focus: '$color-interaction-focus-default',
   },
   transitionDuration: 50,
-  color: 'content-primary',
+  color: '$color-content-primary',
   hasOnClick: {
     backgroundColor: {
-      _: 'interaction-neutral-subtle-normal',
-      disabled: 'interaction-neutral-subtle-normal',
+      _: '$color-interaction-neutral-subtle-normal',
+      disabled: '$color-interaction-neutral-subtle-normal',
       selected: {
-        _: 'interaction-neutral-subtle-selected',
+        _: '$color-interaction-neutral-subtle-selected',
         ...backgroundColor,
       },
       ...backgroundColor,
@@ -48,19 +49,20 @@ export const defaultConfig = {
   },
   innerElements: {
     label: {
-      mx: 'component-padding-small',
+      mx: '$space-component-padding-small',
+      text: '$typo-body-medium',
     },
     closeButton: {
-      mr: 'component-padding-xSmall',
-      h: '2xSmall',
-      w: '2xSmall',
+      mr: '$space-component-padding-xSmall',
+      h: '$size-2xSmall',
+      w: '$size-2xSmall',
       opacity: {
-        disabled: 100,
+        disabled: '$opacity-100',
       },
     },
     beforeComponent: {
       avatar: {
-        ml: 'component-padding-2xSmall',
+        ml: '$space-component-padding-2xSmall',
       },
     },
   },

@@ -77,7 +77,7 @@ describe('Tag', () => {
 
   it('should render the correct color (disabled)', () => {
     const { tag } = getTag(<Tag label="label" state="disabled" />);
-    expect(tag).toHaveStyle('background-color: hsla(204,20%,95%,1);');
+    expect(tag).toHaveStyle('background-color: rgb(240, 243, 245);');
   });
 
   it('should render the right cursor (with onClick)', () => {

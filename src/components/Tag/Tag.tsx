@@ -81,8 +81,8 @@ export const Tag: FC<TagProps & MarginProps> = ({
         {...styles.label}
         mr={
           hasCloseButton
-            ? 'component-padding-xSmall'
-            : 'component-padding-small'
+            ? '$space-component-padding-xSmall'
+            : '$space-component-padding-small'
         }
         data-testid="tag-label"
       >

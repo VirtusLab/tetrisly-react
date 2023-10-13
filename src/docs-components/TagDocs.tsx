@@ -35,18 +35,24 @@ const RenderTag = ({
     />
   </tet.div>
 );
+
 export const TagDocs: FC = () => (
   <tet.div>
     {headers.map((header) => (
-      <tet.section key={header} py="500">
-        <SectionHeader variant="H1" as="h2" py="500">
+      <tet.section key={header} py="$dimension-500">
+        <SectionHeader variant="H1" as="h2" py="$dimension-500">
           {header}
         </SectionHeader>
         {labels.map((label) => (
-          <tet.div px="1000" pb="500" key={label}>
-            <SectionHeader variant="H2" as="h3" py="500" labels={[label]} />
+          <tet.div px="$dimension-1000" pb="$dimension-500" key={label}>
+            <SectionHeader
+              variant="H2"
+              as="h3"
+              py="$dimension-500"
+              labels={[label]}
+            />
             <States states={states} flexBasis="120px" gap="40" />
-            <tet.div display="flex" mt="40" gap="500">
+            <tet.div display="flex" mt="40" gap="$dimension-500">
               {states.map((state) => (
                 <RenderTag
                   key={state}
