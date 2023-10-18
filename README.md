@@ -2,7 +2,7 @@
 
 # Tetrisly React
 
-🧩 Tetrisly offers user-friendly components designed for effortless integration. Plus, it's fully compatible with fully compatible with Tetrisly for Figma with a seamless design and development experience in mind.
+🧩 Tetrisly offers user-friendly components designed for effortless integration. Plus, it's fully compatible with Tetrisly for Figma with a seamless design and development experience in mind.
 
 If you want to know more about Tetrisly, check out our website: [tetrisly.com](https://tetrisly.com/)
 
@@ -11,7 +11,7 @@ If you want to know more about Tetrisly, check out our website: [tetrisly.com](h
 - [React 18](https://react.dev/)
 - [xstyled](https://xstyled.dev/)
 
-We've desided to use `xstyled` for styling our components. If you are interested in our reasoning, check out our article on this topic: [Style Wars: Tailwind vs. CSS-in-JS in Design Systems Implementation](https://medium.com/tetrisly/style-wars-tailwind-vs-css-in-js-in-design-systems-implementation-de6015ee2695)
+We've decided to use `xstyled` for styling our components. If you are interested in our reasoning, check out our article on this topic: [Style Wars: Tailwind vs. CSS-in-JS in Design Systems Implementation](https://medium.com/tetrisly/style-wars-tailwind-vs-css-in-js-in-design-systems-implementation-de6015ee2695)
 
 ## Installation
 
