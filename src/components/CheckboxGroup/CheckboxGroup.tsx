@@ -1,25 +1,22 @@
 import {
   Children,
-  FC,
+  ForwardRefExoticComponent,
   isValidElement,
   PropsWithChildren,
   useMemo,
 } from 'react';
 
-import type {
-  CheckboxGroupProps,
-  CheckboxGroupItemProps,
-} from './CheckboxGroup.props';
+import type { CheckboxGroupProps } from './CheckboxGroup.props';
 import { stylesBuilder } from './stylesBuilder';
-import { Checkbox } from '../Checkbox';
+import { Checkbox, CheckboxProps } from '../Checkbox';
 import { HelperText } from '../HelperText';
 import { Label } from '../Label';
 
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
-type Props = FC<PropsWithChildren<CheckboxGroupProps & MarginProps>> & {
-  Item: FC<CheckboxGroupItemProps>;
+type Props = React.FC<PropsWithChildren<CheckboxGroupProps & MarginProps>> & {
+  Item: ForwardRefExoticComponent<CheckboxProps & MarginProps>;
 };
 
 export const CheckboxGroup: Props = ({
@@ -81,4 +78,4 @@ export const CheckboxGroup: Props = ({
   );
 };
 
-CheckboxGroup.Item = Checkbox as FC<CheckboxGroupItemProps>;
+CheckboxGroup.Item = Checkbox;

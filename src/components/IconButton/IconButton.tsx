@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { IconButtonProps } from './IconButton.props';
 import { defaultConfig } from './IconButton.styles';
 import { Button, ButtonProps } from '../Button';
@@ -23,7 +21,7 @@ const mapperIconButtonPropsToButtonProps = ({
   } as ButtonProps;
 };
 
-export const IconButton: FC<IconButtonProps & MarginProps> = (props) => {
+export const IconButton: React.FC<IconButtonProps & MarginProps> = (props) => {
   const buttonProps = mapperIconButtonPropsToButtonProps(props);
   const custom = mergeConfigWithCustom({
     defaultConfig,

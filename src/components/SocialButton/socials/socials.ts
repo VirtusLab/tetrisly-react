@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { Apple } from './Apple';
 import { Facebook } from './Facebook';
 import { Figma } from './Figma';
@@ -37,7 +35,7 @@ export const socials = {
 } as const satisfies Record<
   SocialButtonProps['platform'],
   {
-    Icon: FC<SocialProps>;
+    Icon: React.FC<SocialProps>;
     color: string;
   }
 >;

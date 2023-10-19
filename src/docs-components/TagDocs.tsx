@@ -1,6 +1,4 @@
-import { FC } from 'react';
-
-import { Tag, TagProps } from '@/components/Tag';
+import { Tag, type TagProps } from '@/components/Tag';
 import { SectionHeader } from '@/docs-components/common/SectionHeader.tsx';
 import { States } from '@/docs-components/common/States.tsx';
 import { tet } from '@/tetrisly';
@@ -36,7 +34,7 @@ const RenderTag = ({
   </tet.div>
 );
 
-export const TagDocs: FC = () => (
+export const TagDocs: React.FC = () => (
   <tet.div>
     {headers.map((header) => (
       <tet.section key={header} py="$dimension-500">

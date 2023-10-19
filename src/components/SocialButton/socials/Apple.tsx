@@ -1,11 +1,9 @@
-import { FC } from 'react';
-
-import { SocialProps } from './SocialProps';
+import type { SocialProps } from './SocialProps';
 import { WithLoader } from './WithLoader';
 
 import { tet } from '@/tetrisly';
 
-export const Apple: FC<SocialProps> = ({ fill, loading }) => (
+export const Apple: React.FC<SocialProps> = ({ fill, loading }) => (
   <WithLoader loading={loading}>
     <tet.svg
       data-testid="apple-icon"

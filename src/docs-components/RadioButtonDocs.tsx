@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { SectionHeader } from './common/SectionHeader';
 import { States } from './common/States';
 
@@ -13,7 +11,7 @@ const getLabels = (label: boolean, helperText: boolean) => [
   `Helper Text: ${getYesNo(helperText)}`,
 ];
 
-export const RadioButtonDocs: FC = () => (
+export const RadioButtonDocs: React.FC = () => (
   <tet.div>
     {['Unchecked', 'Checked'].map((state) => (
       <tet.section key={state} py="$dimension-500">

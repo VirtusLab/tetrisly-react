@@ -1,11 +1,9 @@
-import { FC } from 'react';
-
 import { SocialProps } from './SocialProps';
 import { WithLoader } from './WithLoader';
 
 import { tet } from '@/tetrisly';
 
-export const Google: FC<SocialProps> = ({ loading }) => (
+export const Google: React.FC<SocialProps> = ({ loading }) => (
   <tet.div
     data-testid="google-icon"
     ml="-10px"

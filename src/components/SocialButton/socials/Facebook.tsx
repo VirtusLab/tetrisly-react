@@ -1,9 +1,7 @@
-import { FC } from 'react';
-
-import { SocialProps } from './SocialProps';
+import type { SocialProps } from './SocialProps';
 import { WithLoader } from './WithLoader';
 
-export const Facebook: FC<SocialProps> = ({ fill, loading }) => (
+export const Facebook: React.FC<SocialProps> = ({ fill, loading }) => (
   <WithLoader loading={loading}>
     <svg
       data-testid="facebook-icon"

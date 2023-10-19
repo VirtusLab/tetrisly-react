@@ -1,5 +1,5 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { FC, useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { AlertBannerProps } from './AlertBanner.props';
 import { resolveIconName } from './AlertBanner.styles';
@@ -11,7 +11,7 @@ import { useAction } from '@/hooks';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types';
 
-export const AlertBanner: FC<AlertBannerProps & MarginProps> = ({
+export const AlertBanner: React.FC<AlertBannerProps & MarginProps> = ({
   text,
   intent = 'none',
   custom,

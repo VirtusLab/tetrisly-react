@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { SearchInputProps } from './SearchInput.props';
 import { TextInput, TextInputProps } from '../TextInput';
 
@@ -12,7 +10,7 @@ const SEARCH_ICON_COMPONENT: TextInputProps['beforeComponent'] = {
   },
 };
 
-export const SearchInput: FC<SearchInputProps & MarginProps> = ({
+export const SearchInput: React.FC<SearchInputProps & MarginProps> = ({
   placeholder = 'Search...',
   hasClearButton = true,
   ...restProps

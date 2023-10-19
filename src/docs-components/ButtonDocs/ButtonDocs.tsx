@@ -1,10 +1,9 @@
 import { startCase } from 'lodash';
-import { FC } from 'react';
 
 import { ButtonRow } from './ButtonRow';
 import { SectionHeader } from '../common/SectionHeader';
 
-import { ButtonProps } from '@/components/Button';
+import type { ButtonProps } from '@/components/Button';
 import { tet } from '@/tetrisly';
 
 const variants = ['default', 'ghost', 'bare'] as const;
@@ -28,7 +27,7 @@ const getButtonIntents = (
   return ['none'] as const;
 };
 
-export const ButtonDocs: FC = () => (
+export const ButtonDocs: React.FC = () => (
   <>
     {variants.map((variant) => (
       <tet.section

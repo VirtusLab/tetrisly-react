@@ -1,9 +1,7 @@
-import { FC } from 'react';
-
 import { SocialProps } from './SocialProps';
 import { WithLoader } from './WithLoader';
 
-export const Figma: FC<SocialProps> = ({ fill, loading }) => (
+export const Figma: React.FC<SocialProps> = ({ fill, loading }) => (
   <WithLoader loading={loading}>
     <svg
       data-testid="figma-icon"

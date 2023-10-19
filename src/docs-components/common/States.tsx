@@ -1,13 +1,12 @@
-import {
+import type {
   FlexBasisProps,
   GapProps,
   WidthProps,
 } from '@xstyled/styled-components';
-import { FC } from 'react';
 
 import { tet } from '@/tetrisly';
 
-export const States: FC<{
+export const States: React.FC<{
   states: string[] | readonly string[];
   gap?: GapProps['gap'];
   itemWidth?: WidthProps['w'];

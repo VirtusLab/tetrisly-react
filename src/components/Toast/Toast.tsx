@@ -1,5 +1,5 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { FC, useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { stylesBuilder } from './stylesBuilder';
 import type { ToastProps } from './Toast.props';
@@ -11,7 +11,7 @@ import { useAction } from '@/hooks';
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types';
 
-export const Toast: FC<ToastProps & MarginProps> = ({
+export const Toast: React.FC<ToastProps & MarginProps> = ({
   text,
   emphasis = 'low',
   intent = 'neutral',

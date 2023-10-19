@@ -1,8 +1,8 @@
-import { FC, PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import { Loader } from '@/components/Loader';
 
-export const WithLoader: FC<PropsWithChildren<{ loading: boolean }>> = ({
+export const WithLoader: React.FC<PropsWithChildren<{ loading: boolean }>> = ({
   loading,
   children,
 }) =>

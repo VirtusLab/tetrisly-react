@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { Logo } from './Logo';
 import { TetrislyMark } from './TetrislyMark';
 
@@ -11,7 +9,7 @@ type HeroProps = {
   docs: string | null;
 };
 
-export const Hero: FC<HeroProps> = ({ component, description, docs }) => (
+export const Hero: React.FC<HeroProps> = ({ component, description, docs }) => (
   <tet.section
     p={{
       xs: '$space-component-padding-xLarge',

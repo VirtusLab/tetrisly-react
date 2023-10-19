@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { SelectProps } from './Select.props';
 import { TextInput, TextInputProps } from '../TextInput';
 
@@ -12,6 +10,6 @@ const DROPDOWN_INDICATOR_COMPONENT: TextInputProps['afterComponent'] = {
   },
 };
 
-export const Select: FC<SelectProps & MarginProps> = (props) => (
+export const Select: React.FC<SelectProps & MarginProps> = (props) => (
   <TextInput afterComponent={DROPDOWN_INDICATOR_COMPONENT} {...props} />
 );
