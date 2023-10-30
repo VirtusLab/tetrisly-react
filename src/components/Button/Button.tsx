@@ -67,7 +67,7 @@ export const Button: React.FC<ButtonProps & MarginProps> = ({
       )}
       {beforeIcon && state !== 'loading' && <Icon name={beforeIcon} />}
       {children}
-      {dropdown && <Icon name="20-chevron-down" />}
+      {dropdown && <Icon name="20-chevron-down-small" />}
       {afterIcon && !dropdown && <Icon name={afterIcon} />}
     </tet.button>
   );
