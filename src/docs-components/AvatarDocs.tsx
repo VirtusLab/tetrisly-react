@@ -4,7 +4,6 @@ import { Cols } from './common/Cols';
 import { SectionHeader } from './common/SectionHeader';
 import { Avatar } from '../components/Avatar/Avatar';
 import { AvatarProps } from '../components/Avatar/Avatar.props';
-import { appearances } from '../types/Appearance';
 
 import { avatarAppearanceColors } from '@/components/Avatar/types/AvatarAppearance.type';
 import { tet } from '@/tetrisly';
