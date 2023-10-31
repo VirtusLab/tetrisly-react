@@ -53,9 +53,9 @@ describe('AlertBanner', () => {
     expect(alertBanner).toHaveStyle('background-color: rgb(85, 95, 109);');
   });
 
-  it('should render correct intent color (positive)', () => {
+  it('should render correct intent color (success)', () => {
     const alertBanner = getAlertBanner(
-      <AlertBanner text="Alert" intent="positive" />,
+      <AlertBanner text="Alert" intent="success" />,
     );
     expect(alertBanner).toHaveStyle('color: rgb(255,255,255);');
     expect(alertBanner).toHaveStyle('background-color:  rgb(29, 124, 77);');
