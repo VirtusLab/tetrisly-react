@@ -114,7 +114,7 @@ export const Checkbox = forwardRef<
           <HelperText
             custom={styles.helperText}
             intent={state === 'alert' ? 'alert' : 'none'}
-            beforeIcon={state === 'alert'}
+            hasBeforeIcon={state === 'alert'}
             text={helperText}
             data-testid="checkbox-helperText"
           />

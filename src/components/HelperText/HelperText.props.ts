@@ -7,7 +7,7 @@ export type HelperTextProps = {
     current: number;
     max: number;
   };
-  beforeIcon?: boolean;
+  hasBeforeIcon?: boolean;
   text: string;
   custom?: HelperTextConfig;
 };

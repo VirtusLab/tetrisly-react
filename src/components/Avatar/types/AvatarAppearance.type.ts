@@ -13,7 +13,7 @@ export const avatarAppearanceColors = [
   'teal',
   'aquamarine',
   'emerald',
-];
+] as const;
 
 export type AvatarAppearanceColors = (typeof avatarAppearanceColors)[number];
 

@@ -75,7 +75,7 @@ export const RadioButton = forwardRef<
           <HelperText
             custom={styles.helperText}
             intent={isAlert ? 'alert' : 'none'}
-            beforeIcon={isAlert}
+            hasBeforeIcon={isAlert}
             text={helperText}
             data-testid="radio-button-helperText"
           />

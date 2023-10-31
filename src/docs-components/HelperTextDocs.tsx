@@ -13,7 +13,7 @@ export const HelperTextDocs = () => (
           Intent: {intent}
         </SectionHeader>
         <tet.div py="$space-component-padding-4xLarge">
-          <HelperText intent={intent} text="Helper text" beforeIcon />
+          <HelperText intent={intent} text="Helper text" hasBeforeIcon />
         </tet.div>
       </tet.section>
     ))}
