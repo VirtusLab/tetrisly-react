@@ -17,13 +17,7 @@ type StatesProps = {
 export const State: FC<
   Pick<StatesProps, 'itemWidth' | 'flexBasis'> & { state: string }
 > = ({ state, itemWidth, flexBasis }) => (
-  <tet.div
-    key={state}
-    w={itemWidth}
-    flexShrink="0"
-    flexBasis={flexBasis}
-    flexGrow="1"
-  >
+  <tet.div w={itemWidth} flexShrink="0" flexBasis={flexBasis} flexGrow="1">
     <tet.span text="$typo-body-medium">
       <tet.mark
         borderRadius="$border-radius-small"
@@ -45,7 +39,12 @@ export const States: React.FC<StatesProps> = ({
 }) => (
   <tet.div display="flex" gap={gap} py="$dimension-300">
     {states.map((state) => (
-      <State state={state} itemWidth={itemWidth} flexBasis={flexBasis} />
+      <State
+        key={state}
+        state={state}
+        itemWidth={itemWidth}
+        flexBasis={flexBasis}
+      />
     ))}
   </tet.div>
 );

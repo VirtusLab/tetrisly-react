@@ -34,6 +34,7 @@ export const Checkbox = forwardRef<
       label,
       helperText,
       custom,
+      onChange,
       ...restProps
     },
     checkboxForwardRef,
@@ -64,6 +65,15 @@ export const Checkbox = forwardRef<
       }
     }, [checkboxInternalRef, label]);
 
+    if (
+      (onChange === undefined && isChecked !== undefined) ||
+      (onChange !== undefined && isChecked === undefined)
+    ) {
+      console.warn(
+        'Checkbox: onChange and isChecked have to be either both provided or both not provided',
+      );
+    }
+
     const input = (
       <CheckboxContainer
         {...styles.checkboxContainer}
@@ -73,7 +83,8 @@ export const Checkbox = forwardRef<
           {...styles.input}
           type="checkbox"
           ref={checkboxRef}
-          checked={isChecked}
+          checked={isChecked && !isIndeterminate}
+          onChange={onChange}
           disabled={state === 'disabled'}
           data-state={state}
           id={checkboxId}
@@ -114,8 +125,7 @@ export const Checkbox = forwardRef<
           <HelperText
             custom={styles.helperText}
             intent={state === 'alert' ? 'alert' : 'none'}
-            hasBeforeIcon={state === 'alert'}
-            text={helperText}
+            {...helperText}
             data-testid="checkbox-helperText"
           />
         )}

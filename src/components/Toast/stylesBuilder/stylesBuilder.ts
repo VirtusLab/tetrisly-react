@@ -57,6 +57,6 @@ export const stylesBuilder = ({
     actionContainer,
     iconContainer,
     closeButton,
-    middleDot,
+    middleDot: middleDot.emphasis[props.emphasis],
   };
 };

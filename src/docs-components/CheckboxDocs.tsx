@@ -41,7 +41,10 @@ export const CheckboxDocs: React.FC = () => (
               labels={getLabels(label, helperText)}
             />
             <States
-              states={['normal', 'disabled', 'alert']}
+              states={['normal', 'disabled', 'alert'].filter(
+                (currentState) =>
+                  !(currentState === 'alert' && state === 'Checked'),
+              )}
               flexBasis="130px"
               gap="$dimension-500"
             />
@@ -55,37 +58,46 @@ export const CheckboxDocs: React.FC = () => (
                 <Checkbox
                   isChecked={state === 'Checked'}
                   isIndeterminate={state === 'Indeterminate'}
+                  onChange={() => {}}
                   mt="$dimension-500"
                   label={
                     label ? 'Checkbox Label' : (undefined as unknown as string)
                   }
-                  helperText={helperText ? 'Helper Text' : undefined}
+                  helperText={helperText ? { text: 'Helper Text' } : undefined}
                 />
               </tet.div>
               <tet.div flexBasis="130px" flexGrow="1" flexShrink="0">
                 <Checkbox
                   isChecked={state === 'Checked'}
                   isIndeterminate={state === 'Indeterminate'}
+                  onChange={() => {}}
                   state="disabled"
                   mt="$dimension-500"
                   label={
                     label ? 'Checkbox Label' : (undefined as unknown as string)
                   }
-                  helperText={helperText ? 'Helper Text' : undefined}
+                  helperText={helperText ? { text: 'Helper Text' } : undefined}
                 />
               </tet.div>
-              <tet.div flexBasis="130px" flexGrow="1" flexShrink="0">
-                <Checkbox
-                  isChecked={state === 'Checked'}
-                  isIndeterminate={state === 'Indeterminate'}
-                  state="alert"
-                  mt="$dimension-500"
-                  label={
-                    label ? 'Checkbox Label' : (undefined as unknown as string)
-                  }
-                  helperText={helperText ? 'Helper Text' : undefined}
-                />
-              </tet.div>
+              {state !== 'Checked' && (
+                <tet.div flexBasis="130px" flexGrow="1" flexShrink="0">
+                  <Checkbox
+                    isChecked={false}
+                    isIndeterminate={state === 'Indeterminate'}
+                    onChange={() => {}}
+                    state="alert"
+                    mt="$dimension-500"
+                    label={
+                      label
+                        ? 'Checkbox Label'
+                        : (undefined as unknown as string)
+                    }
+                    helperText={
+                      helperText ? { text: 'Helper Text' } : undefined
+                    }
+                  />
+                </tet.div>
+              )}
             </tet.div>
           </tet.div>
         ))}
