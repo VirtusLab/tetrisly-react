@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Badge } from './Badge';
+import type { BadgeEmphasis } from './BadgeEmphasis.type';
 
 import { BadgeDocs } from '@/docs-components/BadgeDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
@@ -9,6 +10,14 @@ const meta = {
   title: 'Badge',
   component: Badge,
   tags: ['autodocs'],
+  argTypes: {
+    emphasis: {
+      control: {
+        type: 'select',
+        options: ['high', 'medium', 'low'] satisfies BadgeEmphasis[],
+      },
+    },
+  },
   parameters: {
     docs: {
       description: {

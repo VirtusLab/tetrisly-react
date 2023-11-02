@@ -30,7 +30,12 @@ export const InlineBanner: React.FC<InlineBannerProps & MarginProps> = ({
   const iconName = useMemo(() => resolveIconName(intent), [intent]);
 
   return (
-    <tet.div {...styles.container} data-testid="inline-banner" {...restProps}>
+    <tet.div
+      {...styles.container}
+      style={{ wordBreak: 'break-word' }}
+      data-testid="inline-banner"
+      {...restProps}
+    >
       <tet.span
         {...styles.iconContainer}
         data-testid="inline-banner-iconContainer"
