@@ -30,7 +30,7 @@ export type ToastConfig = {
 export const defaultConfig = {
   display: 'inline-flex',
   alignItems: 'center',
-  p: '$space-component-padding-medium $space-component-padding-large',
+  h: '48px',
   padding: '$space-component-padding-medium $space-component-padding-large',
   borderRadius: '$border-radius-large',
   emphasis: {
