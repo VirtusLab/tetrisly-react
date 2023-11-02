@@ -33,6 +33,7 @@ export const defaultConfig = {
   h: '48px',
   padding: '$space-component-padding-medium $space-component-padding-large',
   borderRadius: '$border-radius-large',
+  text: '$typo-body-medium',
   emphasis: {
     high: {},
     low: {
@@ -135,7 +136,6 @@ export const defaultConfig = {
           color: '$color-content-tertiary',
         },
       },
-      text: '$typo-body-medium',
     },
     closeButton: {
       ml: '$space-component-padding-large',
