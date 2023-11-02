@@ -271,7 +271,7 @@ export const defaultConfig = {
         },
         medium: {
           border: '1px solid',
-          borderColor: '$color-nonSemantic-grey-border-strong',
+          borderColor: '$color-nonSemantic-grey-border-subtle',
           color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-white-background-strong',
         },
