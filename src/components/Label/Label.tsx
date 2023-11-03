@@ -1,14 +1,14 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
 import type { LabelProps } from './Label.props';
 import { stylesBuilder } from './stylesBuilder';
 import { Button } from '../Button';
 
 import { tet } from '@/tetrisly';
-import { MarginProps } from '@/types/MarginProps';
+import type { MarginProps } from '@/types/MarginProps';
 
-export const Label: React.FC<LabelProps & MarginProps> = ({
+export const Label: FC<LabelProps & MarginProps> = ({
   label,
   tooltip,
   action,

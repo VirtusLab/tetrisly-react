@@ -1,7 +1,9 @@
+import type { FC } from 'react';
+
 import { SectionHeader } from './common/SectionHeader';
 import { States } from './common/States';
 
-import { RadioButton, RadioButtonProps } from '@/components/RadioButton';
+import { RadioButton, type RadioButtonProps } from '@/components/RadioButton';
 import { tet } from '@/tetrisly';
 
 const getYesNo = (yes: boolean) => (yes ? 'Yes' : 'No');
@@ -11,7 +13,7 @@ const getLabels = (label: boolean, helperText: boolean) => [
   `Helper Text: ${getYesNo(helperText)}`,
 ];
 
-export const RadioButtonDocs: React.FC = () => (
+export const RadioButtonDocs: FC = () => (
   <tet.div>
     {['Unchecked', 'Checked'].map((state) => (
       <tet.section key={state} py="$dimension-500">

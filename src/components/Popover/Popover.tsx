@@ -1,5 +1,5 @@
 import { useSpace } from '@xstyled/styled-components';
-import { type PropsWithChildren, useMemo } from 'react';
+import { type PropsWithChildren, useMemo, type FC } from 'react';
 
 import { AnchorWrapper, PopoverContent } from './AnchorWrapper.styled';
 import type { PopoverProps } from './Popover.props';
@@ -7,9 +7,7 @@ import { stylesBuilder } from './stylesBuilder';
 
 import type { MarginProps } from '@/types';
 
-export const Popover: React.FC<
-  PropsWithChildren<PopoverProps & MarginProps>
-> = ({
+export const Popover: FC<PropsWithChildren<PopoverProps & MarginProps>> = ({
   align = 'center',
   origin = 'top',
   offset = '$space-component-gap-large',

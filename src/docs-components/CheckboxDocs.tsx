@@ -1,3 +1,5 @@
+import type { FC } from 'react';
+
 import { SectionHeader } from './common/SectionHeader';
 import { States } from './common/States';
 
@@ -11,7 +13,7 @@ const getLabels = (label: boolean, helperText: boolean) => [
   `Helper Text: ${getYesNo(helperText)}`,
 ];
 
-export const CheckboxDocs: React.FC = () => (
+export const CheckboxDocs: FC = () => (
   <tet.div>
     {['Unchecked', 'Checked', 'Indeterminate'].map((state) => (
       <tet.section key={state} py="$dimension-500">

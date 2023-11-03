@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { FC, useMemo } from 'react';
 
 import { SocialButtonProps } from './SocialButton.props';
 import { socials } from './socials';
@@ -7,7 +7,7 @@ import { stylesBuilder } from './stylesBuilder';
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types';
 
-export const SocialButton: React.FC<SocialButtonProps & MarginProps> = ({
+export const SocialButton: FC<SocialButtonProps & MarginProps> = ({
   platform,
   appearance = 'primary',
   custom,

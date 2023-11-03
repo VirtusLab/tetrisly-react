@@ -1,5 +1,5 @@
 import { Primary, Controls, Stories, useOf, Unstyled } from '@storybook/blocks';
-import type { PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { z } from 'zod';
 
 import { Hero } from './common/Hero';
@@ -19,7 +19,7 @@ const validateDocs = (docs: unknown) => {
   return null;
 };
 
-export const TetDocs: React.FC<PropsWithChildren<{ docs: string | null }>> = ({
+export const TetDocs: FC<PropsWithChildren<{ docs: string | null }>> = ({
   children,
   docs,
 }) => {

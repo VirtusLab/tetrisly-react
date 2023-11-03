@@ -1,7 +1,7 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
-import { ButtonProps } from './Button.props';
+import type { ButtonProps } from './Button.props';
 import { stylesBuilder } from './stylesBuilder';
 import { tet } from '../../tetrisly';
 import { Loader } from '../Loader';
@@ -9,7 +9,7 @@ import { Loader } from '../Loader';
 import { warnInDevelopment } from '@/services';
 import type { MarginProps } from '@/types';
 
-export const Button: React.FC<ButtonProps & MarginProps> = ({
+export const Button: FC<ButtonProps & MarginProps> = ({
   variant = 'default',
   appearance = 'secondary',
   intent = 'none',

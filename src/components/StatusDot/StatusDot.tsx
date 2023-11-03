@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
 import type { StatusDotProps } from './StatusDot.props';
 import { stylesBuilder } from './stylesBuilder';
@@ -6,7 +6,7 @@ import { stylesBuilder } from './stylesBuilder';
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types';
 
-export const StatusDot: React.FC<StatusDotProps & MarginProps> = ({
+export const StatusDot: FC<StatusDotProps & MarginProps> = ({
   appearance = 'red',
   hasStroke = false,
   custom,

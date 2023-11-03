@@ -1,7 +1,9 @@
-import { SocialProps } from './SocialProps';
+import type { FC } from 'react';
+
+import type { SocialProps } from './SocialProps';
 import { WithLoader } from './WithLoader';
 
-export const Twitter: React.FC<SocialProps> = ({ fill, loading }) => (
+export const Twitter: FC<SocialProps> = ({ fill, loading }) => (
   <WithLoader loading={loading}>
     <svg
       data-testid="x-icon"

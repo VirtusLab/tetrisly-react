@@ -4,6 +4,7 @@ import {
   useCallback,
   useMemo,
   useRef,
+  FC,
 } from 'react';
 
 import { stylesBuilder } from './stylesBuilder';
@@ -19,7 +20,7 @@ const KEYBOARD_KEYS = {
   Space: ' ',
 };
 
-export const Tag: React.FC<TagProps & MarginProps> = ({
+export const Tag: FC<TagProps & MarginProps> = ({
   label,
   state,
   beforeComponent,

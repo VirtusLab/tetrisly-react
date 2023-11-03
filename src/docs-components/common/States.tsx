@@ -3,7 +3,7 @@ import type {
   GapProps,
   WidthProps,
 } from '@xstyled/styled-components';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { tet } from '@/tetrisly';
 
@@ -31,7 +31,7 @@ export const State: FC<
   </tet.div>
 );
 
-export const States: React.FC<StatesProps> = ({
+export const States: FC<StatesProps> = ({
   states,
   gap,
   itemWidth,

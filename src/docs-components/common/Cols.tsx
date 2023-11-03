@@ -1,8 +1,9 @@
-import { GapProps } from '@xstyled/styled-components';
+import type { GapProps } from '@xstyled/styled-components';
+import type { FC } from 'react';
 
 import { tet } from '@/tetrisly';
-import { MarginProps } from '@/types/MarginProps';
-import { PaddingProps } from '@/types/PaddingProps';
+import type { MarginProps } from '@/types/MarginProps';
+import type { PaddingProps } from '@/types/PaddingProps';
 
 type ColsProps = {
   columns?: number;
@@ -11,7 +12,7 @@ type ColsProps = {
 } & PaddingProps &
   MarginProps;
 
-export const Cols: React.FC<ColsProps> = ({
+export const Cols: FC<ColsProps> = ({
   columns = 2,
   children,
   gap,

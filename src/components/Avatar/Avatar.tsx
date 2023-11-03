@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
 import type { AvatarProps } from './Avatar.props';
 import { stylesBuilder } from './stylesBuilder';
@@ -6,7 +6,7 @@ import { stylesBuilder } from './stylesBuilder';
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types/MarginProps';
 
-export const Avatar: React.FC<AvatarProps & MarginProps> = ({
+export const Avatar: FC<AvatarProps & MarginProps> = ({
   appearance = 'blue',
   emphasis = 'low',
   shape = 'rounded',

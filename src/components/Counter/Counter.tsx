@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
 import type { CounterProps } from './Counter.props';
 import { stylesBuilder } from './stylesBuilder';
@@ -6,7 +6,7 @@ import { stylesBuilder } from './stylesBuilder';
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types';
 
-export const Counter: React.FC<CounterProps & MarginProps> = ({
+export const Counter: FC<CounterProps & MarginProps> = ({
   number,
   appearance = 'default',
   emphasis = 'low',

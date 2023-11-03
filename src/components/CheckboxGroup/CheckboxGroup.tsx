@@ -1,5 +1,6 @@
 import {
   Children,
+  FC,
   ForwardRefExoticComponent,
   isValidElement,
   PropsWithChildren,
@@ -8,14 +9,14 @@ import {
 
 import type { CheckboxGroupProps } from './CheckboxGroup.props';
 import { stylesBuilder } from './stylesBuilder';
-import { Checkbox, CheckboxProps } from '../Checkbox';
+import { Checkbox, type CheckboxProps } from '../Checkbox';
 import { HelperText } from '../HelperText';
 import { Label } from '../Label';
 
 import { tet } from '@/tetrisly';
-import { MarginProps } from '@/types';
+import type { MarginProps } from '@/types';
 
-type Props = React.FC<PropsWithChildren<CheckboxGroupProps & MarginProps>> & {
+type Props = FC<PropsWithChildren<CheckboxGroupProps & MarginProps>> & {
   Item: ForwardRefExoticComponent<CheckboxProps & MarginProps>;
 };
 

@@ -1,4 +1,5 @@
 import { startCase } from 'lodash';
+import type { FC } from 'react';
 
 import { ButtonRow } from './ButtonRow';
 import { SectionHeader } from '../common/SectionHeader';
@@ -27,7 +28,7 @@ const getButtonIntents = (
   return ['none'] as const;
 };
 
-export const ButtonDocs: React.FC = () => (
+export const ButtonDocs: FC = () => (
   <>
     {variants.map((variant) => (
       <tet.section

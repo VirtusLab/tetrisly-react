@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
 import type { DividerProps } from './Divider.props';
 import { stylesBuilder } from './stylesBuilder';
@@ -6,7 +6,7 @@ import { stylesBuilder } from './stylesBuilder';
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types';
 
-export const Divider: React.FC<DividerProps & MarginProps> = ({
+export const Divider: FC<DividerProps & MarginProps> = ({
   orientation = 'horizontal',
   width,
   height,

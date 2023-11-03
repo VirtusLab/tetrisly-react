@@ -1,4 +1,5 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
+import type { FC } from 'react';
 
 import type { SelectProps } from './Select.props';
 import { Avatar } from '../Avatar';
@@ -16,7 +17,7 @@ const DROPDOWN_INDICATOR_COMPONENT = {
   },
 } satisfies TextInputProps['afterComponent'];
 
-export const Select: React.FC<SelectProps & MarginProps> = ({
+export const Select: FC<SelectProps & MarginProps> = ({
   state,
   beforeComponent,
   hasClearButton,
