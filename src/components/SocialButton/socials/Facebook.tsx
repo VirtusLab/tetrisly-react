@@ -4,6 +4,7 @@ import { WithLoader } from './WithLoader';
 export const Facebook: React.FC<SocialProps> = ({ fill, loading }) => (
   <WithLoader loading={loading}>
     <svg
+      data-testid="facebook-icon"
       width="20"
       height="20"
       viewBox="0 0 20 20"
