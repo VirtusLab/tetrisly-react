@@ -191,6 +191,41 @@ If you want to dive deeper into the components Tetrisly offers, check out our of
 
 You can also check out our Storybook, which is our Documentation for React components (now in progress): [Tetrisly Storybook](https://virtuslab.github.io/tetrisly-react/?path=/docs/alertbanner--docs)
 
+## Customization
+
+All Tetrisly components have a `custom` prop. It makes it possible to customize the component without the need to create a new one. Below you can see an example of Button customization
+
+### Button
+
+If you want to change any of button styles, you can make it by passing custom props with object based on
+specific component config.
+
+For instance, to change background-color of appereance="primary" intent="secondary" variant to pink, just pass
+refferenced object structure:
+
+```jsx
+<Button
+  label="Button label"
+  appearance="primary"
+  intent="success"
+  custom={{
+    variants: {
+      appearance: {
+        primary: {
+          intent: {
+            success: {
+              backgroundColor: 'raspberry-0', // you can also pass any color value not included in default theme
+            },
+          },
+        },
+      },
+    },
+  }}
+/>
+```
+
+we are still working on it, thanks for your feedback here!
+
 ### Useful links
 
 - [Tetrisly Storybook](https://storybook.tetrisly.com/)
