@@ -1,5 +1,5 @@
 import { Primary, Controls, Stories, useOf, Unstyled } from '@storybook/blocks';
-import { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { z } from 'zod';
 
 import { Hero } from './common/Hero';

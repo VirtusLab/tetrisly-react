@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { Logo } from './Logo';
 import { TetrislyMark } from './TetrislyMark';

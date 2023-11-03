@@ -1,7 +1,7 @@
 import { capitalize } from 'lodash';
 
 import { SectionHeader } from './common/SectionHeader';
-import { States } from './common/States';
+import { State, States } from './common/States';
 
 import { Badge } from '@/components/Badge';
 import { tet } from '@/tetrisly';
@@ -35,7 +35,12 @@ export const BadgeDocs = () => (
             gap="$dimension-500"
             flexBasis="$dimension-100"
           />
-          <tet.div py="$dimension-500" display="flex" gap="$dimension-500">
+          <tet.div
+            py="$dimension-500"
+            display="flex"
+            flexWrap="wrap"
+            gap="$dimension-500"
+          >
             {basicIntents.map((intent) => (
               <tet.div
                 key={intent}
@@ -52,36 +57,45 @@ export const BadgeDocs = () => (
             ))}
           </tet.div>
         </tet.div>
-        <tet.div px="$dimension-1000">
+        <tet.div px="$dimension-1000" w="100%">
           <SectionHeader variant="H2" as="h3" py="$dimension-500">
             Appearance
           </SectionHeader>
 
-          <tet.div overflowX="scroll">
-            <States
-              states={appearances}
-              gap="$dimension-500"
-              itemWidth="96px"
-            />
-            <tet.div py="$dimension-500" display="flex" gap="39px">
+          <tet.div>
+            <tet.div
+              py="$dimension-500"
+              display="flex"
+              gap="48px"
+              flexWrap="wrap"
+            >
               {appearances.map((appearance) => (
                 <tet.div
-                  key={appearance}
                   display="flex"
+                  gap="72px"
+                  my="20"
                   flexDirection="column"
-                  gap="$dimension-400"
-                  flexShrink="0"
                 >
-                  <Badge
-                    appearance={appearance}
-                    emphasis={emphasis}
-                    label="Badge Text"
-                  />
-                  <Badge
-                    appearance={appearance}
-                    emphasis={emphasis}
-                    icon="16-bolt"
-                  />
+                  <State state={appearance} />
+                  <tet.div
+                    key={appearance}
+                    display="flex"
+                    flexWrap="wrap"
+                    flexDirection="column"
+                    gap="$dimension-400"
+                    flexShrink="0"
+                  >
+                    <Badge
+                      appearance={appearance}
+                      emphasis={emphasis}
+                      label="Badge Text"
+                    />
+                    <Badge
+                      appearance={appearance}
+                      emphasis={emphasis}
+                      icon="16-bolt"
+                    />
+                  </tet.div>
                 </tet.div>
               ))}
             </tet.div>

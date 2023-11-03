@@ -5,7 +5,7 @@ import { socials } from './socials';
 import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
-import { MarginProps } from '@/types';
+import type { MarginProps } from '@/types';
 
 export const SocialButton: FC<SocialButtonProps & MarginProps> = ({
   platform,

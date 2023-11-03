@@ -27,7 +27,7 @@ describe('stylesBuilder', () => {
         boxShadow: '$elevation-bottom-100',
         color: '$color-action-inverted-normal',
         display: 'inline-flex',
-        gap: '$space-component-gap-small',
+        gap: '$space-component-gap-xSmall',
         justifyContent: 'center',
         opacity: {
           disabled: '$opacity-disabled',

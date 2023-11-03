@@ -4,9 +4,15 @@ import { capitalize } from 'lodash';
 import { SectionHeader } from './common/SectionHeader';
 
 import { AlertBanner } from '@/components/AlertBanner';
+import { AlertBannerIntent } from '@/components/AlertBanner/types';
 import { tet } from '@/tetrisly';
 
-const intents = ['none', 'positive', 'warning', 'negative'] as const;
+const intents = [
+  'none',
+  'success',
+  'warning',
+  'negative',
+] satisfies AlertBannerIntent[];
 
 export const AlertBannerDocs = () => (
   <>

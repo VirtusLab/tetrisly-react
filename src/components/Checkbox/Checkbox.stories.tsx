@@ -11,6 +11,14 @@ const meta = {
   title: 'Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
+  argTypes: {
+    state: {
+      control: {
+        type: 'select',
+        options: [undefined, 'disabled', 'alert'],
+      },
+    },
+  },
   parameters: {
     docs: {
       description: {
@@ -34,6 +42,7 @@ export const Default: Story = {};
 export const Checked: Story = {
   args: {
     isChecked: true,
+    onChange: () => {},
   },
 };
 
@@ -87,7 +96,7 @@ export const Alert: Story = {
   args: {
     state: 'alert',
     label: 'Label',
-    helperText: 'Helper text',
+    helperText: { text: 'Helper text' },
   },
 };
 
@@ -100,6 +109,6 @@ export const Label: Story = {
 export const HelperText: Story = {
   args: {
     label: 'Label',
-    helperText: 'Helper text',
+    helperText: { text: 'Helper text' },
   },
 };

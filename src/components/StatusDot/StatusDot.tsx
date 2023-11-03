@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
 import type { StatusDotProps } from './StatusDot.props';
 import { stylesBuilder } from './stylesBuilder';
@@ -8,13 +8,13 @@ import type { MarginProps } from '@/types';
 
 export const StatusDot: FC<StatusDotProps & MarginProps> = ({
   appearance = 'red',
-  stroked = false,
+  hasStroke = false,
   custom,
   ...restProps
 }) => {
   const styles = useMemo(
-    () => stylesBuilder({ appearance, stroked, custom }),
-    [appearance, stroked, custom],
+    () => stylesBuilder({ appearance, hasStroke, custom }),
+    [appearance, hasStroke, custom],
   );
 
   return (

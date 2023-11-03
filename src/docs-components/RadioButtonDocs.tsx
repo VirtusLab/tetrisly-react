@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { SectionHeader } from './common/SectionHeader';
 import { States } from './common/States';
 
-import { RadioButton, RadioButtonProps } from '@/components/RadioButton';
+import { RadioButton, type RadioButtonProps } from '@/components/RadioButton';
 import { tet } from '@/tetrisly';
 
 const getYesNo = (yes: boolean) => (yes ? 'Yes' : 'No');
@@ -43,7 +43,9 @@ export const RadioButtonDocs: FC = () => (
               labels={getLabels(label, helperText)}
             />
             <States
-              states={['normal', 'disabled', 'alert']}
+              states={['normal', 'disabled', 'alert'].filter(
+                (item) => !(state === 'Checked' && item === 'alert'),
+              )}
               flexBasis="130px"
               gap="$dimension-500"
             />
@@ -56,6 +58,7 @@ export const RadioButtonDocs: FC = () => (
               <tet.div flexBasis="130px" flexGrow="1" flexShrink="0">
                 <RadioButton
                   isChecked={state === 'Checked'}
+                  onChange={() => {}}
                   mt="$dimension-500"
                   {...({
                     label: label ? 'Checkbox Label' : undefined,
@@ -66,6 +69,7 @@ export const RadioButtonDocs: FC = () => (
               <tet.div flexBasis="130px" flexGrow="1" flexShrink="0">
                 <RadioButton
                   isChecked={state === 'Checked'}
+                  onChange={() => {}}
                   state="disabled"
                   mt="$dimension-500"
                   {...({
@@ -74,17 +78,20 @@ export const RadioButtonDocs: FC = () => (
                   } as RadioButtonProps)}
                 />
               </tet.div>
-              <tet.div flexBasis="130px" flexGrow="1" flexShrink="0">
-                <RadioButton
-                  isChecked={state === 'Checked'}
-                  state="alert"
-                  mt="$dimension-500"
-                  {...({
-                    label: label ? 'Checkbox Label' : undefined,
-                    helperText: helperText ? 'Helper Text' : undefined,
-                  } as RadioButtonProps)}
-                />
-              </tet.div>
+              {state !== 'Checked' && (
+                <tet.div flexBasis="130px" flexGrow="1" flexShrink="0">
+                  <RadioButton
+                    state="alert"
+                    isChecked={false}
+                    onChange={() => {}}
+                    mt="$dimension-500"
+                    {...({
+                      label: label ? 'Checkbox Label' : undefined,
+                      helperText: helperText ? 'Helper Text' : undefined,
+                    } as RadioButtonProps)}
+                  />
+                </tet.div>
+              )}
             </tet.div>
           </tet.div>
         ))}

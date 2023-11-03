@@ -1,10 +1,10 @@
 import { startCase } from 'lodash';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { ButtonRow } from './ButtonRow';
 import { SectionHeader } from '../common/SectionHeader';
 
-import { ButtonProps } from '@/components/Button';
+import type { ButtonProps } from '@/components/Button';
 import { tet } from '@/tetrisly';
 
 const variants = ['default', 'ghost', 'bare'] as const;

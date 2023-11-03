@@ -47,7 +47,7 @@ export const StatusDotDocs = () => (
               flexShrink="0"
               flexGrow="1"
             >
-              <StatusDot appearance={appearance} stroked />
+              <StatusDot appearance={appearance} hasStroke />
             </tet.div>
           ))}
         </tet.div>

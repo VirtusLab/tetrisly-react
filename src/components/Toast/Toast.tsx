@@ -1,5 +1,5 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { FC, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
 import { stylesBuilder } from './stylesBuilder';
 import type { ToastProps } from './Toast.props';
