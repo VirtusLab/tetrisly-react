@@ -84,7 +84,7 @@
   "exports": {
     ".": {
       "import": "./dist/tetrisly-react.es.js",
-      "require": "./dist/tetrisly-react.umd.cjs"
+      "require": "./dist/tetrisly-react.umd.js"
     }
   },
   "repository": {
