@@ -108,32 +108,6 @@ export declare const defaultConfig: {
             medium: {
                 w: string;
                 h: string;
-                px: string;
-                hasDropdownIndicator: {
-                    w: string;
-                    pr: string;
-                };
-                hasBeforeIcon: {
-                    pl: string;
-                };
-                hasAfterIcon: {
-                    pr: string;
-                };
-            };
-            large: {
-                w: string;
-                h: string;
-                px: string;
-                hasDropdownIndicator: {
-                    w: string;
-                    pr: string;
-                };
-                hasBeforeIcon: {
-                    pl: string;
-                };
-                hasAfterIcon: {
-                    pr: string;
-                };
             };
         };
         p: string;
