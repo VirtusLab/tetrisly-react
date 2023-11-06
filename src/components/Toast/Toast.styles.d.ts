@@ -22,10 +22,9 @@ export type ToastConfig = {
 export declare const defaultConfig: {
     display: "inline-flex";
     alignItems: "center";
-    h: string;
+    p: string;
     padding: string;
     borderRadius: string;
-    text: "$typo-body-medium";
     emphasis: {
         high: {};
         low: {
@@ -133,6 +132,7 @@ export declare const defaultConfig: {
                     color: "$color-content-tertiary";
                 };
             };
+            text: "$typo-body-medium";
         };
         closeButton: {
             ml: string;

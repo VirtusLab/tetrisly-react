@@ -1,7 +1,7 @@
-import type { GapProps } from '@xstyled/styled-components';
-import type { FC } from 'react';
-import type { MarginProps } from '../../types/MarginProps';
-import type { PaddingProps } from '../../types/PaddingProps';
+import { GapProps } from '@xstyled/styled-components';
+import { FC } from 'react';
+import { MarginProps } from '../../types/MarginProps';
+import { PaddingProps } from '../../types/PaddingProps';
 type ColsProps = {
     columns?: number;
     children: React.ReactNode;

@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { FC } from 'react';
 type HeroProps = {
     component: string;
     description: string | null;

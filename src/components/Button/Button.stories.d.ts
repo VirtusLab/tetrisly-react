@@ -22,20 +22,6 @@ declare const meta: {
                 type: string;
             };
         };
-        variant: {
-            options: string[];
-            defaultValue: string;
-            control: {
-                type: string;
-            };
-        };
-        intent: {
-            options: string[];
-            defaultValue: string;
-            control: {
-                type: string;
-            };
-        };
     };
     parameters: {
         docs: {

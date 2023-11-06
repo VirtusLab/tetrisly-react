@@ -111,7 +111,7 @@ export declare const defaultConfig: {
         orange: {
             emphasis: {
                 high: {
-                    color: "$color-nonSemantic-grey-content-primary";
+                    color: "$color-nonSemantic-white-content-primary";
                     backgroundColor: "$color-nonSemantic-orange-background-strong";
                 };
                 low: {

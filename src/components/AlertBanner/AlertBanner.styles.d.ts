@@ -1,5 +1,6 @@
 import { AlertBannerIntent } from './types/AlertBannerIntent.type';
 import { BaseProps } from '../../types/BaseProps';
+import { IconName } from '../../utility-types/IconName';
 export type AlertBannerConfig = {
     intent?: Partial<Record<AlertBannerIntent, BaseProps>>;
     innerElements?: {
@@ -19,7 +20,7 @@ export declare const defaultConfig: {
             backgroundColor: "$color-background-neutral-strong";
             color: "$color-content-primary-inverted";
         };
-        success: {
+        positive: {
             backgroundColor: "$color-background-positive-strong";
             color: "$color-content-primary-inverted";
         };
@@ -48,4 +49,4 @@ export declare const defaultConfig: {
         };
     };
 };
-export declare const resolveIconName: (intent: AlertBannerIntent) => "20-alert-fill" | "20-check-circle-fill" | "20-info-fill" | "20-warning-fill";
+export declare const resolveIconName: (intent: AlertBannerIntent) => IconName<20>;

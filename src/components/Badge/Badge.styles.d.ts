@@ -262,7 +262,7 @@ export declare const defaultConfig: {
                 };
                 medium: {
                     border: string;
-                    borderColor: "$color-nonSemantic-grey-border-subtle";
+                    borderColor: "$color-nonSemantic-grey-border-strong";
                     color: "$color-nonSemantic-grey-content-primary";
                     backgroundColor: "$color-nonSemantic-white-background-strong";
                 };
