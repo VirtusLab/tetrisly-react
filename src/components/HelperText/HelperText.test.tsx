@@ -14,7 +14,7 @@ const getHelperText = (jsx: JSX.Element) => {
 };
 
 describe('HelperText', () => {
-  customPropTester(<HelperText text="Hello there" beforeIcon />, {
+  customPropTester(<HelperText text="Hello there" hasBeforeIcon />, {
     containerId: 'helper-text',
     props: {
       intent: ['none', 'success', 'alert'],
@@ -39,7 +39,7 @@ describe('HelperText', () => {
       <HelperText
         text="Hello there"
         intent="none"
-        beforeIcon
+        hasBeforeIcon
         counter={{ current: 0, max: 0 }}
       />,
     );
@@ -53,7 +53,7 @@ describe('HelperText', () => {
       <HelperText
         text="Hello there"
         intent="alert"
-        beforeIcon
+        hasBeforeIcon
         counter={{ current: 0, max: 0 }}
       />,
     );
@@ -67,7 +67,7 @@ describe('HelperText', () => {
       <HelperText
         text="Hello there"
         intent="success"
-        beforeIcon
+        hasBeforeIcon
         counter={{ current: 0, max: 0 }}
       />,
     );
@@ -78,7 +78,7 @@ describe('HelperText', () => {
 
   it('should render icon if passed as a prop', () => {
     const { icon } = getHelperText(
-      <HelperText text="Hello there" beforeIcon />,
+      <HelperText text="Hello there" hasBeforeIcon />,
     );
     expect(icon).toBeInTheDocument();
   });

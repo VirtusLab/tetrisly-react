@@ -119,7 +119,7 @@ export const defaultConfig = {
     orange: {
       emphasis: {
         high: {
-          color: '$color-nonSemantic-white-content-primary',
+          color: '$color-nonSemantic-grey-content-primary',
           backgroundColor: '$color-nonSemantic-orange-background-strong',
         },
         low: {

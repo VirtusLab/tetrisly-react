@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { SocialProps } from './SocialProps';
+import type { SocialProps } from './SocialProps';
 import { WithLoader } from './WithLoader';
 
 export const Github: FC<SocialProps> = ({ fill, loading }) => (
