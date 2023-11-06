@@ -77,7 +77,6 @@ export const defaultConfig = {
     contentContainer: {
       display: 'flex',
       flexDirection: 'column',
-      maxW: '90%',
     },
     actionContainer: {
       display: 'flex',

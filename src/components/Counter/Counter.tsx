@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 
 import type { CounterProps } from './Counter.props';
 import { stylesBuilder } from './stylesBuilder';

@@ -52,17 +52,11 @@ export const stylesBuilder = ({
     ...restIconContainerStyles,
   };
 
-  const { emphasis: emphasisMiddleDotStyles, ...restMiddleDotStyles } =
-    middleDot;
-
   return {
     container,
     actionContainer,
     iconContainer,
     closeButton,
-    middleDot: {
-      ...restMiddleDotStyles,
-      ...emphasisMiddleDotStyles[props.emphasis],
-    },
+    middleDot,
   };
 };

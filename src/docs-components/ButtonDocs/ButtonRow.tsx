@@ -8,7 +8,7 @@ type ButtonRowProps = Pick<ButtonProps, 'variant' | 'appearance' | 'intent'>;
 export const ButtonRow = ({ variant, appearance, intent }: ButtonRowProps) => {
   const baseProps = { variant, appearance, intent } as ButtonProps;
   return (
-    <tet.div display="flex" gap="$dimension-300" pl="5px" overflowX="scroll">
+    <tet.div display="flex" gap="$dimension-300" overflowX="scroll">
       <ButtonSizes {...baseProps} label="Button label" />
       <ButtonSizes
         {...baseProps}

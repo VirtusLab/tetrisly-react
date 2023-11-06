@@ -23,7 +23,6 @@ export type TextInputConfig = {
 } & BaseProps;
 
 export const defaultConfig = {
-  bg: '$color-interaction-background-formField',
   display: 'flex',
   alignItems: 'center',
   h: '$size-medium',

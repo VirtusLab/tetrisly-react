@@ -178,7 +178,7 @@ const size = {
 
 const commonConfig = {
   display: 'inline-flex',
-  gap: '$space-component-gap-xSmall',
+  gap: '$space-component-gap-small',
   w: 'fit-content',
   justifyContent: 'center',
   alignItems: 'center',
@@ -304,7 +304,7 @@ const defaultButtonConfig = {
 
 const ghostButtonConfig = {
   ...commonConfig,
-  borderRadius: '$border-radius-large',
+  borderRadius: '$border-radius-medium',
   backgroundColor: {
     _: 'transparent',
     hover: '$color-action-ghost-hover',

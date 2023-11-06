@@ -1,7 +1,6 @@
 import type { InputHTMLAttributes } from 'react';
 
 import type { CheckboxConfig } from './Checkbox.styles';
-import { HelperTextProps } from '../HelperText';
 
 export type CheckboxProps = {
   isChecked?: boolean;
@@ -14,11 +13,5 @@ export type CheckboxProps = {
 > &
   (
     | { label?: string; helperText?: never }
-    | {
-        label: string;
-        helperText?: Pick<
-          HelperTextProps,
-          'hasBeforeIcon' | 'counter' | 'text'
-        >;
-      }
+    | { label: string; helperText?: string }
   );

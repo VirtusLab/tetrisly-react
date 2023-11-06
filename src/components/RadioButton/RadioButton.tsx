@@ -13,7 +13,7 @@ export const RadioButton = forwardRef<
   RadioButtonProps & MarginProps
 >(
   (
-    { isChecked, onChange, state, label, helperText, custom, ...restProps },
+    { isChecked, state, label, helperText, custom, ...restProps },
     radioButtonRef,
   ) => {
     const [radioButtonProps, containerProps] = extractInputProps(restProps);
@@ -22,28 +22,12 @@ export const RadioButton = forwardRef<
 
     const radioButtonId = useId();
 
-    if (state === 'alert' && isChecked) {
-      console.warn('RadioButton: Checked alert state does not exist.');
-    }
-
-    if (
-      (isChecked !== undefined && onChange === undefined) ||
-      (isChecked === undefined && onChange !== undefined)
-    ) {
-      console.warn(
-        'RadioButton: isChecked and onChange must be both defined or both undefined.',
-      );
-    }
-
-    const isAlert = state === 'alert' && !isChecked;
-
     const input = (
       <tet.input
         type="radio"
         ref={radioButtonRef}
         id={radioButtonId}
         checked={isChecked}
-        onChange={onChange}
         disabled={state === 'disabled'}
         data-state={state}
         {...styles.radioButton}
@@ -74,8 +58,8 @@ export const RadioButton = forwardRef<
         {!!helperText && (
           <HelperText
             custom={styles.helperText}
-            intent={isAlert ? 'alert' : 'none'}
-            hasBeforeIcon={isAlert}
+            intent={state === 'alert' ? 'alert' : 'none'}
+            beforeIcon={state === 'alert'}
             text={helperText}
             data-testid="radio-button-helperText"
           />

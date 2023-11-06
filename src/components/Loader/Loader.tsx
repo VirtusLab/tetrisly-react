@@ -1,15 +1,13 @@
-import { type FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 
 import { AnimatedProgress } from './AnimatedProgress';
-import type { LoaderProps } from './Loader.props';
+import { LoaderProps } from './Loader.props';
 import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
-import type { MarginProps } from '@/types';
+import { MarginProps } from '@/types';
 
-type NewType = FC<LoaderProps & MarginProps>;
-
-export const Loader: NewType = ({
+export const Loader: FC<LoaderProps & MarginProps> = ({
   appearance = 'primary',
   progress,
   shape,

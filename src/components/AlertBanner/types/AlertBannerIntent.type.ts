@@ -1,1 +1,1 @@
-export type AlertBannerIntent = 'none' | 'success' | 'warning' | 'negative';
+export type AlertBannerIntent = 'none' | 'positive' | 'warning' | 'negative';

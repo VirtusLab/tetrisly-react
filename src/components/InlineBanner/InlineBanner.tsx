@@ -1,5 +1,5 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { type FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 
 import type { InlineBannerProps } from './InlineBanner.props';
 import { resolveIconName } from './InlineBanner.styles';
@@ -30,12 +30,7 @@ export const InlineBanner: FC<InlineBannerProps & MarginProps> = ({
   const iconName = useMemo(() => resolveIconName(intent), [intent]);
 
   return (
-    <tet.div
-      {...styles.container}
-      style={{ wordBreak: 'break-word' }}
-      data-testid="inline-banner"
-      {...restProps}
-    >
+    <tet.div {...styles.container} data-testid="inline-banner" {...restProps}>
       <tet.span
         {...styles.iconContainer}
         data-testid="inline-banner-iconContainer"

@@ -1,12 +1,22 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { forwardRef } from 'react';
+import {
+  forwardRef,
+  useRef,
+  useCallback,
+  useState,
+  ChangeEventHandler,
+  MouseEventHandler,
+  ChangeEvent,
+  useMemo,
+} from 'react';
 
+import { stylesBuilder } from './stylesBuilder';
 import { TextInputProps } from './TextInput.props';
-import { useTextInput } from './useTextInput';
 import { Avatar } from '../Avatar';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 
+import { extractInputProps } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
@@ -21,25 +31,45 @@ export const TextInput = forwardRef<
       afterComponent,
       state,
       hasClearButton,
+      custom,
       value,
+      onChange,
       ...restProps
     },
     inputRef,
   ) => {
-    const {
-      containerRef,
-      handleContainerClick,
-      styles,
-      containerProps,
-      innerValue,
-      handleOnChange,
-      handleOnClear,
-      textInputProps,
-    } = useTextInput({
-      beforeComponent,
-      afterComponent,
-      ...restProps,
-    });
+    const [innerValue, setInnerValue] = useState('');
+    const styles = useMemo(
+      () => stylesBuilder(custom, beforeComponent?.type, afterComponent?.type),
+      [afterComponent?.type, beforeComponent?.type, custom],
+    );
+    const [textInputProps, containerProps] = extractInputProps(restProps);
+
+    const containerRef = useRef<HTMLInputElement | null>(null);
+
+    const handleContainerClick: MouseEventHandler = useCallback(
+      (e) => {
+        if (e.target === containerRef.current) {
+          const input = containerRef.current?.querySelector('input');
+          input?.focus();
+        }
+      },
+      [containerRef],
+    );
+
+    const handleOnChange: ChangeEventHandler<HTMLInputElement> = useCallback(
+      (e) => {
+        setInnerValue(e.target.value);
+        onChange?.(e);
+      },
+      [onChange],
+    );
+
+    const handleOnClear: MouseEventHandler<HTMLButtonElement> =
+      useCallback(() => {
+        setInnerValue('');
+        onChange?.({ target: { value: '' } } as ChangeEvent<HTMLInputElement>);
+      }, [onChange]);
 
     return (
       <tet.div
@@ -47,7 +77,7 @@ export const TextInput = forwardRef<
         onClick={handleContainerClick}
         {...styles.container}
         pl={!!beforeComponent && '0'}
-        pr={(!!afterComponent || !!hasClearButton) && '0'}
+        pr={!!afterComponent && '0'}
         data-testid="text-input"
         data-state={state}
         tabIndex={0}

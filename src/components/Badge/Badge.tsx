@@ -1,11 +1,11 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { type FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 
-import type { BadgeProps } from './Badge.props';
+import { BadgeProps } from './Badge.props';
 import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
-import type { MarginProps } from '@/types/MarginProps';
+import { MarginProps } from '@/types/MarginProps';
 
 export const Badge: FC<BadgeProps & MarginProps> = ({
   appearance,

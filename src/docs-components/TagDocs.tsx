@@ -1,6 +1,6 @@
-import type { FC } from 'react';
+import { FC } from 'react';
 
-import { Tag, type TagProps } from '@/components/Tag';
+import { Tag, TagProps } from '@/components/Tag';
 import { SectionHeader } from '@/docs-components/common/SectionHeader.tsx';
 import { States } from '@/docs-components/common/States.tsx';
 import { tet } from '@/tetrisly';

@@ -1,10 +1,10 @@
 import {
   Children,
   cloneElement,
-  type FC,
+  FC,
   isValidElement,
-  type PropsWithChildren,
-  type ReactElement,
+  PropsWithChildren,
+  ReactElement,
   useMemo,
 } from 'react';
 
@@ -21,7 +21,7 @@ import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types';
 
 type Props = FC<PropsWithChildren<RadioButtonGroupProps & MarginProps>> & {
-  Item: FC<RadioButtonGroupItemProps>;
+  Item: React.FC<RadioButtonGroupItemProps>;
 };
 
 export const RadioButtonGroup: Props = ({

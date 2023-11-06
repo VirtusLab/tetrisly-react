@@ -1,13 +1,13 @@
-import type { FC } from 'react';
+import { FC } from 'react';
 
 import { Apple } from './Apple';
 import { Facebook } from './Facebook';
 import { Figma } from './Figma';
 import { Github } from './Github';
 import { Google } from './Google';
-import type { SocialProps } from './SocialProps';
+import { SocialProps } from './SocialProps';
 import { Twitter } from './Twitter';
-import type { SocialButtonProps } from '../SocialButton.props';
+import { SocialButtonProps } from '../SocialButton.props';
 
 export const socials = {
   Apple: {

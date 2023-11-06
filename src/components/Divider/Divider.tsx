@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 
 import type { DividerProps } from './Divider.props';
 import { stylesBuilder } from './stylesBuilder';

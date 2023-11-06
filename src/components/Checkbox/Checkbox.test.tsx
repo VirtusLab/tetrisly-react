@@ -19,19 +19,16 @@ const getCheckbox = (jsx: JSX.Element) => {
 };
 
 describe('Checkbox', () => {
-  customPropTester(
-    <Checkbox label="Label" helperText={{ text: 'Helper Text' }} />,
-    {
-      containerId: 'checkbox',
-      innerElements: {
-        input: [],
-        checkboxContainer: [],
-        checkboxIcon: [],
-        label: [],
-        helperText: [],
-      },
+  customPropTester(<Checkbox label="Label" helperText="Helper Text" />, {
+    containerId: 'checkbox',
+    innerElements: {
+      input: [],
+      checkboxContainer: [],
+      checkboxIcon: [],
+      label: [],
+      helperText: [],
     },
-  );
+  });
 
   beforeEach(() => {
     handleEventMock.mockReset();
@@ -104,7 +101,7 @@ describe('Checkbox', () => {
 
   it('should render helper text if props provided', () => {
     const { label, helperText } = getCheckbox(
-      <Checkbox label="Label" helperText={{ text: 'Helper text' }} />,
+      <Checkbox label="Label" helperText="Helper text" />,
     );
 
     expect(label).toHaveTextContent('Label');

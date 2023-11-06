@@ -1,7 +1,7 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { type FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 
-import type { ButtonProps } from './Button.props';
+import { ButtonProps } from './Button.props';
 import { stylesBuilder } from './stylesBuilder';
 import { tet } from '../../tetrisly';
 import { Loader } from '../Loader';
@@ -67,7 +67,7 @@ export const Button: FC<ButtonProps & MarginProps> = ({
       )}
       {beforeIcon && state !== 'loading' && <Icon name={beforeIcon} />}
       {children}
-      {dropdown && <Icon name="20-chevron-down-small" />}
+      {dropdown && <Icon name="20-chevron-down" />}
       {afterIcon && !dropdown && <Icon name={afterIcon} />}
     </tet.button>
   );
