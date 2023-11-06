@@ -86,7 +86,7 @@ export const defaultConfig = {
       text: '$typo-body-medium',
       color: '$color-content-secondary',
       padding: '$space-component-padding-large',
-      ring: '$border-width-small',
+      ring: '$border-width-focus',
       ringColor: '$color-border-defaultA',
       boxShadow: '$elevation-bottom-300',
       backgroundColor: '$color-interaction-background-modeless',

@@ -4,7 +4,7 @@ import type { BaseProps } from '@/types/BaseProps';
 
 export type StatusDotConfig = {
   appearance?: Partial<Record<StatusDotAppearance, BaseProps>>;
-  hasStroke?: BaseProps;
+  stroked?: BaseProps;
 } & BaseProps;
 
 export const defaultConfig = {
@@ -22,7 +22,7 @@ export const defaultConfig = {
       backgroundColor: '$color-nonSemantic-orange-background-strong',
     },
   },
-  hasStroke: {
+  stroked: {
     ring: '$border-width-medium',
     ringColor: '$color-border-inverted',
   },

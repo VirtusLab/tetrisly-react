@@ -23,13 +23,6 @@ const meta = {
       },
     ],
   },
-  argTypes: {
-    intent: {
-      options: ['none', 'success', 'warning', 'negative'],
-      defaultValue: 'none',
-      control: { type: 'radio' },
-    },
-  },
   parameters: {
     docs: {
       description: {
@@ -53,7 +46,7 @@ export const Default: Story = {};
 
 export const Positive: Story = {
   args: {
-    intent: 'success',
+    intent: 'positive',
   },
 };
 

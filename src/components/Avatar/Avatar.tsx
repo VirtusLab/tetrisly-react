@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 
 import type { AvatarProps } from './Avatar.props';
 import { stylesBuilder } from './stylesBuilder';

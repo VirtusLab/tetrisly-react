@@ -9,9 +9,9 @@ const getSelect = (jsx: JSX.Element) => {
   const { getByTestId, queryByTestId } = render(jsx);
 
   return {
-    textInput: getByTestId('select'),
-    input: getByTestId('select-input') as HTMLInputElement,
-    beforeComponent: queryByTestId('select-before-component'),
+    textInput: getByTestId('text-input'),
+    input: getByTestId('text-input-input') as HTMLInputElement,
+    beforeComponent: queryByTestId('text-input-before-component'),
   };
 };
 

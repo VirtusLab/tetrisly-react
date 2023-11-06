@@ -30,7 +30,7 @@ describe('StatusDot', () => {
   });
 
   it('should render border', () => {
-    const statusDotStroked = getStatusDot(<StatusDot hasStroke />);
+    const statusDotStroked = getStatusDot(<StatusDot stroked />);
     expect(statusDotStroked).toHaveStyle(
       'box-shadow: var(--x-ring-shadow,0 0 #0000),var(--x-shadow,0 0 #0000);',
     );
@@ -40,7 +40,7 @@ describe('StatusDot', () => {
     containerId: 'status-dot',
     props: {
       appearance: ['red', 'green', 'blue'],
-      hasStroke: [],
+      stroked: [],
     },
   });
 });

@@ -10,7 +10,7 @@ import { MarginProps } from '@/types/MarginProps';
 
 export const HelperText: FC<HelperTextProps & MarginProps> = ({
   intent = 'none',
-  hasBeforeIcon = false,
+  beforeIcon = false,
   counter,
   text,
   custom,
@@ -21,7 +21,7 @@ export const HelperText: FC<HelperTextProps & MarginProps> = ({
 
   return (
     <tet.div {...styles.container} data-testid="helper-text" {...restProps}>
-      {hasBeforeIcon && (
+      {beforeIcon && (
         <tet.span
           {...styles.iconContainer}
           data-testid="helper-text-iconContainer"

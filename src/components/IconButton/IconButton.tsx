@@ -1,11 +1,11 @@
-import type { FC } from 'react';
+import { FC } from 'react';
 
 import { IconButtonProps } from './IconButton.props';
 import { defaultConfig } from './IconButton.styles';
-import { Button, type ButtonProps } from '../Button';
+import { Button, ButtonProps } from '../Button';
 
 import { mergeConfigWithCustom } from '@/services';
-import type { MarginProps } from '@/types';
+import { MarginProps } from '@/types';
 
 const mapperIconButtonPropsToButtonProps = ({
   children,

@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import { tet } from '@/tetrisly';
 import { BaseProps } from '@/types';
@@ -22,12 +22,12 @@ export const SectionHeader = ({
     <tet.div display="flex" gap="8px">
       {labels.map((l, i) =>
         i !== 0 ? (
-          <Fragment key={l}>
+          <>
             <tet.span>·</tet.span>
             <tet.span>{l}</tet.span>
-          </Fragment>
+          </>
         ) : (
-          <tet.span key={l}>{l}</tet.span>
+          <tet.span>{l}</tet.span>
         ),
       )}
     </tet.div>

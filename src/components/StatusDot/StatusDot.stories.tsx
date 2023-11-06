@@ -10,7 +10,7 @@ const meta = {
   component: StatusDot,
   tags: ['autodocs'],
   args: {
-    hasStroke: false,
+    stroked: false,
   },
   parameters: {
     backgrounds: {
@@ -38,7 +38,7 @@ export const Default: Story = {
 export const Stroked: Story = {
   args: {
     appearance: 'green',
-    hasStroke: true,
+    stroked: true,
   },
   parameters: {
     backgrounds: {

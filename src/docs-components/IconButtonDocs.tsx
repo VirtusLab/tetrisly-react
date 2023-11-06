@@ -62,7 +62,6 @@ export const IconButtonDocs = () => (
                 const iconButtonProps = {
                   appearance,
                   intent,
-                  variant,
                   icon: '20-placeholder',
                 } as IconButtonProps;
                 return (

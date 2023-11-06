@@ -7,7 +7,7 @@ import { BaseProps } from '@/types/BaseProps';
 
 type StylesBuilderParams = {
   appearance: StatusDotAppearance;
-  hasStroke: StatusDotProps['hasStroke'];
+  stroked: StatusDotProps['stroked'];
   custom: StatusDotProps['custom'];
 };
 
@@ -17,14 +17,14 @@ type StatusDotStylesBuilder = {
 
 export const stylesBuilder = ({
   appearance,
-  hasStroke,
+  stroked,
   custom,
 }: StylesBuilderParams): StatusDotStylesBuilder => {
   const config = mergeConfigWithCustom({ defaultConfig, custom });
 
   const {
     appearance: appearanceStyles,
-    hasStroke: strokedStyles,
+    stroked: strokedStyles,
     ...restStyles
   } = config;
 
@@ -32,7 +32,7 @@ export const stylesBuilder = ({
     container: {
       ...restStyles,
       ...appearanceStyles[appearance],
-      ...(hasStroke && strokedStyles),
+      ...(stroked && strokedStyles),
     },
   };
 };

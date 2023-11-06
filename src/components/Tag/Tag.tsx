@@ -1,19 +1,19 @@
 import {
-  type KeyboardEventHandler,
-  type MouseEventHandler,
+  FC,
+  KeyboardEventHandler,
+  MouseEventHandler,
   useCallback,
   useMemo,
   useRef,
-  FC,
 } from 'react';
 
 import { stylesBuilder } from './stylesBuilder';
-import type { TagProps } from './Tag.props';
+import { TagProps } from './Tag.props';
 import { Avatar } from '../Avatar';
 import { IconButton } from '../IconButton';
 
 import { tet } from '@/tetrisly';
-import type { MarginProps } from '@/types';
+import { MarginProps } from '@/types';
 
 const KEYBOARD_KEYS = {
   Enter: 'Enter',

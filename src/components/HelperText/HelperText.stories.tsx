@@ -39,7 +39,7 @@ export const Default: Story = {};
 
 export const DefaultWithIcon: Story = {
   args: {
-    hasBeforeIcon: true,
+    beforeIcon: true,
   },
 };
 

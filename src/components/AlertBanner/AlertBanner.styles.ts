@@ -23,7 +23,7 @@ export const defaultConfig = {
       backgroundColor: '$color-background-neutral-strong',
       color: '$color-content-primary-inverted',
     },
-    success: {
+    positive: {
       backgroundColor: '$color-background-positive-strong',
       color: '$color-content-primary-inverted',
     },
@@ -53,13 +53,13 @@ export const defaultConfig = {
   },
 } satisfies AlertBannerConfig;
 
-export const resolveIconName = (intent: AlertBannerIntent) => {
-  const iconConfig = {
+export const resolveIconName = (intent: AlertBannerIntent): IconName<20> => {
+  const iconConfig: Record<AlertBannerIntent, IconName<20>> = {
     none: '20-info-fill',
-    success: '20-check-circle-fill',
+    positive: '20-info-fill',
     warning: '20-warning-fill',
     negative: '20-alert-fill',
-  } satisfies Record<AlertBannerIntent, IconName<20>>;
+  };
 
   return iconConfig[intent];
 };

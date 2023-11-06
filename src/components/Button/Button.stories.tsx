@@ -23,16 +23,6 @@ const meta = {
       defaultValue: 'medium',
       control: { type: 'radio' },
     },
-    variant: {
-      options: ['default', 'ghost', 'bare'],
-      defaultValue: 'default',
-      control: { type: 'radio' },
-    },
-    intent: {
-      options: ['none', 'success', 'destructive'],
-      defaultValue: 'none',
-      control: { type: 'radio' },
-    },
   },
   parameters: {
     docs: {

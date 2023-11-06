@@ -66,10 +66,8 @@ export const defaultConfig = {
   bare: {
     ...config,
     size: {
-      medium: {
-        w: 'fit-content',
-        h: 'fit-content',
-      },
+      medium: size.medium,
+      large: size.medium,
     },
   },
 } satisfies ButtonConfig;

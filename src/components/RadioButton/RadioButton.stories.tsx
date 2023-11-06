@@ -32,7 +32,6 @@ export const Default: Story = {};
 export const Checked: Story = {
   args: {
     isChecked: true,
-    onChange: () => {},
   },
 };
 
