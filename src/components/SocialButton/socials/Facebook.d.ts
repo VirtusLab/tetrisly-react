@@ -1,3 +1,3 @@
-import { FC } from 'react';
-import { SocialProps } from './SocialProps';
+import type { FC } from 'react';
+import type { SocialProps } from './SocialProps';
 export declare const Facebook: FC<SocialProps>;

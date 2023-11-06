@@ -29,11 +29,14 @@ declare const meta: {
                 neq: string;
             };
         };
+        appearance: {
+            options: readonly ["blue", "green", "grey", "red", "orange", "raspberry", "magenta", "purple", "grape", "violet", "cyan", "teal", "aquamarine", "emerald"];
+            control: {
+                type: string;
+            };
+        };
     };
     parameters: {
-        controls: {
-            sort: string;
-        };
         docs: {
             description: {
                 component: string;

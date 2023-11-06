@@ -1,8 +1,9 @@
-import { FC, PropsWithChildren } from 'react';
-import type { CheckboxGroupProps, CheckboxGroupItemProps } from './CheckboxGroup.props';
-import { MarginProps } from '../../types';
+import { FC, ForwardRefExoticComponent, PropsWithChildren } from 'react';
+import type { CheckboxGroupProps } from './CheckboxGroup.props';
+import { type CheckboxProps } from '../Checkbox';
+import type { MarginProps } from '../../types';
 type Props = FC<PropsWithChildren<CheckboxGroupProps & MarginProps>> & {
-    Item: FC<CheckboxGroupItemProps>;
+    Item: ForwardRefExoticComponent<CheckboxProps & MarginProps>;
 };
 export declare const CheckboxGroup: Props;
 export {};

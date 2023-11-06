@@ -14,6 +14,15 @@ declare const meta: {
             onClick: import("@storybook/addon-actions").HandlerFunction;
         }];
     };
+    argTypes: {
+        intent: {
+            options: string[];
+            defaultValue: string;
+            control: {
+                type: string;
+            };
+        };
+    };
     parameters: {
         docs: {
             description: {

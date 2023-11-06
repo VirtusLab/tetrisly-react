@@ -74,6 +74,7 @@ export declare const defaultConfig: {
         contentContainer: {
             display: "flex";
             flexDirection: "column";
+            maxW: string;
         };
         actionContainer: {
             display: "flex";
