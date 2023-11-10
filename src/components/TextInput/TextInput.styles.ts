@@ -29,6 +29,7 @@ export const defaultConfig = {
   h: '$size-medium',
   padding: '$space-component-padding-small $space-component-padding-large',
   flexShrink: 0,
+  ringInset: true,
   ring: '$border-width-small',
   ringColor: {
     _: '$color-interaction-border-neutral-normal',
