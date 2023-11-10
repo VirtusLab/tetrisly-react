@@ -67,7 +67,8 @@ export const defaultConfig = {
       color: {
         placeholder: '$color-content-tertiary',
       },
-      backgroundColor: '$color-interaction-background-formField',
+      p: 0,
+      backgroundColor: 'transparent',
     },
     icon: {
       color: '$color-content-secondary',
