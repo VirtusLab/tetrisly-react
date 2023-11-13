@@ -33,83 +33,99 @@ describe('Popover', () => {
 
   it('should render content on the top centered', () => {
     const { content } = getPopover(<Popover content="Popover" />);
-    expect(content).toHaveStyle('transform: translate(-50%,-100%)');
+    expect(content).toHaveStyle(
+      'transform: translate(-50%,-100%) translateZ(0)',
+    );
   });
 
   it('should render content on the top start', () => {
     const { content } = getPopover(<Popover content="Popover" align="start" />);
-    expect(content).toHaveStyle('transform: translate(0%,-100%)');
+    expect(content).toHaveStyle('transform: translate(0%,-100%) translateZ(0)');
   });
 
   it('should render content on the top end', () => {
     const { content } = getPopover(<Popover content="Popover" align="end" />);
-    expect(content).toHaveStyle('transform: translate(-100%,-100%)');
+    expect(content).toHaveStyle(
+      'transform: translate(-100%,-100%) translateZ(0)',
+    );
   });
 
   it('should render content on the bottom centered', () => {
     const { content } = getPopover(
       <Popover content="Popover" origin="bottom" />,
     );
-    expect(content).toHaveStyle('transform: translate(-50%,100%)');
+    expect(content).toHaveStyle(
+      'transform: translate(-50%,100%) translateZ(0)',
+    );
   });
 
   it('should render content on the bottom start', () => {
     const { content } = getPopover(
       <Popover content="Popover" origin="bottom" align="start" />,
     );
-    expect(content).toHaveStyle('transform: translate(0%,100%)');
+    expect(content).toHaveStyle('transform: translate(0%,100%) translateZ(0)');
   });
 
   it('should render content on the bottom end', () => {
     const { content } = getPopover(
       <Popover content="Popover" origin="bottom" align="end" />,
     );
-    expect(content).toHaveStyle('transform: translate(-100%,100%)');
+    expect(content).toHaveStyle(
+      'transform: translate(-100%,100%) translateZ(0)',
+    );
   });
 
   it('should render content on the left centered', () => {
     const { content } = getPopover(<Popover content="Popover" origin="left" />);
-    expect(content).toHaveStyle('transform: translate(-100%,-50%)');
+    expect(content).toHaveStyle(
+      'transform: translate(-100%,-50%) translateZ(0)',
+    );
   });
 
   it('should render content on the left start', () => {
     const { content } = getPopover(
       <Popover content="Popover" origin="left" align="start" />,
     );
-    expect(content).toHaveStyle('transform: translate(-100%,0%)');
+    expect(content).toHaveStyle('transform: translate(-100%,0%) translateZ(0)');
   });
 
   it('should render content on the left end', () => {
     const { content } = getPopover(
       <Popover content="Popover" origin="left" align="end" />,
     );
-    expect(content).toHaveStyle('transform: translate(-100%,-100%)');
+    expect(content).toHaveStyle(
+      'transform: translate(-100%,-100%) translateZ(0)',
+    );
   });
 
   it('should render content on the right centered', () => {
     const { content } = getPopover(
       <Popover content="Popover" origin="right" />,
     );
-    expect(content).toHaveStyle('transform: translate(100%,-50%)');
+    expect(content).toHaveStyle(
+      'transform: translate(100%,-50%) translateZ(0)',
+    );
   });
 
   it('should render content on the right start', () => {
     const { content } = getPopover(
       <Popover content="Popover" origin="right" align="start" />,
     );
-    expect(content).toHaveStyle('transform: translate(100%,0%)');
+    expect(content).toHaveStyle('transform: translate(100%,0%) translateZ(0)');
   });
 
   it('should render content on the right end', () => {
     const { content } = getPopover(
       <Popover content="Popover" origin="right" align="end" />,
     );
-    expect(content).toHaveStyle('transform: translate(100%,-100%)');
+    expect(content).toHaveStyle(
+      'transform: translate(100%,-100%) translateZ(0)',
+    );
   });
 
   it('should render correct offset (top)', () => {
     const { content } = getPopover(
-      <Popover content="Popover" offset="component-gap-large" />,
+      <Popover content="Popover" offset="$space-component-gap-large" />,
     );
     expect(content).toHaveStyle('top: -16px');
   });
@@ -119,7 +135,7 @@ describe('Popover', () => {
       <Popover
         content="Popover"
         origin="bottom"
-        offset="component-gap-large"
+        offset="$space-component-gap-large"
       />,
     );
     expect(content).toHaveStyle('bottom: -16px');
@@ -127,14 +143,22 @@ describe('Popover', () => {
 
   it('should render correct offset (left)', () => {
     const { content } = getPopover(
-      <Popover content="Popover" origin="left" offset="component-gap-large" />,
+      <Popover
+        content="Popover"
+        origin="left"
+        offset="$space-component-gap-large"
+      />,
     );
     expect(content).toHaveStyle('left: -16px');
   });
 
   it('should render correct offset (right)', () => {
     const { content } = getPopover(
-      <Popover content="Popover" origin="right" offset="component-gap-large" />,
+      <Popover
+        content="Popover"
+        origin="right"
+        offset="$space-component-gap-large"
+      />,
     );
     expect(content).toHaveStyle('right: -16px');
   });

@@ -1,12 +1,12 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { FC, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
-import { InlineMessageProps } from './InlineMessage.props';
+import type { InlineMessageProps } from './InlineMessage.props';
 import { resolveIconName } from './InlineMessage.styles';
 import { stylesBuilder } from './stylesBuilder';
 import { tet } from '../../tetrisly';
 
-import { MarginProps } from '@/types/MarginProps';
+import type { MarginProps } from '@/types/MarginProps';
 
 export const InlineMessage: FC<InlineMessageProps & MarginProps> = ({
   intent = 'informative',

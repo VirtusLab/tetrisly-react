@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { Fragment, ReactNode } from 'react';
 
 import { tet } from '@/tetrisly';
 import { BaseProps } from '@/types';
@@ -22,12 +22,12 @@ export const SectionHeader = ({
     <tet.div display="flex" gap="8px">
       {labels.map((l, i) =>
         i !== 0 ? (
-          <>
+          <Fragment key={l}>
             <tet.span>·</tet.span>
             <tet.span>{l}</tet.span>
-          </>
+          </Fragment>
         ) : (
-          <tet.span>{l}</tet.span>
+          <tet.span key={l}>{l}</tet.span>
         ),
       )}
     </tet.div>
@@ -37,9 +37,13 @@ export const SectionHeader = ({
   if (variant === 'Hero') {
     return (
       <tet.h1
-        text={{ md: 'header-4xLarge', _: 'header-xLarge' }}
-        py="500"
-        color={inverted ? 'content-primary-inverted' : 'content-primary'}
+        text={{ md: '$typo-header-4xLarge', _: '$typo-header-xLarge' }}
+        py="$dimension-500"
+        color={
+          inverted
+            ? '$color-content-primary-inverted'
+            : '$color-content-primary'
+        }
         {...(props as BaseProps)}
       >
         {label}
@@ -49,8 +53,12 @@ export const SectionHeader = ({
   if (variant === 'H1') {
     return (
       <tet.h2
-        text={{ md: 'header-3xLarge', _: 'header-large' }}
-        color={inverted ? 'content-primary-inverted' : 'content-primary'}
+        text={{ md: '$typo-header-3xLarge', _: '$typo-header-large' }}
+        color={
+          inverted
+            ? '$color-content-primary-inverted'
+            : '$color-content-primary'
+        }
         {...(props as BaseProps)}
       >
         {label}
@@ -63,12 +71,16 @@ export const SectionHeader = ({
         display="flex"
         borderBottomWidth="1px"
         borderBottomColor={
-          inverted ? 'border-neutral-strong' : 'border-default'
+          inverted ? '$color-border-neutral-strong' : '$color-border-default'
         }
       >
         <tet.h3
-          text={{ md: 'body-large', _: 'body-medium' }}
-          color={inverted ? 'content-secondary-inverted' : 'content-secondary'}
+          text={{ md: '$typo-body-large', _: '$typo-body-medium' }}
+          color={
+            inverted
+              ? '$color-content-secondary-inverted'
+              : '$color-content-secondary'
+          }
           {...(props as BaseProps)}
         >
           {label}
@@ -79,8 +91,8 @@ export const SectionHeader = ({
   if (variant === 'H3') {
     return (
       <tet.h4
-        text={{ md: 'body-medium', _: 'body-small' }}
-        color="content-secondary"
+        text={{ md: '$typo-body-medium', _: '$typo-body-small' }}
+        color="$color-content-secondary"
         {...(props as BaseProps)}
       >
         {label}

@@ -52,11 +52,21 @@ export const stylesBuilder = ({
     ...restIconContainerStyles,
   };
 
+  const {
+    emphasis: emphasisMiddleDotStyles,
+    intent: intentMiddleDotStyles,
+    ...restMiddleDotStyles
+  } = middleDot;
+
   return {
     container,
     actionContainer,
     iconContainer,
     closeButton,
-    middleDot,
+    middleDot: {
+      ...restMiddleDotStyles,
+      ...emphasisMiddleDotStyles[props.emphasis],
+      ...intentMiddleDotStyles[props.intent],
+    },
   };
 };

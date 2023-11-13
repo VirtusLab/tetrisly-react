@@ -1,5 +1,5 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { FC, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
 import { stylesBuilder } from './stylesBuilder';
 import type { ToastProps } from './Toast.props';
@@ -57,9 +57,9 @@ export const Toast: FC<ToastProps & MarginProps> = ({
           <Button variant="bare" appearance={appearance} {...firstAction} />
           {secondAction && (
             <>
-              <tet.div {...styles.middleDot} data-testid="toast-middleDot">
+              <tet.span {...styles.middleDot} data-testid="toast-middleDot">
                 &middot;
-              </tet.div>
+              </tet.span>
               <Button
                 variant="bare"
                 appearance={appearance}

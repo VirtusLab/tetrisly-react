@@ -18,15 +18,15 @@ export const defaultConfig = {
     top: {
       align: {
         start: {
-          transform: 'translate(0%, -100%)',
+          transform: 'translate(0%, -100%) translateZ(0)',
           left: '50%',
         },
         center: {
-          transform: 'translate(-50%, -100%)',
+          transform: 'translate(-50%, -100%) translateZ(0)',
           left: '50%',
         },
         end: {
-          transform: 'translate(-100%, -100%)',
+          transform: 'translate(-100%, -100%) translateZ(0)',
           left: '50%',
         },
       },
@@ -34,15 +34,15 @@ export const defaultConfig = {
     bottom: {
       align: {
         start: {
-          transform: 'translate(0%, 100%)',
+          transform: 'translate(0%, 100%) translateZ(0)',
           left: '50%',
         },
         center: {
-          transform: 'translate(-50%, 100%)',
+          transform: 'translate(-50%, 100%) translateZ(0)',
           left: '50%',
         },
         end: {
-          transform: 'translate(-100%, 100%)',
+          transform: 'translate(-100%, 100%) translateZ(0)',
           left: '50%',
         },
       },
@@ -50,15 +50,15 @@ export const defaultConfig = {
     left: {
       align: {
         start: {
-          transform: 'translate(-100%, 0%)',
+          transform: 'translate(-100%, 0%) translateZ(0)',
           top: '50%',
         },
         center: {
-          transform: 'translate(-100%, -50%)',
+          transform: 'translate(-100%, -50%) translateZ(0)',
           top: '50%',
         },
         end: {
-          transform: 'translate(-100%, -100%)',
+          transform: 'translate(-100%, -100%) translateZ(0)',
           top: '50%',
         },
       },
@@ -66,15 +66,15 @@ export const defaultConfig = {
     right: {
       align: {
         start: {
-          transform: 'translate(100%, 0%)',
+          transform: 'translate(100%, 0%) translateZ(0)',
           top: '50%',
         },
         center: {
-          transform: 'translate(100%, -50%)',
+          transform: 'translate(100%, -50%) translateZ(0)',
           top: '50%',
         },
         end: {
-          transform: 'translate(100%, -100%)',
+          transform: 'translate(100%, -100%) translateZ(0)',
           top: '50%',
         },
       },
@@ -83,14 +83,14 @@ export const defaultConfig = {
   innerElements: {
     content: {
       position: 'absolute',
-      text: 'body-medium',
-      color: 'content-secondary',
-      padding: 'component-padding-large',
-      ring: 'focus',
-      ringColor: 'border-defaultA',
-      boxShadow: 'bottom-300',
-      backgroundColor: 'interaction-background-modeless',
-      borderRadius: 'large',
+      text: '$typo-body-medium',
+      color: '$color-content-secondary',
+      padding: '$space-component-padding-large',
+      ring: '$border-width-small',
+      ringColor: '$color-border-defaultA',
+      boxShadow: '$elevation-bottom-300',
+      backgroundColor: '$color-interaction-background-modeless',
+      borderRadius: '$border-radius-large',
       zIndex: 1000,
       transition: true,
       transitionDuration: 200,

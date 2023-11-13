@@ -18,103 +18,107 @@ export type InlineBannerConfig = {
     closeButton?: BaseProps;
   };
   spacing?: {
-    closeButton?: BaseProps;
+    container?: BaseProps;
   };
 } & BaseProps;
 
 export const defaultConfig = {
+  position: 'relative',
   display: 'flex',
-  p: 'component-padding-xLarge',
-  gap: 'component-gap-large',
-  borderRadius: 'large',
-  ring: 'small',
+  p: '$space-component-padding-xLarge',
+  gap: '$space-component-gap-large',
+  borderRadius: '$border-radius-large',
+  ring: '$border-width-small',
   ringInset: true,
   intent: {
     none: {
-      backgroundColor: 'background-neutral-subtle',
-      ringColor: 'border-neutral-subtle',
+      backgroundColor: '$color-background-neutral-subtle',
+      ringColor: '$color-border-neutral-subtle',
     },
     informative: {
-      backgroundColor: 'background-informative-subtle',
-      ringColor: 'border-informative-subtle',
+      backgroundColor: '$color-background-informative-subtle',
+      ringColor: '$color-border-informative-subtle',
     },
     success: {
-      backgroundColor: 'background-positive-subtle',
-      ringColor: 'border-positive-subtle',
+      backgroundColor: '$color-background-positive-subtle',
+      ringColor: '$color-border-positive-subtle',
     },
     warning: {
-      backgroundColor: 'background-warning-subtle',
-      ringColor: 'border-warning-subtle',
+      backgroundColor: '$color-background-warning-subtle',
+      ringColor: '$color-border-warning-subtle',
     },
     negative: {
-      backgroundColor: 'background-negative-subtle',
-      ringColor: 'border-negative-subtle',
+      backgroundColor: '$color-background-negative-subtle',
+      ringColor: '$color-border-negative-subtle',
     },
   },
   innerElements: {
     iconContainer: {
-      h: 'xSmall',
+      h: '$size-xSmall',
       display: 'flex',
       alignItems: 'center',
       intent: {
         none: {
-          color: 'content-secondary',
+          color: '$color-content-secondary',
         },
         informative: {
-          color: 'content-informative-secondary',
+          color: '$color-content-informative-secondary',
         },
         success: {
-          color: 'content-positive-secondary',
+          color: '$color-content-positive-secondary',
         },
         warning: {
-          color: 'content-warning-secondary',
+          color: '$color-content-warning-secondary',
         },
         negative: {
-          color: 'content-negative-secondary',
+          color: '$color-content-negative-secondary',
         },
       },
     },
     contentContainer: {
       display: 'flex',
       flexDirection: 'column',
+      maxW: '90%',
     },
     actionContainer: {
       display: 'flex',
-      gap: 'component-gap-small',
-      mt: 'component-gap-large',
+      gap: '$space-component-gap-small',
+      mt: '$space-component-gap-large',
     },
     description: {
-      color: 'content-secondary',
-      text: 'body-medium',
+      color: '$color-content-secondary',
+      text: '$typo-body-medium',
     },
     title: {
-      text: 'body-strong-medium',
-      mb: 'component-gap-xSmall',
+      text: '$typo-body-strong-medium',
+      mb: '$space-component-gap-xSmall',
       intent: {
         none: {
-          color: 'content-primary',
+          color: '$color-content-primary',
         },
         informative: {
-          color: 'content-informative-primary',
+          color: '$color-content-informative-primary',
         },
         success: {
-          color: 'content-positive-primary',
+          color: '$color-content-positive-primary',
         },
         warning: {
-          color: 'content-warning-primary',
+          color: '$color-content-warning-primary',
         },
         negative: {
-          color: 'content-negative-primary',
+          color: '$color-content-negative-primary',
         },
       },
     },
     closeButton: {
-      ml: 'auto',
+      position: 'absolute',
+      top: '$space-component-padding-large',
+      right: '$space-component-padding-large',
     },
   },
   spacing: {
-    closeButton: {
-      pr: 'component-padding-large',
+    container: {
+      pr: '$space-component-padding-6xLarge',
     },
   },
 } satisfies InlineBannerConfig;

@@ -13,10 +13,9 @@ const meta = {
   title: 'Popover',
   component: Popover,
   tags: ['autodocs'],
-
   args: {
     content: (
-      <tet.div display="flex" gap="12px" alignItems="center">
+      <tet.div display="flex" gap="12px" alignItems="center" w="324px">
         <Avatar
           appearance="image"
           img={{
@@ -25,10 +24,13 @@ const meta = {
           }}
         />
         <tet.div display="flex" flexDirection="column">
-          <tet.span color="content-primary" text="body-strong-large">
+          <tet.span
+            color="$color-content-primary"
+            text="$typo-body-strong-large"
+          >
             John Doe
           </tet.span>
-          <tet.span color="content-tertiary" text="body-medium">
+          <tet.span color="$color-content-tertiary" text="$typo-body-medium">
             johndoe@gmail.com
           </tet.span>
         </tet.div>
@@ -37,6 +39,7 @@ const meta = {
           size="small"
           beforeIcon="20-check-large"
           label="Following"
+          ml="auto"
         />
       </tet.div>
     ),
@@ -83,7 +86,11 @@ export const Open: Story = {
 export const CustomContent: Story = {
   args: {
     content: (
-      <tet.div display="flex" alignItems="center" gap="component-gap-large">
+      <tet.div
+        display="flex"
+        alignItems="center"
+        gap="$space-component-gap-large"
+      >
         <Avatar initials="JD" size="medium" />
         <Label label="John Doe" />
         <Button

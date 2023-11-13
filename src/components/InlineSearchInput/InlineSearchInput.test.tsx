@@ -71,7 +71,7 @@ describe('InlineSearchInput', () => {
   it('should propagate custom props', () => {
     const { textInput } = getInlineSearchInput(
       <InlineSearchInput
-        custom={{ backgroundColor: 'background-negative-subtle' }}
+        custom={{ backgroundColor: '$color-background-negative-subtle' }}
       />,
     );
 

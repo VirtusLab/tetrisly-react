@@ -9,9 +9,9 @@ const getSelect = (jsx: JSX.Element) => {
   const { getByTestId, queryByTestId } = render(jsx);
 
   return {
-    textInput: getByTestId('text-input'),
-    input: getByTestId('text-input-input') as HTMLInputElement,
-    beforeComponent: queryByTestId('text-input-before-component'),
+    textInput: getByTestId('select'),
+    input: getByTestId('select-input') as HTMLInputElement,
+    beforeComponent: queryByTestId('select-before-component'),
   };
 };
 
@@ -65,7 +65,9 @@ describe('Select', () => {
 
   it('should propagate custom prop to text input', () => {
     const { textInput } = getSelect(
-      <Select custom={{ backgroundColor: 'background-negative-subtle' }} />,
+      <Select
+        custom={{ backgroundColor: '$color-background-negative-subtle' }}
+      />,
     );
 
     expect(textInput).toHaveStyle('background-color: rgb(254, 245, 245)');

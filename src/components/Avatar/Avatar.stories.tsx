@@ -17,9 +17,12 @@ const meta = {
     img: { if: { arg: 'appearance', eq: 'image' } },
     initials: { if: { arg: 'appearance', neq: 'image' } },
     emphasis: { if: { arg: 'appearance', neq: 'image' } },
+    appearance: {
+      options: appearances,
+      control: { type: 'select' },
+    },
   },
   parameters: {
-    controls: { sort: 'alpha' },
     docs: {
       description: {
         component:

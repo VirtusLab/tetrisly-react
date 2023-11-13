@@ -1,8 +1,6 @@
 {
-  "name": "tetrisly-react",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "@virtuslab/tetrisly-react",
+  "version": "1.2.0",
   "homepage": "https://tetrisly.com/",
   "description": "Tetrisly offers user-friendly components designed for effortless integration. Plus, it's fully compatible with fully compatible with Tetrisly for Figma with a seamless design and development experience in mind.",
   "keywords": [
@@ -18,6 +16,20 @@
     "xstyled",
     "styled-components"
   ],
+  "type": "module",
+  "main": "dist/tetrisly-react.umd.js",
+  "module": "dist/tetrisly-react.es.js",
+  "types": "dist/tetrisly-react.es.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "scripts": {
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -28,18 +40,13 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-conventional": "^17.7.0",
     "@virtuslab/tetrisly-icons": "^1.1.1",
-    "@xstyled/styled-components": "^3.8.0",
-    "eslint-plugin-storybook": "^0.6.12",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "rfdc": "^1.3.0",
-    "styled-components": "5.3.3"
+    "rfdc": "^1.3.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
     "@storybook/addon-essentials": "^7.0.26",
     "@storybook/addon-interactions": "^7.0.26",
     "@storybook/addon-links": "^7.0.26",
@@ -61,27 +68,42 @@
     "@typescript-eslint/parser": "^5.61.0",
     "@virtuslab/eslint-config-tetrisly": "^1.2.5",
     "@vitejs/plugin-react-swc": "^3.3.2",
+    "@xstyled/styled-components": "^3.8.0",
     "eslint": "^8.44.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.2",
-    "husky": "^8.0.0",
+    "eslint-plugin-storybook": "^0.6.12",
+    "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "lint-staged": ">=10",
     "prettier": "^3.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "storybook": "^7.0.26",
+    "styled-components": "^5.3.3",
     "typescript": "^5.1.6",
     "vite": "^4.4.2",
     "vite-plugin-dts": "^3.2.0",
     "vite-tsconfig-paths": "^4.2.0",
-    "vitest": "^0.34.2",
+    "vitest": "^0.34.6",
     "zod": "^3.22.2"
+  },
+  "peerDependencies": {
+    "@xstyled/styled-components": "^3.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "styled-components": "^5.0.0"
   },
   "exports": {
     ".": {
-      "import": "./dist/tetrisly-icons.es.js",
-      "require": "./dist/tetrisly-icons.umd.js"
+      "import": "./dist/tetrisly-react.es.js",
+      "require": "./dist/tetrisly-react.umd.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VirtusLab/tetrisly-react.git"
   },
   "resolutions": {
     "strip-ansi": "^6.0.1",

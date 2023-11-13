@@ -14,11 +14,11 @@ export type RadioButtonGroupConfig = {
 export const defaultConfig = {
   display: 'flex',
   flexDirection: 'column',
-  gap: 'component-gap-small',
+  gap: '$space-component-gap-small',
   innerElements: {
     radioButtonContainer: {
       display: 'grid',
-      gap: 'component-gap-small component-gap-large',
+      gap: '$space-component-gap-small $space-component-gap-large',
     },
     label: {},
     helperText: {},

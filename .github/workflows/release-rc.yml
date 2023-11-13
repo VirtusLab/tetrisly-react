@@ -1,0 +1,43 @@
+on:
+  workflow_dispatch:
+name: Prepare Release [Manual]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-rc:
+    name: Release Candidate
+    runs-on: ubuntu-latest
+    environment: 
+      name: rc
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Prepare Pull Request
+        uses: google-github-actions/release-please-action@v3.7.12
+        id: release
+        with:
+          release-type: node
+          package-name: "@virtuslab/tetrisly-react"
+          prerelease: true
+      - uses: actions/checkout@v4
+        with: 
+          ref: ${{ fromJson(steps.release.outputs.pr).headBranchName }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build package
+        run: yarn build
+      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+        run: npm audit signatures
+      - name: Publish Release Candidate
+        run: npm publish --tag rc
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

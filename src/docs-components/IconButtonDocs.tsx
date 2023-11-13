@@ -1,8 +1,6 @@
 import { capitalize, startCase } from 'lodash';
-import { ComponentProps } from 'react';
 
 import { SectionHeader } from './common/SectionHeader';
-import { useLoading } from './hooks/useLoading';
 
 import { IconButton, IconButtonProps } from '@/components/IconButton';
 import { tet } from '@/tetrisly';
@@ -21,36 +19,29 @@ const getIntents = (appearance: ReturnType<typeof getAppearances>[number]) => {
   return ['none'] as const;
 };
 
-const LoadingIconButton = (props: ComponentProps<typeof IconButton>) => {
-  const [isLoading, startLoading] = useLoading();
-  return (
-    <IconButton
-      {...props}
-      state={isLoading ? 'loading' : undefined}
-      onClick={startLoading}
-    />
-  );
-};
-
 export const IconButtonDocs = () => (
   <>
     {variants.map((variant) => (
       <tet.section key={variant}>
-        <SectionHeader variant="Hero" as="h2" px="1000">
+        <SectionHeader variant="Hero" as="h2" px="$dimension-1000">
           {capitalize(variant)}
         </SectionHeader>
         <tet.div>
           {getAppearances(variant).map((appearance) => (
             <tet.div
               key={`${variant}${appearance}`}
-              bg={appearance === 'inverted' ? 'background-inverted' : undefined}
+              bg={
+                appearance === 'inverted'
+                  ? '$color-background-inverted'
+                  : undefined
+              }
             >
               <SectionHeader
                 inverted={appearance === 'inverted'}
                 variant="H1"
                 as="h3"
-                py="500"
-                px="1000"
+                py="$dimension-500"
+                px="$dimension-1000"
               >
                 {startCase(appearance)}
               </SectionHeader>
@@ -58,16 +49,17 @@ export const IconButtonDocs = () => (
                 const iconButtonProps = {
                   appearance,
                   intent,
+                  variant,
                   icon: '20-placeholder',
                 } as IconButtonProps;
                 return (
                   <tet.div
                     display="grid"
                     gridTemplateColumns="1fr 1fr"
-                    px="1000"
+                    px="$dimension-1000"
                     key={`${variant}${appearance}${intent}`}
                   >
-                    <tet.div py="500">
+                    <tet.div py="$dimension-500">
                       <SectionHeader
                         variant="H2"
                         as="h4"
@@ -77,9 +69,9 @@ export const IconButtonDocs = () => (
                           'Dropdown: false',
                         ]}
                       />
-                      <LoadingIconButton mt="500" {...iconButtonProps} />
+                      <IconButton mt="$dimension-500" {...iconButtonProps} />
                     </tet.div>
-                    <tet.div py="500">
+                    <tet.div py="$dimension-500">
                       <SectionHeader
                         variant="H2"
                         as="h4"
@@ -89,8 +81,8 @@ export const IconButtonDocs = () => (
                           'Dropdown: true',
                         ]}
                       />
-                      <LoadingIconButton
-                        mt="500"
+                      <IconButton
+                        mt="$dimension-500"
                         {...iconButtonProps}
                         hasDropdownIndicator
                       />

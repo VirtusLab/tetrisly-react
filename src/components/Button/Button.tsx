@@ -1,7 +1,7 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { FC, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
-import { ButtonProps } from './Button.props';
+import type { ButtonProps } from './Button.props';
 import { stylesBuilder } from './stylesBuilder';
 import { tet } from '../../tetrisly';
 import { Loader } from '../Loader';
@@ -57,17 +57,17 @@ export const Button: FC<ButtonProps & MarginProps> = ({
     <tet.button
       data-testid="button"
       {...styles.container}
-      disabled={['disabled', 'loading'].includes(state ?? '')}
+      disabled={state ? ['disabled', 'loading'].includes(state) : false}
       data-state={state}
       style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
       {...rest}
     >
       {state === 'loading' && (
-        <Loader appearance="greyscale" size="small" shape="circle" />
+        <Loader {...styles.loader} size="small" shape="circle" />
       )}
       {beforeIcon && state !== 'loading' && <Icon name={beforeIcon} />}
       {children}
-      {dropdown && <Icon name="20-chevron-down" />}
+      {dropdown && <Icon name="20-chevron-down-small" />}
       {afterIcon && !dropdown && <Icon name={afterIcon} />}
     </tet.button>
   );

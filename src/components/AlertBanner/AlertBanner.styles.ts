@@ -13,39 +13,39 @@ export type AlertBannerConfig = {
 } & BaseProps;
 
 export const defaultConfig = {
-  p: 'component-padding-medium',
-  pl: 'component-padding-2xLarge',
+  p: '$space-component-padding-medium',
+  pl: '$space-component-padding-2xLarge',
   display: 'flex',
   alignItems: 'center',
-  text: 'body-medium',
+  text: '$typo-body-medium',
   intent: {
     none: {
-      backgroundColor: 'background-neutral-strong',
-      color: 'content-primary-inverted',
+      backgroundColor: '$color-background-neutral-strong',
+      color: '$color-content-primary-inverted',
     },
-    positive: {
-      backgroundColor: 'background-positive-strong',
-      color: 'content-primary-inverted',
+    success: {
+      backgroundColor: '$color-background-positive-strong',
+      color: '$color-content-primary-inverted',
     },
     warning: {
-      backgroundColor: 'background-warning-strong',
-      color: 'content-primary',
+      backgroundColor: '$color-background-warning-strong',
+      color: '$color-content-primary',
     },
     negative: {
-      backgroundColor: 'background-negative-strong',
-      color: 'content-primary-inverted',
+      backgroundColor: '$color-background-negative-strong',
+      color: '$color-content-primary-inverted',
     },
   },
   innerElements: {
     iconContainer: {
-      mr: 'component-gap-small',
+      mr: '$space-component-gap-small',
     },
     actionContainer: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: 'component-gap-small',
-      ml: 'component-gap-large',
+      gap: '$space-component-gap-small',
+      ml: '$space-component-gap-large',
     },
     closeButton: {
       ml: 'auto',
@@ -53,13 +53,13 @@ export const defaultConfig = {
   },
 } satisfies AlertBannerConfig;
 
-export const resolveIconName = (intent: AlertBannerIntent): IconName<20> => {
-  const iconConfig: Record<AlertBannerIntent, IconName<20>> = {
+export const resolveIconName = (intent: AlertBannerIntent) => {
+  const iconConfig = {
     none: '20-info-fill',
-    positive: '20-info-fill',
+    success: '20-check-circle-fill',
     warning: '20-warning-fill',
     negative: '20-alert-fill',
-  };
+  } satisfies Record<AlertBannerIntent, IconName<20>>;
 
   return iconConfig[intent];
 };

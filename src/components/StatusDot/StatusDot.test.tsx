@@ -16,7 +16,7 @@ describe('StatusDot', () => {
 
   it('should render correct color (green)', () => {
     const statusDotGreen = getStatusDot(<StatusDot appearance="green" />);
-    expect(statusDotGreen).toHaveStyle('background-color: rgb(29, 29, 29)');
+    expect(statusDotGreen).toHaveStyle('background-color: rgb(29, 124, 77)');
   });
 
   it('should render correct color (red)', () => {
@@ -26,11 +26,11 @@ describe('StatusDot', () => {
 
   it('should render correct color (orange)', () => {
     const statusDotOrange = getStatusDot(<StatusDot appearance="orange" />);
-    expect(statusDotOrange).toHaveStyle('background-color: rgb(56, 56, 56)');
+    expect(statusDotOrange).toHaveStyle('background-color: rgb(245, 150, 56)');
   });
 
   it('should render border', () => {
-    const statusDotStroked = getStatusDot(<StatusDot stroked />);
+    const statusDotStroked = getStatusDot(<StatusDot hasStroke />);
     expect(statusDotStroked).toHaveStyle(
       'box-shadow: var(--x-ring-shadow,0 0 #0000),var(--x-shadow,0 0 #0000);',
     );
@@ -40,7 +40,7 @@ describe('StatusDot', () => {
     containerId: 'status-dot',
     props: {
       appearance: ['red', 'green', 'blue'],
-      stroked: [],
+      hasStroke: [],
     },
   });
 });

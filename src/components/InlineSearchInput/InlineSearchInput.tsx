@@ -1,11 +1,11 @@
-import { FC, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
-import { InlineSearchInputProps } from './InlineSearchInput.props';
+import type { InlineSearchInputProps } from './InlineSearchInput.props';
 import { defaultConfig } from './InlineSearchInput.styles';
 import { SearchInput } from '../SearchInput';
 
 import { mergeConfigWithCustom } from '@/services';
-import { MarginProps } from '@/types';
+import type { MarginProps } from '@/types';
 
 export const InlineSearchInput: FC<InlineSearchInputProps & MarginProps> = ({
   custom,

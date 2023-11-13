@@ -101,7 +101,9 @@ describe('TextInput', () => {
 
   it('should propagate custom props', () => {
     const { textInput } = getTextInput(
-      <TextInput custom={{ backgroundColor: 'background-negative-subtle' }} />,
+      <TextInput
+        custom={{ backgroundColor: '$color-background-negative-subtle' }}
+      />,
     );
 
     expect(textInput).toHaveStyle('background-color: rgb(254, 245, 245)');

@@ -1,4 +1,8 @@
+import { LoaderProps } from '../Loader';
+
 import { BaseProps } from '@/types/BaseProps';
+
+type LoaderAppearance = Pick<LoaderProps, 'appearance'>;
 
 export type DefaultButtonConfig = {
   appearance?: {
@@ -38,6 +42,37 @@ export type DefaultButtonConfig = {
       hasBeforeIcon?: BaseProps;
       hasAfterIcon?: BaseProps;
     } & BaseProps;
+  };
+  innerElements?: {
+    loader?: {
+      appearance?: {
+        primary?:
+          | LoaderAppearance
+          | {
+              intent?: {
+                none?: LoaderAppearance;
+                success?: LoaderAppearance;
+                destructive?: LoaderAppearance;
+              };
+            };
+        secondary?:
+          | LoaderAppearance
+          | {
+              intent?: {
+                none?: LoaderAppearance;
+                success?: LoaderAppearance;
+                destructive?: LoaderAppearance;
+              };
+            };
+        inverted?:
+          | LoaderAppearance
+          | {
+              intent?: {
+                none?: LoaderAppearance;
+              };
+            };
+      };
+    };
   };
 } & BaseProps;
 
@@ -83,6 +118,42 @@ export type GhostButtonConfig = {
       hasAfterIcon?: BaseProps;
     } & BaseProps;
   };
+  innerElements?: {
+    loader?: {
+      appearance?: {
+        primary?:
+          | LoaderAppearance
+          | {
+              intent?: {
+                none?: LoaderAppearance;
+                success?: LoaderAppearance;
+                destructive?: LoaderAppearance;
+              };
+            };
+        secondary?:
+          | LoaderAppearance
+          | {
+              intent?: {
+                none?: LoaderAppearance;
+              };
+            };
+        inverted?:
+          | LoaderAppearance
+          | {
+              intent?: {
+                none?: LoaderAppearance;
+              };
+            };
+        reverseInverted?:
+          | LoaderAppearance
+          | {
+              intent?: {
+                none?: LoaderAppearance;
+              };
+            };
+      };
+    };
+  };
 } & BaseProps;
 
 export type BareButtonConfig = {
@@ -122,49 +193,85 @@ export type BareButtonConfig = {
       hasAfterIcon?: BaseProps;
     } & BaseProps;
   };
+  innerElements?: {
+    loader?: {
+      appearance?: {
+        primary?:
+          | LoaderAppearance
+          | {
+              intent?: {
+                none?: LoaderAppearance;
+                success?: LoaderAppearance;
+                destructive?: LoaderAppearance;
+              };
+            };
+        secondary?:
+          | LoaderAppearance
+          | {
+              intent?: {
+                none?: LoaderAppearance;
+              };
+            };
+        inverted?:
+          | LoaderAppearance
+          | {
+              intent?: {
+                none?: LoaderAppearance;
+              };
+            };
+        reverseInverted?:
+          | LoaderAppearance
+          | {
+              intent?: {
+                none?: LoaderAppearance;
+              };
+            };
+      };
+    };
+  };
 } & BaseProps;
 
 const size = {
   small: {
-    px: 'component-padding-medium',
-    h: 'small',
-    text: 'body-medium',
+    px: '$space-component-padding-medium',
+    h: '$size-small',
+    text: '$typo-body-medium',
     hasDropdownIndicator: {
-      pr: 'component-padding-small',
+      pr: '$space-component-padding-small',
     },
     hasBeforeIcon: {
-      pl: 'component-padding-small',
+      pl: '$space-component-padding-small',
     },
     hasAfterIcon: {
-      pr: 'component-padding-small',
+      pr: '$space-component-padding-small',
     },
   },
   medium: {
-    px: 'component-padding-large',
-    h: 'medium',
-    text: 'body-medium',
+    px: '$space-component-padding-large',
+    h: '$size-medium',
+    text: '$typo-body-medium',
     hasDropdownIndicator: {
-      pr: 'component-padding-medium',
+      pr: '$space-component-padding-medium',
     },
     hasBeforeIcon: {
-      pl: 'component-padding-medium',
+      pl: '$space-component-padding-medium',
     },
     hasAfterIcon: {
-      pr: 'component-padding-medium',
+      pr: '$space-component-padding-medium',
     },
   },
   large: {
-    px: 'component-padding-large',
-    h: 'large',
-    text: 'body-large',
+    px: '$space-component-padding-large',
+    h: '$size-large',
+    text: '$typo-body-large',
     hasDropdownIndicator: {
-      pr: 'component-padding-medium',
+      pr: '$space-component-padding-medium',
     },
     hasBeforeIcon: {
-      pl: 'component-padding-medium',
+      pl: '$space-component-padding-medium',
     },
     hasAfterIcon: {
-      pr: 'component-padding-medium',
+      pr: '$space-component-padding-medium',
     },
   },
 } as const satisfies Record<
@@ -178,23 +285,24 @@ const size = {
 
 const commonConfig = {
   display: 'inline-flex',
-  gap: '100',
+  borderRadius: '$border-radius-large',
+  gap: '$space-component-gap-small',
   w: 'fit-content',
   justifyContent: 'center',
   alignItems: 'center',
   textAlign: 'center',
   whiteSpace: 'nowrap',
   opacity: {
-    disabled: 'disabled',
+    disabled: '$opacity-disabled',
   },
   outline: {
     focus: 'solid',
   },
   outlineColor: {
-    focus: 'interaction-focus-default',
+    focus: '$color-interaction-focus-default',
   },
   outlineWidth: {
-    focus: 'focus',
+    focus: '$border-width-focus',
   },
   outlineOffset: 1,
   pointerEvents: {
@@ -207,74 +315,73 @@ const commonConfig = {
 
 const defaultButtonConfig = {
   ...commonConfig,
-  borderRadius: 'medium',
-  boxShadow: 'bottom-100',
+  boxShadow: '$elevation-bottom-100',
   appearance: {
     primary: {
-      color: 'action-inverted-normal',
+      color: '$color-action-inverted-normal',
       intent: {
         none: {
           backgroundColor: {
-            _: 'action-primary-normal',
-            hover: 'action-primary-hover',
-            active: 'action-primary-active',
-            selected: 'action-primary-selected',
-            // loading: "action-primary-loading",
+            _: '$color-action-primary-normal',
+            hover: '$color-action-primary-hover',
+            active: '$color-action-primary-active',
+            selected: '$color-action-primary-selected',
+            loading: '$color-action-primary-loading',
           },
         },
         success: {
           backgroundColor: {
-            _: 'action-success-normal',
-            hover: 'action-success-hover',
-            active: 'action-success-active',
-            selected: 'action-success-selected',
-            // loading: "action-success-loading",
+            _: '$color-action-success-normal',
+            hover: '$color-action-success-hover',
+            active: '$color-action-success-active',
+            selected: '$color-action-success-selected',
+            loading: '$color-action-success-loading',
           },
         },
         destructive: {
           backgroundColor: {
-            _: 'action-destructive-normal',
-            hover: 'action-destructive-hover',
-            active: 'action-destructive-active',
-            selected: 'action-destructive-selected',
-            // loading: "action-destructive-loading",
+            _: '$color-action-destructive-normal',
+            hover: '$color-action-destructive-hover',
+            active: '$color-action-destructive-active',
+            selected: '$color-action-destructive-selected',
+            loading: '$color-action-destructive-loading',
           },
         },
       },
     },
     secondary: {
-      backgroundColor: 'action-inverted-normal',
+      backgroundColor: '$color-action-inverted-normal',
       ringInset: true,
-      ring: '100',
+      ring: '$border-width-small',
       ringColor: {
-        _: 'action-outline-normal',
-        hover: 'action-outline-hover',
-        active: 'action-outline-active',
-        selected: 'action-outline-selected',
+        _: '$color-action-outline-normal',
+        hover: '$color-action-outline-hover',
+        active: '$color-action-outline-active',
+        selected: '$color-action-outline-selected',
       },
       intent: {
         none: {
           color: {
-            _: 'action-neutral-normal',
-            hover: 'action-neutral-hover',
-            active: 'action-neutral-active',
-            selected: 'action-neutral-selected',
+            _: '$color-action-neutral-normal',
+            hover: '$color-action-neutral-hover',
+            active: '$color-action-neutral-active',
+            selected: '$color-action-neutral-selected',
           },
         },
         success: {
           color: {
-            _: 'action-success-normal',
-            hover: 'action-success-hover',
-            active: 'action-success-active',
-            selected: 'action-success-selected',
+            _: '$color-action-success-normal',
+            hover: '$color-action-success-hover',
+            active: '$color-action-success-active',
+            selected: '$color-action-success-selected',
           },
         },
         destructive: {
           color: {
-            _: 'action-destructive-normal',
-            hover: 'action-destructive-hover',
-            active: 'action-destructive-active',
-            selected: 'action-destructive-selected',
+            _: '$color-action-destructive-normal',
+            hover: '$color-action-destructive-hover',
+            active: '$color-action-destructive-active',
+            selected: '$color-action-destructive-selected',
           },
         },
       },
@@ -283,59 +390,73 @@ const defaultButtonConfig = {
       intent: {
         none: {
           backgroundColor: {
-            _: 'action-inverted-normal',
-            hover: 'action-inverted-hover',
-            active: 'action-inverted-active',
-            selected: 'action-inverted-selected',
-            // loading: "action-inverted-loading",
+            _: '$color-action-inverted-normal',
+            hover: '$color-action-inverted-hover',
+            active: '$color-action-inverted-active',
+            selected: '$color-action-inverted-selected',
+            loading: '$color-action-inverted-loading',
           },
           color: {
-            _: 'action-neutral-normal',
-            hover: 'action-neutral-hover',
-            active: 'action-neutral-active',
-            selected: 'action-neutral-selected',
+            _: '$color-action-neutral-normal',
+            hover: '$color-action-neutral-hover',
+            active: '$color-action-neutral-active',
+            selected: '$color-action-neutral-selected',
           },
         },
       },
     },
   },
   size,
+  innerElements: {
+    loader: {
+      appearance: {
+        primary: {
+          appearance: 'white',
+        },
+        secondary: {
+          appearance: 'greyscale',
+        },
+        inverted: {
+          appearance: 'greyscale',
+        },
+      },
+    },
+  },
 } satisfies DefaultButtonConfig;
 
 const ghostButtonConfig = {
   ...commonConfig,
-  borderRadius: 'medium',
   backgroundColor: {
     _: 'transparent',
-    hover: 'action-ghost-hover',
-    active: 'action-ghost-active',
-    selected: 'action-ghost-selected',
+    hover: '$color-action-ghost-hover',
+    active: '$color-action-ghost-active',
+    selected: '$color-action-ghost-selected',
   },
   appearance: {
     primary: {
       intent: {
         none: {
           color: {
-            _: 'action-primary-normal',
-            hover: 'action-primary-hover',
-            active: 'action-primary-active',
-            selected: 'action-primary-selected',
+            _: '$color-action-primary-normal',
+            hover: '$color-action-primary-hover',
+            active: '$color-action-primary-active',
+            selected: '$color-action-primary-selected',
           },
         },
         success: {
           color: {
-            _: 'action-success-normal',
-            hover: 'action-success-hover',
-            active: 'action-success-active',
-            selected: 'action-success-selected',
+            _: '$color-action-success-normal',
+            hover: '$color-action-success-hover',
+            active: '$color-action-success-active',
+            selected: '$color-action-success-selected',
           },
         },
         destructive: {
           color: {
-            _: 'action-destructive-normal',
-            hover: 'action-destructive-hover',
-            active: 'action-destructive-active',
-            selected: 'action-destructive-selected',
+            _: '$color-action-destructive-normal',
+            hover: '$color-action-destructive-hover',
+            active: '$color-action-destructive-active',
+            selected: '$color-action-destructive-selected',
           },
         },
       },
@@ -344,10 +465,10 @@ const ghostButtonConfig = {
       intent: {
         none: {
           color: {
-            _: 'action-neutral-normal',
-            hover: 'action-neutral-hover',
-            active: 'action-neutral-active',
-            selected: 'action-neutral-selected',
+            _: '$color-action-neutral-normal',
+            hover: '$color-action-neutral-hover',
+            active: '$color-action-neutral-active',
+            selected: '$color-action-neutral-selected',
           },
         },
       },
@@ -356,16 +477,16 @@ const ghostButtonConfig = {
       intent: {
         none: {
           backgroundColor: {
-            _: 'action-ghost-normal',
-            hover: 'action-ghost-inverted-hover',
-            active: 'action-ghost-inverted-active',
-            selected: 'action-ghost-inverted-selected',
+            _: '$color-action-ghost-normal',
+            hover: '$color-action-ghost-inverted-hover',
+            active: '$color-action-ghost-inverted-active',
+            selected: '$color-action-ghost-inverted-selected',
           },
           color: {
-            _: 'action-inverted-normal',
-            hover: 'action-inverted-hover',
-            active: 'action-inverted-active',
-            selected: 'action-inverted-selected',
+            _: '$color-action-inverted-normal',
+            hover: '$color-action-inverted-hover',
+            active: '$color-action-inverted-active',
+            selected: '$color-action-inverted-selected',
           },
         },
       },
@@ -374,48 +495,68 @@ const ghostButtonConfig = {
       intent: {
         none: {
           color: {
-            _: 'action-reverseInverted-normal',
-            hover: 'action-reverseInverted-hover',
-            active: 'action-reverseInverted-active',
-            selected: 'action-reverseInverted-selected',
+            _: '$color-action-reverseInverted-normal',
+            hover: '$color-action-reverseInverted-hover',
+            active: '$color-action-reverseInverted-active',
+            selected: '$color-action-reverseInverted-selected',
           },
         },
       },
     },
   },
   size,
+  innerElements: {
+    loader: {
+      appearance: {
+        primary: {
+          appearance: 'greyscale',
+          intent: {
+            none: {
+              appearance: 'primary',
+            },
+          },
+        },
+        secondary: {
+          appearance: 'greyscale',
+        },
+        inverted: {
+          appearance: 'greyscale',
+        },
+      },
+    },
+  },
 } satisfies GhostButtonConfig;
 
 const bareButtonConfig = {
   ...commonConfig,
   outlineOffset: 0,
-  p: 25,
+  p: '$space-component-padding-2xSmall',
   backgroundColor: 'transparent',
   appearance: {
     primary: {
       intent: {
         none: {
           color: {
-            _: 'action-primary-normal',
-            hover: 'action-primary-hover',
-            active: 'action-primary-active',
-            selected: 'action-primary-selected',
+            _: '$color-action-primary-normal',
+            hover: '$color-action-primary-hover',
+            active: '$color-action-primary-active',
+            selected: '$color-action-primary-selected',
           },
         },
         success: {
           color: {
-            _: 'action-success-normal',
-            hover: 'action-success-hover',
-            active: 'action-success-active',
-            selected: 'action-success-selected',
+            _: '$color-action-success-normal',
+            hover: '$color-action-success-hover',
+            active: '$color-action-success-active',
+            selected: '$color-action-success-selected',
           },
         },
         destructive: {
           color: {
-            _: 'action-destructive-normal',
-            hover: 'action-destructive-hover',
-            active: 'action-destructive-active',
-            selected: 'action-destructive-selected',
+            _: '$color-action-destructive-normal',
+            hover: '$color-action-destructive-hover',
+            active: '$color-action-destructive-active',
+            selected: '$color-action-destructive-selected',
           },
         },
       },
@@ -424,10 +565,10 @@ const bareButtonConfig = {
       intent: {
         none: {
           color: {
-            _: 'action-neutral-normal',
-            hover: 'action-neutral-hover',
-            active: 'action-neutral-active',
-            selected: 'action-neutral-selected',
+            _: '$color-action-neutral-normal',
+            hover: '$color-action-neutral-hover',
+            active: '$color-action-neutral-active',
+            selected: '$color-action-neutral-selected',
           },
         },
       },
@@ -436,10 +577,10 @@ const bareButtonConfig = {
       intent: {
         none: {
           color: {
-            _: 'action-inverted-normal',
-            hover: 'action-inverted-hover',
-            active: 'action-inverted-active',
-            selected: 'action-inverted-selected',
+            _: '$color-action-inverted-normal',
+            hover: '$color-action-inverted-hover',
+            active: '$color-action-inverted-active',
+            selected: '$color-action-inverted-selected',
           },
         },
       },
@@ -449,10 +590,10 @@ const bareButtonConfig = {
       intent: {
         none: {
           color: {
-            _: 'action-reverseInverted-normal',
-            hover: 'action-reverseInverted-hover',
-            active: 'action-reverseInverted-active',
-            selected: 'action-reverseInverted-selected',
+            _: '$color-action-reverseInverted-normal',
+            hover: '$color-action-reverseInverted-hover',
+            active: '$color-action-reverseInverted-active',
+            selected: '$color-action-reverseInverted-selected',
           },
         },
       },
@@ -461,16 +602,36 @@ const bareButtonConfig = {
   },
   size: {
     medium: {
-      text: 'body-medium',
+      text: '$typo-body-medium',
       hasDropdownIndicator: {},
       hasBeforeIcon: {},
       hasAfterIcon: {},
     },
     large: {
-      text: 'body-large',
+      text: '$typo-body-large',
       hasDropdownIndicator: {},
       hasBeforeIcon: {},
       hasAfterIcon: {},
+    },
+  },
+  innerElements: {
+    loader: {
+      appearance: {
+        primary: {
+          appearance: 'greyscale',
+          intent: {
+            none: {
+              appearance: 'primary',
+            },
+          },
+        },
+        secondary: {
+          appearance: 'greyscale',
+        },
+        inverted: {
+          appearance: 'greyscale',
+        },
+      },
     },
   },
 } satisfies BareButtonConfig;

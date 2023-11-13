@@ -1,7 +1,5 @@
 import { create } from '@storybook/theming/create';
 
-const STORYBOOK_HOST = process?.env?.STORYBOOK_HOST;
-
 export default create({
   base: 'light',
   colorPrimary: '#272E35',
@@ -12,7 +10,7 @@ export default create({
 
   // Branding
   brandTitle: 'Tetrisly - React Components',
-  brandImage: `${STORYBOOK_HOST ? '/' + STORYBOOK_HOST : ''}/logo.svg`,
+  brandImage: '/logo.svg',
 
   // UI
   appBg: '#ffffff',

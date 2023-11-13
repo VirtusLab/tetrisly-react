@@ -50,23 +50,23 @@ describe('AlertBanner', () => {
       <AlertBanner text="Alert" intent="none" />,
     );
     expect(alertBanner).toHaveStyle('color: rgb(255,255,255);');
-    expect(alertBanner).toHaveStyle('background-color: rgb(85,85,85);');
+    expect(alertBanner).toHaveStyle('background-color: rgb(85, 95, 109);');
   });
 
-  it('should render correct intent color (positive)', () => {
+  it('should render correct intent color (success)', () => {
     const alertBanner = getAlertBanner(
-      <AlertBanner text="Alert" intent="positive" />,
+      <AlertBanner text="Alert" intent="success" />,
     );
     expect(alertBanner).toHaveStyle('color: rgb(255,255,255);');
-    expect(alertBanner).toHaveStyle('background-color: rgb(29,29,29);');
+    expect(alertBanner).toHaveStyle('background-color:  rgb(29, 124, 77);');
   });
 
   it('should render correct intent color (warning)', () => {
     const alertBanner = getAlertBanner(
       <AlertBanner text="Alert" intent="warning" />,
     );
-    expect(alertBanner).toHaveStyle('color: rgb(39,39,39);');
-    expect(alertBanner).toHaveStyle('background-color: rgb(56,56,56);');
+    expect(alertBanner).toHaveStyle('color: rgb(39, 46, 53);');
+    expect(alertBanner).toHaveStyle('background-color: rgb(245, 150, 56);');
   });
 
   it('should render correct intent color (negative)', () => {

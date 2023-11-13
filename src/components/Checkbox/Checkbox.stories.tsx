@@ -11,6 +11,14 @@ const meta = {
   title: 'Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
+  argTypes: {
+    state: {
+      control: {
+        type: 'select',
+        options: [undefined, 'disabled', 'alert'],
+      },
+    },
+  },
   parameters: {
     docs: {
       description: {
@@ -34,6 +42,7 @@ export const Default: Story = {};
 export const Checked: Story = {
   args: {
     isChecked: true,
+    onChange: () => {},
   },
 };
 
@@ -54,7 +63,11 @@ export const Indeterminate = () => {
   }, [mainChecked]);
 
   return (
-    <tet.div display="flex" flexDirection="column" gap="component-gap-small">
+    <tet.div
+      display="flex"
+      flexDirection="column"
+      gap="$space-component-gap-small"
+    >
       <Checkbox
         isIndeterminate={!mainChecked && (checkbox1Value || checkbox2Value)}
         isChecked={mainChecked}
@@ -83,7 +96,7 @@ export const Alert: Story = {
   args: {
     state: 'alert',
     label: 'Label',
-    helperText: 'Helper text',
+    helperText: { text: 'Helper text' },
   },
 };
 
@@ -96,6 +109,6 @@ export const Label: Story = {
 export const HelperText: Story = {
   args: {
     label: 'Label',
-    helperText: 'Helper text',
+    helperText: { text: 'Helper text' },
   },
 };

@@ -1,3 +1,4 @@
+import { LoaderProps } from '../../Loader';
 import { ButtonProps } from '../Button.props';
 import { defaultConfig } from '../Button.styles';
 
@@ -17,6 +18,32 @@ type ButtonStylesBulderInput = {
 
 type ButtonStylesBuilder = {
   container: BaseProps;
+  loader: Pick<LoaderProps, 'appearance'>;
+};
+
+const getLoaderProps = (
+  loader: object,
+  props: Pick<ButtonStylesBulderInput, 'appearance' | 'intent'>,
+) => {
+  let loaderProps: Pick<LoaderProps, 'appearance'> = {};
+
+  if (!('appearance' in loader)) return loader;
+
+  const loaderAppearance =
+    loader?.appearance?.[props.appearance as keyof typeof loader.appearance];
+
+  if (loaderAppearance) {
+    if ('intent' in loaderAppearance) {
+      const { intent: loaderIntent } = loaderAppearance;
+
+      loaderProps =
+        loaderIntent?.[props.intent as keyof typeof loaderIntent] || {};
+    } else {
+      loaderProps = loaderAppearance;
+    }
+  }
+
+  return loaderProps;
 };
 
 export const stylesBuilder = (
@@ -26,7 +53,13 @@ export const stylesBuilder = (
     defaultConfig,
     custom: props.custom,
   });
-  const { appearance, size, ...container } = variants[props.variant];
+
+  const {
+    appearance,
+    size,
+    innerElements: { loader },
+    ...container
+  } = variants[props.variant];
 
   const { hasDropdownIndicator, hasBeforeIcon, hasAfterIcon, ...sizeStyles } =
     fallbackKey(
@@ -68,5 +101,9 @@ export const stylesBuilder = (
       ...appearanceStyles,
       ...intentStyles,
     },
+    loader: getLoaderProps(loader, {
+      appearance: props.appearance,
+      intent: props.intent,
+    }),
   };
 };

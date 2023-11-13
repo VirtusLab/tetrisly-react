@@ -17,8 +17,8 @@ const appearances = [
 
 const bgMap = {
   primary: undefined,
-  inverted: 'background-neutral-subtle',
-  white: 'background-inverted',
+  inverted: '$color-background-neutral-subtle',
+  white: '$color-background-inverted',
   greyscale: undefined,
 } as const;
 
@@ -27,7 +27,7 @@ export const LoaderDocs = () => (
     {shapes.map((shape) => (
       <tet.section key={shape}>
         <tet.div>
-          <SectionHeader variant="Hero" as="h2" px="1000">
+          <SectionHeader variant="Hero" as="h2" px="$dimension-1000">
             Shape: {capitalize(shape)}
           </SectionHeader>
           {appearances.map((appearance) => {
@@ -36,13 +36,13 @@ export const LoaderDocs = () => (
               <tet.div
                 key={`${shape}${appearance}`}
                 bg={bgMap[appearance]}
-                px="1000"
-                py="500"
+                px="$dimension-1000"
+                py="$dimension-500"
               >
                 <SectionHeader
                   variant="H1"
                   as="h2"
-                  py="500"
+                  py="$dimension-500"
                   inverted={appearance === 'white'}
                 >
                   {capitalize(appearance)}
@@ -53,18 +53,22 @@ export const LoaderDocs = () => (
                       variant="H2"
                       as="h4"
                       inverted={appearance === 'white'}
-                      py="500"
+                      py="$dimension-500"
                     >
                       Progres: No
                     </SectionHeader>
-                    <Loader shape={shape} appearance={appearance} my="500" />
+                    <Loader
+                      shape={shape}
+                      appearance={appearance}
+                      my="$dimension-500"
+                    />
                   </tet.div>
                   <tet.div>
                     <SectionHeader
                       variant="H2"
                       as="h4"
                       inverted={appearance === 'white'}
-                      py="500"
+                      py="$dimension-500"
                     >
                       Progres: Yes ({Math.floor(progress * 100)}%)
                     </SectionHeader>
@@ -72,7 +76,7 @@ export const LoaderDocs = () => (
                       shape={shape}
                       appearance={appearance}
                       progress={progress}
-                      my="500"
+                      my="$dimension-500"
                     />
                   </tet.div>
                 </Cols>

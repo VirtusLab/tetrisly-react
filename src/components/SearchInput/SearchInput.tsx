@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { SearchInputProps } from './SearchInput.props';
-import { TextInput, TextInputProps } from '../TextInput';
+import type { SearchInputProps } from './SearchInput.props';
+import { TextInput, type TextInputProps } from '../TextInput';
 
-import { MarginProps } from '@/types';
+import type { MarginProps } from '@/types';
 
 const SEARCH_ICON_COMPONENT: TextInputProps['beforeComponent'] = {
   type: 'Icon',

@@ -9,6 +9,11 @@ const meta = {
   title: 'Divider',
   component: Divider,
   tags: ['autodocs'],
+  render: (args) => (
+    <tet.div h="100px">
+      <Divider {...args} />
+    </tet.div>
+  ),
   parameters: {
     docs: {
       description: {

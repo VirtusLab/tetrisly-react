@@ -1,7 +1,7 @@
 import { IconProps } from '@virtuslab/tetrisly-icons';
 import { InputHTMLAttributes } from 'react';
 
-import { TextInputConfig } from './TextInput.style';
+import { TextInputConfig } from './TextInput.styles';
 import { TextInputType } from './TextInputType.type';
 import { AvatarImageProps, AvatarInitialProps } from '../Avatar/Avatar.props';
 import { GhostButtonProps } from '../Button/Button.props';

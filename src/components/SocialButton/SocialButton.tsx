@@ -5,7 +5,7 @@ import { socials } from './socials';
 import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
-import { MarginProps } from '@/types';
+import type { MarginProps } from '@/types';
 
 export const SocialButton: FC<SocialButtonProps & MarginProps> = ({
   platform,
@@ -29,7 +29,11 @@ export const SocialButton: FC<SocialButtonProps & MarginProps> = ({
       disabled={['disabled', 'loading'].includes(state ?? '')}
       data-state={state}
       style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
-      bg={appearance === 'primary' ? social.color : 'action-inverted-normal'}
+      bg={
+        appearance === 'primary'
+          ? social.color
+          : '$color-action-inverted-normal'
+      }
     >
       <social.Icon
         loading={state === 'loading'}
@@ -39,8 +43,8 @@ export const SocialButton: FC<SocialButtonProps & MarginProps> = ({
       <tet.span
         color={
           appearance === 'primary'
-            ? 'content-primary-inverted'
-            : 'action-neutral-normal'
+            ? '$color-content-primary-inverted'
+            : '$color-action-neutral-normal'
         }
       >
         {label}
