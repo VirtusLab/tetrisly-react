@@ -1,8 +1,22 @@
 {
   "name": "@virtuslab/tetrisly-react",
   "version": "1.2.0",
+  "homepage": "https://tetrisly.com/",
+  "description": "Tetrisly offers user-friendly components designed for effortless integration. Plus, it's fully compatible with fully compatible with Tetrisly for Figma with a seamless design and development experience in mind.",
+  "keywords": [
+    "tetrisly",
+    "react",
+    "ui",
+    "design",
+    "system",
+    "components",
+    "library",
+    "typescript",
+    "figma",
+    "xstyled",
+    "styled-components"
+  ],
   "type": "module",
-  "homepage": "https://virtuslab.github.io/tetrisly-react",
   "main": "dist/tetrisly-react.umd.js",
   "module": "dist/tetrisly-react.es.js",
   "types": "dist/tetrisly-react.es.d.ts",
