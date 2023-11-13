@@ -47,7 +47,7 @@ export const TextInput = forwardRef<
         onClick={handleContainerClick}
         {...styles.container}
         pl={!!beforeComponent && '0'}
-        pr={(!!afterComponent || !!hasClearButton) && '0'}
+        pr={!!afterComponent && '0'}
         data-testid="text-input"
         data-state={state}
         tabIndex={0}

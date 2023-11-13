@@ -18,11 +18,12 @@ export type InlineBannerConfig = {
     closeButton?: BaseProps;
   };
   spacing?: {
-    closeButton?: BaseProps;
+    container?: BaseProps;
   };
 } & BaseProps;
 
 export const defaultConfig = {
+  position: 'relative',
   display: 'flex',
   p: '$space-component-padding-xLarge',
   gap: '$space-component-gap-large',
@@ -53,7 +54,7 @@ export const defaultConfig = {
   },
   innerElements: {
     iconContainer: {
-      h: 'xSmall',
+      h: '$size-xSmall',
       display: 'flex',
       alignItems: 'center',
       intent: {
@@ -110,12 +111,14 @@ export const defaultConfig = {
       },
     },
     closeButton: {
-      ml: 'auto',
+      position: 'absolute',
+      top: '$space-component-padding-large',
+      right: '$space-component-padding-large',
     },
   },
   spacing: {
-    closeButton: {
-      pr: '$space-component-padding-large',
+    container: {
+      pr: '$space-component-padding-6xLarge',
     },
   },
 } satisfies InlineBannerConfig;

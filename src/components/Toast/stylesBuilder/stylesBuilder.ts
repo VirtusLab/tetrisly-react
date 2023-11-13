@@ -52,8 +52,11 @@ export const stylesBuilder = ({
     ...restIconContainerStyles,
   };
 
-  const { emphasis: emphasisMiddleDotStyles, ...restMiddleDotStyles } =
-    middleDot;
+  const {
+    emphasis: emphasisMiddleDotStyles,
+    intent: intentMiddleDotStyles,
+    ...restMiddleDotStyles
+  } = middleDot;
 
   return {
     container,
@@ -63,6 +66,7 @@ export const stylesBuilder = ({
     middleDot: {
       ...restMiddleDotStyles,
       ...emphasisMiddleDotStyles[props.emphasis],
+      ...intentMiddleDotStyles[props.intent],
     },
   };
 };

@@ -23,11 +23,11 @@ describe('stylesBuilder', () => {
           loading: '$color-action-primary-loading',
           selected: '$color-action-primary-selected',
         },
-        borderRadius: '$border-radius-medium',
+        borderRadius: '$border-radius-large',
         boxShadow: '$elevation-bottom-100',
         color: '$color-action-inverted-normal',
         display: 'inline-flex',
-        gap: '$space-component-gap-xSmall',
+        gap: '$space-component-gap-small',
         justifyContent: 'center',
         opacity: {
           disabled: '$opacity-disabled',
@@ -55,6 +55,9 @@ describe('stylesBuilder', () => {
         transitionDuration: 200,
         w: 'fit-content',
         whiteSpace: 'nowrap',
+      },
+      loader: {
+        appearance: 'white',
       },
     });
   });

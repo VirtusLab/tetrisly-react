@@ -60,7 +60,7 @@ export const Dropdown: Story = {
   },
 };
 
-export const Icon: Story = {
+export const IconButton: Story = {
   args: {
     afterComponent: {
       type: 'IconButton',
