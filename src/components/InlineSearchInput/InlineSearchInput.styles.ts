@@ -3,6 +3,7 @@ import { SearchInputProps } from '../SearchInput';
 export const defaultConfig: SearchInputProps['custom'] = {
   position: 'relative',
   display: 'inline-flex',
+  w: 'auto',
   h: '$size-small',
   padding: '$space-component-padding-xSmall $space-component-padding-small',
   backgroundColor: {

@@ -26,6 +26,7 @@ export const defaultConfig = {
   bg: '$color-interaction-background-formField',
   display: 'flex',
   alignItems: 'center',
+  w: '100%',
   h: '$size-medium',
   padding: '$space-component-padding-small $space-component-padding-large',
   flexShrink: 0,
@@ -69,6 +70,9 @@ export const defaultConfig = {
       },
       p: 0,
       backgroundColor: 'transparent',
+      opacity: {
+        placeholder: 1,
+      },
     },
     icon: {
       color: '$color-content-secondary',
