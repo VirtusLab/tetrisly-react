@@ -13,7 +13,7 @@
 ### Bug Fixes
 
 * components review ([#95](https://github.com/VirtusLab/tetrisly-react/issues/95)) ([8598130](https://github.com/VirtusLab/tetrisly-react/commit/8598130f769338402c22a5f8a7c3cf3a296d378d))
-* components visual fixes and improvements with updated tokens ([#98](https://github.com/VirtusLab/tetrisly-react/issues/98)) ([0d18440](https://github.com/VirtusLab/tetrisly-react/commit/0d184400ba6819123a3d86a658a8334e386fcecc))
+
 
 ## [1.2.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.1.0...v1.2.0) (2023-10-13)
 
