@@ -15,7 +15,7 @@ const meta = {
   tags: ['autodocs'],
   args: {
     content: (
-      <tet.div display="flex" gap="12px" alignItems="center" w="324px">
+      <tet.div display="flex" gap="12px" alignItems="center">
         <Avatar
           appearance="image"
           img={{
@@ -39,7 +39,6 @@ const meta = {
           size="small"
           beforeIcon="20-check-large"
           label="Following"
-          ml="auto"
         />
       </tet.div>
     ),

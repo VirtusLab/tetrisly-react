@@ -1,18 +1,11 @@
-import type { AvatarAppearance, AvatarShape, AvatarSize } from './types';
+import type { AvatarAppearance, AvatarShape } from './types';
 
 import type { BaseProps } from '@/types/BaseProps';
 import { Emphasis } from '@/types/Emphasis';
 import { Size } from '@/types/Size';
 
 export type AvatarConfig = {
-  shape?: Partial<
-    Record<
-      AvatarShape,
-      BaseProps & {
-        size?: Partial<Record<AvatarSize, BaseProps>>;
-      }
-    >
-  >;
+  shape?: Partial<Record<AvatarShape, BaseProps>>;
   size?: Partial<Record<Size, BaseProps>>;
   appearance?: Partial<
     Record<
@@ -38,11 +31,7 @@ export const defaultConfig = {
       borderRadius: '$border-radius-full',
     },
     square: {
-      borderRadius: {
-        _: '$border-radius-large',
-        '&[data-size="xSmall"]': '$border-radius-medium',
-        '&[data-size="2xSmall"]': '$border-radius-medium',
-      },
+      borderRadius: '$border-radius-large',
     },
   },
   size: {

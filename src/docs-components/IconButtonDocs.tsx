@@ -1,6 +1,8 @@
 import { capitalize, startCase } from 'lodash';
+import { ComponentProps } from 'react';
 
 import { SectionHeader } from './common/SectionHeader';
+import { useLoading } from './hooks/useLoading';
 
 import { IconButton, IconButtonProps } from '@/components/IconButton';
 import { tet } from '@/tetrisly';
@@ -17,6 +19,17 @@ const getIntents = (appearance: ReturnType<typeof getAppearances>[number]) => {
     return ['none', 'success', 'destructive'] as const;
   }
   return ['none'] as const;
+};
+
+const LoadingIconButton = (props: ComponentProps<typeof IconButton>) => {
+  const [isLoading, startLoading] = useLoading();
+  return (
+    <IconButton
+      {...props}
+      state={isLoading ? 'loading' : undefined}
+      onClick={startLoading}
+    />
+  );
 };
 
 export const IconButtonDocs = () => (
@@ -69,7 +82,10 @@ export const IconButtonDocs = () => (
                           'Dropdown: false',
                         ]}
                       />
-                      <IconButton mt="$dimension-500" {...iconButtonProps} />
+                      <LoadingIconButton
+                        mt="$dimension-500"
+                        {...iconButtonProps}
+                      />
                     </tet.div>
                     <tet.div py="$dimension-500">
                       <SectionHeader
@@ -81,7 +97,7 @@ export const IconButtonDocs = () => (
                           'Dropdown: true',
                         ]}
                       />
-                      <IconButton
+                      <LoadingIconButton
                         mt="$dimension-500"
                         {...iconButtonProps}
                         hasDropdownIndicator

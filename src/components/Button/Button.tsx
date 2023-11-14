@@ -57,13 +57,13 @@ export const Button: FC<ButtonProps & MarginProps> = ({
     <tet.button
       data-testid="button"
       {...styles.container}
-      disabled={state ? ['disabled', 'loading'].includes(state) : false}
+      disabled={['disabled', 'loading'].includes(state ?? '')}
       data-state={state}
       style={{ textUnderlineOffset: '3px', textDecorationThickness: '1px' }}
       {...rest}
     >
       {state === 'loading' && (
-        <Loader {...styles.loader} size="small" shape="circle" />
+        <Loader appearance="greyscale" size="small" shape="circle" />
       )}
       {beforeIcon && state !== 'loading' && <Icon name={beforeIcon} />}
       {children}

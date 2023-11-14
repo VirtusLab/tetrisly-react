@@ -57,7 +57,7 @@ export const stylesBuilder = ({
     container: {
       ...restProps,
       ...intentStyles[intent],
-      ...(hasCloseButton && spacing.container),
+      ...(hasCloseButton && spacing.closeButton),
     },
     iconContainer: iconContainerStyles,
     contentContainer,
