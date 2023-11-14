@@ -1,12 +1,19 @@
 # Changelog
 
+## [1.2.2](https://github.com/VirtusLab/tetrisly-react/compare/v1.2.1...v1.2.2) (2023-11-14)
+
+
+### Bug Fixes
+
+* components fixes and improvements with updated tokens ([#100](https://github.com/VirtusLab/tetrisly-react/issues/100)) ([cf85388](https://github.com/VirtusLab/tetrisly-react/commit/cf853886e3dd862c4f906eea2aa5b1c9344a413f))
+
 ## [1.2.1](https://github.com/VirtusLab/tetrisly-react/compare/v1.2.0...v1.2.1) (2023-11-13)
 
 
 ### Bug Fixes
 
 * components review ([#95](https://github.com/VirtusLab/tetrisly-react/issues/95)) ([8598130](https://github.com/VirtusLab/tetrisly-react/commit/8598130f769338402c22a5f8a7c3cf3a296d378d))
-* components visual fixes and improvements with updated tokens ([#98](https://github.com/VirtusLab/tetrisly-react/issues/98)) ([0d18440](https://github.com/VirtusLab/tetrisly-react/commit/0d184400ba6819123a3d86a658a8334e386fcecc))
+
 
 ## [1.2.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.1.0...v1.2.0) (2023-10-13)
 
