@@ -1,5 +1,4 @@
 import type { ToastEmphasis, ToastIntent } from './types';
-import { BareButtonProps } from '../Button/Button.props';
 import type { BaseProps } from '../../types/BaseProps';
 import type { IconName } from '../../utility-types/IconName';
 export type ToastConfig = {
@@ -14,7 +13,8 @@ export type ToastConfig = {
         } & BaseProps;
         actionContainer?: BaseProps;
         middleDot?: {
-            emphasis: Partial<Record<ToastEmphasis, BaseProps | Partial<BareButtonProps>>>;
+            emphasis: Partial<Record<ToastEmphasis, BaseProps>>;
+            intent: Partial<Record<ToastIntent, BaseProps>>;
         } & BaseProps;
         closeButton?: BaseProps;
     };
@@ -132,6 +132,15 @@ export declare const defaultConfig: {
                 low: {
                     color: "$color-content-tertiary";
                 };
+            };
+            intent: {
+                neutral: {};
+                informative: {};
+                success: {};
+                warning: {
+                    color: "$color-content-secondary";
+                };
+                negative: {};
             };
         };
         closeButton: {
