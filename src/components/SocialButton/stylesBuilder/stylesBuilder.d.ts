@@ -12,7 +12,6 @@ export declare const stylesBuilder: (appearance: SocialButtonAppearance, custom:
     flexShrink: number;
     borderRadius: string;
     boxShadow: "$elevation-bottom-100";
-    text: "$typo-body-medium";
     opacity: {
         _: number;
         hover: number;

@@ -17,11 +17,9 @@ export declare const defaultConfig: {
     bg: "$color-interaction-background-formField";
     display: "flex";
     alignItems: "center";
-    w: string;
     h: string;
     padding: string;
     flexShrink: number;
-    ringInset: true;
     ring: string;
     ringColor: {
         _: "$color-interaction-border-neutral-normal";
@@ -59,11 +57,7 @@ export declare const defaultConfig: {
             color: {
                 placeholder: "$color-content-tertiary";
             };
-            p: number;
-            backgroundColor: "transparent";
-            opacity: {
-                placeholder: number;
-            };
+            backgroundColor: "$color-interaction-background-formField";
         };
         icon: {
             color: "$color-content-secondary";

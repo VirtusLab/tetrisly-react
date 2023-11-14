@@ -16,11 +16,10 @@ export type InlineBannerConfig = {
         closeButton?: BaseProps;
     };
     spacing?: {
-        container?: BaseProps;
+        closeButton?: BaseProps;
     };
 } & BaseProps;
 export declare const defaultConfig: {
-    position: "relative";
     display: "flex";
     p: string;
     gap: string;
@@ -108,13 +107,11 @@ export declare const defaultConfig: {
             };
         };
         closeButton: {
-            position: "absolute";
-            top: string;
-            right: string;
+            ml: string;
         };
     };
     spacing: {
-        container: {
+        closeButton: {
             pr: string;
         };
     };

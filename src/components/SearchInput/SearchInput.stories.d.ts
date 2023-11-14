@@ -23,4 +23,4 @@ export declare const Default: Story;
 export declare const Filled: Story;
 export declare const Disabled: Story;
 export declare const Dropdown: Story;
-export declare const IconButton: Story;
+export declare const Icon: Story;

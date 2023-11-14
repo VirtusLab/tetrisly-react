@@ -1,6 +1,4 @@
-import { LoaderProps } from '../Loader';
 import { BaseProps } from '../../types/BaseProps';
-type LoaderAppearance = Pick<LoaderProps, 'appearance'>;
 export type DefaultButtonConfig = {
     appearance?: {
         primary?: {
@@ -39,31 +37,6 @@ export type DefaultButtonConfig = {
             hasBeforeIcon?: BaseProps;
             hasAfterIcon?: BaseProps;
         } & BaseProps;
-    };
-    innerElements?: {
-        loader?: {
-            appearance?: {
-                primary?: LoaderAppearance | {
-                    intent?: {
-                        none?: LoaderAppearance;
-                        success?: LoaderAppearance;
-                        destructive?: LoaderAppearance;
-                    };
-                };
-                secondary?: LoaderAppearance | {
-                    intent?: {
-                        none?: LoaderAppearance;
-                        success?: LoaderAppearance;
-                        destructive?: LoaderAppearance;
-                    };
-                };
-                inverted?: LoaderAppearance | {
-                    intent?: {
-                        none?: LoaderAppearance;
-                    };
-                };
-            };
-        };
     };
 } & BaseProps;
 export type GhostButtonConfig = {
@@ -108,34 +81,6 @@ export type GhostButtonConfig = {
             hasAfterIcon?: BaseProps;
         } & BaseProps;
     };
-    innerElements?: {
-        loader?: {
-            appearance?: {
-                primary?: LoaderAppearance | {
-                    intent?: {
-                        none?: LoaderAppearance;
-                        success?: LoaderAppearance;
-                        destructive?: LoaderAppearance;
-                    };
-                };
-                secondary?: LoaderAppearance | {
-                    intent?: {
-                        none?: LoaderAppearance;
-                    };
-                };
-                inverted?: LoaderAppearance | {
-                    intent?: {
-                        none?: LoaderAppearance;
-                    };
-                };
-                reverseInverted?: LoaderAppearance | {
-                    intent?: {
-                        none?: LoaderAppearance;
-                    };
-                };
-            };
-        };
-    };
 } & BaseProps;
 export type BareButtonConfig = {
     appearance?: {
@@ -174,34 +119,6 @@ export type BareButtonConfig = {
             hasAfterIcon?: BaseProps;
         } & BaseProps;
     };
-    innerElements?: {
-        loader?: {
-            appearance?: {
-                primary?: LoaderAppearance | {
-                    intent?: {
-                        none?: LoaderAppearance;
-                        success?: LoaderAppearance;
-                        destructive?: LoaderAppearance;
-                    };
-                };
-                secondary?: LoaderAppearance | {
-                    intent?: {
-                        none?: LoaderAppearance;
-                    };
-                };
-                inverted?: LoaderAppearance | {
-                    intent?: {
-                        none?: LoaderAppearance;
-                    };
-                };
-                reverseInverted?: LoaderAppearance | {
-                    intent?: {
-                        none?: LoaderAppearance;
-                    };
-                };
-            };
-        };
-    };
 } & BaseProps;
 export type ButtonConfig = {
     default?: DefaultButtonConfig;
@@ -210,6 +127,7 @@ export type ButtonConfig = {
 };
 export declare const defaultConfig: {
     default: {
+        borderRadius: string;
         boxShadow: "$elevation-bottom-100";
         appearance: {
             primary: {
@@ -345,23 +263,7 @@ export declare const defaultConfig: {
                 };
             };
         };
-        innerElements: {
-            loader: {
-                appearance: {
-                    primary: {
-                        appearance: "white";
-                    };
-                    secondary: {
-                        appearance: "greyscale";
-                    };
-                    inverted: {
-                        appearance: "greyscale";
-                    };
-                };
-            };
-        };
         display: "inline-flex";
-        borderRadius: string;
         gap: string;
         w: string;
         justifyContent: "center";
@@ -389,6 +291,7 @@ export declare const defaultConfig: {
         transitionDuration: number;
     };
     ghost: {
+        borderRadius: string;
         backgroundColor: {
             _: "transparent";
             hover: "$color-action-ghost-hover";
@@ -511,28 +414,7 @@ export declare const defaultConfig: {
                 };
             };
         };
-        innerElements: {
-            loader: {
-                appearance: {
-                    primary: {
-                        appearance: "greyscale";
-                        intent: {
-                            none: {
-                                appearance: "primary";
-                            };
-                        };
-                    };
-                    secondary: {
-                        appearance: "greyscale";
-                    };
-                    inverted: {
-                        appearance: "greyscale";
-                    };
-                };
-            };
-        };
         display: "inline-flex";
-        borderRadius: string;
         gap: string;
         w: string;
         justifyContent: "center";
@@ -645,28 +527,7 @@ export declare const defaultConfig: {
                 hasAfterIcon: {};
             };
         };
-        innerElements: {
-            loader: {
-                appearance: {
-                    primary: {
-                        appearance: "greyscale";
-                        intent: {
-                            none: {
-                                appearance: "primary";
-                            };
-                        };
-                    };
-                    secondary: {
-                        appearance: "greyscale";
-                    };
-                    inverted: {
-                        appearance: "greyscale";
-                    };
-                };
-            };
-        };
         display: "inline-flex";
-        borderRadius: string;
         gap: string;
         w: string;
         justifyContent: "center";
@@ -693,4 +554,3 @@ export declare const defaultConfig: {
         transitionDuration: number;
     };
 };
-export {};

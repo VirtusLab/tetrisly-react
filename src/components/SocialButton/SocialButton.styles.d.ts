@@ -15,7 +15,6 @@ export declare const defaultConfig: {
     flexShrink: number;
     borderRadius: string;
     boxShadow: "$elevation-bottom-100";
-    text: "$typo-body-medium";
     opacity: {
         _: number;
         hover: number;
