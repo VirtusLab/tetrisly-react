@@ -52,7 +52,6 @@ export const defaultConfig = {
         alert: {
           _: '$color-interaction-border-alert',
           hover: '$color-interaction-border-alert',
-          checked: '$color-interaction-default-normal',
         },
       },
       outlineStyle: {

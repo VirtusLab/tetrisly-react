@@ -18,15 +18,15 @@ export const defaultConfig = {
     top: {
       align: {
         start: {
-          transform: 'translate(0%, -100%) translateZ(0)',
+          transform: 'translate(0%, -100%)',
           left: '50%',
         },
         center: {
-          transform: 'translate(-50%, -100%) translateZ(0)',
+          transform: 'translate(-50%, -100%)',
           left: '50%',
         },
         end: {
-          transform: 'translate(-100%, -100%) translateZ(0)',
+          transform: 'translate(-100%, -100%)',
           left: '50%',
         },
       },
@@ -34,15 +34,15 @@ export const defaultConfig = {
     bottom: {
       align: {
         start: {
-          transform: 'translate(0%, 100%) translateZ(0)',
+          transform: 'translate(0%, 100%)',
           left: '50%',
         },
         center: {
-          transform: 'translate(-50%, 100%) translateZ(0)',
+          transform: 'translate(-50%, 100%)',
           left: '50%',
         },
         end: {
-          transform: 'translate(-100%, 100%) translateZ(0)',
+          transform: 'translate(-100%, 100%)',
           left: '50%',
         },
       },
@@ -50,15 +50,15 @@ export const defaultConfig = {
     left: {
       align: {
         start: {
-          transform: 'translate(-100%, 0%) translateZ(0)',
+          transform: 'translate(-100%, 0%)',
           top: '50%',
         },
         center: {
-          transform: 'translate(-100%, -50%) translateZ(0)',
+          transform: 'translate(-100%, -50%)',
           top: '50%',
         },
         end: {
-          transform: 'translate(-100%, -100%) translateZ(0)',
+          transform: 'translate(-100%, -100%)',
           top: '50%',
         },
       },
@@ -66,15 +66,15 @@ export const defaultConfig = {
     right: {
       align: {
         start: {
-          transform: 'translate(100%, 0%) translateZ(0)',
+          transform: 'translate(100%, 0%)',
           top: '50%',
         },
         center: {
-          transform: 'translate(100%, -50%) translateZ(0)',
+          transform: 'translate(100%, -50%)',
           top: '50%',
         },
         end: {
-          transform: 'translate(100%, -100%) translateZ(0)',
+          transform: 'translate(100%, -100%)',
           top: '50%',
         },
       },

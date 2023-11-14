@@ -1,8 +1,4 @@
-import { LoaderProps } from '../Loader';
-
 import { BaseProps } from '@/types/BaseProps';
-
-type LoaderAppearance = Pick<LoaderProps, 'appearance'>;
 
 export type DefaultButtonConfig = {
   appearance?: {
@@ -42,37 +38,6 @@ export type DefaultButtonConfig = {
       hasBeforeIcon?: BaseProps;
       hasAfterIcon?: BaseProps;
     } & BaseProps;
-  };
-  innerElements?: {
-    loader?: {
-      appearance?: {
-        primary?:
-          | LoaderAppearance
-          | {
-              intent?: {
-                none?: LoaderAppearance;
-                success?: LoaderAppearance;
-                destructive?: LoaderAppearance;
-              };
-            };
-        secondary?:
-          | LoaderAppearance
-          | {
-              intent?: {
-                none?: LoaderAppearance;
-                success?: LoaderAppearance;
-                destructive?: LoaderAppearance;
-              };
-            };
-        inverted?:
-          | LoaderAppearance
-          | {
-              intent?: {
-                none?: LoaderAppearance;
-              };
-            };
-      };
-    };
   };
 } & BaseProps;
 
@@ -118,42 +83,6 @@ export type GhostButtonConfig = {
       hasAfterIcon?: BaseProps;
     } & BaseProps;
   };
-  innerElements?: {
-    loader?: {
-      appearance?: {
-        primary?:
-          | LoaderAppearance
-          | {
-              intent?: {
-                none?: LoaderAppearance;
-                success?: LoaderAppearance;
-                destructive?: LoaderAppearance;
-              };
-            };
-        secondary?:
-          | LoaderAppearance
-          | {
-              intent?: {
-                none?: LoaderAppearance;
-              };
-            };
-        inverted?:
-          | LoaderAppearance
-          | {
-              intent?: {
-                none?: LoaderAppearance;
-              };
-            };
-        reverseInverted?:
-          | LoaderAppearance
-          | {
-              intent?: {
-                none?: LoaderAppearance;
-              };
-            };
-      };
-    };
-  };
 } & BaseProps;
 
 export type BareButtonConfig = {
@@ -192,42 +121,6 @@ export type BareButtonConfig = {
       hasBeforeIcon?: BaseProps;
       hasAfterIcon?: BaseProps;
     } & BaseProps;
-  };
-  innerElements?: {
-    loader?: {
-      appearance?: {
-        primary?:
-          | LoaderAppearance
-          | {
-              intent?: {
-                none?: LoaderAppearance;
-                success?: LoaderAppearance;
-                destructive?: LoaderAppearance;
-              };
-            };
-        secondary?:
-          | LoaderAppearance
-          | {
-              intent?: {
-                none?: LoaderAppearance;
-              };
-            };
-        inverted?:
-          | LoaderAppearance
-          | {
-              intent?: {
-                none?: LoaderAppearance;
-              };
-            };
-        reverseInverted?:
-          | LoaderAppearance
-          | {
-              intent?: {
-                none?: LoaderAppearance;
-              };
-            };
-      };
-    };
   };
 } & BaseProps;
 
@@ -285,8 +178,7 @@ const size = {
 
 const commonConfig = {
   display: 'inline-flex',
-  borderRadius: '$border-radius-large',
-  gap: '$space-component-gap-small',
+  gap: '$space-component-gap-xSmall',
   w: 'fit-content',
   justifyContent: 'center',
   alignItems: 'center',
@@ -315,6 +207,7 @@ const commonConfig = {
 
 const defaultButtonConfig = {
   ...commonConfig,
+  borderRadius: '$border-radius-medium',
   boxShadow: '$elevation-bottom-100',
   appearance: {
     primary: {
@@ -407,25 +300,11 @@ const defaultButtonConfig = {
     },
   },
   size,
-  innerElements: {
-    loader: {
-      appearance: {
-        primary: {
-          appearance: 'white',
-        },
-        secondary: {
-          appearance: 'greyscale',
-        },
-        inverted: {
-          appearance: 'greyscale',
-        },
-      },
-    },
-  },
 } satisfies DefaultButtonConfig;
 
 const ghostButtonConfig = {
   ...commonConfig,
+  borderRadius: '$border-radius-large',
   backgroundColor: {
     _: 'transparent',
     hover: '$color-action-ghost-hover',
@@ -505,26 +384,6 @@ const ghostButtonConfig = {
     },
   },
   size,
-  innerElements: {
-    loader: {
-      appearance: {
-        primary: {
-          appearance: 'greyscale',
-          intent: {
-            none: {
-              appearance: 'primary',
-            },
-          },
-        },
-        secondary: {
-          appearance: 'greyscale',
-        },
-        inverted: {
-          appearance: 'greyscale',
-        },
-      },
-    },
-  },
 } satisfies GhostButtonConfig;
 
 const bareButtonConfig = {
@@ -612,26 +471,6 @@ const bareButtonConfig = {
       hasDropdownIndicator: {},
       hasBeforeIcon: {},
       hasAfterIcon: {},
-    },
-  },
-  innerElements: {
-    loader: {
-      appearance: {
-        primary: {
-          appearance: 'greyscale',
-          intent: {
-            none: {
-              appearance: 'primary',
-            },
-          },
-        },
-        secondary: {
-          appearance: 'greyscale',
-        },
-        inverted: {
-          appearance: 'greyscale',
-        },
-      },
     },
   },
 } satisfies BareButtonConfig;

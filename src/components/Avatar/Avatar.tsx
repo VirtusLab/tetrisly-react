@@ -26,14 +26,7 @@ export const Avatar: FC<AvatarProps & MarginProps> = ({
   );
 
   return (
-    <tet.div
-      {...styles.container}
-      data-testid="avatar"
-      data-size={size}
-      // if we have a single letter, we don't want to add letter spacing to better center the letter
-      letterSpacing={initials?.length === 1 ? 'normal' : undefined}
-      {...restProps}
-    >
+    <tet.div {...styles.container} data-testid="avatar" {...restProps}>
       {img ? (
         <tet.img {...styles.image} data-testid="avatar-image" {...img} />
       ) : (
