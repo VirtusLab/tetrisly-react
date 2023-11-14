@@ -57,9 +57,9 @@ export const Toast: FC<ToastProps & MarginProps> = ({
           <Button variant="bare" appearance={appearance} {...firstAction} />
           {secondAction && (
             <>
-              <tet.div {...styles.middleDot} data-testid="toast-middleDot">
+              <tet.span {...styles.middleDot} data-testid="toast-middleDot">
                 &middot;
-              </tet.div>
+              </tet.span>
               <Button
                 variant="bare"
                 appearance={appearance}

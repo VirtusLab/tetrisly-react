@@ -2,11 +2,13 @@ import { Icon } from '@virtuslab/tetrisly-icons';
 import type { FC } from 'react';
 
 import type { SelectProps } from './Select.props';
+import { defaultConfig } from './Select.styles';
 import { Avatar } from '../Avatar';
 import { IconButton } from '../IconButton';
 import type { TextInputProps } from '../TextInput';
 import { useTextInput } from '../TextInput/useTextInput';
 
+import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCutom';
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types';
 
@@ -22,9 +24,13 @@ export const Select: FC<SelectProps & MarginProps> = ({
   beforeComponent,
   hasClearButton,
   value,
+  custom: customProps,
   ...props
 }) => {
   const afterComponent = DROPDOWN_INDICATOR_COMPONENT;
+
+  const custom = mergeConfigWithCustom({ defaultConfig, custom: customProps });
+
   const {
     containerRef,
     handleContainerClick,
@@ -37,8 +43,10 @@ export const Select: FC<SelectProps & MarginProps> = ({
   } = useTextInput({
     beforeComponent,
     afterComponent,
+    custom,
     ...props,
   });
+
   return (
     <tet.div
       ref={containerRef}
@@ -78,6 +86,7 @@ export const Select: FC<SelectProps & MarginProps> = ({
         <IconButton
           variant="bare"
           icon="20-close"
+          size="medium"
           onClick={handleOnClear}
           {...styles.clearButton}
           data-testid="select-clear-button"

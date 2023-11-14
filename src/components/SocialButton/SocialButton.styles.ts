@@ -18,6 +18,7 @@ export const defaultConfig = {
   flexShrink: 0,
   borderRadius: '$border-radius-large',
   boxShadow: '$elevation-bottom-100',
+  text: '$typo-body-medium',
   opacity: {
     _: 1,
     hover: 0.8,

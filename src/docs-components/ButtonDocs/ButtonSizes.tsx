@@ -1,6 +1,4 @@
-import { LoadingButton } from './LoadingButton';
-
-import { ButtonProps } from '@/components/Button';
+import { Button, ButtonProps } from '@/components/Button';
 import { tet } from '@/tetrisly';
 
 const getButtonSizes = (variant: ButtonProps['variant']) => {
@@ -23,7 +21,7 @@ export const ButtonSizes = ({ variant, ...buttonProps }: ButtonProps) => (
     py="$dimension-500"
   >
     {getButtonSizes(variant).map((size) => (
-      <LoadingButton
+      <Button
         key={size}
         {...({ ...buttonProps, size, variant } as ButtonProps)}
       />

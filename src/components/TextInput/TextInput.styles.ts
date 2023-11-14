@@ -26,9 +26,11 @@ export const defaultConfig = {
   bg: '$color-interaction-background-formField',
   display: 'flex',
   alignItems: 'center',
+  w: '100%',
   h: '$size-medium',
   padding: '$space-component-padding-small $space-component-padding-large',
   flexShrink: 0,
+  ringInset: true,
   ring: '$border-width-small',
   ringColor: {
     _: '$color-interaction-border-neutral-normal',
@@ -66,7 +68,11 @@ export const defaultConfig = {
       color: {
         placeholder: '$color-content-tertiary',
       },
-      backgroundColor: '$color-interaction-background-formField',
+      p: 0,
+      backgroundColor: 'transparent',
+      opacity: {
+        placeholder: 1,
+      },
     },
     icon: {
       color: '$color-content-secondary',
