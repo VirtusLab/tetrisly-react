@@ -78,7 +78,7 @@ describe('TextInput', () => {
   it('should render beforeComponent', () => {
     const { textInput } = getTextInput(
       <TextInput
-        beforeComponent={{ type: 'Icon', props: { name: '16-bolt' } }}
+        beforeComponent={{ type: 'Icon', props: { name: '20-bolt' } }}
       />,
     );
 
@@ -90,7 +90,7 @@ describe('TextInput', () => {
   it('should render afterComponent', () => {
     const { textInput } = getTextInput(
       <TextInput
-        afterComponent={{ type: 'Icon', props: { name: '16-bolt' } }}
+        afterComponent={{ type: 'Icon', props: { name: '20-bolt' } }}
       />,
     );
 

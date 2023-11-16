@@ -1,4 +1,3 @@
-import { IconProps } from '@virtuslab/tetrisly-icons';
 import { InputHTMLAttributes } from 'react';
 
 import { TextInputConfig } from './TextInput.styles';
@@ -9,9 +8,10 @@ import { GhostIconButtonProps } from '../IconButton/IconButton.props';
 
 import type { BasicInputState } from '@/types';
 import { InnerComponent } from '@/types/InnerComponent';
+import { IconName } from '@/utility-types/IconName';
 
 export namespace TextInputProps.InnerComponents {
-  export type Icon = InnerComponent<'Icon', IconProps>;
+  export type Icon = InnerComponent<'Icon', { name: IconName<20> }>;
   export type IconButton = InnerComponent<
     'IconButton',
     Omit<GhostIconButtonProps, 'variant' | 'size'>
