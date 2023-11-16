@@ -647,3 +647,7 @@ export const defaultConfig = {
   ghost: ghostButtonConfig,
   bare: bareButtonConfig,
 } satisfies ButtonConfig;
+
+export const buttonStyles = {
+  defaultConfig,
+};

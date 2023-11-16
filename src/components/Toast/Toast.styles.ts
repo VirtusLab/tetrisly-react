@@ -161,3 +161,7 @@ export const resolveIconName = (intent: ToastIntent): IconName<20> | null => {
 
   return iconConfig[intent];
 };
+
+export const toastStyles = {
+  defaultConfig,
+};

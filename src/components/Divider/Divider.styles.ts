@@ -19,3 +19,7 @@ export const defaultConfig = {
     },
   },
 } satisfies DividerConfig;
+
+export const dividerStyles = {
+  defaultConfig,
+};

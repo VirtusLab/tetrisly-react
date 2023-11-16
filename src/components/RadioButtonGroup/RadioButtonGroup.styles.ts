@@ -24,3 +24,7 @@ export const defaultConfig = {
     helperText: {},
   },
 } satisfies RadioButtonGroupConfig;
+
+export const radioButtonGroupStyles = {
+  defaultConfig,
+};

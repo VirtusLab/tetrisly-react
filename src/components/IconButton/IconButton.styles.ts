@@ -73,3 +73,7 @@ export const defaultConfig = {
     },
   },
 } satisfies ButtonConfig;
+
+export const iconButtonStyles = {
+  defaultConfig,
+};

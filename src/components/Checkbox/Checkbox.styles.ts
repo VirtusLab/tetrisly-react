@@ -104,3 +104,7 @@ export const defaultConfig = {
     },
   },
 } satisfies CheckboxConfig;
+
+export const checkboxStyles = {
+  defaultConfig,
+};

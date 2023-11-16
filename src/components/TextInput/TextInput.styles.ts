@@ -128,3 +128,7 @@ export const defaultConfig = {
     },
   },
 } satisfies TextInputConfig;
+
+export const textInputStyles = {
+  defaultConfig,
+};

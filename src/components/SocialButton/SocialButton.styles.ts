@@ -39,3 +39,7 @@ export const defaultConfig = {
     primary: {},
   },
 } satisfies SocialButtonConfig;
+
+export const socialButtonStyles = {
+  defaultConfig,
+};

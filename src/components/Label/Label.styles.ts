@@ -29,3 +29,7 @@ export const defaultConfig = {
     },
   },
 } satisfies LabelConfig;
+
+export const labelStyles = {
+  defaultConfig,
+};

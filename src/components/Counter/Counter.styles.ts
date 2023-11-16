@@ -103,3 +103,7 @@ export const defaultConfig = {
     },
   },
 } satisfies CounterConfig;
+
+export const counterStyles = {
+  defaultConfig,
+};

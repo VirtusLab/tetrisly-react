@@ -134,3 +134,5 @@ export const resolveIconName = (intent: InlineBannerIntent): IconName<20> => {
 
   return iconConfig[intent];
 };
+
+export const inlineBannerStyles = { defaultConfig };

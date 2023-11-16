@@ -128,3 +128,7 @@ export const defaultConfig = {
     },
   },
 } satisfies LoaderConfig;
+
+export const loaderStyles = {
+  defaultConfig,
+};

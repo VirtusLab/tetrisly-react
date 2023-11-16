@@ -27,3 +27,7 @@ export const defaultConfig = {
     ringColor: '$color-border-inverted',
   },
 } satisfies StatusDotConfig;
+
+export const statusDotStyles = {
+  defaultConfig,
+};

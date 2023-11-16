@@ -97,3 +97,7 @@ export const defaultConfig = {
     },
   },
 } satisfies PopoverConfig;
+
+export const popoverStyles = {
+  defaultConfig,
+};

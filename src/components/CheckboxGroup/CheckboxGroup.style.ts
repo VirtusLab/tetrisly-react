@@ -26,3 +26,7 @@ export const defaultConfig = {
     helperText: {},
   },
 } satisfies CheckboxGroupConfig;
+
+export const checkboxGroupStyles = {
+  defaultConfig,
+};

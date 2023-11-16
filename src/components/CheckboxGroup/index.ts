@@ -3,3 +3,4 @@ export type {
   CheckboxGroupProps,
   CheckboxGroupItemProps,
 } from './CheckboxGroup.props';
+export { checkboxGroupStyles } from './CheckboxGroup.style';

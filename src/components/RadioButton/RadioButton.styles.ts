@@ -85,3 +85,7 @@ export const defaultConfig = {
     },
   },
 } satisfies RadioButtonConfig;
+
+export const radioButtonStyles = {
+  defaultConfig,
+};
