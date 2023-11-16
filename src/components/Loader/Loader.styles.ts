@@ -6,8 +6,8 @@ import type { LoaderAppearance, LoaderShape, LoaderSize } from './types';
 import { Theme } from '@/theme';
 import { BaseProps } from '@/types/BaseProps';
 
-export type SVGProps = Omit<
-  BaseProps,
+export type SVGProps = BaseProps<
+  | 'appearance'
   | 'opacity'
   | 'display'
   | 'order'

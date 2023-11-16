@@ -74,7 +74,7 @@ export type DefaultButtonConfig = {
       };
     };
   };
-} & BaseProps;
+} & BaseProps<'appearance'>;
 
 export type GhostButtonConfig = {
   appearance?: {
@@ -154,7 +154,7 @@ export type GhostButtonConfig = {
       };
     };
   };
-} & BaseProps;
+} & BaseProps<'appearance'>;
 
 export type BareButtonConfig = {
   appearance?: {
@@ -229,7 +229,7 @@ export type BareButtonConfig = {
       };
     };
   };
-} & BaseProps;
+} & BaseProps<'appearance'>;
 
 const size = {
   small: {

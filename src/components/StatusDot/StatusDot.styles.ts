@@ -5,7 +5,7 @@ import type { BaseProps } from '@/types/BaseProps';
 export type StatusDotConfig = {
   appearance?: Partial<Record<StatusDotAppearance, BaseProps>>;
   hasStroke?: BaseProps;
-} & BaseProps;
+} & BaseProps<'appearance'>;
 
 export const defaultConfig = {
   w: '12px',

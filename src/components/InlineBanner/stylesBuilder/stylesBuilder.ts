@@ -18,7 +18,7 @@ type InlineBannerStylesBuilder = {
   actionContainer: BaseProps;
   description: BaseProps;
   title: BaseProps;
-  closeButton: BaseProps;
+  closeButton: BaseProps<'appearance'>;
 };
 
 export const stylesBuilder = ({
