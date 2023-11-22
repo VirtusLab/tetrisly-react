@@ -50,8 +50,9 @@ export const defaultConfig = {
           hover: '$color-interaction-default-hover',
         },
       },
-      ring: '$border-width-focus',
       borderRadius: '$border-radius-medium',
+      boxShadow: '0 0 #0000',
+      ring: '$border-width-focus',
       ringInset: true,
       ringColor: {
         _: '$color-interaction-border-neutral-normal',
@@ -104,3 +105,7 @@ export const defaultConfig = {
     },
   },
 } satisfies CheckboxConfig;
+
+export const checkboxStyles = {
+  defaultConfig,
+};

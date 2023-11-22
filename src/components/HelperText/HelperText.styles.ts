@@ -44,3 +44,7 @@ export const resolveIconName = (intent: HelperTextIntent): IconName<16> => {
 
   return iconConfig[intent];
 };
+
+export const helperTextStyles = {
+  defaultConfig,
+};

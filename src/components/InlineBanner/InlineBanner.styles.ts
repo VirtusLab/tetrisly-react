@@ -28,6 +28,7 @@ export const defaultConfig = {
   p: '$space-component-padding-xLarge',
   gap: '$space-component-gap-large',
   borderRadius: '$border-radius-large',
+  boxShadow: '0 0 #0000',
   ring: '$border-width-small',
   ringInset: true,
   intent: {
@@ -134,3 +135,5 @@ export const resolveIconName = (intent: InlineBannerIntent): IconName<20> => {
 
   return iconConfig[intent];
 };
+
+export const inlineBannerStyles = { defaultConfig };

@@ -63,3 +63,7 @@ export const resolveIconName = (intent: AlertBannerIntent) => {
 
   return iconConfig[intent];
 };
+
+export const alertBannerStyles = {
+  defaultConfig,
+};

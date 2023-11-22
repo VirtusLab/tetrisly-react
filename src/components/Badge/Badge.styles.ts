@@ -371,3 +371,7 @@ export const defaultConfig = {
     iconContainer: {},
   },
 } satisfies BadgeConfig;
+
+export const badgeStyles = {
+  defaultConfig,
+};

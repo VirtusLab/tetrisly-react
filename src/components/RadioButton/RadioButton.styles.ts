@@ -36,11 +36,12 @@ export const defaultConfig = {
       alignItems: 'center',
       flexShrink: 0,
       backgroundColor: '$color-interaction-background-formField',
+      borderRadius: '$border-radius-full',
+      boxShadow: '0 0 #0000',
       ring: {
         _: '$border-width-focus',
         checked: '5px',
       },
-      borderRadius: '$border-radius-full',
       ringInset: true,
       ringColor: {
         _: '$color-interaction-border-neutral-normal',
@@ -85,3 +86,7 @@ export const defaultConfig = {
     },
   },
 } satisfies RadioButtonConfig;
+
+export const radioButtonStyles = {
+  defaultConfig,
+};

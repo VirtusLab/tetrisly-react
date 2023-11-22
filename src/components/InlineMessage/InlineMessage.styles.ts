@@ -74,3 +74,7 @@ export const resolveIconName = (intent: InlineMessageIntent): IconName<20> => {
 
   return iconConfig[intent];
 };
+
+export const inlineMessageStyles = {
+  defaultConfig,
+};

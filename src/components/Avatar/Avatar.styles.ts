@@ -255,3 +255,7 @@ export const defaultConfig = {
     },
   },
 } satisfies AvatarConfig;
+
+export const avatarStyles = {
+  defaultConfig,
+};

@@ -67,3 +67,7 @@ export const defaultConfig = {
     },
   },
 } satisfies TagConfig;
+
+export const tagStyles = {
+  defaultConfig,
+};

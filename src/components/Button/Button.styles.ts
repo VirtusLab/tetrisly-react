@@ -315,6 +315,7 @@ const commonConfig = {
 
 const defaultButtonConfig = {
   ...commonConfig,
+  ring: 'unset',
   boxShadow: '$elevation-bottom-100',
   appearance: {
     primary: {
@@ -647,3 +648,7 @@ export const defaultConfig = {
   ghost: ghostButtonConfig,
   bare: bareButtonConfig,
 } satisfies ButtonConfig;
+
+export const buttonStyles = {
+  defaultConfig,
+};

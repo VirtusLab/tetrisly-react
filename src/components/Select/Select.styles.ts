@@ -11,3 +11,7 @@ export const defaultConfig: TextInputProps['custom'] = {
     },
   },
 };
+
+export const selectStyles = {
+  defaultConfig,
+};

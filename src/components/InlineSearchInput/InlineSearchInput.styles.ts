@@ -41,3 +41,7 @@ export const defaultConfig: SearchInputProps['custom'] = {
     },
   },
 };
+
+export const inlineSearchInputStyles = {
+  defaultConfig,
+};
