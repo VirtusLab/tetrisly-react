@@ -16,3 +16,18 @@ export declare const defaultConfig: {
         };
     };
 };
+export declare const dividerStyles: {
+    defaultConfig: {
+        backgroundColor: "$color-border-default";
+        orientation: {
+            horizontal: {
+                w: string;
+                h: string;
+            };
+            vertical: {
+                w: string;
+                h: string;
+            };
+        };
+    };
+};

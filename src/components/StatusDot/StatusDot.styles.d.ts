@@ -20,7 +20,31 @@ export declare const defaultConfig: {
         };
     };
     hasStroke: {
+        boxShadow: "0 0 #0000";
         ring: string;
         ringColor: "$color-border-inverted";
+    };
+};
+export declare const statusDotStyles: {
+    defaultConfig: {
+        w: string;
+        h: string;
+        borderRadius: string;
+        appearance: {
+            red: {
+                backgroundColor: "$color-nonSemantic-red-background-strong";
+            };
+            green: {
+                backgroundColor: "$color-nonSemantic-green-background-strong";
+            };
+            orange: {
+                backgroundColor: "$color-nonSemantic-orange-background-strong";
+            };
+        };
+        hasStroke: {
+            boxShadow: "0 0 #0000";
+            ring: string;
+            ringColor: "$color-border-inverted";
+        };
     };
 };

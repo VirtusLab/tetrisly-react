@@ -21,3 +21,18 @@ export declare const defaultConfig: {
         helperText: {};
     };
 };
+export declare const radioButtonGroupStyles: {
+    defaultConfig: {
+        display: "flex";
+        flexDirection: "column";
+        gap: string;
+        innerElements: {
+            radioButtonContainer: {
+                display: "grid";
+                gap: string;
+            };
+            label: {};
+            helperText: {};
+        };
+    };
+};

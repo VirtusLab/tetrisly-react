@@ -101,3 +101,85 @@ export declare const defaultConfig: {
         };
     };
 };
+export declare const loaderStyles: {
+    defaultConfig: {
+        fill: "none";
+        borderRadius: string;
+        shape: {
+            circle: {
+                size: {
+                    large: {
+                        w: number;
+                        h: number;
+                        strokeWidth: string;
+                    };
+                    medium: {
+                        w: number;
+                        h: number;
+                        strokeWidth: string;
+                    };
+                    small: {
+                        w: number;
+                        h: number;
+                        strokeWidth: string;
+                    };
+                };
+            };
+            bar: {
+                size: {
+                    large: {
+                        w: number;
+                        h: number;
+                        strokeWidth: string;
+                    };
+                    medium: {
+                        w: number;
+                        h: number;
+                        strokeWidth: string;
+                    };
+                    small: {
+                        w: number;
+                        h: number;
+                        strokeWidth: string;
+                    };
+                };
+            };
+        };
+        innerElements: {
+            base: {
+                appearance: {
+                    primary: {
+                        stroke: "$color-interaction-neutral-subtle-normal";
+                    };
+                    inverted: {
+                        stroke: "$color-interaction-inverted-normal";
+                    };
+                    white: {
+                        stroke: "$color-interaction-inverted-normal";
+                        opacity: number;
+                    };
+                    greyscale: {
+                        stroke: "$color-interaction-neutral-subtle-normal";
+                    };
+                };
+            };
+            progress: {
+                strokeLinecap: "round";
+                appearance: {
+                    primary: {
+                        stroke: "$color-interaction-default-normal";
+                    };
+                    inverted: {
+                        stroke: "$color-interaction-default-normal";
+                    };
+                    white: {
+                        stroke: "$color-interaction-inverted-normal";
+                    };
+                    greyscale: {
+                        stroke: "$color-interaction-neutral-normal";
+                    };
+                };
+            };
+        };
+    };
+};

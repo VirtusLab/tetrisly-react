@@ -22,3 +22,18 @@ export declare const defaultConfig: {
         helperText: {};
     };
 };
+export declare const checkboxGroupStyles: {
+    defaultConfig: {
+        display: "flex";
+        flexDirection: "column";
+        gap: string;
+        innerElements: {
+            checkboxContainer: {
+                display: "grid";
+                gap: string;
+            };
+            label: {};
+            helperText: {};
+        };
+    };
+};

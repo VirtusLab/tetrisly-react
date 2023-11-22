@@ -27,3 +27,26 @@ export declare const defaultConfig: {
         };
     };
 };
+export declare const labelStyles: {
+    defaultConfig: {
+        text: "$typo-body-medium";
+        color: "$color-content-primary";
+        display: "flex";
+        alignItems: "flex-start";
+        gap: string;
+        innerElements: {
+            tooltip: {
+                color: "$color-content-secondary";
+                display: "flex";
+                alignItems: "center";
+                minHeight: string;
+            };
+            optional: {
+                color: "$color-content-tertiary";
+            };
+            action: {
+                ml: string;
+            };
+        };
+    };
+};

@@ -32,3 +32,29 @@ export declare const defaultConfig: {
     };
 };
 export declare const resolveIconName: (intent: HelperTextIntent) => IconName<16>;
+export declare const helperTextStyles: {
+    defaultConfig: {
+        display: "flex";
+        alignItems: "flex-start";
+        gap: string;
+        text: "$typo-body-small";
+        intent: {
+            none: {
+                color: "$color-content-secondary";
+            };
+            alert: {
+                color: "$color-content-negative-secondary";
+            };
+            success: {
+                color: "$color-content-positive-secondary";
+            };
+        };
+        innerElements: {
+            iconContainer: {
+                display: "flex";
+                alignItems: "center";
+                minHeight: string;
+            };
+        };
+    };
+};
