@@ -28,6 +28,7 @@ export const defaultConfig = {
   p: '$space-component-padding-xLarge',
   gap: '$space-component-gap-large',
   borderRadius: '$border-radius-large',
+  boxShadow: '0 0 #0000',
   ring: '$border-width-small',
   ringInset: true,
   intent: {

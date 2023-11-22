@@ -36,7 +36,9 @@ export const defaultConfig = {
         selected: '$color-action-outline-selected',
       },
     },
-    primary: {},
+    primary: {
+      ring: 'unset',
+    },
   },
 } satisfies SocialButtonConfig;
 

@@ -31,6 +31,7 @@ export const defaultConfig = {
   padding: '$space-component-padding-small $space-component-padding-large',
   flexShrink: 0,
   ringInset: true,
+  boxShadow: '0 0 #0000',
   ring: '$border-width-small',
   ringColor: {
     _: '$color-interaction-border-neutral-normal',

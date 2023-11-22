@@ -23,6 +23,7 @@ export const defaultConfig = {
     },
   },
   hasStroke: {
+    boxShadow: '0 0 #0000',
     ring: '$border-width-medium',
     ringColor: '$color-border-inverted',
   },

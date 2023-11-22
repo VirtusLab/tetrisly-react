@@ -28,12 +28,14 @@ export const defaultConfig = {
     default: {
       emphasis: {
         high: {
+          boxShadow: '0 0 #0000',
           ring: '$border-width-small',
           ringColor: '$color-border-neutral-strong',
           backgroundColor: '$color-background-default',
           color: '$color-content-primary',
         },
         low: {
+          boxShadow: '0 0 #0000',
           ring: '$border-width-small',
           ringColor: '$color-border-neutral-subtle',
           backgroundColor: '$color-background-default',
