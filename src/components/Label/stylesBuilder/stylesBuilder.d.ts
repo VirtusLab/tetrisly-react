@@ -4,7 +4,7 @@ type LabelStylesBuilder = {
     label: BaseProps;
     optional: BaseProps;
     tooltip: BaseProps;
-    action: BaseProps;
+    action: BaseProps<'appearance'>;
 };
 export declare const stylesBuilder: (custom: LabelProps['custom']) => LabelStylesBuilder;
 export {};

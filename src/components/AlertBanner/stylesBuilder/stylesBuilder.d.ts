@@ -7,7 +7,7 @@ type AlertBannerStylesBuilder = {
     container: BaseProps;
     iconContainer: BaseProps;
     actionContainer: BaseProps;
-    closeButton: BaseProps;
+    closeButton: BaseProps<'appearance'>;
     actionProps: Partial<BareButtonProps>;
     closeButtonProps: Partial<GhostIconButtonProps>;
 };

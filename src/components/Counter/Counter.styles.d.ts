@@ -5,7 +5,7 @@ export type CounterConfig = {
     appearance?: Partial<Record<CounterAppearance, {
         emphasis?: Partial<Record<Emphasis, BaseProps>>;
     }>>;
-} & BaseProps;
+} & BaseProps<'appearance'>;
 export declare const defaultConfig: {
     display: "inline-flex";
     flexDirection: "column";

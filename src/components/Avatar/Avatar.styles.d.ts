@@ -13,7 +13,7 @@ export type AvatarConfig = {
     innerElements?: {
         image?: BaseProps;
     };
-} & BaseProps;
+} & BaseProps<'appearance'>;
 export declare const defaultConfig: {
     overflow: "hidden";
     position: "relative";

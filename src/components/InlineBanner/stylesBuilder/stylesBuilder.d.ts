@@ -13,7 +13,7 @@ type InlineBannerStylesBuilder = {
     actionContainer: BaseProps;
     description: BaseProps;
     title: BaseProps;
-    closeButton: BaseProps;
+    closeButton: BaseProps<'appearance'>;
 };
 export declare const stylesBuilder: ({ intent, hasCloseButton, custom, }: StylesBuilderParams) => InlineBannerStylesBuilder;
 export {};

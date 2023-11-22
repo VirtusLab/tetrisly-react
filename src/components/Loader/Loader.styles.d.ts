@@ -3,7 +3,7 @@ import type { Property } from 'csstype';
 import type { LoaderAppearance, LoaderShape, LoaderSize } from './types';
 import { Theme } from '../../theme';
 import { BaseProps } from '../../types/BaseProps';
-export type SVGProps = Omit<BaseProps, 'opacity' | 'display' | 'order' | 'cursor' | 'pointerEvents' | 'overflow' | 'visibility' | 'fill' | 'transform' | 'rotate' | 'scale' | 'stroke' | 'fontFamily' | 'fontSize' | 'fontStyle' | 'fontStyle' | 'fontVariant' | 'fontWeight' | 'letterSpacing' | 'textDecoration'> & {
+export type SVGProps = BaseProps<'appearance' | 'opacity' | 'display' | 'order' | 'cursor' | 'pointerEvents' | 'overflow' | 'visibility' | 'fill' | 'transform' | 'rotate' | 'scale' | 'stroke' | 'fontFamily' | 'fontSize' | 'fontStyle' | 'fontStyle' | 'fontVariant' | 'fontWeight' | 'letterSpacing' | 'textDecoration'> & {
     fill?: ThemeColor<Theme> | Property.Fill;
     strokeWidth?: Property.StrokeWidth<string | number>;
     strokeLinecap?: 'inherit' | 'round' | 'butt' | 'square';

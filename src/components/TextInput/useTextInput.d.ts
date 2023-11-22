@@ -7,7 +7,7 @@ export declare const useTextInput: ({ custom, beforeComponent, afterComponent, o
         input: import("../../types").BaseProps;
         icon: import("../../types").BaseProps;
         text: import("../../types").BaseProps;
-        clearButton: import("../../types").BaseProps;
+        clearButton: import("../../types").BaseProps<"appearance">;
         beforeComponent: import("../../types").BaseProps;
         afterComponent: import("../../types").BaseProps;
     };

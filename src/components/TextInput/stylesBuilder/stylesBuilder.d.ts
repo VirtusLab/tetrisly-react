@@ -5,7 +5,7 @@ type TextInputStylesBuilder = {
     input: BaseProps;
     icon: BaseProps;
     text: BaseProps;
-    clearButton: BaseProps;
+    clearButton: BaseProps<'appearance'>;
     beforeComponent: BaseProps;
     afterComponent: BaseProps;
 };

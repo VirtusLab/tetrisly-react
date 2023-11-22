@@ -65,7 +65,7 @@ export type DefaultButtonConfig = {
             };
         };
     };
-} & BaseProps;
+} & BaseProps<'appearance'>;
 export type GhostButtonConfig = {
     appearance?: {
         primary?: {
@@ -136,7 +136,7 @@ export type GhostButtonConfig = {
             };
         };
     };
-} & BaseProps;
+} & BaseProps<'appearance'>;
 export type BareButtonConfig = {
     appearance?: {
         primary?: {
@@ -202,7 +202,7 @@ export type BareButtonConfig = {
             };
         };
     };
-} & BaseProps;
+} & BaseProps<'appearance'>;
 export type ButtonConfig = {
     default?: DefaultButtonConfig;
     ghost?: GhostButtonConfig;

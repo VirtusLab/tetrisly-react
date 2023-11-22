@@ -13,7 +13,7 @@ export type BadgeConfig = {
         label?: BaseProps;
         iconContainer?: BaseProps;
     };
-} & BaseProps;
+} & BaseProps<'appearance'>;
 export declare const defaultConfig: {
     display: "flex";
     w: string;

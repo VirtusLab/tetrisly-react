@@ -3,7 +3,7 @@ import type { BaseProps } from '../../types/BaseProps';
 export type StatusDotConfig = {
     appearance?: Partial<Record<StatusDotAppearance, BaseProps>>;
     hasStroke?: BaseProps;
-} & BaseProps;
+} & BaseProps<'appearance'>;
 export declare const defaultConfig: {
     w: string;
     h: string;
