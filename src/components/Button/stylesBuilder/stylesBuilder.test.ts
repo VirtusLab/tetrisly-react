@@ -24,6 +24,7 @@ describe('stylesBuilder', () => {
           selected: '$color-action-primary-selected',
         },
         borderRadius: '$border-radius-large',
+        ring: 'unset',
         boxShadow: '$elevation-bottom-100',
         color: '$color-action-inverted-normal',
         display: 'inline-flex',
