@@ -1,6 +1,6 @@
 <img src="https://storybook.tetrisly.com/header.svg" width="100%" alt="css-in-readme">
 
-# Tetrisly React
+# Tetrisly for React
 
 🧩 Tetrisly offers user-friendly components designed for effortless integration. Plus, it's fully compatible with Tetrisly for Figma with a seamless design and development experience in mind.
 
