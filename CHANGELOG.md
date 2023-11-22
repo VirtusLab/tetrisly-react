@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.2.2...v1.3.0) (2023-11-22)
+
+
+### Features
+
+* added styles export to components TET-555 ([#104](https://github.com/VirtusLab/tetrisly-react/issues/104)) ([a215833](https://github.com/VirtusLab/tetrisly-react/commit/a215833c663370fa451194f124cff0b870edd29b))
+
+
+### Bug Fixes
+
+* **TextInput:** beforeComponent Icon only allow 20px size icons TET-348 ([#102](https://github.com/VirtusLab/tetrisly-react/issues/102)) ([d409bdb](https://github.com/VirtusLab/tetrisly-react/commit/d409bdbe3b6353a23dbf983625fc24ee437f81ef))
+
 ## [1.2.2](https://github.com/VirtusLab/tetrisly-react/compare/v1.2.1...v1.2.2) (2023-11-14)
 
 
