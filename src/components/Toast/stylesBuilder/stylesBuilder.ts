@@ -12,7 +12,7 @@ type StylesBuilderProps = Required<Pick<ToastProps, 'emphasis' | 'intent'>> & {
 type ToastStylesBuilder = {
   container: BaseProps;
   actionContainer: BaseProps;
-  closeButton: BaseProps;
+  closeButton: BaseProps<'appearance'>;
   iconContainer: BaseProps;
   middleDot: BaseProps;
 };

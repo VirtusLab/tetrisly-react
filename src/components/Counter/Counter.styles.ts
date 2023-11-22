@@ -12,7 +12,7 @@ export type CounterConfig = {
       }
     >
   >;
-} & BaseProps;
+} & BaseProps<'appearance'>;
 
 export const defaultConfig = {
   display: 'inline-flex',

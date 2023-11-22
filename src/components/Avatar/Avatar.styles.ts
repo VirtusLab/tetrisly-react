@@ -25,7 +25,7 @@ export type AvatarConfig = {
   innerElements?: {
     image?: BaseProps;
   };
-} & BaseProps;
+} & BaseProps<'appearance'>;
 
 export const defaultConfig = {
   overflow: 'hidden',

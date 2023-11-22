@@ -7,8 +7,8 @@ import type { BaseProps } from '@/types/BaseProps';
 type TagStylesBuilder = {
   container: BaseProps;
   label: BaseProps;
-  avatar: BaseProps;
-  closeButton: BaseProps;
+  avatar: BaseProps<'appearance'>;
+  closeButton: BaseProps<'appearance'>;
 };
 export const stylesBuilder = (
   custom: TagProps['custom'],
