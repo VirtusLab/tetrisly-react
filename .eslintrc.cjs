@@ -3,6 +3,7 @@ module.exports = {
     'plugin:storybook/recommended',
     '@virtuslab/eslint-config-tetrisly',
   ],
+  ignorePatterns: ['examples/**/*'],
   rules: {
     '@typescript-eslint/no-use-before-define': [
       2,
