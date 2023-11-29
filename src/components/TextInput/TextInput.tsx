@@ -29,6 +29,7 @@ export const TextInput = forwardRef<
     const {
       containerRef,
       handleContainerClick,
+      handleContainerFocus,
       styles,
       containerProps,
       innerValue,
@@ -51,6 +52,7 @@ export const TextInput = forwardRef<
         data-testid="text-input"
         data-state={state}
         tabIndex={0}
+        onFocus={handleContainerFocus}
         {...containerProps}
       >
         {!!beforeComponent && (
