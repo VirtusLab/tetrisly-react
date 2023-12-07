@@ -2,6 +2,8 @@ import {
   ChangeEvent,
   ChangeEventHandler,
   MouseEventHandler,
+  FocusEvent,
+  MouseEvent,
   useCallback,
   useMemo,
   useRef,
@@ -29,15 +31,18 @@ export const useTextInput = ({
 
   const containerRef = useRef<HTMLInputElement | null>(null);
 
-  const handleContainerClick: MouseEventHandler = useCallback(
-    (e) => {
-      if (e.target === containerRef.current) {
-        const input = containerRef.current?.querySelector('input');
-        input?.focus();
-      }
-    },
-    [containerRef],
-  );
+  const triggerFocusOnInput = (
+    e: MouseEvent<HTMLDivElement> | FocusEvent<HTMLDivElement>,
+  ) => {
+    if (e.target === containerRef.current) {
+      const input = containerRef.current?.querySelector('input');
+      input?.focus();
+    }
+  };
+
+  const handleContainerClick = useCallback(triggerFocusOnInput, [containerRef]);
+
+  const handleContainerFocus = useCallback(triggerFocusOnInput, [containerRef]);
 
   const handleOnChange: ChangeEventHandler<HTMLInputElement> = useCallback(
     (e) => {
@@ -61,6 +66,7 @@ export const useTextInput = ({
     containerProps,
     containerRef,
     handleContainerClick,
+    handleContainerFocus,
     handleOnChange,
     handleOnClear,
   };
