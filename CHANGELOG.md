@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.3.0...v1.4.0) (2023-12-07)
+
+
+### Features
+
+* added vite + react + ts example TET-345 ([#108](https://github.com/VirtusLab/tetrisly-react/issues/108)) ([3d14b5f](https://github.com/VirtusLab/tetrisly-react/commit/3d14b5f1b959b11f9379d7baa73f75b7dfe22c9e))
+* text input focus issue ([#109](https://github.com/VirtusLab/tetrisly-react/issues/109)) ([f7a1b83](https://github.com/VirtusLab/tetrisly-react/commit/f7a1b83abed2168f223942808ffc5276c0f2ab16))
+
 ## [1.3.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.2.2...v1.3.0) (2023-11-22)
 
 
