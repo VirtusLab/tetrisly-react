@@ -148,4 +148,3 @@ button:focus {
   input[type="search"]::-webkit-search-results-button,
   input[type="search"]::-webkit-search-results-decoration { display: none; }
 `,Jr=({children:e,theme:r,preflight:t=!0})=>{const n=r===void 0?Kr:$n(Kr,r);return To.jsxs(mc,{theme:n,children:[To.jsx(ef,{}),t&&To.jsx(Ns,{}),e]})};try{Jr.displayName="TetrislyProvider",Jr.__docgenInfo={description:"",displayName:"TetrislyProvider",props:{theme:{defaultValue:null,description:"",name:"theme",required:!1,type:{name:"TwoPartial<Theme>"}},preflight:{defaultValue:{value:"true"},description:"",name:"preflight",required:!1,type:{name:"boolean"}}}}}catch{}export{Jr as T,nf as W,af as c,lf as s,uf as t,cf as u};
-//# sourceMappingURL=TetrislyProvider-e15ac01a.js.map

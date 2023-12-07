@@ -1,4 +1,4 @@
-import { ChangeEventHandler, MouseEventHandler } from 'react';
+import { ChangeEventHandler, MouseEventHandler, FocusEvent, MouseEvent } from 'react';
 import { TextInputProps } from './TextInput.props';
 export declare const useTextInput: ({ custom, beforeComponent, afterComponent, onChange, ...restProps }: Omit<TextInputProps, 'type' | 'state' | 'value' | 'hasClearButton'>) => {
     innerValue: string;
@@ -310,7 +310,8 @@ export declare const useTextInput: ({ custom, beforeComponent, afterComponent, o
         size?: number | undefined;
     };
     containerRef: import("react").MutableRefObject<HTMLInputElement | null>;
-    handleContainerClick: MouseEventHandler;
+    handleContainerClick: (e: MouseEvent<HTMLDivElement> | FocusEvent<HTMLDivElement>) => void;
+    handleContainerFocus: (e: MouseEvent<HTMLDivElement> | FocusEvent<HTMLDivElement>) => void;
     handleOnChange: ChangeEventHandler<HTMLInputElement>;
     handleOnClear: MouseEventHandler<HTMLButtonElement>;
 };
