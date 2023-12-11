@@ -1,4 +1,3 @@
-// import type { SVGAttributes } from 'react';
 import { IconName } from '@virtuslab/tetrisly-icons';
 
 import type { BaseProps } from '@/types/BaseProps';
