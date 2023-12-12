@@ -50,7 +50,7 @@ const IconsBoard: FC<{ heading: string; items: IconName[] } & MarginProps> = ({
             borderRadius="$border-radius-medium"
             backgroundColor="$color-background-neutral-subtle"
           >
-            <Icon color="$color-content-primary" name={iconName as IconName} />
+            <Icon color="$color-content-primary" name={iconName} />
           </tet.div>
           <tet.b
             text="$typo-body-strong-medium"
