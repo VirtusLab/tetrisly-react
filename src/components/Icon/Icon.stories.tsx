@@ -3,6 +3,7 @@ import { icons } from '@virtuslab/tetrisly-icons';
 
 import { Icon } from './Icon';
 
+import { IconDocs } from '@/docs-components/IconDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
@@ -11,7 +12,6 @@ const meta = {
   tags: ['autodocs'],
   args: {
     name: '20-tetrisly',
-    color: '$color-raspberry-0',
   },
   argTypes: {
     name: {
@@ -27,7 +27,9 @@ const meta = {
           'A clean, consistent, and pixel-perfect icon library crafted especially for modern UI design.',
       },
       page: () => (
-        <TetDocs docs="https://docs.tetrisly.com/foundations/overview/icons" />
+        <TetDocs docs="https://docs.tetrisly.com/foundations/overview/icons">
+          <IconDocs />
+        </TetDocs>
       ),
     },
   },
