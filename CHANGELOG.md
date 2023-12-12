@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.4.0...v1.5.0) (2023-12-12)
+
+
+### Features
+
+* icon component TET-648 ([#111](https://github.com/VirtusLab/tetrisly-react/issues/111)) ([0bdbd42](https://github.com/VirtusLab/tetrisly-react/commit/0bdbd42638e8dec9877a53877f171b26dda860bd))
+
 ## [1.4.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.3.0...v1.4.0) (2023-12-07)
 
 
