@@ -15,7 +15,7 @@ We've decided to use `xstyled` for styling our components. If you are interested
 
 ## Installation
 
-Install `tetrisly-react`` with npm (you can do the same with yarn, pnpm or any other package manager)
+Install `tetrisly-react` with npm (you can do the same with yarn, pnpm or any other package manager)
 
 ```bash
   npm install @virtuslab/tetrisly-react
