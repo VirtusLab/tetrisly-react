@@ -11,7 +11,6 @@ const config: StorybookConfig = {
     '@storybook/addon-styling',
     '@storybook/addon-docs',
     '@storybook/addon-mdx-gfm',
-    '@storybook/addon-google-analytics',
   ],
   framework: {
     name: '@storybook/react-vite',
