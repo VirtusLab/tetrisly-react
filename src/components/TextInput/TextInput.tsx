@@ -22,6 +22,7 @@ export const TextInput = forwardRef<
       state,
       hasClearButton,
       value,
+      defaultValue,
       ...restProps
     },
     inputRef,
@@ -39,6 +40,7 @@ export const TextInput = forwardRef<
     } = useTextInput({
       beforeComponent,
       afterComponent,
+      defaultValue,
       ...restProps,
     });
 

@@ -20,9 +20,10 @@ export const useTextInput = ({
   beforeComponent,
   afterComponent,
   onChange,
+  defaultValue,
   ...restProps
 }: Omit<TextInputProps, 'type' | 'state' | 'value' | 'hasClearButton'>) => {
-  const [innerValue, setInnerValue] = useState('');
+  const [innerValue, setInnerValue] = useState(defaultValue ?? '');
   const styles = useMemo(
     () => stylesBuilder(custom, beforeComponent?.type, afterComponent?.type),
     [afterComponent?.type, beforeComponent?.type, custom],
