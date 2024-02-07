@@ -26,7 +26,8 @@ const inputPropsKeys = [
   'src',
   'step',
   'value',
-
+  'id',
+  'defaultValue',
   'onClick',
   'onChange',
   'onKeyDown',
