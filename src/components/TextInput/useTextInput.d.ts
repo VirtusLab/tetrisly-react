@@ -1,7 +1,7 @@
 import { ChangeEventHandler, MouseEventHandler, FocusEvent, MouseEvent } from 'react';
 import { TextInputProps } from './TextInput.props';
-export declare const useTextInput: ({ custom, beforeComponent, afterComponent, onChange, ...restProps }: Omit<TextInputProps, 'type' | 'state' | 'value' | 'hasClearButton'>) => {
-    innerValue: string;
+export declare const useTextInput: ({ custom, beforeComponent, afterComponent, onChange, defaultValue, ...restProps }: Omit<TextInputProps, 'type' | 'state' | 'value' | 'hasClearButton'>) => {
+    innerValue: string | number | readonly string[];
     styles: {
         container: import("../../types").BaseProps;
         input: import("../../types").BaseProps;
@@ -17,6 +17,7 @@ export declare const useTextInput: ({ custom, beforeComponent, afterComponent, o
         placeholder?: string | undefined;
         form?: string | undefined;
         pattern?: string | undefined;
+        id?: string | undefined;
         max?: string | number | undefined;
         min?: string | number | undefined;
         onFocus?: import("react").FocusEventHandler<HTMLInputElement> | undefined;
@@ -25,6 +26,7 @@ export declare const useTextInput: ({ custom, beforeComponent, afterComponent, o
         onKeyDown?: import("react").KeyboardEventHandler<HTMLInputElement> | undefined;
         onKeyUp?: import("react").KeyboardEventHandler<HTMLInputElement> | undefined;
         onClick?: MouseEventHandler<HTMLInputElement> | undefined;
+        defaultValue?: string | number | readonly string[] | undefined;
         src?: string | undefined;
         alt?: string | undefined;
         formAction?: string | undefined;
@@ -53,7 +55,6 @@ export declare const useTextInput: ({ custom, beforeComponent, afterComponent, o
         suppressHydrationWarning?: boolean | undefined;
         className?: string | undefined;
         height?: string | number | undefined;
-        id?: string | undefined;
         lang?: string | undefined;
         width?: string | number | undefined;
         role?: import("react").AriaRole | undefined;
@@ -272,7 +273,6 @@ export declare const useTextInput: ({ custom, beforeComponent, afterComponent, o
         onTransitionEndCapture?: import("react").TransitionEventHandler<HTMLInputElement> | undefined;
         hidden?: boolean | undefined;
         defaultChecked?: boolean | undefined;
-        defaultValue?: string | number | readonly string[] | undefined;
         suppressContentEditableWarning?: boolean | undefined;
         accessKey?: string | undefined;
         autoFocus?: boolean | undefined;
