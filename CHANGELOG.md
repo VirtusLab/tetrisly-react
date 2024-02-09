@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.5.1](https://github.com/VirtusLab/tetrisly-react/compare/v1.5.0...v1.5.1) (2024-02-09)
+
+
+### Bug Fixes
+
+* NO-JIRA add id and defaultValue to inputPropsKeys ([#118](https://github.com/VirtusLab/tetrisly-react/issues/118)) ([f67c0d5](https://github.com/VirtusLab/tetrisly-react/commit/f67c0d5316ef966fd8a5684a98a5b8a27e25b7ab))
+* removed storybook analytics addon and install GA script manually TET-592 ([#116](https://github.com/VirtusLab/tetrisly-react/issues/116)) ([ded122f](https://github.com/VirtusLab/tetrisly-react/commit/ded122fc8c3d317268f6c6f839b7aba9aa0a5004))
+* **TextInput:** removed trigger action on container focus NO-JIRA ([#120](https://github.com/VirtusLab/tetrisly-react/issues/120)) ([9f6ccc1](https://github.com/VirtusLab/tetrisly-react/commit/9f6ccc1ca73ae3a313bb148db031098ff259259f))
+
 ## [1.5.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.4.0...v1.5.0) (2023-12-12)
 
 
