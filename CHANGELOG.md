@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.5.1...v1.6.0) (2024-02-13)
+
+
+### Features
+
+* NO-JIRA add all possible textInput types ([#125](https://github.com/VirtusLab/tetrisly-react/issues/125)) ([9d569b3](https://github.com/VirtusLab/tetrisly-react/commit/9d569b3e1111e7490e62518537bf13b5e2dae2ff))
+
 ## [1.5.1](https://github.com/VirtusLab/tetrisly-react/compare/v1.5.0...v1.5.1) (2024-02-09)
 
 
