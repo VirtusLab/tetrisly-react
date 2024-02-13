@@ -1,3 +1,7 @@
-import { HTMLInputTypeAttribute } from 'react';
-
-export type TextInputType = HTMLInputTypeAttribute;
+export type TextInputType =
+  | 'text'
+  | 'email'
+  | 'password'
+  | 'search'
+  | 'tel'
+  | 'url';
