@@ -3,7 +3,7 @@ import type { StoryObj } from '@storybook/react';
 declare const meta: {
     title: string;
     component: import("react").ForwardRefExoticComponent<{
-        type?: import("react").HTMLInputTypeAttribute | undefined;
+        type?: import("./TextInputType.type").TextInputType | undefined;
         beforeComponent?: import("./TextInput.props").TextInputProps.InnerComponents.Icon | import("./TextInput.props").TextInputProps.InnerComponents.Dropdown | import("./TextInput.props").TextInputProps.InnerComponents.Prefix | import("./TextInput.props").TextInputProps.InnerComponents.Avatar | undefined;
         afterComponent?: import("./TextInput.props").TextInputProps.InnerComponents.Icon | import("./TextInput.props").TextInputProps.InnerComponents.IconButton | import("./TextInput.props").TextInputProps.InnerComponents.Dropdown | import("./TextInput.props").TextInputProps.InnerComponents.Sufix | import("./TextInput.props").TextInputProps.InnerComponents.Button | undefined;
         state?: import("../../types").BasicInputState | undefined;

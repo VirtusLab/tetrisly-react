@@ -1,7 +1,7 @@
 /// <reference types="react" />
 import { TextInputProps } from './TextInput.props';
 export declare const TextInput: import("react").ForwardRefExoticComponent<{
-    type?: import("react").HTMLInputTypeAttribute | undefined;
+    type?: import("./TextInputType.type").TextInputType | undefined;
     beforeComponent?: TextInputProps.InnerComponents.Icon | TextInputProps.InnerComponents.Dropdown | TextInputProps.InnerComponents.Prefix | TextInputProps.InnerComponents.Avatar | undefined;
     afterComponent?: TextInputProps.InnerComponents.Icon | TextInputProps.InnerComponents.IconButton | TextInputProps.InnerComponents.Dropdown | TextInputProps.InnerComponents.Sufix | TextInputProps.InnerComponents.Button | undefined;
     state?: import("../../types").BasicInputState | undefined;
