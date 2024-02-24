@@ -11,7 +11,9 @@ import type { CheckboxGroupProps } from './CheckboxGroup.props';
 import { stylesBuilder } from './stylesBuilder';
 import { Checkbox, type CheckboxProps } from '../Checkbox';
 import { HelperText } from '../HelperText';
+import type { HelperTextConfig } from '../HelperText/HelperText.styles';
 import { Label } from '../Label';
+import { LabelConfig } from '../Label/Label.styles';
 
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types';
@@ -40,20 +42,7 @@ export const CheckboxGroup: Props = ({
 
   return (
     <tet.div {...styles.container} data-testid="checkbox-group" {...restProps}>
-      {!!label &&
-        (typeof label === 'string' ? (
-          <Label
-            label={label}
-            custom={styles.label}
-            data-testid="checkbox-group-label"
-          />
-        ) : (
-          <Label
-            {...label}
-            custom={styles.label}
-            data-testid="checkbox-group-label"
-          />
-        ))}
+      <CheckboxGroupLabel label={label} styles={styles.label} />
       <tet.div
         {...styles.checkboxContainer}
         gridTemplateColumns={`repeat(${column}, 1fr)`}
@@ -61,21 +50,55 @@ export const CheckboxGroup: Props = ({
       >
         {children}
       </tet.div>
-      {!!helperText &&
-        (typeof helperText === 'string' ? (
-          <HelperText
-            text={helperText}
-            custom={styles.helperText}
-            data-testid="checkbox-group-helperText"
-          />
-        ) : (
-          <HelperText
-            {...helperText}
-            custom={styles.helperText}
-            data-testid="checkbox-group-helperText"
-          />
-        ))}
+      <CheckboxGroupHelperText
+        helperText={helperText}
+        styles={styles.helperText}
+      />
     </tet.div>
+  );
+};
+
+const CheckboxGroupLabel = ({
+  label,
+  styles,
+}: {
+  label: CheckboxGroupProps['label'];
+  styles: LabelConfig;
+}) => {
+  if (!label) return null;
+  if (typeof label === 'string')
+    return (
+      <Label label={label} custom={styles} data-testid="checkbox-group-label" />
+    );
+  return (
+    <Label {...label} custom={styles} data-testid="checkbox-group-label" />
+  );
+};
+
+const CheckboxGroupHelperText = ({
+  helperText,
+  styles,
+}: {
+  helperText: CheckboxGroupProps['helperText'];
+  styles: HelperTextConfig;
+}) => {
+  if (!helperText) return null;
+
+  if (typeof helperText === 'string')
+    return (
+      <HelperText
+        text={helperText}
+        custom={styles}
+        data-testid="checkbox-group-helperText"
+      />
+    );
+
+  return (
+    <HelperText
+      {...helperText}
+      custom={styles}
+      data-testid="checkbox-group-helperText"
+    />
   );
 };
 
