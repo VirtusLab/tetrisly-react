@@ -7,12 +7,16 @@ import { CardHeader } from './CardHeader/CardHeader';
 import { mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 
-export const Card: CardComponent = ({ custom, children }) => {
+export const Card: CardComponent = ({ custom, children, ...rest }) => {
   const styles = mergeConfigWithCustom({
     defaultConfig: cardConfig,
     custom,
   });
-  return <tet.div {...styles}>{children}</tet.div>;
+  return (
+    <tet.div data-testid="card" {...styles} {...rest}>
+      {children}
+    </tet.div>
+  );
 };
 
 Card.Header = CardHeader;

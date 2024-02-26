@@ -8,10 +8,14 @@ import { mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import { BaseProps } from '@/types';
 
-export const CardFooter: FC<CardFooterProps> = ({ custom, actions }) => {
+export const CardFooter: FC<CardFooterProps> = ({
+  custom,
+  actions,
+  ...rest
+}) => {
   const styles = getStylesProps(custom);
   return (
-    <tet.div {...styles.container}>
+    <tet.div data-testid="card-footer" {...styles.container} {...rest}>
       <Actions styles={styles.actions} actions={actions} />
     </tet.div>
   );
@@ -25,7 +29,7 @@ type CardFooterActionProps = {
 const Actions: FC<CardFooterActionProps> = ({ actions, styles }) => {
   if (!actions) return null;
   return (
-    <tet.div {...styles}>
+    <tet.div data-testid="card-footer-actions" {...styles}>
       {actions.map((action) => (
         <Button key={action.label} size="small" variant="ghost" {...action} />
       ))}

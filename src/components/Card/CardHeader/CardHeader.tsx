@@ -1,4 +1,3 @@
-import { Icon } from '@virtuslab/tetrisly-icons';
 import type { FC } from 'react';
 
 import type { CardHeaderProps } from './CardHeader.props';
@@ -6,6 +5,7 @@ import { cardHeaderConfig } from './CardHeader.styles';
 
 import { Avatar } from '@/components/Avatar';
 import { Button } from '@/components/Button';
+import { Icon } from '@/components/Icon';
 import { mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import type { BaseProps } from '@/types';
@@ -16,16 +16,19 @@ export const CardHeader: FC<CardHeaderProps> = ({
   title,
   description,
   actions,
+  ...rest
 }) => {
   const styles = getStylesProps(custom);
   return (
-    <tet.div {...styles.container}>
+    <tet.div data-testid="card-header" {...styles.container} {...rest}>
       <BeforeComponent
         styles={styles.beforeComponent}
         beforeComponent={beforeComponent}
       />
-      <tet.div {...styles.content}>
-        <tet.div {...styles.title}>{title}</tet.div>
+      <tet.div data-testid="card-header-content" {...styles.content}>
+        <tet.div data-testid="card-header-title" {...styles.title}>
+          {title}
+        </tet.div>
         <Description styles={styles.description} description={description} />
       </tet.div>
       <Actions styles={styles.actions} actions={actions} />
@@ -49,14 +52,14 @@ const BeforeComponent: SubComponent<'beforeComponent'> = ({
 
   if ('icon' in beforeComponent)
     return (
-      <tet.div {...styles}>
-        <Icon {...beforeComponent.icon} />
+      <tet.div data-testid="card-header-beforeComponent" {...styles}>
+        <Icon name={beforeComponent.icon.name} />
       </tet.div>
     );
 
   if ('avatar' in beforeComponent)
     return (
-      <tet.div {...styles}>
+      <tet.div data-testid="card-header-beforeComponent" {...styles}>
         <Avatar {...beforeComponent.avatar} />
       </tet.div>
     );
@@ -75,13 +78,17 @@ function warnIfIconAndAvatar(
 
 const Description: SubComponent<'description'> = ({ styles, description }) => {
   if (!description) return null;
-  return <tet.div {...styles}>{description}</tet.div>;
+  return (
+    <tet.div data-testid="card-header-description" {...styles}>
+      {description}
+    </tet.div>
+  );
 };
 
 const Actions: SubComponent<'actions'> = ({ styles, actions }) => {
   if (!actions) return null;
   return (
-    <tet.div {...styles}>
+    <tet.div data-testid="card-header-actions" {...styles}>
       {actions.map((action) => (
         <Button key={action.label} variant="bare" {...action} />
       ))}
