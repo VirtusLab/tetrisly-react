@@ -32,6 +32,9 @@ export const cardConfig = {
   borderRadius: '$border-radius-xLarge',
   bg: '$color-background-default',
   boxShadow: '$elevation-bottom-200',
+  borderWidth: '$border-width-small',
+  borderStyle: '$border-style-solid',
+  borderColor: '$color-border-defaultA',
   overflow: 'hidden',
   innerElements: {
     header: {
