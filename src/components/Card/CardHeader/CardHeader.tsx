@@ -1,26 +1,23 @@
 import type { FC } from 'react';
 
-import type { CardHeaderProps } from './CardHeader.props';
-import { cardHeaderConfig } from './CardHeader.styles';
+import { CardHeaderProps } from './CardHeader.props';
 
 import { Avatar } from '@/components/Avatar';
 import { Button } from '@/components/Button';
 import { Icon } from '@/components/Icon';
-import { mergeConfigWithCustom } from '@/services';
 import { tet } from '@/tetrisly';
 import type { BaseProps } from '@/types';
 
 export const CardHeader: FC<CardHeaderProps> = ({
-  custom,
-  beforeComponent,
-  title,
-  description,
-  actions,
-  ...rest
+  styles: rawStyles,
+  ...props
 }) => {
-  const styles = getStylesProps(custom);
+  const { beforeComponent, title, description, actions } = props;
+
+  const styles = getStylesProps(rawStyles);
+
   return (
-    <tet.div data-testid="card-header" {...styles.container} {...rest}>
+    <tet.div data-testid="card-header" {...styles.container}>
       <BeforeComponent
         styles={styles.beforeComponent}
         beforeComponent={beforeComponent}
@@ -39,7 +36,7 @@ export const CardHeader: FC<CardHeaderProps> = ({
 type SubComponent<T extends keyof CardHeaderProps> = FC<
   {
     [key in T]: CardHeaderProps[key];
-  } & { styles: BaseProps }
+  } & { styles: BaseProps | undefined }
 >;
 
 const BeforeComponent: SubComponent<'beforeComponent'> = ({
@@ -96,10 +93,15 @@ const Actions: SubComponent<'actions'> = ({ styles, actions }) => {
   );
 };
 
-function getStylesProps(custom: CardHeaderProps['custom']) {
-  const { innerElements, ...rest } = mergeConfigWithCustom({
-    defaultConfig: cardHeaderConfig,
-    custom,
-  });
-  return { ...innerElements, container: rest };
+function getStylesProps(styles: CardHeaderProps['styles']) {
+  const {
+    title,
+    description,
+    actions,
+    content,
+    beforeComponent,
+    ...container
+  } = styles;
+
+  return { title, description, actions, content, beforeComponent, container };
 }

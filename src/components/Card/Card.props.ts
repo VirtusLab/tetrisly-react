@@ -1,8 +1,7 @@
-import type { FC, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import type { CardConfig } from './Card.styles';
-import type { CardContentProps } from './CardContent/CardContent.props';
-import type { CardFooterProps } from './CardFooter';
+import type { CardFooterProps } from './CardFooter/CardFooter.props';
 import type { CardHeaderProps } from './CardHeader/CardHeader.props';
 
 import { MarginProps } from '@/types';
@@ -10,10 +9,6 @@ import { MarginProps } from '@/types';
 export type CardProps = {
   custom?: CardConfig;
   children: ReactNode;
+  header?: Omit<CardHeaderProps, 'styles'>;
+  footer?: Omit<CardFooterProps, 'styles'>;
 } & MarginProps;
-
-export type CardComponent = FC<CardProps> & {
-  Header: FC<CardHeaderProps>;
-  Content: FC<CardContentProps>;
-  Footer: FC<CardFooterProps>;
-};

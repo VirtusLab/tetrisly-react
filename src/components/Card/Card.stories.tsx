@@ -11,6 +11,44 @@ const meta = {
   component: Card,
   tags: ['autodocs'],
   argTypes: {},
+  args: {
+    children: (
+      <tet.div
+        display="flex"
+        flexDirection="column"
+        gap="$space-component-gap-2xLarge"
+        minWidth="432px"
+      >
+        <Badge appearance="blue" emphasis="medium" label="In Progress" />
+        <tet.div display="flex" flexDirection="column">
+          <tet.span color="$color-content-secondary" text="$typo-body-small">
+            Task:
+          </tet.span>
+          <tet.span color="$color-content-primary" text="$typo-body-large">
+            Creating React components
+          </tet.span>
+        </tet.div>
+        <tet.div display="flex" gap="$space-component-gap-2xLarge">
+          <tet.div display="flex" flexDirection="column" flexGrow={1}>
+            <tet.span color="$color-content-secondary" text="$typo-body-small">
+              Created
+            </tet.span>
+            <tet.span color="$color-content-primary" text="$typo-body-medium">
+              Mon, 14 Feb 2023
+            </tet.span>
+          </tet.div>
+          <tet.div display="flex" flexDirection="column" flexGrow={1}>
+            <tet.span color="$color-content-secondary" text="$typo-body-small">
+              Last modified
+            </tet.span>
+            <tet.span color="$color-content-primary" text="$typo-body-medium">
+              Today, 5:23 am
+            </tet.span>
+          </tet.div>
+        </tet.div>
+      </tet.div>
+    ),
+  },
   parameters: {
     docs: {
       description: {
@@ -27,171 +65,87 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const CardTaskContent = () => (
-  <tet.div
-    display="flex"
-    flexDirection="column"
-    gap="$space-component-gap-2xLarge"
-    minWidth="432px"
-  >
-    <Badge appearance="blue" emphasis="medium" label="In Progress" />
-    <tet.div display="flex" flexDirection="column">
-      <tet.span color="$color-content-secondary" text="$typo-body-small">
-        Task:
-      </tet.span>
-      <tet.span color="$color-content-primary" text="$typo-body-large">
-        Creating React components
-      </tet.span>
-    </tet.div>
-    <tet.div display="flex" gap="$space-component-gap-2xLarge">
-      <tet.div display="flex" flexDirection="column" flexGrow={1}>
-        <tet.span color="$color-content-secondary" text="$typo-body-small">
-          Created
-        </tet.span>
-        <tet.span color="$color-content-primary" text="$typo-body-medium">
-          Mon, 14 Feb 2023
-        </tet.span>
-      </tet.div>
-      <tet.div display="flex" flexDirection="column" flexGrow={1}>
-        <tet.span color="$color-content-secondary" text="$typo-body-small">
-          Last modified
-        </tet.span>
-        <tet.span color="$color-content-primary" text="$typo-body-medium">
-          Today, 5:23 am
-        </tet.span>
-      </tet.div>
-    </tet.div>
-  </tet.div>
-);
-
 export const Default: Story = {
   args: {
-    children: (
-      <>
-        <Card.Header
-          title="Card Title"
-          description="Card Description"
-          beforeComponent={{
-            icon: { name: '20-wallet' },
-          }}
-          actions={[
-            { label: 'Add', onClick: () => {}, beforeIcon: '20-plus' },
-            { label: 'Cancel', onClick: () => {} },
-          ]}
-        />
-        <Card.Content>
-          <CardTaskContent />
-        </Card.Content>
-        <Card.Footer
-          actions={[
-            { label: 'Details', appearance: 'secondary' },
-            { label: 'Mark as resolved', appearance: 'primary' },
-          ]}
-        />
-      </>
-    ),
+    header: {
+      title: 'Card Title',
+      description: 'Card Description',
+      beforeComponent: {
+        icon: { name: '20-wallet' },
+      },
+      actions: [
+        { label: 'Add', onClick: () => {}, beforeIcon: '20-plus' },
+        { label: 'Cancel', onClick: () => {} },
+      ],
+    },
+
+    footer: {
+      actions: [
+        { label: 'Details', appearance: 'secondary' },
+        { label: 'Mark as resolved', appearance: 'primary' },
+      ],
+    },
   },
 };
 
-export const Content: Story = {
-  args: {
-    children: (
-      <Card.Content>
-        <CardTaskContent />
-      </Card.Content>
-    ),
-  },
-};
+export const Content: Story = {};
 export const Header: Story = {
   args: {
-    children: (
-      <>
-        <Card.Header title="Card Title" />
-        <Card.Content>
-          <CardTaskContent />
-        </Card.Content>
-      </>
-    ),
+    header: {
+      title: 'Card Title',
+    },
   },
 };
 export const HeaderDescription: Story = {
   args: {
-    children: (
-      <>
-        <Card.Header title="Card Title" description="Card Description" />
-        <Card.Content>
-          <CardTaskContent />
-        </Card.Content>
-      </>
-    ),
+    header: { title: 'Card Title', description: 'Card Description' },
   },
 };
 
 export const HeaderIcon: Story = {
   args: {
-    children: (
-      <>
-        <Card.Header
-          title="Card Title"
-          beforeComponent={{ icon: { name: '20-wallet' } }}
-        />
-        <Card.Content>
-          <CardTaskContent />
-        </Card.Content>
-      </>
-    ),
+    header: {
+      title: 'Card Title',
+      beforeComponent: {
+        icon: { name: '20-wallet' },
+      },
+    },
   },
 };
 
 export const HeaderAvatar: Story = {
   args: {
-    children: (
-      <>
-        <Card.Header
-          title="Card Title"
-          beforeComponent={{
-            avatar: {
-              img: { src: 'https://thispersondoesnotexist.com' },
-              appearance: 'image',
-            },
-          }}
-        />
-        <Card.Content>
-          <CardTaskContent />
-        </Card.Content>
-      </>
-    ),
+    header: {
+      title: 'Card Title',
+      beforeComponent: {
+        avatar: {
+          img: { src: 'https://via.placeholder.com/150', alt: '' },
+          appearance: 'image',
+        },
+      },
+    },
   },
 };
 
 export const HeaderActions: Story = {
   args: {
-    children: (
-      <>
-        <Card.Header
-          title="Card Title"
-          actions={[
-            { label: 'Add', onClick: () => {}, beforeIcon: '20-plus' },
-            { label: 'Cancel', onClick: () => {} },
-          ]}
-        />
-        <Card.Content>
-          <CardTaskContent />
-        </Card.Content>
-      </>
-    ),
+    header: {
+      title: 'Card Title',
+      actions: [
+        { label: 'Add', onClick: () => {}, beforeIcon: '20-plus' },
+        { label: 'Cancel', onClick: () => {} },
+      ],
+    },
   },
 };
 
 export const Footer: Story = {
   args: {
-    children: (
-      <>
-        <Card.Content>
-          <CardTaskContent />
-        </Card.Content>
-        <Card.Footer />
-      </>
-    ),
+    footer: {
+      actions: [
+        { label: 'Add', onClick: () => {}, beforeIcon: '20-plus' },
+        { label: 'Cancel', onClick: () => {} },
+      ],
+    },
   },
 };
