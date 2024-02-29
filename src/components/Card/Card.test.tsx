@@ -135,11 +135,7 @@ describe('Card', () => {
           title: 'Title',
           beforeComponent: {
             avatar: {
-              img: {
-                src: 'src',
-                alt: 'avatar',
-              },
-              appearance: 'image',
+              image: 'image',
             },
           },
         }}

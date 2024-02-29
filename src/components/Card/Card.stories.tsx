@@ -119,8 +119,7 @@ export const HeaderAvatar: Story = {
       title: 'Card Title',
       beforeComponent: {
         avatar: {
-          img: { src: 'https://thispersondoesnotexist.com/', alt: '' },
-          appearance: 'image',
+          image: 'https://thispersondoesnotexist.com/',
         },
       },
     },
