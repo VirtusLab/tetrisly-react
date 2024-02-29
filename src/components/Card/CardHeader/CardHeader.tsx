@@ -54,12 +54,31 @@ const BeforeComponent: SubComponent<'beforeComponent'> = ({
       </tet.div>
     );
 
-  if ('avatar' in beforeComponent)
+  if ('avatar' in beforeComponent) {
+    if ('image' in beforeComponent.avatar)
+      return (
+        <tet.div data-testid="card-header-beforeComponent" {...styles}>
+          <Avatar
+            shape="rounded"
+            size="medium"
+            emphasis="low"
+            img={{ src: beforeComponent.avatar.image, alt: 'avatar' }}
+            appearance="image"
+          />
+        </tet.div>
+      );
     return (
       <tet.div data-testid="card-header-beforeComponent" {...styles}>
-        <Avatar {...beforeComponent.avatar} />
+        <Avatar
+          shape="rounded"
+          size="medium"
+          emphasis="low"
+          appearance={beforeComponent.avatar.appearance}
+          initials={beforeComponent.avatar.initials}
+        />
       </tet.div>
     );
+  }
   console.warn('No icon or avatar in beforeComponent.');
   return null;
 };

@@ -2,7 +2,7 @@ import type { IconProps } from '@virtuslab/tetrisly-icons';
 
 import type { CardHeaderConfig } from '../Card.styles';
 
-import type { AvatarProps } from '@/components/Avatar';
+import { AvatarAppearance } from '@/components/Avatar/types';
 import type { BareButtonProps } from '@/components/Button/Button.props';
 
 export type CardHeaderProps = {
@@ -10,6 +10,7 @@ export type CardHeaderProps = {
   description?: string;
   beforeComponent?: BeforeComponentProps;
   styles: CardHeaderConfig;
+  // TODO: in the future omit the size from the buttonprops
   actions?: BareButtonProps[];
 };
 type BeforeComponentProps =
@@ -17,5 +18,7 @@ type BeforeComponentProps =
       icon: IconProps;
     }
   | {
-      avatar: AvatarProps;
+      avatar:
+        | { image: string }
+        | { appearance: Exclude<AvatarAppearance, 'image'>; initials: string };
     };
