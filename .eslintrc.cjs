@@ -5,13 +5,7 @@ module.exports = {
   ],
   ignorePatterns: ['examples/**/*'],
   rules: {
-    '@typescript-eslint/no-use-before-define': [
-      2,
-      {
-        functions: false,
-        typedefs: false,
-      },
-    ],
+    '@typescript-eslint/no-use-before-define': 'off',
     'react/prop-types': 'off',
   },
 };
