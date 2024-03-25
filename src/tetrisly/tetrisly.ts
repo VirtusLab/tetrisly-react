@@ -18,7 +18,6 @@ import {
   transitions,
   typography,
   style,
-  th,
 } from '@xstyled/styled-components';
 
 const opacity = style({
@@ -81,4 +80,3 @@ export const { css, styled, x, createGlobalStyle } = createCss(
 export const t = x;
 export const tet = x;
 export const tetrisly = x;
-export const tetTh = th;

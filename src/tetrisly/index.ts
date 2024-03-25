@@ -1,2 +1,2 @@
-export { tetrisly, tet, tetTh } from './tetrisly';
+export { tetrisly, tet } from './tetrisly';
 export { TetrislyProvider } from './TetrislyProvider';
