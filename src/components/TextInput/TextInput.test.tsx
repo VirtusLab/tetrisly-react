@@ -126,18 +126,25 @@ describe('TextInput', () => {
   });
 
   it('should clear controlled text input', () => {
+    const mockedOnChanged = vi.fn();
+
     const { input, clearButton } = getTextInput(
-      <TextInput value="1234" onChange={handleEventMock} hasClearButton />,
+      <TextInput onChange={mockedOnChanged} hasClearButton />,
     );
 
     if (input && clearButton) {
-      fireEvent.change(input, { target: { value: 'test' } });
+      fireEvent.change(input, { target: { value: 'test value' } });
 
-      expect(input.value).toBe('1234');
+      expect(input.value).toBe('test value');
 
       fireEvent.click(clearButton);
 
-      expect(handleEventMock).toBeCalledWith({ target: { value: '' } });
+      expect(mockedOnChanged).toHaveBeenCalledWith(
+        expect.objectContaining({
+          _reactName: 'onChange',
+          target: expect.objectContaining({ value: '' }),
+        }),
+      );
     }
 
     expect(input).toBeDefined();

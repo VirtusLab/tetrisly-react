@@ -52,26 +52,33 @@ export const useTextInput = ({
     [onChange],
   );
 
-  const handleOnClear: MouseEventHandler<HTMLButtonElement> =
-    useCallback(() => {
-      setInnerValue('');
+  const handleOnClear: MouseEventHandler<HTMLButtonElement> = () => {
+    setInnerValue('');
 
-      const input = containerRef.current?.querySelector('input');
+    const input = containerRef.current?.querySelector('input');
 
-      if (!input) return;
+    if (!input) return;
 
-      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-        input.constructor.prototype,
-        'value',
-      )?.set;
+    const valueSetter = Object.getOwnPropertyDescriptor(
+      input.constructor.prototype,
+      'value',
+    )?.set;
 
-      if (!nativeInputValueSetter) return;
+    const prototype = Object.getPrototypeOf(input);
+    const prototypeValueSetter = Object.getOwnPropertyDescriptor(
+      prototype,
+      'value',
+    )?.set;
 
-      nativeInputValueSetter.call(input, '');
+    if (valueSetter && valueSetter !== prototypeValueSetter) {
+      prototypeValueSetter?.call(input, '');
+    } else {
+      valueSetter?.call(input, '');
+    }
 
-      const e = new Event('input', { bubbles: true });
-      input.dispatchEvent(e);
-    }, []);
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+  };
+
   return {
     innerValue,
     styles,
