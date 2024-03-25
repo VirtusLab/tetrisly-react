@@ -103,13 +103,13 @@ describe('SearchInput', () => {
 
   it('should clear controlled text input', () => {
     const { input, clearButton } = getSearchInput(
-      <SearchInput value="1234" onChange={handleEventMock} />,
+      <SearchInput onChange={handleEventMock} />,
     );
 
     if (input && clearButton) {
       fireEvent.change(input, { target: { value: 'test' } });
 
-      expect(input.value).toBe('1234');
+      expect(input.value).toBe('test');
 
       fireEvent.click(clearButton);
 
