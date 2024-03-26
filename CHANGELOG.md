@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/VirtusLab/tetrisly-react/compare/v1.6.0...v1.6.1) (2024-03-26)
+
+
+### Bug Fixes
+
+* added proper synthetic event emitter NO-JIRA ([#130](https://github.com/VirtusLab/tetrisly-react/issues/130)) ([e07b9bb](https://github.com/VirtusLab/tetrisly-react/commit/e07b9bb4a5454f8e6940311a0b18abe89828107d))
+
 ## [1.6.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.5.1...v1.6.0) (2024-02-13)
 
 
