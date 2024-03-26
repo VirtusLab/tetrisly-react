@@ -1,5 +1,4 @@
 import {
-  ChangeEvent,
   ChangeEventHandler,
   MouseEventHandler,
   FocusEvent,
@@ -53,13 +52,33 @@ export const useTextInput = ({
     [onChange],
   );
 
-  const handleOnClear: MouseEventHandler<HTMLButtonElement> =
-    useCallback(() => {
-      setInnerValue('');
-      onChange?.({
-        target: { value: '' },
-      } as ChangeEvent<HTMLInputElement>);
-    }, [onChange]);
+  const handleOnClear: MouseEventHandler<HTMLButtonElement> = () => {
+    setInnerValue('');
+
+    const input = containerRef.current?.querySelector('input');
+
+    if (!input) return;
+
+    const valueSetter = Object.getOwnPropertyDescriptor(
+      input.constructor.prototype,
+      'value',
+    )?.set;
+
+    const prototype = Object.getPrototypeOf(input);
+    const prototypeValueSetter = Object.getOwnPropertyDescriptor(
+      prototype,
+      'value',
+    )?.set;
+
+    if (valueSetter && valueSetter !== prototypeValueSetter) {
+      prototypeValueSetter?.call(input, '');
+    } else {
+      valueSetter?.call(input, '');
+    }
+
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+  };
+
   return {
     innerValue,
     styles,

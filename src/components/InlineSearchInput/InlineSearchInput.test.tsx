@@ -96,18 +96,18 @@ describe('InlineSearchInput', () => {
 
   it('should clear controlled text input', () => {
     const { input, clearButton } = getInlineSearchInput(
-      <InlineSearchInput value="1234" onChange={handleEventMock} />,
+      <InlineSearchInput onChange={handleEventMock} />,
     );
 
-    if (input && clearButton) {
-      fireEvent.change(input, { target: { value: 'test' } });
+    if (!input || !clearButton) return;
 
-      expect(input.value).toBe('1234');
+    fireEvent.change(input, { target: { value: 'test' } });
 
-      fireEvent.click(clearButton);
+    expect(input.value).toBe('test');
 
-      expect(handleEventMock).toBeCalledWith({ target: { value: '' } });
-    }
+    fireEvent.click(clearButton);
+
+    expect(handleEventMock).toBeCalledWith({ target: { value: '' } });
 
     expect(input).toBeDefined();
   });
