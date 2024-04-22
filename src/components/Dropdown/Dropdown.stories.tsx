@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 
-import { Dropdown } from './Dropdown';
+import { Dropdown, DropdownProps } from './Dropdown';
+import { DropdownItem } from './DropdownItem';
 import { Button } from '../Button';
 
 import { TetDocs } from '@/docs-components/TetDocs';
@@ -40,16 +42,78 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const FunctionalDropdown = ({
+  children,
+  open: _,
+  openChange,
+  trigger,
+  ...props
+}: DropdownProps) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Dropdown
+      open={open}
+      openChange={setOpen}
+      trigger={
+        <Button onClick={() => setOpen((prev) => !prev)}>Open Dropdown</Button>
+      }
+      {...props}
+    >
+      {children}
+    </Dropdown>
+  );
+};
+
 export const Default: Story = {
+  render: FunctionalDropdown,
   args: {
-    renderTrigger: (toggle) => <Button onClick={toggle}>Open Dropdown</Button>,
-    children: <>Hello</>,
+    trigger: <Button>Open Dropdown</Button>,
+    open: true,
+    children: (
+      <>
+        <DropdownItem label="Item 1" />
+        <DropdownItem label="Item 2" />
+      </>
+    ),
   },
 };
 export const ParentWidth: Story = {
+  render: FunctionalDropdown,
   args: {
-    renderTrigger: (toggle) => <Button onClick={toggle}>Open Dropdown</Button>,
-    children: <>Hello</>,
+    trigger: <Button>Open Dropdown</Button>,
+    open: true,
+    children: (
+      <>
+        <DropdownItem label="Item 1" />
+        <DropdownItem label="Item 2" />
+      </>
+    ),
     parentWidth: true,
+  },
+};
+
+export const BeforeComponent: Story = {
+  render: FunctionalDropdown,
+  args: {
+    trigger: <Button>Open Dropdown</Button>,
+    open: true,
+    children: (
+      <>
+        <DropdownItem
+          beforeComponent={{
+            type: 'avatar',
+            props: { appearance: 'blue', initials: 'MW' },
+          }}
+          label="Personal Info"
+        />
+        <DropdownItem
+          label="Calculator"
+          beforeComponent={{
+            type: 'icon',
+            props: { name: '20-calculator' },
+          }}
+        />
+      </>
+    ),
   },
 };

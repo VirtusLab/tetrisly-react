@@ -17,17 +17,30 @@ export function useListOrientation({
     if (!open) return;
     if (!containerRef.current) return;
     const { right, bottom } = containerRef.current.getBoundingClientRect();
-    if (window.innerWidth - right < 280) {
-      setHorizontalDirection('left');
-    } else {
-      setHorizontalDirection('right');
-    }
-    if (window.innerHeight - bottom < 400) {
-      setVerticalDirection('top');
-    } else {
-      setVerticalDirection('bottom');
-    }
+    setHorizontalDirection(
+      calculateHorizontalDirection(window.innerWidth, right, 280),
+    );
+    setVerticalDirection(
+      calculateVerticalDirection(window.innerHeight, bottom, 400),
+    );
   }, [containerRef, open]);
 
   return { horizontalDirection, verticalDirection } as const;
+}
+
+function calculateHorizontalDirection(
+  width: number,
+  rightEdge: number,
+  offset: number,
+) {
+  if (width - rightEdge < offset) return 'left' as const;
+  return 'right' as const;
+}
+function calculateVerticalDirection(
+  height: number,
+  bottomEdge: number,
+  offset: number,
+) {
+  if (height - bottomEdge < offset) return 'top' as const;
+  return 'bottom' as const;
 }
