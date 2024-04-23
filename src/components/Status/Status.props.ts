@@ -1,5 +1,5 @@
 import { StatusConfig } from './Status.styles';
-import { StatusAppearance } from './StatusAppearance.type';
+import type { StatusAppearance } from './StatusAppearance.type';
 import { StatusEmphasis } from './StatusEmphasis.type';
 
 type Status = string;
