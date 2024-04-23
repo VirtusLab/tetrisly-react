@@ -28,8 +28,6 @@ export const defaultConfig = {
   w: 'fit-content',
   h: '$size-xSmall',
   gap: '$space-component-gap-small',
-  p: '$space-component-padding-null $space-component-padding-medium',
-  borderRadius: '$border-radius-medium',
   alignItems: 'center',
   text: '$typo-body-medium',
   dot: {
@@ -41,9 +39,13 @@ export const defaultConfig = {
         emphasis: {
           high: {
             backgroundColor: '$color-nonSemantic-white-content-primary',
+            p: '$space-component-padding-null $space-component-padding-small',
+            borderRadius: '$border-radius-medium',
           },
           medium: {
             backgroundColor: '$color-nonSemantic-grey-background-strong',
+            p: '$space-component-padding-null $space-component-padding-small',
+            borderRadius: '$border-radius-medium',
           },
           low: {
             backgroundColor: '$color-nonSemantic-grey-background-strong',
@@ -54,9 +56,13 @@ export const defaultConfig = {
         emphasis: {
           high: {
             backgroundColor: '$color-nonSemantic-white-content-primary',
+            p: '$space-component-padding-null $space-component-padding-small',
+            borderRadius: '$border-radius-medium',
           },
           medium: {
             backgroundColor: '$color-nonSemantic-blue-background-strong',
+            p: '$space-component-padding-null $space-component-padding-small',
+            borderRadius: '$border-radius-medium',
           },
           low: {
             backgroundColor: '$color-nonSemantic-blue-background-strong',
@@ -110,14 +116,19 @@ export const defaultConfig = {
         high: {
           backgroundColor: '$color-nonSemantic-grey-background-strong',
           color: '$color-nonSemantic-white-content-primary',
+          p: '$space-component-padding-null $space-component-padding-small',
+          borderRadius: '$border-radius-medium',
         },
         medium: {
           backgroundColor: '$color-nonSemantic-grey-background-muted',
           color: '$color-nonSemantic-grey-content-primary',
+          p: '$space-component-padding-null $space-component-padding-small',
+          borderRadius: '$border-radius-medium',
         },
         low: {
           backgroundColor: '$color-transparent',
           color: '$color-nonSemantic-grey-content-primary',
+          borderRadius: '$border-radius-medium',
         },
       },
     },
@@ -126,10 +137,14 @@ export const defaultConfig = {
         high: {
           backgroundColor: '$color-nonSemantic-blue-background-strong',
           color: '$color-nonSemantic-white-content-primary',
+          p: '$space-component-padding-null $space-component-padding-small',
+          borderRadius: '$border-radius-medium',
         },
         medium: {
           backgroundColor: '$color-nonSemantic-blue-background-muted',
           color: '$color-nonSemantic-blue-content-primary',
+          p: '$space-component-padding-null $space-component-padding-small',
+          borderRadius: '$border-radius-medium',
         },
         low: {
           backgroundColor: '$color-transparent',
@@ -142,14 +157,17 @@ export const defaultConfig = {
         high: {
           color: '$color-nonSemantic-white-content-primary',
           backgroundColor: '$color-nonSemantic-green-background-strong',
+          p: '$space-component-padding-null $space-component-padding-small',
+          borderRadius: '$border-radius-medium',
         },
         medium: {
           color: '$color-nonSemantic-green-content-primary',
           backgroundColor: '$color-nonSemantic-green-background-muted',
+          p: '$space-component-padding-null $space-component-padding-small',
+          borderRadius: '$border-radius-medium',
         },
         low: {
           color: '$color-nonSemantic-green-content-primary',
-          backgroundColor: '$color-transparent',
         },
       },
     },
@@ -158,10 +176,14 @@ export const defaultConfig = {
         high: {
           color: '$color-nonSemantic-white-content-primary',
           backgroundColor: '$color-nonSemantic-red-background-strong',
+          p: '$space-component-padding-null $space-component-padding-small',
+          borderRadius: '$border-radius-medium',
         },
         medium: {
           color: '$color-nonSemantic-red-content-primary',
           backgroundColor: '$color-nonSemantic-red-background-muted',
+          p: '$space-component-padding-null $space-component-padding-small',
+          borderRadius: '$border-radius-medium',
         },
         low: {
           color: '$color-nonSemantic-red-content-primary',
@@ -174,10 +196,14 @@ export const defaultConfig = {
         high: {
           backgroundColor: '$color-nonSemantic-orange-background-strong',
           color: '$color-nonSemantic-grey-content-primary',
+          p: '$space-component-padding-null $space-component-padding-small',
+          borderRadius: '$border-radius-medium',
         },
         medium: {
           color: '$color-nonSemantic-orange-content-primary',
           backgroundColor: '$color-nonSemantic-orange-background-muted',
+          p: '$space-component-padding-null $space-component-padding-small',
+          borderRadius: '$border-radius-medium',
         },
         low: {
           color: '$color-nonSemantic-orange-content-primary',
