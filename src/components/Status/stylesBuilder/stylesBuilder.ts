@@ -1,6 +1,6 @@
 import { defaultConfig, StatusConfig } from '../Status.styles';
-import { StatusAppearance } from '../StatusAppearance.type';
-import { StatusEmphasis } from '../StatusEmphasis.type';
+import type { StatusAppearance } from '../StatusAppearance.type';
+import type { StatusEmphasis } from '../StatusEmphasis.type';
 
 import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types';

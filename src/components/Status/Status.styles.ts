@@ -1,4 +1,4 @@
-import { StatusAppearance } from './StatusAppearance.type';
+import type { StatusAppearance } from './StatusAppearance.type';
 
 import { BaseProps } from '@/types';
 
