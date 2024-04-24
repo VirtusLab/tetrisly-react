@@ -7,6 +7,8 @@ export type CornerDialogFooterConfig = {
 export type CornerDialogConfig = BaseProps & {
   innerElements?: {
     intentIndicator?: BaseProps;
+    intentWarning?: BaseProps;
+    intentNegative?: BaseProps;
     body?: BaseProps;
     header?: BaseProps;
     headerTitle?: BaseProps;
@@ -36,6 +38,12 @@ export const defaultConfig = {
       h: '$size-xSmall',
       display: 'flex',
       alignItems: 'flex-end',
+    },
+    intentWarning: {
+      color: '$color-orange-0',
+    },
+    intentNegative: {
+      color: '$color-red-0',
     },
     body: {
       display: 'flex',

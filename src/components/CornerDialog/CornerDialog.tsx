@@ -20,13 +20,13 @@ export const CornerDialog: FC<CornerDialogProps> = ({
   return (
     <tet.div data-testid="corner-dialog" {...styles.container}>
       {intent === 'warning' && (
-        <tet.div color="$color-orange-0" {...styles.intentIndicator}>
+        <tet.div {...styles.intentIndicator} {...styles.intentWarning}>
           <Icon name="20-warning-fill" data-testid="warning-icon" />
         </tet.div>
       )}
 
       {intent === 'negative' && (
-        <tet.div color="$color-red-0" {...styles.intentIndicator}>
+        <tet.div {...styles.intentIndicator} {...styles.intentNegative}>
           <Icon name="20-alert-fill" data-testid="negative-icon" />
         </tet.div>
       )}
@@ -39,7 +39,11 @@ export const CornerDialog: FC<CornerDialogProps> = ({
           >
             <tet.div>{title}</tet.div>
             {!!onCloseClick && (
-              <tet.div color="$color-coolGrey--1" onClick={onCloseClick}>
+              <tet.div
+                color="$color-coolGrey--1"
+                onClick={onCloseClick}
+                {...styles.headerClose}
+              >
                 <Icon name="20-close" data-testid="close-icon" />
               </tet.div>
             )}

@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { CornerDialog } from './CornerDialog';
 
+import { CornerDialogDocs } from '@/docs-components/CornerDialogDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
@@ -24,7 +25,9 @@ const meta = {
           'A small, non-intrusive window that appears in the corner of the screen to convey contextual information or prompt user interaction. Often used for hints, tips, or non-essential notifications.',
       },
       page: () => (
-        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/cornerdialog" />
+        <TetDocs docs="https://docs.tetrisly.com/components/in-progress/cornerdialog">
+          <CornerDialogDocs />
+        </TetDocs>
       ),
     },
   },
