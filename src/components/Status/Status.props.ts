@@ -6,5 +6,5 @@ export type StatusProps = {
   appearance?: StatusAppearance;
   custom?: StatusConfig;
   emphasis?: StatusEmphasis;
-  label?: string;
+  label: string;
 };
