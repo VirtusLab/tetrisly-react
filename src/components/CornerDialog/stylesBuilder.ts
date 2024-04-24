@@ -1,4 +1,4 @@
-import { CornerDialogConfig, defaultConfig } from '../CornerDialog.styles';
+import { CornerDialogConfig, defaultConfig } from './CornerDialog.styles';
 
 import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCutom';
 import { BaseProps } from '@/types/BaseProps';
