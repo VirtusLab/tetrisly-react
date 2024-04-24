@@ -1,7 +1,7 @@
 import { FC, useMemo } from 'react';
 
 import { StatusProps } from './Status.props';
-import { stylesBuilder } from './stylesBuilder/stylesBuilder';
+import { stylesBuilder } from './stylesBuilder';
 
 import { tet } from '@/tetrisly';
 
