@@ -83,7 +83,7 @@ export const Confirmation: Story = {
         appearance: 'primary',
       },
     ],
-    onCloseClick: action('onCloseClick'),
+    onCloseClick: undefined,
   },
 };
 

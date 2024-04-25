@@ -67,8 +67,9 @@ export const defaultConfig = {
     },
     closeButton: {},
     content: {
-      color: '$color-coolGrey-0',
       paddingLeft: '$dimension-25',
+      text: '$typo-body-medium',
+      color: '$color-coolGrey-0',
     },
     footer: {
       display: 'flex',
