@@ -5,6 +5,7 @@ import { CornerDialogProps } from './CornerDialog.props';
 import { stylesBuilder } from './stylesBuilder';
 
 import { Button } from '@/components/Button';
+import { IconButton } from '@/components/IconButton';
 import { tet } from '@/tetrisly';
 
 export const CornerDialog: FC<CornerDialogProps> = ({
@@ -39,13 +40,14 @@ export const CornerDialog: FC<CornerDialogProps> = ({
           >
             <tet.div>{title}</tet.div>
             {!!onCloseClick && (
-              <tet.div
-                color="$color-coolGrey--1"
+              <IconButton
+                variant="bare"
+                icon="20-close"
+                size="medium"
                 onClick={onCloseClick}
-                {...styles.headerClose}
-              >
-                <Icon name="20-close" data-testid="close-icon" />
-              </tet.div>
+                data-testid="close-icon"
+                {...styles.closeButton}
+              />
             )}
           </tet.div>
         </tet.div>

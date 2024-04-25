@@ -12,7 +12,7 @@ export type CornerDialogConfig = BaseProps & {
     body?: BaseProps;
     header?: BaseProps;
     headerTitle?: BaseProps;
-    headerClose?: BaseProps;
+    closeButton?: BaseProps;
     content?: BaseProps;
     footer?: CornerDialogFooterConfig;
   };
@@ -65,9 +65,7 @@ export const defaultConfig = {
       color: '$color-coolGrey--3',
       text: '$typo-body-strong-large',
     },
-    headerClose: {
-      cursor: 'pointer',
-    },
+    closeButton: {},
     content: {
       color: '$color-coolGrey-0',
       paddingLeft: '$dimension-25',

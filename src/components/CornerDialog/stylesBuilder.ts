@@ -11,7 +11,7 @@ type CornerDialogStylesBuilder = {
   body: BaseProps;
   header: BaseProps;
   headerTitle: BaseProps;
-  headerClose: BaseProps;
+  closeButton: BaseProps<'appearance'>;
   content: BaseProps;
   footer: BaseProps;
 };
@@ -32,7 +32,7 @@ export const stylesBuilder = (
     body: innerElements.body,
     header: innerElements.header,
     headerTitle: innerElements.headerTitle,
-    headerClose: innerElements.headerClose,
+    closeButton: innerElements.closeButton,
     content: innerElements.content,
     footer: innerElements.footer,
   };
