@@ -1,11 +1,4 @@
-import {
-  FC,
-  MouseEventHandler,
-  useCallback,
-  useId,
-  useMemo,
-  useState,
-} from 'react';
+import { FC, MouseEventHandler, useCallback, useId, useMemo } from 'react';
 
 import { stylesBuilder } from './stylesBuilder';
 import { ToggleProps } from './Toggle.props';
