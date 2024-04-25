@@ -39,13 +39,9 @@ export const defaultConfig = {
         emphasis: {
           high: {
             backgroundColor: '$color-nonSemantic-white-content-primary',
-            p: '$space-component-padding-null $space-component-padding-small',
-            borderRadius: '$border-radius-medium',
           },
           medium: {
             backgroundColor: '$color-nonSemantic-grey-background-strong',
-            p: '$space-component-padding-null $space-component-padding-small',
-            borderRadius: '$border-radius-medium',
           },
           low: {
             backgroundColor: '$color-nonSemantic-grey-background-strong',
@@ -56,13 +52,9 @@ export const defaultConfig = {
         emphasis: {
           high: {
             backgroundColor: '$color-nonSemantic-white-content-primary',
-            p: '$space-component-padding-null $space-component-padding-small',
-            borderRadius: '$border-radius-medium',
           },
           medium: {
             backgroundColor: '$color-nonSemantic-blue-background-strong',
-            p: '$space-component-padding-null $space-component-padding-small',
-            borderRadius: '$border-radius-medium',
           },
           low: {
             backgroundColor: '$color-nonSemantic-blue-background-strong',
