@@ -5,6 +5,7 @@ import { CornerDialog } from './CornerDialog';
 
 import { CornerDialogDocs } from '@/docs-components/CornerDialogDocs';
 import { TetDocs } from '@/docs-components/TetDocs';
+import { tet } from '@/tetrisly';
 
 const meta = {
   title: 'CornerDialog',
@@ -135,5 +136,35 @@ export const WarningAndAdditionalAction: Story = {
         },
       },
     },
+  },
+};
+
+export const CustomContent: Story = {
+  args: {
+    intent: 'none',
+    title: 'Corner Dialog with custom content',
+    content: (
+      <tet.div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
+        <tet.span color="$color-blue-0" fontWeight="$font-weight-600">
+          Morbi pellentesque elit ut sem accumsan, eget maximus erat eleifend.
+        </tet.span>
+        Vestibulum ac tortor nunc.{' '}
+        <tet.span textDecoration="underline">
+          Nam tincidunt nibh eget nulla aliquet, et auctor dui rhoncus. Donec
+          bibendum rhoncus lacus vel scelerisque.
+        </tet.span>
+        Suspendisse feugiat ligula quis eros interdum varius. Ut nec ex est.
+      </tet.div>
+    ),
+    actions: [
+      { label: 'Action', onClick: action('onClick') },
+      {
+        label: 'Primary Action',
+        onClick: action('onClick'),
+        appearance: 'primary',
+      },
+    ],
+    onCloseClick: action('onCloseClick'),
   },
 };
