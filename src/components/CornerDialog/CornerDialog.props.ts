@@ -9,5 +9,5 @@ export type CornerDialogProps = {
   title: string;
   content: ReactNode;
   actions?: DefaultButtonProps[];
-  onCloseClick?: (e: React.MouseEvent) => void;
+  onCloseClick?: (e?: React.MouseEvent) => void;
 };
