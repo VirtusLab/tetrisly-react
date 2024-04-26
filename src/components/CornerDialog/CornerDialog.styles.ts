@@ -40,7 +40,7 @@ export const defaultConfig = {
       alignItems: 'flex-end',
     },
     intentWarning: {
-      color: '$color-orange-0',
+      color: '$color-content-warning-secondary',
     },
     intentNegative: {
       color: '$color-red-0',
