@@ -55,7 +55,7 @@ export const LoaderDocs = () => (
                       inverted={appearance === 'white'}
                       py="$dimension-500"
                     >
-                      Progres: No
+                      Progress: No
                     </SectionHeader>
                     <Loader
                       shape={shape}
@@ -70,7 +70,7 @@ export const LoaderDocs = () => (
                       inverted={appearance === 'white'}
                       py="$dimension-500"
                     >
-                      Progres: Yes ({Math.floor(progress * 100)}%)
+                      Progress: Yes ({Math.floor(progress * 100)}%)
                     </SectionHeader>
                     <Loader
                       shape={shape}

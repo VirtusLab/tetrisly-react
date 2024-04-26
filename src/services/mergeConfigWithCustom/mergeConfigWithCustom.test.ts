@@ -1,6 +1,6 @@
 import { merge } from 'lodash';
 
-import { mergeConfigWithCustom } from './mergeConfigWithCutom';
+import { mergeConfigWithCustom } from './mergeConfigWithCustom';
 
 const defaultConfig = {
   p: 'component-padding-medium',

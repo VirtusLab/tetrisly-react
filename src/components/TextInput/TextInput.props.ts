@@ -21,7 +21,7 @@ export namespace TextInputProps.InnerComponents {
     Pick<GhostButtonProps, 'label' | 'onClick'>
   >;
   export type Prefix = InnerComponent<'Prefix', { text: string }>;
-  export type Sufix = InnerComponent<'Sufix', { text: string }>;
+  export type Suffix = InnerComponent<'Suffix', { text: string }>;
   export type Button = InnerComponent<
     'Button',
     Pick<GhostButtonProps, 'label' | 'onClick'>
@@ -42,7 +42,7 @@ export type TextInputProps = {
   afterComponent?:
     | TextInputProps.InnerComponents.Icon
     | TextInputProps.InnerComponents.IconButton
-    | TextInputProps.InnerComponents.Sufix
+    | TextInputProps.InnerComponents.Suffix
     | TextInputProps.InnerComponents.Button
     | TextInputProps.InnerComponents.Dropdown;
   state?: BasicInputState;

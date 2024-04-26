@@ -8,7 +8,7 @@ import { IconButton } from '../IconButton';
 import type { TextInputProps } from '../TextInput';
 import { useTextInput } from '../TextInput/useTextInput';
 
-import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCutom';
+import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCustom';
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types';
 

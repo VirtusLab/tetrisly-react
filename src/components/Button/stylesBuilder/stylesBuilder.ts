@@ -5,7 +5,7 @@ import { defaultConfig } from '../Button.styles';
 import { fallbackKey, mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
 
-type ButtonStylesBulderInput = {
+type ButtonStylesBuilderInput = {
   appearance: NonNullable<ButtonProps['appearance']>;
   variant: NonNullable<ButtonProps['variant']>;
   intent: NonNullable<ButtonProps['intent']>;
@@ -23,7 +23,7 @@ type ButtonStylesBuilder = {
 
 const getLoaderProps = (
   loader: object,
-  props: Pick<ButtonStylesBulderInput, 'appearance' | 'intent'>,
+  props: Pick<ButtonStylesBuilderInput, 'appearance' | 'intent'>,
 ) => {
   let loaderProps: Pick<LoaderProps, 'appearance'> = {};
 
@@ -47,7 +47,7 @@ const getLoaderProps = (
 };
 
 export const stylesBuilder = (
-  props: ButtonStylesBulderInput,
+  props: ButtonStylesBuilderInput,
 ): ButtonStylesBuilder => {
   const variants = mergeConfigWithCustom({
     defaultConfig,
