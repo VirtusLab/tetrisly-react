@@ -8,6 +8,6 @@ export type CornerDialogProps = {
   intent?: 'none' | 'warning' | 'negative';
   title: string;
   content: ReactNode;
-  actions?: DefaultButtonProps[];
+  actions?: Omit<DefaultButtonProps, 'size' | 'hasDropdownIndicator'>[];
   onCloseClick?: (e?: React.MouseEvent) => void;
 };
