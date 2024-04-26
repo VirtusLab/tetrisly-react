@@ -43,7 +43,7 @@ export const defaultConfig = {
       color: '$color-content-warning-secondary',
     },
     intentNegative: {
-      color: '$color-red-0',
+      color: '$color-content-negative-secondary',
     },
     body: {
       display: 'flex',
@@ -62,14 +62,13 @@ export const defaultConfig = {
       flexGrow: 1,
       alignItems: 'center',
       justifyContent: 'space-between',
-      color: '$color-coolGrey--3',
+      color: '$color-content-primary',
       text: '$typo-body-strong-large',
     },
     closeButton: {},
     content: {
-      paddingLeft: '$dimension-25',
       text: '$typo-body-medium',
-      color: '$color-coolGrey-0',
+      color: '$color-content-secondary',
     },
     footer: {
       display: 'flex',
