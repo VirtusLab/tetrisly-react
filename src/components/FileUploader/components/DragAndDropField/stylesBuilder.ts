@@ -1,12 +1,12 @@
 import {
-  DragAndDropSelectorConfig,
+  DragAndDropFieldConfig,
   defaultConfig,
-} from './DragAndDropSelector.styles';
+} from './DragAndDropField.styles';
 
 import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom';
 import { BaseProps } from '@/types/BaseProps';
 
-type DragAndDropSelectorStylesBuilder = {
+type DragAndDropFieldStylesBuilder = {
   container: BaseProps;
   icon: BaseProps;
   title: BaseProps;
@@ -14,8 +14,8 @@ type DragAndDropSelectorStylesBuilder = {
 };
 
 export const stylesBuilder = (
-  custom?: DragAndDropSelectorConfig,
-): DragAndDropSelectorStylesBuilder => {
+  custom?: DragAndDropFieldConfig,
+): DragAndDropFieldStylesBuilder => {
   const { innerElements, ...container } = mergeConfigWithCustom({
     defaultConfig,
     custom,

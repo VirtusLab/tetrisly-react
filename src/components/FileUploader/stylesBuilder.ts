@@ -1,4 +1,4 @@
-import { DragAndDropSelectorConfig } from './components';
+import { DragAndDropFieldConfig } from './components';
 import { FileUploaderConfig, defaultConfig } from './FileUploader.styles';
 
 import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom';
@@ -6,7 +6,7 @@ import { BaseProps } from '@/types/BaseProps';
 
 type FileUploaderStylesBuilder = {
   container: BaseProps;
-  dragAndDropSelector: DragAndDropSelectorConfig;
+  dragAndDropField: DragAndDropFieldConfig;
 };
 
 export const stylesBuilder = (
@@ -19,6 +19,6 @@ export const stylesBuilder = (
 
   return {
     container,
-    dragAndDropSelector: innerElements.dragAndDropSelector,
+    dragAndDropField: innerElements.dragAndDropField,
   };
 };

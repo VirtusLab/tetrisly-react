@@ -1,6 +1,6 @@
 import type { BaseProps } from '@/types/BaseProps';
 
-export type DragAndDropSelectorConfig = BaseProps & {
+export type DragAndDropFieldConfig = BaseProps & {
   innerElements: {
     icon: BaseProps;
     title: BaseProps;
@@ -34,8 +34,8 @@ export const defaultConfig = {
       fontWeight: '$font-weight-450',
     },
   },
-} satisfies DragAndDropSelectorConfig;
+} satisfies DragAndDropFieldConfig;
 
-export const dragAndDropSelectorStyles = {
+export const dragAndDropFieldStyles = {
   defaultConfig,
 };

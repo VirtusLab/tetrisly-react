@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { DragAndDropSelector } from './components';
+import { DragAndDropField } from './components';
 import { FileUploaderProps } from './FileUploader.props';
 import { stylesBuilder } from './stylesBuilder';
 
@@ -24,7 +24,7 @@ export const FileUploader: FC<FileUploaderProps> = ({
       )}
 
       <tet.div>
-        <DragAndDropSelector custom={styles.dragAndDropSelector} />
+        <DragAndDropField custom={styles.dragAndDropField} />
       </tet.div>
 
       {helperText && (

@@ -1,13 +1,10 @@
-import {
-  DragAndDropSelectorConfig,
-  dragAndDropSelectorStyles,
-} from './components';
+import { DragAndDropFieldConfig, dragAndDropFieldStyles } from './components';
 
 import type { BaseProps } from '@/types/BaseProps';
 
 export type FileUploaderConfig = BaseProps & {
   innerElements: {
-    dragAndDropSelector: DragAndDropSelectorConfig;
+    dragAndDropField: DragAndDropFieldConfig;
   };
 };
 
@@ -16,7 +13,7 @@ export const defaultConfig = {
   flexDirection: 'column',
   gap: '$space-component-gap-small',
   innerElements: {
-    dragAndDropSelector: dragAndDropSelectorStyles.defaultConfig,
+    dragAndDropField: dragAndDropFieldStyles.defaultConfig,
   },
 } as const satisfies FileUploaderConfig;
 

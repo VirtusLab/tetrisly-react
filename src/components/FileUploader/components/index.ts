@@ -1,1 +1,1 @@
-export * from './DragAndDropSelector';
+export * from './DragAndDropField';

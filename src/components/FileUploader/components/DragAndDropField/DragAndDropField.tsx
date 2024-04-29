@@ -1,14 +1,12 @@
 import { FC } from 'react';
 
-import { DragAndDropSelectorProps } from './DragAndDropSelector.props';
+import { DragAndDropFieldProps } from './DragAndDropField.props';
 import { stylesBuilder } from './stylesBuilder';
 
 import { Icon } from '@/components/Icon';
 import { tet } from '@/tetrisly';
 
-export const DragAndDropSelector: FC<DragAndDropSelectorProps> = ({
-  custom,
-}) => {
+export const DragAndDropField: FC<DragAndDropFieldProps> = ({ custom }) => {
   const styles = stylesBuilder(custom);
 
   return (
