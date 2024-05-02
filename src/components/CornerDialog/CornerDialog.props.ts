@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode, MouseEvent } from 'react';
 
 import { CornerDialogConfig } from './CornerDialog.styles';
 import { DefaultButtonProps } from '../Button/Button.props';
@@ -14,5 +14,5 @@ export type CornerDialogProps = {
     DefaultButtonProps,
     'size' | 'hasDropdownIndicator'
   >[];
-  onCloseClick?: (e?: React.MouseEvent) => void;
+  onCloseClick?: (e?: MouseEvent) => void;
 };
