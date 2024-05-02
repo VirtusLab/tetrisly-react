@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { FileUploader } from './FileUploader';
 
+import { Button } from '@/components/Button';
 import { TetDocs } from '@/docs-components/TetDocs';
 
 const meta = {
@@ -37,5 +38,34 @@ export const Default: Story = {
       text: 'Helper text',
     },
     variant: 'drag&drop',
+    dragAndDropVariant: {
+      isExtended: false,
+      icon: '20-upload',
+      text: (onChooseFileClick) => (
+        <>
+          Drag & Drop or
+          <Button
+            appearance="primary"
+            variant="bare"
+            custom={{
+              bare: {
+                outline: {
+                  focus: 'none',
+                },
+              },
+            }}
+            onClick={onChooseFileClick}
+          >
+            Choose file
+          </Button>
+          to upload
+        </>
+      ),
+      caption: 'JPG, GIF or PNG. Max size of 800K',
+    },
+    buttonVariant: {
+      text: 'Choose file...',
+    },
+    inputProps: {},
   },
 };

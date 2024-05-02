@@ -1,10 +1,10 @@
-import { ReactNode, MouseEvent, MouseEventHandler } from 'react';
+import { ReactNode, FC, MouseEvent, MouseEventHandler } from 'react';
 
-import { DragAndDropFieldConfig } from './DragAndDropField.styles';
+import { DragAndDropField, DragAndDropFieldConfig } from './components';
 
 import { IconName } from '@/utility-types/IconName';
 
-export type DragAndDropFieldProps = {
+export type DragAndDropVariantProps = {
   custom?: DragAndDropFieldConfig;
   isExtended?: boolean;
   isDragOver?: boolean;
@@ -14,3 +14,7 @@ export type DragAndDropFieldProps = {
   caption?: ReactNode;
   onChooseFileClick?: (e?: MouseEvent) => void;
 };
+
+export const DragAndDropVariant: FC<DragAndDropVariantProps> = (props) => (
+  <DragAndDropField {...props} />
+);

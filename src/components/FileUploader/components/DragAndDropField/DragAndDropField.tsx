@@ -3,23 +3,55 @@ import { FC } from 'react';
 import { DragAndDropFieldProps } from './DragAndDropField.props';
 import { stylesBuilder } from './stylesBuilder';
 
+import { Button } from '@/components/Button';
 import { Icon } from '@/components/Icon';
 import { tet } from '@/tetrisly';
 
-export const DragAndDropField: FC<DragAndDropFieldProps> = ({ custom }) => {
-  const styles = stylesBuilder(custom);
+const enableReceivingFocus = { tabIndex: 0 };
+const noop = () => {};
+
+export const DragAndDropField: FC<DragAndDropFieldProps> = (props) => {
+  const {
+    isExtended = false,
+    icon = '20-upload',
+    text = (onChooseFileClick) => (
+      <>
+        Drag & Drop or
+        <Button
+          appearance="primary"
+          variant="bare"
+          custom={{
+            bare: {
+              outline: {
+                focus: 'none',
+              },
+            },
+          }}
+          onClick={onChooseFileClick}
+        >
+          Choose file
+        </Button>
+        to upload
+      </>
+    ),
+    caption = 'JPG, GIF or PNG. Max size of 800K',
+    state,
+    onChooseFileClick,
+  } = props;
+
+  const styles = stylesBuilder(props);
+
+  const withDisabledStyles = state !== 'disabled' ? enableReceivingFocus : {};
 
   return (
-    <tet.div {...styles.container}>
+    <tet.div {...styles.container} {...withDisabledStyles}>
       <tet.div {...styles.icon}>
-        <Icon name="20-upload" />
+        <Icon name={icon} />
       </tet.div>
 
-      <tet.div {...styles.title}>Drag & Drop or Choose file to upload</tet.div>
+      <tet.div {...styles.title}>{text(onChooseFileClick ?? noop)}</tet.div>
 
-      <tet.div {...styles.description}>
-        JPG, GIF or PNG. Max size of 800K
-      </tet.div>
+      {isExtended && <tet.div {...styles.description}>{caption}</tet.div>}
     </tet.div>
   );
 };
