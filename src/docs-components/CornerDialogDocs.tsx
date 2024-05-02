@@ -8,7 +8,11 @@ import { tet } from '@/tetrisly';
 const intents = ['none', 'warning', 'negative'] as const;
 
 export const CornerDialogDocs = () => (
-  <tet.section display="flex" padding="40px 0px" flexDirection="column">
+  <tet.section
+    display="flex"
+    padding="$dimension-500 $dimension-0"
+    flexDirection="column"
+  >
     <SectionHeader px="$dimension-1000" variant="H1" my="auto" as="h2">
       Intent
     </SectionHeader>
