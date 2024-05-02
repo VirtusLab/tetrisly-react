@@ -1,6 +1,6 @@
-import { ReactNode, MouseEventHandler, ChangeEventHandler } from 'react';
+import { ReactNode, MouseEventHandler } from 'react';
 
-import { FileUploaderConfig } from './FileUploader.styles';
+import type { FileUploaderConfig } from './FileUploader.styles';
 
 import { HelperTextProps } from '@/components/HelperText';
 import { LabelProps } from '@/components/Label';
@@ -15,12 +15,14 @@ export type FileUploaderProps = {
   inputProps?: InputFileProps;
   dragAndDropVariant?: DragAndDropVariantProps;
   buttonVariant?: ButtonVariantProps;
+  value?: File[];
+  onChange?: (files: File[]) => void;
 };
 
 export type InputFileProps = {
+  accept?: string;
   name?: string;
   multiple?: boolean;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
 };
 
 export type DragAndDropVariantProps = {

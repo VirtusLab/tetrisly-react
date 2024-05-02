@@ -1,7 +1,7 @@
-import { FC, useRef } from 'react';
+import { FC, ChangeEventHandler, useRef } from 'react';
 
 import { ButtonVariant } from './ButtonVariant';
-import { Control } from './components';
+import { Control, FilesList } from './components';
 import { DragAndDropVariant } from './DragAndDropVariant';
 import { FileUploaderProps } from './FileUploader.props';
 import { stylesBuilder } from './stylesBuilder';
@@ -20,6 +20,8 @@ export const FileUploader: FC<FileUploaderProps> = ({
   inputProps,
   dragAndDropVariant,
   buttonVariant,
+  value,
+  onChange,
 }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const { dragOver, onDragEnter, onDragLeave, onDrop } = useDragOver();
@@ -30,12 +32,21 @@ export const FileUploader: FC<FileUploaderProps> = ({
     inputRef.current?.click();
   };
 
+  const onInputChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    const { files } = e.target;
+
+    if (files) {
+      onChange?.(mapFromFileList(files));
+    }
+  };
+
   return (
     <>
       <tet.input
         ref={inputRef}
         type="file"
         display="none"
+        onChange={onInputChange}
         {...disableReceivingFocus}
         {...inputProps}
       />
@@ -75,7 +86,16 @@ export const FileUploader: FC<FileUploaderProps> = ({
             />
           )}
         </Control>
+
+        {value && value.length > 0 && (
+          <tet.div>
+            <FilesList files={value} />
+          </tet.div>
+        )}
       </tet.div>
     </>
   );
 };
+
+const mapFromFileList = (fileList: FileList): File[] =>
+  Array.from(fileList).map((file) => file);

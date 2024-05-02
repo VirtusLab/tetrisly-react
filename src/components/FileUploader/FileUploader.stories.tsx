@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { FC, useState } from 'react';
 
 import { FileUploader } from './FileUploader';
+import { FileUploaderProps } from './FileUploader.props';
 
 import { Button } from '@/components/Button';
 import { TetDocs } from '@/docs-components/TetDocs';
@@ -28,6 +30,12 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+const FileUploaderDemo: FC<FileUploaderProps> = (props) => {
+  const [files, setFiles] = useState<File[]>([]);
+
+  return <FileUploader {...props} value={files} onChange={setFiles} />;
+};
 
 export const Default: Story = {
   args: {
@@ -66,6 +74,11 @@ export const Default: Story = {
     buttonVariant: {
       text: 'Choose file...',
     },
-    inputProps: {},
+    inputProps: {
+      name: 'myFileInput',
+      multiple: true,
+      accept: '*',
+    },
   },
+  render: (props) => <FileUploaderDemo {...props} />,
 };
