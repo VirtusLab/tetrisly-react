@@ -2,8 +2,8 @@ import { FC } from 'react';
 
 import { FilesListProps } from './FilesList.props';
 import { stylesBuilder } from './stylesBuilder';
-import { FileItem } from '../FileItem';
 
+import { FileItem } from '@/components/FileItem';
 import { tet } from '@/tetrisly';
 
 export const FilesList: FC<FilesListProps> = ({ custom, files }) => {
