@@ -5,7 +5,7 @@ declare const meta: {
     component: import("react").ForwardRefExoticComponent<{
         type?: import("react").HTMLInputTypeAttribute | undefined;
         beforeComponent?: import("./TextInput.props").TextInputProps.InnerComponents.Icon | import("./TextInput.props").TextInputProps.InnerComponents.Dropdown | import("./TextInput.props").TextInputProps.InnerComponents.Prefix | import("./TextInput.props").TextInputProps.InnerComponents.Avatar | undefined;
-        afterComponent?: import("./TextInput.props").TextInputProps.InnerComponents.Icon | import("./TextInput.props").TextInputProps.InnerComponents.IconButton | import("./TextInput.props").TextInputProps.InnerComponents.Dropdown | import("./TextInput.props").TextInputProps.InnerComponents.Sufix | import("./TextInput.props").TextInputProps.InnerComponents.Button | undefined;
+        afterComponent?: import("./TextInput.props").TextInputProps.InnerComponents.Icon | import("./TextInput.props").TextInputProps.InnerComponents.IconButton | import("./TextInput.props").TextInputProps.InnerComponents.Dropdown | import("./TextInput.props").TextInputProps.InnerComponents.Suffix | import("./TextInput.props").TextInputProps.InnerComponents.Button | undefined;
         state?: import("../../types").BasicInputState | undefined;
         hasClearButton?: boolean | undefined;
         custom?: import("./TextInput.styles").TextInputConfig | undefined;
@@ -36,5 +36,5 @@ export declare const BeforeDropdownComponent: Story;
 export declare const AfterDropdownComponent: Story;
 export declare const AfterIconComponent: Story;
 export declare const AfterIconButtonComponent: Story;
-export declare const AfterSufixComponent: Story;
+export declare const AfterSuffixComponent: Story;
 export declare const AfterButtonComponent: Story;

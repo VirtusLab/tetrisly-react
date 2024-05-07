@@ -16,7 +16,7 @@ export declare namespace TextInputProps.InnerComponents {
     type Prefix = InnerComponent<'Prefix', {
         text: string;
     }>;
-    type Sufix = InnerComponent<'Sufix', {
+    type Suffix = InnerComponent<'Suffix', {
         text: string;
     }>;
     type Button = InnerComponent<'Button', Pick<GhostButtonProps, 'label' | 'onClick'>>;
@@ -25,7 +25,7 @@ export declare namespace TextInputProps.InnerComponents {
 export type TextInputProps = {
     type?: TextInputType;
     beforeComponent?: TextInputProps.InnerComponents.Icon | TextInputProps.InnerComponents.Avatar | TextInputProps.InnerComponents.Prefix | TextInputProps.InnerComponents.Dropdown;
-    afterComponent?: TextInputProps.InnerComponents.Icon | TextInputProps.InnerComponents.IconButton | TextInputProps.InnerComponents.Sufix | TextInputProps.InnerComponents.Button | TextInputProps.InnerComponents.Dropdown;
+    afterComponent?: TextInputProps.InnerComponents.Icon | TextInputProps.InnerComponents.IconButton | TextInputProps.InnerComponents.Suffix | TextInputProps.InnerComponents.Button | TextInputProps.InnerComponents.Dropdown;
     state?: BasicInputState;
     hasClearButton?: boolean;
     custom?: TextInputConfig;

@@ -9,5 +9,5 @@ type TextInputStylesBuilder = {
     beforeComponent: BaseProps;
     afterComponent: BaseProps;
 };
-export declare const stylesBuilder: (custom?: TextInputConfig, beforeComponentType?: 'Icon' | 'Avatar' | 'Prefix' | 'Dropdown', afterComponentType?: 'Icon' | 'Sufix' | 'Button' | 'IconButton' | 'Dropdown') => TextInputStylesBuilder;
+export declare const stylesBuilder: (custom?: TextInputConfig, beforeComponentType?: 'Icon' | 'Avatar' | 'Prefix' | 'Dropdown', afterComponentType?: 'Icon' | 'Suffix' | 'Button' | 'IconButton' | 'Dropdown') => TextInputStylesBuilder;
 export {};

@@ -9,7 +9,7 @@ export type TextInputConfig = {
             spacing?: Partial<Record<'Icon' | 'Avatar' | 'Prefix' | 'Dropdown', BaseProps>>;
         } & BaseProps;
         afterComponent?: {
-            spacing?: Partial<Record<'Icon' | 'Sufix' | 'Button' | 'IconButton' | 'Dropdown', BaseProps>>;
+            spacing?: Partial<Record<'Icon' | 'Suffix' | 'Button' | 'IconButton' | 'Dropdown', BaseProps>>;
         } & BaseProps;
     };
 } & BaseProps;
@@ -100,7 +100,7 @@ export declare const defaultConfig: {
                     marginLeft: string;
                     marginRight: string;
                 };
-                Sufix: {
+                Suffix: {
                     marginLeft: string;
                     marginRight: string;
                 };
@@ -208,7 +208,7 @@ export declare const textInputStyles: {
                         marginLeft: string;
                         marginRight: string;
                     };
-                    Sufix: {
+                    Suffix: {
                         marginLeft: string;
                         marginRight: string;
                     };
