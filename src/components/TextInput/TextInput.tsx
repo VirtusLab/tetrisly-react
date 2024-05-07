@@ -117,7 +117,7 @@ export const TextInput = forwardRef<
                 {...afterComponent.props}
               />
             )}
-            {afterComponent.type === 'Sufix' && (
+            {afterComponent.type === 'Suffix' && (
               <tet.span {...styles.text}>{afterComponent.props.text}</tet.span>
             )}
             {afterComponent.type === 'Button' && (

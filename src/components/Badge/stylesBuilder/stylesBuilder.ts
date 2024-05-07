@@ -3,7 +3,7 @@ import { BadgeAppearance } from '../BadgeAppearance.type';
 import { BadgeEmphasis } from '../BadgeEmphasis.type';
 import { BadgeIntent } from '../BadgeIntent.type';
 
-import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCutom';
+import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCustom';
 import { BaseProps } from '@/types/BaseProps';
 
 type BadgeStylesBuilder = {

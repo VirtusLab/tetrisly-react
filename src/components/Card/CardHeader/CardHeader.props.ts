@@ -10,7 +10,7 @@ export type CardHeaderProps = {
   description?: string;
   beforeComponent?: BeforeComponentProps;
   styles: CardHeaderConfig;
-  // TODO: in the future omit the size from the buttonprops
+  // TODO: in the future omit the size from the button props
   actions?: BareButtonProps[];
 };
 type BeforeComponentProps =

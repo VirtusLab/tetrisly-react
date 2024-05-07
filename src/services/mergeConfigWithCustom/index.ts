@@ -1,1 +1,1 @@
-export { mergeConfigWithCustom } from './mergeConfigWithCutom';
+export { mergeConfigWithCustom } from './mergeConfigWithCustom';

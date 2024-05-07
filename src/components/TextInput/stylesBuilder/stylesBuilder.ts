@@ -1,6 +1,6 @@
 import { TextInputConfig, defaultConfig } from '../TextInput.styles';
 
-import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCutom';
+import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCustom';
 import { BaseProps } from '@/types/BaseProps';
 
 type TextInputStylesBuilder = {
@@ -16,7 +16,7 @@ type TextInputStylesBuilder = {
 export const stylesBuilder = (
   custom?: TextInputConfig,
   beforeComponentType?: 'Icon' | 'Avatar' | 'Prefix' | 'Dropdown',
-  afterComponentType?: 'Icon' | 'Sufix' | 'Button' | 'IconButton' | 'Dropdown',
+  afterComponentType?: 'Icon' | 'Suffix' | 'Button' | 'IconButton' | 'Dropdown',
 ): TextInputStylesBuilder => {
   const {
     innerElements: {
