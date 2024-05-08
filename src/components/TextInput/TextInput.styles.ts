@@ -14,7 +14,7 @@ export type TextInputConfig = {
     afterComponent?: {
       spacing?: Partial<
         Record<
-          'Icon' | 'Sufix' | 'Button' | 'IconButton' | 'Dropdown',
+          'Icon' | 'Suffix' | 'Button' | 'IconButton' | 'Dropdown',
           BaseProps
         >
       >;
@@ -109,7 +109,7 @@ export const defaultConfig = {
           marginLeft: '$space-component-padding-small',
           marginRight: '$space-component-padding-large',
         },
-        Sufix: {
+        Suffix: {
           marginLeft: '$space-component-padding-small',
           marginRight: '$space-component-padding-large',
         },
