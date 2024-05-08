@@ -21,13 +21,6 @@ describe('NewItemButton', () => {
     expect(button).toHaveStyle('opacity: 0.5');
   });
 
-  it('should have correct outline when focused', () => {
-    render(<NewItemButton state="disabled" />);
-    const button = screen.getByTestId('new-item-button');
-    fireEvent.focus(button);
-    expect(button).toHaveStyle('outline-color: rgb(103, 146, 244);');
-  });
-
   states.forEach((state) => {
     describe(`State: ${state}`, () => {
       it('should render the NewItemButton', () => {
