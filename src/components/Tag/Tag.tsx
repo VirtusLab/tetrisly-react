@@ -5,6 +5,7 @@ import {
   useMemo,
   useRef,
   FC,
+  useId,
 } from 'react';
 
 import { stylesBuilder } from './stylesBuilder';
@@ -56,9 +57,11 @@ export const Tag: FC<TagProps & MarginProps> = ({
     },
     [onCloseClick],
   );
+  const tagId = useId();
 
   return (
     <tet.span
+      id={tagId}
       tabIndex={0}
       ref={containerRef}
       onClick={onClick}
