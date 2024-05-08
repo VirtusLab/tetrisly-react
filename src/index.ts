@@ -15,6 +15,7 @@ export * from './components/InlineMessage';
 export * from './components/InlineSearchInput';
 export * from './components/Label';
 export * from './components/Loader';
+export * from './components/NewItemButton';
 export * from './components/Popover';
 export * from './components/RadioButton';
 export * from './components/RadioButtonGroup';
