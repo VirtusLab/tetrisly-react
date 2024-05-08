@@ -15,11 +15,12 @@ export const defaultConfig = {
   justifyContent: 'center',
   alignItems: 'center',
   gap: '$space-component-gap-small',
-  h: '120px',
-  w: 'fit-content',
+  minH: '120px',
   minWidth: '120px',
+  h: '100%',
+  w: '100%',
   borderWidth: '$border-width-small',
-  borderStyle: 'dashed',
+  borderStyle: '$border-style-dashed',
   borderRadius: '$border-radius-large',
   padding: '$space-component-padding-xLarge',
   text: '$typo-body-medium',
@@ -27,9 +28,18 @@ export const defaultConfig = {
   whiteSpace: 'nowrap',
   color: '$color-action-neutral-normal',
   backgroundColor: '$color-interaction-background-formField',
+  transition: true,
+  transitionDuration: 200,
+  outline: {
+    focus: 'solid',
+  },
+  outlineColor: {
+    focus: '$color-interaction-focus-default',
+  },
+  outlineWidth: {
+    focus: '$border-width-focus',
+  },
   outlineOffset: 1,
-  outlineWidth: '$border-width-small',
-  outlineColor: '$color-interaction-focus-default',
   state: {
     normal: {
       borderColor: {
@@ -42,7 +52,7 @@ export const defaultConfig = {
     },
     disabled: {
       borderColor: '$color-border-neutral-subtle',
-      opacity: 0.5,
+      opacity: '$opacity-disabled',
       pointerEvents: 'none',
     },
   },
