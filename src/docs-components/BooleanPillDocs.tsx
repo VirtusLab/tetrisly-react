@@ -6,12 +6,17 @@ import { SectionHeader } from './common/SectionHeader';
 import { BooleanPill, BooleanPillProps } from '@/components/BooleanPill';
 import { tet } from '@/tetrisly';
 
-const states = ['default', 'disabled', 'selected'] as const;
+const states = ['default', 'disabled'] as const;
 const appearances = [false, true] as const;
+const selected = [false, true] as const;
 
 const props = [
   { text: 'Value', onChange: () => {} } as const,
-  { text: 'Value', onChange: () => {}, avatar: { initials: 'M' } } as const,
+  {
+    text: 'Value',
+    onChange: () => {},
+    avatar: { initials: 'M' },
+  } as const,
   {
     text: 'Value',
     onChange: () => {},
@@ -48,27 +53,34 @@ export const BooleanPillDocs: FC = () => (
               {appearance ? 'Inverted' : 'Primary'}
             </SectionHeader>
 
-            <tet.div px="$dimension-1000" pb="$dimension-500">
-              <tet.div
-                display="flex"
-                flexBasis="180px"
-                flexGrow="1"
-                flexShrink="0"
-                alignItems="flex-start"
-                justifyContent="flex-start"
-                flexDirection="row"
-                gap="$dimension-300"
-                py="$dimension-500"
-              >
-                {props.map((prop) => (
-                  <BooleanPill
-                    state={state}
-                    isInverted={appearance}
-                    {...prop}
-                  />
-                ))}
+            {selected.map((select) => (
+              <tet.div px="$dimension-1000" pb="$dimension-500">
+                <SectionHeader variant="H3" as="h4" pt="$dimension-500">
+                  Selected: {String(select)}
+                </SectionHeader>
+
+                <tet.div
+                  display="flex"
+                  flexBasis="180px"
+                  flexGrow="1"
+                  flexShrink="0"
+                  alignItems="flex-start"
+                  justifyContent="flex-start"
+                  flexDirection="row"
+                  gap="$dimension-300"
+                  py="$dimension-500"
+                >
+                  {props.map((prop) => (
+                    <BooleanPill
+                      state={state}
+                      isInverted={appearance}
+                      isSelected={select}
+                      {...prop}
+                    />
+                  ))}
+                </tet.div>
               </tet.div>
-            </tet.div>
+            ))}
           </tet.div>
         ))}
       </tet.section>

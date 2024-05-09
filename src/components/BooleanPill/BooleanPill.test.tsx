@@ -5,7 +5,8 @@ import { BooleanPillState } from './BooleanPillState.type';
 import { render, screen, fireEvent } from '../../tests/render';
 
 describe('BooleanPill', () => {
-  const states: BooleanPillState[] = ['default', 'selected', 'disabled'];
+  const states: BooleanPillState[] = ['default', 'disabled'];
+  const selected = [false, true];
   const pillPointer = 'boolean-pill';
 
   it('should render the BooleanPill ', () => {
@@ -57,34 +58,49 @@ describe('BooleanPill', () => {
         expect(checkmark).toBeInTheDocument();
       });
 
-      it('should handle onChange properly when clicked', () => {
-        const onChangeMock = vi.fn();
-        render(
-          <BooleanPill text="Value" state={state} onChange={onChangeMock} />,
-        );
+      selected.forEach((isSelected) => {
+        describe(`isSelected ${isSelected}`, () => {
+          it('should handle onChange properly when clicked', () => {
+            const onChangeMock = vi.fn();
+            render(
+              <BooleanPill
+                text="Value"
+                state={state}
+                isSelected={isSelected}
+                onChange={onChangeMock}
+              />,
+            );
 
-        const pill = screen.getByTestId(pillPointer);
-        expect(pill).toBeInTheDocument();
-        fireEvent.click(pill);
-        if (state !== 'disabled') {
-          expect(onChangeMock).toHaveBeenCalled();
-          expect(onChangeMock).toBeCalledWith(state === 'default');
-        } else {
-          expect(onChangeMock).not.toHaveBeenCalled();
-        }
-      });
+            const pill = screen.getByTestId(pillPointer);
+            expect(pill).toBeInTheDocument();
+            fireEvent.click(pill);
+            if (state !== 'disabled') {
+              expect(onChangeMock).toHaveBeenCalled();
+              expect(onChangeMock).toBeCalledWith(!isSelected);
+            } else {
+              expect(onChangeMock).not.toHaveBeenCalled();
+            }
+          });
 
-      it('should correctly render the checkmark depending on the passed state', () => {
-        render(<BooleanPill text="Value" state={state} />);
-        const pill = screen.getByTestId(pillPointer);
-        const checkmark = screen.queryByTestId('boolean-pill-checkmark');
-        expect(pill).toBeInTheDocument();
+          it('should correctly render the checkmark', () => {
+            render(
+              <BooleanPill
+                text="Value"
+                state={state}
+                isSelected={isSelected}
+              />,
+            );
+            const pill = screen.getByTestId(pillPointer);
+            const checkmark = screen.queryByTestId('boolean-pill-checkmark');
+            expect(pill).toBeInTheDocument();
 
-        if (state !== 'selected') {
-          expect(checkmark).not.toBeInTheDocument();
-        } else {
-          expect(checkmark).toBeInTheDocument();
-        }
+            if (isSelected) {
+              expect(checkmark).toBeInTheDocument();
+            } else {
+              expect(checkmark).not.toBeInTheDocument();
+            }
+          });
+        });
       });
     });
   });

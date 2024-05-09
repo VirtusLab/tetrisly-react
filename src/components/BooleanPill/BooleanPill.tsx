@@ -9,7 +9,9 @@ import { tet } from '@/tetrisly';
 
 export const BooleanPill: FC<BooleanPillProps> = ({
   state = 'default',
+  isSelected = false,
   isInverted = false,
+  tabIndex = 0,
   avatar,
   text,
   custom,
@@ -17,8 +19,15 @@ export const BooleanPill: FC<BooleanPillProps> = ({
   ...rest
 }) => {
   const styles = useMemo(
-    () => stylesBuilder(state, isInverted, custom),
-    [custom, isInverted, state],
+    () =>
+      stylesBuilder({
+        state,
+        custom,
+        isSelected,
+        isInverted,
+        hasAvatar: !!avatar,
+      }),
+    [custom, isInverted, state, avatar, isSelected],
   );
 
   const avatarProps = useMemo(
@@ -39,19 +48,20 @@ export const BooleanPill: FC<BooleanPillProps> = ({
 
   const handleOnClick: MouseEventHandler<HTMLSpanElement> = useCallback(() => {
     if (state !== 'disabled') {
-      onChange?.(state === 'default');
+      onChange?.(!isSelected);
     }
-  }, [onChange, state]);
+  }, [onChange, state, isSelected]);
 
   return (
     <tet.span
+      tabIndex={tabIndex}
       data-state={state}
       onClick={handleOnClick}
       data-testid="boolean-pill"
       {...styles.container}
       {...rest}
     >
-      {state === 'selected' && (
+      {isSelected && (
         <Icon data-testid="boolean-pill-checkmark" name="20-check-large" />
       )}
       {!!avatarProps && (

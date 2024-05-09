@@ -1,1 +1,1 @@
-export type BooleanPillState = 'default' | 'disabled' | 'selected';
+export type BooleanPillState = 'default' | 'disabled';

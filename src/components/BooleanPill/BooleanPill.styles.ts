@@ -3,6 +3,8 @@ import { BooleanPillState } from './BooleanPillState.type';
 import { BaseProps } from '@/types';
 
 export type BooleanPillConfig = {
+  isSelected: BaseProps;
+  hasAvatar: BaseProps;
   state?: Partial<
     Record<BooleanPillState, Record<'primary' | 'inverted', BaseProps>>
   >;
@@ -14,10 +16,8 @@ export const defaultConfig = {
   alignItems: 'center',
   textAlign: 'center',
   whiteSpace: 'nowrap',
-  minWidth: `62px`,
-  w: 'fit-content',
   h: `$size-small`,
-  padding: ` $space-component-padding-xSmall $space-component-padding-medium`,
+  padding: `$space-component-padding-xSmall $space-component-padding-medium`,
   gap: `$space-component-gap-small`,
   borderRadius: `$border-radius-large`,
   color: '$color-content-primary',
@@ -36,6 +36,18 @@ export const defaultConfig = {
     focus: '$border-width-focus',
   },
   outlineOffset: 1,
+  hasAvatar: {
+    pl: '$space-component-padding-xSmall',
+  },
+  isSelected: {
+    pl: '$space-component-padding-small',
+    backgroundColor: '$color-interaction-background-formField',
+    borderColor: {
+      _: '$color-interaction-border-neutral-normal',
+      hover: '$color-interaction-border-neutral-hover',
+      active: '$color-interaction-border-neutral-active',
+    },
+  },
   state: {
     default: {
       primary: {
@@ -65,24 +77,6 @@ export const defaultConfig = {
         borderColor: '$color-interaction-border-neutral-normal',
         opacity: '$opacity-disabled',
         pointerEvents: 'none',
-      },
-    },
-    selected: {
-      primary: {
-        backgroundColor: '$color-interaction-background-formField',
-        borderColor: {
-          _: '$color-interaction-border-neutral-normal',
-          hover: '$color-interaction-border-neutral-hover',
-          active: '$color-interaction-border-neutral-active',
-        },
-      },
-      inverted: {
-        backgroundColor: '$color-interaction-background-formField',
-        borderColor: {
-          _: '$color-interaction-border-neutral-normal',
-          hover: '$color-interaction-border-neutral-hover',
-          active: '$color-interaction-border-neutral-active',
-        },
       },
     },
   },

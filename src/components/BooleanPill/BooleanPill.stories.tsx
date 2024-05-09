@@ -53,13 +53,20 @@ export const Disabled: Story = {
 
 export const Selected: Story = {
   args: {
-    state: 'selected',
+    isSelected: true,
+  },
+};
+
+export const DisabledAndSelected: Story = {
+  args: {
+    isSelected: true,
+    state: 'disabled',
   },
 };
 
 export const SelectedWithAvatar: Story = {
   args: {
-    state: 'selected',
+    isSelected: true,
     avatar: { appearance: 'magenta', initials: 'M' },
   },
 };

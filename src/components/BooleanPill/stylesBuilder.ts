@@ -8,11 +8,21 @@ type BooleanPillStyleBuilder = {
   container: BaseProps;
 };
 
-export const stylesBuilder = (
-  state: BooleanPillState,
-  isInverted: boolean,
-  custom?: BooleanPillConfig,
-): BooleanPillStyleBuilder => {
+type BooleanPillStyleBuilderInput = {
+  state: BooleanPillState;
+  isInverted: boolean;
+  isSelected: boolean;
+  hasAvatar: boolean;
+  custom?: BooleanPillConfig;
+};
+
+export const stylesBuilder = ({
+  state,
+  isInverted,
+  isSelected,
+  hasAvatar,
+  custom,
+}: BooleanPillStyleBuilderInput): BooleanPillStyleBuilder => {
   const { state: containerState, ...container } = mergeConfigWithCustom({
     defaultConfig,
     custom,
@@ -21,10 +31,15 @@ export const stylesBuilder = (
     ? containerState[state].inverted
     : containerState[state].primary;
 
+  const withAvatarStyles = hasAvatar ? container.hasAvatar : {};
+  const withSelectedStyles = isSelected ? container.isSelected : {};
+
   return {
     container: {
       ...container,
       ...containerStyles,
+      ...withAvatarStyles,
+      ...withSelectedStyles,
     },
   };
 };
