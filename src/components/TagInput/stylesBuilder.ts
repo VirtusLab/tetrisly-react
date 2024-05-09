@@ -3,33 +3,10 @@ import { TagInputConfig, defaultConfig } from './TagInput.styles';
 import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCutom';
 import { BaseProps } from '@/types/BaseProps';
 
-type ContainerProps = BaseProps & { flexDirection: string };
-type InputProps = BaseProps & {
-  color?: {
-    placeholder?: string;
-  };
-  opacity?: {
-    placeholder?: number;
-  };
-};
-type InputContainerProps = BaseProps & {
-  ringInset?: string;
-  ringColor?:
-    | string
-    | {
-        _?: string;
-        hoverWithoutButton?: string;
-        alert?: string;
-        focusWithin?: string;
-      };
-};
-
 type StylesBuilderParams = {
-  container: ContainerProps;
-  input: InputProps;
-  label: BaseProps;
-  inputContainer: InputContainerProps;
-  helperText: BaseProps;
+  container: BaseProps;
+  input: BaseProps;
+  inputContainer: BaseProps;
 };
 
 export const stylesBuilder = (
@@ -37,7 +14,7 @@ export const stylesBuilder = (
   isAlertOrError?: boolean,
 ): StylesBuilderParams => {
   const {
-    innerElements: { input, helperText, label, inputContainer },
+    innerElements: { input, inputContainer },
     ...container
   } = mergeConfigWithCustom({
     defaultConfig,
@@ -49,29 +26,16 @@ export const stylesBuilder = (
     ...inputContainerRest
   } = inputContainer;
 
-  const {
-    isValidationError: helperTextValidationErrorStyle,
-    ...helperTextRest
-  } = helperText;
-
   const inputContainerStyles =
     (isAlertOrError && {
       ...inputContainerRest,
       ...inputContainerValidationErrorStyle,
     }) ||
     inputContainerRest;
-  const helperTextStyles =
-    (isAlertOrError && {
-      ...helperTextRest,
-      ...helperTextValidationErrorStyle,
-    }) ||
-    helperTextRest;
 
   return {
     container,
     input,
-    label,
     inputContainer: inputContainerStyles,
-    helperText: helperTextStyles,
   };
 };

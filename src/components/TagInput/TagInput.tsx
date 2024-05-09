@@ -1,15 +1,16 @@
-import { Icon } from '@virtuslab/tetrisly-icons';
 import { Props } from '@xstyled/styled-components';
 import { Children, forwardRef, isValidElement, PropsWithChildren } from 'react';
 
 import { TagInputProps } from './TagInput.props';
 import { useTagInput } from './useTagInput';
+import { HelperText } from '../HelperText';
+import { Label } from '../Label';
 import { Tag } from '../Tag/Tag';
 
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
-const TagInputBase = forwardRef<
+export const TagInput = forwardRef<
   HTMLInputElement,
   PropsWithChildren<TagInputProps & MarginProps>
 >(
@@ -49,7 +50,7 @@ const TagInputBase = forwardRef<
     });
 
     Children.forEach(children, (child) => {
-      if (isValidElement(child) && child?.type !== TagInput.Item) {
+      if (isValidElement(child) && child?.type !== TagInputBase.Item) {
         console.error(
           'You should use only TagInput.Item as a child of a TagInput component.',
         );
@@ -65,7 +66,7 @@ const TagInputBase = forwardRef<
         data-state={state}
         {...containerProps}
       >
-        {label && <tet.span {...styles.label}>{label}</tet.span>}
+        {label && <Label label={label} />}
 
         <tet.div
           data-testid="tag-input-input-container"
@@ -83,14 +84,17 @@ const TagInputBase = forwardRef<
             {...tagInputProps}
           />
         </tet.div>
-        <tet.div {...styles.helperText}>
-          {shouldRenderAlertIcon && <Icon name="16-alert-full" />}
-          <span>{helperText}</span>
-        </tet.div>
+        {helperText && (
+          <HelperText
+            text={helperText}
+            intent={shouldRenderAlertIcon ? 'alert' : 'none'}
+            hasBeforeIcon={shouldRenderAlertIcon}
+          />
+        )}
       </tet.div>
     );
   },
 );
 
-export const TagInput = TagInputBase as Props;
-TagInput.Item = Tag;
+const TagInputBase = TagInput as Props;
+TagInputBase.Item = Tag;
