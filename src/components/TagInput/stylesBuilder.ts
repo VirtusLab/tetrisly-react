@@ -1,6 +1,6 @@
 import { TagInputConfig, defaultConfig } from './TagInput.styles';
 
-import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCutom';
+import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
 
 type StylesBuilderParams = {
