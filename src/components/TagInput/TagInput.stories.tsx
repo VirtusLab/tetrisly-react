@@ -52,7 +52,6 @@ export const Default: Story = {
     children: ['Tag1', 'Tag2'].map((tagLabel) => (
       <Tag label={tagLabel} key={tagLabel} onCloseClick={() => null} />
     )),
-    state: 'alert',
   },
 };
 
