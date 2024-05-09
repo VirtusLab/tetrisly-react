@@ -1,0 +1,77 @@
+import { startCase } from 'lodash';
+import { FC } from 'react';
+
+import { SectionHeader } from './common/SectionHeader';
+
+import { BooleanPill, BooleanPillProps } from '@/components/BooleanPill';
+import { tet } from '@/tetrisly';
+
+const states = ['default', 'disabled', 'selected'] as const;
+const appearances = [false, true] as const;
+
+const props = [
+  { text: 'Value', onChange: () => {} } as const,
+  { text: 'Value', onChange: () => {}, avatar: { initials: 'M' } } as const,
+  {
+    text: 'Value',
+    onChange: () => {},
+    avatar: { image: 'https://thispersondoesnotexist.com/' },
+  } as const,
+] as BooleanPillProps[];
+
+export const BooleanPillDocs: FC = () => (
+  <>
+    {states.map((state) => (
+      <tet.section
+        key={state}
+        display="flex"
+        pt="$dimension-500"
+        flexDirection="column"
+      >
+        <SectionHeader variant="Hero" as="h2" px="$dimension-1000">
+          {startCase(state)}
+        </SectionHeader>
+        {appearances.map((appearance) => (
+          <tet.div
+            key={String(appearance)}
+            display="flex"
+            flexDirection="column"
+            bg={appearance ? '$color-background-neutral-subtle' : undefined}
+          >
+            <SectionHeader
+              variant="H2"
+              as="h3"
+              px="$dimension-1000"
+              py="$dimension-500"
+              borderBottom="$color-neutral-strong"
+            >
+              {appearance ? 'Inverted' : 'Primary'}
+            </SectionHeader>
+
+            <tet.div px="$dimension-1000" pb="$dimension-500">
+              <tet.div
+                display="flex"
+                flexBasis="180px"
+                flexGrow="1"
+                flexShrink="0"
+                alignItems="flex-start"
+                justifyContent="flex-start"
+                flexDirection="row"
+                gap="$dimension-300"
+                py="$dimension-500"
+              >
+                {props.map((prop) => (
+                  <BooleanPill
+                    state={state}
+                    isInverted={appearance}
+                    {...prop}
+                  />
+                ))}
+              </tet.div>
+            </tet.div>
+          </tet.div>
+        ))}
+      </tet.section>
+    ))}
+  </>
+);
