@@ -9,11 +9,25 @@ export type FileItemProps = {
   state?: FileItemState;
   isInverted?: boolean;
   isExtended?: boolean;
-  thumbnail?: 'none' | 'file' | 'photo';
+  thumbnail?: FileItemThumbnail;
+  uploadedPercentage?: number;
+  timeLeftText?: string;
+  alertText?: string;
   onReplaceClick?: (e?: MouseEvent) => void;
   onRetryClick?: (e?: MouseEvent) => void;
   onCloseClick?: (e?: MouseEvent) => void;
 };
 
-export const stateFallback: FileItemState = 'uploading';
-export const thumbnailFallback: FileItemThumbnail = 'none';
+export type Fallback = {
+  state: FileItemState;
+  isInverted: boolean;
+  isExtended: boolean;
+  thumbnail: FileItemThumbnail;
+};
+
+export const fallback: Fallback = {
+  state: 'uploading',
+  isInverted: false,
+  isExtended: false,
+  thumbnail: 'none',
+};

@@ -1,9 +1,9 @@
+import { compressedVariantStyles, extendedVariantStyles } from './components';
 import { FileItemThumbnail } from './types';
 
 import type { BaseProps } from '@/types/BaseProps';
 
 export type FileItemConfig = BaseProps & {
-  fileName?: BaseProps;
   state?: {
     uploading?: BaseProps;
     uploaded?: BaseProps;
@@ -14,28 +14,17 @@ export type FileItemConfig = BaseProps & {
     yes?: BaseProps;
     no?: BaseProps;
   };
-  extended?: {
-    yes?: BaseProps;
-    no?: BaseProps;
-  };
   thumbnail?: Record<FileItemThumbnail, BaseProps>;
   invertedAlert?: BaseProps;
-  innerElements?: {
-    fileName?: BaseProps;
-    fileSize?: BaseProps;
-    progressBar?: BaseProps;
-    progressBarContainer?: BaseProps;
-    progressBarSent?: BaseProps;
-    progressBarTrack?: BaseProps;
-  };
+  compressed?: BaseProps;
+  extended?: BaseProps;
 };
 
 export const defaultConfig = {
   display: 'flex',
+  flexDirection: 'column',
   gap: '$space-component-gap-small',
-  justifyContent: 'space-between',
   borderRadius: '$border-radius-large',
-
   state: {
     uploading: {
       backgroundColor: '$color-interaction-neutral-subtle-normal',
@@ -59,50 +48,16 @@ export const defaultConfig = {
     },
     no: {},
   },
-  extended: {
-    yes: {
-      padding: '$space-component-padding-large',
-    },
-    no: {
-      padding: '$space-component-padding-small',
-      alignItems: 'center',
-    },
-  },
   thumbnail: {
     none: {},
     file: {},
     photo: {},
   },
-
   invertedAlert: {
     borderColor: '$color-interaction-border-alert',
   },
-
-  innerElements: {
-    fileName: {
-      text: '$typo-medium-175',
-      color: '$color-content-primary',
-    },
-    fileSize: {
-      text: '$typo-medium-175',
-      color: '$color-content-secondary',
-    },
-    progressBar: {
-      flex: 1,
-    },
-    progressBarTrack: {
-      mx: '$space-component-padding-large',
-      h: '4px',
-      backgroundColor: '$color-interaction-inverted-normal',
-      borderRadius: '$border-radius-small',
-    },
-    progressBarSent: {
-      w: '50%',
-      h: '100%',
-      borderRadius: '$border-radius-small',
-      backgroundColor: '$color-interaction-default-normal',
-    },
-  },
+  compressed: compressedVariantStyles.defaultConfig,
+  extended: extendedVariantStyles.defaultConfig,
 } as const satisfies FileItemConfig;
 
 export const fileItemStyles = {

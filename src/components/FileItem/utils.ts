@@ -5,22 +5,22 @@ export const formatFileSize = (bytes: number): string => {
   const terabyte = gigabyte * 1024;
 
   if (bytes >= terabyte) {
-    return `${roundToTwoDecimalPlaces(bytes / terabyte)} TB`;
+    return `${roundToTwoDecimalPlaces(bytes / terabyte)}TB`;
   }
 
   if (bytes >= gigabyte) {
-    return `${roundToTwoDecimalPlaces(bytes / gigabyte)} GB`;
+    return `${roundToTwoDecimalPlaces(bytes / gigabyte)}GB`;
   }
 
   if (bytes >= megabyte) {
-    return `${roundToTwoDecimalPlaces(bytes / megabyte)} MB`;
+    return `${roundToTwoDecimalPlaces(bytes / megabyte)}MB`;
   }
 
   if (bytes >= kilobyte) {
-    return `${roundToTwoDecimalPlaces(bytes / kilobyte)} KB`;
+    return `${roundToTwoDecimalPlaces(bytes / kilobyte)}KB`;
   }
 
-  return `${roundToTwoDecimalPlaces(bytes)} B`;
+  return `${roundToTwoDecimalPlaces(bytes)}B`;
 };
 
 const roundTo = (value: number, decimalPlaces: number): number => {
@@ -29,3 +29,8 @@ const roundTo = (value: number, decimalPlaces: number): number => {
 };
 
 const roundToTwoDecimalPlaces = (value: number): number => roundTo(value, 2);
+
+export const isImage = (file: File): boolean => {
+  const [type] = file.type.split('/');
+  return type === 'image';
+};

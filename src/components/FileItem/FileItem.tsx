@@ -1,32 +1,58 @@
 import { FC } from 'react';
 
-import { FileItemProps } from './FileItem.props';
+import { CompressedVariant, ExtendedVariant } from './components';
+import { FileItemProps, fallback } from './FileItem.props';
 import { stylesBuilder } from './stylesBuilder';
-import { formatFileSize } from './utils';
 
-import { IconButton } from '@/components/IconButton';
 import { tet } from '@/tetrisly';
 
 export const FileItem: FC<FileItemProps> = (props) => {
-  const { file, onCloseClick } = props;
+  const {
+    file,
+    state = fallback.state,
+    isInverted = fallback.isInverted,
+    isExtended = fallback.isExtended,
+    // thumbnail = fallback.thumbnail,
+    uploadedPercentage,
+    timeLeftText,
+    alertText,
+    onReplaceClick,
+    onRetryClick,
+    onCloseClick,
+  } = props;
 
   const styles = stylesBuilder(props);
 
   return (
     <tet.div {...styles.container}>
-      <tet.div {...styles.fileName}>{file.name}</tet.div>
+      {!isExtended && (
+        <CompressedVariant
+          custom={styles.compressed}
+          state={state}
+          file={file}
+          isInverted={isInverted}
+          uploadedPercentage={uploadedPercentage}
+          alertText={alertText}
+          onReplaceClick={onReplaceClick}
+          onRetryClick={onRetryClick}
+          onCloseClick={onCloseClick}
+        />
+      )}
 
-      <tet.div {...styles.fileSize}>{formatFileSize(file.size)}</tet.div>
-
-      <tet.div {...styles.progressBar}>
-        <tet.div {...styles.progressBarTrack}>
-          <tet.div {...styles.progressBarSent} />
-        </tet.div>
-      </tet.div>
-
-      <tet.div>
-        <IconButton icon="20-close" variant="bare" onClick={onCloseClick} />
-      </tet.div>
+      {isExtended && (
+        <ExtendedVariant
+          custom={styles.extended}
+          state={state}
+          file={file}
+          isInverted={isInverted}
+          uploadedPercentage={uploadedPercentage}
+          timeLeftText={timeLeftText}
+          alertText={alertText}
+          onReplaceClick={onReplaceClick}
+          onRetryClick={onRetryClick}
+          onCloseClick={onCloseClick}
+        />
+      )}
     </tet.div>
   );
 };
