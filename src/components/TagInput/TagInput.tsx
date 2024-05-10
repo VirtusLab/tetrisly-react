@@ -66,7 +66,7 @@ export const TagInput = forwardRef<
         data-state={state}
         {...containerProps}
       >
-        {label && <Label label={label} />}
+        {label && <Label {...label} />}
 
         <tet.div
           data-testid="tag-input-input-container"
@@ -86,7 +86,7 @@ export const TagInput = forwardRef<
         </tet.div>
         {helperText && (
           <HelperText
-            text={helperText}
+            {...helperText}
             intent={shouldRenderAlertIcon ? 'alert' : 'none'}
             hasBeforeIcon={shouldRenderAlertIcon}
           />

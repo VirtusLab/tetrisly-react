@@ -11,8 +11,8 @@ const meta = {
   component: TagInput,
   tags: ['autodocs'],
   args: {
-    helperText: 'Helper text',
-    label: 'label',
+    helperText: { text: 'Helper text' },
+    label: { label: 'label' },
     isValidationError: false,
     children: ['Tag 1', 'Tag 2'].map((tagLabel) => (
       <Tag label="elo" key={tagLabel} />
@@ -46,8 +46,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    helperText: 'Helper text',
-    label: 'label',
+    helperText: { text: 'Helper text' },
+    label: { label: 'label' },
     isValidationError: false,
     children: ['Tag1', 'Tag2'].map((tagLabel) => (
       <Tag label={tagLabel} key={tagLabel} onCloseClick={() => null} />
@@ -57,8 +57,8 @@ export const Default: Story = {
 
 export const ValidationErrorNo: Story = {
   args: {
-    helperText: 'Helper text',
-    label: 'label',
+    helperText: { text: 'Helper text' },
+    label: { label: 'label' },
     isValidationError: false,
     children: ['Tag1', 'Tag2'].map((tagLabel) => (
       <Tag label={tagLabel} key={tagLabel} onCloseClick={() => null} />
@@ -68,8 +68,8 @@ export const ValidationErrorNo: Story = {
 
 export const ValidationErrorYes: Story = {
   args: {
-    helperText: 'Helper text',
-    label: 'label',
+    helperText: { text: 'Helper text' },
+    label: { label: 'label' },
     isValidationError: true,
     children: ['Tag1', 'Tag2'].map((tagLabel) => (
       <Tag label={tagLabel} key={tagLabel} onCloseClick={() => null} />

@@ -16,6 +16,9 @@ export const TagInputDocs = () => {
     'Tag2',
   ]);
 
+  const label = { label: 'Label' };
+  const helperText = { text: 'Helper text' };
+
   return (
     <>
       <tet.section px="$dimension-1000" key="noValidationError">
@@ -23,7 +26,7 @@ export const TagInputDocs = () => {
           Validation Error: No
         </SectionHeader>
 
-        <TagInput label="Label" helperText="Helper text">
+        <TagInput label={label} helperText={helperText}>
           {noValidationErrorTags.map((tagLabel) => (
             <Tag
               label={tagLabel}
@@ -47,7 +50,7 @@ export const TagInputDocs = () => {
         <SectionHeader variant="H1" as="h2" py="$dimension-400">
           Validation Error: Yes
         </SectionHeader>
-        <TagInput isValidationError label="Label" helperText="Helper text">
+        <TagInput isValidationError label={label} helperText={helperText}>
           {validationErrorTags.map((tagLabel) => (
             <Tag
               label={tagLabel}
