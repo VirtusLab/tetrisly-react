@@ -12,7 +12,7 @@ export const FileItem: FC<FileItemProps> = (props) => {
     state = fallback.state,
     isInverted = fallback.isInverted,
     isExtended = fallback.isExtended,
-    // thumbnail = fallback.thumbnail,
+    thumbnail = fallback.thumbnail,
     uploadedPercentage,
     timeLeftText,
     alertText,
@@ -24,7 +24,7 @@ export const FileItem: FC<FileItemProps> = (props) => {
   const styles = stylesBuilder(props);
 
   return (
-    <tet.div {...styles.container}>
+    <tet.div data-testid="file-item" {...styles.container}>
       {!isExtended && (
         <CompressedVariant
           custom={styles.compressed}
@@ -45,6 +45,7 @@ export const FileItem: FC<FileItemProps> = (props) => {
           state={state}
           file={file}
           isInverted={isInverted}
+          thumbnail={thumbnail}
           uploadedPercentage={uploadedPercentage}
           timeLeftText={timeLeftText}
           alertText={alertText}

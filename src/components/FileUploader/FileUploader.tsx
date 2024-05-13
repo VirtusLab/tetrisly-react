@@ -1,7 +1,7 @@
 import { FC, ChangeEventHandler, useRef } from 'react';
 
 import { ButtonVariant } from './ButtonVariant';
-import { Control, FilesList } from './components';
+import { Control } from './components';
 import { DragAndDropVariant } from './DragAndDropVariant';
 import { FileUploaderProps } from './FileUploader.props';
 import { stylesBuilder } from './stylesBuilder';
@@ -88,9 +88,7 @@ export const FileUploader: FC<FileUploaderProps> = ({
         </Control>
 
         {value && value.length > 0 && (
-          <tet.div>
-            <FilesList files={value} />
-          </tet.div>
+          <tet.div>{/* <FilesList files={value} /> */}</tet.div>
         )}
       </tet.div>
     </>

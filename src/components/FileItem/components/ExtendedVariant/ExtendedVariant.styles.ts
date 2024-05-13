@@ -1,7 +1,15 @@
+import { ProgressBarConfig, progressBarStyles } from '../ProgressBar';
+
 import type { BaseProps } from '@/types/BaseProps';
 
 export type ExtendedVariantConfig = BaseProps & {
+  thumbnailWrapper?: BaseProps;
+  fileDetails?: BaseProps;
+  topDetails?: BaseProps;
+  bottomDetails?: BaseProps;
   innerElements?: {
+    fileThumbnail?: BaseProps;
+    photoThumbnail?: BaseProps;
     fileName?: BaseProps;
     fileSize?: BaseProps;
     timeLeft?: BaseProps;
@@ -11,7 +19,9 @@ export type ExtendedVariantConfig = BaseProps & {
     alertContent?: BaseProps;
     closeIconButton?: BaseProps;
     alert?: BaseProps;
+    alertIcon?: BaseProps;
     fileSizeAlert?: BaseProps;
+    progressBar?: ProgressBarConfig;
   };
 };
 
@@ -20,7 +30,32 @@ export const defaultConfig = {
   flexDirection: 'column',
   gap: '$space-component-gap-small',
   padding: '$space-component-padding-large',
+  thumbnailWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: '$space-component-gap-large',
+  },
+  fileDetails: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '$space-component-gap-xSmall',
+    flexGrow: 1,
+  },
+  topDetails: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  bottomDetails: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
   innerElements: {
+    fileThumbnail: {
+      paddingTop: '$space-component-padding-xSmall',
+    },
+    photoThumbnail: {
+      paddingTop: '$space-component-padding-small',
+    },
     fileName: {
       text: '$typo-medium-175',
       color: '$color-content-primary',
@@ -60,10 +95,14 @@ export const defaultConfig = {
       text: '$typo-body-small',
       color: '$color-content-negative-secondary',
     },
+    alertIcon: {
+      color: '$color-content-negative-secondary',
+    },
     fileSizeAlert: {
       text: '$typo-body-small',
       color: '$color-content-secondary',
     },
+    progressBar: progressBarStyles.defaultConfig,
   },
 } as const satisfies ExtendedVariantConfig;
 

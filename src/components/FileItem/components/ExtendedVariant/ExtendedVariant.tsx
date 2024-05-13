@@ -2,12 +2,12 @@ import { FC } from 'react';
 
 import { ExtendedVariantProps } from './ExtendedVariant.props';
 import { stylesBuilder } from './stylesBuilder';
-import { formatFileSize } from '../../utils';
 import { ProgressBar } from '../ProgressBar';
 
 import { Button } from '@/components/Button';
 import { Icon } from '@/components/Icon';
 import { IconButton } from '@/components/IconButton';
+import { formatFileSize } from '@/services';
 import { tet } from '@/tetrisly';
 
 export const ExtendedVariant: FC<ExtendedVariantProps> = ({
@@ -15,6 +15,7 @@ export const ExtendedVariant: FC<ExtendedVariantProps> = ({
   state,
   file,
   isInverted,
+  thumbnail,
   uploadedPercentage,
   timeLeftText,
   alertText,
@@ -23,103 +24,122 @@ export const ExtendedVariant: FC<ExtendedVariantProps> = ({
   onCloseClick,
 }) => {
   const styles = stylesBuilder(custom);
-
   const formattedFileSize = formatFileSize(file.size);
 
-  const progressBar = (
-    <ProgressBar
-      isInverted={isInverted}
-      progressPercentage={uploadedPercentage}
-    />
-  );
-
-  const replaceButton = (
-    <Button
-      variant="bare"
-      appearance="primary"
-      label="Replace"
-      onClick={onReplaceClick}
-    />
-  );
-
-  const retryButton = (
-    <Button
-      intent="destructive"
-      variant="bare"
-      appearance="primary"
-      label="Retry"
-      onClick={onRetryClick}
-    />
-  );
-
-  const closeIconButton = (
-    <IconButton icon="20-close" variant="bare" onClick={onCloseClick} />
-  );
-
   return (
-    <tet.div {...styles.container}>
-      <tet.div
-        display="flex"
-        flexDirection="column"
-        gap="$space-component-gap-xSmall"
-      >
-        <tet.div display="flex" justifyContent="space-between">
-          <tet.div {...styles.fileName}>{file.name}</tet.div>
-
-          <tet.div
-            display="flex"
-            gap="$space-component-gap-large"
-            alignItems="center"
-          >
-            {state === 'replaceable' && onReplaceClick && (
-              <tet.div {...styles.replaceableContent}>{replaceButton}</tet.div>
-            )}
-
-            {state === 'alert' && onRetryClick && (
-              <tet.div {...styles.alertContent}>{retryButton}</tet.div>
-            )}
-
-            <tet.div {...styles.closeIconButton}>{closeIconButton}</tet.div>
+    <tet.div data-testid="file-item-extended" {...styles.container}>
+      <tet.div {...styles.thumbnailWrapper}>
+        {thumbnail === 'file' && (
+          <tet.div data-testid="thumbnail-file" {...styles.fileThumbnail}>
+            <Icon name="20-file" />
           </tet.div>
-        </tet.div>
+        )}
 
-        <tet.div display="flex" justifyContent="space-between">
-          <tet.div>
-            {state !== 'alert' && (
-              <tet.span {...styles.fileSize}>{formattedFileSize}</tet.span>
-            )}
+        {thumbnail === 'photo' && (
+          <tet.div data-testid="thumbnail-photo" {...styles.photoThumbnail}>
+            <img src={URL.createObjectURL(file)} alt={file.name} />
+          </tet.div>
+        )}
 
-            {state === 'uploading' && timeLeftText !== undefined && (
-              <tet.span {...styles.timeLeft}>
-                {timeLeftText && ` • ${timeLeftText}`}
-              </tet.span>
+        <tet.div {...styles.fileDetails}>
+          <tet.div {...styles.topDetails}>
+            <tet.div {...styles.fileName}>{file.name}</tet.div>
+
+            <tet.div
+              display="flex"
+              gap="$space-component-gap-large"
+              alignItems="center"
+            >
+              {state === 'replaceable' && onReplaceClick && (
+                <tet.div {...styles.replaceableContent}>
+                  <Button
+                    data-testid="replaceable-button"
+                    custom={{ bare: { padding: 0 } }}
+                    variant="bare"
+                    appearance="primary"
+                    label="Replace"
+                    onClick={onReplaceClick}
+                  />
+                </tet.div>
+              )}
+
+              {state === 'alert' && onRetryClick && (
+                <tet.div {...styles.alertContent}>
+                  <Button
+                    data-testid="retry-button"
+                    custom={{ bare: { padding: 0 } }}
+                    intent="destructive"
+                    variant="bare"
+                    appearance="primary"
+                    label="Retry"
+                    onClick={onRetryClick}
+                  />
+                </tet.div>
+              )}
+
+              <tet.div {...styles.closeIconButton}>
+                <IconButton
+                  data-testid="close-icon"
+                  icon="20-close"
+                  variant="bare"
+                  onClick={onCloseClick}
+                />
+              </tet.div>
+            </tet.div>
+          </tet.div>
+
+          <tet.div {...styles.bottomDetails}>
+            <tet.div>
+              {state !== 'alert' && (
+                <tet.span data-testid="file-size" {...styles.fileSize}>
+                  {formattedFileSize}
+                </tet.span>
+              )}
+
+              {state === 'uploading' && timeLeftText !== undefined && (
+                <tet.span
+                  data-testid="uploading-time-left"
+                  {...styles.timeLeft}
+                >
+                  {timeLeftText && ` • ${timeLeftText}`}
+                </tet.span>
+              )}
+            </tet.div>
+
+            {state === 'uploading' && uploadedPercentage !== undefined && (
+              <tet.div
+                data-testid="uploaded-percentage"
+                {...styles.uploadedPercentage}
+              >
+                {uploadedPercentage}%
+              </tet.div>
             )}
           </tet.div>
 
-          {state === 'uploading' && uploadedPercentage !== undefined && (
-            <tet.div {...styles.uploadedPercentage}>
-              {uploadedPercentage}%
+          {state === 'alert' && (
+            <tet.div data-testid="alert-info" {...styles.alert}>
+              {alertText !== undefined && (
+                <>
+                  <Icon name="16-alert-full" {...styles.alertIcon} />{' '}
+                  {alertText}
+                </>
+              )}
+
+              <tet.div data-testid="alert-file-size" {...styles.fileSizeAlert}>
+                {' '}
+                • {formattedFileSize}
+              </tet.div>
             </tet.div>
           )}
         </tet.div>
       </tet.div>
 
-      {state === 'uploading' && <tet.div>{progressBar}</tet.div>}
-
-      {state === 'alert' && (
-        <tet.div {...styles.alert}>
-          {alertText !== undefined && (
-            <>
-              <Icon
-                name="16-alert-full"
-                color="$color-content-negative-secondary"
-              />{' '}
-              {alertText}
-            </>
-          )}
-
-          <tet.div {...styles.fileSizeAlert}> • {formattedFileSize}</tet.div>
-        </tet.div>
+      {state === 'uploading' && (
+        <ProgressBar
+          custom={styles.progressBar}
+          isInverted={isInverted}
+          progressPercentage={uploadedPercentage}
+        />
       )}
     </tet.div>
   );

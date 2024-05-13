@@ -5,6 +5,7 @@ import { SectionHeader } from './common/SectionHeader';
 import { States } from './common/States';
 
 import { FileItem } from '@/components/FileItem';
+import { mockTextFile, mockImageFile } from '@/components/FileItem/mocks';
 import { tet } from '@/tetrisly';
 
 type Variants = {
@@ -24,35 +25,15 @@ const sections: Variants[] = [
   { inverted: true, extended: true, thumbnail: 'photo' },
 ];
 
-const mockTextFile = new File(['foo bar baz'], 'Name');
-
 export const FileItemDocs = () => (
   <tet.section display="flex" flexDirection="column">
     {sections.map((variants) => {
-      const labels = Object.entries(variants).map(([name, value]) => {
-        let label = `${capitalize(name)}: `;
+      const labels = Object.entries(variants).map(
+        ([name, value]) => `${capitalize(name)}: ${getVariantLabel(value)}`,
+      );
 
-        switch (value) {
-          case true:
-            label += 'Yes';
-            break;
-          case false:
-            label += 'No';
-            break;
-          case 'none':
-            label += 'No';
-            break;
-          case 'file':
-            label += 'File';
-            break;
-          case 'photo':
-            label += 'Photo';
-            break;
-          default:
-        }
-
-        return label;
-      });
+      const file =
+        variants.thumbnail === 'photo' ? mockImageFile() : mockTextFile();
 
       return (
         <tet.div key={labels.join()}>
@@ -79,12 +60,12 @@ export const FileItemDocs = () => (
               <tet.div display="flex" gap="$dimension-500" py="$dimension-250">
                 <tet.div flexShrink="0" flexGrow="1" flexBasis="50%">
                   <FileItem
-                    file={mockTextFile}
+                    file={file}
                     state="uploading"
                     isInverted={variants.inverted}
                     isExtended={variants.extended}
                     thumbnail={variants.thumbnail}
-                    uploadedPercentage={50}
+                    uploadedPercentage={44}
                     timeLeftText="7 seconds left"
                     onReplaceClick={action('onReplaceClick')}
                     onRetryClick={action('onRetryClick')}
@@ -94,7 +75,7 @@ export const FileItemDocs = () => (
 
                 <tet.div flexShrink="0" flexGrow="1" flexBasis="50%">
                   <FileItem
-                    file={mockTextFile}
+                    file={file}
                     state="uploaded"
                     isInverted={variants.inverted}
                     isExtended={variants.extended}
@@ -117,7 +98,7 @@ export const FileItemDocs = () => (
               <tet.div display="flex" gap="$dimension-500" py="$dimension-250">
                 <tet.div flexShrink="0" flexGrow="1" flexBasis="50%">
                   <FileItem
-                    file={mockTextFile}
+                    file={file}
                     state="replaceable"
                     isInverted={variants.inverted}
                     isExtended={variants.extended}
@@ -130,7 +111,7 @@ export const FileItemDocs = () => (
 
                 <tet.div flexShrink="0" flexGrow="1" flexBasis="50%">
                   <FileItem
-                    file={mockTextFile}
+                    file={file}
                     state="alert"
                     isInverted={variants.inverted}
                     isExtended={variants.extended}
@@ -149,3 +130,16 @@ export const FileItemDocs = () => (
     })}
   </tet.section>
 );
+
+const getVariantLabel = (value: Variants[keyof Variants]): string => {
+  switch (value) {
+    case true:
+      return 'Yes';
+    case 'file':
+      return 'File';
+    case 'photo':
+      return 'Photo';
+    default:
+      return 'No';
+  }
+};

@@ -1,3 +1,5 @@
+import { ProgressBarConfig, progressBarStyles } from '../ProgressBar';
+
 import type { BaseProps } from '@/types/BaseProps';
 
 export type CompressedVariantConfig = BaseProps & {
@@ -5,12 +7,14 @@ export type CompressedVariantConfig = BaseProps & {
     fileInfo?: BaseProps;
     fileName?: BaseProps;
     fileSize?: BaseProps;
+    alertIcon?: BaseProps;
     content?: BaseProps;
     uploadingContent?: BaseProps;
     replaceableContent?: BaseProps;
     alertContent?: BaseProps;
     notExtendedAlert?: BaseProps;
     closeIconButton?: BaseProps;
+    progressBar?: ProgressBarConfig;
   };
 };
 
@@ -33,6 +37,9 @@ export const defaultConfig = {
     fileSize: {
       text: '$typo-medium-175',
       color: '$color-content-secondary',
+    },
+    alertIcon: {
+      color: '$color-content-negative-secondary',
     },
     content: {
       flexGrow: 1,
@@ -58,6 +65,7 @@ export const defaultConfig = {
       flexDirection: 'column',
       alignItems: 'center',
     },
+    progressBar: progressBarStyles.defaultConfig,
   },
 } as const satisfies CompressedVariantConfig;
 

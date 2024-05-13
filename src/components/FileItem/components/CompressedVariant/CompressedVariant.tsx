@@ -2,12 +2,12 @@ import { FC } from 'react';
 
 import { CompressedVariantProps } from './CompressedVariant.props';
 import { stylesBuilder } from './stylesBuilder';
-import { formatFileSize } from '../../utils';
 import { ProgressBar } from '../ProgressBar';
 
 import { Button } from '@/components/Button';
 import { Icon } from '@/components/Icon';
 import { IconButton } from '@/components/IconButton';
+import { formatFileSize } from '@/services';
 import { tet } from '@/tetrisly';
 
 export const CompressedVariant: FC<CompressedVariantProps> = ({
@@ -22,26 +22,31 @@ export const CompressedVariant: FC<CompressedVariantProps> = ({
   onCloseClick,
 }) => {
   const styles = stylesBuilder(custom);
-
   const formattedFileSize = formatFileSize(file.size);
 
   return (
-    <tet.div {...styles.container}>
+    <tet.div data-testid="file-item-compressed" {...styles.container}>
       <tet.div {...styles.fileInfo}>
         {state === 'alert' && (
           <Icon
+            data-testid="alert-icon"
             name="20-alert-fill"
-            color="$color-content-negative-secondary"
+            {...styles.alertIcon}
           />
         )}
 
-        <tet.div {...styles.fileName}>{file.name}</tet.div>
-        <tet.div {...styles.fileSize}>{formattedFileSize}</tet.div>
+        <tet.div data-testid="file-name" {...styles.fileName}>
+          {file.name}
+        </tet.div>
+        <tet.div data-testid="file-size" {...styles.fileSize}>
+          {formattedFileSize}
+        </tet.div>
 
         <tet.div {...styles.content}>
           {state === 'uploading' && (
-            <tet.div {...styles.uploadingContent}>
+            <tet.div data-testid="progress-bar" {...styles.uploadingContent}>
               <ProgressBar
+                custom={styles.progressBar}
                 isInverted={isInverted}
                 progressPercentage={uploadedPercentage}
               />
@@ -51,6 +56,7 @@ export const CompressedVariant: FC<CompressedVariantProps> = ({
           {state === 'replaceable' && onReplaceClick && (
             <tet.div {...styles.replaceableContent}>
               <Button
+                data-testid="replaceable-button"
                 variant="bare"
                 appearance="primary"
                 label="Replace"
@@ -62,6 +68,7 @@ export const CompressedVariant: FC<CompressedVariantProps> = ({
           {state === 'alert' && onRetryClick && (
             <tet.div {...styles.alertContent}>
               <Button
+                data-testid="retry-button"
                 intent="destructive"
                 variant="bare"
                 appearance="primary"
@@ -73,12 +80,19 @@ export const CompressedVariant: FC<CompressedVariantProps> = ({
         </tet.div>
 
         <tet.div {...styles.closeIconButton}>
-          <IconButton icon="20-close" variant="bare" onClick={onCloseClick} />
+          <IconButton
+            data-testid="close-icon"
+            icon="20-close"
+            variant="bare"
+            onClick={onCloseClick}
+          />
         </tet.div>
       </tet.div>
 
       {state === 'alert' && alertText !== undefined && (
-        <tet.div {...styles.notExtendedAlert}>{alertText}</tet.div>
+        <tet.div data-testid="alert-text" {...styles.notExtendedAlert}>
+          {alertText}
+        </tet.div>
       )}
     </tet.div>
   );
