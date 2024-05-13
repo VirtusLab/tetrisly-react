@@ -1,5 +1,5 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { MouseEventHandler, useCallback, useMemo, type FC } from 'react';
+import { useMemo, type FC } from 'react';
 
 import { BooleanPillProps } from './BooleanPill.props';
 import { stylesBuilder } from './stylesBuilder';
@@ -15,7 +15,6 @@ export const BooleanPill: FC<BooleanPillProps> = ({
   avatar,
   text,
   custom,
-  onChange,
   ...rest
 }) => {
   const styles = useMemo(
@@ -46,17 +45,10 @@ export const BooleanPill: FC<BooleanPillProps> = ({
     [avatar],
   );
 
-  const handleOnClick: MouseEventHandler<HTMLSpanElement> = useCallback(() => {
-    if (state !== 'disabled') {
-      onChange?.(!isSelected);
-    }
-  }, [onChange, state, isSelected]);
-
   return (
     <tet.span
       tabIndex={tabIndex}
       data-state={state}
-      onClick={handleOnClick}
       data-testid="boolean-pill"
       {...styles.container}
       {...rest}

@@ -1,8 +1,6 @@
-import { vi } from 'vitest';
-
 import { BooleanPill } from './BooleanPill';
 import { BooleanPillState } from './BooleanPillState.type';
-import { render, screen, fireEvent } from '../../tests/render';
+import { render, screen } from '../../tests/render';
 
 describe('BooleanPill', () => {
   const states: BooleanPillState[] = ['default', 'disabled'];
@@ -60,28 +58,6 @@ describe('BooleanPill', () => {
 
       selected.forEach((isSelected) => {
         describe(`isSelected ${isSelected}`, () => {
-          it('should handle onChange properly when clicked', () => {
-            const onChangeMock = vi.fn();
-            render(
-              <BooleanPill
-                text="Value"
-                state={state}
-                isSelected={isSelected}
-                onChange={onChangeMock}
-              />,
-            );
-
-            const pill = screen.getByTestId(pillPointer);
-            expect(pill).toBeInTheDocument();
-            fireEvent.click(pill);
-            if (state !== 'disabled') {
-              expect(onChangeMock).toHaveBeenCalled();
-              expect(onChangeMock).toBeCalledWith(!isSelected);
-            } else {
-              expect(onChangeMock).not.toHaveBeenCalled();
-            }
-          });
-
           it('should correctly render the checkmark', () => {
             render(
               <BooleanPill

@@ -71,6 +71,7 @@ export const BooleanPillDocs: FC = () => (
                   flexGrow="1"
                   flexShrink="0"
                   alignItems="flex-start"
+                  flexWrap="wrap"
                   justifyContent="flex-start"
                   flexDirection="row"
                   gap="$dimension-300"

@@ -13,5 +13,4 @@ export type BooleanPillProps = {
   avatar?:
     | { appearance?: 'image'; image: string }
     | { appearance: Exclude<AvatarAppearance, 'image'>; initials: string };
-  onChange?: (state: boolean) => void;
 } & Omit<HTMLAttributes<HTMLSpanElement>, 'color'>;
