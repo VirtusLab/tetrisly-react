@@ -39,9 +39,9 @@ describe('BooleanPill', () => {
       it('should not render avatar if avatar prop is not passed', () => {
         render(<BooleanPill text="Value" state={state} />);
         const pill = screen.getByTestId(pillPointer);
-        const checkmark = screen.queryByTestId('boolean-pill-avatar');
+        const avatar = screen.queryByTestId('boolean-pill-avatar');
         expect(pill).toBeInTheDocument();
-        expect(checkmark).not.toBeInTheDocument();
+        expect(avatar).not.toBeInTheDocument();
       });
 
       it('should render avatar if avatar prop is passed', () => {
@@ -53,9 +53,9 @@ describe('BooleanPill', () => {
           />,
         );
         const pill = screen.getByTestId(pillPointer);
-        const checkmark = screen.getByTestId('boolean-pill-avatar');
+        const avatar = screen.getByTestId('boolean-pill-avatar');
         expect(pill).toBeInTheDocument();
-        expect(checkmark).toBeInTheDocument();
+        expect(avatar).toBeInTheDocument();
       });
 
       selected.forEach((isSelected) => {
