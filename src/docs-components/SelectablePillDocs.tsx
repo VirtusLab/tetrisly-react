@@ -14,25 +14,29 @@ const appearances = [false, true] as const;
 const selected = [false, true] as const;
 
 const props = [
-  { text: 'Value' } as const,
-  { text: 'Value', prefix: 'Prefix' } as const,
-  { text: 'Value', beforeComponent: { icon: '20-tree' } } as const,
+  { id: '0', text: 'Value' } as const,
+  { id: '1', text: 'Value', prefix: 'Prefix' } as const,
+  { id: '2', text: 'Value', beforeComponent: { icon: '20-tree' } } as const,
   {
+    id: '3',
     text: 'Value',
     prefix: 'Prefix',
     beforeComponent: { icon: '20-tree' },
   } as const,
   {
+    id: '4',
     text: 'Value',
     beforeComponent: { avatar: { initials: 'M' } },
   } as const,
   {
+    id: '5',
     text: 'Value',
     beforeComponent: {
       avatar: { image: 'https://thispersondoesnotexist.com/' },
     },
   } as const,
   {
+    id: '6',
     text: 'Value',
     prefix: 'Prefix',
     beforeComponent: {
@@ -55,7 +59,7 @@ export const SelectablePillDocs: FC = () => (
         </SectionHeader>
         {appearances.map((appearance) => (
           <tet.div
-            key={String(appearance)}
+            key={`${state}-${appearance}`}
             display="flex"
             flexDirection="column"
             bg={appearance ? '$color-background-neutral-subtle' : undefined}
@@ -71,7 +75,11 @@ export const SelectablePillDocs: FC = () => (
             </SectionHeader>
 
             {selected.map((select) => (
-              <tet.div px="$dimension-1000" pb="$dimension-500">
+              <tet.div
+                px="$dimension-1000"
+                pb="$dimension-500"
+                key={`${state}-${appearance}-${select}`}
+              >
                 <SectionHeader variant="H3" as="h4" pt="$dimension-500">
                   Selected: {String(select)}
                 </SectionHeader>
@@ -88,8 +96,9 @@ export const SelectablePillDocs: FC = () => (
                   gap="$dimension-300"
                   py="$dimension-500"
                 >
-                  {props.map((prop) => (
+                  {props.map(({ id, ...prop }) => (
                     <SelectablePill
+                      key={id}
                       state={state}
                       isInverted={appearance}
                       isSelected={select}

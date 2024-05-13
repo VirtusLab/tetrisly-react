@@ -14,7 +14,6 @@ export type SelectablePillProps = {
   tabIndex?: number;
   custom?: SelectablePillConfig;
   beforeComponent?: BeforeComponentProps;
-  onChange?: (state: boolean) => void;
 } & Omit<HTMLAttributes<HTMLSpanElement>, 'color'>;
 
 type BeforeComponentProps =

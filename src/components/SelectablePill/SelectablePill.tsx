@@ -1,5 +1,5 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
-import { MouseEventHandler, useCallback, useMemo, type FC } from 'react';
+import { useMemo, type FC } from 'react';
 
 import { SelectablePillProps } from './SelectablePill.props';
 import { stylesBuilder } from './stylesBuilder';
@@ -16,7 +16,6 @@ export const SelectablePill: FC<SelectablePillProps> = ({
   text,
   prefix,
   custom,
-  onChange,
   ...rest
 }) => {
   const styles = useMemo(
@@ -54,17 +53,10 @@ export const SelectablePill: FC<SelectablePillProps> = ({
     [beforeComponent],
   );
 
-  const handleOnClick: MouseEventHandler<HTMLSpanElement> = useCallback(() => {
-    if (state !== 'disabled') {
-      onChange?.(!isSelected);
-    }
-  }, [onChange, state, isSelected]);
-
   return (
     <tet.span
       tabIndex={tabIndex}
       data-state={state}
-      onClick={handleOnClick}
       data-testid="selectable-pill"
       {...styles.container}
       {...rest}
