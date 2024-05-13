@@ -1,4 +1,4 @@
-import { formatFileSize, base64ToBlob } from './files';
+import { formatFileSize } from './files';
 
 describe('formatFileSize', () => {
   it('formats file size from number of bytes provided', () => {
