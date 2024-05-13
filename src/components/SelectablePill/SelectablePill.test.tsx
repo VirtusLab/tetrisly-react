@@ -68,7 +68,8 @@ describe('SelectablePill', () => {
             text="Value"
             state={state}
             beforeComponent={{
-              icon: '20-accesibility',
+              type: 'icon',
+              props: { name: '20-accesibility' },
             }}
           />,
         );
@@ -84,7 +85,8 @@ describe('SelectablePill', () => {
             text="Value"
             state={state}
             beforeComponent={{
-              avatar: { appearance: 'magenta', initials: 'M' },
+              type: 'avatar',
+              props: { appearance: 'magenta', initials: 'M' },
             }}
           />,
         );

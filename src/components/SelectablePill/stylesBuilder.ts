@@ -51,8 +51,8 @@ export const stylesBuilder = ({
 
   const hasPrefix = !!prefix;
   const hasBeforeComponent = !!beforeComponent;
-  const hasAvatar = hasBeforeComponent && 'avatar' in beforeComponent;
-  const hasIcon = hasBeforeComponent && 'icon' in beforeComponent;
+  const hasAvatar = hasBeforeComponent && beforeComponent.type === 'avatar';
+  const hasIcon = hasBeforeComponent && beforeComponent.type === 'icon';
 
   const withAvatarStyles = hasAvatar ? container.hasAvatar : {};
   const withPrefixStyles = hasPrefix ? container.hasPrefix : {};

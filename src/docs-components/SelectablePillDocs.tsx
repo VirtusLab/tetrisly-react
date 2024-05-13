@@ -16,23 +16,28 @@ const selected = [false, true] as const;
 const props = [
   { id: '0', text: 'Value' } as const,
   { id: '1', text: 'Value', prefix: 'Prefix' } as const,
-  { id: '2', text: 'Value', beforeComponent: { icon: '20-tree' } } as const,
+  {
+    id: '2',
+    text: 'Value',
+    beforeComponent: { type: 'icon', props: { name: '20-tree' } },
+  } as const,
   {
     id: '3',
     text: 'Value',
     prefix: 'Prefix',
-    beforeComponent: { icon: '20-tree' },
+    beforeComponent: { type: 'icon', props: { name: '20-tree' } },
   } as const,
   {
     id: '4',
     text: 'Value',
-    beforeComponent: { avatar: { initials: 'M' } },
+    beforeComponent: { type: 'avatar', props: { initials: 'M' } },
   } as const,
   {
     id: '5',
     text: 'Value',
     beforeComponent: {
-      avatar: { image: 'https://thispersondoesnotexist.com/' },
+      type: 'avatar',
+      props: { image: 'https://thispersondoesnotexist.com/' },
     },
   } as const,
   {
@@ -40,7 +45,8 @@ const props = [
     text: 'Value',
     prefix: 'Prefix',
     beforeComponent: {
-      avatar: { image: 'https://thispersondoesnotexist.com/' },
+      type: 'avatar',
+      props: { image: 'https://thispersondoesnotexist.com/' },
     },
   } as const,
 ] as SelectablePillProps[];
@@ -98,7 +104,7 @@ export const SelectablePillDocs: FC = () => (
                 >
                   {props.map(({ id, ...prop }) => (
                     <SelectablePill
-                      key={id}
+                      key={`${states}-${appearance}-${select}-${id}`}
                       state={state}
                       isInverted={appearance}
                       isSelected={select}

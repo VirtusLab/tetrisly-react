@@ -34,22 +34,25 @@ export const SelectablePill: FC<SelectablePillProps> = ({
   const avatarProps = useMemo(
     () =>
       beforeComponent &&
-      'avatar' in beforeComponent &&
-      ('image' in beforeComponent.avatar
+      beforeComponent.type === 'avatar' &&
+      ('image' in beforeComponent.props
         ? {
-            img: { src: beforeComponent.avatar.image, alt: 'avatar' },
+            img: { src: beforeComponent.props.image, alt: 'avatar' },
             appearance: 'image' as const,
           }
         : {
-            initials: beforeComponent.avatar.initials,
-            appearance: beforeComponent.avatar.appearance,
+            initials: beforeComponent.props.initials,
+            appearance: beforeComponent.props.appearance,
           }),
 
     [beforeComponent],
   );
 
   const iconProps = useMemo(
-    () => beforeComponent && 'icon' in beforeComponent && beforeComponent.icon,
+    () =>
+      beforeComponent &&
+      beforeComponent.type === 'icon' &&
+      beforeComponent.props,
     [beforeComponent],
   );
 
@@ -63,7 +66,7 @@ export const SelectablePill: FC<SelectablePillProps> = ({
     >
       {!!iconProps && (
         <tet.span {...styles.icon}>
-          <Icon data-testid="selectable-pill-icon" name={iconProps} />
+          <Icon data-testid="selectable-pill-icon" name={iconProps.name} />
         </tet.span>
       )}
       <tet.div {...styles.contentContainer}>

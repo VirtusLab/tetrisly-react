@@ -58,28 +58,28 @@ export const Inverted: Story = {
 
 export const WithIcon: Story = {
   args: {
-    beforeComponent: { icon: '20-tree' },
+    beforeComponent: { type: 'icon', props: { name: '20-tree' } },
   },
 };
 
 export const DisabledWithIcon: Story = {
   args: {
     state: 'disabled',
-    beforeComponent: { icon: '20-tree' },
+    beforeComponent: { type: 'icon', props: { name: '20-tree' } },
   },
 };
 
 export const WithIconAndPrefix: Story = {
   args: {
     prefix: 'Prefix',
-    beforeComponent: { icon: '20-tree' },
+    beforeComponent: { type: 'icon', props: { name: '20-tree' } },
   },
 };
 
 export const SelectedWithIcon: Story = {
   args: {
     isSelected: true,
-    beforeComponent: { icon: '20-tree' },
+    beforeComponent: { type: 'icon', props: { name: '20-tree' } },
   },
 };
 
@@ -93,7 +93,8 @@ export const InvertedWithPrefix: Story = {
 export const WithAvatar: Story = {
   args: {
     beforeComponent: {
-      avatar: { image: 'https://thispersondoesnotexist.com/' },
+      type: 'avatar',
+      props: { image: 'https://thispersondoesnotexist.com/' },
     },
   },
 };
@@ -102,7 +103,8 @@ export const WithAvatarInitialsAndPrefix: Story = {
   args: {
     prefix: 'Prefix',
     beforeComponent: {
-      avatar: { appearance: 'blue', initials: 'M' },
+      type: 'avatar',
+      props: { appearance: 'blue', initials: 'M' },
     },
   },
 };
