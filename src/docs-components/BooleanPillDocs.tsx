@@ -11,13 +11,15 @@ const appearances = [false, true] as const;
 const selected = [false, true] as const;
 
 const props = [
-  { text: 'Value', onChange: () => {} } as const,
+  { id: '0', text: 'Value', onChange: () => {} } as const,
   {
+    id: '1',
     text: 'Value',
     onChange: () => {},
     avatar: { initials: 'M' },
   } as const,
   {
+    id: '2',
     text: 'Value',
     onChange: () => {},
     avatar: { image: 'https://thispersondoesnotexist.com/' },
@@ -74,11 +76,12 @@ export const BooleanPillDocs: FC = () => (
                   gap="$dimension-300"
                   py="$dimension-500"
                 >
-                  {props.map((prop) => (
+                  {props.map(({ id, ...prop }) => (
                     <BooleanPill
                       state={state}
                       isInverted={appearance}
                       isSelected={select}
+                      key={id}
                       {...prop}
                     />
                   ))}
