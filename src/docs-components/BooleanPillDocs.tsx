@@ -15,13 +15,11 @@ const props = [
   {
     id: '1',
     text: 'Value',
-    onChange: () => {},
     avatar: { initials: 'M' },
   } as const,
   {
     id: '2',
     text: 'Value',
-    onChange: () => {},
     avatar: { image: 'https://thispersondoesnotexist.com/' },
   } as const,
 ] as BooleanPillProps[];
