@@ -38,7 +38,7 @@ export const BooleanPillDocs: FC = () => (
         </SectionHeader>
         {appearances.map((appearance) => (
           <tet.div
-            key={String(appearance)}
+            key={`${state}-${appearance}`}
             display="flex"
             flexDirection="column"
             bg={appearance ? '$color-background-neutral-subtle' : undefined}
@@ -54,7 +54,11 @@ export const BooleanPillDocs: FC = () => (
             </SectionHeader>
 
             {selected.map((select) => (
-              <tet.div px="$dimension-1000" pb="$dimension-500">
+              <tet.div
+                px="$dimension-1000"
+                pb="$dimension-500"
+                key={`${states}-${appearance}-${select}`}
+              >
                 <SectionHeader variant="H3" as="h4" pt="$dimension-500">
                   Selected: {String(select)}
                 </SectionHeader>
