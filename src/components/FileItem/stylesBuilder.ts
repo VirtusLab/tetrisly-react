@@ -12,22 +12,14 @@ type FileItemStylesBuilder = {
 };
 
 export const stylesBuilder = (props: FileItemProps): FileItemStylesBuilder => {
-  const {
-    state,
-    inverted,
-    thumbnail,
-    invertedAlert,
-    compressed,
-    extended,
-    ...container
-  } = mergeConfigWithCustom({
-    defaultConfig,
-    custom: props.custom,
-  });
+  const { state, inverted, invertedAlert, compressed, extended, ...container } =
+    mergeConfigWithCustom({
+      defaultConfig,
+      custom: props.custom,
+    });
 
   const withStateStyles = state[props.state ?? fallback.state];
-  const withInvertedStyles = props.isInverted ? inverted.yes : inverted.no;
-  const withThumbnailStyles = thumbnail[props.thumbnail ?? fallback.thumbnail];
+  const withInvertedStyles = props.isInverted ? inverted : {};
   const withInvertedAlertStyles =
     props.state === 'alert' && props.isInverted ? invertedAlert : {};
 
@@ -36,7 +28,6 @@ export const stylesBuilder = (props: FileItemProps): FileItemStylesBuilder => {
       ...container,
       ...withStateStyles,
       ...withInvertedStyles,
-      ...withThumbnailStyles,
       ...withInvertedAlertStyles,
     },
     compressed,
