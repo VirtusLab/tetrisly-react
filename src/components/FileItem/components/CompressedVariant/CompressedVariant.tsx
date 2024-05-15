@@ -56,6 +56,7 @@ export const CompressedVariant: FC<CompressedVariantProps> = ({
           {state === 'replaceable' && onReplaceClick && (
             <tet.div {...styles.replaceableContent}>
               <Button
+                custom={{ bare: { padding: 0 } }}
                 data-testid="replaceable-button"
                 variant="bare"
                 appearance="primary"
@@ -68,6 +69,7 @@ export const CompressedVariant: FC<CompressedVariantProps> = ({
           {state === 'alert' && onRetryClick && (
             <tet.div {...styles.alertContent}>
               <Button
+                custom={{ bare: { padding: 0 } }}
                 data-testid="retry-button"
                 intent="destructive"
                 variant="bare"
