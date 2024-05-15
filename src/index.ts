@@ -1,6 +1,7 @@
 export * from './components/AlertBanner';
 export * from './components/Avatar';
 export * from './components/Badge';
+export * from './components/BooleanPill';
 export * from './components/Button';
 export * from './components/Checkbox';
 export * from './components/CheckboxGroup';
@@ -22,6 +23,7 @@ export * from './components/RadioButton';
 export * from './components/RadioButtonGroup';
 export * from './components/SearchInput';
 export * from './components/Select';
+export * from './components/SelectablePill';
 export * from './components/SocialButton';
 export * from './components/Status';
 export * from './components/StatusDot';
