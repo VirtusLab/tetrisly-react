@@ -22,6 +22,7 @@ export * from './components/RadioButton';
 export * from './components/RadioButtonGroup';
 export * from './components/SearchInput';
 export * from './components/Select';
+export * from './components/SelectablePill';
 export * from './components/SocialButton';
 export * from './components/Status';
 export * from './components/StatusDot';
