@@ -1,18 +1,8 @@
-import { MouseEvent } from 'react';
-
 import { ExtendedVariantConfig } from './ExtendedVariant.styles';
-import { FileItemState, FileItemThumbnail } from '../../types';
+import { FileItemThumbnail, FileItemCommonProps } from '../../types';
 
-export type ExtendedVariantProps = {
+export type ExtendedVariantProps = FileItemCommonProps & {
   custom?: ExtendedVariantConfig;
-  state: FileItemState;
-  file: File;
-  isInverted?: boolean;
-  thumbnail: FileItemThumbnail;
-  uploadedPercentage?: number;
+  thumbnail?: FileItemThumbnail;
   timeLeftText?: string;
-  alertText?: string;
-  onReplaceClick?: (e?: MouseEvent) => void;
-  onRetryClick?: (e?: MouseEvent) => void;
-  onCloseClick?: (e?: MouseEvent) => void;
 };

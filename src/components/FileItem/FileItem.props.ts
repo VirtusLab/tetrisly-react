@@ -1,21 +1,11 @@
-import { MouseEvent } from 'react';
-
 import { FileItemConfig } from './FileItem.styles';
-import { FileItemState, FileItemThumbnail } from './types';
+import { FileItemState, FileItemThumbnail, FileItemCommonProps } from './types';
 
-export type FileItemProps = {
+export type FileItemProps = FileItemCommonProps & {
   custom?: FileItemConfig;
-  file: File;
-  state?: FileItemState;
-  isInverted?: boolean;
   isExtended?: boolean;
   thumbnail?: FileItemThumbnail;
-  uploadedPercentage?: number;
   timeLeftText?: string;
-  alertText?: string;
-  onReplaceClick?: (e?: MouseEvent) => void;
-  onRetryClick?: (e?: MouseEvent) => void;
-  onCloseClick?: (e?: MouseEvent) => void;
 };
 
 export type Fallback = {
