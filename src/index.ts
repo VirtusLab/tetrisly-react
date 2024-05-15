@@ -1,6 +1,7 @@
 export * from './components/AlertBanner';
 export * from './components/Avatar';
 export * from './components/Badge';
+export * from './components/BooleanPill';
 export * from './components/Button';
 export * from './components/Checkbox';
 export * from './components/CheckboxGroup';
