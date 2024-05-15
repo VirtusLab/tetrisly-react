@@ -44,101 +44,63 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    file: mockTextFile(),
-    state: 'uploaded',
-    isExtended: false,
-    thumbnail: 'none',
-    onCloseClick: action('onCloseClick'),
-  },
+  args: {},
 };
 
 export const Uploading: Story = {
   args: {
-    file: mockTextFile(),
     state: 'uploading',
-    uploadedPercentage: 25,
-    onCloseClick: action('onCloseClick'),
   },
 };
 
 export const Uploaded: Story = {
-  args: {
-    file: mockTextFile(),
-    state: 'uploaded',
-    onCloseClick: action('onCloseClick'),
-  },
+  args: {},
 };
 
 export const Replaceable: Story = {
   args: {
-    file: mockTextFile(),
     state: 'replaceable',
-    onReplaceClick: action('onReplaceClick'),
-    onCloseClick: action('onCloseClick'),
   },
 };
 
 export const Alert: Story = {
   args: {
-    file: mockTextFile(),
     state: 'alert',
-    alertText: 'Short alert text',
-    onRetryClick: action('onRetryClick'),
-    onCloseClick: action('onCloseClick'),
   },
 };
 
 export const ExtendedUploading: Story = {
   args: {
-    file: mockTextFile(),
     state: 'uploading',
     isExtended: true,
-    uploadedPercentage: 25,
-    timeLeftText: '7 seconds left',
-    onCloseClick: action('onCloseClick'),
   },
 };
 
 export const ExtendedUploaded: Story = {
   args: {
-    file: mockTextFile(),
-    state: 'uploaded',
     isExtended: true,
-    onCloseClick: action('onCloseClick'),
   },
 };
 
 export const ExtendedReplaceable: Story = {
   args: {
-    file: mockTextFile(),
     state: 'replaceable',
     isExtended: true,
-    onReplaceClick: action('onReplaceClick'),
-    onCloseClick: action('onCloseClick'),
   },
 };
 
 export const ExtendedAlert: Story = {
   args: {
-    file: mockTextFile(),
     state: 'alert',
     isExtended: true,
-    alertText: 'Short alert text',
-    onRetryClick: action('onRetryClick'),
-    onCloseClick: action('onCloseClick'),
   },
 };
 
 export const ExtendedUploadingFile: Story = {
   args: {
-    file: mockTextFile(),
     state: 'uploading',
     isExtended: true,
     thumbnail: 'file',
-    uploadedPercentage: 25,
-    timeLeftText: '7 seconds left',
-    onCloseClick: action('onCloseClick'),
   },
 };
 
@@ -148,10 +110,6 @@ export const ExtendedAlertImage: Story = {
     state: 'alert',
     isExtended: true,
     thumbnail: 'photo',
-    alertText: 'Short alert text',
-    onReplaceClick: action('onReplaceClick'),
-    onRetryClick: action('onRetryClick'),
-    onCloseClick: action('onCloseClick'),
   },
 };
 
@@ -162,9 +120,5 @@ export const ExtendedInvertedAlertImage: Story = {
     isExtended: true,
     isInverted: true,
     thumbnail: 'photo',
-    alertText: 'Short alert text',
-    onReplaceClick: action('onReplaceClick'),
-    onRetryClick: action('onRetryClick'),
-    onCloseClick: action('onCloseClick'),
   },
 };
