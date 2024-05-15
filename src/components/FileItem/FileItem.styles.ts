@@ -36,7 +36,7 @@ export const defaultConfig = {
   },
   inverted: {
     backgroundColor: '$color-interaction-background-formField',
-    borderWidth: '$border-width-100',
+    borderWidth: '$border-width-small',
     borderStyle: '$border-style-solid',
     borderColor: '$color-interaction-border-neutral-normal',
   },
