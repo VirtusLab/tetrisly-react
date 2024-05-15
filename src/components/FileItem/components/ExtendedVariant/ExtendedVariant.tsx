@@ -101,7 +101,11 @@ export const ExtendedVariant: FC<ExtendedVariantProps> = ({
                   data-testid="uploading-time-left"
                   {...styles.timeLeft}
                 >
-                  {timeLeftText && ` • ${timeLeftText}`}
+                  {timeLeftText && (
+                    <>
+                      <tet.div {...styles.dot} /> {timeLeftText}
+                    </>
+                  )}
                 </tet.span>
               )}
             </tet.div>
@@ -127,7 +131,7 @@ export const ExtendedVariant: FC<ExtendedVariantProps> = ({
 
               <tet.div data-testid="alert-file-size" {...styles.fileSizeAlert}>
                 {' '}
-                • {formattedFileSize}
+                <tet.div {...styles.dot} /> {formattedFileSize}
               </tet.div>
             </tet.div>
           )}

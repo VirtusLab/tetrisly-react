@@ -15,6 +15,7 @@ type ExtendedVariantStylesBuilder = {
   fileName: BaseProps;
   fileSize: BaseProps;
   timeLeft: BaseProps;
+  dot: BaseProps;
   uploadedPercentage: BaseProps;
   uploadingContent: BaseProps;
   replaceableContent: BaseProps;
@@ -52,6 +53,7 @@ export const stylesBuilder = (
     fileName: innerElements.fileName,
     fileSize: innerElements.fileSize,
     timeLeft: innerElements.timeLeft,
+    dot: innerElements.dot,
     uploadedPercentage: innerElements.uploadedPercentage,
     uploadingContent: innerElements.uploadingContent,
     replaceableContent: innerElements.replaceableContent,

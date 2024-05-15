@@ -13,6 +13,7 @@ export type ExtendedVariantConfig = BaseProps & {
     fileName?: BaseProps;
     fileSize?: BaseProps;
     timeLeft?: BaseProps;
+    dot?: BaseProps;
     uploadedPercentage?: BaseProps;
     uploadingContent?: BaseProps;
     replaceableContent?: BaseProps;
@@ -67,6 +68,14 @@ export const defaultConfig = {
     timeLeft: {
       text: '$typo-medium-175',
       color: '$color-content-secondary',
+    },
+    dot: {
+      display: 'inline-block',
+      mx: '$space-component-gap-small',
+      w: '2px',
+      h: '2px',
+      backgroundColor: '$color-content-secondary',
+      verticalAlign: 'middle',
     },
     uploadedPercentage: {
       text: '$typo-medium-175',
