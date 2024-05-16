@@ -89,7 +89,7 @@ export const ExtendedVariant: FC<ExtendedVariantProps> = ({
           </tet.div>
 
           <tet.div {...styles.bottomDetails}>
-            <tet.div>
+            <tet.div {...styles.fileDescription}>
               {state !== 'alert' && (
                 <tet.span data-testid="file-size" {...styles.fileSize}>
                   {formattedFileSize}
@@ -97,16 +97,15 @@ export const ExtendedVariant: FC<ExtendedVariantProps> = ({
               )}
 
               {state === 'uploading' && timeLeftText !== undefined && (
-                <tet.span
-                  data-testid="uploading-time-left"
-                  {...styles.timeLeft}
-                >
-                  {timeLeftText && (
-                    <>
-                      <tet.div {...styles.dot} /> {timeLeftText}
-                    </>
-                  )}
-                </tet.span>
+                <>
+                  <tet.span {...styles.dot} />
+                  <tet.span
+                    data-testid="uploading-time-left"
+                    {...styles.timeLeft}
+                  >
+                    {timeLeftText}
+                  </tet.span>
+                </>
               )}
             </tet.div>
 
@@ -124,15 +123,17 @@ export const ExtendedVariant: FC<ExtendedVariantProps> = ({
             <tet.div data-testid="alert-info" {...styles.alert}>
               {alertText !== undefined && (
                 <>
-                  <Icon name="16-alert-full" {...styles.alertIcon} />{' '}
-                  {alertText}
+                  <tet.div {...styles.alertText}>
+                    <Icon name="16-alert-full" {...styles.alertIcon} />
+                    <tet.span>{alertText}</tet.span>
+                  </tet.div>
+                  <tet.span {...styles.dot} />
                 </>
               )}
 
-              <tet.div data-testid="alert-file-size" {...styles.fileSizeAlert}>
-                {' '}
-                <tet.div {...styles.dot} /> {formattedFileSize}
-              </tet.div>
+              <tet.span data-testid="alert-file-size" {...styles.fileSizeAlert}>
+                {formattedFileSize}
+              </tet.span>
             </tet.div>
           )}
         </tet.div>

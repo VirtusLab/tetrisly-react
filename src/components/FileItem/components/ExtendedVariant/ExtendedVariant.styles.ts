@@ -10,6 +10,7 @@ export type ExtendedVariantConfig = BaseProps & {
   innerElements?: {
     fileThumbnail?: BaseProps;
     photoThumbnail?: BaseProps;
+    fileDescription?: BaseProps;
     fileName?: BaseProps;
     fileSize?: BaseProps;
     timeLeft?: BaseProps;
@@ -20,6 +21,7 @@ export type ExtendedVariantConfig = BaseProps & {
     alertContent?: BaseProps;
     closeIconButton?: BaseProps;
     alert?: BaseProps;
+    alertText?: BaseProps;
     alertIcon?: BaseProps;
     fileSizeAlert?: BaseProps;
     progressBar?: ProgressBarConfig;
@@ -57,6 +59,11 @@ export const defaultConfig = {
     photoThumbnail: {
       paddingTop: '$space-component-padding-small',
     },
+    fileDescription: {
+      display: 'flex',
+      gap: '$space-component-gap-small',
+      alignItems: 'center',
+    },
     fileName: {
       text: '$typo-medium-175',
       color: '$color-content-primary',
@@ -70,12 +77,9 @@ export const defaultConfig = {
       color: '$color-content-secondary',
     },
     dot: {
-      display: 'inline-block',
-      mx: '$space-component-gap-small',
       w: '2px',
       h: '2px',
       backgroundColor: '$color-content-secondary',
-      verticalAlign: 'middle',
     },
     uploadedPercentage: {
       text: '$typo-medium-175',
@@ -99,8 +103,12 @@ export const defaultConfig = {
     },
     alert: {
       display: 'flex',
-      gap: '$space-component-gap-xSmall',
+      gap: '$space-component-gap-small',
       alignItems: 'center',
+    },
+    alertText: {
+      display: 'flex',
+      gap: '$space-component-gap-xSmall',
       text: '$typo-body-small',
       color: '$color-content-negative-secondary',
     },

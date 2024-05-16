@@ -12,6 +12,7 @@ type ExtendedVariantStylesBuilder = {
   bottomDetails: BaseProps;
   fileThumbnail: BaseProps;
   photoThumbnail: BaseProps;
+  fileDescription: BaseProps;
   fileName: BaseProps;
   fileSize: BaseProps;
   timeLeft: BaseProps;
@@ -22,6 +23,7 @@ type ExtendedVariantStylesBuilder = {
   alertContent: BaseProps;
   closeIconButton: BaseProps;
   alert: BaseProps;
+  alertText: BaseProps;
   alertIcon: BaseProps;
   fileSizeAlert: BaseProps;
   progressBar: ProgressBarConfig;
@@ -50,6 +52,7 @@ export const stylesBuilder = (
     bottomDetails,
     fileThumbnail: innerElements.fileThumbnail,
     photoThumbnail: innerElements.photoThumbnail,
+    fileDescription: innerElements.fileDescription,
     fileName: innerElements.fileName,
     fileSize: innerElements.fileSize,
     timeLeft: innerElements.timeLeft,
@@ -60,6 +63,7 @@ export const stylesBuilder = (
     alertContent: innerElements.alertContent,
     closeIconButton: innerElements.closeIconButton,
     alert: innerElements.alert,
+    alertText: innerElements.alertText,
     alertIcon: innerElements.alertIcon,
     fileSizeAlert: innerElements.fileSizeAlert,
     progressBar: innerElements.progressBar,
