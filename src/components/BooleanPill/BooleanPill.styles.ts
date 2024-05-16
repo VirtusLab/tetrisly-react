@@ -14,6 +14,7 @@ export const defaultConfig = {
   display: 'inline-flex',
   justifyContent: 'center',
   alignItems: 'center',
+  text: '$typo-body-medium',
   textAlign: 'center',
   whiteSpace: 'nowrap',
   h: '$size-small',
