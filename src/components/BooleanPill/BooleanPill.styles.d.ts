@@ -9,6 +9,7 @@ export declare const defaultConfig: {
     readonly display: "inline-flex";
     readonly justifyContent: "center";
     readonly alignItems: "center";
+    readonly text: "$typo-body-medium";
     readonly textAlign: "center";
     readonly whiteSpace: "nowrap";
     readonly h: "$size-small";
@@ -81,6 +82,7 @@ export declare const booleanPillStyles: {
         readonly display: "inline-flex";
         readonly justifyContent: "center";
         readonly alignItems: "center";
+        readonly text: "$typo-body-medium";
         readonly textAlign: "center";
         readonly whiteSpace: "nowrap";
         readonly h: "$size-small";
