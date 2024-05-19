@@ -54,7 +54,7 @@ export const defaultConfig = {
         alert: '$border-width-focus',
       },
       transition: 'true',
-      transitionDuration: '50',
+      transitionDuration: '50', // TODO: unify transitionDuration
       cursor: 'text',
       overflow: 'hidden',
       isValidationError: {
