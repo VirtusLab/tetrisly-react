@@ -12,8 +12,8 @@ type TooltipStyleBuilder = {
 };
 
 export const stylesBuilder = (
-  arrowPosition: BaseProps,
   tooltipPosition: TooltipPositionType,
+  arrowPosition: BaseProps,
   custom?: TooltipProps['custom'],
 ): TooltipStyleBuilder => {
   const { innerElements, ...container } = mergeConfigWithCustom({

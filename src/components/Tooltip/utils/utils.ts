@@ -28,17 +28,16 @@ export const getIconName = (position: TooltipPositionType) => {
 export const getArrowPosition = (
   arrowheadPosition: ArrowheadPositionType,
   tooltipPosition: TooltipPositionType,
-  containerSize: HTMLElementDimensions,
   arrowSize: HTMLElementDimensions,
 ) => {
-  const arrowMiddleLeftPosition = (containerSize.width - arrowSize.width) / 2;
-  const sideArrowTopPosition = (containerSize.height - arrowSize.height) / 2;
+  const arrowMiddleLeftPosition = `calc(50% - ${arrowSize.width / 2}px)`;
+  const sideArrowTopPosition = `calc(50% - ${arrowSize.height / 2}px)`;
 
   switch (tooltipPosition) {
     case 'bottom':
       switch (arrowheadPosition) {
         case 'start':
-          return { top: -11, left: 4 } as BaseProps;
+          return { top: -12, left: 4 } as BaseProps;
         case 'middle':
           return { top: -12, left: arrowMiddleLeftPosition } as BaseProps;
         case 'end':

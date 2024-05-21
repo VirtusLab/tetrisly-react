@@ -14,12 +14,9 @@ export const defaultConfig = {
   innerElements: {
     arrow: {
       position: 'absolute',
-      display: 'flex',
-      alignSelf: 'center',
       color: '#272e35', // there is no such color in ITheme
     },
     content: {
-      h: '28px',
       background: '#272e35', // there is no such color in ITheme
       color: '$color-content-primary-inverted',
       padding:

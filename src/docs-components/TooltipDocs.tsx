@@ -13,7 +13,7 @@ const labels = [
   'Arrowhead Position: End',
 ] as const;
 const arrowheadPositions = ['start', 'middle', 'end'] as const;
-const tooltipPositions = ['top', 'bottom', 'left', 'right'] as const;
+const tooltipPositions = ['bottom', 'top', 'right', 'left'] as const;
 
 export const TooltipDocs: FC = () => (
   <>

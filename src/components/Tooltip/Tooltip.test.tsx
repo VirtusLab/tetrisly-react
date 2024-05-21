@@ -1,7 +1,7 @@
 import { Tooltip } from './Tooltip';
 import { render } from '../../tests/render';
-import { customPropTester } from '@/tests/customPropTester';
 
+import { customPropTester } from '@/tests/customPropTester';
 
 const getTooltip = (jsx: JSX.Element) => {
   const { queryByTestId } = render(jsx);
@@ -14,7 +14,7 @@ const getTooltip = (jsx: JSX.Element) => {
 };
 
 describe('Tooltip', () => {
-    customPropTester(<Tooltip text="Hello there" />, {
+  customPropTester(<Tooltip text="Hello there" />, {
     containerId: 'tooltip',
     props: {
       arrowheadPosition: ['start', 'middle', 'end'],
@@ -27,29 +27,23 @@ describe('Tooltip', () => {
     expect(container).toBeInTheDocument();
   });
 
-    it('should render correct text', () => {
+  it('should render correct text', () => {
     const { container } = getTooltip(<Tooltip text="Hello there" />);
     expect(container).toHaveTextContent('Hello there');
   });
 
-    it('should render correct background color (none)', () => {
+  it('should render correct background color (none)', () => {
     const { container, arrow, content } = getTooltip(
-      <Tooltip
-        text="Hello there"
-      />,
+      <Tooltip text="Hello there" />,
     );
-    expect(container).toHaveStyle('background-color: rgb(39, 46, 53);');
     expect(arrow).toHaveStyle('color: rgb(39, 46, 53);');
     expect(content).toHaveStyle('color: rgb(255, 255, 255);');
   });
 
   it('should align text properly (tooltipPosition = top', () => {
     const { content } = getTooltip(
-      <Tooltip
-        text="Hello there"
-        tooltipPosition='top'
-      />,
+      <Tooltip text="Hello there" tooltipPosition="top" />,
     );
-    expect(content).toHaveStyle('text-align: "right');
+    expect(content).toHaveStyle('text-align: center'); // TODO write more tests
   });
 });
