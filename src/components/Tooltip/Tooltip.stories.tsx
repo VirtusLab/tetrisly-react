@@ -17,13 +17,13 @@ const meta = {
   argTypes: {
     arrowheadPosition: {
       options: ['start', 'middle', 'end'],
-      defaultValue: 'start', // ?
-      control: { type: 'radio' }, // change
+      defaultValue: 'medium',
+      control: { type: 'radio' },
     },
     tooltipPosition: {
       options: ['top', 'bottom', 'left', 'right'],
-      defaultValue: 'top', // ?
-      control: { type: 'radio' }, // change
+      defaultValue: 'top',
+      control: { type: 'radio' },
     },
   },
   parameters: {
@@ -45,19 +45,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
-
-// export const DefaultWithIcon: Story = {
-//   args: {
-//     hasBeforeIcon: true,
-//   },
-// };
-
-// export const DefaultWithCounter: Story = {
-//   args: {
-//     counter: {
-//       current: 0,
-//       max: 0,
-//     },
-//   },
-// };
+export const Default: Story = {
+  args: {
+    text: 'Tooltip placeholder',
+    arrowheadPosition: 'middle',
+    tooltipPosition: 'top',
+  },
+};

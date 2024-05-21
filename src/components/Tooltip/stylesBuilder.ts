@@ -1,9 +1,6 @@
-import {
-  ArrowheadPositionType,
-  TooltipPositionType,
-  TooltipProps,
-} from './Tooltip.props';
+import type { TooltipPositionType, TooltipProps } from './Tooltip.props';
 import { defaultConfig } from './Tooltip.styles';
+import { getTextAlign } from './utils';
 
 import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
@@ -15,23 +12,23 @@ type TooltipStyleBuilder = {
 };
 
 export const stylesBuilder = (
-  arrowheadPosition?: ArrowheadPositionType,
-  tooltipPosition?: TooltipPositionType,
+  arrowPosition: BaseProps,
+  tooltipPosition: TooltipPositionType,
   custom?: TooltipProps['custom'],
 ): TooltipStyleBuilder => {
   const { innerElements, ...container } = mergeConfigWithCustom({
     defaultConfig,
     custom,
   });
+  const textAlign = getTextAlign(tooltipPosition);
 
   const { arrow, content } = innerElements;
-
-  // const { ...arrowBasicStyles} = arrow
-  // const arrowStyles = arrowheadPosition && tooltipPosition && arrow.tooltipPosition[tooltipPosition].arrowheadPosition[arrowheadPosition];
+  const arrowStyles: BaseProps = { ...arrow, ...arrowPosition };
+  const contentStyles: BaseProps = { ...content, textAlign };
 
   return {
     container,
-    arrow,
-    content,
+    arrow: arrowStyles,
+    content: contentStyles,
   };
 };
