@@ -1,8 +1,6 @@
-// import { HelperText } from './HelperText';
 import { Tooltip } from './Tooltip';
 import { render } from '../../tests/render';
 
-// import { customPropTester } from '@/tests/customPropTester';
 
 const getTooltip = (jsx: JSX.Element) => {
   const { queryByTestId } = render(jsx);
