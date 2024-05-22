@@ -28,6 +28,7 @@ export * from './components/SocialButton';
 export * from './components/Status';
 export * from './components/StatusDot';
 export * from './components/Tag';
+export * from './components/TagInput';
 export * from './components/TextInput';
 export * from './components/Toast';
 export * from './tetrisly';
