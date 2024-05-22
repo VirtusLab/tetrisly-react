@@ -60,3 +60,4 @@ export declare const GhostDisabled: Story;
 export declare const Bare: Story;
 export declare const BareLoading: Story;
 export declare const BareDisabled: Story;
+export declare const WithFlexContainer: Story;
