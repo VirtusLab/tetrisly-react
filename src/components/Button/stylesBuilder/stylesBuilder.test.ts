@@ -54,7 +54,7 @@ describe('stylesBuilder', () => {
         textAlign: 'center',
         transition: true,
         transitionDuration: 200,
-        w: 'fit-content',
+        w: 'auto',
         whiteSpace: 'nowrap',
       },
       loader: {
