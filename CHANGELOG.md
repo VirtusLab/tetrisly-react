@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.7.0...v1.8.0) (2024-05-23)
+
+
+### Features
+
+* TET-660 fix width button issue ([#150](https://github.com/VirtusLab/tetrisly-react/issues/150)) ([dc44083](https://github.com/VirtusLab/tetrisly-react/commit/dc440831d33c51e0edea6fcb3acf7ba884f9382c))
+* TET-866 add tag input component ([#140](https://github.com/VirtusLab/tetrisly-react/issues/140)) ([2070c34](https://github.com/VirtusLab/tetrisly-react/commit/2070c34b3477c3c1ba53fd9041d22ce7297a4450))
+
 ## [1.7.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.6.1...v1.7.0) (2024-05-17)
 
 
