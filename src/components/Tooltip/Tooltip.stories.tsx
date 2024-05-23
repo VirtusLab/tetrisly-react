@@ -17,7 +17,7 @@ const meta = {
   argTypes: {
     arrowheadPosition: {
       options: ['start', 'middle', 'end'],
-      defaultValue: 'medium',
+      defaultValue: 'start',
       control: { type: 'radio' },
     },
     tooltipPosition: {

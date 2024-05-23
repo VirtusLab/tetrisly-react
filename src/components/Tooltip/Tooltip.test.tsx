@@ -33,10 +33,7 @@ describe('Tooltip', () => {
   });
 
   it('should render correct background color (none)', () => {
-    const { container, arrow, content } = getTooltip(
-      <Tooltip text="Hello there" />,
-    );
-    expect(arrow).toHaveStyle('color: rgb(39, 46, 53);');
+    const { content } = getTooltip(<Tooltip text="Hello there" />);
     expect(content).toHaveStyle('color: rgb(255, 255, 255);');
   });
 

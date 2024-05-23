@@ -1,47 +1,51 @@
-import { Icon } from '@virtuslab/tetrisly-icons';
-import { FC, useMemo } from 'react';
+import { FC, PropsWithChildren, useMemo } from 'react';
 
 import { stylesBuilder } from './stylesBuilder';
 import { TooltipProps } from './Tooltip.props';
-import { getArrowPosition, getIconName, HTMLElementDimensions } from './utils';
+import { TooltipElement } from './TooltipElement';
 import { tet } from '../../tetrisly';
 
-export const Tooltip: FC<TooltipProps> = ({
+export const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
+  children,
   arrowheadPosition = 'middle',
   tooltipPosition = 'top',
   text,
   custom,
   ...restProps
 }) => {
-  const iconName = getIconName(tooltipPosition);
-  const arrowSize: HTMLElementDimensions = {
-    height: 22,
-    width: 24,
-  };
-
-  const arrowPos = getArrowPosition(
-    arrowheadPosition,
-    tooltipPosition,
-    arrowSize,
-  );
-
   const styles = useMemo(
-    () => stylesBuilder(tooltipPosition, arrowPos, custom),
-    [tooltipPosition, custom],
+    () => stylesBuilder(tooltipPosition, arrowheadPosition, custom),
+    [arrowheadPosition, tooltipPosition, custom],
   );
+
+  const renderTooltipBeforeChildren =
+    tooltipPosition === 'left' || tooltipPosition === 'top';
+  const renderTooltipAfterChildren =
+    tooltipPosition === 'right' || tooltipPosition === 'bottom';
 
   return (
-    <tet.div {...styles.container} data-testid="tooltip" {...restProps}>
-      <tet.div {...styles.content} data-testid="tooltip-content">
-        <tet.div {...styles.arrow} data-testid="tooltip-arrow">
-          <Icon
-            name={iconName}
-            height={arrowSize.height}
-            width={arrowSize.width}
-          />
-        </tet.div>
-        {text}
-      </tet.div>
+    <tet.div {...styles.wrapper} data-testid="tooltip-wrapper">
+      {renderTooltipBeforeChildren && (
+        <TooltipElement
+          text={text}
+          arrowheadPosition={arrowheadPosition}
+          tooltipPosition={tooltipPosition}
+          custom={custom}
+          {...restProps}
+        />
+      )}
+
+      {children && <tet.div>{children}</tet.div>}
+
+      {renderTooltipAfterChildren && (
+        <TooltipElement
+          text={text}
+          arrowheadPosition={arrowheadPosition}
+          tooltipPosition={tooltipPosition}
+          custom={custom}
+          {...restProps}
+        />
+      )}
     </tet.div>
   );
 };
