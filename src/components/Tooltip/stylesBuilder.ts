@@ -4,7 +4,11 @@ import type {
   TooltipProps,
 } from './Tooltip.props';
 import { defaultConfig } from './Tooltip.styles';
-import { alignItemsBasedOnArrowheadPosition, getTextAlign } from './utils';
+import {
+  alignItemsBasedOnArrowheadPosition,
+  getArrowPosition,
+  getTextAlign,
+} from './utils';
 
 import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types/BaseProps';
@@ -20,6 +24,7 @@ export const stylesBuilder = (
   tooltipPosition: TooltipPositionType,
   arrowheadPosition: ArrowheadPositionType,
   custom?: TooltipProps['custom'],
+  isOpen?: boolean,
 ): TooltipStyleBuilder => {
   const { innerElements, ...container } = mergeConfigWithCustom({
     defaultConfig,
@@ -34,6 +39,13 @@ export const stylesBuilder = (
     tooltipPosition === 'left' || tooltipPosition === 'right'
       ? 'center'
       : alignItemsBasedOnArrowheadPosition(arrowheadPosition);
+  const openContainerStyle: BaseProps = isOpen
+    ? { opacity: 1, zIndex: 100, display: 'inline-flex' }
+    : {};
+  const positionOfContainer: BaseProps = getArrowPosition(
+    arrowheadPosition,
+    tooltipPosition,
+  );
 
   const { arrow, content, wrapper } = innerElements;
   const arrowStyles = arrow[tooltipPosition];
@@ -42,6 +54,8 @@ export const stylesBuilder = (
     ...container,
     flexDirection,
     alignItems,
+    ...openContainerStyle,
+    ...positionOfContainer,
   };
   const wrapperStyles: BaseProps = {
     ...wrapper,

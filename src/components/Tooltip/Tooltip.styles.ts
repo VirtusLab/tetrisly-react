@@ -14,10 +14,14 @@ export type TooltipConfig = {
 } & BaseProps;
 
 export const defaultConfig = {
-  display: 'inline-flex',
+  position: 'absolute',
   alignContent: 'center',
   justifyContent: 'center',
-  maxWidth: '240px',
+  w: 'fit-content',
+  transition: 'opacity',
+  transitionDuration: 200,
+  opacity: 0,
+  zIndex: -1,
   innerElements: {
     arrow: {
       right: {
@@ -40,13 +44,15 @@ export const defaultConfig = {
     content: {
       background: '#272e35', // TODO change when there is this color in ITheme
       color: '$color-content-primary-inverted',
-      padding:
-        '$space-component-padding-xSmall $space-component-padding-small $space-component-padding-xSmall $space-component-padding-small',
+      padding: '$space-component-padding-xSmall $space-component-padding-small',
       borderRadius: '$border-radius-medium',
       text: '$typo-body-small',
+      w: 'max-content',
+      maxWidth: '240px',
     },
     wrapper: {
       display: 'inline-flex',
+      position: 'relative',
     },
   },
 } satisfies TooltipConfig;

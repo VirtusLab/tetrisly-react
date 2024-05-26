@@ -50,5 +50,6 @@ export const Default: Story = {
     text: 'Tooltip placeholder',
     arrowheadPosition: 'middle',
     tooltipPosition: 'top',
+    children: <div />,
   },
 };

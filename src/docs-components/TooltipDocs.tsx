@@ -15,6 +15,8 @@ const labels = [
 const arrowheadPositions = ['start', 'middle', 'end'] as const;
 const tooltipPositions = ['bottom', 'top', 'right', 'left'] as const;
 
+const Rec = () => <tet.div h="20" w="50" bg="lightblue" />;
+
 export const TooltipDocs: FC = () => (
   <>
     {arrowheadPositions.map((arrowheadPosition, i) => (
@@ -58,8 +60,11 @@ export const TooltipDocs: FC = () => (
                   <Tooltip
                     arrowheadPosition={arrowheadPosition}
                     tooltipPosition={tooltipPosition}
-                    text="Tooltip Placeholder"
-                  />
+                    text="Tooltip Placeholder vsd vds v ds vds bv ds vd vd v dd vd sdv  dsv"
+                    // />
+                  >
+                    <Rec />
+                  </Tooltip>
                 </tet.div>
               </tet.div>
             ))}
