@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react';
+import { forwardRef, useMemo } from 'react';
 
 import { Arrow } from './Arrow';
 import { stylesBuilder } from './stylesBuilder';
@@ -10,46 +10,59 @@ import {
 
 import { tet } from '@/tetrisly';
 
-type TooltipElementProps = TooltipProps & { isOpen: boolean };
-
-export const TooltipElement: FC<TooltipElementProps> = ({
-  arrowheadPosition = 'middle',
-  isOpen,
-  tooltipPosition = 'top',
-  text,
-  custom,
-  ...restProps
-}) => {
-  const renderArrowBeforeContent =
-    shouldRenderArrowBeforeContent(tooltipPosition);
-  const renderArrowAfterContent =
-    shouldRenderArrowAfterContent(tooltipPosition);
-
-  const styles = useMemo(
-    () => stylesBuilder(tooltipPosition, arrowheadPosition, custom, isOpen),
-    [arrowheadPosition, tooltipPosition, custom, isOpen],
-  );
-
-  return (
-    <tet.div
-      {...styles.container}
-      data-testid="tooltip-container"
-      {...restProps}
-    >
-      {renderArrowBeforeContent && (
-        <tet.div {...styles.arrow} data-testid="tooltip-arrow">
-          <Arrow arrowType={tooltipPosition} />
-        </tet.div>
-      )}
-      <tet.div {...styles.content} data-testid="tooltip-content">
-        {text}
-      </tet.div>
-
-      {renderArrowAfterContent && (
-        <tet.div {...styles.arrow} data-testid="tooltip-arrow">
-          <Arrow arrowType={tooltipPosition} />
-        </tet.div>
-      )}
-    </tet.div>
-  );
+type TooltipElementProps = TooltipProps & {
+  isVisible: boolean;
+  position: { left: number; top: number };
 };
+
+export const TooltipElement = forwardRef<HTMLDivElement, TooltipElementProps>(
+  (
+    {
+      arrowheadPosition = 'middle',
+      isVisible,
+      tooltipPosition = 'top',
+      text,
+      custom,
+      position,
+      ...restProps
+    },
+    tooltipElementRef,
+  ) => {
+    const renderArrowBeforeContent =
+      shouldRenderArrowBeforeContent(tooltipPosition);
+    const renderArrowAfterContent =
+      shouldRenderArrowAfterContent(tooltipPosition);
+
+    const styles = useMemo(
+      () =>
+        stylesBuilder(tooltipPosition, arrowheadPosition, custom, isVisible),
+      [arrowheadPosition, tooltipPosition, custom, isVisible],
+    );
+
+    return (
+      <tet.div
+        ref={tooltipElementRef}
+        {...styles.container}
+        data-testid="tooltip-container"
+        {...restProps}
+        top={position.top}
+        left={position.left}
+      >
+        {renderArrowBeforeContent && (
+          <tet.div {...styles.arrow} data-testid="tooltip-arrow">
+            <Arrow arrowType={tooltipPosition} />
+          </tet.div>
+        )}
+        <tet.div {...styles.content} data-testid="tooltip-content">
+          {text}
+        </tet.div>
+
+        {renderArrowAfterContent && (
+          <tet.div {...styles.arrow} data-testid="tooltip-arrow">
+            <Arrow arrowType={tooltipPosition} />
+          </tet.div>
+        )}
+      </tet.div>
+    );
+  },
+);

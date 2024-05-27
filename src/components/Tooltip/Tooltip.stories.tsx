@@ -4,6 +4,7 @@ import { Tooltip } from './Tooltip';
 
 import { TetDocs } from '@/docs-components/TetDocs';
 import { TooltipDocs } from '@/docs-components/TooltipDocs';
+import { tet } from '@/tetrisly';
 
 const meta = {
   title: 'Tooltip',
@@ -50,6 +51,6 @@ export const Default: Story = {
     text: 'Tooltip placeholder',
     arrowheadPosition: 'middle',
     tooltipPosition: 'top',
-    children: <div />,
+    children: <tet.div h={20} w={80} bg="blue" />, // TODO
   },
 };

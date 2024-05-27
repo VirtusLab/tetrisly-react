@@ -3,8 +3,6 @@ import type {
   TooltipPositionType,
 } from '../Tooltip.props';
 
-import { BaseProps } from '@/types';
-
 export const getTextAlign = (position?: TooltipPositionType) => {
   if (position === 'bottom' || position === 'top') {
     return 'center';
@@ -34,40 +32,86 @@ export const shouldRenderTooltipElementBeforeIcon = (
   tooltipPosition: TooltipPositionType,
 ) => tooltipPosition === 'right' || tooltipPosition === 'bottom';
 
-export const getArrowPosition = (
-  arrowheadPosition: ArrowheadPositionType,
-  tooltipPosition: TooltipPositionType,
+export const calculatePosition = (
+  targetRect: DOMRect,
+  tooltipRect: DOMRect,
+  tooltipPosition: string,
+  arrowheadPosition: string,
 ) => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+  let top: number;
+  let left: number;
+
   switch (tooltipPosition) {
-    case 'bottom':
-      switch (arrowheadPosition) {
-        case 'start':
-          return { top: '100%', left: 4 } as BaseProps;
-
-        case 'middle':
-          return { top: '100%' } as BaseProps;
-        case 'end':
-          return { top: '100%', right: 4 } as BaseProps;
-        default:
-          return { top: '100%', left: 4 } as BaseProps;
-      }
-
     case 'top':
-      switch (arrowheadPosition) {
-        case 'start':
-          return { bottom: '100%', left: 4 } as BaseProps;
-        case 'middle':
-          return { bottom: '100%' } as BaseProps;
-        case 'end':
-          return { bottom: '100%', right: 4 } as BaseProps;
-        default:
-          return { bottom: '100%', left: 4 } as BaseProps;
-      }
+      top = targetRect.top + scrollTop - tooltipRect.height;
+      left =
+        getHorizontalPosition(targetRect, tooltipRect, arrowheadPosition) +
+        scrollLeft;
+      break;
+    case 'bottom':
+      top = targetRect.bottom + scrollTop;
+      left =
+        getHorizontalPosition(targetRect, tooltipRect, arrowheadPosition) +
+        scrollLeft;
+      break;
+
     case 'left':
-      return { right: '100%' } as BaseProps;
+      top = getVerticalPosition(targetRect, tooltipRect) + scrollTop;
+      left = targetRect.left + scrollLeft - tooltipRect.width;
+      break;
     case 'right':
-      return { left: '100%' } as BaseProps;
+      top = getVerticalPosition(targetRect, tooltipRect) + scrollTop;
+      left = targetRect.right + scrollLeft;
+      break;
     default:
-      return {} as BaseProps;
+      top = targetRect.top + scrollTop - tooltipRect.height;
+      left =
+        getHorizontalPosition(targetRect, tooltipRect, arrowheadPosition) +
+        scrollLeft;
+      break;
+  }
+
+  top = Math.max(
+    0,
+    Math.min(top, window.innerHeight - tooltipRect.height + scrollTop),
+  );
+  left = Math.max(
+    0,
+    Math.min(left, window.innerWidth - tooltipRect.width + scrollLeft),
+  );
+
+  return { top, left };
+};
+
+const getHorizontalPosition = (
+  targetRect: DOMRect,
+  tooltipRect: DOMRect,
+  arrowheadPosition: string,
+): number => {
+  switch (arrowheadPosition) {
+    case 'start':
+      return targetRect.left;
+    case 'end':
+      return targetRect.left + targetRect.width - tooltipRect.width;
+    default:
+      return targetRect.left + targetRect.width / 2 - tooltipRect.width / 2;
+  }
+};
+
+const getVerticalPosition = (
+  targetRect: DOMRect,
+  tooltipRect: DOMRect,
+  arrowheadPosition?: string,
+): number => {
+  switch (arrowheadPosition) {
+    case 'start':
+      return targetRect.top;
+    case 'end':
+      return targetRect.top + targetRect.height - tooltipRect.height;
+    default:
+      return targetRect.top + targetRect.height / 2 - tooltipRect.height / 2;
   }
 };

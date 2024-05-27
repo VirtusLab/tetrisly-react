@@ -20,8 +20,9 @@ export const defaultConfig = {
   w: 'fit-content',
   transition: 'opacity',
   transitionDuration: 200,
-  opacity: 0,
-  zIndex: -1,
+  opacity: 1,
+  display: 'inline-flex',
+  zIndex: 1,
   innerElements: {
     arrow: {
       right: {
