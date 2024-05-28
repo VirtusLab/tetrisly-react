@@ -1352,7 +1352,7 @@ const fixedTokens = {
     hoverWithoutButton:
       '&:hover:not(:has(button:hover), &:invalid, &[data-state="alert"])',
     alert: '&:invalid, &[data-state="alert"]',
-    indeterminate: '&:indeterminate',
+    indeterminate: '&:indeterminate, &[data-indeterminate="indeterminate"]',
   },
   // TO DO: utility for xstyled to gather color of shadow and generate rgba based on opacity
   shadows: {
