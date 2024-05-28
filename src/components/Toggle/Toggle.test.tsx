@@ -13,6 +13,7 @@ const getToggle = (jsx: JSX.Element) => {
   return {
     toggle: getByTestId('toggle'),
     toggleOval: getByTestId('toggle-oval'),
+    input: getByTestId('toggle-input'),
     label: queryByTestId('toggle-label'),
     labelContainer: getByTestId('toggle-label-container'),
   };
@@ -45,16 +46,16 @@ describe('Toggle', () => {
   });
 
   it('should emit onChange', () => {
-    const { labelContainer } = getToggle(<Toggle onChange={handleEventMock} />);
-    fireEvent.click(labelContainer);
+    const { input } = getToggle(<Toggle onChange={handleEventMock} />);
+    fireEvent.click(input);
     expect(handleEventMock).toHaveBeenCalled();
   });
 
   it('should not emit onChange when disable', () => {
-    const { labelContainer } = getToggle(
+    const { input } = getToggle(
       <Toggle onChange={handleEventMock} state="disabled" />,
     );
-    fireEvent.click(labelContainer);
+    fireEvent.click(input);
     expect(handleEventMock).not.toHaveBeenCalled();
   });
 
@@ -69,8 +70,8 @@ describe('Toggle', () => {
   });
 
   it('should render the right cursor on disabled toggleOval', () => {
-    const { toggleOval } = getToggle(<Toggle state="disabled" />);
-    expect(toggleOval).toHaveStyle('cursor: default');
+    const { input } = getToggle(<Toggle state="disabled" />);
+    expect(input).toHaveStyle('cursor: default');
   });
 
   it('should render the right cursor on disabled label', () => {

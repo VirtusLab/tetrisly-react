@@ -36,8 +36,6 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-export const Default = () => {};
 export const Checked: Story = {
   args: {
     isChecked: true,
@@ -75,15 +73,18 @@ export const Indeterminate = () => {
         size="large"
         isIndeterminate={toggle1Value || toggle2Value}
         isChecked={mainChecked || (toggle1Value && toggle2Value)}
-        onChange={() => setMainChecked(!mainChecked)}
+        onChange={() => setMainChecked((prevValue) => !prevValue)}
+        label="Main label"
       />
       <Toggle
         isChecked={toggle1Value}
-        onChange={() => setToggle1Value(!toggle1Value)}
+        onChange={() => setToggle1Value((prevValue) => !prevValue)}
+        label="Label 1"
       />
       <Toggle
         isChecked={toggle2Value}
-        onChange={() => setToggle2Value(!toggle2Value)}
+        onChange={() => setToggle2Value((prevValue) => !prevValue)}
+        label="Label 2"
       />
     </tet.div>
   );

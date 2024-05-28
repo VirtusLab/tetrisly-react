@@ -1,5 +1,3 @@
-import { SystemProps } from '@xstyled/styled-components';
-
 import { ToggleConfig, defaultConfig } from './Toggle.styles.ts';
 
 import { HelperTextConfig } from '@/components/HelperText/HelperText.styles.ts';
@@ -10,8 +8,9 @@ type ToggleStylesBuilder = {
   container: BaseProps;
   toggleOval: BaseProps;
   slider: BaseProps;
-  input: SystemProps;
+  input: BaseProps;
   label: BaseProps;
+  labelContainer: BaseProps;
   helperText: HelperTextConfig;
 };
 
@@ -26,6 +25,7 @@ export const stylesBuilder = (
         slider: { size: sliderSize, ...restSlider },
         toggleOval: { size: toggleOvalSize, ...restToggleOval },
       },
+      labelContainer,
       label,
       helperText,
     },
@@ -36,6 +36,7 @@ export const stylesBuilder = (
     input,
     slider: { ...sliderSize[size], ...restSlider },
     toggleOval: { ...toggleOvalSize[size], ...restToggleOval },
+    labelContainer,
     label,
     helperText,
   };

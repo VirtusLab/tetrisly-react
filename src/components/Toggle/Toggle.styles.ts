@@ -12,6 +12,7 @@ export type ToggleConfig = {
       slider?: BaseProps & ToggleSize;
       toggleOval?: BaseProps & ToggleSize;
     };
+    labelContainer?: BaseProps;
     label?: BaseProps;
     helperText?: HelperTextConfig;
   };
@@ -78,10 +79,6 @@ export const defaultConfig = {
         outlineOffset: {
           focusWithin: '$border-width-small',
         },
-        cursor: {
-          _: 'pointer',
-          disabled: 'default',
-        },
       },
       slider: {
         size: {
@@ -117,24 +114,33 @@ export const defaultConfig = {
         transition: 'transform 0.2s ease-in-out',
         backgroundColor: '$color-whiteA-0',
         borderRadius: '$border-radius-full',
-        borderWidth: '$border-width-100',
+        borderWidth: '$border-width-small',
         borderStyle: '$border-style-solid',
         borderColor: '$color-border-defaultA',
         boxShadow: '$elevation-bottom-100',
         position: 'absolute',
       },
       input: {
-        w: 0,
-        h: 0,
+        borderRadius: '100px',
+        w: '100%',
+        h: '100%',
+        appearance: 'none',
+        zIndex: 1,
+        cursor: {
+          _: 'pointer',
+          disabled: 'default',
+        },
       },
     },
-    label: {
+    labelContainer: {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       gap: '$space-component-gap-medium',
       text: '$typo-body-medium',
       color: '$color-content-primary',
+    },
+    label: {
       cursor: {
         _: 'pointer',
         disabled: 'default',
@@ -142,6 +148,7 @@ export const defaultConfig = {
     },
     helperText: {
       paddingLeft: '$space-component-padding-2xLarge',
+      cursor: 'default',
     },
   },
 } satisfies ToggleConfig;

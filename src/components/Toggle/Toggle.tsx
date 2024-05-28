@@ -1,9 +1,10 @@
-import { FC, MouseEventHandler, useCallback, useId, useMemo } from 'react';
+import { ChangeEventHandler, FC, useCallback, useId, useMemo } from 'react';
 
 import { stylesBuilder } from './stylesBuilder';
 import { ToggleProps } from './Toggle.props';
 
 import { HelperText } from '@/components/HelperText';
+import { useIndeterminate } from '@/hooks';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
 
@@ -16,7 +17,7 @@ export const Toggle: FC<ToggleProps & MarginProps> = ({
   size = 'small',
   custom,
   onChange,
-  ...marginProps
+  ...restProps
 }) => {
   const styles = useMemo(() => stylesBuilder(size, custom), [custom, size]);
   const toggleId = useId();
@@ -24,7 +25,9 @@ export const Toggle: FC<ToggleProps & MarginProps> = ({
   const disabled = state === 'disabled';
   const indeterminate = !isChecked && isIndeterminate;
 
-  const handleToggle: MouseEventHandler<HTMLSpanElement> = useCallback(
+  const inputRef = useIndeterminate(indeterminate);
+
+  const handleToggle: ChangeEventHandler<HTMLInputElement> = useCallback(
     (e) => {
       if (state !== 'disabled') {
         onChange?.(e);
@@ -33,58 +36,53 @@ export const Toggle: FC<ToggleProps & MarginProps> = ({
     [onChange, state],
   );
 
-  const input = (
-    <tet.span
-      {...styles.toggleOval}
-      data-state={indeterminate ? 'indeterminate' : undefined}
-      aria-disabled={disabled}
-      aria-selected={isChecked}
-      data-testid="toggle-oval"
-    >
-      <tet.span
-        {...styles.slider}
-        data-state={indeterminate ? 'indeterminate' : undefined}
-        aria-selected={isChecked}
-        data-testid="toggle-slider"
-      />
-      <tet.input
-        {...styles.input}
-        type="checkbox"
-        role="switch"
-        disabled={disabled}
-        checked={isChecked}
-        data-testid="toggle-input"
-        id={toggleId}
-      />
-    </tet.span>
-  );
   return (
     <tet.div
       {...styles.container}
       aria-disabled={disabled}
       data-testid="toggle"
-      {...marginProps}
+      {...restProps}
     >
       <tet.span
-        {...styles.label}
+        {...styles.labelContainer}
         aria-disabled={disabled}
-        onClick={handleToggle}
         data-testid="toggle-label-container"
       >
+        <tet.span
+          {...styles.toggleOval}
+          data-indeterminate={indeterminate ? 'indeterminate' : undefined}
+          data-state={isChecked ? 'selected' : undefined}
+          aria-disabled={disabled}
+          data-testid="toggle-oval"
+        >
+          <tet.span
+            {...styles.slider}
+            data-indeterminate={indeterminate ? 'indeterminate' : undefined}
+            data-state={isChecked ? 'selected' : undefined}
+            data-testid="toggle-slider"
+          />
+          <tet.input
+            {...styles.input}
+            type="checkbox"
+            role="switch"
+            disabled={disabled}
+            checked={isChecked}
+            data-testid="toggle-input"
+            id={toggleId}
+            onChange={handleToggle}
+            ref={inputRef}
+          />
+        </tet.span>
         {label ? (
-          <>
-            {input}
-            <tet.label
-              {...styles.label}
-              aria-disabled={disabled}
-              data-testid="toggle-label"
-            >
-              {label}
-            </tet.label>
-          </>
-        ) : (
-          input
-        )}
+          <tet.label
+            {...styles.label}
+            aria-disabled={disabled}
+            data-testid="toggle-label"
+            htmlFor={toggleId}
+          >
+            {label}
+          </tet.label>
+        ) : null}
       </tet.span>
       {!!helperText && (
         <HelperText

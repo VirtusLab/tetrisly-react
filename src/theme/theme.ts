@@ -1347,12 +1347,12 @@ const fixedTokens = {
     active: '&:active',
     placeholder: '&::placeholder',
     disabled: '&:disabled, &[aria-disabled=true], &[data-state="disabled"]',
-    selected: '&[data-state="selected"], &[aria-selected=true]',
+    selected: '&[data-state="selected"]',
     loading: '&[data-state="loading"]',
     hoverWithoutButton:
       '&:hover:not(:has(button:hover), &:invalid, &[data-state="alert"])',
     alert: '&:invalid, &[data-state="alert"]',
-    indeterminate: '&:indeterminate, &[data-state="indeterminate"]',
+    indeterminate: '&:indeterminate, &[data-indeterminate="indeterminate"]',
   },
   // TO DO: utility for xstyled to gather color of shadow and generate rgba based on opacity
   shadows: {

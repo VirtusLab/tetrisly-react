@@ -59,25 +59,42 @@ export const ToggleDocs: FC = () => (
                   flexDirection="column"
                   gap="$space-component-gap-2xLarge"
                 >
-                  <Toggle
-                    isIndeterminate={state === 'Indeterminate'}
-                    isChecked={state === 'Checked'}
-                    mt="$dimension-500"
-                    label={label ? 'Label' : (undefined as unknown as string)}
-                    helperText={
-                      helperText ? { text: 'Helper Text' } : undefined
-                    }
-                    size="large"
-                  />
-                  <Toggle
-                    isIndeterminate={state === 'Indeterminate'}
-                    isChecked={state === 'Checked'}
-                    mt="$dimension-500"
-                    label={label ? 'Label' : (undefined as unknown as string)}
-                    helperText={
-                      helperText ? { text: 'Helper Text' } : undefined
-                    }
-                  />
+                  {label ? (
+                    <Toggle
+                      isIndeterminate={state === 'Indeterminate'}
+                      isChecked={state === 'Checked'}
+                      mt="$dimension-500"
+                      label="Label"
+                      helperText={
+                        helperText ? { text: 'Helper Text' } : undefined
+                      }
+                      size="large"
+                    />
+                  ) : (
+                    <Toggle
+                      isIndeterminate={state === 'Indeterminate'}
+                      isChecked={state === 'Checked'}
+                      mt="$dimension-500"
+                      size="large"
+                    />
+                  )}
+                  {label ? (
+                    <Toggle
+                      isIndeterminate={state === 'Indeterminate'}
+                      isChecked={state === 'Checked'}
+                      mt="$dimension-500"
+                      label="Label"
+                      helperText={
+                        helperText ? { text: 'Helper Text' } : undefined
+                      }
+                    />
+                  ) : (
+                    <Toggle
+                      isIndeterminate={state === 'Indeterminate'}
+                      isChecked={state === 'Checked'}
+                      mt="$dimension-500"
+                    />
+                  )}
                 </tet.div>
               </tet.div>
               <tet.div flexBasis="130px" flexGrow="1" flexShrink="0">
@@ -86,27 +103,46 @@ export const ToggleDocs: FC = () => (
                   flexDirection="column"
                   gap="$space-component-gap-2xLarge"
                 >
-                  <Toggle
-                    isIndeterminate={state === 'Indeterminate'}
-                    isChecked={state === 'Checked'}
-                    mt="$dimension-500"
-                    state="disabled"
-                    label={label ? 'Label' : (undefined as unknown as string)}
-                    helperText={
-                      helperText ? { text: 'Helper Text' } : undefined
-                    }
-                    size="large"
-                  />
-                  <Toggle
-                    isIndeterminate={state === 'Indeterminate'}
-                    isChecked={state === 'Checked'}
-                    state="disabled"
-                    mt="$dimension-500"
-                    label={label ? 'Label' : (undefined as unknown as string)}
-                    helperText={
-                      helperText ? { text: 'Helper Text' } : undefined
-                    }
-                  />
+                  {label ? (
+                    <Toggle
+                      isIndeterminate={state === 'Indeterminate'}
+                      isChecked={state === 'Checked'}
+                      mt="$dimension-500"
+                      state="disabled"
+                      label="Label"
+                      helperText={
+                        helperText ? { text: 'Helper Text' } : undefined
+                      }
+                      size="large"
+                    />
+                  ) : (
+                    <Toggle
+                      isIndeterminate={state === 'Indeterminate'}
+                      isChecked={state === 'Checked'}
+                      mt="$dimension-500"
+                      state="disabled"
+                      size="large"
+                    />
+                  )}
+                  {label ? (
+                    <Toggle
+                      isIndeterminate={state === 'Indeterminate'}
+                      isChecked={state === 'Checked'}
+                      state="disabled"
+                      mt="$dimension-500"
+                      label="Label"
+                      helperText={
+                        helperText ? { text: 'Helper Text' } : undefined
+                      }
+                    />
+                  ) : (
+                    <Toggle
+                      isIndeterminate={state === 'Indeterminate'}
+                      isChecked={state === 'Checked'}
+                      state="disabled"
+                      mt="$dimension-500"
+                    />
+                  )}
                 </tet.div>
               </tet.div>
             </tet.div>

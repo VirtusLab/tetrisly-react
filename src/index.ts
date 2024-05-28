@@ -24,5 +24,6 @@ export * from './components/StatusDot';
 export * from './components/Tag';
 export * from './components/TextInput';
 export * from './components/Toast';
+export * from './components/Toggle';
 export * from './tetrisly';
 export * from './theme';

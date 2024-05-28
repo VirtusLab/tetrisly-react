@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { InputHTMLAttributes } from 'react';
 
 import type { ToggleConfig } from './Toggle.styles';
 import { HelperTextProps } from '../HelperText';
@@ -7,9 +7,16 @@ export type ToggleProps = {
   isIndeterminate?: boolean;
   isChecked?: boolean;
   size?: 'small' | 'large';
-  state?: 'disabled' | undefined;
-  label?: string;
-  helperText?: Pick<HelperTextProps, 'text'>;
+  state?: 'disabled';
   custom?: ToggleConfig;
-  onChange?: (e?: MouseEvent<HTMLSpanElement>) => void;
-};
+} & Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'checked' | 'disabled' | 'color' | 'type' | 'size'
+> &
+  (
+    | { label?: string; helperText?: never }
+    | {
+        label: string;
+        helperText?: Pick<HelperTextProps, 'text'>;
+      }
+  );
