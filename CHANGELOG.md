@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.8.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.7.0...v1.8.0) (2024-05-23)
+
+
+### Features
+
+* TET-660 fix width button issue ([#150](https://github.com/VirtusLab/tetrisly-react/issues/150)) ([dc44083](https://github.com/VirtusLab/tetrisly-react/commit/dc440831d33c51e0edea6fcb3acf7ba884f9382c))
+* TET-866 add tag input component ([#140](https://github.com/VirtusLab/tetrisly-react/issues/140)) ([2070c34](https://github.com/VirtusLab/tetrisly-react/commit/2070c34b3477c3c1ba53fd9041d22ce7297a4450))
+
+## [1.7.0](https://github.com/VirtusLab/tetrisly-react/compare/v1.6.1...v1.7.0) (2024-05-17)
+
+
+### Features
+
+* NO-JIRA Corner Dialog component ([#135](https://github.com/VirtusLab/tetrisly-react/issues/135)) ([d916220](https://github.com/VirtusLab/tetrisly-react/commit/d916220f5d6f3e022ca8ec81e76ec69df2fc17e4))
+* NO-JIRA new item button ([#138](https://github.com/VirtusLab/tetrisly-react/issues/138)) ([4cfd24a](https://github.com/VirtusLab/tetrisly-react/commit/4cfd24a9a829c2728cae0b7157b4d1e67a136c26))
+* TET-853 add FileItem component ([#143](https://github.com/VirtusLab/tetrisly-react/issues/143)) ([9f50c5e](https://github.com/VirtusLab/tetrisly-react/commit/9f50c5e1478b12f633fcab89bacc36083c37d853))
+* TET-858 boolean pill ([#141](https://github.com/VirtusLab/tetrisly-react/issues/141)) ([a3c89de](https://github.com/VirtusLab/tetrisly-react/commit/a3c89dee1dabf88645af1dd17e2c13d00f2fcb3d))
+* TET-863 add Status component ([#134](https://github.com/VirtusLab/tetrisly-react/issues/134)) ([c81b1a6](https://github.com/VirtusLab/tetrisly-react/commit/c81b1a6997eab528f56f6ef54e565dc947d48ce5))
+* TET-894 unify components folders ([#142](https://github.com/VirtusLab/tetrisly-react/issues/142)) ([cae49b7](https://github.com/VirtusLab/tetrisly-react/commit/cae49b7670a942883b15ce89bac4cb4a06f5ea36))
+* TET-901 selectable pill ([#145](https://github.com/VirtusLab/tetrisly-react/issues/145)) ([4f08a7a](https://github.com/VirtusLab/tetrisly-react/commit/4f08a7a14788a1d8cf7aef638e4a0904f1014f3b))
+
+
+### Bug Fixes
+
+* **Pill:** added missing text styles in NO-JIRA ([#147](https://github.com/VirtusLab/tetrisly-react/issues/147)) ([db37e79](https://github.com/VirtusLab/tetrisly-react/commit/db37e799cffa49877b6d86e48c36c8f2d5d325e4))
+
 ## [1.6.1](https://github.com/VirtusLab/tetrisly-react/compare/v1.6.0...v1.6.1) (2024-03-26)
 
 

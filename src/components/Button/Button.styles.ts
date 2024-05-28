@@ -287,7 +287,7 @@ const commonConfig = {
   display: 'inline-flex',
   borderRadius: '$border-radius-large',
   gap: '$space-component-gap-small',
-  w: 'fit-content',
+  w: 'auto',
   justifyContent: 'center',
   alignItems: 'center',
   textAlign: 'center',

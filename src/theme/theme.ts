@@ -973,7 +973,7 @@ const fixedTokens = {
   borderStyles: {
     '$border-style-none': 'none',
     '$border-style-solid': 'solid',
-    '$border-style-dashed': 'dashed solid',
+    '$border-style-dashed': 'dashed',
   },
   fonts: { '$font-family-primary': 'Inter' },
   fontSizes: {

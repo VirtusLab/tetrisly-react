@@ -127,12 +127,12 @@ export const AfterIconButtonComponent: Story = {
   },
 };
 
-export const AfterSufixComponent: Story = {
+export const AfterSuffixComponent: Story = {
   args: {
     afterComponent: {
-      type: 'Sufix',
+      type: 'Suffix',
       props: {
-        text: 'Sufix',
+        text: 'Suffix',
       },
     },
   },

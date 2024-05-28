@@ -157,3 +157,12 @@ export const BareDisabled: Story = {
     variant: 'bare',
   },
 };
+
+// should automatically fill the width of the container
+export const WithFlexContainer: Story = {
+  render: () => (
+    <div style={{ display: 'flex', width: '400px', flexDirection: 'column' }}>
+      <Button label="Button 1" />
+    </div>
+  ),
+};
