@@ -20,9 +20,8 @@ export const stylesBuilder = (
   tooltipPosition: TooltipPositionType,
   arrowheadPosition: ArrowheadPositionType,
   custom?: TooltipProps['custom'],
-  isVisible?: boolean,
 ): TooltipStyleBuilder => {
-  const { innerElements, ...container } = mergeConfigWithCustom({
+  const { innerElements, ...wrapper } = mergeConfigWithCustom({
     defaultConfig,
     custom,
   });
@@ -35,21 +34,17 @@ export const stylesBuilder = (
     tooltipPosition === 'left' || tooltipPosition === 'right'
       ? 'center'
       : alignItemsBasedOnArrowheadPosition(arrowheadPosition);
-  const openContainerStyle: BaseProps = isVisible
-    ? { opacity: 1, display: 'inline-flex' }
-    : { opacity: 0 };
 
-  const { arrow, content, wrapper } = innerElements;
+  const { arrow, content, container } = innerElements;
   const arrowStyles = arrow[tooltipPosition];
   const contentStyles: BaseProps = { ...content, textAlign };
-  const containerStyles: BaseProps = {
-    ...container,
-    flexDirection,
-    alignItems,
-    ...openContainerStyle,
-  };
   const wrapperStyles: BaseProps = {
     ...wrapper,
+    flexDirection,
+    alignItems,
+  };
+  const containerStyles: BaseProps = {
+    ...container,
     flexDirection,
     alignItems,
   };

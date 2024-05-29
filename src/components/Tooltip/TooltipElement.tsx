@@ -11,7 +11,6 @@ import {
 import { tet } from '@/tetrisly';
 
 type TooltipElementProps = TooltipProps & {
-  isVisible?: boolean;
   position?: { left: number; top: number };
 };
 
@@ -19,7 +18,6 @@ export const TooltipElement = forwardRef<HTMLDivElement, TooltipElementProps>(
   (
     {
       arrowheadPosition = 'middle',
-      isVisible = true,
       tooltipPosition = 'top',
       text,
       custom,
@@ -34,9 +32,8 @@ export const TooltipElement = forwardRef<HTMLDivElement, TooltipElementProps>(
       shouldRenderArrowAfterContent(tooltipPosition);
 
     const styles = useMemo(
-      () =>
-        stylesBuilder(tooltipPosition, arrowheadPosition, custom, isVisible),
-      [arrowheadPosition, tooltipPosition, custom, isVisible],
+      () => stylesBuilder(tooltipPosition, arrowheadPosition, custom),
+      [arrowheadPosition, tooltipPosition, custom],
     );
 
     return (

@@ -9,20 +9,13 @@ export type TooltipConfig = {
       bottom: BaseProps;
     };
     content: BaseProps;
-    wrapper: BaseProps;
+    container: BaseProps;
   };
 } & BaseProps;
 
 export const defaultConfig = {
-  position: 'absolute',
-  alignContent: 'center',
-  justifyContent: 'center',
-  w: 'fit-content',
-  transition: 'opacity',
-  transitionDuration: 200,
-  opacity: 1,
   display: 'inline-flex',
-  zIndex: 1,
+  position: 'relative',
   innerElements: {
     arrow: {
       right: {
@@ -51,9 +44,16 @@ export const defaultConfig = {
       w: 'max-content',
       maxWidth: '240px',
     },
-    wrapper: {
+    container: {
+      position: 'absolute',
+      alignContent: 'center',
+      justifyContent: 'center',
+      w: 'fit-content',
+      transition: 'opacity',
+      transitionDuration: 200,
+      opacity: 1,
       display: 'inline-flex',
-      position: 'relative',
+      zIndex: 1,
     },
   },
 } satisfies TooltipConfig;

@@ -24,14 +24,14 @@ export const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
   arrowheadPosition = 'middle',
   ...restProps
 }) => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const targetRef = useRef<HTMLDivElement>(null);
   const tooltipElementRef = useRef<HTMLDivElement>(null);
-  // TODO fix styling when children is very small
+
   const styles = useMemo(
-    () => stylesBuilder(tooltipPosition, arrowheadPosition, custom, visible),
-    [arrowheadPosition, tooltipPosition, custom, visible],
+    () => stylesBuilder(tooltipPosition, arrowheadPosition, custom),
+    [arrowheadPosition, tooltipPosition, custom],
   );
 
   const updatePosition = useCallback(() => {
@@ -77,12 +77,12 @@ export const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
     <tet.div
       {...styles.wrapper}
       data-testid="tooltip-wrapper"
-      {...restProps}
       ref={targetRef}
       onMouseEnter={showTooltip}
       onMouseLeave={hideTooltip}
       onFocus={showTooltip}
       onBlur={hideTooltip}
+      {...restProps}
     >
       {children && <tet.div cursor="pointer">{children}</tet.div>}
       {visible &&
@@ -90,11 +90,11 @@ export const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
           <TooltipElement
             ref={tooltipElementRef}
             text={text}
-            isVisible={visible}
             arrowheadPosition={arrowheadPosition}
             tooltipPosition={tooltipPosition}
             position={position}
             custom={custom}
+            {...restProps}
           />,
           document.body,
         )}
