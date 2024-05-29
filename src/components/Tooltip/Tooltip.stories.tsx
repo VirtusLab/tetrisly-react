@@ -1,14 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Tooltip } from './Tooltip';
+import { TooltipElement } from './TooltipElement';
 
 import { TetDocs } from '@/docs-components/TetDocs';
 import { TooltipDocs } from '@/docs-components/TooltipDocs';
-import { tet } from '@/tetrisly';
 
 const meta = {
   title: 'Tooltip',
-  component: Tooltip,
+  component: TooltipElement,
   tags: ['autodocs'],
   args: {
     text: 'Tooltip placeholder',
@@ -40,7 +39,7 @@ const meta = {
       ),
     },
   },
-} satisfies Meta<typeof Tooltip>;
+} satisfies Meta<typeof TooltipElement>;
 
 export default meta;
 
@@ -51,6 +50,5 @@ export const Default: Story = {
     text: 'Tooltip placeholder',
     arrowheadPosition: 'middle',
     tooltipPosition: 'top',
-    children: <tet.div h={20} w={80} bg="blue" />, // TODO
   },
 };

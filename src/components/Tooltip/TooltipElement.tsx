@@ -11,19 +11,19 @@ import {
 import { tet } from '@/tetrisly';
 
 type TooltipElementProps = TooltipProps & {
-  isVisible: boolean;
-  position: { left: number; top: number };
+  isVisible?: boolean;
+  position?: { left: number; top: number };
 };
 
 export const TooltipElement = forwardRef<HTMLDivElement, TooltipElementProps>(
   (
     {
       arrowheadPosition = 'middle',
-      isVisible,
+      isVisible = true,
       tooltipPosition = 'top',
       text,
       custom,
-      position,
+      position = { left: 0, top: 0 },
       ...restProps
     },
     tooltipElementRef,

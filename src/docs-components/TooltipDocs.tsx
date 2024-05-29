@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import { State } from './common/States';
 
-import { Tooltip } from '@/components/Tooltip/Tooltip';
+import { TooltipElement } from '@/components/Tooltip/TooltipElement';
 import { SectionHeader } from '@/docs-components/common/SectionHeader.tsx';
 import { tet } from '@/tetrisly';
 
@@ -14,8 +14,6 @@ const labels = [
 ] as const;
 const arrowheadPositions = ['start', 'middle', 'end'] as const;
 const tooltipPositions = ['bottom', 'top', 'right', 'left'] as const;
-
-const Rec = () => <tet.div zIndex={2} h="60" w="100" bg="lightblue" />; // TODO
 
 export const TooltipDocs: FC = () => (
   <>
@@ -56,15 +54,15 @@ export const TooltipDocs: FC = () => (
                   key={tooltipPositions[j]}
                   state={capitalize(tooltipPositions[j])}
                 />
-                <tet.div py="$space-component-padding-4xLarge">
-                  <Tooltip
+                <tet.div
+                  py="$space-component-padding-4xLarge"
+                  position="relative"
+                >
+                  <TooltipElement
                     arrowheadPosition={arrowheadPosition}
                     tooltipPosition={tooltipPosition}
                     text="Tooltip Placeholder"
-                    // />
-                  >
-                    <Rec />
-                  </Tooltip>
+                  />
                 </tet.div>
               </tet.div>
             ))}
