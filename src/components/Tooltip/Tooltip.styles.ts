@@ -36,7 +36,7 @@ export const defaultConfig = {
       },
     },
     content: {
-      background: '#272e35', // TODO change when there is this color in ITheme
+      backgroundColor: '$color-background-inverted',
       color: '$color-content-primary-inverted',
       padding: '$space-component-padding-xSmall $space-component-padding-small',
       borderRadius: '$border-radius-medium',

@@ -1,7 +1,7 @@
 import type {
   ArrowheadPositionType,
   TooltipPositionType,
-} from '../Tooltip.props';
+} from './Tooltip.props';
 
 export const getTextAlign = (position?: TooltipPositionType) => {
   if (position === 'bottom' || position === 'top') {
