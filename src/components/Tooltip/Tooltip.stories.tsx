@@ -1,9 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { Tooltip } from './Tooltip';
 import { TooltipElement } from './TooltipElement';
+import { Button } from '../Button';
 
 import { TetDocs } from '@/docs-components/TetDocs';
 import { TooltipDocs } from '@/docs-components/TooltipDocs';
+import { tet } from '@/tetrisly';
 
 const meta = {
   title: 'Tooltip',
@@ -39,7 +42,7 @@ const meta = {
       ),
     },
   },
-} satisfies Meta<typeof TooltipElement>;
+} satisfies Meta<typeof Tooltip>;
 
 export default meta;
 
@@ -50,4 +53,23 @@ export const Default: Story = {
     arrowheadPosition: 'middle',
     tooltipPosition: 'top',
   },
+};
+
+export const WithButtonTootlip: Story = {
+  render: () => (
+    <tet.div
+      margin={20}
+      display="flex"
+      flexDirection="column"
+      alignItems="start"
+    >
+      <Tooltip
+        text="Button tooltip"
+        arrowheadPosition="end"
+        tooltipPosition="top"
+      >
+        <Button label="Button" />
+      </Tooltip>
+    </tet.div>
+  ),
 };

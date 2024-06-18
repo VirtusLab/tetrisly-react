@@ -3,6 +3,7 @@ import { forwardRef, useMemo } from 'react';
 import { Arrow } from './Arrow';
 import { stylesBuilder } from './stylesBuilder';
 import { TooltipProps } from './Tooltip.props';
+import { useOpacity } from './useOpacity';
 import {
   shouldRenderTooltipElementAfterIcon as shouldRenderArrowAfterContent,
   shouldRenderTooltipElementBeforeIcon as shouldRenderArrowBeforeContent,
@@ -31,6 +32,7 @@ export const TooltipElement = forwardRef<HTMLDivElement, TooltipElementProps>(
     const renderArrowAfterContent =
       shouldRenderArrowAfterContent(tooltipPosition);
 
+    const { opacity } = useOpacity();
     const styles = useMemo(
       () => stylesBuilder(tooltipPosition, arrowheadPosition, custom),
       [arrowheadPosition, tooltipPosition, custom],
@@ -44,6 +46,7 @@ export const TooltipElement = forwardRef<HTMLDivElement, TooltipElementProps>(
         {...restProps}
         top={position.top}
         left={position.left}
+        opacity={opacity}
       >
         {renderArrowBeforeContent && (
           <tet.div {...styles.arrow} data-testid="tooltip-arrow">
