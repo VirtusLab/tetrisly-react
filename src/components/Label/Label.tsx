@@ -4,6 +4,7 @@ import { type FC, useMemo } from 'react';
 import type { LabelProps } from './Label.props';
 import { stylesBuilder } from './stylesBuilder';
 import { Button } from '../Button';
+import { Tooltip } from '../Tooltip';
 
 import { tet } from '@/tetrisly';
 import type { MarginProps } from '@/types/MarginProps';
@@ -26,11 +27,14 @@ export const Label: FC<LabelProps & MarginProps> = ({
           {optional}
         </tet.span>
       )}
-      {/* TODO: add tooltip instead of bare icon, when we get one */}
       {tooltip && (
-        <tet.span {...styles.tooltip} data-testid="label-tooltip">
+        <Tooltip
+          {...styles.tooltip}
+          text="label tooltip"
+          data-testid="label-tooltip"
+        >
           <Icon name="16-info" />
-        </tet.span>
+        </Tooltip>
       )}
       {!!action && (
         <Button

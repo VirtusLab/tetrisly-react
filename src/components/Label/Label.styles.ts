@@ -20,6 +20,7 @@ export const defaultConfig = {
       display: 'flex',
       alignItems: 'center',
       minHeight: '$size-xSmall',
+      justifyContent: 'center',
     },
     optional: {
       color: '$color-content-tertiary',
