@@ -5,12 +5,13 @@ import { IconName } from '@/utility-types/IconName';
 
 export type InlineMetricsConfig = {
   innerElements: {
-    label: BaseProps;
-    metric: BaseProps;
-    trendContainer: BaseProps;
-    trend: { trend: Partial<Record<TrendType, BaseProps>> } & BaseProps;
-    icon: BaseProps;
-    trendValue: BaseProps;
+    label?: BaseProps;
+    metric?: BaseProps;
+    trendContainer?: BaseProps;
+    trend?: { trend?: Partial<Record<TrendType, BaseProps>> } & BaseProps;
+    icon?: BaseProps;
+    trendValue?: BaseProps;
+    referenceDate?: BaseProps;
   };
 } & BaseProps;
 
@@ -19,6 +20,7 @@ export const defaultConfig = {
   h: '',
   display: 'flex',
   flexDirection: 'column',
+  gap: '$space-component-gap-medium',
   innerElements: {
     trendContainer: {
       display: 'flex',
@@ -28,7 +30,6 @@ export const defaultConfig = {
     label: {
       color: '$color-content-secondary',
       text: '$typo-body-medium',
-      marginBottom: '$space-component-gap-medium',
     },
     metric: {
       text: '$typo-header-4xLarge',
@@ -39,7 +40,6 @@ export const defaultConfig = {
       padding: '$space-component-padding-xSmall 0',
       display: 'flex',
       alignItems: 'center',
-      alignSelf: 'flex-end',
       trend: {
         None: {},
         Positive: {
@@ -57,6 +57,9 @@ export const defaultConfig = {
       text: '$typo-body-strong-medium',
       display: 'flex',
       alignItems: 'end',
+    },
+    referenceDate: {
+      display: 'none',
     },
   },
 } satisfies InlineMetricsConfig;

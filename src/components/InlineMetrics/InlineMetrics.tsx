@@ -48,6 +48,9 @@ export const InlineMetrics: FC<InlineMetricsProps & MarginProps> = ({
             data-testid="inline-metrics-trend-value"
           >
             {trendValue}
+            <tet.span {...styles.referenceDate} data-testid="last-year">
+              vs. last year
+            </tet.span>
           </tet.span>
         </tet.div>
       </tet.div>
