@@ -14,6 +14,7 @@ export * from './components/Icon';
 export * from './components/IconButton';
 export * from './components/InlineBanner';
 export * from './components/InlineMessage';
+export * from './components/InlineMetrics';
 export * from './components/InlineSearchInput';
 export * from './components/Label';
 export * from './components/Loader';
