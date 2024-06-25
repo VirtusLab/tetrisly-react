@@ -40,7 +40,6 @@ export const defaultConfig = {
       padding: '$space-component-padding-xSmall 0',
       display: 'flex',
       alignItems: 'center',
-      alignSelf: 'flex-end',
       trend: {
         None: {},
         Positive: {

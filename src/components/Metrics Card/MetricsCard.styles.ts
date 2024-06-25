@@ -23,7 +23,7 @@ export const defaultConfig = {
   padding: '$space-component-padding-2xLarge',
   display: 'flex',
   boxShadow: '$elevation-bottom-200',
-  w: '480px', // w tym przypadku ok, ale sprawdź jak to powinno być zrobione poprawnie
+  w: '480px',
   iconPosition: {
     Top: {
       flexDirection: 'column',
@@ -36,10 +36,10 @@ export const defaultConfig = {
     circle: {
       w: '$size-large',
       h: '$size-large',
-      padding: '$space-component-padding-medium', // powinno być 14px
+      padding: '$space-component-padding-medium',
       border: '1px solid',
       borderColor: '$color-border-neutral-subtle',
-      borderRadius: '24px', // TODO
+      borderRadius: '24px',
     },
     trend: {},
     icon: {
