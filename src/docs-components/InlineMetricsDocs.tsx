@@ -2,7 +2,7 @@ import { InlineMetrics } from '@/components/InlineMetrics/InlineMetrics';
 import { TrendType } from '@/components/InlineMetrics/InlineMetrics.props';
 import { tet } from '@/tetrisly';
 
-const trends: TrendType[] = ['None', 'Positive', 'Negative'] as const;
+const trends: TrendType[] = ['None', 'Positive', 'Negative'];
 const intentNames: Record<TrendType, string> = {
   None: 'Neutral',
   Positive: 'Positive',
