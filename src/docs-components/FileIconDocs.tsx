@@ -1,4 +1,4 @@
-import { FileIcon } from '@/components/File Icon/FileIcon';
+import { FileIcon } from '@/components/FileIcon/FileIcon';
 import { tet } from '@/tetrisly';
 
 const iconTypes = [
