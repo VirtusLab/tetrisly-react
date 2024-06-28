@@ -25,11 +25,9 @@ export const defaultConfig: SearchInputProps['custom'] = {
       minWidth: '50px',
       backgroundColor: 'transparent',
       padding: 0,
-      paddingRight: '36px',
       display: 'inline-block',
     },
     clearButton: {
-      position: 'absolute',
       right: '$space-component-padding-small',
     },
     beforeComponent: {
