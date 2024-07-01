@@ -93,7 +93,8 @@ export const TextInput = forwardRef<
           disabled={state === 'disabled'}
           ref={inputRef}
           size={0}
-          paddingRight={showClearButton ? '0px' : '28px'}
+          padding={0}
+          w={showClearButton ? 'calc(100%-28px)' : '100%'}
         />
         {showClearButton && (
           <IconButton
