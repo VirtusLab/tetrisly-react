@@ -22,7 +22,7 @@ export const defaultConfig: SearchInputProps['custom'] = {
     input: {
       w: 'unset',
       h: 'unset',
-      minWidth: '50px',
+      minWidth: '30px',
       backgroundColor: 'transparent',
       padding: 0,
       display: 'inline-block',

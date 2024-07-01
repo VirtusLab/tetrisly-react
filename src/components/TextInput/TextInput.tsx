@@ -44,8 +44,6 @@ export const TextInput = forwardRef<
       ...restProps,
     });
 
-    const showClearButton = !!hasClearButton && (value || innerValue);
-
     return (
       <tet.div
         ref={containerRef}
@@ -94,9 +92,8 @@ export const TextInput = forwardRef<
           ref={inputRef}
           size={0}
           padding={0}
-          w={showClearButton ? 'calc(100%-28px)' : '100%'}
         />
-        {showClearButton && (
+        {!!hasClearButton && (value || innerValue) && (
           <IconButton
             variant="bare"
             icon="20-close"
