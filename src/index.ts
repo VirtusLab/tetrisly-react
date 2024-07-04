@@ -9,6 +9,7 @@ export * from './components/CornerDialog';
 export * from './components/Counter';
 export * from './components/Divider';
 export * from './components/FileItem';
+export * from './components/Header';
 export * from './components/HelperText';
 export * from './components/Icon';
 export * from './components/IconButton';
