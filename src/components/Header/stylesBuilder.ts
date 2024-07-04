@@ -1,5 +1,4 @@
-import { HeaderType } from './Header.props';
-import { HeaderConfig, defaultConfig } from './Header.styles';
+import { HeaderConfig, HeaderType, defaultConfig } from './Header.styles';
 
 import { mergeConfigWithCustom } from '@/services/mergeConfigWithCustom/mergeConfigWithCustom';
 import { BaseProps } from '@/types/BaseProps';
