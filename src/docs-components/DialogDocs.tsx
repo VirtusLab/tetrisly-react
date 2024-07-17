@@ -34,16 +34,12 @@ export const DialogDocs = () => (
             gap="$dimension-500"
             overflowX="scroll"
           >
-            {/* <State key={sizes[i]} state={sizes[i]} /> */}
             <tet.div padding="10px">
               <Dialog
                 size={size}
                 title="Title"
                 content="Everything in Tetrisly contains Auto Layout. Moreover, we’ve redefined all variants and we have created brand-new components."
-                actions={[
-                  { label: 'Action', appearance: 'secondary' },
-                  { label: 'Primary action', appearance: 'primary' },
-                ]}
+                actions={[{ label: 'Action' }, { label: 'Primary action' }]}
                 custom={customStyleForDocs}
               />
             </tet.div>

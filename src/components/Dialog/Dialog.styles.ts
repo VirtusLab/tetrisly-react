@@ -9,9 +9,7 @@ export type DialogConfig = {
   } & BaseProps;
   closeIcon?: BaseProps;
   content?: BaseProps;
-  emptyDiv?: BaseProps;
   header?: BaseProps;
-  additionalChild?: BaseProps;
   intentIcon?: Record<Partial<DialogIntent>, BaseProps>;
   size?: Record<DialogSize, BaseProps>;
   title?: BaseProps;
@@ -33,17 +31,12 @@ export const defaultConfig = {
   left: '50%',
   top: '50%',
   transform: ' translate(-50%, -50%)',
-  additionalChild: {
-    display: 'flex',
-  },
-  emptyDiv: {
-    w: '100%',
-  },
   closeIcon: {
     color: '$color-action-neutral-normal',
   },
   footer: {
     display: 'flex',
+    alignItems: 'center',
     gap: '$space-component-gap-large',
     type: {
       confirmation: {

@@ -1,6 +1,7 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
 import { FC, useMemo } from 'react';
 
+import { AdditionalElementWrapper } from './AdditionalElementWrapper';
 import { DialogProps } from './Dialog.props';
 import { stylesBuilder } from './stylesBuilder';
 import { Button } from '../Button';
@@ -10,6 +11,7 @@ import { tet } from '@/tetrisly';
 
 export const Dialog: FC<DialogProps> = ({
   actions,
+  additionalAction,
   children,
   content,
   hasCloseButton = true,
@@ -57,19 +59,31 @@ export const Dialog: FC<DialogProps> = ({
       {actions && (
         <tet.div data-testid="dialog-footer" {...styles.footer}>
           {hasChildren && footer !== 'steps' && (
-            <>
-              <tet.div
-                {...styles.additionalChild}
-                data-testid="dialog-additional-child"
-              >
-                {children}
-              </tet.div>
-              <tet.div {...styles.emptyDiv} />
-            </>
+            <AdditionalElementWrapper>{children}</AdditionalElementWrapper>
           )}
-          {actions.map((action) => (
-            <Button key={action.label} {...action} />
-          ))}
+          {additionalAction && (
+            <AdditionalElementWrapper>
+              <Button
+                key={additionalAction.label}
+                appearance="secondary"
+                {...additionalAction}
+              />
+            </AdditionalElementWrapper>
+          )}
+          {actions.map((action, index) => {
+            const appearance =
+              index !== 0 || actions.length === 1 ? 'primary' : 'secondary';
+            const buttonIntent =
+              intent === 'destructive' && index === 1 ? 'destructive' : 'none';
+            return (
+              <Button
+                key={action.label}
+                appearance={appearance}
+                intent={buttonIntent}
+                {...action}
+              />
+            );
+          })}
         </tet.div>
       )}
     </tet.div>

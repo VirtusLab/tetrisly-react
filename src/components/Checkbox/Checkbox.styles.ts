@@ -19,6 +19,7 @@ export const defaultConfig = {
   flexDirection: 'column',
   alignItems: 'flex-start',
   gap: '$space-component-gap-xSmall',
+  w: 'max-content',
   minWidth: '$size-3xSmall',
   minHeight: '$size-3xSmall',
   color: '$color-content-primary',
