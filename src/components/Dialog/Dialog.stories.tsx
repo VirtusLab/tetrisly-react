@@ -1,8 +1,8 @@
+import { action } from '@storybook/addon-actions';
 import { Meta, StoryObj } from '@storybook/react';
 
 import { Dialog } from './Dialog';
 import { customStyleForDocs } from './Dialog.styles';
-import { DialogFooter, DialogSize } from './types';
 import { Checkbox } from '../Checkbox';
 import { Dimmer } from '../Dimmer';
 
@@ -15,41 +15,25 @@ const meta = {
   component: Dialog,
   tags: ['autodocs'],
   argTypes: {
-    actions: {
-      control: {
-        type: 'object',
+    docsPresentation: {
+      table: {
+        disable: true,
       },
     },
-    children: {
-      control: {
-        type: 'string',
+  },
+  args: {
+    title: 'Title',
+    actions: [
+      {
+        label: 'Primary action',
+        onClick: action('onClick'),
       },
-    },
-    content: {
-      type: 'string',
-    },
-    custom: {
-      control: {
-        type: 'object',
+      {
+        label: 'Secondary action',
+        onClick: action('onClick'),
       },
-    },
-    footer: {
-      control: 'select',
-      options: ['confirmation', 'decision', 'steps'] satisfies DialogFooter[],
-    },
-    size: {
-      control: 'radio',
-      options: ['small', 'medium', 'large'] satisfies DialogSize[],
-    },
-    hasCloseButton: {
-      control: 'radio',
-      options: [true, false],
-    },
-    intent: {
-      value: 'none',
-      control: 'radio',
-      options: ['destructive', 'warning', 'none'],
-    },
+    ],
+    onCloseClick: action('onCloseClick'),
   },
   parameters: {
     docs: {
@@ -73,13 +57,15 @@ export const Default: Story = {
   args: {
     title: 'title',
     content: 'content',
-    hasCloseButton: true,
+    onCloseClick: () => {},
     footer: 'steps',
     actions: [{ label: 'first action' }, { label: 'second action' }],
     size: 'small',
-    custom: customStyleForDocs, // is it ok? Different prezentation in docs and different in usage
+    custom: customStyleForDocs, // is it ok? I need different prezentation in docs and different in usage
   },
 };
+
+// TODO not sure if Dimmer should be included in Dialog compinent or user should decide if he/she uses it
 
 export const Decision: Story = {
   render: () => (
@@ -193,7 +179,7 @@ export const NestedComponentInsideFooter: Story = {
   args: {
     title: 'title',
     content: 'content',
-    hasCloseButton: true,
+    onCloseClick: () => {},
     footer: 'decision',
     actions: [{ label: 'first action' }, { label: 'second action' }],
     size: 'medium',

@@ -14,7 +14,7 @@ export const Dialog: FC<DialogProps> = ({
   additionalAction,
   children,
   content,
-  hasCloseButton = true,
+  onCloseClick,
   size = 'small',
   title = '',
   footer = 'decision',
@@ -27,6 +27,7 @@ export const Dialog: FC<DialogProps> = ({
     [size, footer, intent, custom],
   );
   const hasChildren = !!children;
+  const hasCloseIcon = !!onCloseClick;
   const hasIntentIcon = intent !== 'none';
   const intentIconName =
     intent === 'destructive' ? '20-alert-fill' : '20-warning-fill';
@@ -46,9 +47,13 @@ export const Dialog: FC<DialogProps> = ({
           <tet.span {...styles.title} data-testid="dialog-title">
             {title}
           </tet.span>
-          {hasCloseButton && (
+          {hasCloseIcon && (
             <tet.span {...styles.closeIcon} data-testid="dialog-close-icon">
-              <IconButton icon="20-close" variant="ghost" />
+              <IconButton
+                icon="20-close"
+                variant="ghost"
+                onClick={onCloseClick}
+              />
             </tet.span>
           )}
         </tet.span>
@@ -56,7 +61,7 @@ export const Dialog: FC<DialogProps> = ({
       <tet.div {...styles.content} data-testid="dialog-content">
         {content}
       </tet.div>
-      {actions && (
+      {(actions || additionalAction) && (
         <tet.div data-testid="dialog-footer" {...styles.footer}>
           {hasChildren && footer !== 'steps' && (
             <AdditionalElementWrapper>{children}</AdditionalElementWrapper>
@@ -64,26 +69,30 @@ export const Dialog: FC<DialogProps> = ({
           {additionalAction && (
             <AdditionalElementWrapper>
               <Button
+                data-testid="dialog-additional-action"
                 key={additionalAction.label}
                 appearance="secondary"
                 {...additionalAction}
               />
             </AdditionalElementWrapper>
           )}
-          {actions.map((action, index) => {
-            const appearance =
-              index !== 0 || actions.length === 1 ? 'primary' : 'secondary';
-            const buttonIntent =
-              intent === 'destructive' && index === 1 ? 'destructive' : 'none';
-            return (
-              <Button
-                key={action.label}
-                appearance={appearance}
-                intent={buttonIntent}
-                {...action}
-              />
-            );
-          })}
+          {actions &&
+            actions.map((action, index) => {
+              const appearance =
+                index !== 0 || actions.length === 1 ? 'primary' : 'secondary';
+              const buttonIntent =
+                intent === 'destructive' && index === 1
+                  ? 'destructive'
+                  : 'none';
+              return (
+                <Button
+                  key={action.label}
+                  appearance={appearance}
+                  intent={buttonIntent}
+                  {...action}
+                />
+              );
+            })}
         </tet.div>
       )}
     </tet.div>
