@@ -5,12 +5,10 @@ import { mergeConfigWithCustom } from '@/services';
 import { BaseProps } from '@/types';
 
 type StylesBuilderParams = {
-  additionalChild: BaseProps;
   footer: BaseProps;
   closeIcon: BaseProps;
   container: BaseProps;
   content: BaseProps;
-  emptyDiv: BaseProps;
   intentIcon: BaseProps;
   header: BaseProps;
   title: BaseProps;
@@ -24,9 +22,7 @@ export const stylesBuilder = (
   custom?: DialogConfig,
 ): StylesBuilderParams => {
   const {
-    additionalChild,
     closeIcon,
-    emptyDiv,
     size: containerSize,
     footer: footerContainer,
     intentIcon,
@@ -43,11 +39,9 @@ export const stylesBuilder = (
   const intentIconStyles = { ...intentIcon[intent] };
 
   return {
-    additionalChild,
     closeIcon,
     container: containerStyles,
     content,
-    emptyDiv,
     footer: footerStyles,
     intentIcon: intentIconStyles,
     header,
