@@ -4,10 +4,9 @@ import { SectionHeader } from './common/SectionHeader';
 
 import { Dialog } from '@/components/Dialog';
 import { customStyleForDocs } from '@/components/Dialog/Dialog.styles';
-import { DialogSize } from '@/components/Dialog/types';
 import { tet } from '@/tetrisly';
 
-const sizes: DialogSize[] = ['small', 'medium', 'large'] as const;
+const sizes = ['small', 'medium', 'large'] as const;
 
 export const DialogDocs = () => (
   <>
