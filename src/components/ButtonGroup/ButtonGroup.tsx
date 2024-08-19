@@ -16,7 +16,7 @@ import { Button, ButtonProps } from '../Button';
 import { tet } from '@/tetrisly';
 
 type Props = FC<PropsWithChildren<ButtonGroupProps & MarginProps>> & {
-  Item: ForwardRefExoticComponent<ButtonProps & MarginProps>;
+  Item: FC<ButtonProps & MarginProps>;
 };
 
 export const ButtonGroup: Props = ({
