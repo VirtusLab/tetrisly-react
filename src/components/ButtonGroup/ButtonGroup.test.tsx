@@ -1,4 +1,4 @@
-import { render, screen } from '../../tests/render';
+import { render } from '../../tests/render';
 
 import { ButtonGroup } from '.';
 
