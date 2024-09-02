@@ -18,6 +18,7 @@ export declare const defaultConfig: {
             display: "flex";
             alignItems: "center";
             minHeight: string;
+            justifyContent: "center";
         };
         optional: {
             color: "$color-content-tertiary";
@@ -40,6 +41,7 @@ export declare const labelStyles: {
                 display: "flex";
                 alignItems: "center";
                 minHeight: string;
+                justifyContent: "center";
             };
             optional: {
                 color: "$color-content-tertiary";
