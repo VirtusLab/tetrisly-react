@@ -1,5 +1,5 @@
-import { MetricsCardProps } from './MetricsCard.props';
-import { defaultConfig, IconPositionType } from './MetricsCard.styles';
+import type { IconPositionType, MetricsCardProps } from './MetricsCard.props';
+import { defaultConfig } from './MetricsCard.styles';
 
 import { mergeConfigWithCustom } from '@/services';
 

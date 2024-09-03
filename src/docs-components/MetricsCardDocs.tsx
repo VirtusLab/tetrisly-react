@@ -2,15 +2,12 @@ import { SectionHeader } from './common/SectionHeader';
 
 import { TrendType } from '@/components/InlineMetrics/InlineMetrics.props';
 import { MetricsCard } from '@/components/MetricsCard';
-import type {
-  IconPositionType,
-  IntentType,
-} from '@/components/MetricsCard/MetricsCard.props';
+import type { IconPositionType } from '@/components/MetricsCard/MetricsCard.props';
 import { tet } from '@/tetrisly';
 
 const trends: TrendType[] = ['None', 'Positive', 'Negative'];
 const iconPositions: IconPositionType[] = ['Top', 'Left'];
-const intentNames: Record<TrendType, IntentType> = {
+const intentNames: Record<TrendType, string> = {
   None: 'Neutral',
   Positive: 'Positive',
   Negative: 'Negative',
@@ -58,7 +55,6 @@ export const MetricsCardDocs = () => (
                 trendValue="24%"
                 metrics="$123.12"
                 label="Total Earnings"
-                intent={intentNames[trend]}
                 iconPosition={position}
                 hasIcon
                 hasTrend

@@ -16,7 +16,7 @@ const getMetricsCard = (jsx: JSX.Element) => {
 describe('Metrics Card', () => {
   customPropTester(
     <MetricsCard
-      intent="Neutral"
+      trend="None"
       iconPosition="Top"
       hasTrend={false}
       hasIcon={false}
