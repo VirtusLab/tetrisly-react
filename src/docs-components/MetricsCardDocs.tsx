@@ -1,9 +1,15 @@
+import { SectionHeader } from './common/SectionHeader';
+
 import { TrendType } from '@/components/InlineMetrics/InlineMetrics.props';
 import { MetricsCard } from '@/components/MetricsCard';
-import type { IntentType } from '@/components/MetricsCard/MetricsCard.props';
+import type {
+  IconPositionType,
+  IntentType,
+} from '@/components/MetricsCard/MetricsCard.props';
 import { tet } from '@/tetrisly';
 
 const trends: TrendType[] = ['None', 'Positive', 'Negative'];
+const iconPositions: IconPositionType[] = ['Top', 'Left'];
 const intentNames: Record<TrendType, IntentType> = {
   None: 'Neutral',
   Positive: 'Positive',
@@ -11,15 +17,24 @@ const intentNames: Record<TrendType, IntentType> = {
 };
 
 export const MetricsCardDocs = () => (
-  <tet.section py="$space-component-padding-4xLarge">
-    <tet.div px="$dimension-800" py="$dimension-300">
-      <tet.div display="flex">
+  <tet.section display="flex" flexWrap="wrap" justifyContent="center">
+    {iconPositions.map((position) => (
+      <>
+        <SectionHeader
+          variant="H1"
+          as="h2"
+          px="$dimension-1000"
+          py="$dimension-1000"
+        >
+          {position} Icon Position
+        </SectionHeader>
         {trends.map((trend) => (
           <tet.section
             key={trend}
             display="flex"
             flexDirection="column"
-            px="$dimension-400"
+            px="$dimension-300"
+            py="$dimension-300"
             my="auto"
           >
             <tet.div
@@ -44,14 +59,14 @@ export const MetricsCardDocs = () => (
                 metrics="$123.12"
                 label="Total Earnings"
                 intent={intentNames[trend]}
-                iconPosition="Top"
+                iconPosition={position}
                 hasIcon
                 hasTrend
               />
             </tet.div>
           </tet.section>
         ))}
-      </tet.div>
-    </tet.div>
+      </>
+    ))}
   </tet.section>
 );

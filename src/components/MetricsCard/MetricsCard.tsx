@@ -12,7 +12,7 @@ import { tet } from '@/tetrisly';
 export const MetricsCard: FC<MetricsCardProps & MarginProps> = ({
   hasIcon = false,
   hasMoreIcon = false,
-  hasTrend = false,
+  hasTrend,
   metrics,
   label,
   trend = 'None',

@@ -31,7 +31,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    intent: 'Positive',
     trend: 'Positive',
     trendValue: '+24%',
     metrics: '$123.12',
@@ -45,9 +44,8 @@ export const Default: Story = {
 
 export const IconPositionLeft: Story = {
   args: {
-    intent: 'Negative',
     trend: 'Negative',
-    trendValue: '+24%',
+    trendValue: '-24%',
     metrics: '$123.12',
     label: 'Total Earnings',
     hasIcon: true,

@@ -1,6 +1,6 @@
-import type { BaseProps } from '@/types/BaseProps';
+import type { IconPositionType } from './MetricsCard.props';
 
-export type IconPositionType = 'Top' | 'Left';
+import type { BaseProps } from '@/types/BaseProps';
 
 export type MetricsCardConfig = {
   iconPosition?: Record<IconPositionType, BaseProps>;
