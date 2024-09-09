@@ -9,20 +9,17 @@ export declare const stylesBuilder: ({ trend, custom }: StylesBuilderParams) => 
         padding: string;
         display: "flex";
         alignItems: "center";
-        alignSelf: "flex-end";
     } | {
         gap: string;
         padding: string;
         display: "flex";
         alignItems: "center";
-        alignSelf: "flex-end";
         color: "$color-content-positive-secondary";
     } | {
         gap: string;
         padding: string;
         display: "flex";
         alignItems: "center";
-        alignSelf: "flex-end";
         color: "$color-content-negative-secondary";
     };
     trendContainer: {
@@ -33,7 +30,6 @@ export declare const stylesBuilder: ({ trend, custom }: StylesBuilderParams) => 
     label: {
         color: "$color-content-secondary";
         text: "$typo-body-medium";
-        marginBottom: string;
     };
     metric: {
         text: "$typo-header-4xLarge";
@@ -47,11 +43,15 @@ export declare const stylesBuilder: ({ trend, custom }: StylesBuilderParams) => 
         display: "flex";
         alignItems: "end";
     };
+    referenceDate: {
+        display: "none";
+    };
     container: {
         w: string;
         h: string;
         display: "flex";
         flexDirection: "column";
+        gap: string;
     };
 };
 export {};

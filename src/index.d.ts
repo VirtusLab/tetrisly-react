@@ -19,6 +19,7 @@ export * from './components/InlineMetrics';
 export * from './components/InlineSearchInput';
 export * from './components/Label';
 export * from './components/Loader';
+export * from './components/MetricsCard';
 export * from './components/NewItemButton';
 export * from './components/Popover';
 export * from './components/RadioButton';

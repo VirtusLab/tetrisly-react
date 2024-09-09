@@ -2,14 +2,15 @@ import type { TrendType } from './InlineMetrics.props';
 import type { BaseProps } from '../../types/BaseProps';
 export type InlineMetricsConfig = {
     innerElements: {
-        label: BaseProps;
-        metric: BaseProps;
-        trendContainer: BaseProps;
-        trend: {
-            trend: Partial<Record<TrendType, BaseProps>>;
+        label?: BaseProps;
+        metric?: BaseProps;
+        trendContainer?: BaseProps;
+        trend?: {
+            trend?: Partial<Record<TrendType, BaseProps>>;
         } & BaseProps;
-        icon: BaseProps;
-        trendValue: BaseProps;
+        icon?: BaseProps;
+        trendValue?: BaseProps;
+        referenceDate?: BaseProps;
     };
 } & BaseProps;
 export declare const defaultConfig: {
@@ -17,6 +18,7 @@ export declare const defaultConfig: {
     h: string;
     display: "flex";
     flexDirection: "column";
+    gap: string;
     innerElements: {
         trendContainer: {
             display: "flex";
@@ -26,7 +28,6 @@ export declare const defaultConfig: {
         label: {
             color: "$color-content-secondary";
             text: "$typo-body-medium";
-            marginBottom: string;
         };
         metric: {
             text: "$typo-header-4xLarge";
@@ -37,7 +38,6 @@ export declare const defaultConfig: {
             padding: string;
             display: "flex";
             alignItems: "center";
-            alignSelf: "flex-end";
             trend: {
                 None: {};
                 Positive: {
@@ -56,6 +56,9 @@ export declare const defaultConfig: {
             display: "flex";
             alignItems: "end";
         };
+        referenceDate: {
+            display: "none";
+        };
     };
 };
 export declare const inlineMetricsStyles: {
@@ -64,6 +67,7 @@ export declare const inlineMetricsStyles: {
         h: string;
         display: "flex";
         flexDirection: "column";
+        gap: string;
         innerElements: {
             trendContainer: {
                 display: "flex";
@@ -73,7 +77,6 @@ export declare const inlineMetricsStyles: {
             label: {
                 color: "$color-content-secondary";
                 text: "$typo-body-medium";
-                marginBottom: string;
             };
             metric: {
                 text: "$typo-header-4xLarge";
@@ -84,7 +87,6 @@ export declare const inlineMetricsStyles: {
                 padding: string;
                 display: "flex";
                 alignItems: "center";
-                alignSelf: "flex-end";
                 trend: {
                     None: {};
                     Positive: {
@@ -102,6 +104,9 @@ export declare const inlineMetricsStyles: {
                 text: "$typo-body-strong-medium";
                 display: "flex";
                 alignItems: "end";
+            };
+            referenceDate: {
+                display: "none";
             };
         };
     };
