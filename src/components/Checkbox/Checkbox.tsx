@@ -3,10 +3,10 @@ import styled from '@xstyled/styled-components';
 import { forwardRef, useCallback, useId, useMemo } from 'react';
 
 import type { CheckboxProps } from './Checkbox.props';
-import { useIndeterminate } from './hooks';
 import { stylesBuilder } from './stylesBuilder';
 import { HelperText } from '../HelperText';
 
+import { useIndeterminate } from '@/hooks';
 import { extractInputProps } from '@/services';
 import { tet } from '@/tetrisly';
 import { MarginProps } from '@/types/MarginProps';
