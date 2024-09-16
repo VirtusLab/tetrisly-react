@@ -15,5 +15,5 @@ export const InlineSearchInput: FC<InlineSearchInputProps & MarginProps> = ({
     () => mergeConfigWithCustom({ defaultConfig, custom }),
     [custom],
   );
-  return <SearchInput size={8} {...restProps} custom={config} />;
+  return <SearchInput size={0} {...restProps} custom={config} />;
 };
