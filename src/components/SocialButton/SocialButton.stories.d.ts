@@ -4,7 +4,7 @@ declare const meta: {
     title: string;
     component: import("react").FC<{
         label: string;
-        platform: "Apple" | "Facebook" | "Figma" | "Github" | "Google" | "X";
+        platform: "Figma" | "Apple" | "Facebook" | "Github" | "Google" | "X";
         appearance?: import("./SocialButton.styles").SocialButtonAppearance | undefined;
         state?: "disabled" | "loading" | undefined;
         custom?: import("./SocialButton.styles").SocialButtonConfig | undefined;
