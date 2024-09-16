@@ -1,0 +1,8 @@
+import{j as r}from"./jsx-runtime-ffb262ed.js";import{D as a}from"./Divider-fd284774.js";import{T as l}from"./TetDocs-85781681.js";import{t as d}from"./TetrislyProvider-679426f7.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./mergeConfigWithCustom-aec35d44.js";import"./index-74beb656.js";import"./iframe-e2d638c9.js";import"../sb-preview/runtime.js";import"./index-d3ea75b5.js";import"./index-11d98b33.js";import"./index-8fd8397b.js";import"./index-356e4a49.js";const _={title:"Divider",component:a,tags:["autodocs"],render:o=>r.jsx(d.div,{h:"100px",children:r.jsx(a,{...o})}),parameters:{docs:{description:{component:"A visual separator that breaks up content or UI elements within a layout. Dividers help to create hierarchy and structure, improving readability and organization of content on the page."},page:()=>r.jsx(l,{docs:"https://docs.tetrisly.com/components/in-progress/divider"})}}},t={},e={args:{orientation:"vertical"},render:o=>r.jsx(d.div,{h:"100px",children:r.jsx(a,{...o})})};var i,s,n;t.parameters={...t.parameters,docs:{...(i=t.parameters)==null?void 0:i.docs,source:{originalSource:"{}",...(n=(s=t.parameters)==null?void 0:s.docs)==null?void 0:n.source}}};var p,c,m;e.parameters={...e.parameters,docs:{...(p=e.parameters)==null?void 0:p.docs,source:{originalSource:`{
+  args: {
+    orientation: 'vertical'
+  },
+  render: args => <tet.div h="100px">
+      <Divider {...args} />
+    </tet.div>
+}`,...(m=(c=e.parameters)==null?void 0:c.docs)==null?void 0:m.source}}};const k=["Default","Vertical"];export{t as Default,e as Vertical,k as __namedExportsOrder,_ as default};
