@@ -22,14 +22,12 @@ export const defaultConfig: SearchInputProps['custom'] = {
     input: {
       w: 'unset',
       h: 'unset',
-      minWidth: '50px',
+      minWidth: '30px',
       backgroundColor: 'transparent',
       padding: 0,
-      paddingRight: '36px',
       display: 'inline-block',
     },
     clearButton: {
-      position: 'absolute',
       right: '$space-component-padding-small',
     },
     beforeComponent: {

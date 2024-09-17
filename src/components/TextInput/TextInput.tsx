@@ -90,6 +90,8 @@ export const TextInput = forwardRef<
           type={type}
           disabled={state === 'disabled'}
           ref={inputRef}
+          size={0}
+          padding={0}
         />
         {!!hasClearButton && (value || innerValue) && (
           <IconButton
