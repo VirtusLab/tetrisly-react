@@ -78,13 +78,6 @@ describe('Dialog', () => {
     expect(buttons[1]).toBeInTheDocument();
   });
 
-  it('should render additional action when provided', () => {
-    const { additionalAction } = getDialog(
-      <Dialog additionalAction={{ label: 'label' }} />,
-    );
-    expect(additionalAction).toBeInTheDocument();
-  });
-
   it('should render proper title', () => {
     const { dialogTitle } = getDialog(<Dialog title="dialog title" />);
     expect(dialogTitle).toHaveTextContent('dialog title');

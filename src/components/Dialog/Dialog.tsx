@@ -1,17 +1,18 @@
 import { Icon } from '@virtuslab/tetrisly-icons';
+import { Props } from '@xstyled/styled-components';
 import { FC, useMemo } from 'react';
 
 import { AdditionalElementWrapper } from './AdditionalElementWrapper';
 import { DialogProps } from './Dialog.props';
 import { stylesBuilder } from './stylesBuilder';
 import { Button } from '../Button';
+import { Checkbox } from '../Checkbox';
 import { IconButton } from '../IconButton';
 
 import { tet } from '@/tetrisly';
 
 export const Dialog: FC<DialogProps> = ({
   actions,
-  additionalAction,
   children,
   content,
   onCloseClick,
@@ -61,20 +62,10 @@ export const Dialog: FC<DialogProps> = ({
       <tet.div {...styles.content} data-testid="dialog-content">
         {content}
       </tet.div>
-      {(actions || additionalAction) && (
+      {actions && (
         <tet.div data-testid="dialog-footer" {...styles.footer}>
           {hasChildren && footer !== 'steps' && (
             <AdditionalElementWrapper>{children}</AdditionalElementWrapper>
-          )}
-          {additionalAction && (
-            <AdditionalElementWrapper>
-              <Button
-                data-testid="dialog-additional-action"
-                key={additionalAction.label}
-                appearance="secondary"
-                {...additionalAction}
-              />
-            </AdditionalElementWrapper>
           )}
           {actions &&
             actions.map((action, index) => {
@@ -98,3 +89,6 @@ export const Dialog: FC<DialogProps> = ({
     </tet.div>
   );
 };
+
+const DialogBase = Dialog as Props;
+DialogBase.Item = Button || Checkbox;

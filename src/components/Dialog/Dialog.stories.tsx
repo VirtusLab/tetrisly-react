@@ -3,6 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { Dialog } from './Dialog';
 import { customStyleForDocs } from './Dialog.styles';
+import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { Dimmer } from '../Dimmer';
 
@@ -153,28 +154,6 @@ export const Destructive: Story = {
   ),
 };
 
-export const AdditionalAction: Story = {
-  render: () => (
-    <tet.div
-      padding="40"
-      h="400px"
-      borderRadius={10}
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Dimmer />
-      <Dialog
-        title="Title"
-        content="Everything in Tetrisly contains Auto Layout. Moreover, we’ve redefined all variants and we have created brand-new components."
-        footer="decision"
-        actions={[{ label: 'Cancel' }, { label: 'Accept' }]}
-        additionalAction={{ label: 'Find out more' }}
-      />
-    </tet.div>
-  ),
-};
-
 export const NestedComponentInsideFooter: Story = {
   args: {
     title: 'title',
@@ -185,5 +164,50 @@ export const NestedComponentInsideFooter: Story = {
     size: 'medium',
     custom: customStyleForDocs,
     children: <Checkbox label="Do not show me again" />,
+  },
+};
+
+export const NestedButtonInsideFooter: Story = {
+  args: {
+    title: 'title',
+    content: 'content',
+    onCloseClick: () => {},
+    footer: 'decision',
+    actions: [{ label: 'first action' }, { label: 'second action' }],
+    size: 'medium',
+    custom: customStyleForDocs,
+    children: <Button label="Find out more" />,
+  },
+};
+
+export const AdditionalCustomContent: Story = {
+  args: {
+    title: 'title',
+    content: 'content',
+    onCloseClick: () => {},
+    footer: 'decision',
+    actions: [{ label: 'first action' }, { label: 'second action' }],
+    size: 'medium',
+    custom: customStyleForDocs,
+    children: <div>Additional component</div>,
+  },
+};
+
+export const AdditionalCustomContentWithButton: Story = {
+  args: {
+    title: 'title',
+    content: 'content',
+    onCloseClick: () => {},
+    footer: 'decision',
+    actions: [{ label: 'first action' }, { label: 'second action' }],
+    size: 'medium',
+    custom: customStyleForDocs,
+    children: (
+      <div>
+        Additional component with button
+        <br />
+        <Button label="button" />
+      </div>
+    ),
   },
 };
