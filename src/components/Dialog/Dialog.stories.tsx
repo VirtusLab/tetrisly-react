@@ -62,11 +62,9 @@ export const Default: Story = {
     footer: 'steps',
     actions: [{ label: 'first action' }, { label: 'second action' }],
     size: 'small',
-    custom: customStyleForDocs, // is it ok? I need different prezentation in docs and different in usage
+    custom: customStyleForDocs,
   },
 };
-
-// TODO not sure if Dimmer should be included in Dialog compinent or user should decide if he/she uses it
 
 export const Decision: Story = {
   render: () => (
