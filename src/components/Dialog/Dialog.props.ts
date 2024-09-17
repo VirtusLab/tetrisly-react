@@ -7,7 +7,6 @@ import type { Action } from '@/types';
 
 export type DialogProps = {
   actions?: Action[];
-  // additionalAction?: Action;
   children?: ReactNode;
   content?: string;
   custom?: DialogConfig;
@@ -18,6 +17,3 @@ export type DialogProps = {
   size?: DialogSize;
   title?: string;
 };
-// } & {
-//   Item: ForwardRefExoticComponent<allComponentsProps & MarginProps>;
-// };

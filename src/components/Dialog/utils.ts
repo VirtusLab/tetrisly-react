@@ -1,5 +1,5 @@
 export const checkIfChildrenIsCustomComponent = (
-  element: React.ReactElement<any>,
+  element: React.ReactElement<unknown>,
 ) => {
   const { type } = element;
   const displayName =
