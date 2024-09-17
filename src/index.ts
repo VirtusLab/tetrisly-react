@@ -8,6 +8,7 @@ export * from './components/Checkbox';
 export * from './components/CheckboxGroup';
 export * from './components/CornerDialog';
 export * from './components/Counter';
+export * from './components/Dialog';
 export * from './components/Dimmer';
 export * from './components/Divider';
 export * from './components/FileIcon';
