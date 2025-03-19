@@ -111,7 +111,6 @@ near future. You can read more [here](https://xstyled.dev/docs/utility-props/).
 import {
   TetrislyProvider,
   Button,
-  theme,
   tet,
 } from '@virtuslab/tetrisly-react';
 
